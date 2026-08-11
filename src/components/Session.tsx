@@ -3,6 +3,7 @@ import { VocabDrillBlock } from "./VocabDrillBlock";
 import { ReadalongBlock } from "./ReadalongBlock";
 import { IntroBlock } from "./IntroBlock";
 import { GrammarBlock } from "./GrammarBlock";
+import { AuditBar } from "./AuditBar";
 import { cancelSpeech } from "../engine/speech";
 
 export function Session() {
@@ -13,6 +14,7 @@ export function Session() {
     return (
       <div className="session complete">
         <h2>Lesson complete 🎉</h2>
+        <AuditBar />
       </div>
     );
   }
@@ -33,6 +35,7 @@ export function Session() {
         >
           ▶ Resume
         </button>
+        <AuditBar />
       </div>
     );
   }
@@ -74,6 +77,8 @@ export function Session() {
           onComplete={handleComplete}
         />
       )}
+
+      <AuditBar />
     </div>
   );
 }

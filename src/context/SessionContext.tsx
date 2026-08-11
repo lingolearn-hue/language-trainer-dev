@@ -12,6 +12,7 @@ interface SessionState {
 type Action =
   | { type: "NEXT_BLOCK" }
   | { type: "PREV_BLOCK" }
+  | { type: "GOTO_BLOCK"; index: number }
   | { type: "PAUSE" }
   | { type: "RESUME" }
   | { type: "RESTORE"; blockIndex: number };
@@ -54,6 +55,19 @@ function reducer(state: SessionState, action: Action): SessionState {
     }
     case "PREV_BLOCK": {
       const next = { ...state, blockIndex: Math.max(0, state.blockIndex - 1) };
+      saveCheckpoint(next);
+      return next;
+    }
+    case "GOTO_BLOCK": {
+      const clamped = Math.max(
+        0,
+        Math.min(action.index, state.lesson.blocks.length - 1)
+      );
+      const next: SessionState = {
+        ...state,
+        blockIndex: clamped,
+        status: "running",
+      };
       saveCheckpoint(next);
       return next;
     }

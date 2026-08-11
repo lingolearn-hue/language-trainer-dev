@@ -24,6 +24,32 @@ test("lesson 2 session loads and advances through blocks", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Fragen" })).toBeVisible();
 });
 
+test("audit bar: jump list navigates directly to any slide", async ({ page }) => {
+  await page.goto("/");
+
+  await page.getByText(/Slide 1 \//).click();
+  await expect(page.locator(".audit-jump-list")).toBeVisible();
+
+  await page.locator(".audit-jump-list button", { hasText: "Gegenstände" }).click();
+  await expect(page.getByText(/Slide 2 \//)).toBeVisible();
+  await expect(page.getByText("Gegenstände und Eigenschaften")).toBeVisible();
+});
+
+test("audit bar: verbal text overlay shows spoken lines without playing audio", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByText(/Slide 1 \//).click();
+  await page.locator(".audit-jump-list button", { hasText: "Gegenstände" }).click();
+
+  await page.getByText("🗨 Verbal text").click();
+  await expect(page.locator(".audit-overlay-panel")).toBeVisible();
+  await expect(page.locator(".audit-overlay-panel")).toContainText("das Buch");
+
+  await page.getByText("Close").click();
+  await expect(page.locator(".audit-overlay-panel")).not.toBeVisible();
+});
+
 test("pause and resume persists block position via localStorage", async ({ page }) => {
   await page.goto("/");
   await page.getByText("Continue →").click(); // past intro

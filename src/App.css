@@ -43,3 +43,49 @@ tr.active td { background: #2b3a6b; }
 .chunk .source { font-size: 13px; opacity: 0.65; }
 .chunk .listen { margin-left: auto; background: transparent; padding: 2px 6px; }
 .chunks.density-sparse .chunk { font-size: 20px; padding: 16px; }
+
+/* Audit bar — quick slide navigation + verbal-content overlay (QA tool) */
+.audit-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; gap: 8px;
+  background: #0d0d13; border-top: 1px solid #333;
+  padding: 8px 16px; z-index: 50;
+}
+.audit-bar button {
+  background: #2a2a38; color: #ccc; border: none; padding: 6px 12px;
+  border-radius: 6px; cursor: pointer; font-size: 13px;
+}
+.audit-bar button:disabled { opacity: 0.35; cursor: default; }
+.audit-bar button.active { background: #4f6bff; color: white; }
+.audit-jump-label { flex: 1; text-align: left; }
+
+.audit-jump-list {
+  position: fixed; bottom: 46px; left: 0; right: 0; max-height: 40vh;
+  overflow-y: auto; background: #14141c; border-top: 1px solid #333;
+  padding: 8px; z-index: 49; display: flex; flex-direction: column; gap: 4px;
+}
+.audit-jump-list button {
+  text-align: left; background: transparent; color: #ccc; border: none;
+  padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 13px;
+}
+.audit-jump-list button.active { background: #2b3a6b; color: white; }
+.audit-jump-list button:hover { background: #1e1e29; }
+
+.audit-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center; z-index: 60;
+}
+.audit-overlay-panel {
+  background: #1e1e29; border-radius: 12px; padding: 20px;
+  max-width: 600px; width: 90%; max-height: 70vh; overflow-y: auto;
+}
+.audit-overlay-panel h3 { margin-top: 0; font-size: 15px; opacity: 0.85; }
+.audit-overlay-panel ul { list-style: none; padding: 0; margin: 0; }
+.audit-overlay-panel li {
+  display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid #2a2a38;
+}
+.audit-overlay-panel .label { opacity: 0.5; font-size: 12px; min-width: 70px; }
+.audit-overlay-panel .text { font-size: 15px; }
+
+/* leave room at bottom so audit bar doesn't cover block content */
+.session { padding-bottom: 70px; }
