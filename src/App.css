@@ -1,48 +1,109 @@
 * { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, sans-serif; background: #14141c; color: #eee; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color: #eee; overflow: hidden; }
 
-.session { max-width: 700px; margin: 0 auto; padding: 24px; min-height: 100vh; }
-.session-header {
+.session { position: relative; width: 100vw; height: 100vh; }
+.session.paused, .session.complete {
+  width: 100vw; height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+}
+
+.session-header.floating {
+  position: fixed; top: 0; left: 0; right: 0;
   display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 20px; font-size: 14px; opacity: 0.8;
+  padding: 8px 16px; font-size: 12px; opacity: 0.55; z-index: 40;
+  pointer-events: none;
 }
-.session-header button { background: #333; color: #eee; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; }
-
-.block { background: #1e1e29; border-radius: 12px; padding: 20px; }
-.block h2 { margin-top: 0; }
-.block button {
-  background: #4f6bff; color: white; border: none; padding: 10px 18px;
-  border-radius: 8px; cursor: pointer; font-size: 14px; margin: 4px 8px 16px 0;
+.session-header.floating button { pointer-events: auto; }
+.session-header button {
+  background: #333; color: #eee; border: none; padding: 5px 10px;
+  border-radius: 6px; cursor: pointer; font-size: 12px;
 }
-.block button:disabled { opacity: 0.5; cursor: default; }
 
-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #333; }
-tr.active td { background: #2b3a6b; }
+/* ---------------------------------------------------------------------
+   Slide frame — beamer-style: fixed 16:9 canvas, letterboxed to fit the
+   viewport, dense single-view content (no scrolling, everything shown
+   at once by default). Standard-view target is landscape/horizontal.
+   --------------------------------------------------------------------- */
+.slide-viewport {
+  width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 16px 60px; /* leave room for floating header + audit bar */
+}
+.slide-frame {
+  width: min(100%, calc((100vh - 100px) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  background: #16161f;
+  border: 1px solid #2a2a38;
+  border-radius: 10px;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.slide-title {
+  font-size: clamp(18px, 2.4vw, 28px); font-weight: 700;
+  padding: 3% 4% 1.5%; border-bottom: 1px solid #262633;
+}
+.slide-content {
+  flex: 1; padding: 2% 4%; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center;
+  font-size: clamp(12px, 1.3vw, 16px);
+}
+.slide-footer {
+  display: flex; align-items: center; gap: 10px;
+  padding: 1.5% 4%; border-top: 1px solid #262633; font-size: 12px;
+}
+.slide-footer button {
+  background: #4f6bff; color: white; border: none; padding: 6px 14px;
+  border-radius: 6px; cursor: pointer; font-size: 12px;
+}
+.slide-footer button:disabled { opacity: 0.4; cursor: default; }
+.slide-footer button:not(:first-child) { margin-left: 4px; }
+.phase-label { opacity: 0.7; margin-right: auto; }
 
-.readalong .lines { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
-.line { padding: 8px 12px; border-radius: 8px; opacity: 0.6; }
+/* Push horizontal orientation: nudge overlay on narrow portrait viewports */
+.rotate-nudge { display: none; }
+@media (orientation: portrait) and (max-width: 600px) {
+  .rotate-nudge {
+    display: flex; position: fixed; inset: 0; background: rgba(10,10,15,0.92);
+    align-items: center; justify-content: center; text-align: center;
+    padding: 24px; z-index: 100; font-size: 15px;
+  }
+}
+
+/* Dense vocab: 2-column table, everything visible at once */
+.vocab-columns { display: flex; gap: 6%; height: 100%; }
+.vocab-columns table { flex: 1; border-collapse: collapse; align-self: flex-start; }
+.vocab-columns td { padding: 0.4em 0.6em; border-bottom: 1px solid #23233260; }
+.vocab-columns td.target { font-weight: 600; }
+.vocab-columns td.source { opacity: 0.6; }
+.vocab-columns tr.active td { background: #2b3a6b; }
+
+/* Readalong lines — dense, all visible at once */
+.lines { display: flex; flex-direction: column; gap: 0.5em; overflow-y: auto; }
+.line { padding: 0.4em 0.7em; border-radius: 8px; opacity: 0.55; }
 .line.active { background: #2b3a6b; opacity: 1; }
-.line .target { font-size: 18px; }
-.line .source { font-size: 13px; opacity: 0.7; }
-.phase-label { font-weight: 600; opacity: 0.85; }
+.line .target { font-size: 1.15em; }
+.line .source { font-size: 0.75em; opacity: 0.7; }
 
-.session.paused, .session.complete { text-align: center; padding-top: 80px; }
+.intro-text { font-size: 1.2em; margin: 0.3em 0; }
+.intro-text.source { opacity: 0.6; font-size: 0.85em; }
 
-.intro-text { font-size: 17px; margin: 6px 0; }
-.intro-text.source { opacity: 0.65; font-size: 14px; }
+.explanation { margin: 0 0 0.5em; }
+.explanation.source { opacity: 0.6; font-size: 0.85em; margin-bottom: 1em; }
+.explanation-row { display: flex; align-items: baseline; gap: 0.6em; }
+.explanation-row .explanation { flex: 1; }
+.explanation-row .listen { background: transparent; border: none; cursor: pointer; padding: 0 4px; }
 
-.grammar .explanation { margin: 4px 0; }
-.grammar .explanation.source { opacity: 0.65; font-size: 14px; margin-bottom: 16px; }
-.chunks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+/* Dense grammar chunks: wrap into a compact grid, everything shown at once */
+.chunks { display: flex; flex-wrap: wrap; gap: 0.5em; overflow-y: auto; }
+.chunks.density-dense .chunk { flex: 1 1 45%; }
+.chunks.density-sparse .chunk { flex: 1 1 100%; font-size: 1.3em; padding: 1em; }
 .chunk {
-  display: flex; align-items: baseline; gap: 10px;
-  background: #23233260; padding: 8px 12px; border-radius: 8px;
+  display: flex; align-items: baseline; gap: 0.6em;
+  background: #23233260; padding: 0.5em 0.7em; border-radius: 8px;
 }
-.chunk .target { font-size: 16px; }
-.chunk .source { font-size: 13px; opacity: 0.65; }
-.chunk .listen { margin-left: auto; background: transparent; padding: 2px 6px; }
-.chunks.density-sparse .chunk { font-size: 20px; padding: 16px; }
+.chunk .source { opacity: 0.6; font-size: 0.85em; }
+.chunk .listen { margin-left: auto; background: transparent; padding: 0 4px; border: none; cursor: pointer; }
 
 /* Audit bar — quick slide navigation + verbal-content overlay (QA tool) */
 .audit-bar {
@@ -87,5 +148,50 @@ tr.active td { background: #2b3a6b; }
 .audit-overlay-panel .label { opacity: 0.5; font-size: 12px; min-width: 70px; }
 .audit-overlay-panel .text { font-size: 15px; }
 
-/* leave room at bottom so audit bar doesn't cover block content */
-.session { padding-bottom: 70px; }
+/* Trainer choice screen (Preply-style cards) */
+.trainer-select { max-width: 900px; margin: 0 auto; padding: 48px 24px; text-align: center; overflow-y: auto; height: 100vh; }
+.trainer-select h1 { margin-bottom: 4px; }
+.trainer-select .subtitle { opacity: 0.6; margin-top: 0; margin-bottom: 32px; }
+
+.trainer-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.trainer-card {
+  background: #1e1e29; border: 1px solid #2a2a38; border-radius: 14px;
+  padding: 20px; cursor: pointer; color: #eee; text-align: center;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+.trainer-card:hover { transform: translateY(-2px); border-color: #4f6bff; }
+
+.trainer-avatar {
+  width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: 600; color: white; position: relative;
+  overflow: hidden;
+}
+.trainer-avatar.avatar-orb { background: radial-gradient(circle at 35% 35%, #ffffff55, transparent 60%), var(--orb, #6be0ff); }
+.orb-glow {
+  position: absolute; inset: 0; border-radius: 50%;
+  box-shadow: 0 0 20px 6px rgba(255,255,255,0.35) inset;
+}
+
+.trainer-name { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
+.trainer-languages { font-size: 13px; opacity: 0.75; margin-bottom: 6px; }
+.trainer-style { font-size: 12px; opacity: 0.5; }
+
+/* In-lesson corner avatars: trainer (top) + user placeholder (below) */
+.lesson-avatars {
+  position: fixed; top: 40px; right: 16px; z-index: 41;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.lesson-avatar-slot {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.lesson-avatar-name { font-size: 11px; opacity: 0.75; }
+.user-avatar-placeholder {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #2a2a38; border: 1px dashed #4a4a5c;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; opacity: 0.6;
+}

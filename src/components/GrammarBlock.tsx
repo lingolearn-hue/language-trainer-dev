@@ -1,9 +1,14 @@
 import { useState } from "react";
 import type { Block, GrammarContent, LanguageSettings, DisplaySettings } from "../types";
 import { speak } from "../engine/speech";
+import { Slide } from "./Slide";
 
 // Per spec (03-lessons.md pacing rules): grammar = explain -> drill -> quiz,
 // no 3-phase read-along. Single on-demand read per chunk instead.
+//
+// Standard view is DENSE: everything shows at once, beamer-style, matching
+// the source slide design. "Progressive reveal" is available as an explicit
+// opt-in toggle for step-by-step teaching, not the default.
 export function GrammarBlock({
   block,
   lang,
@@ -16,11 +21,21 @@ export function GrammarBlock({
   onComplete: () => void;
 }) {
   const content = block.content as GrammarContent;
-  const [revealed, setRevealed] = useState(0); // how many chunks unhidden so far
+  const [stepMode, setStepMode] = useState(false); // opt-in progressive reveal
+  const [revealed, setRevealed] = useState(content.chunks.length); // dense default: all shown
+
+  function toggleStepMode() {
+    if (!stepMode) {
+      setRevealed(0); // entering step mode starts from nothing revealed
+    } else {
+      setRevealed(content.chunks.length); // leaving step mode shows everything again
+    }
+    setStepMode(!stepMode);
+  }
 
   const atEnd = revealed >= content.chunks.length;
   const visibleChunks =
-    display.density === "dense"
+    !stepMode || display.density === "dense"
       ? content.chunks.slice(0, revealed)
       : revealed > 0
       ? [content.chunks[revealed - 1]]
@@ -35,9 +50,28 @@ export function GrammarBlock({
   }
 
   return (
-    <div className="block grammar">
-      <h2>{block.title?.[lang.targetLang] ?? block.title?.en}</h2>
-      <p className="explanation">{content.explanation[lang.targetLang]}</p>
+    <Slide
+      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      footer={
+        <>
+          <button onClick={toggleStepMode}>
+            {stepMode ? "Show all" : "Step through"}
+          </button>
+          {stepMode && !atEnd && <button onClick={revealNext}>Reveal next →</button>}
+          <button onClick={onComplete}>Continue →</button>
+        </>
+      }
+    >
+      <div className="explanation-row">
+        <p className="explanation">{content.explanation[lang.targetLang]}</p>
+        <button
+          className="listen"
+          onClick={() => readChunk(content.explanation[lang.targetLang])}
+          title="Hear the grammar explanation"
+        >
+          🔊
+        </button>
+      </div>
       <p className="explanation source">{content.explanation[lang.sourceLang]}</p>
 
       <div className={`chunks density-${display.density}`}>
@@ -54,11 +88,6 @@ export function GrammarBlock({
           </div>
         ))}
       </div>
-
-      <div className="controls">
-        {!atEnd && <button onClick={revealNext}>Reveal next →</button>}
-        {atEnd && <button onClick={onComplete}>Continue →</button>}
-      </div>
-    </div>
+    </Slide>
   );
 }

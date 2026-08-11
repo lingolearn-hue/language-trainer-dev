@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Block, ReadalongContent, LanguageSettings, ReadalongPhase } from "../types";
 import { speak, wait } from "../engine/speech";
+import { Slide } from "./Slide";
 
 const PHASES: ReadalongPhase[] = ["echo", "shadow", "silent"];
 
@@ -56,10 +57,20 @@ export function ReadalongBlock({
   }
 
   return (
-    <div className="block readalong">
-      <h2>{block.title?.[lang.targetLang] ?? block.title?.en}</h2>
-      <p className="phase-label">{PHASE_LABEL[phase]}</p>
-
+    <Slide
+      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      footer={
+        <>
+          <span className="phase-label">{PHASE_LABEL[phase]}</span>
+          <button disabled={running} onClick={runPhase}>
+            {running ? "Playing…" : `▶ Play phase: ${phase}`}
+          </button>
+          <button disabled={running} onClick={nextPhase}>
+            {phaseIdx < PHASES.length - 1 ? "Next phase →" : "Continue →"}
+          </button>
+        </>
+      }
+    >
       <div className="lines">
         {content.lines.map((line, i) => (
           <div key={line.id} className={i === activeLine ? "line active" : "line"}>
@@ -68,15 +79,6 @@ export function ReadalongBlock({
           </div>
         ))}
       </div>
-
-      <div className="controls">
-        <button disabled={running} onClick={runPhase}>
-          {running ? "Playing…" : `▶ Play phase: ${phase}`}
-        </button>
-        <button disabled={running} onClick={nextPhase}>
-          {phaseIdx < PHASES.length - 1 ? "Next phase →" : "Continue →"}
-        </button>
-      </div>
-    </div>
+    </Slide>
   );
 }

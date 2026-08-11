@@ -4,9 +4,11 @@ import { ReadalongBlock } from "./ReadalongBlock";
 import { IntroBlock } from "./IntroBlock";
 import { GrammarBlock } from "./GrammarBlock";
 import { AuditBar } from "./AuditBar";
+import { LessonAvatars } from "./LessonAvatars";
 import { cancelSpeech } from "../engine/speech";
+import type { Trainer } from "../data/trainers";
 
-export function Session() {
+export function Session({ trainer }: { trainer: Trainer }) {
   const { state, dispatch } = useSession();
   const { lesson, blockIndex, status, lang, display } = state;
 
@@ -52,13 +54,15 @@ export function Session() {
 
   return (
     <div className={`session mode-${block.displayMode}`}>
-      <div className="session-header">
+      <div className="session-header floating">
         <span>
           {lesson.title[lang.targetLang]} — Block {blockIndex + 1}/
           {lesson.blocks.length}
         </span>
         <button onClick={handlePause}>⏸ Pause</button>
       </div>
+
+      <LessonAvatars trainer={trainer} />
 
       {block.type === "vocabDrill" && (
         <VocabDrillBlock block={block} lang={lang} onComplete={handleComplete} />

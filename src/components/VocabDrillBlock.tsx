@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Block, VocabDrillContent, LanguageSettings } from "../types";
 import { speak, wait } from "../engine/speech";
+import { Slide } from "./Slide";
 
 export function VocabDrillBlock({
   block,
@@ -29,29 +30,41 @@ export function VocabDrillBlock({
     setPlaying(false);
   }
 
+  // Dense beamer-style layout: split into 2 columns like the source slides
+  // (all items visible at once — no reveal steps for vocab).
+  const mid = Math.ceil(content.items.length / 2);
+  const colA = content.items.slice(0, mid);
+  const colB = content.items.slice(mid);
+
   return (
-    <div className="block vocab-drill">
-      <h2>{block.title?.[lang.targetLang] ?? block.title?.en}</h2>
-      <button disabled={playing} onClick={playEchoPass}>
-        {playing ? "Playing…" : "▶ Read along (echo)"}
-      </button>
-      <table>
-        <thead>
-          <tr>
-            <th>{lang.targetLang}</th>
-            <th>{lang.sourceLang}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {content.items.map((item, i) => (
-            <tr key={item.id} className={i === activeIndex ? "active" : ""}>
-              <td>{item.translations[lang.targetLang]}</td>
-              <td>{item.translations[lang.sourceLang]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <button onClick={onComplete}>Continue →</button>
-    </div>
+    <Slide
+      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      footer={
+        <>
+          <button disabled={playing} onClick={playEchoPass}>
+            {playing ? "Playing…" : "▶ Read along (echo)"}
+          </button>
+          <button onClick={onComplete}>Continue →</button>
+        </>
+      }
+    >
+      <div className="vocab-columns">
+        {[colA, colB].map((col, ci) => (
+          <table key={ci}>
+            <tbody>
+              {col.map((item) => {
+                const globalIndex = content.items.indexOf(item);
+                return (
+                  <tr key={item.id} className={globalIndex === activeIndex ? "active" : ""}>
+                    <td className="target">{item.translations[lang.targetLang]}</td>
+                    <td className="source">{item.translations[lang.sourceLang]}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        ))}
+      </div>
+    </Slide>
   );
 }

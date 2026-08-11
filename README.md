@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 0.4 — 2026-08-11
+Version: 0.5 — 2026-08-11
 
 React-based long-form language tutor simulation. Static content, multiple
 trainer personas, block-based session engine with pause/resume.

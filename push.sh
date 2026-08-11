@@ -38,6 +38,9 @@ if [ "$PASSPHRASE" != "$EXPECTED" ]; then
 fi
 
 echo "Passphrase OK. Pushing source (main) to $REPO..."
+# REMINDER: source and Pages must always be pushed together in the same
+# push.sh run — never push main without also rebuilding and pushing
+# gh-pages right after, and never push gh-pages on its own.
 git push origin main
 
 echo "Building and pushing GitHub Pages (gh-pages) to $REPO..."
