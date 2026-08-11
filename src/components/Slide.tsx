@@ -21,9 +21,6 @@ export function Slide({
         <div className="slide-content">{children}</div>
         {footer && <div className="slide-footer">{footer}</div>}
       </div>
-      <div className="rotate-nudge">
-        <p>Rotate your device — this course is designed for landscape view.</p>
-      </div>
     </div>
   );
 }

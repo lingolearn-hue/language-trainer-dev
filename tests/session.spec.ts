@@ -19,29 +19,39 @@ test("trainer select screen shows all 6 trainers with name + languages", async (
   await expect(page.getByText("German ↔ English").first()).toBeVisible();
 });
 
-test("selecting a trainer starts the lesson session", async ({ page }) => {
+test("selecting a trainer starts on the title slide, not the warm-up", async ({ page }) => {
   await pickTrainer(page);
-  await expect(page.getByText("Willkommen")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Deutsch für Anfänger" })).toBeVisible();
 });
 
-test("lesson 2 session loads and advances through blocks", async ({ page }) => {
+test("lesson 2 session follows the source slide order: title -> agenda -> intro -> vocab -> grammar -> Fragen", async ({
+  page,
+}) => {
   await pickTrainer(page);
 
-  // Intro block
+  // 1. Title slide
+  await expect(page.getByRole("heading", { name: "Deutsch für Anfänger" })).toBeVisible();
+  await page.getByText("Continue →").click();
+
+  // 2. Agenda slide
+  await expect(page.getByRole("heading", { name: "Ablauf" })).toBeVisible();
+  await page.getByText("Continue →").click();
+
+  // 3. Self-intro (Selbstvorstellung / warm-up)
   await expect(page.getByText("Willkommen")).toBeVisible();
   await page.getByText("Continue →").click();
 
-  // Vocab drill block
-  await expect(page.getByText("Gegenstände und Eigenschaften")).toBeVisible();
+  // 4. Vocab drill block
+  await expect(page.getByText("Wortschatz")).toBeVisible();
   await expect(page.getByText("das Buch")).toBeVisible();
   await page.getByText("Continue →").click();
 
-  // Grammar block (verbs) — dense view shows everything at once now
+  // 5. Grammar block (verbs) — dense view shows everything at once
   await expect(page.getByRole("heading", { name: "Regelmäßige Verben" })).toBeVisible();
   await expect(page.getByText("ich lerne", { exact: true })).toBeVisible();
   await page.getByText("Continue →").click();
 
-  // Grammar block (Fragen)
+  // 6. Grammar block (Fragen)
   await expect(page.getByRole("heading", { name: "Fragen" })).toBeVisible();
 });
 
@@ -51,9 +61,8 @@ test("audit bar: jump list navigates directly to any slide", async ({ page }) =>
   await page.getByText(/Slide 1 \//).click();
   await expect(page.locator(".audit-jump-list")).toBeVisible();
 
-  await page.locator(".audit-jump-list button", { hasText: "Gegenstände" }).click();
-  await expect(page.getByText(/Slide 2 \//)).toBeVisible();
-  await expect(page.getByText("Gegenstände und Eigenschaften")).toBeVisible();
+  await page.locator(".audit-jump-list button", { hasText: "Wortschatz" }).click();
+  await expect(page.getByText("Wortschatz")).toBeVisible();
 });
 
 test("audit bar: verbal text overlay shows spoken lines without playing audio", async ({
@@ -61,7 +70,7 @@ test("audit bar: verbal text overlay shows spoken lines without playing audio", 
 }) => {
   await pickTrainer(page);
   await page.getByText(/Slide 1 \//).click();
-  await page.locator(".audit-jump-list button", { hasText: "Gegenstände" }).click();
+  await page.locator(".audit-jump-list button", { hasText: "Wortschatz" }).click();
 
   await page.getByText("🗨 Verbal text").click();
   await expect(page.locator(".audit-overlay-panel")).toBeVisible();
@@ -79,11 +88,13 @@ test("in-lesson trainer avatar and user placeholder are shown", async ({ page })
 
 test("pause and resume persists block position via localStorage", async ({ page }) => {
   await pickTrainer(page);
+  await page.getByText("Continue →").click(); // past title
+  await page.getByText("Continue →").click(); // past agenda
   await page.getByText("Continue →").click(); // past intro
 
   await page.getByText("⏸ Pause").click();
   await expect(page.getByText("Paused")).toBeVisible();
 
   await page.getByText("▶ Resume").click();
-  await expect(page.getByText("Gegenstände und Eigenschaften")).toBeVisible();
+  await expect(page.getByText("Wortschatz")).toBeVisible();
 });

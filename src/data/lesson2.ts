@@ -11,6 +11,36 @@ import type { LessonPlan, Block } from "../types";
 // lesson-2 block sequence — kept below as standalone exports in case they're
 // useful later (e.g. reused elsewhere), just not wired into `lesson2.blocks`.
 
+export const titleBlock: Block = {
+  id: "l2-title",
+  type: "intro",
+  displayMode: "face",
+  estimatedMinutes: 1,
+  title: { de: "Deutsch für Anfänger", en: "German for Beginners", zh: "德语入门" },
+  content: {
+    text: {
+      de: "Ihre ersten Schritte im Deutschen — Kurs-Einführung",
+      en: "Your first steps in German — Course introduction",
+      zh: "德语学习的第一步——课程介绍",
+    },
+  },
+};
+
+export const agendaBlock: Block = {
+  id: "l2-agenda",
+  type: "intro",
+  displayMode: "content",
+  estimatedMinutes: 1,
+  title: { de: "Ablauf", en: "Agenda", zh: "介绍" },
+  content: {
+    text: {
+      de: "1 Einführung · 2 Wiederholung · 3 Wortschatz · 4 Grammatik · 5 Fragen · 6 Lied · 7 Philosophie",
+      en: "1 Introduction · 2 Review · 3 Vocabulary · 4 Grammar · 5 Questions · 6 Song · 7 Philosophy",
+      zh: "1 介绍 · 2 复习 · 3 词汇 · 4 语法 · 5 问句 · 6 歌曲 · 7 哲学",
+    },
+  },
+};
+
 export const introBlock: Block = {
   id: "l2-intro",
   type: "intro",
@@ -31,37 +61,50 @@ export const vocabObjectsBlock: Block = {
   type: "vocabDrill",
   displayMode: "content",
   estimatedMinutes: 5,
-  title: { de: "Gegenstände und Eigenschaften", en: "Objects and Properties", zh: "物品与性质" },
+  title: { de: "Wortschatz", en: "Vocabulary", zh: "词汇" },
   content: {
     items: [
-      { id: "v01", translations: { de: "das Buch", en: "the book", zh: "书" } },
-      { id: "v02", translations: { de: "das Haus", en: "the house", zh: "房子" } },
-      { id: "v03", translations: { de: "der Tisch", en: "the table", zh: "桌子" } },
-      { id: "v04", translations: { de: "die Lampe", en: "the lamp", zh: "灯" } },
-      { id: "v05", translations: { de: "der Stuhl", en: "the chair", zh: "椅子" } },
-      { id: "v06", translations: { de: "die Uhr", en: "the clock", zh: "钟表" } },
-      { id: "v07", translations: { de: "das Auto", en: "the car", zh: "汽车" } },
-      { id: "v08", translations: { de: "die Tasche", en: "the bag", zh: "包" } },
-      { id: "v09", translations: { de: "das Handy", en: "the phone", zh: "手机" } },
-      { id: "v10", translations: { de: "der Schlüssel", en: "the key", zh: "钥匙" } },
-      { id: "v11", translations: { de: "die Tür", en: "the door", zh: "门" } },
-      { id: "v12", translations: { de: "der Ball", en: "the ball", zh: "球" } },
-      { id: "v13", translations: { de: "das Fenster", en: "the window", zh: "窗户" } },
-      { id: "v14", translations: { de: "das Fahrrad", en: "the bicycle", zh: "自行车" } },
-      { id: "v15", translations: { de: "der Computer", en: "the computer", zh: "电脑" } },
-      { id: "v16", translations: { de: "die Schule", en: "the school", zh: "学校" } },
-      { id: "v17", translations: { de: "rot", en: "red", zh: "红色" } },
-      { id: "v18", translations: { de: "groß", en: "big", zh: "大" } },
-      { id: "v19", translations: { de: "blau", en: "blue", zh: "蓝色" } },
-      { id: "v20", translations: { de: "klein", en: "small", zh: "小" } },
-      { id: "v21", translations: { de: "grün", en: "green", zh: "绿色" } },
-      { id: "v22", translations: { de: "gut", en: "good", zh: "好" } },
-      { id: "v23", translations: { de: "gelb", en: "yellow", zh: "黄色" } },
-      { id: "v24", translations: { de: "schlecht", en: "bad", zh: "不好" } },
-      { id: "v25", translations: { de: "schwarz", en: "black", zh: "黑色" } },
-      { id: "v26", translations: { de: "neu", en: "new", zh: "新" } },
-      { id: "v27", translations: { de: "weiß", en: "white", zh: "白色" } },
-      { id: "v28", translations: { de: "alt", en: "old", zh: "旧" } },
+      // Nouns (16) — "Gegenstände und Eigenschaften"
+      { id: "v01", category: "noun", translations: { de: "das Buch", en: "the book", zh: "书" } },
+      { id: "v02", category: "noun", translations: { de: "das Haus", en: "the house", zh: "房子" } },
+      { id: "v03", category: "noun", translations: { de: "der Tisch", en: "the table", zh: "桌子" } },
+      { id: "v04", category: "noun", translations: { de: "die Lampe", en: "the lamp", zh: "灯" } },
+      { id: "v05", category: "noun", translations: { de: "der Stuhl", en: "the chair", zh: "椅子" } },
+      { id: "v06", category: "noun", translations: { de: "die Uhr", en: "the clock", zh: "钟表" } },
+      { id: "v07", category: "noun", translations: { de: "das Auto", en: "the car", zh: "汽车" } },
+      { id: "v08", category: "noun", translations: { de: "die Tasche", en: "the bag", zh: "包" } },
+      { id: "v09", category: "noun", translations: { de: "das Handy", en: "the phone", zh: "手机" } },
+      { id: "v10", category: "noun", translations: { de: "der Schlüssel", en: "the key", zh: "钥匙" } },
+      { id: "v11", category: "noun", translations: { de: "die Tür", en: "the door", zh: "门" } },
+      { id: "v12", category: "noun", translations: { de: "der Ball", en: "the ball", zh: "球" } },
+      { id: "v13", category: "noun", translations: { de: "das Fenster", en: "the window", zh: "窗户" } },
+      { id: "v14", category: "noun", translations: { de: "das Fahrrad", en: "the bicycle", zh: "自行车" } },
+      { id: "v15", category: "noun", translations: { de: "der Computer", en: "the computer", zh: "电脑" } },
+      { id: "v16", category: "noun", translations: { de: "die Schule", en: "the school", zh: "学校" } },
+      // Verbs (10) — "Regelmäßige Verben" + Bruder Jakob / Alle meine Entchen
+      { id: "v17", category: "verb", translations: { de: "lernen", en: "to learn", zh: "学习" } },
+      { id: "v18", category: "verb", translations: { de: "arbeiten", en: "to work", zh: "工作" } },
+      { id: "v19", category: "verb", translations: { de: "machen", en: "to make/do", zh: "做" } },
+      { id: "v20", category: "verb", translations: { de: "wohnen", en: "to live (reside)", zh: "居住" } },
+      { id: "v21", category: "verb", translations: { de: "spielen", en: "to play", zh: "玩" } },
+      { id: "v22", category: "verb", translations: { de: "kommen", en: "to come", zh: "来" } },
+      { id: "v23", category: "verb", translations: { de: "schwimmen", en: "to swim", zh: "游泳" } },
+      { id: "v24", category: "verb", translations: { de: "fliegen", en: "to fly", zh: "飞" } },
+      { id: "v25", category: "verb", translations: { de: "finden", en: "to find", zh: "找到" } },
+      { id: "v26", category: "verb", translations: { de: "hören", en: "to hear", zh: "听见" } },
+      // Adjectives (12)
+      { id: "v27", category: "adjective", translations: { de: "rot", en: "red", zh: "红色" } },
+      { id: "v28", category: "adjective", translations: { de: "groß", en: "big", zh: "大" } },
+      { id: "v29", category: "adjective", translations: { de: "blau", en: "blue", zh: "蓝色" } },
+      { id: "v30", category: "adjective", translations: { de: "klein", en: "small", zh: "小" } },
+      { id: "v31", category: "adjective", translations: { de: "grün", en: "green", zh: "绿色" } },
+      { id: "v32", category: "adjective", translations: { de: "gut", en: "good", zh: "好" } },
+      { id: "v33", category: "adjective", translations: { de: "gelb", en: "yellow", zh: "黄色" } },
+      { id: "v34", category: "adjective", translations: { de: "schlecht", en: "bad", zh: "不好" } },
+      { id: "v35", category: "adjective", translations: { de: "schwarz", en: "black", zh: "黑色" } },
+      { id: "v36", category: "adjective", translations: { de: "neu", en: "new", zh: "新" } },
+      { id: "v37", category: "adjective", translations: { de: "weiß", en: "white", zh: "白色" } },
+      { id: "v38", category: "adjective", translations: { de: "alt", en: "old", zh: "旧" } },
     ],
   },
 };
@@ -213,12 +256,14 @@ export const lesson2: LessonPlan = {
   id: "lesson-2",
   title: { de: "Lektion 2", en: "Lesson 2", zh: "第二课" },
   blocks: [
+    titleBlock,
+    agendaBlock,
     introBlock,
     vocabObjectsBlock,
     grammarVerbsBlock,
     grammarFragenBlock,
-    pronunciationBlock,
     grammarSatzstellungBlock,
-    readalongBruderJakobBlock, // the one song for this lesson
+    pronunciationBlock, // reused from Deutsch_3.pdf — not native to lesson 2
+    readalongBruderJakobBlock, // song always closes the lesson
   ],
 };

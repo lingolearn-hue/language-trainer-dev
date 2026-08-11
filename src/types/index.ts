@@ -15,6 +15,7 @@ export type DisplayMode = "face" | "content";
 export interface VocabItem {
   id: string;
   translations: Translations;
+  category?: "noun" | "verb" | "adjective";
 }
 
 export interface VocabDrillContent {

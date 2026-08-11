@@ -1,5 +1,5 @@
 * { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color: #eee; overflow: hidden; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color: #1a1a22; overflow: hidden; }
 
 .session { position: relative; width: 100vw; height: 100vh; }
 .session.paused, .session.complete {
@@ -10,12 +10,12 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
 .session-header.floating {
   position: fixed; top: 0; left: 0; right: 0;
   display: flex; justify-content: space-between; align-items: center;
-  padding: 8px 16px; font-size: 12px; opacity: 0.55; z-index: 40;
-  pointer-events: none;
+  padding: 8px 16px; font-size: 12px; opacity: 0.6; z-index: 40;
+  pointer-events: none; color: #1a1a22;
 }
 .session-header.floating button { pointer-events: auto; }
 .session-header button {
-  background: #333; color: #eee; border: none; padding: 5px 10px;
+  background: #d8d8de; color: #1a1a22; border: none; padding: 5px 10px;
   border-radius: 6px; cursor: pointer; font-size: 12px;
 }
 
@@ -23,25 +23,29 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
    Slide frame — beamer-style: fixed 16:9 canvas, letterboxed to fit the
    viewport, dense single-view content (no scrolling, everything shown
    at once by default). Standard-view target is landscape/horizontal.
+   Light mode: white slide background, dark text — matches how real
+   in-person lessons are normally projected/printed.
    --------------------------------------------------------------------- */
 .slide-viewport {
   width: 100vw; height: 100vh;
   display: flex; align-items: center; justify-content: center;
   padding: 40px 16px 60px; /* leave room for floating header + audit bar */
+  overflow-y: auto;
 }
 .slide-frame {
   width: min(100%, calc((100vh - 100px) * 16 / 9));
   aspect-ratio: 16 / 9;
-  background: #16161f;
-  border: 1px solid #2a2a38;
+  background: #ffffff;
+  color: #1a1a22;
+  border: 1px solid #d5d5db;
   border-radius: 10px;
   display: flex; flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.18);
 }
 .slide-title {
   font-size: clamp(18px, 2.4vw, 28px); font-weight: 700;
-  padding: 3% 4% 1.5%; border-bottom: 1px solid #262633;
+  padding: 3% 4% 1.5%; border-bottom: 1px solid #e2e2e8; margin: 0;
 }
 .slide-content {
   flex: 1; padding: 2% 4%; overflow: hidden;
@@ -50,40 +54,44 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
 }
 .slide-footer {
   display: flex; align-items: center; gap: 10px;
-  padding: 1.5% 4%; border-top: 1px solid #262633; font-size: 12px;
+  padding: 1.5% 4%; border-top: 1px solid #e2e2e8; font-size: 12px;
 }
 .slide-footer button {
-  background: #4f6bff; color: white; border: none; padding: 6px 14px;
+  background: #3355e0; color: white; border: none; padding: 6px 14px;
   border-radius: 6px; cursor: pointer; font-size: 12px;
 }
 .slide-footer button:disabled { opacity: 0.4; cursor: default; }
 .slide-footer button:not(:first-child) { margin-left: 4px; }
-.phase-label { opacity: 0.7; margin-right: auto; }
+.phase-label { opacity: 0.65; margin-right: auto; }
 
-/* Push horizontal orientation: nudge overlay on narrow portrait viewports */
-.rotate-nudge { display: none; }
-@media (orientation: portrait) and (max-width: 600px) {
-  .rotate-nudge {
-    display: flex; position: fixed; inset: 0; background: rgba(10,10,15,0.92);
-    align-items: center; justify-content: center; text-align: center;
-    padding: 24px; z-index: 100; font-size: 15px;
-  }
+/* Portrait note: slide fills width and shrinks in height (16:9 ratio),
+   deliberately not blocked — horizontal/landscape is the intended
+   viewing mode but portrait isn't prevented, just visually compressed. */
+
+/* Dense vocab: category columns (noun/verb/adjective), everything visible
+   at once. Designed to hold 30-50 items on one slide, matching the source
+   course's own grouped-column vocab-slide density. */
+.vocab-groups { display: flex; gap: 4%; height: 100%; align-items: flex-start; }
+.vocab-group { flex: 1; min-width: 0; }
+.vocab-group-label {
+  font-size: 0.85em; font-weight: 700; opacity: 0.75; text-transform: uppercase;
+  letter-spacing: 0.03em; margin-bottom: 0.3em; border-bottom: 1px solid #d5d5db;
+  padding-bottom: 0.2em;
 }
-
-/* Dense vocab: 2-column table, everything visible at once */
-.vocab-columns { display: flex; gap: 6%; height: 100%; }
-.vocab-columns table { flex: 1; border-collapse: collapse; align-self: flex-start; }
-.vocab-columns td { padding: 0.4em 0.6em; border-bottom: 1px solid #23233260; }
-.vocab-columns td.target { font-weight: 600; }
-.vocab-columns td.source { opacity: 0.6; }
-.vocab-columns tr.active td { background: #2b3a6b; }
+.vocab-group-label .source { font-weight: 400; text-transform: none; opacity: 0.65; }
+.vocab-group table { width: 100%; border-collapse: collapse; }
+.vocab-group td { padding: 0.15em 0.3em 0.15em 0; font-size: 0.82em; line-height: 1.3; }
+.vocab-group td.target { font-weight: 600; white-space: nowrap; }
+.vocab-group td.source { opacity: 0.6; }
+.vocab-group tr.active td { background: #dde6ff; }
+.vocab-count { opacity: 0.55; font-size: 0.85em; margin: 0 auto; }
 
 /* Readalong lines — dense, all visible at once */
 .lines { display: flex; flex-direction: column; gap: 0.5em; overflow-y: auto; }
 .line { padding: 0.4em 0.7em; border-radius: 8px; opacity: 0.55; }
-.line.active { background: #2b3a6b; opacity: 1; }
+.line.active { background: #dde6ff; opacity: 1; }
 .line .target { font-size: 1.15em; }
-.line .source { font-size: 0.75em; opacity: 0.7; }
+.line .source { font-size: 0.75em; opacity: 0.65; }
 
 .intro-text { font-size: 1.2em; margin: 0.3em 0; }
 .intro-text.source { opacity: 0.6; font-size: 0.85em; }
@@ -100,16 +108,18 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
 .chunks.density-sparse .chunk { flex: 1 1 100%; font-size: 1.3em; padding: 1em; }
 .chunk {
   display: flex; align-items: baseline; gap: 0.6em;
-  background: #23233260; padding: 0.5em 0.7em; border-radius: 8px;
+  background: #f2f2f6; padding: 0.5em 0.7em; border-radius: 8px;
 }
 .chunk .source { opacity: 0.6; font-size: 0.85em; }
 .chunk .listen { margin-left: auto; background: transparent; padding: 0 4px; border: none; cursor: pointer; }
 
-/* Audit bar — quick slide navigation + verbal-content overlay (QA tool) */
+/* Audit bar — quick slide navigation + verbal-content overlay (QA tool).
+   Kept dark, deliberately distinct from the light slide surface, so it
+   always reads as a review/QA overlay rather than lesson content. */
 .audit-bar {
   position: fixed; bottom: 0; left: 0; right: 0;
   display: flex; align-items: center; gap: 8px;
-  background: #0d0d13; border-top: 1px solid #333;
+  background: #14141c; color: #eee; border-top: 1px solid #333;
   padding: 8px 16px; z-index: 50;
 }
 .audit-bar button {
@@ -122,7 +132,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
 
 .audit-jump-list {
   position: fixed; bottom: 46px; left: 0; right: 0; max-height: 40vh;
-  overflow-y: auto; background: #14141c; border-top: 1px solid #333;
+  overflow-y: auto; background: #1a1a24; color: #eee; border-top: 1px solid #333;
   padding: 8px; z-index: 49; display: flex; flex-direction: column; gap: 4px;
 }
 .audit-jump-list button {
@@ -130,26 +140,26 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
   padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 13px;
 }
 .audit-jump-list button.active { background: #2b3a6b; color: white; }
-.audit-jump-list button:hover { background: #1e1e29; }
+.audit-jump-list button:hover { background: #242430; }
 
 .audit-overlay {
-  position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
   display: flex; align-items: center; justify-content: center; z-index: 60;
 }
 .audit-overlay-panel {
-  background: #1e1e29; border-radius: 12px; padding: 20px;
+  background: #1e1e29; color: #eee; border-radius: 12px; padding: 20px;
   max-width: 600px; width: 90%; max-height: 70vh; overflow-y: auto;
 }
 .audit-overlay-panel h3 { margin-top: 0; font-size: 15px; opacity: 0.85; }
 .audit-overlay-panel ul { list-style: none; padding: 0; margin: 0; }
 .audit-overlay-panel li {
-  display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid #2a2a38;
+  display: flex; gap: 10px; padding: 6px 0; border-bottom: 1px solid #333;
 }
 .audit-overlay-panel .label { opacity: 0.5; font-size: 12px; min-width: 70px; }
 .audit-overlay-panel .text { font-size: 15px; }
 
 /* Trainer choice screen (Preply-style cards) */
-.trainer-select { max-width: 900px; margin: 0 auto; padding: 48px 24px; text-align: center; overflow-y: auto; height: 100vh; }
+.trainer-select { max-width: 900px; margin: 0 auto; padding: 48px 24px; text-align: center; overflow-y: auto; height: 100vh; color: #1a1a22; }
 .trainer-select h1 { margin-bottom: 4px; }
 .trainer-select .subtitle { opacity: 0.6; margin-top: 0; margin-bottom: 32px; }
 
@@ -158,11 +168,12 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
   gap: 20px;
 }
 .trainer-card {
-  background: #1e1e29; border: 1px solid #2a2a38; border-radius: 14px;
-  padding: 20px; cursor: pointer; color: #eee; text-align: center;
+  background: #ffffff; border: 1px solid #d5d5db; border-radius: 14px;
+  padding: 20px; cursor: pointer; color: #1a1a22; text-align: center;
   transition: transform 0.12s ease, border-color 0.12s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
-.trainer-card:hover { transform: translateY(-2px); border-color: #4f6bff; }
+.trainer-card:hover { transform: translateY(-2px); border-color: #3355e0; }
 
 .trainer-avatar {
   width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 14px;
@@ -170,14 +181,14 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
   font-size: 26px; font-weight: 600; color: white; position: relative;
   overflow: hidden;
 }
-.trainer-avatar.avatar-orb { background: radial-gradient(circle at 35% 35%, #ffffff55, transparent 60%), var(--orb, #6be0ff); }
+.trainer-avatar.avatar-orb { background: radial-gradient(circle at 35% 35%, #ffffff77, transparent 60%), var(--orb, #4fb8e0); }
 .orb-glow {
   position: absolute; inset: 0; border-radius: 50%;
-  box-shadow: 0 0 20px 6px rgba(255,255,255,0.35) inset;
+  box-shadow: 0 0 20px 6px rgba(255,255,255,0.45) inset;
 }
 
 .trainer-name { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
-.trainer-languages { font-size: 13px; opacity: 0.75; margin-bottom: 6px; }
+.trainer-languages { font-size: 13px; opacity: 0.7; margin-bottom: 6px; }
 .trainer-style { font-size: 12px; opacity: 0.5; }
 
 /* In-lesson corner avatars: trainer (top) + user placeholder (below) */
@@ -188,10 +199,10 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #0a0a0f; color
 .lesson-avatar-slot {
   display: flex; flex-direction: column; align-items: center; gap: 4px;
 }
-.lesson-avatar-name { font-size: 11px; opacity: 0.75; }
+.lesson-avatar-name { font-size: 11px; opacity: 0.7; color: #1a1a22; }
 .user-avatar-placeholder {
   width: 40px; height: 40px; border-radius: 50%;
-  background: #2a2a38; border: 1px dashed #4a4a5c;
+  background: #ffffff; border: 1px dashed #b0b0ba;
   display: flex; align-items: center; justify-content: center;
-  font-size: 10px; opacity: 0.6;
+  font-size: 10px; opacity: 0.7; color: #1a1a22;
 }
