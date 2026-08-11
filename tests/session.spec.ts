@@ -13,7 +13,7 @@ test("lesson 2 session loads and advances through blocks", async ({ page }) => {
   await page.getByText("Continue →").click();
 
   // Grammar block (verbs) — reveal chunks then continue
-  await expect(page.getByText("Regelmäßige Verben")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Regelmäßige Verben" })).toBeVisible();
   const revealButton = page.getByText("Reveal next →");
   while (await revealButton.isVisible().catch(() => false)) {
     await revealButton.click();
@@ -21,7 +21,7 @@ test("lesson 2 session loads and advances through blocks", async ({ page }) => {
   await page.getByText("Continue →").click();
 
   // Grammar block (Fragen)
-  await expect(page.getByText("Fragen", { exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Fragen" })).toBeVisible();
 });
 
 test("pause and resume persists block position via localStorage", async ({ page }) => {

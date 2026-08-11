@@ -20,3 +20,18 @@ npm run dev
 npx playwright install chromium   # first time only
 npx playwright test
 ```
+
+## Playwright in constrained sandboxes
+
+If `npx playwright install` can't reach `cdn.playwright.dev` (blocked egress),
+use the Chromium binary bundled in `@sparticuz/chromium` (distributed via npm)
+instead:
+
+```
+npm install -D @sparticuz/chromium
+node -e "require('@sparticuz/chromium').default.executablePath().then(console.log)"  # or .mjs, see note below
+PW_CHROMIUM_PATH=/tmp/chromium npx playwright test
+```
+Note: `@sparticuz/chromium`'s CJS export is unreliable via `require()` in some
+Node versions — resolve the path via a `.mjs` script if `require` gives you
+`{ graphicsMode }` only.
