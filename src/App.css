@@ -1,0 +1,45 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #14141c; color: #eee; }
+
+.session { max-width: 700px; margin: 0 auto; padding: 24px; min-height: 100vh; }
+.session-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px; font-size: 14px; opacity: 0.8;
+}
+.session-header button { background: #333; color: #eee; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; }
+
+.block { background: #1e1e29; border-radius: 12px; padding: 20px; }
+.block h2 { margin-top: 0; }
+.block button {
+  background: #4f6bff; color: white; border: none; padding: 10px 18px;
+  border-radius: 8px; cursor: pointer; font-size: 14px; margin: 4px 8px 16px 0;
+}
+.block button:disabled { opacity: 0.5; cursor: default; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #333; }
+tr.active td { background: #2b3a6b; }
+
+.readalong .lines { display: flex; flex-direction: column; gap: 10px; margin: 16px 0; }
+.line { padding: 8px 12px; border-radius: 8px; opacity: 0.6; }
+.line.active { background: #2b3a6b; opacity: 1; }
+.line .target { font-size: 18px; }
+.line .source { font-size: 13px; opacity: 0.7; }
+.phase-label { font-weight: 600; opacity: 0.85; }
+
+.session.paused, .session.complete { text-align: center; padding-top: 80px; }
+
+.intro-text { font-size: 17px; margin: 6px 0; }
+.intro-text.source { opacity: 0.65; font-size: 14px; }
+
+.grammar .explanation { margin: 4px 0; }
+.grammar .explanation.source { opacity: 0.65; font-size: 14px; margin-bottom: 16px; }
+.chunks { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.chunk {
+  display: flex; align-items: baseline; gap: 10px;
+  background: #23233260; padding: 8px 12px; border-radius: 8px;
+}
+.chunk .target { font-size: 16px; }
+.chunk .source { font-size: 13px; opacity: 0.65; }
+.chunk .listen { margin-left: auto; background: transparent; padding: 2px 6px; }
+.chunks.density-sparse .chunk { font-size: 20px; padding: 16px; }
