@@ -64,6 +64,11 @@ export interface Block {
   displayMode: DisplayMode;
   estimatedMinutes: number;
   title?: Translations;
+  // Short spoken framing line the trainer says when the slide opens —
+  // distinct from the slide's own visible content (e.g. "Let's look at
+  // some vocabulary now."). Auto-played as audio + shown as a caption
+  // below the slide frame.
+  spokenIntro?: Translations;
   content: BlockContent;
 }
 

@@ -80,6 +80,18 @@ test("audit bar: verbal text overlay shows spoken lines without playing audio", 
   await expect(page.locator(".audit-overlay-panel")).not.toBeVisible();
 });
 
+test("teacher caption shows the spoken intro for the current slide", async ({ page }) => {
+  await pickTrainer(page);
+  await expect(page.locator(".teacher-caption .target")).toHaveText(
+    "Willkommen zu deiner zweiten Deutschstunde!"
+  );
+
+  await page.getByText("Continue →").click(); // -> agenda
+  await expect(page.locator(".teacher-caption .target")).toHaveText(
+    "So sieht unser heutiger Ablauf aus."
+  );
+});
+
 test("in-lesson trainer avatar and user placeholder are shown", async ({ page }) => {
   await pickTrainer(page);
   await expect(page.locator(".lesson-avatar-name")).toHaveText("Max");

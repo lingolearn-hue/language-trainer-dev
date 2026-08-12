@@ -5,6 +5,7 @@ import { IntroBlock } from "./IntroBlock";
 import { GrammarBlock } from "./GrammarBlock";
 import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
+import { TeacherCaption } from "./TeacherCaption";
 import { cancelSpeech } from "../engine/speech";
 import type { Trainer } from "../data/trainers";
 
@@ -81,6 +82,8 @@ export function Session({ trainer }: { trainer: Trainer }) {
           onComplete={handleComplete}
         />
       )}
+
+      <TeacherCaption key={block.id} block={block} lang={lang} />
 
       <AuditBar />
     </div>

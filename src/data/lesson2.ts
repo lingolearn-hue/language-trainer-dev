@@ -17,6 +17,11 @@ export const titleBlock: Block = {
   displayMode: "face",
   estimatedMinutes: 1,
   title: { de: "Deutsch für Anfänger", en: "German for Beginners", zh: "德语入门" },
+  spokenIntro: {
+    de: "Willkommen zu deiner zweiten Deutschstunde!",
+    en: "Welcome to your second German lesson!",
+    zh: "欢迎来到你的第二堂德语课！",
+  },
   content: {
     text: {
       de: "Ihre ersten Schritte im Deutschen — Kurs-Einführung",
@@ -32,6 +37,11 @@ export const agendaBlock: Block = {
   displayMode: "content",
   estimatedMinutes: 1,
   title: { de: "Ablauf", en: "Agenda", zh: "介绍" },
+  spokenIntro: {
+    de: "So sieht unser heutiger Ablauf aus.",
+    en: "Here's what we'll cover today.",
+    zh: "这是我们今天的课程安排。",
+  },
   content: {
     text: {
       de: "1 Einführung · 2 Wiederholung · 3 Wortschatz · 4 Grammatik · 5 Fragen · 6 Lied · 7 Philosophie",
@@ -47,6 +57,11 @@ export const introBlock: Block = {
   displayMode: "face",
   estimatedMinutes: 3,
   title: { de: "Willkommen", en: "Welcome", zh: "欢迎" },
+  spokenIntro: {
+    de: "Bevor wir anfangen, erzähl mir kurz etwas über dich.",
+    en: "Before we start, tell me a little about yourself.",
+    zh: "在开始之前，先简单介绍一下你自己。",
+  },
   content: {
     text: {
       de: "Ich lerne Deutsch, weil ... Und du? Erzähl mir kurz, warum du Deutsch lernst.",
@@ -62,6 +77,11 @@ export const vocabObjectsBlock: Block = {
   displayMode: "content",
   estimatedMinutes: 5,
   title: { de: "Wortschatz", en: "Vocabulary", zh: "词汇" },
+  spokenIntro: {
+    de: "Jetzt schauen wir uns wichtige Wörter an: Nomen, Verben und Adjektive.",
+    en: "Now let's look at some important words: nouns, verbs, and adjectives.",
+    zh: "现在我们来看一些重要的词：名词、动词和形容词。",
+  },
   content: {
     items: [
       // Nouns (16) — "Gegenstände und Eigenschaften"
@@ -115,6 +135,11 @@ export const grammarVerbsBlock: Block = {
   displayMode: "content",
   estimatedMinutes: 5,
   title: { de: "Regelmäßige Verben", en: "Regular Verbs", zh: "规则动词" },
+  spokenIntro: {
+    de: "Sehen wir uns an, wie regelmäßige Verben konjugiert werden.",
+    en: "Let's look at how regular verbs are conjugated.",
+    zh: "我们来看看规则动词是如何变位的。",
+  },
   content: {
     explanation: {
       de: "Regelmäßige Verben ändern die Endung je nach Person, der Wortstamm bleibt gleich.",
@@ -141,6 +166,11 @@ export const grammarFragenBlock: Block = {
   displayMode: "content",
   estimatedMinutes: 5,
   title: { de: "Fragen", en: "Questions", zh: "问句" },
+  spokenIntro: {
+    de: "Wie bildet man im Deutschen eine Ja-Nein-Frage?",
+    en: "How do you form a yes-no question in German?",
+    zh: "德语中如何构成是非问句？",
+  },
   content: {
     explanation: {
       de: "Ja/Nein-Fragen: das Verb steht am Satzanfang, vor dem Subjekt.",
@@ -165,6 +195,11 @@ export const pronunciationBlock: Block = {
   displayMode: "content",
   estimatedMinutes: 4,
   title: { de: "Aussprachetraining", en: "Pronunciation Practice", zh: "发音" },
+  spokenIntro: {
+    de: "Üben wir jetzt ein paar knifflige Laute.",
+    en: "Let's practice a few tricky sounds now.",
+    zh: "现在我们来练习一些不容易发的音。",
+  },
   content: {
     items: [
       { id: "p01", translations: { de: "eins", en: "one (ei)", zh: "一" } },
@@ -185,6 +220,11 @@ export const grammarSatzstellungBlock: Block = {
   displayMode: "content",
   estimatedMinutes: 4,
   title: { de: "Frage vs. Aussage", en: "Question vs. Statement", zh: "问句与陈述句" },
+  spokenIntro: {
+    de: "Ein kleiner philosophischer Gedanke von Immanuel Kant zum Abschluss.",
+    en: "A small philosophical thought from Immanuel Kant to wrap up.",
+    zh: "最后来看一个来自康德的小小哲学思考。",
+  },
   content: {
     explanation: {
       de: "Frage: Verb + Subjekt. Aussage: Subjekt + Verb.",
@@ -204,6 +244,11 @@ export const readalongBruderJakobBlock: Block = {
   displayMode: "face",
   estimatedMinutes: 10,
   title: { de: "Bruder Jakob", en: "Brother John", zh: "雅各弟兄" },
+  spokenIntro: {
+    de: "Zum Schluss singen wir gemeinsam ein Lied.",
+    en: "To finish, let's sing a song together.",
+    zh: "最后，让我们一起唱首歌。",
+  },
   content: {
     lines: [
       { id: "r1", translations: { de: "Bruder Jakob, Bruder Jakob,", en: "Brother John, Brother John,", zh: "雅各弟兄，雅各弟兄，" } },
