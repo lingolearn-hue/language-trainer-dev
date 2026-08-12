@@ -90,25 +90,29 @@ export function Session({ trainer }: { trainer: Trainer }) {
         <div className="classroom-banner">👥 Everyone, repeat after me!</div>
       )}
 
-      <LessonAvatars trainer={trainer} />
+      <div className="session-layout">
+        <div className="slide-area">
+          {block.type === "vocabDrill" && (
+            <VocabDrillBlock block={block} lang={lang} onComplete={handleComplete} />
+          )}
+          {block.type === "readalong" && (
+            <ReadalongBlock block={block} lang={lang} onComplete={handleComplete} />
+          )}
+          {block.type === "intro" && (
+            <IntroBlock block={block} lang={lang} onComplete={handleComplete} />
+          )}
+          {block.type === "grammar" && (
+            <GrammarBlock
+              block={block}
+              lang={lang}
+              display={display}
+              onComplete={handleComplete}
+            />
+          )}
+        </div>
 
-      {block.type === "vocabDrill" && (
-        <VocabDrillBlock block={block} lang={lang} onComplete={handleComplete} />
-      )}
-      {block.type === "readalong" && (
-        <ReadalongBlock block={block} lang={lang} onComplete={handleComplete} />
-      )}
-      {block.type === "intro" && (
-        <IntroBlock block={block} lang={lang} onComplete={handleComplete} />
-      )}
-      {block.type === "grammar" && (
-        <GrammarBlock
-          block={block}
-          lang={lang}
-          display={display}
-          onComplete={handleComplete}
-        />
-      )}
+        <LessonAvatars trainer={trainer} />
+      </div>
 
       <TeacherCaption key={block.id} block={block} lang={lang} trainer={trainer} />
 

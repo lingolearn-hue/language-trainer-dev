@@ -1,7 +1,7 @@
 * { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color: #1a1a22; overflow: hidden; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color: #1a1a22; }
 
-.session { position: relative; width: 100vw; height: 100vh; }
+.session { position: relative; width: 100%; min-height: 100vh; }
 .session.paused, .session.complete {
   width: 100vw; height: 100vh; display: flex; flex-direction: column;
   align-items: center; justify-content: center; text-align: center;
@@ -27,41 +27,42 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 }
 
 /* ---------------------------------------------------------------------
-   Slide frame — beamer-style: fixed 16:9 canvas, letterboxed to fit the
-   viewport, dense single-view content (no scrolling, everything shown
-   at once by default). Standard-view target is landscape/horizontal.
+   Slide frame — real Beamer-class style: fixed size, fixed small text,
+   rendered at its natural dimensions. NO scale-to-fit/letterboxing — the
+   slide does not shrink or stretch to the viewport. If it doesn't fit,
+   the page scrolls, same as looking at an actual exported .beamer PDF
+   embedded in a page rather than a "responsive" web component.
    Light mode: white slide background, dark text — matches how real
    in-person lessons are normally projected/printed.
    --------------------------------------------------------------------- */
-.slide-viewport {
-  width: 100vw; height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  padding: 40px 16px 60px; /* leave room for floating header + audit bar */
-  overflow-y: auto;
+.session-layout {
+  display: flex; flex-direction: row; align-items: flex-start; justify-content: center;
+  gap: 24px; width: 100%; padding: 56px 16px 72px; /* room for floating header + audit bar */
 }
+.slide-area { flex-shrink: 0; }
 .slide-frame {
-  width: min(100%, calc((100vh - 100px) * 16 / 9));
-  aspect-ratio: 16 / 9;
+  width: 960px;
+  height: 540px;
   background: #ffffff;
   color: #1a1a22;
   border: 1px solid #d5d5db;
-  border-radius: 10px;
+  border-radius: 6px;
   display: flex; flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+  overflow-y: auto; /* content that doesn't fit scrolls, slide never rescales */
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
 }
 .slide-title {
-  font-size: clamp(18px, 2.4vw, 28px); font-weight: 700;
-  padding: 3% 4% 1.5%; border-bottom: 1px solid #e2e2e8; margin: 0;
+  font-size: 22px; font-weight: 700;
+  padding: 16px 24px 10px; border-bottom: 1px solid #e2e2e8; margin: 0;
 }
 .slide-content {
-  flex: 1; padding: 2% 4%; overflow: hidden;
-  display: flex; flex-direction: column; justify-content: center;
-  font-size: clamp(12px, 1.3vw, 16px);
+  flex: 1; padding: 14px 24px;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  font-size: 14px;
 }
 .slide-footer {
   display: flex; align-items: center; gap: 10px;
-  padding: 1.5% 4%; border-top: 1px solid #e2e2e8; font-size: 12px;
+  padding: 10px 24px; border-top: 1px solid #e2e2e8; font-size: 12px;
 }
 .slide-footer button {
   background: #3355e0; color: white; border: none; padding: 6px 14px;
@@ -71,9 +72,17 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .slide-footer button:not(:first-child) { margin-left: 4px; }
 .phase-label { opacity: 0.65; margin-right: auto; }
 
-/* Portrait note: slide fills width and shrinks in height (16:9 ratio),
-   deliberately not blocked — horizontal/landscape is the intended
-   viewing mode but portrait isn't prevented, just visually compressed. */
+/* Portrait: slide is still fixed-size (no shrinking), so it commonly
+   overflows a narrow viewport horizontally — that's expected, the page
+   scrolls. Avatars drop out of the side-by-side row and go back to a
+   fixed corner overlay, since there's no room beside the slide. */
+@media (orientation: portrait) {
+  .session-layout { flex-direction: column; align-items: center; overflow-x: auto; }
+  .lesson-avatars {
+    position: fixed; top: 40px; right: 16px; z-index: 41;
+    flex-direction: column;
+  }
+}
 
 /* Dense vocab: category columns (noun/verb/adjective), everything visible
    at once. Designed to hold 30-50 items on one slide, matching the source
@@ -183,7 +192,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    presence minimal). Difference: in face mode the trainer avatar is
    larger and the slide frame is slightly narrower/centered, evoking a
    "trainer speaking to you" framing rather than a plain content screen. */
-.session.mode-face .slide-frame { max-width: 82%; margin: 0 auto; }
+.session.mode-face .slide-frame { width: 780px; margin: 0 auto; }
 .session.mode-face .lesson-avatars .trainer-avatar { width: 64px !important; height: 64px !important; font-size: 22px !important; }
 .session.mode-content .lesson-avatars .trainer-avatar { width: 40px !important; height: 40px !important; font-size: 14px !important; }
 
@@ -224,9 +233,13 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .trainer-languages { font-size: 13px; opacity: 0.7; margin-bottom: 6px; }
 .trainer-style { font-size: 12px; opacity: 0.5; }
 
-/* In-lesson corner avatars: trainer (top) + user placeholder (below) */.lesson-avatars {
-  position: fixed; top: 40px; right: 16px; z-index: 41;
+/* In-lesson avatars: trainer (top) + user placeholder (below). Default
+   (landscape): normal flex child inside .session-layout, sitting beside
+   the slide. Portrait override (fixed corner) is defined above alongside
+   the .session-layout portrait rule. */
+.lesson-avatars {
   display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding-top: 8px;
 }
 .lesson-avatar-slot {
   display: flex; flex-direction: column; align-items: center; gap: 4px;

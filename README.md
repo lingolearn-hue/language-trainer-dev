@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 9 — 2026-08-12
+Version: 10 — 2026-08-12
 
 React-based long-form language tutor simulation. Static content, multiple
 trainer personas, block-based session engine with pause/resume.
@@ -80,6 +80,21 @@ Test suite grew from 8 to 13 during this pass, all passing.
 - Delivered a real Beamer-compiled (xelatex, CJK via Noto Sans CJK SC)
   4:3 PDF preview of that slide as a one-off deliverable, separate from
   the in-app HTML/CSS rendering — not part of the app build.
+
+## Recent changes (v10)
+
+- Real Beamer-class rendering: slide frame is now fixed-size (960×540px,
+  16:9) — no scale-to-fit, no `vw`/`vh`-based clamping/letterboxing.
+  Renders at its literal size everywhere, like an exported `.beamer` PDF
+  page. If it doesn't fit the viewport, the page scrolls instead of the
+  slide shrinking.
+- Layout restructured: trainer/user avatars now sit beside the slide as a
+  normal sidebar in landscape (`.session-layout` flex row), reverting to
+  the fixed top-right corner overlay only in portrait, where there's no
+  room beside a stacked layout.
+- Portrait behavior changed as a direct consequence: the slide can now
+  overflow narrow viewports and scroll horizontally, rather than shrinking
+  to fit — this is the expected tradeoff of "no zoom, no fitting."
 
 ## Dev
 
