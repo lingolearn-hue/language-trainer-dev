@@ -3,7 +3,7 @@ import type { Block, VocabDrillContent, VocabItem, LanguageSettings } from "../t
 import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
 
-const CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string }> = {
+const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string }> = {
   noun: { de: "Nomen", en: "Nouns", zh: "名词" },
   verb: { de: "Verben", en: "Verbs", zh: "动词" },
   adjective: { de: "Adjektive", en: "Adjectives", zh: "形容词" },
@@ -37,16 +37,25 @@ export function VocabDrillBlock({
     setPlaying(false);
   }
 
-  // Group into real word-class columns (nouns / verbs / adjectives / other)
-  // — matches the source course's own grouped vocab-slide layout, and lets
-  // 30-50 items fit legibly on one dense slide instead of one long list.
+  // Group into columns by category — matches the source course's own
+  // grouped vocab-slide layout, and lets 30-50+ items fit legibly on one
+  // dense slide instead of one long list. Column headers come from the
+  // block's own groupLabels if provided (e.g. sound groups for a
+  // pronunciation slide), otherwise fall back to noun/verb/adjective.
   const groups = new Map<string, VocabItem[]>();
+  const order: string[] = [];
   for (const item of content.items) {
     const key = item.category ?? "other";
-    if (!groups.has(key)) groups.set(key, []);
+    if (!groups.has(key)) {
+      groups.set(key, []);
+      order.push(key); // preserves first-seen order from the data
+    }
     groups.get(key)!.push(item);
   }
-  const order = ["noun", "verb", "adjective", "other"].filter((k) => groups.has(k));
+
+  function labelFor(key: string) {
+    return content.groupLabels?.[key] ?? DEFAULT_CATEGORY_LABEL[key] ?? { de: key, en: key, zh: key };
+  }
 
   return (
     <Slide
@@ -64,7 +73,7 @@ export function VocabDrillBlock({
       <div className="vocab-groups">
         {order.map((key) => {
           const items = groups.get(key)!;
-          const label = CATEGORY_LABEL[key];
+          const label = labelFor(key);
           return (
             <div className="vocab-group" key={key}>
               <div className="vocab-group-label">

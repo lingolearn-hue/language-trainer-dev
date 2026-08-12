@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
-import type { LessonPlan, LanguageSettings, SessionCheckpoint, DisplaySettings } from "../types";
+import type { LessonPlan, LanguageSettings, SessionCheckpoint, DisplaySettings, SessionMode } from "../types";
 
 interface SessionState {
   lesson: LessonPlan;
@@ -7,6 +7,8 @@ interface SessionState {
   status: "running" | "paused" | "complete";
   lang: LanguageSettings;
   display: DisplaySettings;
+  style: "rigid" | "flexible"; // session-level override of trainer default
+  mode: SessionMode;
 }
 
 type Action =
@@ -15,6 +17,8 @@ type Action =
   | { type: "GOTO_BLOCK"; index: number }
   | { type: "PAUSE" }
   | { type: "RESUME" }
+  | { type: "SET_STYLE"; style: "rigid" | "flexible" }
+  | { type: "SET_MODE"; mode: SessionMode }
   | { type: "RESTORE"; blockIndex: number };
 
 function checkpointKey(lessonId: string) {
@@ -75,6 +79,10 @@ function reducer(state: SessionState, action: Action): SessionState {
       return { ...state, status: "paused" };
     case "RESUME":
       return { ...state, status: "running" };
+    case "SET_STYLE":
+      return { ...state, style: action.style };
+    case "SET_MODE":
+      return { ...state, mode: action.mode };
     case "RESTORE":
       return { ...state, blockIndex: action.blockIndex };
     default:
@@ -93,11 +101,13 @@ export function SessionProvider({
   lesson,
   lang,
   display,
+  initialStyle,
   children,
 }: {
   lesson: LessonPlan;
   lang: LanguageSettings;
   display: DisplaySettings;
+  initialStyle: "rigid" | "flexible";
   children: React.ReactNode;
 }) {
   const [state, dispatch] = useReducer(reducer, {
@@ -106,6 +116,8 @@ export function SessionProvider({
     status: "running",
     lang,
     display,
+    style: initialStyle,
+    mode: "oneOnOne",
   });
 
   // Restore checkpoint on mount if present

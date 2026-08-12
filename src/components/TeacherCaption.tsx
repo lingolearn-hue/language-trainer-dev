@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Block, LanguageSettings } from "../types";
+import type { Trainer } from "../data/trainers";
 import { speak, cancelSpeech } from "../engine/speech";
 
 // Audio playback for the trainer, delivered as a subtitle first (real TTS
@@ -13,9 +14,11 @@ import { speak, cancelSpeech } from "../engine/speech";
 export function TeacherCaption({
   block,
   lang,
+  trainer,
 }: {
   block: Block;
   lang: LanguageSettings;
+  trainer: Trainer;
 }) {
   const [speaking, setSpeaking] = useState(false);
 
@@ -26,7 +29,7 @@ export function TeacherCaption({
     if (!text) return;
     let cancelled = false;
     setSpeaking(true);
-    speak(text, lang.targetLang).then(() => {
+    speak(text, lang.targetLang, trainer.voiceProfile).then(() => {
       if (!cancelled) setSpeaking(false);
     });
     return () => {
@@ -40,7 +43,7 @@ export function TeacherCaption({
     if (!text) return;
     cancelSpeech();
     setSpeaking(true);
-    speak(text, lang.targetLang).then(() => setSpeaking(false));
+    speak(text, lang.targetLang, trainer.voiceProfile).then(() => setSpeaking(false));
   }
 
   if (!text) return null;

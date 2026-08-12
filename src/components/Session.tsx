@@ -11,7 +11,7 @@ import type { Trainer } from "../data/trainers";
 
 export function Session({ trainer }: { trainer: Trainer }) {
   const { state, dispatch } = useSession();
-  const { lesson, blockIndex, status, lang, display } = state;
+  const { lesson, blockIndex, status, lang, display, style, mode } = state;
 
   if (status === "complete") {
     return (
@@ -25,11 +25,16 @@ export function Session({ trainer }: { trainer: Trainer }) {
   const block = lesson.blocks[blockIndex];
 
   if (status === "paused") {
+    const classroom = mode === "classroom";
     return (
       <div className="session paused">
-        <h2>Paused</h2>
+        <h2>{style === "rigid" ? "Paused" : "Taking a break?"}</h2>
         <p>
-          Block {blockIndex + 1} / {lesson.blocks.length}
+          {classroom
+            ? `Class is paused on slide ${blockIndex + 1} of ${lesson.blocks.length}.`
+            : style === "rigid"
+            ? `Block ${blockIndex + 1} / ${lesson.blocks.length}`
+            : `You're on block ${blockIndex + 1} of ${lesson.blocks.length} — resume whenever you're ready.`}
         </p>
         <button
           onClick={() => {
@@ -60,8 +65,30 @@ export function Session({ trainer }: { trainer: Trainer }) {
           {lesson.title[lang.targetLang]} — Block {blockIndex + 1}/
           {lesson.blocks.length}
         </span>
+        <button
+          className="style-toggle"
+          onClick={() =>
+            dispatch({ type: "SET_STYLE", style: style === "rigid" ? "flexible" : "rigid" })
+          }
+          title="Teaching style is a session setting — overrides the trainer's default"
+        >
+          {style === "rigid" ? "📏 Structured" : "🌿 Flexible"}
+        </button>
+        <button
+          className="mode-toggle"
+          onClick={() =>
+            dispatch({ type: "SET_MODE", mode: mode === "oneOnOne" ? "classroom" : "oneOnOne" })
+          }
+          title="Same lesson content either way — only framing/copy changes"
+        >
+          {mode === "oneOnOne" ? "🧑 1:1" : "👥 Classroom"}
+        </button>
         <button onClick={handlePause}>⏸ Pause</button>
       </div>
+
+      {mode === "classroom" && (
+        <div className="classroom-banner">👥 Everyone, repeat after me!</div>
+      )}
 
       <LessonAvatars trainer={trainer} />
 
@@ -83,7 +110,7 @@ export function Session({ trainer }: { trainer: Trainer }) {
         />
       )}
 
-      <TeacherCaption key={block.id} block={block} lang={lang} />
+      <TeacherCaption key={block.id} block={block} lang={lang} trainer={trainer} />
 
       <AuditBar />
     </div>

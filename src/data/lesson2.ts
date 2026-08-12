@@ -187,8 +187,11 @@ export const grammarFragenBlock: Block = {
   },
 };
 
-// Reused from Deutsch_3.pdf "Aussprachetraining" (ei / eu-äu / soft ch minimal
-// pairs) — lesson 2 has no pronunciation slide of its own.
+// Reused from Deutsch_3.pdf "Aussprachetraining" (page 4/14) — lesson 2 has
+// no pronunciation slide of its own. Full slide content, all 4 sound-group
+// columns as printed: ei / eu-äu / soft ch (ich-Laut) / hard ch (ach-Laut),
+// ~15 words each, each with its zh translation from the source PDF; en
+// added for the matrix.
 export const pronunciationBlock: Block = {
   id: "l2-pronunciation-reused",
   type: "vocabDrill",
@@ -201,15 +204,107 @@ export const pronunciationBlock: Block = {
     zh: "现在我们来练习一些不容易发的音。",
   },
   content: {
+    groupLabels: {
+      ei: { de: "ei", en: "\"ei\" sound", zh: "ei 音" },
+      eu: { de: "eu / äu", en: "\"eu/äu\" sound", zh: "eu/äu 音" },
+      ch_soft: { de: "weiches ch (ich-Laut)", en: "soft ch (ich-sound)", zh: "软 ch（ich 音）" },
+      ch_hard: { de: "hartes ch (ach-Laut)", en: "hard ch (ach-sound)", zh: "硬 ch（ach 音）" },
+    },
     items: [
-      { id: "p01", translations: { de: "eins", en: "one (ei)", zh: "一" } },
-      { id: "p02", translations: { de: "heute", en: "today (eu)", zh: "今天" } },
-      { id: "p03", translations: { de: "ich", en: "I (soft ch)", zh: "我" } },
-      { id: "p04", translations: { de: "machen", en: "to make (hard ch)", zh: "做" } },
-      { id: "p05", translations: { de: "mein", en: "my (ei)", zh: "我的" } },
-      { id: "p06", translations: { de: "Europa", en: "Europe (eu)", zh: "欧洲" } },
-      { id: "p07", translations: { de: "nicht", en: "not (soft ch)", zh: "不" } },
-      { id: "p08", translations: { de: "Nacht", en: "night (hard ch)", zh: "夜晚" } },
+      // ei
+      { id: "p-ei-01", category: "ei", translations: { de: "eins", en: "one", zh: "一" } },
+      { id: "p-ei-02", category: "ei", translations: { de: "zwei", en: "two", zh: "二" } },
+      { id: "p-ei-03", category: "ei", translations: { de: "drei", en: "three", zh: "三" } },
+      { id: "p-ei-04", category: "ei", translations: { de: "nein", en: "no", zh: "不" } },
+      { id: "p-ei-05", category: "ei", translations: { de: "mein", en: "my", zh: "我的" } },
+      { id: "p-ei-06", category: "ei", translations: { de: "dein", en: "your", zh: "你的" } },
+      { id: "p-ei-07", category: "ei", translations: { de: "sein", en: "to be / his", zh: "是" } },
+      { id: "p-ei-08", category: "ei", translations: { de: "heiß", en: "hot", zh: "热的" } },
+      { id: "p-ei-09", category: "ei", translations: { de: "weiß", en: "white", zh: "白色的" } },
+      { id: "p-ei-10", category: "ei", translations: { de: "klein", en: "small", zh: "小的" } },
+      { id: "p-ei-11", category: "ei", translations: { de: "bleiben", en: "to stay", zh: "停留" } },
+      { id: "p-ei-12", category: "ei", translations: { de: "arbeiten", en: "to work", zh: "工作" } },
+      { id: "p-ei-13", category: "ei", translations: { de: "Reise", en: "trip", zh: "旅行" } },
+      { id: "p-ei-14", category: "ei", translations: { de: "Fleisch", en: "meat", zh: "肉" } },
+      { id: "p-ei-15", category: "ei", translations: { de: "Zeit", en: "time", zh: "时间" } },
+      // eu / äu
+      { id: "p-eu-01", category: "eu", translations: { de: "heute", en: "today", zh: "今天" } },
+      { id: "p-eu-02", category: "eu", translations: { de: "Leute", en: "people", zh: "人们" } },
+      { id: "p-eu-03", category: "eu", translations: { de: "Freund", en: "friend", zh: "朋友" } },
+      { id: "p-eu-04", category: "eu", translations: { de: "Europa", en: "Europe", zh: "欧洲" } },
+      { id: "p-eu-05", category: "eu", translations: { de: "neu", en: "new", zh: "新的" } },
+      { id: "p-eu-06", category: "eu", translations: { de: "teuer", en: "expensive", zh: "昂贵的" } },
+      { id: "p-eu-07", category: "eu", translations: { de: "Häuser", en: "houses", zh: "房屋（复数）" } },
+      { id: "p-eu-08", category: "eu", translations: { de: "Bäume", en: "trees", zh: "树木（复数）" } },
+      { id: "p-eu-09", category: "eu", translations: { de: "träumen", en: "to dream", zh: "做梦" } },
+      { id: "p-eu-10", category: "eu", translations: { de: "Feuer", en: "fire", zh: "火" } },
+      { id: "p-eu-11", category: "eu", translations: { de: "euer", en: "your (pl.)", zh: "你们的" } },
+      { id: "p-eu-12", category: "eu", translations: { de: "neun", en: "nine", zh: "九" } },
+      { id: "p-eu-13", category: "eu", translations: { de: "Zeug", en: "stuff", zh: "东西" } },
+      { id: "p-eu-14", category: "eu", translations: { de: "Freude", en: "joy", zh: "快乐" } },
+      { id: "p-eu-15", category: "eu", translations: { de: "Deutsch", en: "German", zh: "德语" } },
+      // soft ch (ich-Laut)
+      { id: "p-chs-01", category: "ch_soft", translations: { de: "ich", en: "I", zh: "我" } },
+      { id: "p-chs-02", category: "ch_soft", translations: { de: "mich", en: "me (acc.)", zh: "我（宾格）" } },
+      { id: "p-chs-03", category: "ch_soft", translations: { de: "dich", en: "you (acc.)", zh: "你（宾格）" } },
+      { id: "p-chs-04", category: "ch_soft", translations: { de: "sich", en: "oneself", zh: "自己" } },
+      { id: "p-chs-05", category: "ch_soft", translations: { de: "nicht", en: "not", zh: "不" } },
+      { id: "p-chs-06", category: "ch_soft", translations: { de: "richtig", en: "correct", zh: "正确的" } },
+      { id: "p-chs-07", category: "ch_soft", translations: { de: "wichtig", en: "important", zh: "重要的" } },
+      { id: "p-chs-08", category: "ch_soft", translations: { de: "Bücher", en: "books", zh: "书（复数）" } },
+      { id: "p-chs-09", category: "ch_soft", translations: { de: "Mädchen", en: "girl", zh: "女孩" } },
+      { id: "p-chs-10", category: "ch_soft", translations: { de: "welche", en: "which", zh: "哪一个" } },
+      { id: "p-chs-11", category: "ch_soft", translations: { de: "manche", en: "some", zh: "一些" } },
+      { id: "p-chs-12", category: "ch_soft", translations: { de: "China", en: "China", zh: "中国" } },
+      { id: "p-chs-13", category: "ch_soft", translations: { de: "Chemie", en: "chemistry", zh: "化学" } },
+      { id: "p-chs-14", category: "ch_soft", translations: { de: "Kirche", en: "church", zh: "教堂" } },
+      // hard ch (ach-Laut)
+      { id: "p-chh-01", category: "ch_hard", translations: { de: "machen", en: "to make/do", zh: "做" } },
+      { id: "p-chh-02", category: "ch_hard", translations: { de: "Nacht", en: "night", zh: "夜晚" } },
+      { id: "p-chh-03", category: "ch_hard", translations: { de: "Bach", en: "stream", zh: "小河" } },
+      { id: "p-chh-04", category: "ch_hard", translations: { de: "lachen", en: "to laugh", zh: "笑" } },
+      { id: "p-chh-05", category: "ch_hard", translations: { de: "Sache", en: "thing", zh: "事情" } },
+      { id: "p-chh-06", category: "ch_hard", translations: { de: "Sprache", en: "language", zh: "语言" } },
+      { id: "p-chh-07", category: "ch_hard", translations: { de: "Buch", en: "book", zh: "书" } },
+      { id: "p-chh-08", category: "ch_hard", translations: { de: "noch", en: "still", zh: "还" } },
+      { id: "p-chh-09", category: "ch_hard", translations: { de: "auch", en: "also", zh: "也" } },
+      { id: "p-chh-10", category: "ch_hard", translations: { de: "Koch", en: "cook", zh: "厨师" } },
+      { id: "p-chh-11", category: "ch_hard", translations: { de: "Tochter", en: "daughter", zh: "女儿" } },
+      { id: "p-chh-12", category: "ch_hard", translations: { de: "Woche", en: "week", zh: "星期" } },
+      { id: "p-chh-13", category: "ch_hard", translations: { de: "Loch", en: "hole", zh: "洞" } },
+      { id: "p-chh-14", category: "ch_hard", translations: { de: "suchen", en: "to search", zh: "寻找" } },
+      { id: "p-chh-15", category: "ch_hard", translations: { de: "brauchen", en: "to need", zh: "需要" } },
+    ],
+  },
+};
+
+// Reused from Deutsch_3.pdf "Dialog: Im Café" — lesson 2 has no dialogue of
+// its own (only lessons 3+ do), so this is borrowed to validate that the
+// `readalong` block type genuinely covers dialogue content, not just songs.
+// zh from the original PDF; en added for the matrix.
+export const dialogueCafeBlock: Block = {
+  id: "l2-dialogue-cafe-reused",
+  type: "readalong",
+  displayMode: "face",
+  estimatedMinutes: 6,
+  title: { de: "Dialog: Im Café", en: "Dialogue: At the Café", zh: "咖啡馆里" },
+  spokenIntro: {
+    de: "Hören wir uns ein Gespräch im Café an.",
+    en: "Let's listen to a conversation at a café.",
+    zh: "我们来听一段咖啡馆里的对话。",
+  },
+  content: {
+    lines: [
+      { id: "c1", speaker: "Kellner", translations: { de: "Guten Tag!", en: "Good day!", zh: "你好！" } },
+      { id: "c2", speaker: "Gast A", translations: { de: "Guten Tag!", en: "Good day!", zh: "你好！" } },
+      { id: "c3", speaker: "Kellner", translations: { de: "Was möchten Sie?", en: "What would you like?", zh: "您想要什么？" } },
+      { id: "c4", speaker: "Gast A", translations: { de: "Ich möchte einen Kaffee, bitte.", en: "I'd like a coffee, please.", zh: "我要一杯咖啡，谢谢。" } },
+      { id: "c5", speaker: "Kellner", translations: { de: "Mit Milch und Zucker?", en: "With milk and sugar?", zh: "加牛奶和糖吗？" } },
+      { id: "c6", speaker: "Gast A", translations: { de: "Ja, mit Milch und Zucker.", en: "Yes, with milk and sugar.", zh: "是的，加牛奶和糖。" } },
+      { id: "c7", speaker: "Kellner", translations: { de: "Und Sie?", en: "And you?", zh: "您呢？" } },
+      { id: "c8", speaker: "Gast B", translations: { de: "Ich möchte einen Tee.", en: "I'd like a tea.", zh: "我要一杯茶。" } },
+      { id: "c9", speaker: "Kellner", translations: { de: "Schwarz oder grün?", en: "Black or green?", zh: "红茶还是绿茶？" } },
+      { id: "c10", speaker: "Gast B", translations: { de: "Schwarz, bitte.", en: "Black, please.", zh: "红茶，谢谢。" } },
     ],
   },
 };
@@ -299,6 +394,7 @@ export const readalongKantchenBlock: Block = {
 
 export const lesson2: LessonPlan = {
   id: "lesson-2",
+  courseId: "german-beginner",
   title: { de: "Lektion 2", en: "Lesson 2", zh: "第二课" },
   blocks: [
     titleBlock,
@@ -308,6 +404,7 @@ export const lesson2: LessonPlan = {
     grammarVerbsBlock,
     grammarFragenBlock,
     grammarSatzstellungBlock,
+    dialogueCafeBlock, // reused from Deutsch_3.pdf — validates readalong-as-dialogue
     pronunciationBlock, // reused from Deutsch_3.pdf — not native to lesson 2
     readalongBruderJakobBlock, // song always closes the lesson
   ],
