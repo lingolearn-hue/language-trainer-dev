@@ -213,6 +213,61 @@ test("classroom mode toggle shows a banner and changes pause copy, without chang
   await expect(page.getByText(/Class is paused on slide/)).toBeVisible();
 });
 
+test("slide always fits fully within its container (no overflow) in landscape and portrait", async ({
+  page,
+}) => {
+  for (const viewport of [
+    { width: 1400, height: 900 },
+    { width: 1000, height: 500 },
+    { width: 420, height: 900 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await pickTrainer(page);
+
+    const box = await page.locator(".slide-frame").boundingBox();
+    expect(box).not.toBeNull();
+    if (box) {
+      expect(box.x).toBeGreaterThanOrEqual(-1); // allow 1px rounding
+      expect(box.y).toBeGreaterThanOrEqual(-1);
+      expect(box.x + box.width).toBeLessThanOrEqual(viewport.width + 1);
+      expect(box.y + box.height).toBeLessThanOrEqual(viewport.height + 1);
+    }
+  }
+});
+
+test("english advanced lesson: trainer with matching course sees both lessons, content plays correctly", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByText("Lena").click();
+
+  await expect(page.getByRole("heading", { name: "Choose a lesson" })).toBeVisible();
+  await expect(page.getByText("Lesson 2")).toBeVisible();
+  await expect(page.getByText("Voices from Orbit")).toBeVisible();
+
+  await page.getByText("Voices from Orbit").click();
+  await expect(page.getByRole("heading", { name: "Voices from Orbit" })).toBeVisible();
+
+  await page.getByText(/Slide 1 \//).click();
+  await page.locator(".audit-jump-list button", { hasText: "Vocabulary" }).click();
+  await expect(page.getByText("trajectory")).toBeVisible();
+  await expect(page.getByText("to decelerate")).toBeVisible();
+  await expect(page.getByText("resilient")).toBeVisible();
+
+  await page.getByText(/Slide \d+ \//).click();
+  await page
+    .locator(".audit-jump-list button", { hasText: "Inversion After Negative Adverbials" })
+    .click();
+  await expect(page.getByText("Never had the crew experienced such silence.")).toBeVisible();
+});
+
+test("selecting a trainer without the english course only shows lesson 2", async ({ page }) => {
+  await page.goto("/");
+  await page.getByText("Max").click();
+  await expect(page.getByText("Lektion 2")).toBeVisible();
+  await expect(page.getByText("Voices from Orbit")).not.toBeVisible();
+});
+
 test("pause and resume persists block position via localStorage", async ({ page }) => {
   await pickTrainer(page);
   await page.getByText("Continue →").click(); // past title

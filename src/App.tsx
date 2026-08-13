@@ -4,12 +4,13 @@ import { Session } from "./components/Session";
 import { TrainerSelect } from "./components/TrainerSelect";
 import { LessonSelect } from "./components/LessonSelect";
 import { lesson2 } from "./data/lesson2";
+import { lessonEnglishSpace } from "./data/lessonEnglishSpace";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan } from "./types";
 import "./App.css";
 
 const display = { density: "dense" as const };
-const allLessons: LessonPlan[] = [lesson2]; // grows as more lessons are built
+const allLessons: LessonPlan[] = [lesson2, lessonEnglishSpace]; // grows as more lessons are built
 
 function App() {
   const [trainer, setTrainer] = useState<Trainer | null>(null);

@@ -64,10 +64,10 @@ export const trainers: Trainer[] = [
       "Mid-30s, shoulder-length auburn hair, blazer, sits very upright.",
     hobby: "Restores old furniture in her spare time.",
     defaultStyle: "rigid",
-    courseIds: ["german-beginner"],
+    courseIds: ["german-beginner", "english-advanced-c1"],
     personalityNote:
       "Structured and calm. Sticks to the lesson plan, praises sparingly but genuinely.",
-    voiceProfile: { lang: "de-DE", pitch: 1.1, rate: 0.95 },
+    voiceProfile: { lang: "en-US", pitch: 1.1, rate: 0.95 },
   },
   {
     id: "t-mei",
@@ -106,7 +106,7 @@ export const trainers: Trainer[] = [
       "Abstract glowing orb, warm amber palette, brighter/faster pulse on emphasis.",
     hobby: "N/A — abstract persona.",
     defaultStyle: "flexible",
-    courseIds: ["german-beginner"],
+    courseIds: ["german-beginner", "english-advanced-c1"],
     personalityNote:
       "Slightly more animated pulse timing than Ao; reads as more casual despite no face.",
     voiceProfile: { lang: "en-US", pitch: 1.0, rate: 1.05 },

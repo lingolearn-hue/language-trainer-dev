@@ -27,28 +27,38 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 }
 
 /* ---------------------------------------------------------------------
-   Slide frame — real Beamer-class style: fixed size, fixed small text,
-   rendered at its natural dimensions. NO scale-to-fit/letterboxing — the
-   slide does not shrink or stretch to the viewport. If it doesn't fit,
-   the page scrolls, same as looking at an actual exported .beamer PDF
-   embedded in a page rather than a "responsive" web component.
+   Slide frame — real Beamer-class style: fixed internal 960x540
+   layout/typography (title/content/footer, fixed font sizes — same
+   coordinate system as an exported .beamer PDF page), scaled via CSS
+   transform to always fully fill either the available width or height
+   (whichever is tighter) — a PDF-viewer-style "fit to screen", not a
+   fixed unscaled render and not a responsive reflow. See Slide.tsx for
+   the ResizeObserver that computes the scale factor.
    Light mode: white slide background, dark text — matches how real
    in-person lessons are normally projected/printed.
    --------------------------------------------------------------------- */
 .session-layout {
-  display: flex; flex-direction: row; align-items: flex-start; justify-content: center;
-  gap: 24px; width: 100%; padding: 56px 16px 72px; /* room for floating header + audit bar */
+  display: flex; flex-direction: row; align-items: stretch; justify-content: center;
+  gap: 24px; width: 100%; height: calc(100vh - 128px); /* room for floating header + audit bar */
+  padding: 56px 16px 72px;
+  box-sizing: border-box;
 }
-.slide-area { flex-shrink: 0; }
+.slide-area { flex: 1; width: 100%; height: 100%; min-width: 0; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.slide-fit-container {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
 .slide-frame {
   width: 960px;
   height: 540px;
+  flex-shrink: 0;
   background: #ffffff;
   color: #1a1a22;
   border: 1px solid #d5d5db;
   border-radius: 6px;
   display: flex; flex-direction: column;
-  overflow-y: auto; /* content that doesn't fit scrolls, slide never rescales */
+  overflow: hidden;
   box-shadow: 0 6px 24px rgba(0,0,0,0.15);
 }
 .slide-title {
@@ -72,12 +82,11 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .slide-footer button:not(:first-child) { margin-left: 4px; }
 .phase-label { opacity: 0.65; margin-right: auto; }
 
-/* Portrait: slide is still fixed-size (no shrinking), so it commonly
-   overflows a narrow viewport horizontally — that's expected, the page
-   scrolls. Avatars drop out of the side-by-side row and go back to a
-   fixed corner overlay, since there's no room beside the slide. */
+/* Portrait: avatars drop out of the side-by-side row and go back to a
+   fixed corner overlay, since there's no room beside the slide once
+   stacked — the slide still scale-to-fits within whatever space remains. */
 @media (orientation: portrait) {
-  .session-layout { flex-direction: column; align-items: center; overflow-x: auto; }
+  .session-layout { flex-direction: column; align-items: center; }
   .lesson-avatars {
     position: fixed; top: 40px; right: 16px; z-index: 41;
     flex-direction: column;
@@ -190,10 +199,10 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 /* face vs content display mode — per spec, 'face' is meant for
    dialogue/speaking blocks (trainer more prominent, content secondary)
    and 'content' for reading/drills/grammar (content dominant, trainer
-   presence minimal). Difference: in face mode the trainer avatar is
-   larger and the slide frame is slightly narrower/centered, evoking a
-   "trainer speaking to you" framing rather than a plain content screen. */
-.session.mode-face .slide-frame { width: 780px; margin: 0 auto; }
+   presence minimal). The slide itself always scale-to-fits at the same
+   960x540 base regardless of mode (a hardcoded narrower width here would
+   conflict with Slide.tsx's fixed BASE_WIDTH used for the fit
+   calculation) — the difference is expressed through avatar size instead. */
 .session.mode-face .lesson-avatars .trainer-avatar { width: 64px !important; height: 64px !important; font-size: 22px !important; }
 .session.mode-content .lesson-avatars .trainer-avatar { width: 40px !important; height: 40px !important; font-size: 14px !important; }
 

@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 11 — 2026-08-12
+Version: 12 — 2026-08-12
 
 React-based long-form language tutor simulation. Static content, multiple
 trainer personas, block-based session engine with pause/resume.
@@ -119,6 +119,28 @@ Test suite grew from 8 to 13 during this pass, all passing.
   silent, not gaps).
 - Test suite grew from 14 to 16, including a zero-click full-flow test and
   a pause-halts-autoplay test.
+
+## Recent changes (v12)
+
+- Slide fit-to-screen: the 960×540 Beamer-style slide now scales via a
+  `ResizeObserver`-driven CSS transform to always fully fill either the
+  available width or height (whichever is tighter) — no cropping, no
+  scrolling to see a cropped slide. Found and fixed a real flexbox bug
+  along the way: `.slide-area`'s width relied on `align-items: stretch`,
+  which worked as the flex *main* axis in landscape but silently failed as
+  the *cross* axis in portrait, causing the slide to overflow badly. Fixed
+  with an explicit `width/height: 100%`. Covered by a new regression test
+  that checks the slide's bounding box against the viewport across three
+  viewport shapes.
+- New lesson: **"Voices from Orbit"** — English for advanced learners
+  (~C1), space-travel themed, same structure as Lesson 2 (title, agenda,
+  warm-up, vocab, 3 grammar points, dialogue, pronunciation, song).
+  Grammar: inversion after negative adverbials, cleft sentences, and
+  nominalization. Original closing song (not reused/copyrighted). New
+  `courseId: "english-advanced-c1"`, assigned to Lena and Sol (both target
+  English). Along the way, fixed a pre-existing bug: Lena's
+  `voiceProfile.lang` was still `"de-DE"` despite her target being English.
+- Test suite grew from 17 to 19.
 
 ## Dev
 
