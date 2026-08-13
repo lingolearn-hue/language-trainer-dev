@@ -37,7 +37,7 @@ function App() {
 
   return (
     <SessionProvider lesson={lesson} lang={lang} display={display} initialStyle={trainer.defaultStyle}>
-      <Session trainer={trainer} />
+      <Session trainer={trainer} onExitToLessons={() => setLesson(null)} />
     </SessionProvider>
   );
 }

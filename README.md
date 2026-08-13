@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 12 — 2026-08-12
+Version: 13 — 2026-08-13
 
 React-based long-form language tutor simulation. Static content, multiple
 trainer personas, block-based session engine with pause/resume.
@@ -141,6 +141,46 @@ Test suite grew from 8 to 13 during this pass, all passing.
   English). Along the way, fixed a pre-existing bug: Lena's
   `voiceProfile.lang` was still `"de-DE"` despite her target being English.
 - Test suite grew from 17 to 19.
+
+## Recent changes (v13)
+
+- Back button: "← Lessons" in the session header, plus "← Back to lessons"
+  on paused/complete screens — returns to lesson selection without
+  reloading, cancels speech and releases the wake lock on exit.
+- Beginner-course framing language: new `LessonPlan.framingLanguage`
+  ("source" | "target"). Lesson 2 (beginner German) now speaks the
+  trainer's framing lines (e.g. "now let's sing a song") in the student's
+  own language, with the target-language line shown as a secondary
+  caption — actual content narration (vocab, dialogue, song lyrics)
+  always stays in the target language regardless. The C1 English course
+  keeps framing in the target language (advanced learners can follow it).
+- Screen wake lock: new `engine/wakeLock.ts`, active while a session is
+  running, prevents the device from auto-dimming/locking during long
+  (45-90 min) sessions. Feature-detected, no-ops gracefully where
+  unsupported.
+- Readalong (dialogue/song) redesign: target and source now split
+  left/right per line in a compact grid instead of stacking vertically —
+  fits ~14 lines of target-language content on one slide without overflow
+  (previously the dialogue block could overflow). Speaker column only
+  appears when the content actually has speakers.
+- Agenda/table-of-contents redesign: new `agenda` block type — a proper
+  vertical list (target + source per item), never read aloud verbatim.
+  The trainer's spokenIntro now carries genuine free-form spoken framing
+  of the lesson ahead instead of a flattened, comma-separated readout.
+- Portrait layout: slide now spans the full width edge-to-edge (no side
+  padding), and the trainer/student avatars sit in normal document flow
+  directly above the slide instead of a fixed corner overlay that
+  overlapped it.
+- **Real bug found and fixed**: several block components used a
+  `played`-once ref guard that could get permanently stuck true from a
+  stale `autoPlay=true` prop briefly carried over across a block
+  transition (before Session's reset effect commits) — this silently hung
+  the lesson forever on affected slides. Fixed across all 5 block
+  components (Agenda/Intro/Grammar/VocabDrill/Readalong) by removing the
+  `played` ref and relying solely on a per-invocation `cancelled` flag.
+  Covered by a dedicated regression test that runs the full 10-block
+  lesson hands-off and confirms it actually reaches "complete".
+- Test suite grew from 19 to 27.
 
 ## Dev
 

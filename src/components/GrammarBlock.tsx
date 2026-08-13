@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Block, GrammarContent, LanguageSettings, DisplaySettings } from "../types";
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
@@ -29,8 +29,6 @@ export function GrammarBlock({
   const [stepMode, setStepMode] = useState(false); // opt-in progressive reveal
   const [revealed, setRevealed] = useState(content.chunks.length); // dense default: all shown
   const [activeChunkId, setActiveChunkId] = useState<string | null>(null);
-  const cancelledRef = useRef(false);
-  const played = useRef(false);
 
   function toggleStepMode() {
     if (!stepMode) {
@@ -60,33 +58,37 @@ export function GrammarBlock({
   // Flows automatically once the spoken intro caption is done: read the
   // explanation, then every visible chunk in order (same dense set the
   // person already sees), then auto-advance to the next block.
+  //
+  // No `played`-once ref guard here (deliberately) — see AgendaBlock.tsx
+  // for why that pattern is buggy: a block can briefly mount with a stale
+  // `autoPlay=true` left over from the previous block. The `cancelled`
+  // flag is scoped to *this* effect invocation (via the cleanup this
+  // effect itself returns, tied to the same [autoPlay, block.id] deps
+  // that can flip it prematurely), so a stale run is correctly aborted
+  // and the genuine later run — with its own fresh `cancelled` — isn't
+  // blocked by anything left over from the aborted one.
   useEffect(() => {
-    played.current = false;
-    cancelledRef.current = false;
-    return () => {
-      cancelledRef.current = true;
-    };
-  }, [block.id]);
-
-  useEffect(() => {
-    if (!autoPlay || played.current) return;
-    played.current = true;
+    if (!autoPlay) return;
+    let cancelled = false;
     (async () => {
       const explanation = content.explanation[lang.targetLang];
       if (explanation) await speak(explanation, lang.targetLang, trainer.voiceProfile);
-      if (cancelledRef.current) return;
+      if (cancelled) return;
 
       for (const chunk of content.chunks) {
-        if (cancelledRef.current) return;
+        if (cancelled) return;
         setActiveChunkId(chunk.id);
         const text = chunk.translations[lang.targetLang];
         if (text) await speak(text, lang.targetLang, trainer.voiceProfile);
-        if (cancelledRef.current) return;
+        if (cancelled) return;
         await wait(500);
       }
       setActiveChunkId(null);
-      if (!cancelledRef.current) onComplete();
+      if (!cancelled) onComplete();
     })();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoPlay, block.id]);
 

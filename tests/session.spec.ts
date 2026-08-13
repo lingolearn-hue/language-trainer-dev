@@ -60,7 +60,7 @@ test("lesson 2 session follows the source slide order: title -> agenda -> intro 
 test("lesson flows automatically from title through several blocks with zero clicks", async ({
   page,
 }) => {
-  test.setTimeout(60000);
+  test.setTimeout(75000);
   await pickTrainer(page);
 
   await expect(page.getByRole("heading", { name: "Deutsch für Anfänger" })).toBeVisible();
@@ -69,7 +69,14 @@ test("lesson flows automatically from title through several blocks with zero cli
   // slides (agenda, intro) are transient and may already be gone by the
   // time we'd assert on them, since auto-play doesn't wait for the person —
   // so we only check the eventual destination, not every step along the way.
-  await expect(page.getByText("Wortschatz")).toBeVisible({ timeout: 30000 });
+  // Generous timeout: the agenda slide's spoken framing is now a full
+  // free-form paragraph (not a short one-liner), which takes longer to
+  // speak through than earlier slides did.
+  // Use `.vocab-groups` (a class unique to the real vocab slide) rather
+  // than the text "Wortschatz" — that word now also appears as an agenda
+  // list item and inside the agenda's own spoken-framing paragraph, so a
+  // plain text match is ambiguous.
+  await expect(page.locator(".vocab-groups").first()).toBeVisible({ timeout: 45000 });
 });
 
 test("pause stops auto-play; resume does not skip ahead unexpectedly", async ({ page }) => {
@@ -107,15 +114,23 @@ test("audit bar: verbal text overlay shows spoken lines without playing audio", 
   await expect(page.locator(".audit-overlay-panel")).not.toBeVisible();
 });
 
-test("teacher caption shows the spoken intro for the current slide", async ({ page }) => {
+test("teacher caption shows the spoken intro for the current slide, in the source language for beginner courses", async ({
+  page,
+}) => {
   await pickTrainer(page);
-  await expect(page.locator(".teacher-caption .target")).toHaveText(
+  // lesson2 is a beginner course (framingLanguage: "source") — Max teaches
+  // de/en, so framing is spoken/shown as primary in English, with German
+  // as the secondary reference line.
+  await expect(page.locator(".teacher-caption .primary")).toHaveText(
+    "Welcome to your second German lesson!"
+  );
+  await expect(page.locator(".teacher-caption .secondary")).toHaveText(
     "Willkommen zu deiner zweiten Deutschstunde!"
   );
 
   await page.getByText("Continue →").click(); // -> agenda
-  await expect(page.locator(".teacher-caption .target")).toHaveText(
-    "So sieht unser heutiger Ablauf aus."
+  await expect(page.locator(".teacher-caption .primary")).toHaveText(
+    "Today we'll start with a short intro. After that we'll build up your vocabulary, look at how regular verbs work, practice asking questions, and sort out word order. We'll wrap up with a café dialogue, some pronunciation practice, and finish, as always, with a song."
   );
 });
 
@@ -266,6 +281,146 @@ test("selecting a trainer without the english course only shows lesson 2", async
   await page.getByText("Max").click();
   await expect(page.getByText("Lektion 2")).toBeVisible();
   await expect(page.getByText("Voices from Orbit")).not.toBeVisible();
+});
+
+test("back button returns from a session to the lesson selection screen", async ({ page }) => {
+  await pickTrainer(page);
+  await expect(page.getByRole("heading", { name: "Choose a lesson" })).not.toBeVisible();
+
+  await page.getByTitle("Back to lesson selection").click();
+  await expect(page.getByRole("heading", { name: "Choose a lesson" })).toBeVisible();
+  await expect(page.getByText("Lektion 2")).toBeVisible();
+});
+
+test("back button is also available from the paused screen", async ({ page }) => {
+  await pickTrainer(page);
+  await page.getByText("⏸ Pause").click();
+  await expect(page.getByText("Paused")).toBeVisible();
+
+  await page.getByText("← Back to lessons").click();
+  await expect(page.getByRole("heading", { name: "Choose a lesson" })).toBeVisible();
+});
+
+test("advanced (C1) course keeps framing in the target language, unlike the beginner course", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByText("Lena").click();
+  await page.getByText("Voices from Orbit").click();
+  // lessonEnglishSpace has no framingLanguage override (defaults to
+  // "target") — Lena's target is English, so the caption's primary line
+  // should be the English text itself, with no separate secondary line
+  // beneath it (spokenIntro for this lesson isn't authored in German).
+  await expect(page.locator(".teacher-caption .primary")).toHaveText(
+    "Welcome back. Today we head into deep space."
+  );
+});
+
+test("wake lock: session does not crash in browsers without Wake Lock API support", async ({
+  page,
+}) => {
+  // This sandbox's headless Chromium build doesn't implement
+  // navigator.wakeLock, which is exactly the unsupported-browser path we
+  // want covered — acquireWakeLock() must no-op safely rather than throw.
+  await pickTrainer(page);
+  await expect(page.locator(".slide-frame")).toBeVisible();
+  await page.getByText("⏸ Pause").click();
+  await expect(page.getByText("Paused")).toBeVisible();
+  await page.getByText("▶ Resume").click();
+  await expect(page.locator(".slide-frame")).toBeVisible();
+});
+
+test("readalong lines are compact enough that 14 target-language lines would fit on one slide without overflow", async ({
+  page,
+}) => {
+  await pickTrainer(page);
+  await page.getByText(/Slide \d+ \//).click();
+  await page.locator(".audit-jump-list button", { hasText: "Dialog: Im Café" }).click();
+
+  const measurements = await page.evaluate(() => {
+    const contentEl = document.querySelector(".slide-content");
+    const linesEl = document.querySelector(".lines");
+    const lineCount = document.querySelectorAll(".line").length;
+    return {
+      contentHeight: contentEl?.getBoundingClientRect().height ?? 0,
+      linesHeight: linesEl?.getBoundingClientRect().height ?? 0,
+      lineCount,
+    };
+  });
+
+  expect(measurements.lineCount).toBeGreaterThan(0);
+  const perLineHeight = measurements.linesHeight / measurements.lineCount;
+  // Real target: ~14 lines must fit within the available content height.
+  expect(perLineHeight * 14).toBeLessThanOrEqual(measurements.contentHeight);
+  // The current 10-line dialogue itself must not overflow either.
+  expect(measurements.linesHeight).toBeLessThanOrEqual(measurements.contentHeight);
+});
+
+test("agenda is a vertical list, not a single read-aloud line, and items are not spoken verbatim", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByText("Max").click();
+  await page.getByText("Lektion 2").click();
+  await page.getByText("Continue →").click(); // -> agenda
+
+  await expect(page.getByRole("heading", { name: "Ablauf" })).toBeVisible();
+  const items = page.locator(".agenda-item");
+  await expect(items).toHaveCount(8);
+  // Max's target language is German — .agenda-target shows the target
+  // language, .agenda-source shows English (his source language).
+  await expect(items.nth(0).locator(".agenda-target")).toHaveText("Einführung");
+  await expect(items.nth(0).locator(".agenda-source")).toHaveText("Introduction");
+  await expect(items.nth(7).locator(".agenda-target")).toHaveText("Lied");
+  await expect(items.nth(7).locator(".agenda-source")).toHaveText("Song");
+
+  // The caption speaks free-form framing prose, not the list content —
+  // none of the agenda's own item text is what's playing as the caption.
+  const caption = await page.locator(".teacher-caption .primary").textContent();
+  expect(caption).not.toContain("Introduction · Vocabulary");
+  expect(caption?.length ?? 0).toBeGreaterThan(80); // genuinely free-form prose, not a short label
+});
+
+test("portrait: slide spans full width and avatars sit above it without overlapping", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 420, height: 900 });
+  await pickTrainer(page);
+
+  const layoutBox = await page.locator(".session-layout").boundingBox();
+  const slideAreaBox = await page.locator(".slide-area").boundingBox();
+  const avatarsBox = await page.locator(".lesson-avatars").boundingBox();
+
+  expect(layoutBox && slideAreaBox).toBeTruthy();
+  if (layoutBox && slideAreaBox) {
+    // Full width: slide-area spans (approximately) the whole layout width.
+    expect(slideAreaBox.width).toBeGreaterThanOrEqual(layoutBox.width - 2);
+  }
+
+  expect(avatarsBox && slideAreaBox).toBeTruthy();
+  if (avatarsBox && slideAreaBox) {
+    // Avatars sit above the slide (their bottom edge is at/above the
+    // slide's top edge) rather than overlapping it.
+    expect(avatarsBox.y + avatarsBox.height).toBeLessThanOrEqual(slideAreaBox.y + 1);
+  }
+});
+
+test("regression: auto-play does not hang on any block transition (stale autoPlay-prop race)", async ({
+  page,
+}) => {
+  // Guards against a real bug found while building the agenda block: a
+  // block component could briefly mount with a stale autoPlay=true left
+  // over from the previous block (before Session's reset effect commits),
+  // and a naive "played once" ref guard would permanently block the real
+  // run once autoPlay genuinely turned true — silently hanging the lesson
+  // forever on that slide. Runs the full 10-block lesson hands-off and
+  // confirms it actually reaches "complete", not just that it doesn't
+  // throw.
+  test.setTimeout(280000);
+  await pickTrainer(page);
+  await expect(page.getByText("Lesson complete", { exact: false })).toBeVisible({
+    timeout: 260000,
+  });
 });
 
 test("pause and resume persists block position via localStorage", async ({ page }) => {

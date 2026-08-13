@@ -14,6 +14,9 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   pointer-events: none; color: #1a1a22;
 }
 .session-header.floating button { pointer-events: auto; }
+.session-header .back-link.session-back {
+  display: inline; margin-bottom: 0; font-size: 12px; margin-right: 8px;
+}
 .style-toggle { margin: 0 8px; }
 .mode-toggle { margin-right: 8px; }
 .classroom-banner {
@@ -86,10 +89,19 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    fixed corner overlay, since there's no room beside the slide once
    stacked — the slide still scale-to-fits within whatever space remains. */
 @media (orientation: portrait) {
-  .session-layout { flex-direction: column; align-items: center; }
-  .lesson-avatars {
-    position: fixed; top: 40px; right: 16px; z-index: 41;
-    flex-direction: column;
+  .session-layout {
+    flex-direction: column; align-items: stretch;
+    padding-left: 0; padding-right: 0; /* slide spans full width, edge to edge */
+  }
+  /* Extra `.session-layout` ancestor qualifier (not just `.lesson-avatars`)
+     is required here, not stylistic — the base .lesson-avatars rule below
+     has equal specificity and comes later in source order, so without the
+     extra qualifier it silently wins over this one regardless of the
+     media query matching. */
+  .session-layout .lesson-avatars {
+    order: -1; /* above the slide in document flow, not overlapping it */
+    flex-direction: row; justify-content: center; gap: 28px;
+    padding: 4px 0 10px;
   }
 }
 
@@ -115,16 +127,43 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .vocab-group tr.active td { background: #dde6ff; }
 .vocab-count { opacity: 0.55; font-size: 0.85em; margin: 0 auto; }
 
-/* Readalong lines — dense, all visible at once */
-.lines { display: flex; flex-direction: column; gap: 0.5em; overflow-y: auto; }
-.line { padding: 0.4em 0.7em; border-radius: 8px; opacity: 0.55; }
-.line.active { background: #dde6ff; opacity: 1; }
-.line .target { font-size: 1.15em; }
-.line .source { font-size: 0.75em; opacity: 0.65; }
-.line .speaker { font-size: 0.75em; font-weight: 700; opacity: 0.6; display: block; text-transform: uppercase; letter-spacing: 0.03em; }
+/* Readalong lines — target and source split left/right, one compact row
+   per line (not stacked), so a full dialogue/song fits on one slide
+   without scrolling. Optional speaker column only appears when the
+   content actually has speakers (dialogues) — songs/plain readalongs use
+   a 2-column layout instead. `.line` uses display:contents so its
+   children (speaker/target/source) participate directly as items in the
+   parent grid, keeping every line's columns aligned. */
+.lines {
+  display: grid;
+  grid-template-columns: minmax(60px, auto) 1fr 1fr;
+  column-gap: 14px;
+  row-gap: 2px;
+  overflow-y: auto;
+  align-items: baseline;
+  font-size: 13px;
+}
+.lines.no-speakers { grid-template-columns: 1fr 1fr; }
+.line { display: contents; }
+.line .target,
+.line .source {
+  padding: 2px 6px;
+  border-radius: 5px;
+  line-height: 1.25;
+  opacity: 0.55;
+}
+.line .target { font-size: 1em; }
+.line .source { font-size: 0.85em; }
+.line .speaker {
+  font-size: 0.68em; font-weight: 700; opacity: 0.5;
+  text-transform: uppercase; letter-spacing: 0.02em; align-self: center;
+}
+.line.active .target,
+.line.active .source { opacity: 1; background: #dde6ff; }
+.line.active .speaker { opacity: 0.85; }
 .self-check-btn {
   background: transparent; border: none; cursor: pointer; font-size: 0.85em;
-  margin-left: 0.5em; padding: 0 4px; vertical-align: middle;
+  margin-left: 0.4em; padding: 0 3px; vertical-align: middle;
 }
 .self-check-btn.listening { animation: pulse-btn 0.6s ease-in-out infinite; }
 @keyframes pulse-btn { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
@@ -132,6 +171,22 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 
 .intro-text { font-size: 1.2em; margin: 0.3em 0; }
 .intro-text.source { opacity: 0.6; font-size: 0.85em; }
+
+/* Agenda / table of contents — vertical list, target + source side by
+   side per item (same split-column idea as the readalong redesign),
+   never a single read-aloud line. */
+.agenda-list { list-style: none; margin: 0; padding: 0; }
+.agenda-item {
+  display: grid; grid-template-columns: 28px 1fr 1fr;
+  align-items: baseline; column-gap: 14px;
+  padding: 7px 4px; border-bottom: 1px solid #ececf1;
+}
+.agenda-item:last-child { border-bottom: none; }
+.agenda-number {
+  font-size: 0.85em; font-weight: 700; opacity: 0.45; text-align: right;
+}
+.agenda-target { font-size: 1.05em; }
+.agenda-source { font-size: 0.85em; opacity: 0.6; }
 
 .explanation { margin: 0 0 0.5em; }
 .explanation.source { opacity: 0.6; font-size: 0.85em; margin-bottom: 1em; }
@@ -288,5 +343,5 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   background: transparent; border: none; color: inherit; cursor: pointer;
   font-size: 16px; padding: 2px 4px; flex-shrink: 0;
 }
-.caption-text .target { line-height: 1.3; }
-.caption-text .source { opacity: 0.65; font-size: 0.85em; margin-top: 2px; }
+.caption-text .primary { line-height: 1.3; }
+.caption-text .secondary { opacity: 0.65; font-size: 0.85em; margin-top: 2px; }

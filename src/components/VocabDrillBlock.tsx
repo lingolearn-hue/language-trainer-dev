@@ -27,13 +27,12 @@ export function VocabDrillBlock({
   const content = block.content as VocabDrillContent;
   const [playing, setPlaying] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
-  const cancelledRef = useRef(false);
-  const played = useRef(false);
+  const cancelledRef = useRef(false); // interrupts a manual echo pass on a real block change
 
-  async function playEchoPass() {
+  async function playEchoPass(shouldCancel: () => boolean = () => cancelledRef.current) {
     setPlaying(true);
     for (const item of content.items) {
-      if (cancelledRef.current) break;
+      if (shouldCancel()) break;
       setActiveId(item.id);
       const word = item.translations[lang.targetLang];
       if (word) {
@@ -45,23 +44,35 @@ export function VocabDrillBlock({
     setPlaying(false);
   }
 
-  // Slide flows automatically once the spoken intro caption is done: read
-  // every word aloud (same pass as the manual button), then auto-advance.
   useEffect(() => {
-    played.current = false;
     cancelledRef.current = false;
     return () => {
       cancelledRef.current = true;
     };
   }, [block.id]);
 
+  // Slide flows automatically once the spoken intro caption is done: read
+  // every word aloud (same pass as the manual button), then auto-advance.
+  //
+  // No `played`-once ref guard here (deliberately) — see AgendaBlock.tsx
+  // for why that pattern is buggy: a block can briefly mount with a stale
+  // `autoPlay=true` left over from the previous block. This effect also
+  // can't just reuse the shared `cancelledRef` for its own cancellation
+  // (that ref only flips on a real block change, not on autoPlay toggling
+  // within the same block) — reusing it would let a stale premature run
+  // read the whole vocab list aloud, overlapping the trainer's caption
+  // speech. A local `cancelled` flag, scoped to this exact effect
+  // invocation via [autoPlay, block.id], handles both cases correctly.
   useEffect(() => {
-    if (!autoPlay || played.current) return;
-    played.current = true;
+    if (!autoPlay) return;
+    let cancelled = false;
     (async () => {
-      await playEchoPass();
-      if (!cancelledRef.current) onComplete();
+      await playEchoPass(() => cancelled);
+      if (!cancelled) onComplete();
     })();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoPlay, block.id]);
 
@@ -90,7 +101,7 @@ export function VocabDrillBlock({
       title={block.title?.[lang.targetLang] ?? block.title?.en}
       footer={
         <>
-          <button disabled={playing} onClick={playEchoPass}>
+          <button disabled={playing} onClick={() => playEchoPass()}>
             {playing ? "Playing…" : "▶ Read along (echo)"}
           </button>
           <span className="vocab-count">{content.items.length} words</span>

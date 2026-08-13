@@ -29,21 +29,26 @@ export const titleBlock: Block = {
 
 export const agendaBlock: Block = {
   id: "es-agenda",
-  type: "intro",
+  type: "agenda",
   displayMode: "content",
   estimatedMinutes: 1,
   title: { en: "Agenda", de: "Ablauf", zh: "介绍" },
   spokenIntro: {
-    en: "Here's what we'll cover today.",
-    de: "So sieht unser heutiger Ablauf aus.",
-    zh: "这是我们今天的课程安排。",
+    en: "After a quick warm-up, we'll build up some precise vocabulary for space travel, then dig into three grammar points that'll sharpen your formal register: inversion, cleft sentences, and nominalization. We'll put it all to work in a mission control dialogue, sharpen your stress on technical terms, and close, as always, with a song.",
+    de: "Nach einem kurzen Aufwärmen bauen wir präzisen Wortschatz zur Raumfahrt auf und vertiefen dann drei Grammatikpunkte, die deinen formellen Sprachstil schärfen: Inversion, Spaltsätze und Nominalisierung. Das alles wenden wir in einem Dialog mit der Missionskontrolle an, üben die Betonung von Fachbegriffen und schließen, wie immer, mit einem Lied.",
+    zh: "简短热身之后，我们会积累一些精确的太空旅行词汇，接着深入学习三个能提升你正式语体的语法点：倒装、分裂句和名词化。我们会在一段与任务控制中心的对话中运用这些内容，练习专业术语的重音，并像往常一样以一首歌结束。",
   },
   content: {
-    text: {
-      en: "1 Introduction · 2 Vocabulary · 3 Grammar: Inversion · 4 Grammar: Cleft sentences · 5 Grammar: Nominalization · 6 Dialogue · 7 Pronunciation · 8 Song",
-      de: "1 Einführung · 2 Wortschatz · 3 Grammatik: Inversion · 4 Grammatik: Spaltsätze · 5 Grammatik: Nominalisierung · 6 Dialog · 7 Aussprache · 8 Lied",
-      zh: "1 介绍 · 2 词汇 · 3 语法：倒装 · 4 语法：分裂句 · 5 语法：名词化 · 6 对话 · 7 发音 · 8 歌曲",
-    },
+    items: [
+      { id: "a1", translations: { en: "Introduction", de: "Einführung", zh: "介绍" } },
+      { id: "a2", translations: { en: "Vocabulary", de: "Wortschatz", zh: "词汇" } },
+      { id: "a3", translations: { en: "Grammar: Inversion", de: "Grammatik: Inversion", zh: "语法：倒装" } },
+      { id: "a4", translations: { en: "Grammar: Cleft Sentences", de: "Grammatik: Spaltsätze", zh: "语法：分裂句" } },
+      { id: "a5", translations: { en: "Grammar: Nominalization", de: "Grammatik: Nominalisierung", zh: "语法：名词化" } },
+      { id: "a6", translations: { en: "Dialogue: Mission Control", de: "Dialog: Missionskontrolle", zh: "对话：任务控制中心" } },
+      { id: "a7", translations: { en: "Pronunciation", de: "Aussprache", zh: "发音" } },
+      { id: "a8", translations: { en: "Song", de: "Lied", zh: "歌曲" } },
+    ],
   },
 };
 
@@ -302,6 +307,8 @@ export const lessonEnglishSpace: LessonPlan = {
   id: "lesson-en-space-c1",
   courseId: "english-advanced-c1",
   title: { en: "Voices from Orbit", de: "Stimmen aus dem Orbit", zh: "轨道上的声音" },
+  // framingLanguage omitted (defaults to "target") — C1 learners can follow
+  // trainer framing directly in English, unlike the beginner course.
   blocks: [
     titleBlock,
     agendaBlock,

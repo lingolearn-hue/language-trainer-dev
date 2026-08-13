@@ -19,17 +19,26 @@ export function TeacherCaption({
   block,
   lang,
   trainer,
+  framingLanguage = "target",
   onFinished,
 }: {
   block: Block;
   lang: LanguageSettings;
   trainer: Trainer;
+  framingLanguage?: "source" | "target";
   onFinished?: () => void;
 }) {
   const [speaking, setSpeaking] = useState(false);
 
-  const text = block.spokenIntro?.[lang.targetLang];
-  const sourceText = block.spokenIntro?.[lang.sourceLang];
+  // Which language the framing line is actually SPOKEN in — "source" for
+  // beginner courses (student can't yet follow target-language
+  // instructions), "target" otherwise. The other language's line, if
+  // present, is still shown as a secondary caption but not spoken.
+  const spokenLangCode = framingLanguage === "source" ? lang.sourceLang : lang.targetLang;
+  const otherLangCode = framingLanguage === "source" ? lang.targetLang : lang.sourceLang;
+
+  const text = block.spokenIntro?.[spokenLangCode];
+  const otherText = block.spokenIntro?.[otherLangCode];
 
   useEffect(() => {
     let cancelled = false;
@@ -41,7 +50,7 @@ export function TeacherCaption({
       return;
     }
     setSpeaking(true);
-    speak(text, lang.targetLang, trainer.voiceProfile).then(() => {
+    speak(text, spokenLangCode, trainer.voiceProfile).then(() => {
       if (!cancelled) {
         setSpeaking(false);
         onFinished?.();
@@ -58,7 +67,7 @@ export function TeacherCaption({
     if (!text) return;
     cancelSpeech();
     setSpeaking(true);
-    speak(text, lang.targetLang, trainer.voiceProfile).then(() => setSpeaking(false));
+    speak(text, spokenLangCode, trainer.voiceProfile).then(() => setSpeaking(false));
   }
 
   if (!text) return null;
@@ -69,9 +78,9 @@ export function TeacherCaption({
         🔊
       </button>
       <div className="caption-text">
-        <div className="target">{text}</div>
-        {sourceText && sourceText !== text && (
-          <div className="source">{sourceText}</div>
+        <div className="primary">{text}</div>
+        {otherText && otherText !== text && (
+          <div className="secondary">{otherText}</div>
         )}
       </div>
     </div>

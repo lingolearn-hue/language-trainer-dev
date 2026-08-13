@@ -47,6 +47,11 @@ export function getSpokenLines(block: Block, targetLang: LangCode): SpokenLine[]
       const text = content.text[targetLang];
       return text ? [{ label: "intro", text }] : [];
     }
+    case "agenda":
+      // Deliberately no content narration — the list is never read aloud
+      // verbatim, only the block's spokenIntro (free-form, not surfaced by
+      // this function for any block type) covers what's spoken here.
+      return [];
     default:
       return [];
   }

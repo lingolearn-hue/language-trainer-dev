@@ -33,21 +33,28 @@ export const titleBlock: Block = {
 
 export const agendaBlock: Block = {
   id: "l2-agenda",
-  type: "intro",
+  type: "agenda",
   displayMode: "content",
   estimatedMinutes: 1,
   title: { de: "Ablauf", en: "Agenda", zh: "介绍" },
+  // Free-form spoken framing — the only narration for this slide (the
+  // list itself is never read aloud verbatim, see BlockType note).
   spokenIntro: {
-    de: "So sieht unser heutiger Ablauf aus.",
-    en: "Here's what we'll cover today.",
-    zh: "这是我们今天的课程安排。",
+    de: "Heute beginnen wir mit einer kurzen Einführung. Danach erweitern wir deinen Wortschatz, schauen uns an, wie regelmäßige Verben funktionieren, üben, wie man Fragen stellt, und klären die Wortstellung im Satz. Zum Abschluss gibt es einen Dialog im Café, etwas Ausspracheübung und, wie immer, ein Lied.",
+    en: "Today we'll start with a short intro. After that we'll build up your vocabulary, look at how regular verbs work, practice asking questions, and sort out word order. We'll wrap up with a café dialogue, some pronunciation practice, and finish, as always, with a song.",
+    zh: "今天我们先做一个简短的介绍。然后我们会扩展词汇量，学习规则动词的用法，练习如何提问，并理清句子的语序。最后我们会有一段咖啡馆对话、一些发音练习，并像往常一样以一首歌结束。",
   },
   content: {
-    text: {
-      de: "1 Einführung · 2 Wiederholung · 3 Wortschatz · 4 Grammatik · 5 Fragen · 6 Lied · 7 Philosophie",
-      en: "1 Introduction · 2 Review · 3 Vocabulary · 4 Grammar · 5 Questions · 6 Song · 7 Philosophy",
-      zh: "1 介绍 · 2 复习 · 3 词汇 · 4 语法 · 5 问句 · 6 歌曲 · 7 哲学",
-    },
+    items: [
+      { id: "a1", translations: { de: "Einführung", en: "Introduction", zh: "介绍" } },
+      { id: "a2", translations: { de: "Wortschatz", en: "Vocabulary", zh: "词汇" } },
+      { id: "a3", translations: { de: "Grammatik: Verben", en: "Grammar: Verbs", zh: "语法：动词" } },
+      { id: "a4", translations: { de: "Grammatik: Fragen", en: "Grammar: Questions", zh: "语法：问句" } },
+      { id: "a5", translations: { de: "Grammatik: Satzstellung", en: "Grammar: Word Order", zh: "语法：语序" } },
+      { id: "a6", translations: { de: "Dialog: Im Café", en: "Dialogue: At the Café", zh: "对话：在咖啡馆" } },
+      { id: "a7", translations: { de: "Aussprache", en: "Pronunciation", zh: "发音" } },
+      { id: "a8", translations: { de: "Lied", en: "Song", zh: "歌曲" } },
+    ],
   },
 };
 
@@ -396,6 +403,7 @@ export const lesson2: LessonPlan = {
   id: "lesson-2",
   courseId: "german-beginner",
   title: { de: "Lektion 2", en: "Lesson 2", zh: "第二课" },
+  framingLanguage: "source", // beginner course — trainer framing lines spoken in the student's own language
   blocks: [
     titleBlock,
     agendaBlock,

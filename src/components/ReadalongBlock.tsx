@@ -36,25 +36,27 @@ export function ReadalongBlock({
   // engine/recognition.ts). Only meaningful in the "silent" phase, where
   // the student is reading alone and might want to check themselves.
   const [checkState, setCheckState] = useState<Record<string, CheckState>>({});
-  const cancelledRef = useRef(false);
-  const played = useRef(false);
+  const cancelledRef = useRef(false); // interrupts a manual phase play on a real block change
 
   const phase = PHASES[phaseIdx];
 
   // Takes an explicit phase rather than reading `phase` from closure, so
   // the auto-play sequence below can run all 3 phases back to back without
   // stale-closure bugs from setPhaseIdx not having re-rendered yet.
-  async function runPhaseFor(p: ReadalongPhase) {
+  // `shouldCancel` defaults to the shared ref (manual play, interrupted
+  // only by a real block change) but the auto-play effect below passes in
+  // its own locally-scoped check instead — see that effect for why.
+  async function runPhaseFor(p: ReadalongPhase, shouldCancel: () => boolean = () => cancelledRef.current) {
     setRunning(true);
     for (let i = 0; i < content.lines.length; i++) {
-      if (cancelledRef.current) break;
+      if (shouldCancel()) break;
       setActiveLine(i);
       const text = content.lines[i].translations[lang.targetLang];
       if (!text) continue;
 
       if (p === "echo") {
         await speak(text, lang.targetLang, trainer.voiceProfile);
-        if (cancelledRef.current) break;
+        if (shouldCancel()) break;
         await wait(2500); // long pause for student to repeat
       } else if (p === "shadow") {
         await speak(text, lang.targetLang, trainer.voiceProfile); // no pause, read together
@@ -93,12 +95,7 @@ export function ReadalongBlock({
     }
   }
 
-  // Flows automatically once the spoken intro caption is done: run echo,
-  // then shadow, then silent, back to back, then auto-advance to the next
-  // block — no manual "Play phase"/"Next phase" clicks needed for the
-  // default flow (they remain available for manual override/replay).
   useEffect(() => {
-    played.current = false;
     cancelledRef.current = false;
     setPhaseIdx(0);
     return () => {
@@ -106,21 +103,40 @@ export function ReadalongBlock({
     };
   }, [block.id]);
 
+  // Flows automatically once the spoken intro caption is done: run echo,
+  // then shadow, then silent, back to back, then auto-advance to the next
+  // block — no manual "Play phase"/"Next phase" clicks needed for the
+  // default flow (they remain available for manual override/replay).
+  //
+  // No `played`-once ref guard here (deliberately) — see AgendaBlock.tsx
+  // for why that pattern is buggy: a block can briefly mount with a stale
+  // `autoPlay=true` left over from the previous block. This effect also
+  // can't just reuse the shared `cancelledRef` for its own cancellation
+  // (that ref only flips on a real block change, not on autoPlay toggling
+  // within the same block) — reusing it would let a stale premature run
+  // speak through all 3 phases, overlapping the trainer's caption speech.
+  // A local `cancelled` flag, scoped to this exact effect invocation via
+  // [autoPlay, block.id], handles both cases correctly.
   useEffect(() => {
-    if (!autoPlay || played.current) return;
-    played.current = true;
+    if (!autoPlay) return;
+    let cancelled = false;
     (async () => {
       for (let i = 0; i < PHASES.length; i++) {
-        if (cancelledRef.current) return;
+        if (cancelled) return;
         setPhaseIdx(i);
-        await runPhaseFor(PHASES[i]);
-        if (cancelledRef.current) return;
+        await runPhaseFor(PHASES[i], () => cancelled);
+        if (cancelled) return;
         await wait(400);
       }
-      if (!cancelledRef.current) onComplete();
+      if (!cancelled) onComplete();
     })();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoPlay, block.id]);
+
+  const hasSpeakers = content.lines.some((l) => l.speaker);
 
   return (
     <Slide
@@ -137,13 +153,13 @@ export function ReadalongBlock({
         </>
       }
     >
-      <div className="lines">
+      <div className={hasSpeakers ? "lines" : "lines no-speakers"}>
         {content.lines.map((line, i) => {
           const text = line.translations[lang.targetLang];
           const check = checkState[line.id] ?? "idle";
           return (
             <div key={line.id} className={i === activeLine ? "line active" : "line"}>
-              {line.speaker && <span className="speaker">{line.speaker}:</span>}
+              {hasSpeakers && <div className="speaker">{line.speaker ?? ""}</div>}
               <div className="target">
                 {text}
                 {phase === "silent" && (

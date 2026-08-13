@@ -4,13 +4,21 @@ import { VocabDrillBlock } from "./VocabDrillBlock";
 import { ReadalongBlock } from "./ReadalongBlock";
 import { IntroBlock } from "./IntroBlock";
 import { GrammarBlock } from "./GrammarBlock";
+import { AgendaBlock } from "./AgendaBlock";
 import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
 import { TeacherCaption } from "./TeacherCaption";
 import { cancelSpeech } from "../engine/speech";
+import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
 import type { Trainer } from "../data/trainers";
 
-export function Session({ trainer }: { trainer: Trainer }) {
+export function Session({
+  trainer,
+  onExitToLessons,
+}: {
+  trainer: Trainer;
+  onExitToLessons: () => void;
+}) {
   const { state, dispatch } = useSession();
   const { lesson, blockIndex, status, lang, display, style, mode } = state;
   const block = lesson.blocks[blockIndex];
@@ -27,10 +35,46 @@ export function Session({ trainer }: { trainer: Trainer }) {
     setAutoPlayReady(false);
   }, [block?.id]);
 
+  // Sessions run long (45-90 min) with passive listening stretches — keep
+  // the screen from auto-dimming/locking while actively running, release
+  // it while paused/complete or when leaving the session entirely.
+  useEffect(() => {
+    if (status === "running") {
+      acquireWakeLock();
+    } else {
+      releaseWakeLock();
+    }
+    return () => {
+      releaseWakeLock();
+    };
+  }, [status]);
+
+  // Wake locks are auto-released by the browser when the tab loses
+  // visibility (e.g. switching apps); re-acquire on return if the lesson
+  // is still actively running.
+  useEffect(() => {
+    function handleVisibility() {
+      if (document.visibilityState === "visible" && status === "running") {
+        acquireWakeLock();
+      }
+    }
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => document.removeEventListener("visibilitychange", handleVisibility);
+  }, [status]);
+
+  function handleExit() {
+    cancelSpeech();
+    releaseWakeLock();
+    onExitToLessons();
+  }
+
   if (status === "complete") {
     return (
       <div className="session complete">
         <h2>Lesson complete 🎉</h2>
+        <button className="back-link" onClick={handleExit}>
+          ← Back to lessons
+        </button>
         <AuditBar />
       </div>
     );
@@ -55,6 +99,9 @@ export function Session({ trainer }: { trainer: Trainer }) {
         >
           ▶ Resume
         </button>
+        <button className="back-link" onClick={handleExit}>
+          ← Back to lessons
+        </button>
         <AuditBar />
       </div>
     );
@@ -73,6 +120,9 @@ export function Session({ trainer }: { trainer: Trainer }) {
   return (
     <div className={`session mode-${block.displayMode}`}>
       <div className="session-header floating">
+        <button className="back-link session-back" onClick={handleExit} title="Back to lesson selection">
+          ← Lessons
+        </button>
         <span>
           {lesson.title[lang.targetLang]} — Block {blockIndex + 1}/
           {lesson.blocks.length}
@@ -141,6 +191,15 @@ export function Session({ trainer }: { trainer: Trainer }) {
               onComplete={handleComplete}
             />
           )}
+          {block.type === "agenda" && (
+            <AgendaBlock
+              block={block}
+              lang={lang}
+              trainer={trainer}
+              autoPlay={autoPlayReady}
+              onComplete={handleComplete}
+            />
+          )}
         </div>
 
         <LessonAvatars trainer={trainer} />
@@ -151,6 +210,7 @@ export function Session({ trainer }: { trainer: Trainer }) {
         block={block}
         lang={lang}
         trainer={trainer}
+        framingLanguage={lesson.framingLanguage}
         onFinished={() => setAutoPlayReady(true)}
       />
 

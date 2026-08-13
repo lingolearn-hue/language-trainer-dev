@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import type { Block, IntroContent, LanguageSettings } from "../types";
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
@@ -18,19 +18,16 @@ export function IntroBlock({
   onComplete: () => void;
 }) {
   const content = block.content as IntroContent;
-  const played = useRef(false);
 
-  // Narrates the slide's own visible text (distinct from the spokenIntro
-  // caption, which already played by the time autoPlay flips true), then
-  // auto-advances — this is the "flow automatically" default. `played`
-  // guards against double-firing (e.g. React effect re-runs).
+  // No `played`-once ref guard here (deliberately) — see AgendaBlock.tsx
+  // for the full explanation of a real bug that pattern caused: a block
+  // can briefly mount with a stale `autoPlay=true` left over from the
+  // previous block, and marking "already played" during that aborted
+  // stale run would permanently block the real run once autoPlay
+  // genuinely turns true. The `cancelled` flag alone, fresh on every real
+  // effect re-run, handles this correctly.
   useEffect(() => {
-    played.current = false;
-  }, [block.id]);
-
-  useEffect(() => {
-    if (!autoPlay || played.current) return;
-    played.current = true;
+    if (!autoPlay) return;
     let cancelled = false;
 
     (async () => {

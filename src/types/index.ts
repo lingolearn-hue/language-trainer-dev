@@ -6,9 +6,12 @@ export type Translations = Partial<Record<LangCode, string>>;
 
 // Block model ------------------------------------------------------------
 
-export type BlockType = "readalong" | "vocabDrill" | "intro" | "grammar";
+export type BlockType = "readalong" | "vocabDrill" | "intro" | "grammar" | "agenda";
 // 'readalong' also covers dialogue/singAlong content — same 3-phase mechanic.
-// more to come: 'dialogue' as a distinct type if it needs branching later.
+// 'agenda' is a distinct type from 'intro' because it's never read aloud
+// verbatim (a table of contents read as a run-on sentence sounds terrible)
+// — instead the block's spokenIntro carries a free-form spoken framing of
+// what's ahead, and the visible list is just for reading/reference.
 
 export type DisplayMode = "face" | "content";
 
@@ -40,6 +43,19 @@ export interface IntroContent {
   text: Translations; // short warm-up / framing text, no reveal steps
 }
 
+// Table of contents — a vertical list of short labelled items, never read
+// aloud verbatim (see BlockType note). The spoken counterpart lives on
+// the block's spokenIntro as free-form prose, not a readout of this list.
+export interface AgendaItem {
+  id: string;
+  number?: number; // optional explicit ordering label, e.g. "1"
+  translations: Translations;
+}
+
+export interface AgendaContent {
+  items: AgendaItem[];
+}
+
 // Grammar block: explanation + a sequence of example chunks that reveal
 // progressively. Density (dense = several chunks visible/added per step,
 // sparse = one chunk on screen at a time) is a *display* setting, not part
@@ -60,7 +76,8 @@ export type BlockContent =
   | VocabDrillContent
   | ReadalongContent
   | IntroContent
-  | GrammarContent;
+  | GrammarContent
+  | AgendaContent;
 
 export interface Block {
   id: string;
@@ -83,6 +100,15 @@ export interface LessonPlan {
   courseId: string; // which course this lesson belongs to, matched against Trainer.courseIds
   title: Translations;
   blocks: Block[];
+  // Which language the trainer's spoken *framing* lines (spokenIntro, e.g.
+  // "now we sing a song") are delivered in. "source" = the student's own
+  // language — appropriate for early/beginner courses where the student
+  // can't yet follow instructions in the target language. "target" (or
+  // omitted, the default) = framing is spoken in the target language too,
+  // appropriate once a student can follow along. This only affects the
+  // trainer's framing lines — actual lesson content (vocab, dialogue,
+  // song lyrics) is always narrated in the target language regardless.
+  framingLanguage?: "source" | "target";
 }
 
 export type ReadalongPhase = "echo" | "shadow" | "silent";
