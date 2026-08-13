@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 10 — 2026-08-12
+Version: 11 — 2026-08-12
 
 React-based long-form language tutor simulation. Static content, multiple
 trainer personas, block-based session engine with pause/resume.
@@ -95,6 +95,30 @@ Test suite grew from 8 to 13 during this pass, all passing.
 - Portrait behavior changed as a direct consequence: the slide can now
   overflow narrow viewports and scroll horizontally, rather than shrinking
   to fit — this is the expected tradeoff of "no zoom, no fitting."
+
+## Recent changes (v11)
+
+- **Full auto-play**: the whole lesson now plays itself end to end once
+  started — spoken intro caption, then the slide's own content narration
+  (every vocab word, every grammar chunk, every dialogue/song line across
+  echo/shadow phases), then auto-advance to the next block. No manual
+  clicks required for normal playback; manual buttons remain available as
+  optional overrides/replay only.
+- Pause genuinely halts everything mid-narration (cancels speech, unmounts
+  the active block, in-flight async loops check a cancellation flag before
+  every step).
+- Fixed a real React rules-of-hooks violation in `Session.tsx` (hooks were
+  called after conditional early returns).
+- Spec review: clarified that the app is fully teacher-led by design (no
+  interaction required except intentional skip/rewind or pause/resume),
+  corrected a doc inconsistency where the audit bar was described as
+  "not part of the student experience" even though its prev/next/jump
+  controls are the actual skip/rewind mechanism, and documented exactly
+  what is/isn't narrated (target-language content only; source subtitles,
+  the silent phase, structural chrome, and speaker names are intentionally
+  silent, not gaps).
+- Test suite grew from 14 to 16, including a zero-click full-flow test and
+  a pause-halts-autoplay test.
 
 ## Dev
 

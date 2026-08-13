@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Block, ReadalongContent, LanguageSettings, ReadalongPhase } from "../types";
+import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { isRecognitionSupported, listenAndCompare } from "../engine/recognition";
 import { Slide } from "./Slide";
@@ -17,10 +18,14 @@ type CheckState = "idle" | "listening" | "match" | "no-match" | "unsupported";
 export function ReadalongBlock({
   block,
   lang,
+  trainer,
+  autoPlay,
   onComplete,
 }: {
   block: Block;
   lang: LanguageSettings;
+  trainer: Trainer;
+  autoPlay: boolean;
   onComplete: () => void;
 }) {
   const content = block.content as ReadalongContent;
@@ -31,21 +36,28 @@ export function ReadalongBlock({
   // engine/recognition.ts). Only meaningful in the "silent" phase, where
   // the student is reading alone and might want to check themselves.
   const [checkState, setCheckState] = useState<Record<string, CheckState>>({});
+  const cancelledRef = useRef(false);
+  const played = useRef(false);
 
   const phase = PHASES[phaseIdx];
 
-  async function runPhase() {
+  // Takes an explicit phase rather than reading `phase` from closure, so
+  // the auto-play sequence below can run all 3 phases back to back without
+  // stale-closure bugs from setPhaseIdx not having re-rendered yet.
+  async function runPhaseFor(p: ReadalongPhase) {
     setRunning(true);
     for (let i = 0; i < content.lines.length; i++) {
+      if (cancelledRef.current) break;
       setActiveLine(i);
       const text = content.lines[i].translations[lang.targetLang];
       if (!text) continue;
 
-      if (phase === "echo") {
-        await speak(text, lang.targetLang);
+      if (p === "echo") {
+        await speak(text, lang.targetLang, trainer.voiceProfile);
+        if (cancelledRef.current) break;
         await wait(2500); // long pause for student to repeat
-      } else if (phase === "shadow") {
-        await speak(text, lang.targetLang); // no pause, read together
+      } else if (p === "shadow") {
+        await speak(text, lang.targetLang, trainer.voiceProfile); // no pause, read together
       } else {
         // silent: no trainer voice, just a timed pace for student to read alone
         await wait(2000);
@@ -53,6 +65,10 @@ export function ReadalongBlock({
     }
     setActiveLine(null);
     setRunning(false);
+  }
+
+  async function runPhase() {
+    await runPhaseFor(phase);
   }
 
   async function selfCheck(lineId: string, text: string | undefined) {
@@ -76,6 +92,35 @@ export function ReadalongBlock({
       onComplete();
     }
   }
+
+  // Flows automatically once the spoken intro caption is done: run echo,
+  // then shadow, then silent, back to back, then auto-advance to the next
+  // block — no manual "Play phase"/"Next phase" clicks needed for the
+  // default flow (they remain available for manual override/replay).
+  useEffect(() => {
+    played.current = false;
+    cancelledRef.current = false;
+    setPhaseIdx(0);
+    return () => {
+      cancelledRef.current = true;
+    };
+  }, [block.id]);
+
+  useEffect(() => {
+    if (!autoPlay || played.current) return;
+    played.current = true;
+    (async () => {
+      for (let i = 0; i < PHASES.length; i++) {
+        if (cancelledRef.current) return;
+        setPhaseIdx(i);
+        await runPhaseFor(PHASES[i]);
+        if (cancelledRef.current) return;
+        await wait(400);
+      }
+      if (!cancelledRef.current) onComplete();
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoPlay, block.id]);
 
   return (
     <Slide

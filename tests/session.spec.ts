@@ -57,6 +57,31 @@ test("lesson 2 session follows the source slide order: title -> agenda -> intro 
   await expect(page.getByRole("heading", { name: "Fragen" })).toBeVisible();
 });
 
+test("lesson flows automatically from title through several blocks with zero clicks", async ({
+  page,
+}) => {
+  test.setTimeout(60000);
+  await pickTrainer(page);
+
+  await expect(page.getByRole("heading", { name: "Deutsch für Anfänger" })).toBeVisible();
+  // No clicks at all — just wait for auto-play to carry the session forward
+  // on its own, past title/agenda/intro, all the way to vocab. Intermediate
+  // slides (agenda, intro) are transient and may already be gone by the
+  // time we'd assert on them, since auto-play doesn't wait for the person —
+  // so we only check the eventual destination, not every step along the way.
+  await expect(page.getByText("Wortschatz")).toBeVisible({ timeout: 30000 });
+});
+
+test("pause stops auto-play; resume does not skip ahead unexpectedly", async ({ page }) => {
+  await pickTrainer(page);
+  await page.getByText("⏸ Pause").click();
+  await expect(page.getByText(/Block \d/)).toBeVisible();
+  const pausedText = await page.locator(".session.paused p").textContent();
+  await page.waitForTimeout(3000); // long enough that auto-play would have advanced if still running
+  const stillPausedText = await page.locator(".session.paused p").textContent();
+  expect(stillPausedText).toBe(pausedText);
+});
+
 test("audit bar: jump list navigates directly to any slide", async ({ page }) => {
   await pickTrainer(page);
 
@@ -130,14 +155,15 @@ test("lesson select screen appears after trainer choice and supports going back"
 test("self-check button appears in silent phase and handles unsupported browsers gracefully", async ({
   page,
 }) => {
+  test.setTimeout(60000);
   await pickTrainer(page);
   await page.getByText(/Slide 1 \//).click();
   await page.locator(".audit-jump-list button", { hasText: "Bruder Jakob" }).click();
 
-  // Advance to the silent phase (3rd) where self-check appears
-  await page.getByText("Next phase →").click();
-  await page.getByText("Next phase →").click();
-  await expect(page.getByText("3. Silent — read alone")).toBeVisible();
+  // The lesson now flows automatically (spoken intro, then echo, shadow,
+  // silent phases in sequence) — wait for auto-play to reach silent rather
+  // than manually clicking "Next phase", which would race the auto-advance.
+  await expect(page.getByText("3. Silent — read alone")).toBeVisible({ timeout: 45000 });
 
   const checkBtn = page.locator(".self-check-btn").first();
   await expect(checkBtn).toBeVisible();

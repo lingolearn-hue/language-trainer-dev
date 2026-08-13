@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useSession } from "../context/SessionContext";
 import { VocabDrillBlock } from "./VocabDrillBlock";
 import { ReadalongBlock } from "./ReadalongBlock";
@@ -12,6 +13,19 @@ import type { Trainer } from "../data/trainers";
 export function Session({ trainer }: { trainer: Trainer }) {
   const { state, dispatch } = useSession();
   const { lesson, blockIndex, status, lang, display, style, mode } = state;
+  const block = lesson.blocks[blockIndex];
+
+  // The whole lesson plays automatically: spoken intro caption, then the
+  // slide's own content narration, then auto-advance to the next block —
+  // no manual "Continue"/"Play" clicks required for the default flow.
+  // `autoPlayReady` gates content narration until the intro caption (if
+  // any) has finished, so the two never talk over each other. Resets on
+  // every block change. Declared above the early returns below so hook
+  // order stays stable regardless of session status.
+  const [autoPlayReady, setAutoPlayReady] = useState(false);
+  useEffect(() => {
+    setAutoPlayReady(false);
+  }, [block?.id]);
 
   if (status === "complete") {
     return (
@@ -21,8 +35,6 @@ export function Session({ trainer }: { trainer: Trainer }) {
       </div>
     );
   }
-
-  const block = lesson.blocks[blockIndex];
 
   if (status === "paused") {
     const classroom = mode === "classroom";
@@ -93,19 +105,39 @@ export function Session({ trainer }: { trainer: Trainer }) {
       <div className="session-layout">
         <div className="slide-area">
           {block.type === "vocabDrill" && (
-            <VocabDrillBlock block={block} lang={lang} onComplete={handleComplete} />
+            <VocabDrillBlock
+              block={block}
+              lang={lang}
+              trainer={trainer}
+              autoPlay={autoPlayReady}
+              onComplete={handleComplete}
+            />
           )}
           {block.type === "readalong" && (
-            <ReadalongBlock block={block} lang={lang} onComplete={handleComplete} />
+            <ReadalongBlock
+              block={block}
+              lang={lang}
+              trainer={trainer}
+              autoPlay={autoPlayReady}
+              onComplete={handleComplete}
+            />
           )}
           {block.type === "intro" && (
-            <IntroBlock block={block} lang={lang} onComplete={handleComplete} />
+            <IntroBlock
+              block={block}
+              lang={lang}
+              trainer={trainer}
+              autoPlay={autoPlayReady}
+              onComplete={handleComplete}
+            />
           )}
           {block.type === "grammar" && (
             <GrammarBlock
               block={block}
               lang={lang}
               display={display}
+              trainer={trainer}
+              autoPlay={autoPlayReady}
               onComplete={handleComplete}
             />
           )}
@@ -114,7 +146,13 @@ export function Session({ trainer }: { trainer: Trainer }) {
         <LessonAvatars trainer={trainer} />
       </div>
 
-      <TeacherCaption key={block.id} block={block} lang={lang} trainer={trainer} />
+      <TeacherCaption
+        key={block.id}
+        block={block}
+        lang={lang}
+        trainer={trainer}
+        onFinished={() => setAutoPlayReady(true)}
+      />
 
       <AuditBar />
     </div>

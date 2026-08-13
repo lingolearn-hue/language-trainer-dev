@@ -11,14 +11,20 @@ import { speak, cancelSpeech } from "../engine/speech";
 // caption sits below the slide frame; on narrow/portrait layouts this is
 // the primary place a person reads it, since the slide itself is
 // compressed there.
+//
+// `onFinished` fires once the spoken intro is done playing (or immediately
+// if there is none) — Session uses this to know when it's safe to start
+// narrating the slide's actual content, so the two never overlap.
 export function TeacherCaption({
   block,
   lang,
   trainer,
+  onFinished,
 }: {
   block: Block;
   lang: LanguageSettings;
   trainer: Trainer;
+  onFinished?: () => void;
 }) {
   const [speaking, setSpeaking] = useState(false);
 
@@ -26,11 +32,20 @@ export function TeacherCaption({
   const sourceText = block.spokenIntro?.[lang.sourceLang];
 
   useEffect(() => {
-    if (!text) return;
     let cancelled = false;
+    if (!text) {
+      // No spoken intro on this block — signal "done" immediately so the
+      // rest of the auto-play sequence (content narration) isn't stuck
+      // waiting on something that will never fire.
+      onFinished?.();
+      return;
+    }
     setSpeaking(true);
     speak(text, lang.targetLang, trainer.voiceProfile).then(() => {
-      if (!cancelled) setSpeaking(false);
+      if (!cancelled) {
+        setSpeaking(false);
+        onFinished?.();
+      }
     });
     return () => {
       cancelled = true;

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Block, GrammarContent, LanguageSettings, DisplaySettings } from "../types";
-import { speak } from "../engine/speech";
+import type { Trainer } from "../data/trainers";
+import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
 
 // Per spec (03-lessons.md pacing rules): grammar = explain -> drill -> quiz,
@@ -13,16 +14,23 @@ export function GrammarBlock({
   block,
   lang,
   display,
+  trainer,
+  autoPlay,
   onComplete,
 }: {
   block: Block;
   lang: LanguageSettings;
   display: DisplaySettings;
+  trainer: Trainer;
+  autoPlay: boolean;
   onComplete: () => void;
 }) {
   const content = block.content as GrammarContent;
   const [stepMode, setStepMode] = useState(false); // opt-in progressive reveal
   const [revealed, setRevealed] = useState(content.chunks.length); // dense default: all shown
+  const [activeChunkId, setActiveChunkId] = useState<string | null>(null);
+  const cancelledRef = useRef(false);
+  const played = useRef(false);
 
   function toggleStepMode() {
     if (!stepMode) {
@@ -46,8 +54,41 @@ export function GrammarBlock({
   }
 
   function readChunk(text: string | undefined) {
-    if (text) speak(text, lang.targetLang);
+    if (text) speak(text, lang.targetLang, trainer.voiceProfile);
   }
+
+  // Flows automatically once the spoken intro caption is done: read the
+  // explanation, then every visible chunk in order (same dense set the
+  // person already sees), then auto-advance to the next block.
+  useEffect(() => {
+    played.current = false;
+    cancelledRef.current = false;
+    return () => {
+      cancelledRef.current = true;
+    };
+  }, [block.id]);
+
+  useEffect(() => {
+    if (!autoPlay || played.current) return;
+    played.current = true;
+    (async () => {
+      const explanation = content.explanation[lang.targetLang];
+      if (explanation) await speak(explanation, lang.targetLang, trainer.voiceProfile);
+      if (cancelledRef.current) return;
+
+      for (const chunk of content.chunks) {
+        if (cancelledRef.current) return;
+        setActiveChunkId(chunk.id);
+        const text = chunk.translations[lang.targetLang];
+        if (text) await speak(text, lang.targetLang, trainer.voiceProfile);
+        if (cancelledRef.current) return;
+        await wait(500);
+      }
+      setActiveChunkId(null);
+      if (!cancelledRef.current) onComplete();
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoPlay, block.id]);
 
   return (
     <Slide
@@ -76,7 +117,7 @@ export function GrammarBlock({
 
       <div className={`chunks density-${display.density}`}>
         {visibleChunks.map((chunk) => (
-          <div key={chunk.id} className="chunk">
+          <div key={chunk.id} className={`chunk${chunk.id === activeChunkId ? " active" : ""}`}>
             <span className="target">{chunk.translations[lang.targetLang]}</span>
             <span className="source">{chunk.translations[lang.sourceLang]}</span>
             <button

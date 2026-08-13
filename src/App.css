@@ -140,6 +140,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 }
 .chunk .source { opacity: 0.6; font-size: 0.85em; }
 .chunk .listen { margin-left: auto; background: transparent; padding: 0 4px; border: none; cursor: pointer; }
+.chunk.active { background: #dde6ff; }
 
 /* Audit bar — quick slide navigation + verbal-content overlay (QA tool).
    Kept dark, deliberately distinct from the light slide surface, so it

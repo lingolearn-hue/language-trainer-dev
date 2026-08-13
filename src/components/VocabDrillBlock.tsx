@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Block, VocabDrillContent, VocabItem, LanguageSettings } from "../types";
+import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
 
@@ -13,29 +14,56 @@ const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: strin
 export function VocabDrillBlock({
   block,
   lang,
+  trainer,
+  autoPlay,
   onComplete,
 }: {
   block: Block;
   lang: LanguageSettings;
+  trainer: Trainer;
+  autoPlay: boolean;
   onComplete: () => void;
 }) {
   const content = block.content as VocabDrillContent;
   const [playing, setPlaying] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const cancelledRef = useRef(false);
+  const played = useRef(false);
 
   async function playEchoPass() {
     setPlaying(true);
     for (const item of content.items) {
+      if (cancelledRef.current) break;
       setActiveId(item.id);
       const word = item.translations[lang.targetLang];
       if (word) {
-        await speak(word, lang.targetLang);
+        await speak(word, lang.targetLang, trainer.voiceProfile);
         await wait(1200); // pause for student to repeat
       }
     }
     setActiveId(null);
     setPlaying(false);
   }
+
+  // Slide flows automatically once the spoken intro caption is done: read
+  // every word aloud (same pass as the manual button), then auto-advance.
+  useEffect(() => {
+    played.current = false;
+    cancelledRef.current = false;
+    return () => {
+      cancelledRef.current = true;
+    };
+  }, [block.id]);
+
+  useEffect(() => {
+    if (!autoPlay || played.current) return;
+    played.current = true;
+    (async () => {
+      await playEchoPass();
+      if (!cancelledRef.current) onComplete();
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoPlay, block.id]);
 
   // Group into columns by category — matches the source course's own
   // grouped vocab-slide layout, and lets 30-50+ items fit legibly on one
