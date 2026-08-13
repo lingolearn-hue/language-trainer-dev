@@ -10,15 +10,41 @@ async function pickTrainer(page: Page) {
   await page.getByText("Lektion 2").click();
 }
 
-test("trainer select screen shows all 6 trainers with name + languages", async ({ page }) => {
+test("trainer select screen shows all original 6 trainers with name + languages, plus Yui", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "Choose your trainer" })).toBeVisible();
 
-  const names = ["Max", "Jonas", "Lena", "Mei", "Ao", "Sol"];
+  const names = ["Max", "Jonas", "Lena", "Mei", "Ao", "Sol", "Yui"];
   for (const name of names) {
     await expect(page.getByText(name, { exact: true })).toBeVisible();
   }
   await expect(page.getByText("German ↔ English").first()).toBeVisible();
+});
+
+test("japanese lesson: Yui teaches it, vocab/dialogue/agenda render correctly", async ({ page }) => {
+  await page.goto("/");
+  await page.getByText("Yui").click();
+  await expect(page.getByRole("heading", { name: "Choose a lesson" })).toBeVisible();
+
+  await page.getByText("にほんごにゅうもん").click();
+  await expect(page.getByRole("heading", { name: "にほんごにゅうもん" })).toBeVisible();
+
+  await page.getByText(/Slide \d+ \//).click();
+  await page.locator(".audit-jump-list button", { hasText: "たんご" }).click();
+  await expect(page.getByText("コーヒー")).toBeVisible();
+  await expect(page.getByText("たべる")).toBeVisible();
+  await expect(page.locator(".vocab-groups")).toBeVisible();
+
+  await page.getByText(/Slide \d+ \//).click();
+  await page.locator(".audit-jump-list button", { hasText: "かいわ" }).click();
+  await expect(page.locator(".speaker", { hasText: "けんた" }).first()).toBeVisible();
+
+  await page.getByText(/Slide \d+ \//).click();
+  await page.locator(".audit-jump-list button", { hasText: "ながれ" }).click();
+  await expect(page.locator(".agenda-item")).toHaveCount(8);
+  // Beginner course — framing caption leads with English, not Japanese.
+  const caption = await page.locator(".teacher-caption .primary").textContent();
+  expect(caption).toMatch(/^Today we'll start/);
 });
 
 test("selecting a trainer starts on the title slide, not the warm-up", async ({ page }) => {

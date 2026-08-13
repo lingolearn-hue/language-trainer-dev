@@ -6,6 +6,7 @@ const LANG_LABEL: Record<LangCode, string> = {
   de: "German",
   en: "English",
   zh: "Chinese",
+  ja: "Japanese",
 };
 
 export function TrainerSelect({

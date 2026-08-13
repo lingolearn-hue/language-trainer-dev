@@ -111,4 +111,23 @@ export const trainers: Trainer[] = [
       "Slightly more animated pulse timing than Ao; reads as more casual despite no face.",
     voiceProfile: { lang: "en-US", pitch: 1.0, rate: 1.05 },
   },
+  // 7th trainer, added when Japanese support landed — breaks the original
+  // "6 trainers, exactly 2 per avatar type, all 6 ordered de/en/zh pairs"
+  // MVP symmetry (see 02-trainers.md), which predates the 4-language
+  // matrix. Not rebalanced to a full 12-pair de/en/zh/ja roster yet —
+  // that's a separate scope decision, not something to default into here.
+  {
+    id: "t-yui",
+    name: "Yui",
+    languages: ["ja", "en"],
+    avatarType: "female",
+    appearance:
+      "Early 20s, straight black bob, oversized cardigan, tends to sketch kanji in the air while explaining.",
+    hobby: "Collects stationery — pens and notebooks in particular.",
+    defaultStyle: "flexible",
+    courseIds: ["japanese-beginner"],
+    personalityNote:
+      "Patient and encouraging, repeats readings without being asked, celebrates small wins.",
+    voiceProfile: { lang: "ja-JP", pitch: 1.1, rate: 0.95 },
+  },
 ];

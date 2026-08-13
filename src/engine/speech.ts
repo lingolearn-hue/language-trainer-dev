@@ -4,6 +4,7 @@ const bcp47: Record<LangCode, string> = {
   de: "de-DE",
   en: "en-US",
   zh: "zh-CN",
+  ja: "ja-JP",
 };
 
 export interface VoicePreference {

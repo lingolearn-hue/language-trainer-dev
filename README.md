@@ -1,11 +1,68 @@
 # Language Trainer
 
-Version: 13 — 2026-08-13
+Version: 14 — 2026-08-13
 
-React-based long-form language tutor simulation. Static content, multiple
-trainer personas, block-based session engine with pause/resume.
+React-based long-form language tutor simulation (45-90 min sessions).
+Static content, multiple trainer personas, block-based session engine
+with pause/resume, fully auto-playing by default.
 
 See `/spec` (in project history) for concept, trainer, and lesson-structure docs.
+
+## Current state
+
+- **Languages**: de, en, zh, ja (`LangCode`). Japanese added in v14 —
+  first non-de/en/zh language, sourced from JLPT-leveled data rather than
+  authored from scratch (see "Content sources" below).
+- **Trainers**: 7 — the original 6 cover all ordered de/en/zh pairs (Max,
+  Jonas, Lena, Mei, Ao, Sol); Yui (ja↔en) is a 7th, added for the Japanese
+  course. Breaks the original "2 per avatar type" symmetry — not
+  rebalanced to a full de/en/zh/ja matrix, that's a separate scope call.
+  Male/female/orb avatars, each bilingual with its own voice profile and
+  default teaching style.
+- **Lessons**: 3 live so far —
+  - *Lektion 2* (`german-beginner`) — sourced from the Deutsch_1-10.pdf
+    course material, 10 blocks: title, agenda, warm-up, vocabulary (38
+    items), grammar (verbs, questions, word order), a café dialogue,
+    pronunciation, and a closing song. Framing lines are spoken in the
+    student's own language (beginner-appropriate); content narration is
+    always in German.
+  - *Voices from Orbit* (`english-advanced-c1`) — original C1 English
+    course, space-travel themed, same 10-block structure. Grammar:
+    inversion after negative adverbials, cleft sentences, nominalization.
+    Framing is spoken in English (advanced learners can follow it
+    directly).
+  - *にほんごにゅうもん / Japanese for Beginners* (`japanese-beginner`) —
+    same 10-block structure, JLPT N5. Vocab, grammar explanations, and the
+    market dialogue are sourced from `lingolearn-hue/vocab-games-dev`'s
+    vocab/grammar/dialogue JSON (see "Content sources" below) rather than
+    authored from a PDF or from scratch; the reading-practice block
+    (real Japanese homophone pairs) and closing song are original. Target
+    text is hiragana throughout — no furigana rendering exists yet, so
+    kanji without a reading aid isn't usable for an absolute beginner.
+- **Content sources**: beyond the original Deutsch PDFs and
+  self-authored content, lesson content can now be bootstrapped from
+  `lingolearn-hue/vocab-games-dev` — a large, CEFR/JLPT-leveled,
+  multi-language (de/en/es/fr/ja/zh) vocab+grammar+dialogue corpus from a
+  sibling project. Structurally audited but not semantically verified by
+  its own admission, and pivoted through English (`<lang>-en.json`, not a
+  full any-to-any matrix) — treat as a strong starting draft, not a final
+  authoritative source; spot-check whatever subset lands in a real lesson.
+  No song content exists there — songs are still self-authored per lesson.
+- **Session engine**: fully auto-plays end to end once started (spoken
+  framing → content narration → auto-advance), with pause/resume
+  (persisted via localStorage), a back button to lesson selection, a
+  screen wake lock during active sessions, session-level style
+  (structured/flexible) and mode (1:1/classroom) toggles, and an audit
+  bar for QA (slide jump list + a silent "verbal text" overlay).
+- **Slide rendering**: fixed 960×540 Beamer-style layout, scaled via
+  `ResizeObserver` to always fully fill the available width or height in
+  any orientation — no cropping, no scrolling. Vocab/pronunciation slides
+  use grouped columns; readalong (dialogue/song) slides split target and
+  source side by side, compact enough for ~14 lines per slide.
+- **Test suite**: 28 Playwright tests, including a full hands-off
+  10-block lesson playthrough.
+
+## Version history
 
 ## Recent changes (v5-v6)
 
@@ -141,6 +198,38 @@ Test suite grew from 8 to 13 during this pass, all passing.
   English). Along the way, fixed a pre-existing bug: Lena's
   `voiceProfile.lang` was still `"de-DE"` despite her target being English.
 - Test suite grew from 17 to 19.
+
+## Recent changes (v14)
+
+- **Japanese support added** — first language beyond the original
+  de/en/zh matrix. `LangCode` extended to include `ja`; BCP-47 voice
+  mapping, `SpeechRecognition` lang mapping, trainer-select language
+  labels, and vocab-drill default category labels all updated to match
+  (these were exhaustive `Record<LangCode, ...>` maps that needed a `ja`
+  entry each — a genuine type-safety win, since TypeScript's `tsc -b`
+  caught every one of them at build time rather than failing silently at
+  runtime).
+- New trainer: **Yui** (ja↔en), 7th trainer overall — no existing trainer
+  covered this pair. Breaks the original 6-trainer "2 per avatar type"
+  symmetry; not rebalanced to a full 4-language matrix in this pass.
+- New lesson: **にほんごにゅうもん / Japanese for Beginners**
+  (`japanese-beginner`) — a structural conversion of Lesson 2 (same
+  10-block shape), JLPT N5 level. Vocabulary (38 items, same 16/10/12
+  noun/verb/adjective split), grammar explanations (topic は, ます form,
+  word order), and the market dialogue are sourced from
+  `lingolearn-hue/vocab-games-dev`'s existing vocab/grammar/dialogue
+  corpus rather than authored from scratch — the CEFR/JLPT level tags on
+  that data made picking beginner-appropriate content fast. Grammar
+  example sentences were newly written using this lesson's own vocab
+  selection; the reading-practice block (real Japanese homophone pairs:
+  はし = chopsticks/bridge, etc.) and the closing song are original, since
+  the source repo has no equivalent content for either. Target text is
+  hiragana throughout rather than kanji — this app has no furigana/ruby
+  rendering, so kanji without a reading aid isn't usable for an absolute
+  beginner. 2 interactive comprehension-check turns in the source
+  dialogue were dropped (don't map to this app's plain-line readalong
+  model) — the 6 spoken lines that remain are unmodified from the source.
+- Test suite grew from 27 to 28.
 
 ## Recent changes (v13)
 

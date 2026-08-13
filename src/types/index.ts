@@ -1,6 +1,6 @@
 // Language matrix ------------------------------------------------------
 
-export type LangCode = "de" | "en" | "zh";
+export type LangCode = "de" | "en" | "zh" | "ja";
 
 export type Translations = Partial<Record<LangCode, string>>;
 

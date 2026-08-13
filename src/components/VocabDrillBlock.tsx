@@ -4,11 +4,11 @@ import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
 
-const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string }> = {
-  noun: { de: "Nomen", en: "Nouns", zh: "名词" },
-  verb: { de: "Verben", en: "Verbs", zh: "动词" },
-  adjective: { de: "Adjektive", en: "Adjectives", zh: "形容词" },
-  other: { de: "Weitere", en: "Other", zh: "其他" },
+const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string; ja: string }> = {
+  noun: { de: "Nomen", en: "Nouns", zh: "名词", ja: "名詞" },
+  verb: { de: "Verben", en: "Verbs", zh: "动词", ja: "動詞" },
+  adjective: { de: "Adjektive", en: "Adjectives", zh: "形容词", ja: "形容詞" },
+  other: { de: "Weitere", en: "Other", zh: "其他", ja: "その他" },
 };
 
 export function VocabDrillBlock({
@@ -93,7 +93,7 @@ export function VocabDrillBlock({
   }
 
   function labelFor(key: string) {
-    return content.groupLabels?.[key] ?? DEFAULT_CATEGORY_LABEL[key] ?? { de: key, en: key, zh: key };
+    return content.groupLabels?.[key] ?? DEFAULT_CATEGORY_LABEL[key] ?? { de: key, en: key, zh: key, ja: key };
   }
 
   return (
