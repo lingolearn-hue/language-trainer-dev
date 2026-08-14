@@ -134,6 +134,17 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .controls-rail .slide-footer button { margin-left: 0 !important; width: 100%; }
 .controls-rail .phase-label { margin-right: 0; text-align: center; }
 
+.rate-controls {
+  display: flex; flex-direction: column; align-items: stretch; gap: 4px;
+  padding: 10px 4px; border-top: 1px solid #d5d5db; font-size: 12px;
+}
+.rate-controls button {
+  background: #d8d8de; color: #1a1a22; border: none; padding: 6px 8px;
+  border-radius: 6px; cursor: pointer; font-size: 12px;
+}
+.rate-controls button:disabled { opacity: 0.4; cursor: default; }
+.rate-value { text-align: center; opacity: 0.6; }
+
 /* Dense vocab: category columns (noun/verb/adjective), everything visible
    at once. Designed to hold 30-50 items on one slide, matching the source
    course's own grouped-column vocab-slide density. */

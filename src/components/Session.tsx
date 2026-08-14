@@ -8,6 +8,7 @@ import { AgendaBlock } from "./AgendaBlock";
 import { SelfIntroBlock } from "./SelfIntroBlock";
 import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
+import { RateControls } from "./RateControls";
 import { TeacherCaption } from "./TeacherCaption";
 import { cancelSpeech } from "../engine/speech";
 import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
@@ -245,6 +246,7 @@ export function Session({
 
           <div className="right-rail">
             <LessonAvatars trainer={trainer} />
+            <RateControls />
             {/* Portal target for the active block's footer controls —
                 see SlideControlsContext / Slide.tsx. Only actually used
                 (non-null in context) in landscape; harmless empty div

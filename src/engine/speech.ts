@@ -90,6 +90,39 @@ function splitOnEllipsis(text: string): string[] {
     .filter((s) => s.length > 0);
 }
 
+// Global rate multiplier — applies on top of each trainer's own base
+// rate (voiceProfile.rate), so "faster"/"slower" affects every voice
+// uniformly without touching per-trainer data. Default is slightly below
+// 1 (all voices read a little slower by default); user-adjustable via
+// the rate controls in the session's right-hand rail.
+const RATE_MIN = 0.6;
+const RATE_MAX = 1.3;
+const RATE_STEP = 0.1;
+let rateMultiplier = 0.85;
+type RateListener = (rate: number) => void;
+const rateListeners = new Set<RateListener>();
+
+export function getRateMultiplier(): number {
+  return rateMultiplier;
+}
+
+export function setRateMultiplier(value: number) {
+  rateMultiplier = Math.min(RATE_MAX, Math.max(RATE_MIN, value));
+  rateListeners.forEach((l) => l(rateMultiplier));
+}
+
+export function adjustRateMultiplier(delta: number) {
+  setRateMultiplier(rateMultiplier + delta);
+}
+
+export function subscribeRate(listener: RateListener): () => void {
+  rateListeners.add(listener);
+  listener(rateMultiplier);
+  return () => rateListeners.delete(listener);
+}
+
+export { RATE_MIN, RATE_MAX, RATE_STEP };
+
 async function speakSegment(
   text: string,
   lang: LangCode,
@@ -101,7 +134,7 @@ async function speakSegment(
     utter.lang = bcp47[lang];
     if (voice) utter.voice = voice;
     if (preference?.pitch !== undefined) utter.pitch = preference.pitch;
-    if (preference?.rate !== undefined) utter.rate = preference.rate;
+    utter.rate = (preference?.rate ?? 1) * rateMultiplier;
     utter.onend = () => resolve();
     utter.onerror = () => resolve();
     window.speechSynthesis.speak(utter);
