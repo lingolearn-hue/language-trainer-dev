@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-const BASE_HEIGHT = 540; // 16:9, matches the fixed Beamer-style layout below
+const BASE_HEIGHT = 600; // 16:10 (960x600) — was 16:9 (960x540); a bit taller/tighter, especially for portrait
 
 // Beamer-style slide: the internal layout/typography is still fixed at a
 // literal 960x540 "beamer" coordinate system (same title/content/footer

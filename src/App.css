@@ -30,7 +30,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 }
 
 /* ---------------------------------------------------------------------
-   Slide frame — real Beamer-class style: fixed internal 960x540
+   Slide frame — real Beamer-class style: fixed internal 960x600
    layout/typography (title/content/footer, fixed font sizes — same
    coordinate system as an exported .beamer PDF page), scaled via CSS
    transform to always fully fill either the available width or height
@@ -58,7 +58,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 }
 .slide-frame {
   width: 960px;
-  height: 540px;
+  height: 600px; /* 16:10, was 540 (16:9) */
   flex-shrink: 0;
   background: #ffffff;
   color: #1a1a22;
@@ -259,7 +259,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    dialogue/speaking blocks (trainer more prominent, content secondary)
    and 'content' for reading/drills/grammar (content dominant, trainer
    presence minimal). The slide itself always scale-to-fits at the same
-   960x540 base regardless of mode (a hardcoded narrower width here would
+   960x600 base regardless of mode (a hardcoded narrower width here would
    conflict with Slide.tsx's fixed BASE_WIDTH used for the fit
    calculation) — the difference is expressed through avatar size instead. */
 .session.mode-face .lesson-avatars .trainer-avatar { width: 64px !important; height: 64px !important; font-size: 22px !important; }
