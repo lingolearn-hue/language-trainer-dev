@@ -154,6 +154,14 @@ export function Session({
 
       <div className="session-layout">
         <div className="slide-area">
+          <TeacherCaption
+            key={block.id}
+            block={block}
+            lang={lang}
+            trainer={trainer}
+            framingLanguage={lesson.framingLanguage}
+            onFinished={() => setAutoPlayReady(true)}
+          />
           {block.type === "vocabDrill" && (
             <VocabDrillBlock
               block={block}
@@ -204,15 +212,6 @@ export function Session({
 
         <LessonAvatars trainer={trainer} />
       </div>
-
-      <TeacherCaption
-        key={block.id}
-        block={block}
-        lang={lang}
-        trainer={trainer}
-        framingLanguage={lesson.framingLanguage}
-        onFinished={() => setAutoPlayReady(true)}
-      />
 
       <AuditBar />
     </div>

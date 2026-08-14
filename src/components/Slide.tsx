@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-const BASE_WIDTH = 960;
 const BASE_HEIGHT = 540; // 16:9, matches the fixed Beamer-style layout below
 
 // Beamer-style slide: the internal layout/typography is still fixed at a
@@ -31,7 +30,12 @@ export function Slide({
       if (!entry) return;
       const { width, height } = entry.contentRect;
       if (width <= 0 || height <= 0) return;
-      setScale(Math.min(width / BASE_WIDTH, height / BASE_HEIGHT));
+      // Landscape requirement: fill available height completely.
+      // Previously used the tighter of width/height (classic "fit to
+      // screen", could leave vertical gaps). Now height always wins;
+      // width can exceed the container (slide-fit-container clips via
+      // overflow: hidden) rather than shrinking to fit horizontally.
+      setScale(height / BASE_HEIGHT);
     });
     observer.observe(el);
     return () => observer.disconnect();
