@@ -131,6 +131,21 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .vocab-group tr.active td { background: #dde6ff; }
 .vocab-count { opacity: 0.55; font-size: 0.85em; margin: 0 auto; }
 
+/* Self-intro slide (e.g. Lesson 2's "Selbstvorstellung") — two independent
+   columns side by side: fixed self-intro template on the left (readalong,
+   target-language only, no translation shown), a list of "reason" options
+   on the right (narrated once each, translation spoken only — never
+   displayed, per spec). Both columns share the same line/active styling
+   as .lines/.line above for visual consistency. */
+.self-intro-columns { display: flex; gap: 6%; height: 100%; align-items: flex-start; }
+.self-intro-template, .self-intro-options { flex: 1; min-width: 0; }
+.self-intro-lead { font-size: 0.95em; opacity: 0.75; margin: 0 0 0.5em; font-style: italic; }
+.self-intro-line {
+  font-size: 0.95em; line-height: 1.5; margin: 0.15em 0;
+  padding: 2px 6px; border-radius: 5px; opacity: 0.55;
+}
+.self-intro-line.active { opacity: 1; background: #dde6ff; }
+
 /* Readalong lines — target and source split left/right, one compact row
    per line (not stacked), so a full dialogue/song fits on one slide
    without scrolling. Optional speaker column only appears when the

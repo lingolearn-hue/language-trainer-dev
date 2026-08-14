@@ -6,7 +6,7 @@ export type Translations = Partial<Record<LangCode, string>>;
 
 // Block model ------------------------------------------------------------
 
-export type BlockType = "readalong" | "vocabDrill" | "intro" | "grammar" | "agenda";
+export type BlockType = "readalong" | "vocabDrill" | "intro" | "grammar" | "agenda" | "selfIntro";
 // 'readalong' also covers dialogue/singAlong content — same 3-phase mechanic.
 // 'agenda' is a distinct type from 'intro' because it's never read aloud
 // verbatim (a table of contents read as a run-on sentence sounds terrible)
@@ -43,6 +43,30 @@ export interface IntroContent {
   text: Translations; // short warm-up / framing text, no reveal steps
 }
 
+// Self-introduction template slide (e.g. Lesson 2's "Selbstvorstellung").
+// Two independent halves on one slide:
+//  - `template`: a fixed self-intro readalong, target-language only, no
+//    on-screen translation (student fills in name/hometown live) — reuses
+//    ReadalongLine/3-phase mechanic like any other readalong content.
+//  - `options`: a list of "reason" lines (e.g. "...ich Philosophie mag.").
+//    Each is narrated once in the target language, immediately followed by
+//    a SPOKEN-ONLY translation in the source language (never shown as
+//    on-screen text — this slide has no visible translation at all).
+//    After all options are narrated, `choosePrompt` is spoken in the
+//    source language, inviting the student to pick their own reason.
+//    Purely a demonstration pass — no selection is recorded.
+export interface SelfIntroOption {
+  id: string;
+  translations: Translations; // target-language line; other langs used only for spoken narration, never displayed
+}
+
+export interface SelfIntroContent {
+  template: ReadalongLine[];
+  optionsIntro: Translations; // e.g. "Ich lerne Deutsch, weil ..." lead-in line, narrated once before options
+  options: SelfIntroOption[];
+  choosePrompt: Translations; // spoken in source language after all options are demonstrated
+}
+
 // Table of contents — a vertical list of short labelled items, never read
 // aloud verbatim (see BlockType note). The spoken counterpart lives on
 // the block's spokenIntro as free-form prose, not a readout of this list.
@@ -77,7 +101,8 @@ export type BlockContent =
   | ReadalongContent
   | IntroContent
   | GrammarContent
-  | AgendaContent;
+  | AgendaContent
+  | SelfIntroContent;
 
 export interface Block {
   id: string;

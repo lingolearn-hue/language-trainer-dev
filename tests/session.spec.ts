@@ -66,7 +66,7 @@ test("lesson 2 session follows the source slide order: title -> agenda -> intro 
   await page.getByText("Continue →").click();
 
   // 3. Self-intro (Selbstvorstellung / warm-up)
-  await expect(page.getByText("Willkommen")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Selbstvorstellung" })).toBeVisible();
   await page.getByText("Continue →").click();
 
   // 4. Vocab drill block

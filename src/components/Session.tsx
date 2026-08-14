@@ -5,6 +5,7 @@ import { ReadalongBlock } from "./ReadalongBlock";
 import { IntroBlock } from "./IntroBlock";
 import { GrammarBlock } from "./GrammarBlock";
 import { AgendaBlock } from "./AgendaBlock";
+import { SelfIntroBlock } from "./SelfIntroBlock";
 import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
 import { TeacherCaption } from "./TeacherCaption";
@@ -201,6 +202,15 @@ export function Session({
           )}
           {block.type === "agenda" && (
             <AgendaBlock
+              block={block}
+              lang={lang}
+              trainer={trainer}
+              autoPlay={autoPlayReady}
+              onComplete={handleComplete}
+            />
+          )}
+          {block.type === "selfIntro" && (
+            <SelfIntroBlock
               block={block}
               lang={lang}
               trainer={trainer}

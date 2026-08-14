@@ -58,22 +58,81 @@ export const agendaBlock: Block = {
   },
 };
 
-export const introBlock: Block = {
-  id: "l2-intro",
-  type: "intro",
+// Source: Deutsch_2.pdf, slide 3 ("Selbstvorstellung"). The slide itself is
+// German-only, no on-screen translation anywhere — "名字"/"家乡" in the PDF
+// are Chinese *instructions* ("name"/"hometown") for the live blank, not a
+// translation of the sentence. Left column (template) is read 3x
+// (echo/shadow/silent) like any readalong. Right column (reason options)
+// is narrated once per line, immediately followed by a SPOKEN translation
+// in the source language (never shown as text) — then a spoken prompt
+// inviting the student to choose their own reason.
+export const selfIntroBlock: Block = {
+  id: "l2-self-intro",
+  type: "selfIntro",
   displayMode: "face",
-  estimatedMinutes: 3,
-  title: { de: "Willkommen", en: "Welcome", zh: "欢迎" },
+  estimatedMinutes: 4,
+  title: { de: "Selbstvorstellung", en: "Self-Introduction", zh: "自我介绍" },
   spokenIntro: {
-    de: "Bevor wir anfangen, erzähl mir kurz etwas über dich.",
-    en: "Before we start, tell me a little about yourself.",
-    zh: "在开始之前，先简单介绍一下你自己。",
+    de: "Bevor wir anfangen, stellen wir uns kurz vor.",
+    en: "Before we start, let's introduce ourselves briefly.",
+    zh: "在开始之前，我们先简单地自我介绍一下。",
   },
   content: {
-    text: {
-      de: "Ich lerne Deutsch, weil ... Und du? Erzähl mir kurz, warum du Deutsch lernst.",
-      en: "I'm learning German because ... And you? Tell me briefly why you're learning German.",
-      zh: "我学习德语是因为……你呢？简单说说你为什么学德语。",
+    template: [
+      { id: "si1", translations: { de: "Guten Tag!" } },
+      { id: "si2", translations: { de: "Ich bin [Name]." } },
+      { id: "si3", translations: { de: "Ich komme aus [Heimatort]." } },
+      { id: "si4", translations: { de: "[Heimatort] ist in China." } },
+      { id: "si5", translations: { de: "Ich spreche Chinesisch." } },
+      { id: "si6", translations: { de: "Ich spreche auch Deutsch." } },
+    ],
+    optionsIntro: {
+      de: "Ich lerne Deutsch, weil ...",
+      en: "I'm learning German because ...",
+      zh: "我学习德语是因为……",
+    },
+    options: [
+      {
+        id: "so1",
+        translations: { de: "... ich Philosophie mag.", en: "...I like philosophy.", zh: "……我喜欢哲学。" },
+      },
+      {
+        id: "so2",
+        translations: { de: "... ich Deutschland mag.", en: "...I like Germany.", zh: "……我喜欢德国。" },
+      },
+      {
+        id: "so3",
+        translations: { de: "... ich deutsche Musik mag.", en: "...I like German music.", zh: "……我喜欢德国音乐。" },
+      },
+      {
+        id: "so4",
+        translations: { de: "... ich deutsche Autos mag.", en: "...I like German cars.", zh: "……我喜欢德国汽车。" },
+      },
+      {
+        id: "so5",
+        translations: { de: "... ich Sprachen mag.", en: "...I like languages.", zh: "……我喜欢语言。" },
+      },
+      {
+        id: "so6",
+        translations: {
+          de: "... ich in Deutschland arbeiten möchte.",
+          en: "...I want to work in Germany.",
+          zh: "……我想在德国工作。",
+        },
+      },
+      {
+        id: "so7",
+        translations: {
+          de: "... ich in Deutschland studieren möchte.",
+          en: "...I want to study in Germany.",
+          zh: "……我想在德国留学。",
+        },
+      },
+    ],
+    choosePrompt: {
+      de: "Und du? Du kannst jetzt deinen eigenen Grund wählen.",
+      en: "And you? You can now choose your own reason.",
+      zh: "你呢？现在你可以选择你自己的理由了。",
     },
   },
 };
@@ -407,7 +466,7 @@ export const lesson2: LessonPlan = {
   blocks: [
     titleBlock,
     agendaBlock,
-    introBlock,
+    selfIntroBlock,
     vocabObjectsBlock,
     grammarVerbsBlock,
     grammarFragenBlock,
