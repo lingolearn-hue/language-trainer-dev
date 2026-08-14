@@ -232,7 +232,11 @@ export const dialogueMissionControlBlock: Block = {
       { id: "d7", speaker: "Commander", translations: { en: "Copy. Never have I been more grateful for a well-trained crew.", de: "Verstanden. Nie war ich dankbarer für eine gut ausgebildete Crew.", zh: "收到。我从未如此感激拥有训练有素的机组人员。" } },
       { id: "d8", speaker: "Mission Control", translations: { en: "Diagnostics confirm a sensor fault. You are cleared to proceed with the mission.", de: "Die Diagnose bestätigt einen Sensorfehler. Ihr seid freigegeben, die Mission fortzusetzen.", zh: "诊断确认是传感器故障。你们可以继续执行任务。" } },
       { id: "d9", speaker: "Commander", translations: { en: "Copy that, Mission Control. Continuing as planned.", de: "Verstanden, Missionskontrolle. Wir setzen wie geplant fort.", zh: "收到，任务控制中心。按计划继续。" } },
-      { id: "d10", speaker: "Mission Control", translations: { en: "Godspeed.", de: "Gute Reise.", zh: "一路平安。" } },
+      { id: "d10", speaker: "Mission Control", translations: { en: "Not only is your trajectory nominal, but your fuel margin is also better than projected.", de: "Nicht nur eure Flugbahn ist nominal, auch eure Treibstoffreserve ist besser als vorhergesagt.", zh: "不仅你们的轨迹正常，燃料余量也比预计的要好。" } },
+      { id: "d11", speaker: "Commander", translations: { en: "That's excellent news. Rarely have we had such a smooth stretch of the mission.", de: "Das sind hervorragende Neuigkeiten. Selten hatten wir einen so reibungslosen Abschnitt der Mission.", zh: "这是个好消息。我们很少有任务进行得如此顺利的阶段。" } },
+      { id: "d12", speaker: "Mission Control", translations: { en: "What remains critical now is the docking sequence in six hours.", de: "Was jetzt entscheidend bleibt, ist die Andocksequenz in sechs Stunden.", zh: "现在关键的是六小时后的对接程序。" } },
+      { id: "d13", speaker: "Commander", translations: { en: "Understood. We'll begin final checks well ahead of schedule.", de: "Verstanden. Wir beginnen die letzten Kontrollen deutlich vor dem Zeitplan.", zh: "明白。我们会提前很多开始最后检查。" } },
+      { id: "d14", speaker: "Mission Control", translations: { en: "Godspeed.", de: "Gute Reise.", zh: "一路平安。" } },
     ],
   },
 };

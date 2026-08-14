@@ -371,6 +371,10 @@ export const dialogueCafeBlock: Block = {
       { id: "c8", speaker: "Gast B", translations: { de: "Ich möchte einen Tee.", en: "I'd like a tea.", zh: "我要一杯茶。" } },
       { id: "c9", speaker: "Kellner", translations: { de: "Schwarz oder grün?", en: "Black or green?", zh: "红茶还是绿茶？" } },
       { id: "c10", speaker: "Gast B", translations: { de: "Schwarz, bitte.", en: "Black, please.", zh: "红茶，谢谢。" } },
+      { id: "c11", speaker: "Kellner", translations: { de: "Möchten Sie auch einen Kuchen?", en: "Would you also like some cake?", zh: "您还要蛋糕吗？" } },
+      { id: "c12", speaker: "Gast A", translations: { de: "Ja, ein Stück Apfelkuchen, bitte.", en: "Yes, one piece of apple cake, please.", zh: "好的，请给我一块苹果蛋糕。" } },
+      { id: "c13", speaker: "Kellner", translations: { de: "Kommt sofort!", en: "Coming right up!", zh: "马上就来！" } },
+      { id: "c14", speaker: "Gast B", translations: { de: "Die Rechnung, bitte.", en: "The bill, please.", zh: "请给我账单。" } },
     ],
   },
 };
