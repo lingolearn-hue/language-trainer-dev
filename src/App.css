@@ -289,8 +289,23 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   font-size: 13px; margin-bottom: 16px; padding: 0; display: block;
 }
 
+/* Language-pair filter — two plain dropdowns, order-independent (a
+   trainer matches regardless of which dropdown holds which of their two
+   languages, since every trainer teaches both directions). */
+.trainer-filters {
+  display: flex; gap: 12px; justify-content: center; margin-bottom: 24px;
+}
+.trainer-filters select {
+  padding: 8px 12px; border-radius: 8px; border: 1px solid #d5d5db;
+  background: #ffffff; color: #1a1a22; font-size: 14px; min-width: 160px;
+}
+
+/* 2 columns for now — matches (or everyone, if no filter set) come
+   first, non-matching trainers are appended after in the same grid so
+   the whole list still fills the 2-column layout, just visually
+   demoted via .trainer-card-dimmed below. */
 .trainer-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: grid; grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 .trainer-card {
@@ -300,6 +315,16 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 .trainer-card:hover { transform: translateY(-2px); border-color: #3355e0; }
+/* Doesn't match the current language filter — greyed out but still a
+   normal clickable button, just visually deprioritized below the
+   matching trainers. */
+.trainer-card.trainer-card-dimmed {
+  background: #ececef; color: #8a8a92; box-shadow: none; filter: grayscale(0.6);
+}
+.trainer-card.trainer-card-dimmed:hover { border-color: #b0b0ba; }
+.trainer-card.trainer-card-dimmed .trainer-name,
+.trainer-card.trainer-card-dimmed .trainer-languages,
+.trainer-card.trainer-card-dimmed .trainer-style { color: #8a8a92; }
 
 .trainer-avatar {
   width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 14px;
