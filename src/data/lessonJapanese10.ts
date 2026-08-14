@@ -48,7 +48,7 @@ export const agendaBlock: Block = {
   estimatedMinutes: 1,
   title: { ja: "ながれ", en: "Agenda" },
   spokenIntro: {
-    ja: "きょうは まず じこしょうかい、それから けんこうの たんごを べんきょうします。そのあと めいれいけいを みて、ふたつの かいわを れんしゅうし、さいごに よみかたの れんしゅうを します。",
+    ja: "きょうは まず じこしょうかい、それから けんこうの たんごを べんきょうします。そのあと めいれいけいを みて、ふたつの かいわを れんしゅうし、さいごに はつおんの れんしゅうを します。",
     en: "Today we'll start with a short introduction, then learn health vocabulary. After that we'll look at the imperative/request form, practice two dialogues, and finish with reading practice.",
   },
   content: {
@@ -58,7 +58,7 @@ export const agendaBlock: Block = {
       { id: "a3", translations: { ja: "ぶんぽう：めいれいけい", en: "Grammar: Imperatives / Requests" } },
       { id: "a4", translations: { ja: "かいわ：びょういんで", en: "Dialogue A: At the Doctor" } },
       { id: "a5", translations: { ja: "かいわ：おうきゅうしょち", en: "Dialogue B: First Aid" } },
-      { id: "a6", translations: { ja: "よみかたの れんしゅう", en: "Reading Practice" } },
+      { id: "a6", translations: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice" } },
     ],
   },
 };
@@ -215,27 +215,39 @@ export const dialogueFirstAidBlock: Block = {
   },
 };
 
-export const readingPracticeBlock: Block = {
-  id: "ja10-reading-practice",
+export const pronunciationBlock: Block = {
+  id: "ja10-pronunciation",
   type: "vocabDrill",
   displayMode: "content",
   estimatedMinutes: 4,
-  title: { ja: "よみかたの れんしゅう", en: "Reading Practice: Long vs Short Vowels" },
+  title: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice" },
   spokenIntro: {
-    ja: "ながい おとと みじかい おとの ちがいを れんしゅうしましょう。けんこうの たんごには、この ちがいが おおいです。",
-    en: "Let's practice the difference between long and short vowel sounds — health vocabulary has a lot of these.",
+    ja: "ながい おとと みじかい おと、それから ちいさい「っ」を れんしゅうしましょう。",
+    en: "Let's practice long vs short vowels, reinforced from last time, plus a new one: the small っ.",
   },
   content: {
     groupLabels: {
-      pair: { ja: "ながい・みじかい ぼいん", en: "Long vs short vowel" },
+      longvowel: { ja: "ながい・みじかい ぼいん（ふくしゅう）", en: "Long vs short vowels (reinforced)" },
+      sokuon: { ja: "ちいさい「っ」", en: "Small っ (doubled consonant)" },
     },
     items: [
-      { id: "r1", category: "pair", translations: { ja: "びょういん / びよういん", en: "hospital / beauty salon (long おう vs お+う)" } },
-      { id: "r2", category: "pair", translations: { ja: "おばさん / おばあさん", en: "aunt / grandmother (short あ vs long ああ)" } },
-      { id: "r3", category: "pair", translations: { ja: "ゆき / ゆうき", en: "snow / courage (short う vs long うう)" } },
-      { id: "r4", category: "pair", translations: { ja: "え / ええ", en: "picture / yes (casual) (short え vs long ええ)" } },
-      { id: "r5", category: "pair", translations: { ja: "とる / とおる", en: "to take / to pass through (short お vs long とお)" } },
-      { id: "r6", category: "pair", translations: { ja: "せき / せいき", en: "cough / century (short い vs long せい)" } },
+      // Long vs short vowels — reinforced from Lesson 2, new health-themed pairs.
+      { id: "l1", category: "longvowel", translations: { ja: "びょういん", en: "hospital (long おう)" } },
+      { id: "l2", category: "longvowel", translations: { ja: "びよういん", en: "beauty salon (お + separate う)" } },
+      { id: "l3", category: "longvowel", translations: { ja: "とる", en: "to take (short お)" } },
+      { id: "l4", category: "longvowel", translations: { ja: "とおる", en: "to pass through (long とお)" } },
+      { id: "l5", category: "longvowel", translations: { ja: "せき", en: "cough (short い)" } },
+      { id: "l6", category: "longvowel", translations: { ja: "せいき", en: "century (long せい)" } },
+      // Small っ — a beat of silence before the next consonant; genuinely
+      // changes the word, not a subtle nuance. Well-known textbook pairs.
+      { id: "s1", category: "sokuon", translations: { ja: "きて", en: "come (te-form, no っ)" } },
+      { id: "s2", category: "sokuon", translations: { ja: "きって", en: "stamp (with っ)" } },
+      { id: "s3", category: "sokuon", translations: { ja: "かた", en: "shoulder / way of doing (no っ)" } },
+      { id: "s4", category: "sokuon", translations: { ja: "かった", en: "bought, past tense (with っ)" } },
+      { id: "s5", category: "sokuon", translations: { ja: "おと", en: "sound (no っ)" } },
+      { id: "s6", category: "sokuon", translations: { ja: "おっと", en: "husband (with っ)" } },
+      { id: "s7", category: "sokuon", translations: { ja: "また", en: "again (no っ)" } },
+      { id: "s8", category: "sokuon", translations: { ja: "まった", en: "waited, past tense (with っ)" } },
     ],
   },
 };
@@ -253,7 +265,7 @@ export const lessonJapanese10: LessonPlan = {
     grammarImperativeBlock,
     dialogueDoctorBlock,
     dialogueFirstAidBlock,
-    readingPracticeBlock,
+    pronunciationBlock,
     // No song block — Lesson 10 is an "open slot" in a1-master-lesson-table-v02.md
   ],
 };

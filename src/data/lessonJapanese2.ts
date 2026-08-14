@@ -47,7 +47,7 @@ export const agendaBlock: Block = {
   estimatedMinutes: 1,
   title: { ja: "ながれ", en: "Agenda" },
   spokenIntro: {
-    ja: "きょうは まず じこしょうかい、それから たんごを べんきょうします。そのあと ぶんぽうを みっつ みて、かいわの れんしゅうと よみかたの れんしゅうを して、さいごに うたを うたいます。",
+    ja: "きょうは まず じこしょうかい、それから たんごを べんきょうします。そのあと ぶんぽうを みっつ みて、かいわの れんしゅうと はつおんの れんしゅうを して、さいごに うたを うたいます。",
     en: "Today we'll start with a short introduction, then build up some vocabulary. After that we'll look at three grammar points, practice a dialogue and some reading, and finish with a song.",
   },
   content: {
@@ -58,7 +58,7 @@ export const agendaBlock: Block = {
       { id: "a4", translations: { ja: "ぶんぽう：ます形", en: "Grammar: Polite Verb Form" } },
       { id: "a5", translations: { ja: "ぶんぽう：ごじゅん", en: "Grammar: Word Order" } },
       { id: "a6", translations: { ja: "かいわ：いちばで", en: "Dialogue: At the Market" } },
-      { id: "a7", translations: { ja: "よみかたの れんしゅう", en: "Reading Practice" } },
+      { id: "a7", translations: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice" } },
       { id: "a8", translations: { ja: "うた", en: "Song" } },
     ],
   },
@@ -245,29 +245,41 @@ export const dialogueMarketBlock: Block = {
   },
 };
 
-export const readingPracticeBlock: Block = {
-  id: "ja2-reading-practice",
+export const pronunciationBlock: Block = {
+  id: "ja2-pronunciation",
   type: "vocabDrill",
   displayMode: "content",
   estimatedMinutes: 4,
-  title: { ja: "よみかたの れんしゅう", en: "Reading Practice: Homophones" },
+  title: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice" },
   spokenIntro: {
-    ja: "おなじ よみかたで いみが ちがう ことばを れんしゅうしましょう。",
-    en: "Let's practice words that sound the same but mean different things.",
+    ja: "にほんごの むずかしい おとを れんしゅうしましょう。",
+    en: "Let's practice two tricky things about Japanese pronunciation.",
   },
   content: {
     groupLabels: {
-      pair: { ja: "おなじ よみかた・ちがう いみ", en: "Same reading, different meaning" },
+      pitch: { ja: "アクセント（たかさ）", en: "Pitch accent (same spelling, different meaning)" },
+      longvowel: { ja: "ながい・みじかい ぼいん", en: "Long vs short vowels" },
     },
     items: [
-      { id: "h1", category: "pair", translations: { ja: "はし", en: "chopsticks / bridge (different pitch accent)" } },
-      { id: "h2", category: "pair", translations: { ja: "あめ", en: "rain / candy (different pitch accent)" } },
-      { id: "h3", category: "pair", translations: { ja: "かみ", en: "paper / hair (different pitch accent)" } },
-      { id: "h4", category: "pair", translations: { ja: "くも", en: "cloud / spider (different pitch accent)" } },
-      { id: "h5", category: "pair", translations: { ja: "かき", en: "persimmon / oyster (different pitch accent)" } },
-      { id: "h6", category: "pair", translations: { ja: "はな", en: "flower / nose (different pitch accent)" } },
-      { id: "h7", category: "pair", translations: { ja: "きる", en: "to wear / to cut (different pitch accent)" } },
-      { id: "h8", category: "pair", translations: { ja: "とる", en: "to take (a photo) / to take (a class) — same word, context distinguishes" } },
+      // Pitch accent — genuinely well-known minimal pairs, not invented.
+      { id: "p1", category: "pitch", translations: { ja: "はし", en: "chopsticks (HL) / bridge (LH)" } },
+      { id: "p2", category: "pitch", translations: { ja: "あめ", en: "rain (HL) / candy (LH)" } },
+      { id: "p3", category: "pitch", translations: { ja: "かみ", en: "paper (HL) / hair (LH)" } },
+      { id: "p4", category: "pitch", translations: { ja: "くも", en: "cloud (HL) / spider (LH)" } },
+      { id: "p5", category: "pitch", translations: { ja: "かき", en: "persimmon (HL) / oyster (LH)" } },
+      { id: "p6", category: "pitch", translations: { ja: "はな", en: "flower (LH) / nose (HL)" } },
+      { id: "p7", category: "pitch", translations: { ja: "きる", en: "to wear (HL) / to cut (LH)" } },
+      { id: "p8", category: "pitch", translations: { ja: "かえる", en: "frog (LH) / to return (HL)" } },
+      // Long vs short vowels — separate from pitch, a different real
+      // challenge: doubling a vowel changes the word entirely.
+      { id: "l1", category: "longvowel", translations: { ja: "おばさん", en: "aunt (short あ)" } },
+      { id: "l2", category: "longvowel", translations: { ja: "おばあさん", en: "grandmother (long ああ)" } },
+      { id: "l3", category: "longvowel", translations: { ja: "おじさん", en: "uncle (short じ)" } },
+      { id: "l4", category: "longvowel", translations: { ja: "おじいさん", en: "grandfather (long いい)" } },
+      { id: "l5", category: "longvowel", translations: { ja: "ゆき", en: "snow (short う)" } },
+      { id: "l6", category: "longvowel", translations: { ja: "ゆうき", en: "courage (long うう)" } },
+      { id: "l7", category: "longvowel", translations: { ja: "え", en: "picture (short え)" } },
+      { id: "l8", category: "longvowel", translations: { ja: "ええ", en: "yes, casual (long ええ)" } },
     ],
   },
 };
@@ -307,7 +319,7 @@ export const lessonJapanese2: LessonPlan = {
     grammarMasuBlock,
     grammarWordOrderBlock,
     dialogueMarketBlock,
-    readingPracticeBlock,
+    pronunciationBlock,
     songBlock, // song always closes the lesson
   ],
 };
