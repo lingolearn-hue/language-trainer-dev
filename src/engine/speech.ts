@@ -74,6 +74,40 @@ export function subscribeSpeaking(listener: Listener): () => void {
   return () => listeners.delete(listener);
 }
 
+// A run of "..." (or the single-char "…") in lesson text is meant as a
+// spoken PAUSE, not literal dots — German TTS in particular reads "..."
+// aloud as "Punkt Punkt Punkt", which is wrong. speak() below strips
+// ellipses out and replaces them with a silent wait between segments
+// instead, transparently for every caller (spokenIntro, vocab words,
+// grammar chunks, readalong lines, selfIntro content) — no call site
+// needs to know about this.
+const ELLIPSIS_PAUSE_MS = 600;
+
+function splitOnEllipsis(text: string): string[] {
+  return text
+    .split(/\.{3,}|…/g)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+}
+
+async function speakSegment(
+  text: string,
+  lang: LangCode,
+  preference?: VoicePreference
+): Promise<void> {
+  const voice = await resolveVoice(lang, preference);
+  return new Promise((resolve) => {
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = bcp47[lang];
+    if (voice) utter.voice = voice;
+    if (preference?.pitch !== undefined) utter.pitch = preference.pitch;
+    if (preference?.rate !== undefined) utter.rate = preference.rate;
+    utter.onend = () => resolve();
+    utter.onerror = () => resolve();
+    window.speechSynthesis.speak(utter);
+  });
+}
+
 export async function speak(
   text: string,
   lang: LangCode,
@@ -81,25 +115,15 @@ export async function speak(
 ): Promise<void> {
   if (!("speechSynthesis" in window)) return;
 
-  const voice = await resolveVoice(lang, preference);
+  const segments = splitOnEllipsis(text);
+  if (segments.length === 0) return;
 
-  return new Promise((resolve) => {
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = bcp47[lang];
-    if (voice) utter.voice = voice;
-    if (preference?.pitch !== undefined) utter.pitch = preference.pitch;
-    if (preference?.rate !== undefined) utter.rate = preference.rate;
-    setSpeaking(true);
-    utter.onend = () => {
-      setSpeaking(false);
-      resolve();
-    };
-    utter.onerror = () => {
-      setSpeaking(false);
-      resolve();
-    };
-    window.speechSynthesis.speak(utter);
-  });
+  setSpeaking(true);
+  for (let i = 0; i < segments.length; i++) {
+    await speakSegment(segments[i], lang, preference);
+    if (i < segments.length - 1) await wait(ELLIPSIS_PAUSE_MS);
+  }
+  setSpeaking(false);
 }
 
 export function cancelSpeech() {

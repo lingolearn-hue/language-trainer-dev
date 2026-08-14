@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useSession } from "../context/SessionContext";
 import { VocabDrillBlock } from "./VocabDrillBlock";
 import { ReadalongBlock } from "./ReadalongBlock";
@@ -42,7 +42,19 @@ export function Session({
   // every block change. Declared above the early returns below so hook
   // order stays stable regardless of session status.
   const [autoPlayReady, setAutoPlayReady] = useState(false);
-  useEffect(() => {
+  // useLayoutEffect (not useEffect) is required here, not stylistic: a
+  // real race existed against TeacherCaption's own effect. When a block
+  // has no spokenIntro, TeacherCaption's effect calls onFinished()
+  // *synchronously* (setAutoPlayReady(true)) — and since passive effects
+  // run child-before-parent within the same commit, this reset effect
+  // (parent) would then fire right after and clobber it back to false,
+  // permanently starving autoplay for that block (most visible on the
+  // very first slide, which typically has no spokenIntro). Layout
+  // effects run before ANY passive effect across the whole tree, so
+  // this reset is now guaranteed to happen first, and a child's later
+  // (synchronous-in-its-own-effect or async-via-speech) true always
+  // wins instead of losing the race.
+  useLayoutEffect(() => {
     setAutoPlayReady(false);
   }, [block?.id]);
 
