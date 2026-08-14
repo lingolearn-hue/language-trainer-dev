@@ -421,6 +421,10 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .trainer-name { font-size: 17px; font-weight: 600; margin-bottom: 4px; }
 .trainer-languages { font-size: 13px; opacity: 0.7; margin-bottom: 6px; }
 .trainer-style { font-size: 12px; opacity: 0.5; }
+.lesson-summary {
+  margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e2e8;
+  font-size: 11px; opacity: 0.7; text-align: left; line-height: 1.5;
+}
 
 /* In-lesson avatars: trainer (top) + user placeholder (below). Default
    (landscape): normal flex child inside .session-layout, sitting beside
