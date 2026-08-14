@@ -6,12 +6,13 @@ import { LessonSelect } from "./components/LessonSelect";
 import { lesson2 } from "./data/lesson2";
 import { lessonEnglishSpace } from "./data/lessonEnglishSpace";
 import { lessonJapanese2 } from "./data/lessonJapanese2";
+import { lessonJapanese10 } from "./data/lessonJapanese10";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan } from "./types";
 import "./App.css";
 
 const display = { density: "dense" as const };
-const allLessons: LessonPlan[] = [lesson2, lessonEnglishSpace, lessonJapanese2]; // grows as more lessons are built
+const allLessons: LessonPlan[] = [lesson2, lessonEnglishSpace, lessonJapanese2, lessonJapanese10]; // grows as more lessons are built
 
 function App() {
   const [trainer, setTrainer] = useState<Trainer | null>(null);

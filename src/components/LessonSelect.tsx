@@ -2,6 +2,7 @@ import type { LessonPlan, LangCode } from "../types";
 import type { Trainer } from "../data/trainers";
 import { LanguageSamples } from "./LanguageSamples";
 import { summarizeLesson } from "../data/lessonSummary";
+import { primeSpeechSynthesis } from "../engine/speech";
 
 // Course/lesson picker, shown after trainer selection. Only lessons whose
 // courseId is in the trainer's courseIds are offered — currently there's
@@ -39,7 +40,14 @@ export function LessonSelect({
           {available.map((lesson) => {
             const summary = summarizeLesson(lesson, displayLang);
             return (
-              <button key={lesson.id} className="trainer-card" onClick={() => onSelect(lesson)}>
+              <button
+                key={lesson.id}
+                className="trainer-card"
+                onClick={() => {
+                  primeSpeechSynthesis(); // see engine/speech.ts — unlocks TTS before Session's autoplay narration fires
+                  onSelect(lesson);
+                }}
+              >
                 <div className="trainer-name">{lesson.title[displayLang]}</div>
                 <div className="trainer-style">{lesson.blocks.length} slides</div>
                 <div className="lesson-summary">

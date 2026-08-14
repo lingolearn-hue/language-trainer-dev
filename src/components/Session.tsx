@@ -10,7 +10,7 @@ import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
 import { RateControls } from "./RateControls";
 import { TeacherCaption } from "./TeacherCaption";
-import { cancelSpeech } from "../engine/speech";
+import { cancelSpeech, setCurrentTargetLang } from "../engine/speech";
 import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
 import { SlideControlsContext } from "../context/SlideControlsContext";
 import { useIsLandscape } from "../hooks/useIsLandscape";
@@ -26,6 +26,13 @@ export function Session({
   const { state, dispatch } = useSession();
   const { lesson, blockIndex, status, lang, display, style, mode } = state;
   const block = lesson.blocks[blockIndex];
+
+  // Tells engine/speech.ts which language is the "target" (learning)
+  // language so it can apply the slower target-rate to it and the
+  // faster source-rate to everything else — see setCurrentTargetLang.
+  useEffect(() => {
+    setCurrentTargetLang(lang.targetLang);
+  }, [lang.targetLang]);
 
   // Slide footer controls (phase buttons, "Continue", etc.) portal into
   // this element instead of rendering inline under the slide — but only

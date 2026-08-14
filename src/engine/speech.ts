@@ -90,34 +90,52 @@ function splitOnEllipsis(text: string): string[] {
     .filter((s) => s.length > 0);
 }
 
-// Global rate multiplier — applies on top of each trainer's own base
-// rate (voiceProfile.rate), so "faster"/"slower" affects every voice
-// uniformly without touching per-trainer data. Default is slightly below
-// 1 (all voices read a little slower by default); user-adjustable via
-// the rate controls in the session's right-hand rail.
-const RATE_MIN = 0.6;
-const RATE_MAX = 1.3;
+// Per-language-role rate — the language being LEARNED (target) reads
+// slower, the student's OWN language (source, used for framing/spoken
+// translations) reads faster. `currentTargetLang` is set by Session
+// whenever LanguageSettings changes; any `speak()` call for that exact
+// language uses the target (slower) rate, everything else uses the
+// source (faster) rate. The existing faster/slower controls adjust a
+// single shared offset applied to both, preserving the gap between them.
+const RATE_MIN = 0.5;
+const RATE_MAX = 1.6;
 const RATE_STEP = 0.1;
-let rateMultiplier = 0.85;
-type RateListener = (rate: number) => void;
+const BASE_TARGET_RATE = 0.85; // learning language — slower
+const BASE_SOURCE_RATE = 1.15; // student's own language — faster
+let rateOffset = 0;
+let currentTargetLang: LangCode | null = null;
+
+export function setCurrentTargetLang(lang: LangCode) {
+  currentTargetLang = lang;
+}
+
+type RateListener = (rates: { target: number; source: number }) => void;
 const rateListeners = new Set<RateListener>();
 
-export function getRateMultiplier(): number {
-  return rateMultiplier;
+function clampRate(v: number): number {
+  return Math.min(RATE_MAX, Math.max(RATE_MIN, v));
 }
 
-export function setRateMultiplier(value: number) {
-  rateMultiplier = Math.min(RATE_MAX, Math.max(RATE_MIN, value));
-  rateListeners.forEach((l) => l(rateMultiplier));
+function currentRates() {
+  return {
+    target: clampRate(BASE_TARGET_RATE + rateOffset),
+    source: clampRate(BASE_SOURCE_RATE + rateOffset),
+  };
 }
 
-export function adjustRateMultiplier(delta: number) {
-  setRateMultiplier(rateMultiplier + delta);
+export function getRates() {
+  return currentRates();
+}
+
+export function adjustRateOffset(delta: number) {
+  rateOffset = clampRate(BASE_TARGET_RATE + rateOffset + delta) - BASE_TARGET_RATE;
+  const rates = currentRates();
+  rateListeners.forEach((l) => l(rates));
 }
 
 export function subscribeRate(listener: RateListener): () => void {
   rateListeners.add(listener);
-  listener(rateMultiplier);
+  listener(currentRates());
   return () => rateListeners.delete(listener);
 }
 
@@ -134,7 +152,8 @@ async function speakSegment(
     utter.lang = bcp47[lang];
     if (voice) utter.voice = voice;
     if (preference?.pitch !== undefined) utter.pitch = preference.pitch;
-    utter.rate = (preference?.rate ?? 1) * rateMultiplier;
+    const roleMultiplier = lang === currentTargetLang ? currentRates().target : currentRates().source;
+    utter.rate = (preference?.rate ?? 1) * roleMultiplier;
     utter.onend = () => resolve();
     utter.onerror = () => resolve();
     window.speechSynthesis.speak(utter);
@@ -164,6 +183,25 @@ export function cancelSpeech() {
     window.speechSynthesis.cancel();
   }
   setSpeaking(false);
+}
+
+// Real bug fix: on some browsers (notably Safari/iOS, and Chrome to a
+// lesser extent), speechSynthesis.speak() silently produces no audio the
+// very first time it's called unless it happens inside/soon-after a
+// direct user gesture (click/tap). The session's first narration call
+// happens automatically on mount (autoplay), which is NOT itself a
+// gesture — so it gets silently dropped, and only the next speak() call
+// (triggered indirectly by a later click, e.g. "next slide") succeeds,
+// because the engine is now "unlocked". Calling this from within an
+// actual click handler (trainer select / lesson select — the last real
+// clicks before the session mounts) unlocks the API ahead of time, so
+// the session's very first autoplay narration works on the first try.
+export function primeSpeechSynthesis() {
+  if (!("speechSynthesis" in window)) return;
+  const utter = new SpeechSynthesisUtterance(" ");
+  utter.volume = 0;
+  window.speechSynthesis.speak(utter);
+  window.speechSynthesis.cancel();
 }
 
 export function wait(ms: number): Promise<void> {
