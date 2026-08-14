@@ -5,11 +5,14 @@ import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
 
 // Per spec (03-lessons.md pacing rules): grammar = explain -> drill -> quiz,
-// no 3-phase read-along. Single on-demand read per chunk instead.
+// no 3-phase read-along — examples don't need to be learned like vocab
+// words, so this is "shadow" only (single read together, no long
+// echo-pause, no silent solo pass).
 //
 // Standard view is DENSE: everything shows at once, beamer-style, matching
 // the source slide design. "Progressive reveal" is available as an explicit
 // opt-in toggle for step-by-step teaching, not the default.
+const PHASE_LABEL = "2. Shadow — read along together";
 export function GrammarBlock({
   block,
   lang,
@@ -97,6 +100,7 @@ export function GrammarBlock({
       title={block.title?.[lang.targetLang] ?? block.title?.en}
       footer={
         <>
+          <span className="phase-label">{PHASE_LABEL}</span>
           <button onClick={toggleStepMode}>
             {stepMode ? "Show all" : "Step through"}
           </button>

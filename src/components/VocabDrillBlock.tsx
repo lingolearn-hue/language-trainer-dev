@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import type { Block, VocabDrillContent, VocabItem, LanguageSettings } from "../types";
+import { useEffect, useState } from "react";
+import type { Block, VocabDrillContent, VocabItem, LanguageSettings, ReadalongPhase } from "../types";
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
@@ -11,6 +11,18 @@ const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: strin
   other: { de: "Weitere", en: "Other", zh: "其他", ja: "その他" },
 };
 
+const PHASES: ReadalongPhase[] = ["echo", "shadow", "silent"];
+
+const PHASE_LABEL: Record<ReadalongPhase, string> = {
+  echo: "1. Echo — repeat after the trainer",
+  shadow: "2. Shadow — read along together",
+  silent: "3. Silent — read alone",
+};
+
+// Vocab now gets the same 3-phase treatment as readalong (dialogue/song):
+// echo (word + long pause to repeat), shadow (word, no pause, read
+// together), silent (no trainer voice, timed pace to read alone). Same
+// mechanic as ReadalongBlock, just iterating vocab items instead of lines.
 export function VocabDrillBlock({
   block,
   lang,
@@ -25,49 +37,59 @@ export function VocabDrillBlock({
   onComplete: () => void;
 }) {
   const content = block.content as VocabDrillContent;
-  const [playing, setPlaying] = useState(false);
+  const [phaseIdx, setPhaseIdx] = useState(0);
+  const [running, setRunning] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
-  const cancelledRef = useRef(false); // interrupts a manual echo pass on a real block change
 
-  async function playEchoPass(shouldCancel: () => boolean = () => cancelledRef.current) {
-    setPlaying(true);
+  const phase = PHASES[phaseIdx];
+
+  async function runPhaseFor(p: ReadalongPhase, shouldCancel: () => boolean) {
+    setRunning(true);
     for (const item of content.items) {
       if (shouldCancel()) break;
       setActiveId(item.id);
       const word = item.translations[lang.targetLang];
-      if (word) {
+      if (!word) continue;
+
+      if (p === "echo") {
         await speak(word, lang.targetLang, trainer.voiceProfile);
+        if (shouldCancel()) break;
         await wait(1200); // pause for student to repeat
+      } else if (p === "shadow") {
+        await speak(word, lang.targetLang, trainer.voiceProfile); // no pause, read together
+      } else {
+        // silent: no trainer voice, just a timed pace for student to read alone
+        await wait(1000);
       }
     }
     setActiveId(null);
-    setPlaying(false);
+    setRunning(false);
   }
 
   useEffect(() => {
-    cancelledRef.current = false;
-    return () => {
-      cancelledRef.current = true;
-    };
+    setPhaseIdx(0);
   }, [block.id]);
 
-  // Slide flows automatically once the spoken intro caption is done: read
-  // every word aloud (same pass as the manual button), then auto-advance.
+  // Flows automatically once the spoken intro caption is done: run echo,
+  // then shadow, then silent, back to back, then auto-advance to the next
+  // block — same pattern as ReadalongBlock's autoplay effect.
   //
   // No `played`-once ref guard here (deliberately) — see AgendaBlock.tsx
   // for why that pattern is buggy: a block can briefly mount with a stale
-  // `autoPlay=true` left over from the previous block. This effect also
-  // can't just reuse the shared `cancelledRef` for its own cancellation
-  // (that ref only flips on a real block change, not on autoPlay toggling
-  // within the same block) — reusing it would let a stale premature run
-  // read the whole vocab list aloud, overlapping the trainer's caption
-  // speech. A local `cancelled` flag, scoped to this exact effect
-  // invocation via [autoPlay, block.id], handles both cases correctly.
+  // `autoPlay=true` left over from the previous block. A local `cancelled`
+  // flag, scoped to this exact effect invocation via [autoPlay, block.id],
+  // handles both the stale-run and real-run cases correctly.
   useEffect(() => {
     if (!autoPlay) return;
     let cancelled = false;
     (async () => {
-      await playEchoPass(() => cancelled);
+      for (let i = 0; i < PHASES.length; i++) {
+        if (cancelled) return;
+        setPhaseIdx(i);
+        await runPhaseFor(PHASES[i], () => cancelled);
+        if (cancelled) return;
+        await wait(400);
+      }
       if (!cancelled) onComplete();
     })();
     return () => {
@@ -75,6 +97,14 @@ export function VocabDrillBlock({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoPlay, block.id]);
+
+  function nextPhase() {
+    if (phaseIdx < PHASES.length - 1) {
+      setPhaseIdx(phaseIdx + 1);
+    } else {
+      onComplete();
+    }
+  }
 
   // Group into columns by category — matches the source course's own
   // grouped vocab-slide layout, and lets 30-50+ items fit legibly on one
@@ -101,11 +131,14 @@ export function VocabDrillBlock({
       title={block.title?.[lang.targetLang] ?? block.title?.en}
       footer={
         <>
-          <button disabled={playing} onClick={() => playEchoPass()}>
-            {playing ? "Playing…" : "▶ Read along (echo)"}
+          <span className="phase-label">{PHASE_LABEL[phase]}</span>
+          <button disabled={running} onClick={() => runPhaseFor(phase, () => false)}>
+            {running ? "Playing…" : `▶ Play phase: ${phase}`}
           </button>
           <span className="vocab-count">{content.items.length} words</span>
-          <button onClick={onComplete}>Continue →</button>
+          <button disabled={running} onClick={nextPhase}>
+            {phaseIdx < PHASES.length - 1 ? "Next phase →" : "Continue →"}
+          </button>
         </>
       }
     >
