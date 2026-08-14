@@ -227,27 +227,32 @@ export const pronunciationBlock: Block = {
   },
   content: {
     groupLabels: {
-      longvowel: { ja: "ながい・みじかい ぼいん（ふくしゅう）", en: "Long vs short vowels (reinforced)" },
-      sokuon: { ja: "ちいさい「っ」", en: "Small っ (doubled consonant)" },
+      short: { ja: "みじかい (短)", en: "Short" },
+      long: { ja: "ながい (長)", en: "Long" },
+      plain: { ja: "「っ」なし", en: "Without っ" },
+      sokuon: { ja: "「っ」あり", en: "With っ" },
     },
     items: [
-      // Long vs short vowels — reinforced from Lesson 2, new health-themed pairs.
-      { id: "l1", category: "longvowel", translations: { ja: "びょういん", en: "hospital (long おう)" } },
-      { id: "l2", category: "longvowel", translations: { ja: "びよういん", en: "beauty salon (お + separate う)" } },
-      { id: "l3", category: "longvowel", translations: { ja: "とる", en: "to take (short お)" } },
-      { id: "l4", category: "longvowel", translations: { ja: "とおる", en: "to pass through (long とお)" } },
-      { id: "l5", category: "longvowel", translations: { ja: "せき", en: "cough (short い)" } },
-      { id: "l6", category: "longvowel", translations: { ja: "せいき", en: "century (long せい)" } },
-      // Small っ — a beat of silence before the next consonant; genuinely
-      // changes the word, not a subtle nuance. Well-known textbook pairs.
-      { id: "s1", category: "sokuon", translations: { ja: "きて", en: "come (te-form, no っ)" } },
-      { id: "s2", category: "sokuon", translations: { ja: "きって", en: "stamp (with っ)" } },
-      { id: "s3", category: "sokuon", translations: { ja: "かた", en: "shoulder / way of doing (no っ)" } },
-      { id: "s4", category: "sokuon", translations: { ja: "かった", en: "bought, past tense (with っ)" } },
-      { id: "s5", category: "sokuon", translations: { ja: "おと", en: "sound (no っ)" } },
-      { id: "s6", category: "sokuon", translations: { ja: "おっと", en: "husband (with っ)" } },
-      { id: "s7", category: "sokuon", translations: { ja: "また", en: "again (no っ)" } },
-      { id: "s8", category: "sokuon", translations: { ja: "まった", en: "waited, past tense (with っ)" } },
+      // Long vs short vowels — reinforced from Lesson 2, health-themed
+      // pairs, laid out as two side-by-side matched tables (see
+      // Deutsch_3.pdf's kurz/lang pronunciation slide for the reference
+      // layout this follows).
+      { id: "s1", category: "short", translations: { ja: "とる", en: "to take" } },
+      { id: "s2", category: "short", translations: { ja: "せき", en: "cough" } },
+      { id: "s3", category: "short", translations: { ja: "びよういん", en: "beauty salon" } },
+      { id: "n1", category: "long", translations: { ja: "とおる", en: "to pass through" } },
+      { id: "n2", category: "long", translations: { ja: "せいき", en: "century" } },
+      { id: "n3", category: "long", translations: { ja: "びょういん", en: "hospital" } },
+      // Small っ — same paired-table layout, without/with the doubled
+      // consonant. Well-known textbook minimal pairs, not invented.
+      { id: "p1", category: "plain", translations: { ja: "きて", en: "come (te-form)" } },
+      { id: "p2", category: "plain", translations: { ja: "かた", en: "shoulder / way of doing" } },
+      { id: "p3", category: "plain", translations: { ja: "おと", en: "sound" } },
+      { id: "p4", category: "plain", translations: { ja: "また", en: "again" } },
+      { id: "q1", category: "sokuon", translations: { ja: "きって", en: "stamp" } },
+      { id: "q2", category: "sokuon", translations: { ja: "かった", en: "bought" } },
+      { id: "q3", category: "sokuon", translations: { ja: "おっと", en: "husband" } },
+      { id: "q4", category: "sokuon", translations: { ja: "まった", en: "waited" } },
     ],
   },
 };

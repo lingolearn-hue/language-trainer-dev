@@ -258,7 +258,8 @@ export const pronunciationBlock: Block = {
   content: {
     groupLabels: {
       pitch: { ja: "アクセント（たかさ）", en: "Pitch accent (same spelling, different meaning)" },
-      longvowel: { ja: "ながい・みじかい ぼいん", en: "Long vs short vowels" },
+      short: { ja: "みじかい (短)", en: "Short" },
+      long: { ja: "ながい (長)", en: "Long" },
     },
     items: [
       // Pitch accent — genuinely well-known minimal pairs, not invented.
@@ -270,16 +271,18 @@ export const pronunciationBlock: Block = {
       { id: "p6", category: "pitch", translations: { ja: "はな", en: "flower (LH) / nose (HL)" } },
       { id: "p7", category: "pitch", translations: { ja: "きる", en: "to wear (HL) / to cut (LH)" } },
       { id: "p8", category: "pitch", translations: { ja: "かえる", en: "frog (LH) / to return (HL)" } },
-      // Long vs short vowels — separate from pitch, a different real
-      // challenge: doubling a vowel changes the word entirely.
-      { id: "l1", category: "longvowel", translations: { ja: "おばさん", en: "aunt (short あ)" } },
-      { id: "l2", category: "longvowel", translations: { ja: "おばあさん", en: "grandmother (long ああ)" } },
-      { id: "l3", category: "longvowel", translations: { ja: "おじさん", en: "uncle (short じ)" } },
-      { id: "l4", category: "longvowel", translations: { ja: "おじいさん", en: "grandfather (long いい)" } },
-      { id: "l5", category: "longvowel", translations: { ja: "ゆき", en: "snow (short う)" } },
-      { id: "l6", category: "longvowel", translations: { ja: "ゆうき", en: "courage (long うう)" } },
-      { id: "l7", category: "longvowel", translations: { ja: "え", en: "picture (short え)" } },
-      { id: "l8", category: "longvowel", translations: { ja: "ええ", en: "yes, casual (long ええ)" } },
+      // Long vs short vowels — two side-by-side tables, matching
+      // pairs on each row (same layout as Deutsch_3.pdf's kurz/lang
+      // pronunciation slide: source+target per row, short/long paired
+      // across the two tables).
+      { id: "s1", category: "short", translations: { ja: "おばさん", en: "aunt" } },
+      { id: "s2", category: "short", translations: { ja: "おじさん", en: "uncle" } },
+      { id: "s3", category: "short", translations: { ja: "ゆき", en: "snow" } },
+      { id: "s4", category: "short", translations: { ja: "え", en: "picture" } },
+      { id: "n1", category: "long", translations: { ja: "おばあさん", en: "grandmother" } },
+      { id: "n2", category: "long", translations: { ja: "おじいさん", en: "grandfather" } },
+      { id: "n3", category: "long", translations: { ja: "ゆうき", en: "courage" } },
+      { id: "n4", category: "long", translations: { ja: "ええ", en: "yes (casual)" } },
     ],
   },
 };

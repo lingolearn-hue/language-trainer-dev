@@ -54,12 +54,14 @@ export function VocabDrillBlock({
       if (p === "echo") {
         await speak(word, lang.targetLang, trainer.voiceProfile);
         if (shouldCancel()) break;
-        await wait(1200); // pause for student to repeat
+        await wait(2200); // pause for student to repeat — was 1200ms, too tight to actually repeat a word before the next one started
       } else if (p === "shadow") {
-        await speak(word, lang.targetLang, trainer.voiceProfile); // no pause, read together
+        await speak(word, lang.targetLang, trainer.voiceProfile);
+        if (shouldCancel()) break;
+        await wait(600); // small gap so list items don't blur together — was 0 (back-to-back)
       } else {
         // silent: no trainer voice, just a timed pace for student to read alone
-        await wait(1000);
+        await wait(1500); // was 1000ms
       }
     }
     setActiveId(null);
