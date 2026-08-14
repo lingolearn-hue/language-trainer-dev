@@ -9,7 +9,10 @@ set -euo pipefail
 #      in their current message. Finishing a feature, fixing a bug, or the
 #      user saying "looks good" is NOT a push request on its own.
 #   2. ALWAYS ask the user for the passphrase before running this script,
-#      even if they just asked you to push. Do not proceed without it.
+#      EVERY time, even if they gave it earlier in this same conversation
+#      and even if they just asked you to push. Do not reuse a
+#      previously-given passphrase from memory or context — ask fresh,
+#      every push, no exceptions.
 #        - Dev repo (language-trainer-dev)  passphrase: "Kindle"
 #        - Prod repo (language-trainer)      passphrase: "Forge"
 #   3. If the passphrase given does not match the target repo, stop and
