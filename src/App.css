@@ -29,6 +29,24 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   border-radius: 6px; cursor: pointer; font-size: 12px;
 }
 
+.chrome-toggle {
+  position: fixed; top: 6px; right: 6px; z-index: 45;
+  background: rgba(20,20,28,0.7); color: #fff; border: none;
+  width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 13px;
+}
+
+/* Declutter mode — hides header, avatar row, and any inline slide
+   footer, leaving just the slide. Slide.tsx keeps rendering its footer
+   regardless of this state (it has no idea chrome-hidden exists) — this
+   is purely a visual hide via CSS, no state is lost, so un-hiding
+   restores everything exactly as it was. */
+.session.chrome-hidden .session-header,
+.session.chrome-hidden .classroom-banner,
+.session.chrome-hidden .right-rail,
+.session.chrome-hidden .slide-footer {
+  display: none !important;
+}
+
 /* ---------------------------------------------------------------------
    Slide frame — real Beamer-class style: fixed internal 960x600
    layout/typography (title/content/footer, fixed font sizes — same

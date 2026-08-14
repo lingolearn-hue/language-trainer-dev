@@ -42,6 +42,14 @@ export function Session({
   const [controlsRail, setControlsRail] = useState<HTMLDivElement | null>(null);
   const landscape = useIsLandscape();
 
+  // Declutter toggle — hides the header bar, avatar row, and slide
+  // footer controls, leaving just the slide itself. Mainly aimed at
+  // portrait (header + avatar row + inline footer all stack vertically
+  // above/below a slide that's already fairly compressed), but works
+  // the same way in landscape too, where it also lets the slide expand
+  // into the freed-up right-rail width.
+  const [chromeHidden, setChromeHidden] = useState(false);
+
   // The whole lesson plays automatically: spoken intro caption, then the
   // slide's own content narration, then auto-advance to the next block —
   // no manual "Continue"/"Play" clicks required for the default flow.
@@ -149,7 +157,15 @@ export function Session({
   }
 
   return (
-    <div className={`session mode-${block.displayMode}`}>
+    <div className={`session mode-${block.displayMode}${chromeHidden ? " chrome-hidden" : ""}`}>
+      <button
+        className="chrome-toggle"
+        onClick={() => setChromeHidden((h) => !h)}
+        title={chromeHidden ? "Show controls" : "Hide controls"}
+      >
+        {chromeHidden ? "👁" : "🙈"}
+      </button>
+
       <div className="session-header floating">
         <button className="back-link session-back" onClick={handleExit} title="Back to lesson selection">
           ← Lessons
