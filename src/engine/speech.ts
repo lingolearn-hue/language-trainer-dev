@@ -200,8 +200,14 @@ export function primeSpeechSynthesis() {
   if (!("speechSynthesis" in window)) return;
   const utter = new SpeechSynthesisUtterance(" ");
   utter.volume = 0;
+  // Real bug fix: DO NOT call cancel() right after speak() here. That
+  // combination is a known WebSpeech quirk (Chrome/Safari) — calling
+  // cancel() immediately after speak() can corrupt the internal speech
+  // queue, causing the NEXT real utterance spoken afterward to fire
+  // twice. This primer is silent and near-instant (a single space), so
+  // there's nothing to gain from cancelling it early — just let it
+  // finish naturally.
   window.speechSynthesis.speak(utter);
-  window.speechSynthesis.cancel();
 }
 
 export function wait(ms: number): Promise<void> {
