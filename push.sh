@@ -23,10 +23,10 @@ PASSPHRASE="$2"     # passphrase supplied by the user for this push
 
 if [ "$REPO" = "dev" ]; then
   EXPECTED="Kindle"
-  REMOTE="https://\${GH_TOKEN}@github.com/lingolearn-hue/language-trainer-dev.git"
+  REMOTE="https://${GH_TOKEN}@github.com/lingolearn-hue/language-trainer-dev.git"
 elif [ "$REPO" = "prod" ]; then
   EXPECTED="Forge"
-  REMOTE="https://\${GH_TOKEN}@github.com/lingolearn-hue/language-trainer.git"
+  REMOTE="https://${GH_TOKEN}@github.com/lingolearn-hue/language-trainer.git"
 else
   echo "Usage: push.sh <dev|prod> <passphrase>"
   exit 1
