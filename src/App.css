@@ -42,9 +42,17 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    --------------------------------------------------------------------- */
 .session-layout {
   display: flex; flex-direction: row; align-items: stretch; justify-content: center;
-  gap: 24px; width: 100%; height: calc(100vh - 128px); /* room for floating header + audit bar */
-  padding: 56px 16px 72px;
+  gap: 24px; width: 100%; height: 100vh;
+  padding: 0 16px;
   box-sizing: border-box;
+  /* Slide now goes edge-to-edge, top to bottom. The floating header and
+     audit bar (both position: fixed, see their own rules) render ON TOP
+     of the slide as overlays — same treatment the caption overlay
+     already gets — rather than reserving permanent dead space for them.
+     Previous version subtracted 128px via height AND another 128px via
+     padding (56+72, eaten into an already-shrunk border-box height) —
+     a real double-subtraction bug that shrank the slide far more than
+     intended. */
 }
 .slide-area {
   flex: 1; width: 100%; height: 100%; min-width: 0; min-height: 0;
@@ -122,6 +130,15 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .right-rail {
   display: flex; flex-direction: column; align-items: stretch;
   width: 200px; flex-shrink: 0; height: 100%;
+  /* Safety net: on a short landscape viewport (e.g. phone), avatars +
+     rate controls + a block's footer buttons stacked together can
+     exceed the available height. Without this, flex's default overflow
+     is *visible* — content silently spills past the rail's own box and
+     can visually overlap the slide or the audit bar below. Scrolling
+     internally guarantees the rail never bleeds outside its own column,
+     i.e. never overlaps the slide, regardless of how much content a
+     given block's footer has. */
+  overflow-y: auto; min-height: 0;
 }
 .controls-rail {
   flex: 1; display: flex; flex-direction: column; justify-content: flex-end;
@@ -460,18 +477,30 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    this becomes the most visible way to follow along. */
 .teacher-caption {
   /* Subtitle overlay on top of the slide itself (moved off the page-fixed
-     bottom bar) — anchored to .slide-area, not the viewport. */
-  position: absolute; left: 0; right: 0; bottom: 24px; z-index: 30;
-  display: flex; align-items: center; gap: 10px; justify-content: center;
-  max-width: 80%; margin: 0 auto; padding: 8px 16px;
-  background: rgba(20,20,28,0.88); color: #f4f4f8; border-radius: 10px;
-  font-size: 12px; pointer-events: none;
+     bottom bar) — anchored to .slide-area, not the viewport. Shows one
+     sentence at a time (see TeacherCaption.tsx), so it's kept genuinely
+     small — a real subtitle's worth of text, max ~2 thin lines, not a
+     paragraph block. */
+  position: absolute; left: 0; right: 0; bottom: 14px; z-index: 30;
+  display: flex; align-items: center; gap: 8px; justify-content: center;
+  max-width: 70%; margin: 0 auto; padding: 5px 12px;
+  background: rgba(20,20,28,0.82); color: #f4f4f8; border-radius: 8px;
+  font-size: 11px; pointer-events: none;
 }
 .teacher-caption .caption-replay { pointer-events: auto; }
 .teacher-caption.speaking { box-shadow: 0 0 0 2px #3355e0; }
 .caption-replay {
   background: transparent; border: none; color: inherit; cursor: pointer;
-  font-size: 16px; padding: 2px 4px; flex-shrink: 0;
+  font-size: 13px; padding: 1px 3px; flex-shrink: 0;
 }
-.caption-text .primary { line-height: 1.3; }
-.caption-text .secondary { opacity: 0.65; font-size: 0.85em; margin-top: 2px; }
+.caption-text { min-width: 0; }
+.caption-text .primary {
+  line-height: 1.25;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.caption-text .secondary {
+  opacity: 0.65; font-size: 0.85em; margin-top: 1px;
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+  overflow: hidden; text-overflow: ellipsis;
+}

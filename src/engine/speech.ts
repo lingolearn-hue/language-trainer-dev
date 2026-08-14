@@ -169,3 +169,20 @@ export function cancelSpeech() {
 export function wait(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+// Splits narration text into individual sentences, for callers (currently
+// TeacherCaption) that want to speak — and caption — one sentence at a
+// time instead of showing a whole multi-sentence paragraph at once.
+// "..." / "…" are protected first so an ellipsis-bearing sentence isn't
+// itself split apart by this (it still gets pause-treatment internally,
+// inside speak() — that's a separate, lower-level concern from this
+// sentence-level split).
+export function splitIntoSentences(text: string): string[] {
+  const ELLIPSIS_TOKEN = "\u0000E\u0000";
+  const protectedText = text.replace(/\.{3,}|…/g, ELLIPSIS_TOKEN);
+  return protectedText
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0)
+    .map((s) => s.split(ELLIPSIS_TOKEN).join("..."));
+}

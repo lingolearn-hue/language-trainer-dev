@@ -285,6 +285,7 @@ export const songVoyageBlock: Block = {
   type: "readalong",
   displayMode: "face",
   estimatedMinutes: 8,
+  isSong: true, // see types/index.ts — explicit flag, not positional inference
   title: { en: "Voyage to the Stars", de: "Reise zu den Sternen", zh: "星际航行" },
   spokenIntro: {
     en: "To close today's lesson, an original song about venturing into the unknown.",

@@ -115,6 +115,15 @@ export interface Block {
   // some vocabulary now."). Auto-played as audio + shown as a caption
   // below the slide frame.
   spokenIntro?: Translations;
+  // Explicit flag for readalong blocks that are a song (vs a dialogue —
+  // both use the same readalong mechanic/content shape). Positional
+  // inference ("the last readalong block is always the song") broke once
+  // lessons started having two dialogues plus an optional, sometimes-reused
+  // song (see a1-master-lesson-table v02) — this flag is now the single
+  // source of truth for lessonSummary.ts and anywhere else that needs to
+  // tell a song apart from a dialogue. Undefined/false = not a song
+  // (dialogue, or any other block type where the question doesn't apply).
+  isSong?: boolean;
   content: BlockContent;
 }
 

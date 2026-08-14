@@ -269,6 +269,7 @@ export const songBlock: Block = {
   type: "readalong",
   displayMode: "face",
   estimatedMinutes: 6,
+  isSong: true, // see types/index.ts — explicit flag, not positional inference
   title: { ja: "ちいさな うた", en: "A Little Song" },
   spokenIntro: {
     ja: "さいごに、みじかい うたを うたいましょう。",

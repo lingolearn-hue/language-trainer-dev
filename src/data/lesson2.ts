@@ -404,6 +404,7 @@ export const readalongBruderJakobBlock: Block = {
   type: "readalong",
   displayMode: "face",
   estimatedMinutes: 10,
+  isSong: true, // see types/index.ts — explicit flag, not positional inference
   title: { de: "Bruder Jakob", en: "Brother John", zh: "雅各弟兄" },
   spokenIntro: {
     de: "Zum Schluss singen wir gemeinsam ein Lied.",

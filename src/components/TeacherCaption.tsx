@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Block, LanguageSettings } from "../types";
 import type { Trainer } from "../data/trainers";
-import { speak, cancelSpeech } from "../engine/speech";
+import { speak, cancelSpeech, splitIntoSentences } from "../engine/speech";
 
 // Audio playback for the trainer, delivered as a subtitle first (real TTS
 // speech + on-screen caption) rather than a full avatar/lip-sync system.
@@ -12,9 +12,16 @@ import { speak, cancelSpeech } from "../engine/speech";
 // the primary place a person reads it, since the slide itself is
 // compressed there.
 //
-// `onFinished` fires once the spoken intro is done playing (or immediately
-// if there is none) — Session uses this to know when it's safe to start
-// narrating the slide's actual content, so the two never overlap.
+// The full spokenIntro is broken into individual sentences (see
+// splitIntoSentences) and stepped through one at a time — narrated and
+// captioned in sync — rather than shown as one multi-sentence block.
+// Keeps the on-screen caption to a real subtitle's worth of text (max
+// ~2 thin lines, see .teacher-caption CSS) instead of a paragraph.
+//
+// `onFinished` fires once every sentence has finished playing (or
+// immediately if there is no spokenIntro at all) — Session uses this to
+// know when it's safe to start narrating the slide's actual content, so
+// the two never overlap.
 export function TeacherCaption({
   block,
   lang,
@@ -29,6 +36,7 @@ export function TeacherCaption({
   onFinished?: () => void;
 }) {
   const [speaking, setSpeaking] = useState(false);
+  const [sentenceIdx, setSentenceIdx] = useState(0);
 
   // Which language the framing line is actually SPOKEN in — "source" for
   // beginner courses (student can't yet follow target-language
@@ -40,22 +48,38 @@ export function TeacherCaption({
   const text = block.spokenIntro?.[spokenLangCode];
   const otherText = block.spokenIntro?.[otherLangCode];
 
+  const sentences = text ? splitIntoSentences(text) : [];
+  // Best-effort: the secondary (non-spoken) language's sentences, matched
+  // by index — if the two texts don't split into the same number of
+  // sentences, later indices just show nothing extra rather than a
+  // mismatched line.
+  const otherSentences = otherText && otherText !== text ? splitIntoSentences(otherText) : [];
+
   useEffect(() => {
     let cancelled = false;
-    if (!text) {
+    setSentenceIdx(0);
+
+    if (sentences.length === 0) {
       // No spoken intro on this block — signal "done" immediately so the
       // rest of the auto-play sequence (content narration) isn't stuck
       // waiting on something that will never fire.
       onFinished?.();
       return;
     }
-    setSpeaking(true);
-    speak(text, spokenLangCode, trainer.voiceProfile).then(() => {
+
+    (async () => {
+      setSpeaking(true);
+      for (let i = 0; i < sentences.length; i++) {
+        if (cancelled) return;
+        setSentenceIdx(i);
+        await speak(sentences[i], spokenLangCode, trainer.voiceProfile);
+      }
       if (!cancelled) {
         setSpeaking(false);
         onFinished?.();
       }
-    });
+    })();
+
     return () => {
       cancelled = true;
       cancelSpeech();
@@ -63,14 +87,21 @@ export function TeacherCaption({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [block.id]);
 
-  function replay() {
-    if (!text) return;
+  async function replay() {
+    if (sentences.length === 0) return;
     cancelSpeech();
     setSpeaking(true);
-    speak(text, spokenLangCode, trainer.voiceProfile).then(() => setSpeaking(false));
+    for (let i = 0; i < sentences.length; i++) {
+      setSentenceIdx(i);
+      await speak(sentences[i], spokenLangCode, trainer.voiceProfile);
+    }
+    setSpeaking(false);
   }
 
-  if (!text) return null;
+  if (sentences.length === 0) return null;
+
+  const currentText = sentences[sentenceIdx];
+  const currentOther = otherSentences[sentenceIdx];
 
   return (
     <div className={`teacher-caption${speaking ? " speaking" : ""}`}>
@@ -78,9 +109,9 @@ export function TeacherCaption({
         🔊
       </button>
       <div className="caption-text">
-        <div className="primary">{text}</div>
-        {otherText && otherText !== text && (
-          <div className="secondary">{otherText}</div>
+        <div className="primary">{currentText}</div>
+        {currentOther && currentOther !== currentText && (
+          <div className="secondary">{currentOther}</div>
         )}
       </div>
     </div>
