@@ -42,12 +42,10 @@ export function Session({
   const [controlsRail, setControlsRail] = useState<HTMLDivElement | null>(null);
   const landscape = useIsLandscape();
 
-  // Declutter toggle — hides the header bar, avatar row, and slide
-  // footer controls, leaving just the slide itself. Mainly aimed at
-  // portrait (header + avatar row + inline footer all stack vertically
-  // above/below a slide that's already fairly compressed), but works
-  // the same way in landscape too, where it also lets the slide expand
-  // into the freed-up right-rail width.
+  // Declutter toggle — hides the header bar, rate controls, and slide
+  // footer controls, leaving the slide and the avatar row visible. The
+  // avatar row must never be hidden by this toggle (per explicit
+  // correction) — only the header and interactive controls collapse.
   const [chromeHidden, setChromeHidden] = useState(false);
 
   // The whole lesson plays automatically: spoken intro caption, then the

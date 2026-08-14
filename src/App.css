@@ -35,14 +35,17 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 13px;
 }
 
-/* Declutter mode — hides header, avatar row, and any inline slide
-   footer, leaving just the slide. Slide.tsx keeps rendering its footer
-   regardless of this state (it has no idea chrome-hidden exists) — this
-   is purely a visual hide via CSS, no state is lost, so un-hiding
-   restores everything exactly as it was. */
+/* Declutter mode — hides header, rate controls, and any footer
+   controls (inline or portalled to the rail), leaving the slide and the
+   avatar row visible. Avatars stay visible even when decluttered — only
+   the header bar and interactive controls hide. Slide.tsx keeps
+   rendering its footer regardless of this state (it has no idea
+   chrome-hidden exists) — this is purely a visual hide via CSS, no
+   state is lost, so un-hiding restores everything exactly as it was. */
 .session.chrome-hidden .session-header,
 .session.chrome-hidden .classroom-banner,
-.session.chrome-hidden .right-rail,
+.session.chrome-hidden .rate-controls,
+.session.chrome-hidden .controls-rail,
 .session.chrome-hidden .slide-footer {
   display: none !important;
 }
