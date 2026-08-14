@@ -91,23 +91,48 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 
 /* Portrait: avatars drop out of the side-by-side row and go back to a
    fixed corner overlay, since there's no room beside the slide once
-   stacked — the slide still scale-to-fits within whatever space remains. */
+   stacked — the slide still scale-to-fits within whatever space remains.
+   Controls-rail is landscape-only (see .controls-rail below); in
+   portrait, Slide falls back to rendering its footer inline under the
+   slide content instead (SlideControlsContext gets null there), so the
+   rail div itself just needs to be hidden. */
 @media (orientation: portrait) {
   .session-layout {
     flex-direction: column; align-items: stretch;
     padding-left: 0; padding-right: 0; /* slide spans full width, edge to edge */
   }
-  /* Extra `.session-layout` ancestor qualifier (not just `.lesson-avatars`)
-     is required here, not stylistic — the base .lesson-avatars rule below
+  /* Extra `.session-layout` ancestor qualifier (not just `.right-rail`)
+     is required here, not stylistic — the base `.right-rail` rule below
      has equal specificity and comes later in source order, so without the
      extra qualifier it silently wins over this one regardless of the
      media query matching. */
-  .session-layout .lesson-avatars {
+  .session-layout .right-rail {
     order: -1; /* above the slide in document flow, not overlapping it */
     flex-direction: row; justify-content: center; gap: 28px;
-    padding: 4px 0 10px;
+    padding: 4px 0 10px; height: auto; width: auto;
   }
+  .session-layout .controls-rail { display: none; }
 }
+
+/* Landscape: right-hand column holding the trainer avatars (top) and the
+   active block's controls (below, filling the rest of the vertical
+   space) — lets the slide use its full height without a footer bar
+   competing for room underneath it. See SlideControlsContext / Slide.tsx
+   for how a block's footer ends up portalled into .controls-rail. */
+.right-rail {
+  display: flex; flex-direction: column; align-items: stretch;
+  width: 200px; flex-shrink: 0; height: 100%;
+}
+.controls-rail {
+  flex: 1; display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 0;
+}
+.controls-rail .slide-footer {
+  flex-direction: column; align-items: stretch; gap: 8px;
+  padding: 12px 4px; border-top: none; font-size: 12px;
+}
+.controls-rail .slide-footer button { margin-left: 0 !important; width: 100%; }
+.controls-rail .phase-label { margin-right: 0; text-align: center; }
 
 /* Dense vocab: category columns (noun/verb/adjective), everything visible
    at once. Designed to hold 30-50 items on one slide, matching the source
@@ -293,11 +318,20 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    trainer matches regardless of which dropdown holds which of their two
    languages, since every trainer teaches both directions). */
 .trainer-filters {
-  display: flex; gap: 12px; justify-content: center; margin-bottom: 24px;
+  display: flex; gap: 12px; justify-content: center; margin-bottom: 8px;
+}
+.trainer-filter-col {
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-start;
+}
+.trainer-filter-col label {
+  font-size: 12px; opacity: 0.65; padding-left: 2px;
 }
 .trainer-filters select {
   padding: 8px 12px; border-radius: 8px; border: 1px solid #d5d5db;
   background: #ffffff; color: #1a1a22; font-size: 14px; min-width: 160px;
+}
+.trainer-filter-hint {
+  text-align: center; font-size: 12px; opacity: 0.6; margin: 0 0 24px;
 }
 
 /* 2 columns for now — matches (or everyone, if no filter set) come
@@ -381,7 +415,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   display: flex; align-items: center; gap: 10px; justify-content: center;
   max-width: 80%; margin: 0 auto; padding: 8px 16px;
   background: rgba(20,20,28,0.88); color: #f4f4f8; border-radius: 10px;
-  font-size: 14px; pointer-events: none;
+  font-size: 12px; pointer-events: none;
 }
 .teacher-caption .caption-replay { pointer-events: auto; }
 .teacher-caption.speaking { box-shadow: 0 0 0 2px #3355e0; }

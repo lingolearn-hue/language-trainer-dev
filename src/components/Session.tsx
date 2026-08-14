@@ -11,6 +11,8 @@ import { LessonAvatars } from "./LessonAvatars";
 import { TeacherCaption } from "./TeacherCaption";
 import { cancelSpeech } from "../engine/speech";
 import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
+import { SlideControlsContext } from "../context/SlideControlsContext";
+import { useIsLandscape } from "../hooks/useIsLandscape";
 import type { Trainer } from "../data/trainers";
 
 export function Session({
@@ -23,6 +25,14 @@ export function Session({
   const { state, dispatch } = useSession();
   const { lesson, blockIndex, status, lang, display, style, mode } = state;
   const block = lesson.blocks[blockIndex];
+
+  // Slide footer controls (phase buttons, "Continue", etc.) portal into
+  // this element instead of rendering inline under the slide — but only
+  // in landscape (see .controls-rail / .right-rail below); portrait keeps
+  // them under the slide, so the target is withheld (null) there even
+  // though the DOM node still exists.
+  const [controlsRail, setControlsRail] = useState<HTMLDivElement | null>(null);
+  const landscape = useIsLandscape();
 
   // The whole lesson plays automatically: spoken intro caption, then the
   // slide's own content narration, then auto-advance to the next block —
@@ -153,75 +163,84 @@ export function Session({
         <div className="classroom-banner">👥 Everyone, repeat after me!</div>
       )}
 
-      <div className="session-layout">
-        <div className="slide-area">
-          <TeacherCaption
-            key={block.id}
-            block={block}
-            lang={lang}
-            trainer={trainer}
-            framingLanguage={lesson.framingLanguage}
-            onFinished={() => setAutoPlayReady(true)}
-          />
-          {block.type === "vocabDrill" && (
-            <VocabDrillBlock
+      <SlideControlsContext.Provider value={landscape ? controlsRail : null}>
+        <div className="session-layout">
+          <div className="slide-area">
+            <TeacherCaption
+              key={block.id}
               block={block}
               lang={lang}
               trainer={trainer}
-              autoPlay={autoPlayReady}
-              onComplete={handleComplete}
+              framingLanguage={lesson.framingLanguage}
+              onFinished={() => setAutoPlayReady(true)}
             />
-          )}
-          {block.type === "readalong" && (
-            <ReadalongBlock
-              block={block}
-              lang={lang}
-              trainer={trainer}
-              autoPlay={autoPlayReady}
-              onComplete={handleComplete}
-            />
-          )}
-          {block.type === "intro" && (
-            <IntroBlock
-              block={block}
-              lang={lang}
-              trainer={trainer}
-              autoPlay={autoPlayReady}
-              onComplete={handleComplete}
-            />
-          )}
-          {block.type === "grammar" && (
-            <GrammarBlock
-              block={block}
-              lang={lang}
-              display={display}
-              trainer={trainer}
-              autoPlay={autoPlayReady}
-              onComplete={handleComplete}
-            />
-          )}
-          {block.type === "agenda" && (
-            <AgendaBlock
-              block={block}
-              lang={lang}
-              trainer={trainer}
-              autoPlay={autoPlayReady}
-              onComplete={handleComplete}
-            />
-          )}
-          {block.type === "selfIntro" && (
-            <SelfIntroBlock
-              block={block}
-              lang={lang}
-              trainer={trainer}
-              autoPlay={autoPlayReady}
-              onComplete={handleComplete}
-            />
-          )}
-        </div>
+            {block.type === "vocabDrill" && (
+              <VocabDrillBlock
+                block={block}
+                lang={lang}
+                trainer={trainer}
+                autoPlay={autoPlayReady}
+                onComplete={handleComplete}
+              />
+            )}
+            {block.type === "readalong" && (
+              <ReadalongBlock
+                block={block}
+                lang={lang}
+                trainer={trainer}
+                autoPlay={autoPlayReady}
+                onComplete={handleComplete}
+              />
+            )}
+            {block.type === "intro" && (
+              <IntroBlock
+                block={block}
+                lang={lang}
+                trainer={trainer}
+                autoPlay={autoPlayReady}
+                onComplete={handleComplete}
+              />
+            )}
+            {block.type === "grammar" && (
+              <GrammarBlock
+                block={block}
+                lang={lang}
+                display={display}
+                trainer={trainer}
+                autoPlay={autoPlayReady}
+                onComplete={handleComplete}
+              />
+            )}
+            {block.type === "agenda" && (
+              <AgendaBlock
+                block={block}
+                lang={lang}
+                trainer={trainer}
+                autoPlay={autoPlayReady}
+                onComplete={handleComplete}
+              />
+            )}
+            {block.type === "selfIntro" && (
+              <SelfIntroBlock
+                block={block}
+                lang={lang}
+                trainer={trainer}
+                autoPlay={autoPlayReady}
+                onComplete={handleComplete}
+              />
+            )}
+          </div>
 
-        <LessonAvatars trainer={trainer} />
-      </div>
+          <div className="right-rail">
+            <LessonAvatars trainer={trainer} />
+            {/* Portal target for the active block's footer controls —
+                see SlideControlsContext / Slide.tsx. Only actually used
+                (non-null in context) in landscape; harmless empty div
+                otherwise. */}
+            <div className="controls-rail" ref={setControlsRail} />
+          </div>
+        </div>
+      </SlideControlsContext.Provider>
 
       <AuditBar />
     </div>

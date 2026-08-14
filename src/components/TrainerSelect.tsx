@@ -60,23 +60,32 @@ export function TrainerSelect({
       <p className="subtitle">Each trainer teaches a fixed language pair, in either direction.</p>
 
       <div className="trainer-filters">
-        <select value={langA} onChange={(e) => setLangA(e.target.value as LangCode | "")}>
-          <option value="">Any language</option>
-          {ALL_LANGS.map((l) => (
-            <option key={l} value={l}>
-              {LANG_LABEL[l]}
-            </option>
-          ))}
-        </select>
-        <select value={langB} onChange={(e) => setLangB(e.target.value as LangCode | "")}>
-          <option value="">Any language</option>
-          {ALL_LANGS.map((l) => (
-            <option key={l} value={l}>
-              {LANG_LABEL[l]}
-            </option>
-          ))}
-        </select>
+        <div className="trainer-filter-col">
+          <label htmlFor="filter-learn">I want to learn</label>
+          <select id="filter-learn" value={langA} onChange={(e) => setLangA(e.target.value as LangCode | "")}>
+            <option value="">Any language</option>
+            {ALL_LANGS.map((l) => (
+              <option key={l} value={l}>
+                {LANG_LABEL[l]}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="trainer-filter-col">
+          <label htmlFor="filter-know">I already know</label>
+          <select id="filter-know" value={langB} onChange={(e) => setLangB(e.target.value as LangCode | "")}>
+            <option value="">Any language</option>
+            {ALL_LANGS.map((l) => (
+              <option key={l} value={l}>
+                {LANG_LABEL[l]}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
+      <p className="trainer-filter-hint">
+        Pick what you want to learn and what you already know — matching trainers are highlighted below.
+      </p>
 
       <div className="trainer-grid">
         {matching.map((t) => renderCard(t, false))}

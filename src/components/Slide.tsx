@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
+import { useSlideControlsTarget } from "../context/SlideControlsContext";
 
+const BASE_WIDTH = 960;
 const BASE_HEIGHT = 600; // 16:10 (960x600) — was 16:9 (960x540); a bit taller/tighter, especially for portrait
 
 // Beamer-style slide: the internal layout/typography is still fixed at a
@@ -20,6 +23,7 @@ export function Slide({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
+  const controlsTarget = useSlideControlsTarget();
 
   useEffect(() => {
     const el = containerRef.current;
@@ -30,12 +34,12 @@ export function Slide({
       if (!entry) return;
       const { width, height } = entry.contentRect;
       if (width <= 0 || height <= 0) return;
-      // Landscape requirement: fill available height completely.
-      // Previously used the tighter of width/height (classic "fit to
-      // screen", could leave vertical gaps). Now height always wins;
-      // width can exceed the container (slide-fit-container clips via
-      // overflow: hidden) rather than shrinking to fit horizontally.
-      setScale(height / BASE_HEIGHT);
+      // Fit-to-screen: scale by whichever dimension is tighter, so the
+      // slide always fits fully inside its container with no overflow
+      // and no wasted gap. (A height-only scale previously caused
+      // portrait overflow — a narrow-tall container would scale the
+      // fixed 960-wide slide up past the container's actual width.)
+      setScale(Math.min(width / BASE_WIDTH, height / BASE_HEIGHT));
     });
     observer.observe(el);
     return () => observer.disconnect();
@@ -49,8 +53,14 @@ export function Slide({
       >
         {title && <h2 className="slide-title">{title}</h2>}
         <div className="slide-content">{children}</div>
-        {footer && <div className="slide-footer">{footer}</div>}
+        {/* Landscape: footer portals into the right-hand rail (see
+            SlideControlsContext) so buttons render at real size, not
+            scaled down with the slide transform above. Portrait (or no
+            rail mounted yet): falls back to inline, under the content,
+            same as always. */}
+        {footer && !controlsTarget && <div className="slide-footer">{footer}</div>}
       </div>
+      {footer && controlsTarget && createPortal(<div className="slide-footer">{footer}</div>, controlsTarget)}
     </div>
   );
 }
