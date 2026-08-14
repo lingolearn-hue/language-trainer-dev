@@ -1,5 +1,6 @@
 import type { LessonPlan, LangCode } from "../types";
 import type { Trainer } from "../data/trainers";
+import { LanguageSamples } from "./LanguageSamples";
 
 // Course/lesson picker, shown after trainer selection. Only lessons whose
 // courseId is in the trainer's courseIds are offered — currently there's
@@ -27,6 +28,8 @@ export function LessonSelect({
       </button>
       <h1>Choose a lesson</h1>
       <p className="subtitle">with {trainer.name}</p>
+
+      <LanguageSamples trainer={trainer} />
 
       {available.length === 0 ? (
         <p>No lessons available for this trainer's course yet.</p>
