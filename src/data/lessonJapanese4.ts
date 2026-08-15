@@ -247,6 +247,9 @@ export const pronunciationBlock: Block = {
 export const lessonJapanese4: LessonPlan = {
   id: "lesson-ja-4",
   courseId: "japanese-beginner",
+  language: "Japanese",
+  level: "A1",
+  lessonNumber: 4,
   title: { ja: "きもち", en: "Emotions" },
   framingLanguage: "source",
   blocks: [

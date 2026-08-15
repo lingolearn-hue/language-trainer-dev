@@ -311,6 +311,9 @@ export const songBlock: Block = {
 export const lessonJapanese2: LessonPlan = {
   id: "lesson-ja-2",
   courseId: "japanese-beginner",
+  language: "Japanese",
+  level: "A1",
+  lessonNumber: 2,
   title: { ja: "にほんごにゅうもん", en: "Japanese for Beginners" },
   framingLanguage: "source", // beginner course — same rule as lesson2 (German)
   blocks: [

@@ -466,6 +466,9 @@ export const readalongKantchenBlock: Block = {
 export const lesson2: LessonPlan = {
   id: "lesson-2",
   courseId: "german-beginner",
+  language: "German",
+  level: "A1",
+  lessonNumber: 2,
   title: { de: "Lektion 2", en: "Lesson 2", zh: "第二课" },
   framingLanguage: "source", // beginner course — trainer framing lines spoken in the student's own language
   blocks: [

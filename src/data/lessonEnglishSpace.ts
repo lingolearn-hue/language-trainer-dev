@@ -311,6 +311,9 @@ export const songVoyageBlock: Block = {
 export const lessonEnglishSpace: LessonPlan = {
   id: "lesson-en-space-c1",
   courseId: "english-advanced-c1",
+  language: "English",
+  level: "C1",
+  lessonNumber: 1,
   title: { en: "Voices from Orbit", de: "Stimmen aus dem Orbit", zh: "轨道上的声音" },
   // framingLanguage omitted (defaults to "target") — C1 learners can follow
   // trainer framing directly in English, unlike the beginner course.

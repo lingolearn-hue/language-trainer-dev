@@ -278,6 +278,30 @@ export function Session({
                 onComplete={handleComplete}
               />
             )}
+
+            <div className="slide-nav-footer">
+              <button
+                className="slide-nav-arrow"
+                onClick={() => dispatch({ type: "GOTO_BLOCK", index: blockIndex - 1 })}
+                disabled={blockIndex === 0}
+                title="Previous slide"
+              >
+                ‹
+              </button>
+              <span className="slide-nav-label">
+                {lesson.language && lesson.level && lesson.lessonNumber
+                  ? `${lesson.language} ${lesson.level} — Lesson ${lesson.lessonNumber}`
+                  : lesson.title[lang.targetLang] ?? lesson.title.en}
+              </span>
+              <button
+                className="slide-nav-arrow"
+                onClick={() => dispatch({ type: "GOTO_BLOCK", index: blockIndex + 1 })}
+                disabled={blockIndex === lesson.blocks.length - 1}
+                title="Next slide"
+              >
+                ›
+              </button>
+            </div>
           </div>
 
           <div className="right-rail">

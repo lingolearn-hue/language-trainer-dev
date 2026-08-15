@@ -143,6 +143,14 @@ export interface LessonPlan {
   // trainer's framing lines — actual lesson content (vocab, dialogue,
   // song lyrics) is always narrated in the target language regardless.
   framingLanguage?: "source" | "target";
+  // Display metadata for the slide footer (e.g. "German A1 — Lesson 2"):
+  // human-readable target-language name, CEFR-style level, and lesson
+  // number within that course. All optional — Slide falls back to
+  // showing just the lesson title if any are missing, rather than
+  // rendering a broken/partial label.
+  language?: string;
+  level?: string;
+  lessonNumber?: number;
 }
 
 export type ReadalongPhase = "echo" | "shadow" | "silent";
