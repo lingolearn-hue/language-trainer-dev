@@ -6,6 +6,9 @@ import { LessonSelect } from "./components/LessonSelect";
 import { lesson2 } from "./data/lesson2";
 import { lessonEnglishSpace } from "./data/lessonEnglishSpace";
 import { lessonJapanese2 } from "./data/lessonJapanese2";
+import { lessonJapanese1 } from "./data/lessonJapanese1";
+import { lessonJapanese3 } from "./data/lessonJapanese3";
+import { lessonJapanese4 } from "./data/lessonJapanese4";
 import { lessonJapanese5 } from "./data/lessonJapanese5";
 import { lessonJapanese8 } from "./data/lessonJapanese8";
 import { lessonJapanese10 } from "./data/lessonJapanese10";
@@ -17,7 +20,10 @@ const display = { density: "dense" as const };
 const allLessons: LessonPlan[] = [
   lesson2,
   lessonEnglishSpace,
+  lessonJapanese1,
   lessonJapanese2,
+  lessonJapanese3,
+  lessonJapanese4,
   lessonJapanese5,
   lessonJapanese8,
   lessonJapanese10,
