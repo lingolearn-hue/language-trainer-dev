@@ -1,7 +1,18 @@
 * { box-sizing: border-box; }
 body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color: #1a1a22; }
 
-.session { position: relative; width: 100%; min-height: 100vh; }
+/* .session opts out of the #root leftover Vite-template styling
+   (fixed 1126px width, centered border-inline) — that's landing-page
+   boilerplate from the starter template, unrelated to and actively
+   wasting horizontal space in the actual lesson session view. Other
+   screens (TrainerSelect, LessonSelect) have their own centering and
+   aren't affected either way. */
+#root:has(.session) {
+  width: 100%;
+  border-inline: none;
+}
+
+.session { position: relative; width: 100%; min-height: 100vh; min-height: 100dvh; }
 .session.paused, .session.complete {
   width: 100vw; height: 100vh; display: flex; flex-direction: column;
   align-items: center; justify-content: center; text-align: center;
@@ -76,8 +87,8 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    --------------------------------------------------------------------- */
 .session-layout {
   display: flex; flex-direction: row; align-items: stretch; justify-content: center;
-  gap: 24px; width: 100%; height: 100vh;
-  padding: 0 16px;
+  gap: 8px; width: 100%; height: 100vh; height: 100dvh;
+  padding: 0 4px 0 max(4px, env(safe-area-inset-left));
   box-sizing: border-box;
   /* Slide now goes edge-to-edge, top to bottom. The floating header and
      audit bar (both position: fixed, see their own rules) render ON TOP
@@ -86,7 +97,16 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
      Previous version subtracted 128px via height AND another 128px via
      padding (56+72, eaten into an already-shrunk border-box height) —
      a real double-subtraction bug that shrank the slide far more than
-     intended. */
+     intended.
+     Horizontal overhead (padding + gap + right-rail width) is kept to a
+     minimum on purpose: any of it eaten unnecessarily narrows
+     .slide-area, which pushes its aspect ratio away from the slide's own
+     16:10 and makes WIDTH the tighter fit-to-screen constraint instead
+     of height — the actual cause of the "gap at top and bottom in
+     landscape" symptom, not a viewport-unit quirk. 100dvh (falls back to
+     100vh on unsupported browsers) also avoids mobile browsers' static
+     100vh overshooting the real visible viewport when the address bar
+     is showing. */
 }
 .slide-area {
   flex: 1; width: 100%; height: 100%; min-width: 0; min-height: 0;
@@ -163,7 +183,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    for how a block's footer ends up portalled into .controls-rail. */
 .right-rail {
   display: flex; flex-direction: column; align-items: stretch;
-  width: 200px; flex-shrink: 0; height: 100%;
+  width: 88px; flex-shrink: 0; height: 100%;
   /* Safety net: on a short landscape viewport (e.g. phone), avatars +
      rate controls + a block's footer buttons stacked together can
      exceed the available height. Without this, flex's default overflow

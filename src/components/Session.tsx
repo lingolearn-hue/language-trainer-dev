@@ -46,7 +46,7 @@ export function Session({
   // footer controls, leaving the slide and the avatar row visible. The
   // avatar row must never be hidden by this toggle (per explicit
   // correction) — only the header and interactive controls collapse.
-  const [chromeHidden, setChromeHidden] = useState(false);
+  const [chromeHidden, setChromeHidden] = useState(true);
 
   // Subtitles toggle — purely a visual hide, same approach as
   // chrome-hidden: TeacherCaption keeps running underneath regardless
