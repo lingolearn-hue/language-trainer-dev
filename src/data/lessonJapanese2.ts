@@ -1,25 +1,28 @@
 import type { LessonPlan, Block } from "../types";
 
-// Japanese-from-English beginner lesson — a structural conversion of
-// lesson2.ts (German), reusing the same 10-block shape: title -> agenda
-// -> warm-up -> vocab -> grammar x3 -> dialogue -> reading practice ->
-// song. Unlike Lesson 2, most content here is pulled from an existing
-// corpus rather than authored from a PDF:
-// - Vocab, grammar explanations, and the dialogue are sourced from
-//   lingolearn-hue/vocab-games-dev's public/{vocab,grammar,dialogues}/ja-en.json
-//   (JLPT N5 level — the beginner tier, analogous to CEFR A1). Grammar
-//   example sentences are newly written using this lesson's own vocab
-//   selection; explanations are lightly adapted from the source.
-// - Target text is written in hiragana rather than kanji throughout,
-//   matching both the source data's own style and N5 teaching practice —
-//   this app has no furigana/ruby-text rendering, so kanji without a
-//   reading aid would be unusable for an absolute beginner.
-// - The "reading practice" block (no direct source-data equivalent, same
-//   situation as lesson2's reused pronunciation slide) covers real,
-//   well-known Japanese homophone pairs — genuine content, not invented.
-// - The closing song is original (no source-data song content exists,
-//   and no existing song was reused/translated) — same approach as the
-//   English C1 course's closing song.
+// Japanese-from-English, Lesson 2 — per a1-master-lesson-table-v02.md row 2:
+// Vocab: Body | Grammar: Personal pronouns | Dialogue A: at the doctor,
+// pointing out symptoms | Dialogue B: describing yourself and a friend
+// physically | Song: "Head Shoulders Knees and Toes" in the German
+// track — genuinely translatable here (unlike most other rows) since
+// it's literally a body-parts song, matching this lesson's own topic.
+//
+// REPLACES the original lessonJapanese2.ts content: that version predated
+// the master table and used generic, untagged vocabulary/grammar with no
+// relationship to what row 2 actually specifies — it was never realigned
+// after the table was adopted, while every other Japanese lesson (1, 3,
+// 4, 5, 8, 10) does follow the table. Rebuilt here to match, and to keep
+// exactly one "Lesson 2" rather than one that's out of step with the
+// rest of the course. The pitch-accent / long-vs-short-vowel
+// pronunciation content is carried over unchanged from the old version —
+// it's generic sound practice, not tied to any particular vocab topic,
+// so there was no reason to replace it.
+//
+// Grammar: personal pronouns (わたし, あなた, かれ, かのじょ, わたしたち,
+// かれら) plus は-marking — the natural first-lesson-after-copula grammar
+// point, and directly useful for Dialogue B's "describing yourself and a
+// friend" contrast (かれは.../かのじょは...).
+// Target text is hiragana-only, matching the established rule.
 // courseId: "japanese-beginner", taught by Yui (ja-en) — see data/trainers.ts.
 
 export const titleBlock: Block = {
@@ -27,16 +30,13 @@ export const titleBlock: Block = {
   type: "intro",
   displayMode: "face",
   estimatedMinutes: 1,
-  title: { ja: "にほんごにゅうもん", en: "Japanese for Beginners" },
+  title: { ja: "からだ", en: "Body" },
   spokenIntro: {
-    ja: "ようこそ！にほんごの べんきょうを はじめましょう。",
-    en: "Welcome! Let's start learning Japanese.",
+    ja: "ようこそ！きょうは からだの ぶぶんについて べんきょうしましょう。",
+    en: "Welcome! Today we'll learn about parts of the body.",
   },
   content: {
-    text: {
-      ja: "はじめての にほんご — コースの しょうかい",
-      en: "Your first steps in Japanese — Course introduction",
-    },
+    text: { ja: "だい2か — からだ", en: "Lesson 2 — Body" },
   },
 };
 
@@ -47,19 +47,18 @@ export const agendaBlock: Block = {
   estimatedMinutes: 1,
   title: { ja: "ながれ", en: "Agenda" },
   spokenIntro: {
-    ja: "きょうは まず じこしょうかい、それから たんごを べんきょうします。そのあと ぶんぽうを みっつ みて、かいわの れんしゅうと はつおんの れんしゅうを して、さいごに うたを うたいます。",
-    en: "Today we'll start with a short introduction, then build up some vocabulary. After that we'll look at three grammar points, practice a dialogue and some reading, and finish with a song.",
+    ja: "きょうは まず じこしょうかい、それから からだの たんごを べんきょうします。そのあと にんしょうだいめいしを みて、ふたつの かいわを れんしゅうし、さいごに はつおんの れんしゅうと うたを します。",
+    en: "Today we'll start with a short introduction, then learn body vocabulary. After that we'll look at personal pronouns, practice two dialogues, and finish with pronunciation practice and a song.",
   },
   content: {
     items: [
       { id: "a1", translations: { ja: "じこしょうかい", en: "Introduction" } },
-      { id: "a2", translations: { ja: "たんご", en: "Vocabulary" } },
-      { id: "a3", translations: { ja: "ぶんぽう：は", en: "Grammar: Topic Particle は" } },
-      { id: "a4", translations: { ja: "ぶんぽう：ます形", en: "Grammar: Polite Verb Form" } },
-      { id: "a5", translations: { ja: "ぶんぽう：ごじゅん", en: "Grammar: Word Order" } },
-      { id: "a6", translations: { ja: "かいわ：いちばで", en: "Dialogue: At the Market" } },
-      { id: "a7", translations: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice" } },
-      { id: "a8", translations: { ja: "うた", en: "Song" } },
+      { id: "a2", translations: { ja: "たんご：からだ", en: "Vocabulary: Body" } },
+      { id: "a3", translations: { ja: "ぶんぽう：にんしょうだいめいし", en: "Grammar: Personal Pronouns" } },
+      { id: "a4", translations: { ja: "かいわ：いしゃに しょうじょうを つたえる", en: "Dialogue A: At the Doctor" } },
+      { id: "a5", translations: { ja: "かいわ：じぶんと ともだちの とくちょう", en: "Dialogue B: Describing Yourself and a Friend" } },
+      { id: "a6", translations: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice" } },
+      { id: "a7", translations: { ja: "うた", en: "Song" } },
     ],
   },
 };
@@ -68,16 +67,16 @@ export const introBlock: Block = {
   id: "ja2-intro",
   type: "intro",
   displayMode: "face",
-  estimatedMinutes: 3,
+  estimatedMinutes: 2,
   title: { ja: "じこしょうかい", en: "Warm-up" },
   spokenIntro: {
-    ja: "はじめる まえに、すこし じこしょうかいを しましょう。",
-    en: "Before we start, let's introduce ourselves a little.",
+    ja: "はじめる まえに、すこし はなしましょう。",
+    en: "Before we start, let's talk a little.",
   },
   content: {
     text: {
-      ja: "わたしは にほんごを べんきょうしたいです。なぜなら... あなたは？どうして にほんごを べんきょうしますか？",
-      en: "I want to learn Japanese because... And you? Why are you learning Japanese?",
+      ja: "きょう どこか いたい ところが ありますか？",
+      en: "Does anywhere hurt today?",
     },
   },
 };
@@ -87,160 +86,131 @@ export const vocabBlock: Block = {
   type: "vocabDrill",
   displayMode: "content",
   estimatedMinutes: 6,
-  title: { ja: "たんご", en: "Vocabulary" },
+  title: { ja: "たんご：からだ", en: "Vocabulary: Body" },
   spokenIntro: {
-    ja: "だいじな たんごを みてみましょう。",
-    en: "Let's look at some important words.",
+    ja: "からだの ぶぶんに かんけいする たんごを みてみましょう。",
+    en: "Let's look at some words for parts of the body.",
   },
   content: {
     items: [
-      { id: "v01", category: "noun", translations: { ja: "コーヒー", en: "coffee" } },
-      { id: "v02", category: "noun", translations: { ja: "おちゃ", en: "tea" } },
-      { id: "v03", category: "noun", translations: { ja: "パン", en: "bread" } },
-      { id: "v04", category: "noun", translations: { ja: "みず", en: "water" } },
-      { id: "v05", category: "noun", translations: { ja: "おさら", en: "plate" } },
-      { id: "v06", category: "noun", translations: { ja: "コップ", en: "glass, cup" } },
-      { id: "v07", category: "noun", translations: { ja: "テーブル", en: "table" } },
-      { id: "v08", category: "noun", translations: { ja: "いす", en: "chair" } },
-      { id: "v09", category: "noun", translations: { ja: "おかね", en: "money" } },
-      { id: "v10", category: "noun", translations: { ja: "がっこう", en: "school" } },
-      { id: "v11", category: "noun", translations: { ja: "せんせい", en: "teacher" } },
-      { id: "v12", category: "noun", translations: { ja: "ともだち", en: "friend" } },
-      { id: "v13", category: "noun", translations: { ja: "いえ", en: "house, home" } },
-      { id: "v14", category: "noun", translations: { ja: "でんわ", en: "telephone" } },
-      { id: "v15", category: "noun", translations: { ja: "ほん", en: "book" } },
-      { id: "v16", category: "noun", translations: { ja: "じかん", en: "time" } },
+      { id: "v01", category: "noun", translations: { ja: "からだ", en: "body" } },
+      { id: "v02", category: "noun", translations: { ja: "あたま", en: "head" } },
+      { id: "v03", category: "noun", translations: { ja: "かお", en: "face" } },
+      { id: "v04", category: "noun", translations: { ja: "め", en: "eyes" } },
+      { id: "v05", category: "noun", translations: { ja: "みみ", en: "ears" } },
+      { id: "v06", category: "noun", translations: { ja: "はな", en: "nose" } },
+      { id: "v07", category: "noun", translations: { ja: "くち", en: "mouth" } },
+      { id: "v08", category: "noun", translations: { ja: "は", en: "teeth" } },
+      { id: "v09", category: "noun", translations: { ja: "くび", en: "neck" } },
+      { id: "v10", category: "noun", translations: { ja: "かた", en: "shoulders" } },
+      { id: "v11", category: "noun", translations: { ja: "て", en: "hands, arms" } },
+      { id: "v12", category: "noun", translations: { ja: "ゆび", en: "fingers" } },
+      { id: "v13", category: "noun", translations: { ja: "むね", en: "chest" } },
+      { id: "v14", category: "noun", translations: { ja: "おなか", en: "stomach" } },
+      { id: "v15", category: "noun", translations: { ja: "せなか", en: "back" } },
+      { id: "v16", category: "noun", translations: { ja: "あし", en: "legs, feet" } },
+      { id: "v17", category: "noun", translations: { ja: "ひざ", en: "knees" } },
 
-      { id: "v17", category: "verb", translations: { ja: "たべる", en: "to eat" } },
-      { id: "v18", category: "verb", translations: { ja: "のむ", en: "to drink" } },
-      { id: "v19", category: "verb", translations: { ja: "はなす", en: "to speak" } },
-      { id: "v20", category: "verb", translations: { ja: "よむ", en: "to read" } },
-      { id: "v21", category: "verb", translations: { ja: "かく", en: "to write" } },
-      { id: "v22", category: "verb", translations: { ja: "かう", en: "to buy" } },
-      { id: "v23", category: "verb", translations: { ja: "いく", en: "to go" } },
-      { id: "v24", category: "verb", translations: { ja: "みる", en: "to see, to look" } },
-      { id: "v25", category: "verb", translations: { ja: "まつ", en: "to wait" } },
-      { id: "v26", category: "verb", translations: { ja: "わかる", en: "to understand" } },
+      { id: "v18", category: "verb", translations: { ja: "うごかす", en: "to move (something)" } },
+      { id: "v19", category: "verb", translations: { ja: "いたむ", en: "to hurt, ache" } },
+      { id: "v20", category: "verb", translations: { ja: "のばす", en: "to stretch" } },
+      { id: "v21", category: "verb", translations: { ja: "まげる", en: "to bend" } },
+      { id: "v22", category: "verb", translations: { ja: "さわる", en: "to touch" } },
+      { id: "v23", category: "verb", translations: { ja: "あらう", en: "to wash" } },
+      { id: "v24", category: "verb", translations: { ja: "つかう", en: "to use" } },
 
-      { id: "v27", category: "adjective", translations: { ja: "おおきい", en: "big" } },
-      { id: "v28", category: "adjective", translations: { ja: "ちいさい", en: "small" } },
-      { id: "v29", category: "adjective", translations: { ja: "あたらしい", en: "new" } },
-      { id: "v30", category: "adjective", translations: { ja: "ふるい", en: "old (objects)" } },
-      { id: "v31", category: "adjective", translations: { ja: "おいしい", en: "delicious" } },
-      { id: "v32", category: "adjective", translations: { ja: "たかい", en: "expensive, tall" } },
-      { id: "v33", category: "adjective", translations: { ja: "やすい", en: "cheap" } },
-      { id: "v34", category: "adjective", translations: { ja: "いそがしい", en: "busy" } },
-      { id: "v35", category: "adjective", translations: { ja: "たのしい", en: "fun, enjoyable" } },
-      { id: "v36", category: "adjective", translations: { ja: "むずかしい", en: "difficult" } },
-      { id: "v37", category: "adjective", translations: { ja: "やさしい", en: "easy" } },
-      { id: "v38", category: "adjective", translations: { ja: "げんき", en: "healthy, energetic" } },
+      { id: "v25", category: "adjective", translations: { ja: "つよい", en: "strong (い-adj)" } },
+      { id: "v26", category: "adjective", translations: { ja: "よわい", en: "weak (い-adj)" } },
+      { id: "v27", category: "adjective", translations: { ja: "ながい", en: "long (い-adj)" } },
+      { id: "v28", category: "adjective", translations: { ja: "みじかい", en: "short (い-adj)" } },
+      { id: "v29", category: "adjective", translations: { ja: "おおきい", en: "big (い-adj)" } },
+      { id: "v30", category: "adjective", translations: { ja: "ちいさい", en: "small (い-adj)" } },
     ],
   },
 };
 
-export const grammarWaBlock: Block = {
-  id: "ja2-grammar-wa",
+export const grammarPronounsBlock: Block = {
+  id: "ja2-grammar-pronouns",
   type: "grammar",
   displayMode: "content",
   estimatedMinutes: 6,
-  title: { ja: "は — トピックの じょし", en: "は — Topic Particle" },
+  title: { ja: "にんしょうだいめいし", en: "Personal Pronouns" },
   spokenIntro: {
-    ja: "さいしょの ぶんぽうは、とても だいじな じょし「は」です。",
-    en: "Our first grammar point is a very important particle: は.",
+    ja: "きょうの ぶんぽうは、にんしょうだいめいしと「は」の つかいかたです。",
+    en: "Today's grammar is personal pronouns and how to use は with them.",
   },
   content: {
     explanation: {
-      ja: "「は」は、ぶんの トピック（なにについて はなしているか）を しめします。",
-      en: "は marks the topic of the sentence — what the sentence is about. It often replaces が or を when something is the topic rather than just the subject or object.",
+      ja: "にほんごの にんしょうだいめいしは：わたし（わたくし）、あなた、かれ、かのじょ、わたしたち、かれら です。「あなた」は じっさいには あまり つかわず、なまえを よぶ ほうが しぜんです。だいめいしの あとに「は」を つけて、しゅだいを しめします。",
+      en: "Japanese personal pronouns: わたし (I), あなた (you), かれ (he), かのじょ (she), わたしたち (we), かれら (they). あなた is used less than English \"you\" in practice — using someone's name directly is usually more natural. は after a pronoun marks it as the topic of the sentence.",
     },
     chunks: [
-      { id: "w1", translations: { ja: "わたしは がくせいです。", en: "I am a student." } },
-      { id: "w2", translations: { ja: "これは ほんです。", en: "This is a book." } },
-      { id: "w3", translations: { ja: "あれは がっこうです。", en: "That is a school." } },
-      { id: "w4", translations: { ja: "コーヒーは おいしいです。", en: "The coffee is delicious." } },
-      { id: "w5", translations: { ja: "ともだちは げんきです。", en: "My friend is well." } },
-      { id: "w6", translations: { ja: "この ほんは あたらしいです。", en: "This book is new." } },
+      { id: "g1", translations: { ja: "わたしは がくせいです。", en: "I am a student. (わたし + は)" } },
+      { id: "g2", translations: { ja: "かれは せが たかいです。", en: "He is tall. (かれ + は)" } },
+      { id: "g3", translations: { ja: "かのじょは かみが ながいです。", en: "She has long hair. (かのじょ + は)" } },
+      { id: "g4", translations: { ja: "わたしたちは ともだちです。", en: "We are friends. (わたしたち + は)" } },
+      { id: "g5", translations: { ja: "かれらは きょうだいです。", en: "They are siblings. (かれら + は)" } },
+      { id: "g6", translations: { ja: "たなかさんは いしゃです。", en: "Mr. Tanaka is a doctor. (name instead of あなた, more natural)" } },
     ],
   },
 };
 
-export const grammarMasuBlock: Block = {
-  id: "ja2-grammar-masu",
-  type: "grammar",
-  displayMode: "content",
-  estimatedMinutes: 6,
-  title: { ja: "ます形", en: "The ます Form" },
-  spokenIntro: {
-    ja: "つぎは、どうしの ていねいな かたち「ます形」です。",
-    en: "Next, the polite verb form — the ます form.",
-  },
-  content: {
-    explanation: {
-      ja: "「ます形」は どうしの ていねいな げんざい・みらいけいです。しゅうかんや じょうたい、みらいの よてい を あらわします。",
-      en: "The ます form is the polite non-past form of a verb. It expresses present habits, states, and future intentions.",
-    },
-    chunks: [
-      { id: "m1", translations: { ja: "わたしは パンを たべます。", en: "I eat bread." } },
-      { id: "m2", translations: { ja: "わたしは おちゃを のみます。", en: "I drink tea." } },
-      { id: "m3", translations: { ja: "わたしは にほんごを はなします。", en: "I speak Japanese." } },
-      { id: "m4", translations: { ja: "わたしは ほんを よみます。", en: "I read a book." } },
-      { id: "m5", translations: { ja: "わたしは まいにち がっこうへ いきます。", en: "I go to school every day." } },
-      { id: "m6", translations: { ja: "わたしは せんせいを まちます。", en: "I wait for the teacher." } },
-    ],
-  },
-};
-
-export const grammarWordOrderBlock: Block = {
-  id: "ja2-grammar-order",
-  type: "grammar",
-  displayMode: "content",
-  estimatedMinutes: 6,
-  title: { ja: "ぶんの ごじゅん", en: "Word Order" },
-  spokenIntro: {
-    ja: "さいごの ぶんぽうは、にほんごの ぶんの ならびかたです。",
-    en: "Our last grammar point is how Japanese sentences are ordered.",
-  },
-  content: {
-    explanation: {
-      ja: "にほんごは 「だれが・なにを・どうする」の じゅんばんです。どうしは いつも さいごに きます。じかんと ばしょは どうしの まえに きます。",
-      en: "Japanese follows Subject-Object-Verb order — the verb always comes last. Time and place expressions come before the verb, usually with time before place.",
-    },
-    chunks: [
-      { id: "o1", translations: { ja: "わたしは りんごを たべます。", en: "I eat an apple. (subject-object-verb)" } },
-      { id: "o2", translations: { ja: "わたしは まいにち がっこうで にほんごを べんきょうします。", en: "I study Japanese at school every day. (time-place-object-verb)" } },
-      { id: "o3", translations: { ja: "わたしは あさ コーヒーを のみます。", en: "I drink coffee in the morning." } },
-      { id: "o4", translations: { ja: "せんせいは きょうしつに います。", en: "The teacher is in the classroom." } },
-      { id: "o5", translations: { ja: "あの たかい たてものは ぎんこうです。", en: "That tall building is a bank. (adjective before noun)" } },
-    ],
-  },
-};
-
-export const dialogueMarketBlock: Block = {
-  id: "ja2-dialogue-market",
+export const dialogueDoctorSymptomsBlock: Block = {
+  id: "ja2-dialogue-doctor",
   type: "readalong",
   displayMode: "face",
-  estimatedMinutes: 8,
-  title: { ja: "かいわ：いちばで", en: "Dialogue: At the Market" },
+  estimatedMinutes: 6,
+  title: { ja: "かいわ：いしゃに しょうじょうを つたえる", en: "Dialogue A: At the Doctor" },
   spokenIntro: {
-    ja: "いちばでの かいわを ききましょう。",
-    en: "Let's listen to a conversation at the market.",
+    ja: "いしゃに どこが いたいかを つたえる かいわを ききましょう。",
+    en: "Let's listen to someone telling a doctor where it hurts.",
   },
   content: {
     lines: [
-      { id: "d1", speaker: "けんた", translations: { ja: "すみません！りんごは いくらですか？", en: "Excuse me! How much are the apples?" } },
-      { id: "d2", speaker: "うりて", translations: { ja: "いらっしゃいませ！ひとつ ひゃくえんです。", en: "Welcome! They are one hundred yen each." } },
-      { id: "d3", speaker: "けんた", translations: { ja: "じゃあ、みっつ ください。", en: "Then, I'll take three, please." } },
-      { id: "d4", speaker: "うりて", translations: { ja: "はい、どうぞ。ほかに なにか いかがですか？", en: "Here you are. Would you like anything else?" } },
-      { id: "d5", speaker: "けんた", translations: { ja: "バナナも ありますか？", en: "Do you have bananas too?" } },
-      { id: "d6", speaker: "うりて", translations: { ja: "はい、あります。ひとふさ にひゃくえんです。", en: "Yes, we do. One bunch is two hundred yen." } },
-      { id: "d7", speaker: "けんた", translations: { ja: "ひとふさ ください。", en: "One bunch, please." } },
-      { id: "d8", speaker: "うりて", translations: { ja: "ぜんぶで ごひゃくえんです。", en: "That's five hundred yen in total." } },
-      { id: "d9", speaker: "けんた", translations: { ja: "すこし たかいですね。", en: "That's a little expensive, isn't it?" } },
-      { id: "d10", speaker: "うりて", translations: { ja: "じゃあ、よんひゃくごじゅうえんに します。", en: "Alright, I'll make it four hundred fifty yen." } },
-      { id: "d11", speaker: "けんた", translations: { ja: "ありがとうございます。", en: "Thank you." } },
-      { id: "d12", speaker: "うりて", translations: { ja: "ぜんぶで ななひゃくごじゅうえんです。", en: "That's seven hundred fifty yen in total." } },
-      { id: "d13", speaker: "けんた", translations: { ja: "はい、どうぞ。ありがとう！", en: "Here you are. Thank you!" } },
-      { id: "d14", speaker: "うりて", translations: { ja: "ありがとうございました！またどうぞ！", en: "Thank you very much! Please come again!" } },
+      { id: "d1", speaker: "いしゃ", translations: { ja: "どうしましたか？", en: "What's wrong?" } },
+      { id: "d2", speaker: "かんじゃ", translations: { ja: "あたまが いたいです。", en: "My head hurts." } },
+      { id: "d3", speaker: "いしゃ", translations: { ja: "ほかに いたい ところは ありますか？", en: "Does anywhere else hurt?" } },
+      { id: "d4", speaker: "かんじゃ", translations: { ja: "はい、のども いたいです。", en: "Yes, my throat hurts too." } },
+      { id: "d5", speaker: "いしゃ", translations: { ja: "おなかは どうですか？", en: "What about your stomach?" } },
+      { id: "d6", speaker: "かんじゃ", translations: { ja: "おなかは だいじょうぶです。", en: "My stomach is fine." } },
+      { id: "d7", speaker: "いしゃ", translations: { ja: "せなかは？", en: "What about your back?" } },
+      { id: "d8", speaker: "かんじゃ", translations: { ja: "すこし いたいです。", en: "It hurts a little." } },
+      { id: "d9", speaker: "いしゃ", translations: { ja: "てを うごかせますか？", en: "Can you move your hand?" } },
+      { id: "d10", speaker: "かんじゃ", translations: { ja: "はい、うごかせます。", en: "Yes, I can move it." } },
+      { id: "d11", speaker: "いしゃ", translations: { ja: "ゆびは？", en: "What about your fingers?" } },
+      { id: "d12", speaker: "かんじゃ", translations: { ja: "ゆびも うごかせます。", en: "I can move my fingers too." } },
+      { id: "d13", speaker: "いしゃ", translations: { ja: "わかりました。くすりを だします。", en: "Understood. I'll prescribe some medicine." } },
+      { id: "d14", speaker: "かんじゃ", translations: { ja: "ありがとうございます。", en: "Thank you." } },
+    ],
+  },
+};
+
+export const dialogueDescribingBlock: Block = {
+  id: "ja2-dialogue-describing",
+  type: "readalong",
+  displayMode: "face",
+  estimatedMinutes: 6,
+  title: { ja: "かいわ：じぶんと ともだちの とくちょう", en: "Dialogue B: Describing Yourself and a Friend" },
+  spokenIntro: {
+    ja: "じぶんと ともだちの みための とくちょうを はなす かいわを ききましょう。",
+    en: "Let's listen to a conversation describing yourself and a friend physically.",
+  },
+  content: {
+    lines: [
+      { id: "e1", speaker: "あい", translations: { ja: "わたしは せが ひくいです。", en: "I am short." } },
+      { id: "e2", speaker: "けん", translations: { ja: "わたしは せが たかいです。", en: "I am tall." } },
+      { id: "e3", speaker: "あい", translations: { ja: "かのじょは どんな ひとですか？", en: "What is she like?" } },
+      { id: "e4", speaker: "けん", translations: { ja: "かのじょは かみが みじかいです。", en: "She has short hair." } },
+      { id: "e5", speaker: "あい", translations: { ja: "めは おおきいですか？", en: "Are her eyes big?" } },
+      { id: "e6", speaker: "けん", translations: { ja: "はい、めが とても おおきいです。", en: "Yes, her eyes are very big." } },
+      { id: "e7", speaker: "けん", translations: { ja: "かれは どんな ひとですか？", en: "What is he like?" } },
+      { id: "e8", speaker: "あい", translations: { ja: "かれは てが おおきいです。", en: "He has big hands." } },
+      { id: "e9", speaker: "けん", translations: { ja: "つよそうですね。", en: "He looks strong." } },
+      { id: "e10", speaker: "あい", translations: { ja: "はい、とても つよいです。", en: "Yes, he's very strong." } },
+      { id: "e11", speaker: "けん", translations: { ja: "わたしたちは にていますか？", en: "Do we look alike?" } },
+      { id: "e12", speaker: "あい", translations: { ja: "いいえ、ぜんぜん にていません。", en: "No, not at all." } },
+      { id: "e13", speaker: "けん", translations: { ja: "あしは どうですか？おなじ くらい ながいですか？", en: "What about legs? Are they about the same length?" } },
+      { id: "e14", speaker: "あい", translations: { ja: "けんさんの あしの ほうが ながいです。", en: "Your legs are longer, Ken." } },
     ],
   },
 };
@@ -262,7 +232,6 @@ export const pronunciationBlock: Block = {
       long: { ja: "ながい (長)", en: "Long" },
     },
     items: [
-      // Pitch accent — genuinely well-known minimal pairs, not invented.
       { id: "p1", category: "pitch", translations: { ja: "はし", en: "chopsticks (HL) / bridge (LH)" } },
       { id: "p2", category: "pitch", translations: { ja: "あめ", en: "rain (HL) / candy (LH)" } },
       { id: "p3", category: "pitch", translations: { ja: "かみ", en: "paper (HL) / hair (LH)" } },
@@ -271,10 +240,6 @@ export const pronunciationBlock: Block = {
       { id: "p6", category: "pitch", translations: { ja: "はな", en: "flower (LH) / nose (HL)" } },
       { id: "p7", category: "pitch", translations: { ja: "きる", en: "to wear (HL) / to cut (LH)" } },
       { id: "p8", category: "pitch", translations: { ja: "かえる", en: "frog (LH) / to return (HL)" } },
-      // Long vs short vowels — two side-by-side tables, matching
-      // pairs on each row (same layout as Deutsch_3.pdf's kurz/lang
-      // pronunciation slide: source+target per row, short/long paired
-      // across the two tables).
       { id: "s1", category: "short", translations: { ja: "おばさん", en: "aunt" } },
       { id: "s2", category: "short", translations: { ja: "おじさん", en: "uncle" } },
       { id: "s3", category: "short", translations: { ja: "ゆき", en: "snow" } },
@@ -291,19 +256,21 @@ export const songBlock: Block = {
   id: "ja2-song",
   type: "readalong",
   displayMode: "face",
-  estimatedMinutes: 6,
+  estimatedMinutes: 4,
   isSong: true, // see types/index.ts — explicit flag, not positional inference
-  title: { ja: "ちいさな うた", en: "A Little Song" },
+  title: { ja: "あたま かた ひざ あし", en: "Head, Shoulders, Knees and Toes" },
   spokenIntro: {
-    ja: "さいごに、みじかい うたを うたいましょう。",
-    en: "To finish, let's sing a short song.",
+    ja: "さいごに、からだの うたを うたいましょう。",
+    en: "To finish, let's sing a song about the body.",
   },
   content: {
     lines: [
-      { id: "s1", translations: { ja: "そらは あおい", en: "The sky is blue" } },
-      { id: "s2", translations: { ja: "くもは しろい", en: "The clouds are white" } },
-      { id: "s3", translations: { ja: "はなは きれい", en: "The flowers are pretty" } },
-      { id: "s4", translations: { ja: "みんな げんき", en: "Everyone is well" } },
+      { id: "sg1", translations: { ja: "あたま かた ひざ あし", en: "Head, shoulders, knees and toes" } },
+      { id: "sg2", translations: { ja: "ひざ あし", en: "Knees and toes" } },
+      { id: "sg3", translations: { ja: "あたま かた ひざ あし", en: "Head, shoulders, knees and toes" } },
+      { id: "sg4", translations: { ja: "ひざ あし", en: "Knees and toes" } },
+      { id: "sg5", translations: { ja: "め と みみと くちと はな", en: "Eyes and ears and mouth and nose" } },
+      { id: "sg6", translations: { ja: "あたま かた ひざ あし", en: "Head, shoulders, knees and toes" } },
     ],
   },
 };
@@ -314,17 +281,16 @@ export const lessonJapanese2: LessonPlan = {
   language: "Japanese",
   level: "A1",
   lessonNumber: 2,
-  title: { ja: "にほんごにゅうもん", en: "Japanese for Beginners" },
-  framingLanguage: "source", // beginner course — same rule as lesson2 (German)
+  title: { ja: "からだ", en: "Body" },
+  framingLanguage: "source", // beginner course — same rule as the other Japanese lessons
   blocks: [
     titleBlock,
     agendaBlock,
     introBlock,
     vocabBlock,
-    grammarWaBlock,
-    grammarMasuBlock,
-    grammarWordOrderBlock,
-    dialogueMarketBlock,
+    grammarPronounsBlock,
+    dialogueDoctorSymptomsBlock,
+    dialogueDescribingBlock,
     pronunciationBlock,
     songBlock, // song always closes the lesson
   ],
