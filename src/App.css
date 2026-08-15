@@ -34,6 +34,19 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   background: rgba(20,20,28,0.7); color: #fff; border: none;
   width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 13px;
 }
+.subtitles-toggle {
+  position: fixed; top: 6px; right: 42px; z-index: 45;
+  background: rgba(20,20,28,0.7); color: #fff; border: none;
+  width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 12px;
+}
+
+/* Subtitles toggle — purely visual, same pattern as chrome-hidden below.
+   TeacherCaption keeps running underneath regardless (still gates
+   autoPlayReady via onFinished), so hiding it here doesn't touch
+   narration timing at all, just the on-screen text. */
+.session.subtitles-hidden .teacher-caption {
+  display: none !important;
+}
 
 /* Declutter mode — hides header, rate controls, and any footer
    controls (inline or portalled to the rail), leaving the slide and the

@@ -48,6 +48,12 @@ export function Session({
   // correction) — only the header and interactive controls collapse.
   const [chromeHidden, setChromeHidden] = useState(false);
 
+  // Subtitles toggle — purely a visual hide, same approach as
+  // chrome-hidden: TeacherCaption keeps running underneath regardless
+  // (it still gates autoPlayReady via onFinished), so narration timing
+  // is unaffected either way, only the on-screen text is hidden.
+  const [subtitlesHidden, setSubtitlesHidden] = useState(false);
+
   // The whole lesson plays automatically: spoken intro caption, then the
   // slide's own content narration, then auto-advance to the next block —
   // no manual "Continue"/"Play" clicks required for the default flow.
@@ -155,13 +161,22 @@ export function Session({
   }
 
   return (
-    <div className={`session mode-${block.displayMode}${chromeHidden ? " chrome-hidden" : ""}`}>
+    <div
+      className={`session mode-${block.displayMode}${chromeHidden ? " chrome-hidden" : ""}${subtitlesHidden ? " subtitles-hidden" : ""}`}
+    >
       <button
         className="chrome-toggle"
         onClick={() => setChromeHidden((h) => !h)}
         title={chromeHidden ? "Show controls" : "Hide controls"}
       >
         {chromeHidden ? "👁" : "🙈"}
+      </button>
+      <button
+        className="subtitles-toggle"
+        onClick={() => setSubtitlesHidden((h) => !h)}
+        title={subtitlesHidden ? "Show subtitles" : "Hide subtitles"}
+      >
+        {subtitlesHidden ? "💬" : "🚫💬"}
       </button>
 
       <div className="session-header floating">
