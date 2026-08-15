@@ -14,6 +14,7 @@ import { cancelSpeech, setCurrentTargetLang } from "../engine/speech";
 import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
 import { SlideControlsContext } from "../context/SlideControlsContext";
 import { useIsLandscape } from "../hooks/useIsLandscape";
+import { subscribeSlideSize, type SlideRect } from "../engine/slideSize";
 import type { Trainer } from "../data/trainers";
 
 export function Session({
@@ -53,6 +54,14 @@ export function Session({
   // (it still gates autoPlayReady via onFinished), so narration timing
   // is unaffected either way, only the on-screen text is hidden.
   const [subtitlesHidden, setSubtitlesHidden] = useState(false);
+
+  // Live size of the actual rendered slide graphic (not its outer,
+  // often-letterboxed container) — used to size/position the
+  // caption+nav-footer overlay so it sits exactly on the slide, never
+  // floating below/beside it in empty letterbox space. See
+  // engine/slideSize.ts / Slide.tsx.
+  const [slideSize, setSlideSize] = useState<SlideRect>({ width: 0, height: 0 });
+  useEffect(() => subscribeSlideSize(setSlideSize), []);
 
   // The whole lesson plays automatically: spoken intro caption, then the
   // slide's own content narration, then auto-advance to the next block —
@@ -164,13 +173,10 @@ export function Session({
     <div
       className={`session mode-${block.displayMode}${chromeHidden ? " chrome-hidden" : ""}${subtitlesHidden ? " subtitles-hidden" : ""}`}
     >
-      <button
-        className="chrome-toggle"
-        onClick={() => setChromeHidden((h) => !h)}
-        title={chromeHidden ? "Show controls" : "Hide controls"}
-      >
-        {chromeHidden ? "👁" : "🙈"}
-      </button>
+      {/* Fixed top-right corner cluster — exit is the rightmost/outermost
+          (Teams/Windows-app-style close button), always visible
+          regardless of declutter state since it's essential navigation,
+          not decorative chrome. Declutter/subtitles sit to its left. */}
       <button
         className="subtitles-toggle"
         onClick={() => setSubtitlesHidden((h) => !h)}
@@ -178,33 +184,18 @@ export function Session({
       >
         {subtitlesHidden ? "💬" : "🚫💬"}
       </button>
+      <button
+        className="chrome-toggle"
+        onClick={() => setChromeHidden((h) => !h)}
+        title={chromeHidden ? "Show controls" : "Hide controls"}
+      >
+        {chromeHidden ? "👁" : "🙈"}
+      </button>
+      <button className="exit-toggle" onClick={handleExit} title="Exit lesson">
+        ✕
+      </button>
 
       <div className="session-header floating">
-        <button className="back-link session-back" onClick={handleExit} title="Back to lesson selection">
-          ← Lessons
-        </button>
-        <span>
-          {lesson.title[lang.targetLang]} — Block {blockIndex + 1}/
-          {lesson.blocks.length}
-        </span>
-        <button
-          className="style-toggle"
-          onClick={() =>
-            dispatch({ type: "SET_STYLE", style: style === "rigid" ? "flexible" : "rigid" })
-          }
-          title="Teaching style is a session setting — overrides the trainer's default"
-        >
-          {style === "rigid" ? "📏 Structured" : "🌿 Flexible"}
-        </button>
-        <button
-          className="mode-toggle"
-          onClick={() =>
-            dispatch({ type: "SET_MODE", mode: mode === "oneOnOne" ? "classroom" : "oneOnOne" })
-          }
-          title="Same lesson content either way — only framing/copy changes"
-        >
-          {mode === "oneOnOne" ? "🧑 1:1" : "👥 Classroom"}
-        </button>
         <button onClick={handlePause}>⏸ Pause</button>
       </div>
 
@@ -215,14 +206,6 @@ export function Session({
       <SlideControlsContext.Provider value={landscape ? controlsRail : null}>
         <div className="session-layout">
           <div className="slide-area">
-            <TeacherCaption
-              key={block.id}
-              block={block}
-              lang={lang}
-              trainer={trainer}
-              framingLanguage={lesson.framingLanguage}
-              onFinished={() => setAutoPlayReady(true)}
-            />
             {block.type === "vocabDrill" && (
               <VocabDrillBlock
                 block={block}
@@ -279,28 +262,50 @@ export function Session({
               />
             )}
 
-            <div className="slide-nav-footer">
-              <button
-                className="slide-nav-arrow"
-                onClick={() => dispatch({ type: "GOTO_BLOCK", index: blockIndex - 1 })}
-                disabled={blockIndex === 0}
-                title="Previous slide"
-              >
-                ‹
-              </button>
-              <span className="slide-nav-label">
-                {lesson.language && lesson.level && lesson.lessonNumber
-                  ? `${lesson.language} ${lesson.level} — Lesson ${lesson.lessonNumber}`
-                  : lesson.title[lang.targetLang] ?? lesson.title.en}
-              </span>
-              <button
-                className="slide-nav-arrow"
-                onClick={() => dispatch({ type: "GOTO_BLOCK", index: blockIndex + 1 })}
-                disabled={blockIndex === lesson.blocks.length - 1}
-                title="Next slide"
-              >
-                ›
-              </button>
+            {/* Sized/centered to the ACTUAL rendered slide graphic (see
+                engine/slideSize.ts), not the outer .slide-area box —
+                otherwise, whenever the slide is letterboxed (its aspect
+                ratio doesn't exactly match the container's), these would
+                float in the empty letterbox space instead of sitting on
+                the slide itself. Falls back to filling the container
+                before the first size report arrives. */}
+            <div
+              className="slide-overlay-bounds"
+              style={
+                slideSize.width > 0
+                  ? { width: slideSize.width, height: slideSize.height }
+                  : { width: "100%", height: "100%" }
+              }
+            >
+              <TeacherCaption
+                key={block.id}
+                block={block}
+                lang={lang}
+                trainer={trainer}
+                framingLanguage={lesson.framingLanguage}
+                onFinished={() => setAutoPlayReady(true)}
+              />
+              <div className="slide-nav-footer">
+                <button
+                  className="slide-nav-arrow"
+                  onClick={() => dispatch({ type: "GOTO_BLOCK", index: blockIndex - 1 })}
+                  disabled={blockIndex === 0}
+                  title="Previous slide"
+                >
+                  ‹
+                </button>
+                <span className="slide-nav-label">
+                  {new Date().toISOString().slice(0, 10)} · {blockIndex + 1}/{lesson.blocks.length}
+                </span>
+                <button
+                  className="slide-nav-arrow"
+                  onClick={() => dispatch({ type: "GOTO_BLOCK", index: blockIndex + 1 })}
+                  disabled={blockIndex === lesson.blocks.length - 1}
+                  title="Next slide"
+                >
+                  ›
+                </button>
+              </div>
             </div>
           </div>
 

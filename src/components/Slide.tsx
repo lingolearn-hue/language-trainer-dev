@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { useSlideControlsTarget } from "../context/SlideControlsContext";
+import { reportSlideSize } from "../engine/slideSize";
 
 const BASE_WIDTH = 960;
 const BASE_HEIGHT = 600; // 16:10 (960x600) — was 16:9 (960x540); a bit taller/tighter, especially for portrait
@@ -39,7 +40,12 @@ export function Slide({
       // and no wasted gap. (A height-only scale previously caused
       // portrait overflow — a narrow-tall container would scale the
       // fixed 960-wide slide up past the container's actual width.)
-      setScale(Math.min(width / BASE_WIDTH, height / BASE_HEIGHT));
+      const nextScale = Math.min(width / BASE_WIDTH, height / BASE_HEIGHT);
+      setScale(nextScale);
+      // Reported for Session.tsx to position the caption/nav-footer
+      // overlay exactly over the visible slide graphic, not the outer
+      // (often larger, letterboxed) container — see engine/slideSize.ts.
+      reportSlideSize(BASE_WIDTH * nextScale, BASE_HEIGHT * nextScale);
     });
     observer.observe(el);
     return () => observer.disconnect();
