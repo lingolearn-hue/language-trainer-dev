@@ -125,6 +125,16 @@ export const vocabBlock: Block = {
       { id: "v28", category: "adjective", translations: { ja: "つらい", de: "schmerzhaft, schwer zu ertragen", en: "painful, hard to bear" } },
       { id: "v29", category: "adjective", translations: { ja: "きけん", de: "gefährlich", en: "dangerous" } },
       { id: "v30", category: "adjective", translations: { ja: "あんぜん", de: "sicher", en: "safe" } },
+
+      // Added after an audit found these appear in the lesson's own
+      // dialogues but were missing from the vocab slide.
+      { id: "v31", category: "noun", translations: { ja: "しごと", de: "Arbeit, Job", en: "work, job" } },
+      { id: "v32", category: "noun", translations: { ja: "て", de: "Hand", en: "hand" } },
+      { id: "v33", category: "noun", translations: { ja: "ち", de: "Blut", en: "blood" } },
+      { id: "v34", category: "noun", translations: { ja: "みず", de: "Wasser", en: "water" } },
+      { id: "v35", category: "verb", translations: { ja: "みせる", de: "zeigen", en: "to show" } },
+      { id: "v36", category: "verb", translations: { ja: "すわる", de: "sich setzen", en: "to sit" } },
+      { id: "v37", category: "verb", translations: { ja: "はる", de: "aufkleben, anbringen", en: "to apply, stick on" } },
     ],
   },
 };

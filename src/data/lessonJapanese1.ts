@@ -121,6 +121,21 @@ export const vocabBlock: Block = {
       { id: "v28", category: "adjective", translations: { ja: "きびしい", de: "streng", en: "strict" } },
       { id: "v29", category: "adjective", translations: { ja: "にぎやか", de: "lebhaft", en: "lively" } },
       { id: "v30", category: "adjective", translations: { ja: "しずか", de: "ruhig", en: "quiet" } },
+
+      // Added after an audit found these appear in the lesson's own
+      // dialogues but were missing from the vocab slide (e.g. はたらく
+      // "to work" — flagged directly; the rest found via the same
+      // cross-check of dialogue text against the vocab list).
+      { id: "v31", category: "noun", translations: { ja: "ちち", de: "Vater (eigener)", en: "father (own, used when talking about your own to others)" } },
+      { id: "v32", category: "noun", translations: { ja: "はは", de: "Mutter (eigene)", en: "mother (own, used when talking about your own to others)" } },
+      { id: "v33", category: "noun", translations: { ja: "がくせい", de: "Student(in), Schüler(in)", en: "student" } },
+      { id: "v34", category: "noun", translations: { ja: "せんせい", de: "Lehrer(in)", en: "teacher" } },
+      { id: "v35", category: "noun", translations: { ja: "なまえ", de: "Name", en: "name" } },
+      { id: "v36", category: "noun", translations: { ja: "いぬ", de: "Hund", en: "dog" } },
+      { id: "v37", category: "noun", translations: { ja: "ねこ", de: "Katze", en: "cat" } },
+      { id: "v38", category: "verb", translations: { ja: "はたらく", de: "arbeiten", en: "to work" } },
+      { id: "v39", category: "verb", translations: { ja: "さんぽする", de: "spazieren gehen", en: "to take a walk" } },
+      { id: "v40", category: "adjective", translations: { ja: "かわいい", de: "süß, niedlich", en: "cute" } },
     ],
   },
 };

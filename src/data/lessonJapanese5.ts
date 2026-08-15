@@ -130,6 +130,13 @@ export const vocabBlock: Block = {
       { id: "v28", category: "adjective", translations: { ja: "からい", de: "scharf", en: "spicy" } },
       { id: "v29", category: "adjective", translations: { ja: "しょっぱい", de: "salzig", en: "salty" } },
       { id: "v30", category: "adjective", translations: { ja: "あつい", de: "heiß (Temperatur)", en: "hot (temperature)" } },
+
+      // Added after an audit found these appear in the lesson's own
+      // dialogues but were missing from the vocab slide.
+      { id: "v31", category: "noun", translations: { ja: "すし", de: "Sushi", en: "sushi" } },
+      { id: "v32", category: "noun", translations: { ja: "かいしゃ", de: "Firma, Büro", en: "company, office" } },
+      { id: "v33", category: "noun", translations: { ja: "じぶん", de: "man selbst", en: "oneself" } },
+      { id: "v34", category: "adjective", translations: { ja: "すき", de: "mögen (な-Adjektiv)", en: "to like, be fond of (な-adj)" } },
     ],
   },
 };

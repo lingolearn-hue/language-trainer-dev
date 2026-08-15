@@ -120,6 +120,17 @@ export const vocabBlock: Block = {
       { id: "v28", category: "adjective", translations: { ja: "げんき", de: "wohlauf, energisch (な-Adjektiv)", en: "well, energetic (な-adj)" } },
       { id: "v29", category: "adjective", translations: { ja: "たいへん", de: "hart, schwierig (な-Adjektiv)", en: "tough, difficult (な-adj)" } },
       { id: "v30", category: "adjective", translations: { ja: "だいじょうぶ", de: "okay, in Ordnung (な-Adjektiv)", en: "okay, fine (な-adj)" } },
+
+      // Added after an audit found these appear in the lesson's own
+      // dialogues but were missing from the vocab slide.
+      { id: "v31", category: "noun", translations: { ja: "しごと", de: "Arbeit, Job", en: "work, job" } },
+      { id: "v32", category: "noun", translations: { ja: "たべもの", de: "Essen", en: "food" } },
+      { id: "v33", category: "verb", translations: { ja: "しっぱいする", de: "scheitern, einen Fehler machen", en: "to fail, make a mistake" } },
+      { id: "v34", category: "verb", translations: { ja: "がんばる", de: "sich anstrengen, sein Bestes geben", en: "to try hard, do one's best" } },
+      { id: "v35", category: "verb", translations: { ja: "おもう", de: "denken", en: "to think" } },
+      { id: "v36", category: "verb", translations: { ja: "やすむ", de: "sich ausruhen", en: "to rest" } },
+      { id: "v37", category: "verb", translations: { ja: "むりを する", de: "sich überanstrengen", en: "to overdo it" } },
+      { id: "v38", category: "verb", translations: { ja: "きを つける", de: "aufpassen, vorsichtig sein", en: "to be careful" } },
     ],
   },
 };

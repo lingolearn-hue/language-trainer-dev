@@ -122,6 +122,20 @@ export const vocabBlock: Block = {
       { id: "v28", category: "adjective", translations: { ja: "げんき", de: "energisch wirkend (な-Adjektiv)", en: "energetic-looking (な-adjective)" } },
       { id: "v29", category: "adjective", translations: { ja: "しんせつ", de: "freundlich wirkend (な-Adjektiv)", en: "kind-looking (な-adjective)" } },
       { id: "v30", category: "adjective", translations: { ja: "はで", de: "auffällig, extravagant (な-Adjektiv)", en: "flashy, showy (な-adjective)" } },
+
+      // Added after an audit found these appear in the lesson's own
+      // dialogues but were missing from the vocab slide.
+      { id: "v31", category: "noun", translations: { ja: "くうこう", de: "Flughafen", en: "airport" } },
+      { id: "v32", category: "noun", translations: { ja: "でぐち", de: "Ausgang", en: "exit" } },
+      { id: "v33", category: "noun", translations: { ja: "ひと", de: "Person, Mensch", en: "person" } },
+      { id: "v34", category: "verb", translations: { ja: "つく", de: "ankommen", en: "to arrive" } },
+      { id: "v35", category: "verb", translations: { ja: "まつ", de: "warten", en: "to wait" } },
+      { id: "v36", category: "verb", translations: { ja: "いく", de: "gehen", en: "to go" } },
+      { id: "v37", category: "adjective", translations: { ja: "おおきい", de: "groß (い-Adjektiv)", en: "big (い-adj)" } },
+      { id: "v38", category: "adjective", translations: { ja: "あおい", de: "blau (い-Adjektiv)", en: "blue (い-adj)" } },
+      { id: "v39", category: "adjective", translations: { ja: "あかい", de: "rot (い-Adjektiv)", en: "red (い-adj)" } },
+      { id: "v40", category: "adjective", translations: { ja: "くろい", de: "schwarz (い-Adjektiv)", en: "black (い-adj)" } },
+      { id: "v41", category: "adjective", translations: { ja: "しんぱい", de: "besorgt (な-Adjektiv)", en: "worried (な-adj)" } },
     ],
   },
 };

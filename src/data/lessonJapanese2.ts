@@ -125,6 +125,16 @@ export const vocabBlock: Block = {
       { id: "v28", category: "adjective", translations: { ja: "みじかい", de: "kurz (い-Adjektiv)", en: "short (い-adj)" } },
       { id: "v29", category: "adjective", translations: { ja: "おおきい", de: "groß (い-Adjektiv)", en: "big (い-adj)" } },
       { id: "v30", category: "adjective", translations: { ja: "ちいさい", de: "klein (い-Adjektiv)", en: "small (い-adj)" } },
+
+      // Added after an audit found these appear in the lesson's own
+      // dialogues but were missing from the vocab slide.
+      { id: "v31", category: "noun", translations: { ja: "のど", de: "Hals, Kehle", en: "throat" } },
+      { id: "v32", category: "noun", translations: { ja: "せ", de: "Körpergröße", en: "height" } },
+      { id: "v33", category: "noun", translations: { ja: "くすり", de: "Medikament", en: "medicine" } },
+      { id: "v34", category: "verb", translations: { ja: "にる", de: "ähneln", en: "to resemble" } },
+      { id: "v35", category: "adjective", translations: { ja: "たかい", de: "groß, hoch (い-Adjektiv)", en: "tall, high (い-adj)" } },
+      { id: "v36", category: "adjective", translations: { ja: "ひくい", de: "klein, niedrig (い-Adjektiv)", en: "short, low (い-adj)" } },
+      { id: "v37", category: "adjective", translations: { ja: "どんな", de: "was für ein(e)", en: "what kind of" } },
     ],
   },
 };

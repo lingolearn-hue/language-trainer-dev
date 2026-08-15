@@ -132,6 +132,18 @@ export const vocabBlock: Block = {
       { id: "v28", category: "adjective", translations: { ja: "すくない", de: "wenig(e)", en: "few, a little" } },
       { id: "v29", category: "adjective", translations: { ja: "べんり", de: "praktisch", en: "convenient" } },
       { id: "v30", category: "adjective", translations: { ja: "しんせん", de: "frisch", en: "fresh" } },
+
+      // Added after an audit found these appear in the lesson's own
+      // dialogues but were missing from the vocab slide.
+      { id: "v31", category: "noun", translations: { ja: "やさい", de: "Gemüse", en: "vegetables" } },
+      { id: "v32", category: "noun", translations: { ja: "トマト", de: "Tomate", en: "tomato" } },
+      { id: "v33", category: "noun", translations: { ja: "たまご", de: "Ei", en: "egg" } },
+      { id: "v34", category: "noun", translations: { ja: "かばん", de: "Tasche", en: "bag" } },
+      { id: "v35", category: "noun", translations: { ja: "げんきん", de: "Bargeld", en: "cash" } },
+      { id: "v36", category: "noun", translations: { ja: "カード", de: "Karte", en: "card" } },
+      { id: "v37", category: "noun", translations: { ja: "サービス", de: "gratis, aufs Haus", en: "complimentary, on the house" } },
+      { id: "v38", category: "verb", translations: { ja: "いる", de: "brauchen, benötigen", en: "to need" } },
+      { id: "v39", category: "adjective", translations: { ja: "ほしい", de: "möchten, haben wollen (い-Adjektiv)", en: "to want (い-adj)" } },
     ],
   },
 };
