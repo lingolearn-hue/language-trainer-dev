@@ -130,4 +130,21 @@ export const trainers: Trainer[] = [
       "Patient and encouraging, repeats readings without being asked, celebrates small wins.",
     voiceProfile: { lang: "ja-JP", pitch: 1.1, rate: 0.95 },
   },
+  // 8th trainer, added for the ja-de pair once German translations were
+  // added to the Japanese lesson set. Same non-rebalancing note as Yui
+  // above applies — this doesn't attempt to restore full MVP symmetry.
+  {
+    id: "t-hiro",
+    name: "Hiro",
+    languages: ["ja", "de"],
+    avatarType: "male",
+    appearance:
+      "Late 20s, short tidy black hair, round glasses, plain button-up shirt, calm posture.",
+    hobby: "Amateur woodworker — builds small furniture on weekends.",
+    defaultStyle: "rigid",
+    courseIds: ["japanese-beginner"],
+    personalityNote:
+      "Measured and methodical, explains grammar step by step, rarely rushes ahead.",
+    voiceProfile: { lang: "ja-JP", pitch: 1.0, rate: 1.0 },
+  },
 ];
