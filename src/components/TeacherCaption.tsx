@@ -7,10 +7,18 @@ import { speak, cancelSpeech, splitIntoSentences } from "../engine/speech";
 // speech + on-screen caption) rather than a full avatar/lip-sync system.
 // Each slide can carry a short spoken framing line (`spokenIntro`) that is
 // distinct from the slide's own visible content — this component plays it
-// automatically when the block mounts and displays it as a caption. The
-// caption sits below the slide frame; on narrow/portrait layouts this is
-// the primary place a person reads it, since the slide itself is
-// compressed there.
+// automatically when the block mounts and displays it as a caption.
+//
+// Subtitles are only meant for text that ISN'T already visible on the
+// slide (that's their whole purpose — narrating something the student
+// can't otherwise read). For the agenda block specifically, spokenIntro
+// narrates essentially the same sequence the visible agenda list already
+// shows — so the caption bubble is suppressed there (via
+// `showCaptionText=false`) while the audio itself still plays normally.
+// Every other block type's spokenIntro is genuinely distinct from its
+// visible content (a welcome line, a warm-up question, a short framing
+// sentence — none of which duplicate on-screen text), so they keep the
+// caption as before.
 //
 // The full spokenIntro is broken into individual sentences (see
 // splitIntoSentences) and stepped through one at a time — narrated and
@@ -27,12 +35,14 @@ export function TeacherCaption({
   lang,
   trainer,
   framingLanguage = "target",
+  showCaptionText = true,
   onFinished,
 }: {
   block: Block;
   lang: LanguageSettings;
   trainer: Trainer;
   framingLanguage?: "source" | "target";
+  showCaptionText?: boolean;
   onFinished?: () => void;
 }) {
   const [speaking, setSpeaking] = useState(false);
@@ -99,6 +109,7 @@ export function TeacherCaption({
   }
 
   if (sentences.length === 0) return null;
+  if (!showCaptionText) return null; // audio already played above; no visible bubble for this block
 
   const currentText = sentences[sentenceIdx];
   const currentOther = otherSentences[sentenceIdx];

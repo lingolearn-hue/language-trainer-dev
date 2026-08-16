@@ -283,6 +283,7 @@ export function Session({
                 lang={lang}
                 trainer={trainer}
                 framingLanguage={lesson.framingLanguage}
+                showCaptionText={block.type !== "agenda"}
                 onFinished={() => setAutoPlayReady(true)}
               />
               <div className="slide-nav-footer">

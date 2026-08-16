@@ -119,12 +119,12 @@ export const vocabBlock: Block = {
       { id: "v23", category: "verb", translations: { ja: "あらう", de: "waschen", en: "to wash" } },
       { id: "v24", category: "verb", translations: { ja: "つかう", de: "benutzen", en: "to use" } },
 
-      { id: "v25", category: "adjective", translations: { ja: "つよい", de: "stark (い-Adjektiv)", en: "strong (い-adj)" } },
-      { id: "v26", category: "adjective", translations: { ja: "よわい", de: "schwach (い-Adjektiv)", en: "weak (い-adj)" } },
-      { id: "v27", category: "adjective", translations: { ja: "ながい", de: "lang (い-Adjektiv)", en: "long (い-adj)" } },
-      { id: "v28", category: "adjective", translations: { ja: "みじかい", de: "kurz (い-Adjektiv)", en: "short (い-adj)" } },
-      { id: "v29", category: "adjective", translations: { ja: "おおきい", de: "groß (い-Adjektiv)", en: "big (い-adj)" } },
-      { id: "v30", category: "adjective", translations: { ja: "ちいさい", de: "klein (い-Adjektiv)", en: "small (い-adj)" } },
+      { id: "v25", category: "adjective", translations: { ja: "つよい", de: "stark", en: "strong" } },
+      { id: "v26", category: "adjective", translations: { ja: "よわい", de: "schwach", en: "weak" } },
+      { id: "v27", category: "adjective", translations: { ja: "ながい", de: "lang", en: "long" } },
+      { id: "v28", category: "adjective", translations: { ja: "みじかい", de: "kurz", en: "short" } },
+      { id: "v29", category: "adjective", translations: { ja: "おおきい", de: "groß", en: "big" } },
+      { id: "v30", category: "adjective", translations: { ja: "ちいさい", de: "klein", en: "small" } },
 
       // Added after an audit found these appear in the lesson's own
       // dialogues but were missing from the vocab slide.
@@ -132,8 +132,8 @@ export const vocabBlock: Block = {
       { id: "v32", category: "noun", translations: { ja: "せ", de: "Körpergröße", en: "height" } },
       { id: "v33", category: "noun", translations: { ja: "くすり", de: "Medikament", en: "medicine" } },
       { id: "v34", category: "verb", translations: { ja: "にる", de: "ähneln", en: "to resemble" } },
-      { id: "v35", category: "adjective", translations: { ja: "たかい", de: "groß, hoch (い-Adjektiv)", en: "tall, high (い-adj)" } },
-      { id: "v36", category: "adjective", translations: { ja: "ひくい", de: "klein, niedrig (い-Adjektiv)", en: "short, low (い-adj)" } },
+      { id: "v35", category: "adjective", translations: { ja: "たかい", de: "groß, hoch", en: "tall, high" } },
+      { id: "v36", category: "adjective", translations: { ja: "ひくい", de: "klein, niedrig", en: "short, low" } },
       { id: "v37", category: "adjective", translations: { ja: "どんな", de: "was für ein(e)", en: "what kind of" } },
     ],
   },

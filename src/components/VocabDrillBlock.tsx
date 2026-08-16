@@ -1,5 +1,5 @@
 import { useEffect, useState, type CSSProperties } from "react";
-import type { Block, VocabDrillContent, VocabItem, LanguageSettings, ReadalongPhase } from "../types";
+import type { Block, VocabDrillContent, VocabItem, LanguageSettings, ReadalongPhase, Translations } from "../types";
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
@@ -18,6 +18,17 @@ const PHASE_LABEL: Record<ReadalongPhase, string> = {
   shadow: "2. Shadow — read along together",
   silent: "3. Silent — read alone",
 };
+
+// Max rows in a single column before it gets split into "Nouns 1" /
+// "Nouns 2" etc — keeps every column readable and legible regardless of
+// how many words a lesson's vocab audit ends up adding to one category.
+const MAX_ROWS_PER_COLUMN = 16;
+
+interface DisplayColumn {
+  key: string;
+  label: Translations;
+  items: VocabItem[];
+}
 
 // Vocab now gets the same 3-phase treatment as readalong (dialogue/song):
 // echo (word + long pause to repeat), shadow (word, no pause, read
@@ -41,11 +52,74 @@ export function VocabDrillBlock({
   const [running, setRunning] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
 
+  function labelFor(key: string) {
+    return content.groupLabels?.[key] ?? DEFAULT_CATEGORY_LABEL[key] ?? { de: key, en: key, zh: key, ja: key };
+  }
+
+  // Group into columns by category — matches the source course's own
+  // grouped vocab-slide layout, and lets 30-50+ items fit legibly on one
+  // dense slide instead of one long list. Column headers come from the
+  // block's own groupLabels if provided (e.g. sound groups for a
+  // pronunciation slide), otherwise fall back to noun/verb/adjective.
+  //
+  // Any category over MAX_ROWS_PER_COLUMN gets split into "Label 1" /
+  // "Label 2" sub-columns — this used to be a single unbounded column,
+  // which both looked cramped and (see below) caused a real narration
+  // bug once a category grew past what fit on one slide comfortably.
+  const rawGroups = new Map<string, VocabItem[]>();
+  const rawOrder: string[] = [];
+  for (const item of content.items) {
+    const key = item.category ?? "other";
+    if (!rawGroups.has(key)) {
+      rawGroups.set(key, []);
+      rawOrder.push(key); // preserves first-seen order from the data
+    }
+    rawGroups.get(key)!.push(item);
+  }
+
+  const columns: DisplayColumn[] = [];
+  for (const key of rawOrder) {
+    const items = rawGroups.get(key)!;
+    const label = labelFor(key);
+    if (items.length <= MAX_ROWS_PER_COLUMN) {
+      columns.push({ key, label, items });
+      continue;
+    }
+    const chunkCount = Math.ceil(items.length / MAX_ROWS_PER_COLUMN);
+    for (let i = 0; i < chunkCount; i++) {
+      const chunkItems = items.slice(i * MAX_ROWS_PER_COLUMN, (i + 1) * MAX_ROWS_PER_COLUMN);
+      columns.push({
+        key: `${key}-${i}`,
+        label: {
+          de: `${label.de} ${i + 1}`,
+          en: `${label.en} ${i + 1}`,
+          zh: `${label.zh} ${i + 1}`,
+          ja: `${label.ja} ${i + 1}`,
+        },
+        items: chunkItems,
+      });
+    }
+  }
+
+  // Narration order MUST match the visual column order above — flatten
+  // the same `columns` structure the render uses, rather than iterating
+  // content.items in raw data-file order. Real bug this fixes: once a
+  // lesson's vocab audit appends new items to the END of the array
+  // instead of keeping same-category items contiguous (e.g. more nouns
+  // added after verbs/adjectives were already appended), narrating
+  // content.items directly would jump to a later column, continue into
+  // a third, then jump BACK to finish the first column's leftover
+  // items — audibly "skipping to the next column, then returning
+  // later." Deriving narration order from the same grouped/columned
+  // structure as the visual layout makes that class of bug structurally
+  // impossible, regardless of how items are ordered in the source data.
+  const narrationOrder: VocabItem[] = columns.flatMap((c) => c.items);
+
   const phase = PHASES[phaseIdx];
 
   async function runPhaseFor(p: ReadalongPhase, shouldCancel: () => boolean) {
     setRunning(true);
-    for (const item of content.items) {
+    for (const item of narrationOrder) {
       if (shouldCancel()) break;
       setActiveId(item.id);
       const word = item.translations[lang.targetLang];
@@ -108,35 +182,12 @@ export function VocabDrillBlock({
     }
   }
 
-  // Group into columns by category — matches the source course's own
-  // grouped vocab-slide layout, and lets 30-50+ items fit legibly on one
-  // dense slide instead of one long list. Column headers come from the
-  // block's own groupLabels if provided (e.g. sound groups for a
-  // pronunciation slide), otherwise fall back to noun/verb/adjective.
-  const groups = new Map<string, VocabItem[]>();
-  const order: string[] = [];
-  for (const item of content.items) {
-    const key = item.category ?? "other";
-    if (!groups.has(key)) {
-      groups.set(key, []);
-      order.push(key); // preserves first-seen order from the data
-    }
-    groups.get(key)!.push(item);
-  }
-
-  function labelFor(key: string) {
-    return content.groupLabels?.[key] ?? DEFAULT_CATEGORY_LABEL[key] ?? { de: key, en: key, zh: key, ja: key };
-  }
-
-  // Available row height was previously fixed (0.82em, ~11.5px) regardless
-  // of how many rows actually needed to fit — leaving large unused
-  // whitespace below shorter columns. Instead, size rows from the actual
-  // largest column's item count, so the table always uses close to the
-  // full available height. ~430px is the usable content height inside a
-  // slide (600px slide - title - footer - padding); dividing by the
-  // tallest column's row count (plus its label) gives a fair per-row
-  // budget, clamped to a sane legible range.
-  const maxRows = Math.max(1, ...order.map((key) => groups.get(key)!.length));
+  // Row font-size computed from the tallest column's actual row count
+  // (now capped at MAX_ROWS_PER_COLUMN by the splitting above, so this
+  // no longer needs to shrink as aggressively as it did for a 23-row
+  // single column) — still dynamic so short lists (e.g. an 8-row
+  // pronunciation group) scale up to use the available height.
+  const maxRows = Math.max(1, ...columns.map((c) => c.items.length));
   const rowBudgetPx = 430 / (maxRows + 1);
   const vocabFontPx = Math.max(11, Math.min(22, rowBudgetPx / 1.55));
 
@@ -157,30 +208,26 @@ export function VocabDrillBlock({
       }
     >
       <div className="vocab-groups" style={{ "--vocab-font-size": `${vocabFontPx}px` } as CSSProperties}>
-        {order.map((key) => {
-          const items = groups.get(key)!;
-          const label = labelFor(key);
-          return (
-            <div className="vocab-group" key={key}>
-              <div className="vocab-group-label">
-                {label[lang.targetLang]}
-                {lang.sourceLang !== lang.targetLang && (
-                  <span className="source"> · {label[lang.sourceLang]}</span>
-                )}
-              </div>
-              <table>
-                <tbody>
-                  {items.map((item) => (
-                    <tr key={item.id} className={item.id === activeId ? "active" : ""}>
-                      <td className="target">{item.translations[lang.targetLang]}</td>
-                      <td className="source">{item.translations[lang.sourceLang]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+        {columns.map((col) => (
+          <div className="vocab-group" key={col.key}>
+            <div className="vocab-group-label">
+              {col.label[lang.targetLang]}
+              {lang.sourceLang !== lang.targetLang && (
+                <span className="source"> · {col.label[lang.sourceLang]}</span>
+              )}
             </div>
-          );
-        })}
+            <table>
+              <tbody>
+                {col.items.map((item) => (
+                  <tr key={item.id} className={item.id === activeId ? "active" : ""}>
+                    <td className="target">{item.translations[lang.targetLang]}</td>
+                    <td className="source">{item.translations[lang.sourceLang]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
       </div>
     </Slide>
   );
