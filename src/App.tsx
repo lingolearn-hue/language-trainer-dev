@@ -4,6 +4,7 @@ import { Session } from "./components/Session";
 import { TrainerSelect } from "./components/TrainerSelect";
 import { LessonSelect } from "./components/LessonSelect";
 import { lesson2 } from "./data/lesson2";
+import { lesson11 } from "./data/lesson11";
 import { lessonEnglishSpace } from "./data/lessonEnglishSpace";
 import { lessonJapanese2 } from "./data/lessonJapanese2";
 import { lessonJapanese1 } from "./data/lessonJapanese1";
@@ -19,6 +20,7 @@ import "./App.css";
 const display = { density: "dense" as const };
 const allLessons: LessonPlan[] = [
   lesson2,
+  lesson11,
   lessonEnglishSpace,
   lessonJapanese1,
   lessonJapanese2,
