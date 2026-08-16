@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { Block, ReadalongContent, LanguageSettings, ReadalongPhase } from "../types";
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
@@ -138,6 +138,23 @@ export function ReadalongBlock({
 
   const hasSpeakers = content.lines.some((l) => l.speaker);
 
+  // Same scaling approach as VocabDrillBlock: a fixed font-size regardless
+  // of content caused overflow whenever lines were long enough to wrap
+  // (a wrapped line takes 2+ visual rows, which a row-count-only estimate
+  // would miss) — so this estimates each line's likely VISUAL row count
+  // from its text length, not just counts 14 logical lines as 14 rows.
+  // ~28 characters is a rough per-row budget for the target/source column
+  // width; long lines that would wrap are counted as 2+ rows accordingly.
+  const CHARS_PER_ROW_ESTIMATE = 28;
+  const totalVisualRows = content.lines.reduce((sum, line) => {
+    const targetLen = (line.translations[lang.targetLang] ?? "").length;
+    const sourceLen = (line.translations[lang.sourceLang] ?? "").length;
+    const longer = Math.max(targetLen, sourceLen);
+    return sum + Math.max(1, Math.ceil(longer / CHARS_PER_ROW_ESTIMATE));
+  }, 0);
+  const rowBudgetPx = 430 / (totalVisualRows + 1);
+  const dialogueFontPx = Math.max(11, Math.min(24, rowBudgetPx / 1.35));
+
   return (
     <Slide
       title={block.title?.[lang.targetLang] ?? block.title?.en}
@@ -153,7 +170,10 @@ export function ReadalongBlock({
         </>
       }
     >
-      <div className={hasSpeakers ? "lines" : "lines no-speakers"}>
+      <div
+        className={hasSpeakers ? "lines" : "lines no-speakers"}
+        style={{ "--dialogue-font-size": `${dialogueFontPx}px` } as CSSProperties}
+      >
         {content.lines.map((line, i) => {
           const text = line.translations[lang.targetLang];
           const check = checkState[line.id] ?? "idle";
