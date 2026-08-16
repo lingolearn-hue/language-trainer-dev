@@ -433,6 +433,7 @@ export const readalongEntchenBlock: Block = {
   id: "l2-readalong-entchen",
   type: "readalong",
   displayMode: "face",
+  isSong: true, // added as a second song for this lesson — see readalongBruderJakobBlock for the first
   estimatedMinutes: 10,
   title: { de: "Alle meine Entchen", en: "All My Little Ducklings", zh: "我的小鸭子们" },
   content: {
@@ -482,5 +483,6 @@ export const lesson2: LessonPlan = {
     dialogueCafeBlock, // reused from Deutsch_3.pdf — validates readalong-as-dialogue
     pronunciationBlock, // reused from Deutsch_3.pdf — not native to lesson 2
     readalongBruderJakobBlock, // song always closes the lesson
+    readalongEntchenBlock, // second song — kept unused as dead code before, now wired in
   ],
 };
