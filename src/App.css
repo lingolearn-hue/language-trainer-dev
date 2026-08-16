@@ -589,22 +589,30 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .teacher-caption .caption-replay { pointer-events: auto; }
 .teacher-caption.speaking { box-shadow: 0 0 0 2px #3355e0; }
 
-/* Persistent per-slide footer: date + slide n/total, flush right,
-   small — plus prev/next arrows. Anchored to .slide-overlay-bounds
-   (the slide's own rendered box) so it always sits on the slide
-   itself, in both orientations, regardless of letterboxing. Shown on
-   every slide type, since it's rendered once in Session.tsx rather
-   than per-block. */
+/* Persistent per-slide footer: course/level/lesson label + date on the
+   left side of the right group, page n/total on the right — plus
+   prev/next arrows. Previous-slide arrow is pinned to the far-left edge
+   of the slide (justify-content: space-between with exactly two
+   groups: the prev arrow alone, and a right-hand group holding the
+   label + next arrow together) — everything else stays flush right.
+   Anchored to .slide-overlay-bounds (the slide's own rendered box) so
+   it always sits on the slide itself, in both orientations, regardless
+   of letterboxing. Shown on every slide type, since it's rendered once
+   in Session.tsx rather than per-block. */
 .slide-nav-footer {
   position: absolute; left: 0; right: 0; bottom: 0; z-index: 31;
-  display: flex; align-items: center; justify-content: flex-end; gap: 6px;
+  display: flex; align-items: center; justify-content: space-between;
   padding: 3px 6px; pointer-events: none;
 }
+.slide-nav-right-group {
+  display: flex; align-items: center; gap: 6px;
+}
 .slide-nav-label {
-  font-size: 8px; opacity: 0.5; color: #1a1a22;
+  font-size: 7px; opacity: 0.5; color: #1a1a22;
   background: rgba(255,255,255,0.7); padding: 1px 6px; border-radius: 5px;
   white-space: nowrap;
 }
+.slide-nav-gap { display: inline-block; width: 1.2em; }
 .slide-nav-arrow {
   pointer-events: auto; background: rgba(20,20,28,0.5); color: #fff;
   border: none; width: 17px; height: 17px; border-radius: 50%;

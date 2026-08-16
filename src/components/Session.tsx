@@ -295,17 +295,23 @@ export function Session({
                 >
                   ‹
                 </button>
-                <span className="slide-nav-label">
-                  {new Date().toISOString().slice(0, 10)} · {blockIndex + 1}/{lesson.blocks.length}
-                </span>
-                <button
-                  className="slide-nav-arrow"
-                  onClick={() => dispatch({ type: "GOTO_BLOCK", index: blockIndex + 1 })}
-                  disabled={blockIndex === lesson.blocks.length - 1}
-                  title="Next slide"
-                >
-                  ›
-                </button>
+                <div className="slide-nav-right-group">
+                  <span className="slide-nav-label">
+                    {lesson.language && lesson.level && lesson.lessonNumber
+                      ? `${lesson.language} ${lesson.level} - Lesson ${lesson.lessonNumber} - ${new Date().toISOString().slice(0, 10)}`
+                      : new Date().toISOString().slice(0, 10)}
+                    <span className="slide-nav-gap" />
+                    Page {blockIndex + 1}/{lesson.blocks.length}
+                  </span>
+                  <button
+                    className="slide-nav-arrow"
+                    onClick={() => dispatch({ type: "GOTO_BLOCK", index: blockIndex + 1 })}
+                    disabled={blockIndex === lesson.blocks.length - 1}
+                    title="Next slide"
+                  >
+                    ›
+                  </button>
+                </div>
               </div>
             </div>
           </div>

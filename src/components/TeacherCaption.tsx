@@ -47,6 +47,12 @@ export function TeacherCaption({
 }) {
   const [speaking, setSpeaking] = useState(false);
   const [sentenceIdx, setSentenceIdx] = useState(0);
+  // Without this, the caption kept showing the LAST intro sentence for
+  // the entire rest of the block (through the whole vocab drill,
+  // dialogue, etc.) once `speaking` went false — it only stopped
+  // narrating, it never actually disappeared. Subtitles should only be
+  // visible for the short intro itself.
+  const [finished, setFinished] = useState(false);
 
   // Which language the framing line is actually SPOKEN in — "source" for
   // beginner courses (student can't yet follow target-language
@@ -68,6 +74,7 @@ export function TeacherCaption({
   useEffect(() => {
     let cancelled = false;
     setSentenceIdx(0);
+    setFinished(false);
 
     if (sentences.length === 0) {
       // No spoken intro on this block — signal "done" immediately so the
@@ -86,6 +93,7 @@ export function TeacherCaption({
       }
       if (!cancelled) {
         setSpeaking(false);
+        setFinished(true);
         onFinished?.();
       }
     })();
@@ -100,16 +108,19 @@ export function TeacherCaption({
   async function replay() {
     if (sentences.length === 0) return;
     cancelSpeech();
+    setFinished(false);
     setSpeaking(true);
     for (let i = 0; i < sentences.length; i++) {
       setSentenceIdx(i);
       await speak(sentences[i], spokenLangCode, trainer.voiceProfile);
     }
     setSpeaking(false);
+    setFinished(true);
   }
 
   if (sentences.length === 0) return null;
   if (!showCaptionText) return null; // audio already played above; no visible bubble for this block
+  if (finished) return null; // intro's done — don't linger through the rest of the block's content
 
   const currentText = sentences[sentenceIdx];
   const currentOther = otherSentences[sentenceIdx];
