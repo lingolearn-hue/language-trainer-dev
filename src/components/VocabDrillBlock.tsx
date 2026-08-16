@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import type { Block, VocabDrillContent, VocabItem, LanguageSettings, ReadalongPhase } from "../types";
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
@@ -128,6 +128,18 @@ export function VocabDrillBlock({
     return content.groupLabels?.[key] ?? DEFAULT_CATEGORY_LABEL[key] ?? { de: key, en: key, zh: key, ja: key };
   }
 
+  // Available row height was previously fixed (0.82em, ~11.5px) regardless
+  // of how many rows actually needed to fit — leaving large unused
+  // whitespace below shorter columns. Instead, size rows from the actual
+  // largest column's item count, so the table always uses close to the
+  // full available height. ~430px is the usable content height inside a
+  // slide (600px slide - title - footer - padding); dividing by the
+  // tallest column's row count (plus its label) gives a fair per-row
+  // budget, clamped to a sane legible range.
+  const maxRows = Math.max(1, ...order.map((key) => groups.get(key)!.length));
+  const rowBudgetPx = 430 / (maxRows + 1);
+  const vocabFontPx = Math.max(11, Math.min(22, rowBudgetPx / 1.55));
+
   return (
     <Slide
       title={block.title?.[lang.targetLang] ?? block.title?.en}
@@ -144,7 +156,7 @@ export function VocabDrillBlock({
         </>
       }
     >
-      <div className="vocab-groups">
+      <div className="vocab-groups" style={{ "--vocab-font-size": `${vocabFontPx}px` } as CSSProperties}>
         {order.map((key) => {
           const items = groups.get(key)!;
           const label = labelFor(key);

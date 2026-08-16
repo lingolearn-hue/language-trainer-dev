@@ -230,23 +230,30 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 
 /* Dense vocab: category columns (noun/verb/adjective), everything visible
    at once. Designed to hold 30-50 items on one slide, matching the source
-   course's own grouped-column vocab-slide density. */
+   course's own grouped-column vocab-slide density.
+   Row font-size is computed per-slide in VocabDrillBlock.tsx from the
+   actual tallest column's row count (--vocab-font-size) — a fixed small
+   size regardless of content left large unused whitespace under short
+   columns; this uses close to the full available height instead, on
+   every vocab/pronunciation slide, not just a special-cased 4+-column
+   tier. The 0.82em fallback only applies if the variable is somehow
+   unset. */
 .vocab-groups { display: flex; gap: 4%; height: 100%; align-items: flex-start; }
 .vocab-group { flex: 1; min-width: 0; }
 .vocab-group-label {
-  font-size: 0.85em; font-weight: 700; opacity: 0.75; text-transform: uppercase;
+  font-size: calc(var(--vocab-font-size, 12px) * 1.15); font-weight: 700; opacity: 0.75; text-transform: uppercase;
   letter-spacing: 0.03em; margin-bottom: 0.3em; border-bottom: 1px solid #d5d5db;
   padding-bottom: 0.2em;
 }
 .vocab-group-label .source { font-weight: 400; text-transform: none; opacity: 0.65; }
 .vocab-group table { width: 100%; border-collapse: collapse; }
-.vocab-group td { padding: 0.15em 0.3em 0.15em 0; font-size: 0.82em; line-height: 1.3; }
+.vocab-group td {
+  padding: 0.15em 0.3em 0.15em 0;
+  font-size: var(--vocab-font-size, 0.82em);
+  line-height: 1.3;
+}
 .vocab-group td.target { font-weight: 600; white-space: nowrap; }
 .vocab-group td.source { opacity: 0.6; }
-/* Denser variant for slides with 4+ columns / 14+ rows per column
-   (e.g. the pronunciation slide) — same structure, smaller type. */
-.vocab-groups:has(.vocab-group:nth-child(4)) .vocab-group td { font-size: 0.68em; padding: 0.08em 0.25em 0.08em 0; line-height: 1.2; }
-.vocab-groups:has(.vocab-group:nth-child(4)) .vocab-group-label { font-size: 0.72em; margin-bottom: 0.15em; }
 .vocab-group tr.active td { background: #dde6ff; }
 .vocab-count { opacity: 0.55; font-size: 0.85em; margin: 0 auto; }
 
@@ -271,15 +278,21 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
    content actually has speakers (dialogues) — songs/plain readalongs use
    a 2-column layout instead. `.line` uses display:contents so its
    children (speaker/target/source) participate directly as items in the
-   parent grid, keeping every line's columns aligned. */
+   parent grid, keeping every line's columns aligned.
+   Base size was a fixed 13px regardless of dialogue length — every
+   dialogue in this app is exactly 14 lines, which at 13px left a lot of
+   the slide's available height unused. Bumped to fill it properly.
+   Target and source used to be two different sizes (1em / 0.85em); now
+   both use the same size — the smaller source size wasn't needed for
+   fit, just made the translation harder to read for no benefit. */
 .lines {
   display: grid;
   grid-template-columns: minmax(60px, auto) 1fr 1fr;
   column-gap: 14px;
-  row-gap: 2px;
+  row-gap: 4px;
   overflow-y: auto;
   align-items: baseline;
-  font-size: 13px;
+  font-size: 22px;
 }
 .lines.no-speakers { grid-template-columns: 1fr 1fr; }
 .line { display: contents; }
@@ -291,9 +304,9 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   opacity: 0.55;
 }
 .line .target { font-size: 1em; }
-.line .source { font-size: 0.85em; }
+.line .source { font-size: 1em; }
 .line .speaker {
-  font-size: 0.68em; font-weight: 700; opacity: 0.5;
+  font-size: 0.6em; font-weight: 700; opacity: 0.5;
   text-transform: uppercase; letter-spacing: 0.02em; align-self: center;
 }
 .line.active .target,
