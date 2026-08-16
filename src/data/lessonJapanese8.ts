@@ -66,6 +66,7 @@ export const agendaBlock: Block = {
       { id: "a4", translations: { ja: "かいわ：しじょうで", de: "Dialog A: Auf dem Markt", en: "Dialogue A: At the Market" } },
       { id: "a5", translations: { ja: "かいわ：ねだんの こうしょう", de: "Dialog B: Über den Preis verhandeln", en: "Dialogue B: Haggling Over Price" } },
       { id: "a6", translations: { ja: "はつおんの れんしゅう", de: "Aussprachetraining", en: "Pronunciation Practice" } },
+      { id: "a7", translations: { ja: "かず と らぎょう", de: "Zahlen und R-Laut", en: "Numbers & R-sound Practice" } },
     ],
   },
 };
@@ -278,6 +279,82 @@ export const pronunciationBlock: Block = {
   },
 };
 
+export const numberDrillBlock: Block = {
+  id: "ja8-number-drill",
+  type: "vocabDrill",
+  displayMode: "content",
+  estimatedMinutes: 6,
+  title: { ja: "かず と らぎょう", en: "Numbers & R-sound Practice", de: "Zahlen und R-Laut-Übung" },
+  spokenIntro: {
+    ja: "つぎは、かずと ら行の れんしゅうです。",
+    en: "Next, let's practice numbers and the R-sound.",
+    de: "Als Nächstes üben wir Zahlen und den R-Laut.",
+  },
+  content: {
+    groupLabels: {
+      rwords: { ja: "ら行の たんご", en: "R-sound words", de: "Wörter mit R-Laut" },
+      numbers: { ja: "かず", en: "Numbers", de: "Zahlen" },
+      numbers_hon: { ja: "かず ＋ ほん", en: "Numbers + ほん (long objects)", de: "Zahlen + ほん (lange Gegenstände)" },
+    },
+    items: [
+      // Column 1 — more R-sound practice words (distinct from the ones
+      // already used on the pronunciation slide), real common A1 words.
+      { id: "nr1", category: "rwords", translations: { ja: "これ", en: "this", de: "dies, das hier" } },
+      { id: "nr2", category: "rwords", translations: { ja: "それ", en: "that", de: "das" } },
+      { id: "nr3", category: "rwords", translations: { ja: "あれ", en: "that (over there)", de: "das (dort drüben)" } },
+      { id: "nr4", category: "rwords", translations: { ja: "どれ", en: "which (of many)", de: "welches" } },
+      { id: "nr5", category: "rwords", translations: { ja: "だれ", en: "who", de: "wer" } },
+      { id: "nr6", category: "rwords", translations: { ja: "いくら", en: "how much", de: "wie viel" } },
+      { id: "nr7", category: "rwords", translations: { ja: "ください", en: "please give me", de: "geben Sie mir bitte" } },
+      { id: "nr8", category: "rwords", translations: { ja: "ありがとう", en: "thank you", de: "danke" } },
+      { id: "nr9", category: "rwords", translations: { ja: "さくら", en: "cherry blossom", de: "Kirschblüte" } },
+      { id: "nr10", category: "rwords", translations: { ja: "りんご", en: "apple", de: "Apfel" } },
+      { id: "nr11", category: "rwords", translations: { ja: "わかる", en: "to understand", de: "verstehen" } },
+      { id: "nr12", category: "rwords", translations: { ja: "はいる", en: "to enter", de: "eintreten" } },
+      { id: "nr13", category: "rwords", translations: { ja: "とおり", en: "street, avenue", de: "Straße" } },
+      { id: "nr14", category: "rwords", translations: { ja: "れい", en: "example / zero", de: "Beispiel / null" } },
+      { id: "nr15", category: "rwords", translations: { ja: "らいねん", en: "next year", de: "nächstes Jahr" } },
+
+      // Column 2 — bare numbers: 0-10, then 11, 15, 20, 100.
+      { id: "nb0", category: "numbers", translations: { ja: "ゼロ", en: "zero", de: "null" } },
+      { id: "nb1", category: "numbers", translations: { ja: "いち", en: "one", de: "eins" } },
+      { id: "nb2", category: "numbers", translations: { ja: "に", en: "two", de: "zwei" } },
+      { id: "nb3", category: "numbers", translations: { ja: "さん", en: "three", de: "drei" } },
+      { id: "nb4", category: "numbers", translations: { ja: "よん", en: "four", de: "vier" } },
+      { id: "nb5", category: "numbers", translations: { ja: "ご", en: "five", de: "fünf" } },
+      { id: "nb6", category: "numbers", translations: { ja: "ろく", en: "six", de: "sechs" } },
+      { id: "nb7", category: "numbers", translations: { ja: "なな", en: "seven", de: "sieben" } },
+      { id: "nb8", category: "numbers", translations: { ja: "はち", en: "eight", de: "acht" } },
+      { id: "nb9", category: "numbers", translations: { ja: "きゅう", en: "nine", de: "neun" } },
+      { id: "nb10", category: "numbers", translations: { ja: "じゅう", en: "ten", de: "zehn" } },
+      { id: "nb11", category: "numbers", translations: { ja: "じゅういち", en: "eleven", de: "elf" } },
+      { id: "nb15", category: "numbers", translations: { ja: "じゅうご", en: "fifteen", de: "fünfzehn" } },
+      { id: "nb20", category: "numbers", translations: { ja: "にじゅう", en: "twenty", de: "zwanzig" } },
+      { id: "nb100", category: "numbers", translations: { ja: "ひゃく", en: "hundred", de: "hundert" } },
+
+      // Column 3 — same numbers, now with the ほん counter for long thin
+      // objects (bottles, pens, etc.) — genuinely irregular at 1, 6, 8,
+      // 10 (see the earlier pronunciation slide's own note on this), so
+      // this column doubles as reinforcement of that same real pattern.
+      { id: "nh0", category: "numbers_hon", translations: { ja: "ゼロほん", en: "zero (long objects)", de: "null (lange Gegenstände)" } },
+      { id: "nh1", category: "numbers_hon", translations: { ja: "いっぽん", en: "one (long objects)", de: "eins (lange Gegenstände)" } },
+      { id: "nh2", category: "numbers_hon", translations: { ja: "にほん", en: "two (long objects)", de: "zwei (lange Gegenstände)" } },
+      { id: "nh3", category: "numbers_hon", translations: { ja: "さんぼん", en: "three (long objects)", de: "drei (lange Gegenstände)" } },
+      { id: "nh4", category: "numbers_hon", translations: { ja: "よんほん", en: "four (long objects)", de: "vier (lange Gegenstände)" } },
+      { id: "nh5", category: "numbers_hon", translations: { ja: "ごほん", en: "five (long objects)", de: "fünf (lange Gegenstände)" } },
+      { id: "nh6", category: "numbers_hon", translations: { ja: "ろっぽん", en: "six (long objects)", de: "sechs (lange Gegenstände)" } },
+      { id: "nh7", category: "numbers_hon", translations: { ja: "ななほん", en: "seven (long objects)", de: "sieben (lange Gegenstände)" } },
+      { id: "nh8", category: "numbers_hon", translations: { ja: "はっぽん", en: "eight (long objects)", de: "acht (lange Gegenstände)" } },
+      { id: "nh9", category: "numbers_hon", translations: { ja: "きゅうほん", en: "nine (long objects)", de: "neun (lange Gegenstände)" } },
+      { id: "nh10", category: "numbers_hon", translations: { ja: "じゅっぽん", en: "ten (long objects)", de: "zehn (lange Gegenstände)" } },
+      { id: "nh11", category: "numbers_hon", translations: { ja: "じゅういっぽん", en: "eleven (long objects)", de: "elf (lange Gegenstände)" } },
+      { id: "nh15", category: "numbers_hon", translations: { ja: "じゅうごほん", en: "fifteen (long objects)", de: "fünfzehn (lange Gegenstände)" } },
+      { id: "nh20", category: "numbers_hon", translations: { ja: "にじゅっぽん", en: "twenty (long objects)", de: "zwanzig (lange Gegenstände)" } },
+      { id: "nh100", category: "numbers_hon", translations: { ja: "ひゃっぽん", en: "hundred (long objects)", de: "hundert (lange Gegenstände)" } },
+    ],
+  },
+};
+
 export const lessonJapanese8: LessonPlan = {
   id: "lesson-ja-8",
   courseId: "japanese-beginner",
@@ -295,6 +372,7 @@ export const lessonJapanese8: LessonPlan = {
     dialogueMarketBlock,
     dialogueHagglingBlock,
     pronunciationBlock,
+    numberDrillBlock,
     // No song block — German track has "This Old Man" here, but no
     // Japanese-specific song has been researched yet (known open item).
   ],
