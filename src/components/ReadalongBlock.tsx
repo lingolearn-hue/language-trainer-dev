@@ -40,6 +40,18 @@ export function ReadalongBlock({
 
   const phase = PHASES[phaseIdx];
 
+  // Pause length between dialogue lines now scales with how long the
+  // sentence actually is — a fixed pause regardless of sentence length
+  // meant short lines dragged and long lines got cut short before a
+  // student could realistically finish repeating/reading them. Applies
+  // to echo (repeat-aloud), silent (read-alone, which needs the most
+  // time since there's no audio pacing it), and now shadow too (was a
+  // flat 0ms — lines ran straight into each other with no breathing
+  // room at all).
+  function pauseFor(text: string, minMs: number, perCharMs: number, maxMs: number): number {
+    return Math.max(minMs, Math.min(maxMs, text.length * perCharMs));
+  }
+
   // Takes an explicit phase rather than reading `phase` from closure, so
   // the auto-play sequence below can run all 3 phases back to back without
   // stale-closure bugs from setPhaseIdx not having re-rendered yet.
@@ -57,12 +69,16 @@ export function ReadalongBlock({
       if (p === "echo") {
         await speak(text, lang.targetLang, trainer.voiceProfile);
         if (shouldCancel()) break;
-        await wait(2500); // long pause for student to repeat
+        await wait(pauseFor(text, 2800, 90, 7000)); // long pause for student to repeat, scaled by sentence length
       } else if (p === "shadow") {
-        await speak(text, lang.targetLang, trainer.voiceProfile); // no pause, read together
+        await speak(text, lang.targetLang, trainer.voiceProfile);
+        if (shouldCancel()) break;
+        await wait(pauseFor(text, 900, 45, 3500)); // was 0ms (no pause at all) — real gap now, still shorter than echo since it's read together, not independently
       } else {
-        // silent: no trainer voice, just a timed pace for student to read alone
-        await wait(2000);
+        // silent: no trainer voice, timed pace for student to read alone —
+        // needs the most generous scaling since there's no audio cue at
+        // all to pace against.
+        await wait(pauseFor(text, 2800, 120, 8000));
       }
     }
     setActiveLine(null);
