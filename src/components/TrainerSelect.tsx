@@ -3,6 +3,7 @@ import { trainers, type Trainer } from "../data/trainers";
 import type { LangCode } from "../types";
 import { TrainerAvatar } from "./TrainerAvatar";
 import { VoiceHelpOverlay } from "./VoiceHelpOverlay";
+import { UpdateCheckButton } from "./UpdateCheckButton";
 
 const LANG_LABEL: Record<LangCode, string> = {
   de: "German",
@@ -58,6 +59,7 @@ export function TrainerSelect({
   return (
     <div className="trainer-select">
       <VoiceHelpOverlay />
+      <UpdateCheckButton />
       <h1>Choose your trainer</h1>
       <p className="subtitle">Each trainer teaches a fixed language pair, in either direction.</p>
 
