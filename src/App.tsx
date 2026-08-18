@@ -16,6 +16,9 @@ import { lessonJapanese7 } from "./data/lessonJapanese7";
 import { lessonJapanese8 } from "./data/lessonJapanese8";
 import { lessonJapanese9 } from "./data/lessonJapanese9";
 import { lessonJapanese10 } from "./data/lessonJapanese10";
+import { lessonJapanese11 } from "./data/lessonJapanese11";
+import { lessonJapanese12 } from "./data/lessonJapanese12";
+import { lessonJapanese13 } from "./data/lessonJapanese13";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan } from "./types";
 import "./App.css";
@@ -35,6 +38,9 @@ const allLessons: LessonPlan[] = [
   lessonJapanese8,
   lessonJapanese9,
   lessonJapanese10,
+  lessonJapanese11,
+  lessonJapanese12,
+  lessonJapanese13,
 ]; // grows as more lessons are built
 
 function App() {
