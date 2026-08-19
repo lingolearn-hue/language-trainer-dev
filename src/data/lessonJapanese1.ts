@@ -30,6 +30,8 @@ export const titleBlock: Block = {
   title: { ja: "かぞく", zh: "家庭", de: "Familie", en: "Family" },
   spokenIntro: {
     ja: "ようこそ！きょうは かぞくについて べんきょうしましょう。",
+    zh: "欢迎！今天我们学习家庭相关的词汇。",
+    de: "Willkommen! Heute lernen wir Wörter rund um die Familie.",
     en: "Welcome! Today we'll learn about family.",
   },
   content: {
@@ -45,6 +47,8 @@ export const agendaBlock: Block = {
   title: { ja: "ながれ", zh: "介绍", de: "Ablauf", en: "Agenda" },
   spokenIntro: {
     ja: "きょうは まず じこしょうかい、それから かぞくの たんごを べんきょうします。そのあと「です」と「います」を みて、ふたつの かいわを れんしゅうし、さいごに はつおんの れんしゅうを します。",
+    zh: "今天我们先简单介绍，然后学习家庭词汇。之后学习です和います，练习两段对话，最后进行发音练习。",
+    de: "Heute beginnen wir mit einer kurzen Einführung und lernen dann Wortschatz zur Familie. Danach schauen wir uns です und います an, üben zwei Dialoge und schließen mit Aussprachetraining ab.",
     en: "Today we'll start with a short introduction, then learn family vocabulary. After that we'll look at です and います, practice two dialogues, and finish with pronunciation practice.",
   },
   content: {
@@ -67,11 +71,15 @@ export const introBlock: Block = {
   title: { ja: "じこしょうかい", zh: "热身", de: "Aufwärmen", en: "Warm-up" },
   spokenIntro: {
     ja: "はじめる まえに、すこし はなしましょう。",
+    zh: "开始之前，我们先聊聊。",
+    de: "Bevor wir anfangen, lass uns kurz reden.",
     en: "Before we start, let's talk a little.",
   },
   content: {
     text: {
       ja: "かぞくは なんにんですか？きょうだいが いますか？",
+      zh: "你家有几口人？你有兄弟姐妹吗？",
+      de: "Wie viele Personen hat deine Familie? Hast du Geschwister?",
       en: "How many people are in your family? Do you have siblings?",
     },
   },
@@ -85,6 +93,8 @@ export const vocabBlock: Block = {
   title: { ja: "たんご：かぞく", zh: "词汇：家庭", de: "Wortschatz: Familie", en: "Vocabulary: Family" },
   spokenIntro: {
     ja: "かぞくに かんけいする たんごを みてみましょう。",
+    zh: "我们来看一些家庭相关的词汇。",
+    de: "Schauen wir uns ein paar Wörter rund um die Familie an.",
     en: "Let's look at some family-related words.",
   },
   content: {
@@ -148,6 +158,8 @@ export const grammarToBeToHaveBlock: Block = {
   title: { ja: "「です」と「います」", zh: "是／有", de: "Sein / Haben", en: "To Be / To Have" },
   spokenIntro: {
     ja: "きょうの ぶんぽうは、「です」と「います」の つかいかたです。",
+    zh: "今天的语法是です和います／あります的用法。",
+    de: "Die heutige Grammatik ist, wie man です und います/あります benutzt.",
     en: "Today's grammar is how to use です and います/あります.",
   },
   content: {
@@ -176,6 +188,8 @@ export const dialogueIntroducingFamilyBlock: Block = {
   title: { ja: "かいわ：かぞくを しょうかいする", zh: "对话A：介绍家人", de: "Dialog A: Die Familie vorstellen", en: "Dialogue A: Introducing Family" },
   spokenIntro: {
     ja: "パーティーで かぞくを しょうかいする かいわを ききましょう。",
+    zh: "我们来听听有人在派对上介绍自己的家人。",
+    de: "Hören wir uns an, wie jemand auf einer Party seine Familie vorstellt.",
     en: "Let's listen to someone introducing their family at a party.",
   },
   content: {
@@ -206,6 +220,8 @@ export const dialogueWhoLivesAtHomeBlock: Block = {
   title: { ja: "かいわ：いえに すんでいる ひと", zh: "对话B：谁住在家里", de: "Dialog B: Wer zu Hause wohnt", en: "Dialogue B: Who Lives at Home" },
   spokenIntro: {
     ja: "いえに だれが すんでいるかを はなす かいわを ききましょう。",
+    zh: "我们来听一段关于谁住在家里的对话。",
+    de: "Hören wir uns ein Gespräch darüber an, wer bei jemandem zu Hause wohnt.",
     en: "Let's listen to a conversation about who lives in someone's house.",
   },
   content: {
@@ -236,6 +252,8 @@ export const pronunciationBlock: Block = {
   title: { ja: "はつおんの れんしゅう", zh: "发音练习", de: "Aussprachetraining", en: "Pronunciation Practice" },
   spokenIntro: {
     ja: "だくてんと はんだくてん、それから アクセントを れんしゅうしましょう。",
+    zh: "我们来练习浊音／半浊音符号，并巩固声调重音。",
+    de: "Üben wir stimmhafte/halbstimmhafte Lautzeichen und vertiefen den Tonhöhenakzent.",
     en: "Let's practice voiced/semi-voiced consonant marks, and reinforce pitch accent.",
   },
   content: {
