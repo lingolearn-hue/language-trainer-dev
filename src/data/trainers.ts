@@ -147,4 +147,21 @@ export const trainers: Trainer[] = [
       "Measured and methodical, explains grammar step by step, rarely rushes ahead.",
     voiceProfile: { lang: "ja-JP", pitch: 1.0, rate: 1.0 },
   },
+  // 9th trainer, added for the zh-ja pair once Chinese translations were
+  // added to the Japanese lesson set — completes all 6 possible pairs
+  // among {en, de, ja, zh} for the Japanese course.
+  {
+    id: "t-lin",
+    name: "Lin",
+    languages: ["zh", "ja"],
+    avatarType: "female",
+    appearance:
+      "Mid 20s, straight shoulder-length hair, small silver earrings, soft cardigan, gentle expression.",
+    hobby: "Calligraphy — practices both Chinese and Japanese brush writing.",
+    defaultStyle: "flexible",
+    courseIds: ["japanese-beginner"],
+    personalityNote:
+      "Warm and encouraging, draws comparisons between Chinese and Japanese where useful, patient with mistakes.",
+    voiceProfile: { lang: "ja-JP", pitch: 1.1, rate: 1.0 },
+  },
 ];
