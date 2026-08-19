@@ -1,12 +1,17 @@
 # Language Trainer
 
-Version: 62 — 2026-08-16
+Version: 67 — 2026-08-16
 
 React-based long-form language tutor simulation (45-90 min sessions).
 Static content, multiple trainer personas, block-based session engine
 with pause/resume, fully auto-playing by default.
 
 See `/spec` (in project history) for concept, trainer, and lesson-structure docs.
+
+See `docs/topic-lesson-system.md` for the topic-based lesson architecture
+(proof of concept — vocab/dialogue/song shared across target languages,
+grammar/pronunciation authored per language). Status and next steps for
+migrating the rest of the built lessons are documented there.
 
 ## Current state
 
