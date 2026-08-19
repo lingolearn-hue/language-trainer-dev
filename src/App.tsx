@@ -19,11 +19,27 @@ import { lessonJapanese10 } from "./data/lessonJapanese10";
 import { lessonJapanese11 } from "./data/lessonJapanese11";
 import { lessonJapanese12 } from "./data/lessonJapanese12";
 import { lessonJapanese13 } from "./data/lessonJapanese13";
+import { topicFood } from "./data/topics/topic-05-food";
+import { buildLessonPlan } from "./engine/buildLesson";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan } from "./types";
 import "./App.css";
 
 const display = { density: "dense" as const };
+
+// Proof of concept for the topic-based lesson system (see
+// engine/buildLesson.ts) — generates two LessonPlans from ONE topic
+// file (topic-05-food.ts): a Japanese-target version and a German-target
+// version, both sharing the exact same vocab/dialogue data, each with
+// its own real grammar/pronunciation. Registered alongside, not instead
+// of, the existing hand-written lessonJapanese5 while this is being
+// proven out — nothing existing changes.
+const generatedFoodJa = buildLessonPlan(topicFood, "ja", "en", "japanese-beginner");
+const generatedFoodDe = buildLessonPlan(topicFood, "de", "en", "german-beginner");
+const generatedLessons: LessonPlan[] = [generatedFoodJa, generatedFoodDe].filter(
+  (l): l is LessonPlan => l !== null,
+);
+
 const allLessons: LessonPlan[] = [
   lesson2,
   lesson11,
@@ -41,6 +57,7 @@ const allLessons: LessonPlan[] = [
   lessonJapanese11,
   lessonJapanese12,
   lessonJapanese13,
+  ...generatedLessons,
 ]; // grows as more lessons are built
 
 function App() {

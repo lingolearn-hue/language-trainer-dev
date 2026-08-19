@@ -192,10 +192,12 @@ export function ReadalongBlock({
       >
         {content.lines.map((line, i) => {
           const text = line.translations[lang.targetLang];
+          const speakerText =
+            typeof line.speaker === "string" ? line.speaker : line.speaker?.[lang.targetLang];
           const check = checkState[line.id] ?? "idle";
           return (
             <div key={line.id} className={i === activeLine ? "line active" : "line"}>
-              {hasSpeakers && <div className="speaker">{line.speaker ?? ""}</div>}
+              {hasSpeakers && <div className="speaker">{speakerText ?? ""}</div>}
               <div className="target">
                 {text}
                 {phase === "silent" && (

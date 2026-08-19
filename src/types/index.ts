@@ -31,7 +31,12 @@ export interface VocabDrillContent {
 
 export interface ReadalongLine {
   id: string;
-  speaker?: string; // e.g. trainer name, or undefined for narration
+  // Plain string (existing behavior, all hand-written lesson files) or a
+  // full Translations object (topic-based lessons — see topicTypes.ts —
+  // where the same dialogue line backs multiple target languages, so a
+  // role label like "waiter" needs to actually translate, not just carry
+  // over the original language's word untranslated).
+  speaker?: string | Translations;
   translations: Translations;
 }
 
