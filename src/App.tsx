@@ -6,58 +6,53 @@ import { LessonSelect } from "./components/LessonSelect";
 import { lesson2 } from "./data/lesson2";
 import { lesson11 } from "./data/lesson11";
 import { lessonEnglishSpace } from "./data/lessonEnglishSpace";
-import { lessonJapanese2 } from "./data/lessonJapanese2";
-import { lessonJapanese1 } from "./data/lessonJapanese1";
-import { lessonJapanese3 } from "./data/lessonJapanese3";
-import { lessonJapanese4 } from "./data/lessonJapanese4";
-import { lessonJapanese5 } from "./data/lessonJapanese5";
-import { lessonJapanese6 } from "./data/lessonJapanese6";
-import { lessonJapanese7 } from "./data/lessonJapanese7";
-import { lessonJapanese8 } from "./data/lessonJapanese8";
-import { lessonJapanese9 } from "./data/lessonJapanese9";
-import { lessonJapanese10 } from "./data/lessonJapanese10";
-import { lessonJapanese11 } from "./data/lessonJapanese11";
-import { lessonJapanese12 } from "./data/lessonJapanese12";
-import { lessonJapanese13 } from "./data/lessonJapanese13";
+import { topicFamily } from "./data/topics/topic-01-family";
+import { topicBody } from "./data/topics/topic-02-body";
+import { topicAppearance } from "./data/topics/topic-03-appearance";
+import { topicEmotions } from "./data/topics/topic-04-emotions";
 import { topicFood } from "./data/topics/topic-05-food";
+import { topicHome } from "./data/topics/topic-06-home";
+import { topicClothing } from "./data/topics/topic-07-clothing";
+import { topicShopping } from "./data/topics/topic-08-shopping";
+import { topicAnimals } from "./data/topics/topic-09-animals";
+import { topicHealth } from "./data/topics/topic-10-health";
+import { topicTravel } from "./data/topics/topic-11-travel";
+import { topicDirections } from "./data/topics/topic-12-directions";
+import { topicTime } from "./data/topics/topic-13-time";
 import { buildLessonPlan } from "./engine/buildLesson";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan, LangCode } from "./types";
+import type { TopicLesson } from "./data/topicTypes";
 import "./App.css";
 
 const display = { density: "dense" as const };
 
-// Proof of concept for the topic-based lesson system (see
-// engine/buildLesson.ts) — generates two LessonPlans from ONE topic
-// file (topic-05-food.ts): a Japanese-target version and a German-target
-// version, both sharing the exact same vocab/dialogue data, each with
-// its own real grammar/pronunciation. Registered alongside, not instead
-// of, the existing hand-written lessonJapanese5 while this is being
-// proven out — nothing existing changes.
-const generatedFoodJa = buildLessonPlan(topicFood, "ja", "en", "japanese-beginner");
+// All 13 built Japanese lessons (rows 1-13 of the A1 master table) now
+// go through the topic-based system (see docs/topic-lesson-system.md)
+// instead of separate hand-written per-language files — this is the
+// real migration the proof of concept (Food, topic-05) was building
+// toward. Only Japanese grammar/pronunciation exist for these topics so
+// far (German/English/Chinese would need their own grammar/pronunciation
+// authored — vocab/dialogue/song are already there, ready for that).
+// Food additionally has real German grammar/pronunciation, so it builds
+// both a ja-target and a de-target lesson from the same file.
+const JAPANESE_TOPICS: TopicLesson[] = [
+  topicFamily, topicBody, topicAppearance, topicEmotions, topicFood,
+  topicHome, topicClothing, topicShopping, topicAnimals, topicHealth,
+  topicTravel, topicDirections, topicTime,
+];
+const generatedJapaneseLessons = JAPANESE_TOPICS
+  .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))
+  .filter((l): l is LessonPlan => l !== null);
+
 const generatedFoodDe = buildLessonPlan(topicFood, "de", "en", "german-beginner");
-const generatedLessons: LessonPlan[] = [generatedFoodJa, generatedFoodDe].filter(
-  (l): l is LessonPlan => l !== null,
-);
 
 const allLessons: LessonPlan[] = [
   lesson2,
   lesson11,
   lessonEnglishSpace,
-  lessonJapanese1,
-  lessonJapanese2,
-  lessonJapanese3,
-  lessonJapanese4,
-  lessonJapanese5,
-  lessonJapanese6,
-  lessonJapanese7,
-  lessonJapanese8,
-  lessonJapanese9,
-  lessonJapanese10,
-  lessonJapanese11,
-  lessonJapanese12,
-  lessonJapanese13,
-  ...generatedLessons,
+  ...generatedJapaneseLessons,
+  ...(generatedFoodDe ? [generatedFoodDe] : []),
 ]; // grows as more lessons are built
 
 function App() {

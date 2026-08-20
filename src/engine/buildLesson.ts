@@ -151,6 +151,21 @@ export function buildLessonPlan(
     dialogueABlock, dialogueBBlock, pronunciationBlock,
   ];
 
+  const extraDrills = topic.extraDrills?.[targetLang];
+  if (extraDrills) {
+    for (const drill of extraDrills) {
+      blocks.push({
+        id: `${idSuffix}-${drill.id}`,
+        type: "vocabDrill",
+        displayMode: "content",
+        estimatedMinutes: 6,
+        title: drill.title,
+        spokenIntro: drill.spokenIntro ?? framingText((_, p) => p.pronunciationIntro, () => ""),
+        content: { items: drill.items, groupLabels: drill.groupLabels },
+      });
+    }
+  }
+
   if (topic.song) {
     blocks.push({
       id: `${idSuffix}-song`,

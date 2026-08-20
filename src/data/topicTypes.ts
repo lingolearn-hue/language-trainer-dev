@@ -26,6 +26,12 @@ export interface TopicPronunciation extends VocabDrillContent {
   title: Translations;
 }
 
+export interface TopicExtraDrill extends VocabDrillContent {
+  id: string; // suffix for the generated block id
+  title: Translations;
+  spokenIntro?: Translations;
+}
+
 export interface TopicLesson {
   id: string; // "topic-05-food"
   lessonNumber: number; // master table row
@@ -34,6 +40,11 @@ export interface TopicLesson {
   dialogueA: TopicDialogue;
   dialogueB: TopicDialogue;
   song?: TopicSong;
+  // Extra vocabDrill-style slides beyond the standard vocab+pronunciation
+  // pair (e.g. Japanese Lesson 8's number/R-sound drill) — per target
+  // language, since these are usually language-specific practice content
+  // just like grammar/pronunciation.
+  extraDrills?: Partial<Record<LangCode, TopicExtraDrill[]>>;
   // Per-target-language only — see file header. A language missing here
   // means no LessonPlan can be built for that target yet, even if vocab
   // is translated into it.

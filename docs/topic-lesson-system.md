@@ -1,8 +1,8 @@
 # Topic-Based Lesson System
 
-**Status: proof of concept, proven on one topic (Food, row 5). Not yet the
-default way lessons are built — the 15 existing hand-written lesson files
-are untouched and still work exactly as before.**
+**Status: all 13 built Japanese lessons (rows 1–13) migrated to this
+system. German (Lessons 2, 11) and English (Voices from Orbit) remain
+hand-written — see "Known gaps" below.**
 
 ## The problem this solves
 
@@ -66,6 +66,33 @@ and every other consumer needed ZERO changes.** They only ever cared about
 is why the blast radius of adding this system was small enough to prove
 out safely alongside the existing 15 lessons.
 
+## Migration: all 13 Japanese lessons (rows 1–13)
+
+Migrated mechanically via `scripts/migrateLesson.mjs` — imports each
+hand-written lesson module directly (real typed objects, not regex
+parsing) and emits the equivalent `TopicLesson` source file. This
+restructures existing, already-correct content; it doesn't author
+anything new.
+
+Every migration was verified programmatically (not just "it compiles")
+by deep-equality-checking the generated `LessonPlan`'s vocab, both
+dialogues, grammar, pronunciation, and song against the original
+hand-written file's blocks — all 13 passed with zero mismatches. The 13
+original hand-written `lessonJapaneseN.ts` files were then deleted;
+confirmed unused first (`grep` for any remaining import), and the build
+size was identical before/after deletion (confirms they were truly dead
+code by that point, not silently still referenced somewhere).
+
+**Real structural gap found and fixed along the way**: Japanese Lesson 8
+(Shopping) has an extra vocab-drill slide beyond the standard
+vocab+pronunciation pair (a number/R-sound practice slide). `TopicLesson`
+didn't have anywhere to put a third per-language drill slide. Added
+`extraDrills?: Partial<Record<LangCode, TopicExtraDrill[]>>` to
+`topicTypes.ts`, and `buildLessonPlan()` now inserts any extra drills
+right after the pronunciation block. Verified the same way — a dedicated
+deep-equality check confirmed the extra drill's content survived the
+migration unchanged.
+
 ## Proof of concept: `topic-05-food.ts`
 
 Built from `lessonJapanese5.ts`'s existing vocab (34 items) and both
@@ -101,34 +128,36 @@ labels that need translating.
   `phraseTemplates.ts` first. Framing text for those languages currently
   falls back to the bare topic name (no "Lesson N —" wrapper), rather
   than breaking outright.
-- **Only 1 of 15 built lessons has been migrated** (Food). The other 12
-  Japanese lessons and 2 German lessons still exist as their original
-  hand-written files, registered separately in `App.tsx`. Migrating them
-  is straightforward (extract vocab/dialogue/song, keep existing
-  grammar/pronunciation, wire into a `TopicLesson`) but hasn't been done
-  yet — this doc exists specifically so that migration work has a clear
-  reference for how the system is supposed to work.
+- **Only Food (topic-05) has German grammar/pronunciation authored.**
+  The other 12 Japanese-topic files have vocab/dialogue/song already
+  translated into de/en/zh (inherited from the original hand-written
+  files), but `buildLessonPlan(topic, "de", ...)` returns `null` for all
+  of them until real German grammar/pronunciation gets written per
+  topic — this is genuine content-authoring work, not migration.
+- **German Lessons 2/11 and the English C1 lesson remain hand-written.**
+  Lesson 2 predates the master table and doesn't map cleanly to a single
+  row; Lesson 11 and the English lesson could be extracted into topics
+  the same mechanical way the Japanese lessons were, but haven't been
+  yet.
 - **`fr`/`es` have no lessons or phrase templates at all** — the topic
   system's `LangCode` type already supports them structurally (same
   `Partial<Record<LangCode, ...>>` pattern), but nothing has been
   authored.
-- Generated lessons are currently registered *alongside* the equivalent
-  hand-written ones in `App.tsx` (e.g. both `lessonJapanese5` and the
-  generated `topic-05-food` ja-target lesson exist simultaneously) —
-  deduplicating once a topic is confidently migrated hasn't been decided.
+- Generated lessons now fully replace their hand-written equivalents for
+  all 13 Japanese topics (no more duplicate registration) — Food's
+  German version is additionally registered as its own lesson entry
+  alongside the Japanese one, since it's a second target language for
+  the same topic, not a duplicate.
 
 ## For a future session picking this up
 
 The fastest path to "every built topic works for every trainer pair" is:
 1. Add `en` and `zh` `PhraseSet`s to `phraseTemplates.ts` (same shape as
    `ja`/`de`, straightforward translation work)
-2. For each of the other 12 built lessons: extract into a `TopicLesson`
-   file (vocab/dialogue/song copy over as-is since they're already
-   multi-language; grammar/pronunciation copy over as the existing
-   target language's entry)
-3. Author the *missing* per-target-language grammar/pronunciation for
-   whichever additional languages each topic should support (this is the
-   only genuinely new content-authoring work — everything else is
-   mechanical extraction)
-4. Swap `App.tsx`'s `allLessons` array to generate from topics instead of
-   importing hand-written files directly, once confident
+2. For each of the 12 non-Food Japanese topics: author the missing
+   German grammar/pronunciation (or `en`/`zh`, once templates exist) —
+   this is the only genuinely new content-authoring work now that the
+   migration itself is done
+3. Extract German Lesson 11 and the English C1 lesson into topic files
+   the same mechanical way (`scripts/migrateLesson.mjs` should work
+   as-is or with minor adjustment)
