@@ -3,6 +3,9 @@ import type { Block, ReadalongContent, LanguageSettings, ReadalongPhase } from "
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { isRecognitionSupported, listenAndCompare } from "../engine/recognition";
+import { playMelodyLine, stopMelody } from "../engine/melodyPlayer";
+import { isMelodyOn, toggleMelody, subscribeMelody } from "../engine/melodyToggle";
+import { SONG_MELODIES } from "../data/songMelodies";
 import { Slide } from "./Slide";
 
 const PHASES: ReadalongPhase[] = ["echo", "shadow", "silent"];
@@ -37,6 +40,10 @@ export function ReadalongBlock({
   // the student is reading alone and might want to check themselves.
   const [checkState, setCheckState] = useState<Record<string, CheckState>>({});
   const cancelledRef = useRef(false); // interrupts a manual phase play on a real block change
+  const [melodyOn, setMelodyOnState] = useState(isMelodyOn());
+  const melody = block.isSong ? SONG_MELODIES[block.id] : undefined;
+
+  useEffect(() => subscribeMelody(setMelodyOnState), []);
 
   const phase = PHASES[phaseIdx];
 
@@ -67,11 +74,19 @@ export function ReadalongBlock({
       if (!text) continue;
 
       if (p === "echo") {
-        await speak(text, lang.targetLang, trainer.voiceProfile);
+        if (melody && melodyOn) {
+          await playMelodyLine(melody, content.lines[i].id);
+        } else {
+          await speak(text, lang.targetLang, trainer.voiceProfile);
+        }
         if (shouldCancel()) break;
         await wait(pauseFor(text, 2800, 90, 7000)); // long pause for student to repeat, scaled by sentence length
       } else if (p === "shadow") {
-        await speak(text, lang.targetLang, trainer.voiceProfile);
+        if (melody && melodyOn) {
+          await playMelodyLine(melody, content.lines[i].id);
+        } else {
+          await speak(text, lang.targetLang, trainer.voiceProfile);
+        }
         if (shouldCancel()) break;
         await wait(pauseFor(text, 900, 45, 3500)); // was 0ms (no pause at all) — real gap now, still shorter than echo since it's read together, not independently
       } else {
@@ -116,6 +131,7 @@ export function ReadalongBlock({
     setPhaseIdx(0);
     return () => {
       cancelledRef.current = true;
+      stopMelody(); // cuts off any notes still scheduled ahead if the block changes mid-line
     };
   }, [block.id]);
 
@@ -177,6 +193,15 @@ export function ReadalongBlock({
       footer={
         <>
           <span className="phase-label">{PHASE_LABEL[phase]}</span>
+          {melody && (
+            <button
+              className={`melody-toggle-btn${melodyOn ? " active" : ""}`}
+              onClick={toggleMelody}
+              title={melodyOn ? "Switch to spoken lyrics" : "Switch to melody"}
+            >
+              {melodyOn ? "🎵 Melody" : "🗣️ Lyrics"}
+            </button>
+          )}
           <button disabled={running} onClick={runPhase}>
             {running ? "Playing…" : `▶ Play phase: ${phase}`}
           </button>

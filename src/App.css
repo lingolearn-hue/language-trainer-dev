@@ -166,6 +166,11 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .slide-footer button:disabled { opacity: 0.4; cursor: default; }
 .slide-footer button:not(:first-child) { margin-left: 4px; }
 .phase-label { opacity: 0.65; margin-right: auto; }
+.melody-toggle-btn {
+  background: #ececef; color: #1a1a22; border: none; padding: 6px 12px;
+  border-radius: 8px; cursor: pointer; font-size: 12px;
+}
+.melody-toggle-btn.active { background: #3355e0; color: #fff; }
 
 /* Portrait: avatars drop out of the side-by-side row and go back to a
    fixed corner overlay, since there's no room beside the slide once
