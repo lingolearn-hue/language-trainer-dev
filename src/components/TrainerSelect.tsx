@@ -4,6 +4,7 @@ import type { LangCode } from "../types";
 import { TrainerAvatar } from "./TrainerAvatar";
 import { VoiceHelpOverlay } from "./VoiceHelpOverlay";
 import { UpdateCheckButton } from "./UpdateCheckButton";
+import { loadSettings, saveSettings } from "../engine/userSettings";
 
 const LANG_LABEL: Record<LangCode, string> = {
   de: "German",
@@ -29,20 +30,39 @@ function matchesFilter(t: Trainer, langA: LangCode | "", langB: LangCode | ""): 
 export function TrainerSelect({
   onSelect,
 }: {
-  onSelect: (trainer: Trainer) => void;
+  // langChoice is passed when the student had both filter dropdowns set —
+  // "I want to learn" -> targetLang, "I already know" -> sourceLang. Real
+  // bug fix: App.tsx used to always hardcode target/source from
+  // trainer.languages[0]/[1] regardless of what the student actually
+  // said they wanted, which could silently teach the wrong direction of
+  // a trainer's pair. Now the student's stated intent wins when given.
+  onSelect: (trainer: Trainer, langChoice?: { targetLang: LangCode; sourceLang: LangCode }, style?: "rigid" | "flexible") => void;
 }) {
-  const [langA, setLangA] = useState<LangCode | "">("");
-  const [langB, setLangB] = useState<LangCode | "">("");
+  const saved = loadSettings();
+  const [langA, setLangA] = useState<LangCode | "">(saved.targetLang ?? "");
+  const [langB, setLangB] = useState<LangCode | "">(saved.sourceLang ?? "");
+  const [style, setStyle] = useState<"rigid" | "flexible">(saved.style ?? "rigid");
 
   const matching = trainers.filter((t) => matchesFilter(t, langA, langB));
   const nonMatching = trainers.filter((t) => !matchesFilter(t, langA, langB));
+
+  function handleSelect(t: Trainer) {
+    const langChoice = langA && langB ? { targetLang: langA, sourceLang: langB } : undefined;
+    saveSettings({
+      trainerId: t.id,
+      targetLang: langA || undefined,
+      sourceLang: langB || undefined,
+      style,
+    });
+    onSelect(t, langChoice, style);
+  }
 
   function renderCard(t: Trainer, dimmed: boolean) {
     return (
       <button
         key={t.id}
         className={`trainer-card${dimmed ? " trainer-card-dimmed" : ""}`}
-        onClick={() => onSelect(t)}
+        onClick={() => handleSelect(t)}
       >
         <TrainerAvatar trainer={t} />
         <div className="trainer-name">{t.name}</div>
@@ -90,6 +110,35 @@ export function TrainerSelect({
       <p className="trainer-filter-hint">
         Pick what you want to learn and what you already know — matching trainers are highlighted below.
       </p>
+
+      <div className="trainer-style-toggle">
+        <label>Teaching style</label>
+        <div className="trainer-style-buttons">
+          <button
+            className={style === "rigid" ? "active" : ""}
+            onClick={() => {
+              setStyle("rigid");
+              saveSettings({ style: "rigid" });
+            }}
+          >
+            📏 Structured
+          </button>
+          <button
+            className={style === "flexible" ? "active" : ""}
+            onClick={() => {
+              setStyle("flexible");
+              saveSettings({ style: "flexible" });
+            }}
+          >
+            🌿 Flexible
+          </button>
+        </div>
+        <p className="trainer-style-hint">
+          {style === "rigid"
+            ? "Vocabulary shown all at once, in dense columns."
+            : "Vocabulary broken into smaller chunks — one word group at a time."}
+        </p>
+      </div>
 
       <div className="trainer-grid">
         {matching.map((t) => renderCard(t, false))}

@@ -160,6 +160,38 @@ async function speakSegment(
   });
 }
 
+// Real bug fix: many grammar-note and framing sentences intentionally
+// embed a target-language word inside otherwise English/German/Chinese
+// text for teaching clarity (e.g. "Today's grammar is how to use です
+// and います/あります."). When that whole sentence gets spoken with an
+// English/German/etc. voice, the embedded Japanese characters are
+// silently dropped — the voice has no idea how to render them, so they
+// just vanish from the audio (the rest of the sentence plays fine).
+// Fix: split text into runs of Japanese script vs everything else, and
+// speak each run with the voice that actually matches its script,
+// regardless of what language was originally requested for the
+// surrounding sentence. A caller asking for "ja" text with no Latin
+// runs is unaffected (single run, same as before).
+const JAPANESE_SCRIPT_RUN = /[\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uFF66-\uFF9F]+/gu;
+
+function splitByScript(text: string, requestedLang: LangCode): Array<{ text: string; lang: LangCode }> {
+  if (requestedLang === "ja") return [{ text, lang: "ja" }]; // already the right voice for any embedded Japanese
+  const runs: Array<{ text: string; lang: LangCode }> = [];
+  let lastIndex = 0;
+  for (const match of text.matchAll(JAPANESE_SCRIPT_RUN)) {
+    const start = match.index ?? 0;
+    if (start > lastIndex) {
+      const before = text.slice(lastIndex, start).trim();
+      if (before) runs.push({ text: before, lang: requestedLang });
+    }
+    runs.push({ text: match[0], lang: "ja" });
+    lastIndex = start + match[0].length;
+  }
+  const rest = text.slice(lastIndex).trim();
+  if (rest) runs.push({ text: rest, lang: requestedLang });
+  return runs.length > 0 ? runs : [{ text, lang: requestedLang }];
+}
+
 export async function speak(
   text: string,
   lang: LangCode,
@@ -172,7 +204,10 @@ export async function speak(
 
   setSpeaking(true);
   for (let i = 0; i < segments.length; i++) {
-    await speakSegment(segments[i], lang, preference);
+    const scriptRuns = splitByScript(segments[i], lang);
+    for (const run of scriptRuns) {
+      await speakSegment(run.text, run.lang, preference);
+    }
     if (i < segments.length - 1) await wait(ELLIPSIS_PAUSE_MS);
   }
   setSpeaking(false);

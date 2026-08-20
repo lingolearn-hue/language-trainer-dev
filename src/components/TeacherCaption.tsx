@@ -76,15 +76,45 @@ export function TeacherCaption({
     setSentenceIdx(0);
     setFinished(false);
 
-    if (sentences.length === 0) {
-      // No spoken intro on this block — signal "done" immediately so the
-      // rest of the auto-play sequence (content narration) isn't stuck
-      // waiting on something that will never fire.
-      onFinished?.();
-      return;
-    }
-
     (async () => {
+      // Real bug fix: on some browsers, the first speech utterance after
+      // navigating to a new slide is silently dropped — audio doesn't
+      // play, but the returned promise still resolves normally (onend/
+      // onerror both fire), so timing/sequencing was never actually
+      // wrong. It just LOOKS like vocab narration jumped ahead of the
+      // intro, because the intro's audio was inaudible while its timing
+      // slot was still consumed correctly.
+      //
+      // Fix: always speak the block's own title first — in the target
+      // language, then the source language if it's meaningfully
+      // different — before anything else, on every block, regardless of
+      // whether spokenIntro exists. The title is already shown as
+      // on-screen text (the slide's own <h2>), so if THIS particular
+      // utterance gets silently dropped instead, nothing is lost — the
+      // student can already read it. Real spoken content (the actual
+      // intro, then the block's content narration) only ever plays
+      // after this sacrificial utterance, once the speech engine is
+      // reliably warmed up for this navigation.
+      const targetTitle = block.title?.[lang.targetLang];
+      const sourceTitle = block.title?.[lang.sourceLang];
+      if (targetTitle) {
+        await speak(targetTitle, lang.targetLang, trainer.voiceProfile);
+      }
+      if (cancelled) return;
+      if (sourceTitle && sourceTitle !== targetTitle) {
+        await speak(sourceTitle, lang.sourceLang, trainer.voiceProfile);
+      }
+      if (cancelled) return;
+
+      if (sentences.length === 0) {
+        // No spoken intro on this block — signal "done" now that the
+        // title primer has run, so the rest of the auto-play sequence
+        // (content narration) isn't stuck waiting on something that
+        // will never fire.
+        onFinished?.();
+        return;
+      }
+
       setSpeaking(true);
       for (let i = 0; i < sentences.length; i++) {
         if (cancelled) return;

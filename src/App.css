@@ -497,6 +497,25 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .trainer-filter-hint {
   text-align: center; font-size: 12px; opacity: 0.6; margin: 0 0 24px;
 }
+.trainer-style-toggle {
+  text-align: center; margin: 0 0 32px;
+}
+.trainer-style-toggle label {
+  display: block; font-size: 12px; opacity: 0.6; margin-bottom: 6px;
+}
+.trainer-style-buttons {
+  display: flex; gap: 8px; justify-content: center;
+}
+.trainer-style-buttons button {
+  padding: 8px 16px; border-radius: 8px; border: 1px solid #d5d5db;
+  background: #ffffff; color: #1a1a22; font-size: 13px; cursor: pointer;
+}
+.trainer-style-buttons button.active {
+  background: #3355e0; color: #fff; border-color: #3355e0;
+}
+.trainer-style-hint {
+  font-size: 11px; opacity: 0.55; margin: 8px 0 0;
+}
 
 /* 2 columns for now — matches (or everyone, if no filter set) come
    first, non-matching trainers are appended after in the same grid so

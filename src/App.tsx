@@ -22,7 +22,7 @@ import { lessonJapanese13 } from "./data/lessonJapanese13";
 import { topicFood } from "./data/topics/topic-05-food";
 import { buildLessonPlan } from "./engine/buildLesson";
 import type { Trainer } from "./data/trainers";
-import type { LessonPlan } from "./types";
+import type { LessonPlan, LangCode } from "./types";
 import "./App.css";
 
 const display = { density: "dense" as const };
@@ -63,9 +63,22 @@ const allLessons: LessonPlan[] = [
 function App() {
   const [trainer, setTrainer] = useState<Trainer | null>(null);
   const [lesson, setLesson] = useState<LessonPlan | null>(null);
+  // Explicit direction the student picked on the trainer-select screen
+  // (via the "I want to learn" / "I already know" filters), if both were
+  // set — falls back to trainer.languages[0]/[1] convention otherwise.
+  const [langChoice, setLangChoice] = useState<{ targetLang: LangCode; sourceLang: LangCode } | null>(null);
+  const [styleChoice, setStyleChoice] = useState<"rigid" | "flexible" | null>(null);
 
   if (!trainer) {
-    return <TrainerSelect onSelect={setTrainer} />;
+    return (
+      <TrainerSelect
+        onSelect={(t, chosenLang, chosenStyle) => {
+          setTrainer(t);
+          setLangChoice(chosenLang ?? null);
+          setStyleChoice(chosenStyle ?? null);
+        }}
+      />
+    );
   }
 
   if (!lesson) {
@@ -79,12 +92,19 @@ function App() {
     );
   }
 
-  // Trainer's language pair becomes the session's target/source. Convention:
-  // languages[0] = target (what's being taught), languages[1] = source.
-  const lang = { targetLang: trainer.languages[0], sourceLang: trainer.languages[1] };
+  // Trainer's language pair becomes the session's target/source. The
+  // student's explicit choice from the filter dropdowns wins if they set
+  // both; otherwise falls back to the languages[0]=target/[1]=source
+  // convention.
+  const lang = langChoice ?? { targetLang: trainer.languages[0], sourceLang: trainer.languages[1] };
 
   return (
-    <SessionProvider lesson={lesson} lang={lang} display={display} initialStyle={trainer.defaultStyle}>
+    <SessionProvider
+      lesson={lesson}
+      lang={lang}
+      display={display}
+      initialStyle={styleChoice ?? trainer.defaultStyle}
+    >
       <Session trainer={trainer} onExitToLessons={() => setLesson(null)} />
     </SessionProvider>
   );
