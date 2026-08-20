@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 70 — 2026-08-20
+Version: 71 — 2026-08-20
 
 React-based long-form language tutor simulation (45-90 min sessions).
 Static content, multiple trainer personas, block-based session engine
@@ -13,59 +13,92 @@ See `docs/topic-lesson-system.md` for the topic-based lesson architecture
 grammar/pronunciation authored per language). Status and next steps for
 migrating the rest of the built lessons are documented there.
 
-## Current state
+See `docs/song-melodies.md` for how song melody playback works and how
+to add melody data for a new song.
 
-- **Languages**: de, en, zh, ja (`LangCode`). Japanese added in v14 —
-  first non-de/en/zh language, sourced from JLPT-leveled data rather than
-  authored from scratch (see "Content sources" below).
-- **Trainers**: 7 — the original 6 cover all ordered de/en/zh pairs (Max,
-  Jonas, Lena, Mei, Ao, Sol); Yui (ja↔en) is a 7th, added for the Japanese
-  course. Breaks the original "2 per avatar type" symmetry — not
-  rebalanced to a full de/en/zh/ja matrix, that's a separate scope call.
-  Male/female/orb avatars, each bilingual with its own voice profile and
-  default teaching style.
-- **Lessons**: 3 live so far —
-  - *Lektion 2* (`german-beginner`) — sourced from the Deutsch_1-10.pdf
-    course material, 10 blocks: title, agenda, warm-up, vocabulary (38
-    items), grammar (verbs, questions, word order), a café dialogue,
-    pronunciation, and a closing song. Framing lines are spoken in the
-    student's own language (beginner-appropriate); content narration is
-    always in German.
-  - *Voices from Orbit* (`english-advanced-c1`) — original C1 English
-    course, space-travel themed, same 10-block structure. Grammar:
-    inversion after negative adverbials, cleft sentences, nominalization.
-    Framing is spoken in English (advanced learners can follow it
-    directly).
-  - *にほんごにゅうもん / Japanese for Beginners* (`japanese-beginner`) —
-    same 10-block structure, JLPT N5. Vocab, grammar explanations, and the
-    market dialogue are sourced from `lingolearn-hue/vocab-games-dev`'s
-    vocab/grammar/dialogue JSON (see "Content sources" below) rather than
-    authored from a PDF or from scratch; the reading-practice block
-    (real Japanese homophone pairs) and closing song are original. Target
-    text is hiragana throughout — no furigana rendering exists yet, so
-    kanji without a reading aid isn't usable for an absolute beginner.
-- **Content sources**: beyond the original Deutsch PDFs and
-  self-authored content, lesson content can now be bootstrapped from
-  `lingolearn-hue/vocab-games-dev` — a large, CEFR/JLPT-leveled,
-  multi-language (de/en/es/fr/ja/zh) vocab+grammar+dialogue corpus from a
-  sibling project. Structurally audited but not semantically verified by
-  its own admission, and pivoted through English (`<lang>-en.json`, not a
-  full any-to-any matrix) — treat as a strong starting draft, not a final
-  authoritative source; spot-check whatever subset lands in a real lesson.
-  No song content exists there — songs are still self-authored per lesson.
-- **Session engine**: fully auto-plays end to end once started (spoken
-  framing → content narration → auto-advance), with pause/resume
-  (persisted via localStorage), a back button to lesson selection, a
-  screen wake lock during active sessions, session-level style
-  (structured/flexible) and mode (1:1/classroom) toggles, and an audit
-  bar for QA (slide jump list + a silent "verbal text" overlay).
-- **Slide rendering**: fixed 960×540 Beamer-style layout, scaled via
+See `docs/a1-master-lesson-table-v05.md` for the full A1 content plan
+(per-lesson vocab/grammar/dialogue/pronunciation/song assignments) — now
+tracked in the repo itself instead of only existing in session
+workspace. Build status there reflects what's actually implemented vs
+still planned.
+
+## Current state (as of v70 — see note below on changelog staleness)
+
+- **Languages**: de, en, zh, ja (`LangCode`). All 6 possible pairs among
+  these 4 languages have at least one trainer.
+- **Trainers**: 9 — Max, Jonas, Lena, Mei, Orb-A, Orb-B (original 6,
+  covering all ordered de/en/zh pairs), Yui (ja↔en), Hiro (ja↔de), Lin
+  (zh↔ja). Male/female/orb avatars (currently CSS circle + initials —
+  see `docs/` for an in-progress illustrated-avatar exploration, not
+  wired in yet), each bilingual with its own voice profile and default
+  teaching style.
+- **Lessons**: 16 hand-written + 1 generated (topic-based, see below) —
+  - **Japanese (`japanese-beginner`)**: 13 lessons, rows 1–13 of the A1
+    master table (Family, Body, Appearance, Emotions, Food, Home,
+    Clothing, Shopping, Animals, Health, Travel, Directions, Time). Full
+    ja/en/de coverage on all 13; zh done for lessons 1–5, still pending
+    for 6–13. Grammar/pronunciation are genuinely Japanese-specific per
+    lesson (pitch accent, sokuon, particle assimilation, etc.), not
+    translated German content.
+  - **German (`german-beginner`)**: 2 lessons — Lektion 2 (predates the
+    master table, self-intro + general vocab) and Lektion 11 (Travel,
+    built directly from the table: wo/wohin case grammar,
+    consonant-cluster pronunciation).
+  - **English (`english-advanced-c1`)**: 1 lesson, "Voices from Orbit"
+    (space-travel themed, C1 grammar: inversion, cleft sentences,
+    nominalization) — standalone, not on the A1 track.
+  - **Topic-based (proof of concept)**: `topic-05-food.ts` generates a
+    ja-target AND a de-target `LessonPlan` from one shared vocab/dialogue
+    file — see `docs/topic-lesson-system.md` for the architecture and
+    what's still needed to migrate the rest.
+- **Songs**: 9 song blocks across the built lessons, each with real
+  melody data (`data/songMelodies.ts`) — a toggle on the song's footer
+  switches between spoken-lyric narration (TTS, as before) and
+  melody-only playback (Web Audio oscillator tones, synced to the exact
+  same lyric lines). Melodies are plain note-sequence transcriptions of
+  public-domain tunes, not sourced from external MIDI files (see the doc
+  section below for why).
+- **Vocab sourcing**: `scripts/lookup_vocab.py` cross-references English
+  glosses against `vocab-games-dev`'s real HSK/JLPT/CEFR-tagged word
+  lists (zh/de/ja/fr/es) — a review aid, not full automation; every
+  suggestion still needs a human pick (documented false-positive cases
+  exist, e.g. English "chest" matching a suitcase word).
+- **Session engine**: fully auto-plays end to end once started, with
+  pause/resume, tap-to-pause (tapping the slide center), a screen wake
+  lock, session-level style (structured/flexible) and mode (1:1/
+  classroom) toggles, a declutter toggle (hides header/controls, keeps
+  the avatar row), a subtitles toggle, and an audit bar for QA. User
+  settings (trainer, language pair, style) persist across sessions via
+  `localStorage` (`engine/userSettings.ts`).
+- **Narration engine**: mixed-script sentences (e.g. English grammar
+  notes embedding Japanese particles) are spoken with each script routed
+  to its correct voice automatically; every block speaks its own title
+  as a sacrificial "primer" utterance before real content, working
+  around a browser quirk where the first utterance per navigation can
+  silently fail to play; dialogue/vocab pause timing scales with actual
+  sentence length instead of a fixed value.
+- **Slide rendering**: 960×600 (16:10) Beamer-style frame, scaled via
   `ResizeObserver` to always fully fill the available width or height in
-  any orientation — no cropping, no scrolling. Vocab/pronunciation slides
-  use grouped columns; readalong (dialogue/song) slides split target and
-  source side by side, compact enough for ~14 lines per slide.
-- **Test suite**: 28 Playwright tests, including a full hands-off
-  10-block lesson playthrough.
+  any orientation. Vocab/pronunciation tables use LaTeX-style r|l
+  alignment (target right-aligned, source left-aligned, divider between)
+  and auto-split into "Label 1"/"Label 2" sub-columns past 16 rows.
+  Dialogue font size is computed per-slide from estimated wrapped-row
+  count, not a fixed size. A persistent slide footer shows
+  language/level/lesson-number/date/page-count, with prev/next arrows.
+- **PWA**: installable, offline-capable (manifest + service worker via
+  `vite-plugin-pwa`), with a "Check for updates" button on the front
+  page (updates never apply silently mid-session).
+
+### Changelog note
+
+The per-version "Recent changes" log below was actively maintained
+through roughly v14, then fell behind — a large amount of work (Japanese
+lessons 1–13, German Lesson 11, the topic-lesson system, melody
+playback, settings persistence, and more) happened without corresponding
+entries. **The "Current state" section above is the authoritative,
+up-to-date summary; the dated entries below are a historical record from
+the project's early phase, not a complete log.** See `git log` for the
+full detailed history since.
 
 ## Version history
 
