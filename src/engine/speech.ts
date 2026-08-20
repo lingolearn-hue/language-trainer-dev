@@ -175,7 +175,7 @@ async function speakSegment(
 const JAPANESE_SCRIPT_RUN = /[\u3040-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uFF66-\uFF9F]+/gu;
 
 function splitByScript(text: string, requestedLang: LangCode): Array<{ text: string; lang: LangCode }> {
-  if (requestedLang === "ja") return [{ text, lang: "ja" }]; // already the right voice for any embedded Japanese
+  if (requestedLang === "ja" || requestedLang === "zh") return [{ text, lang: requestedLang }]; // ja/zh share the CJK ideograph block; only ja/zh voices need not be split
   const runs: Array<{ text: string; lang: LangCode }> = [];
   let lastIndex = 0;
   for (const match of text.matchAll(JAPANESE_SCRIPT_RUN)) {
