@@ -4,6 +4,7 @@ import type { LangCode } from "../types";
 import { TrainerAvatar } from "./TrainerAvatar";
 import { VoiceHelpOverlay } from "./VoiceHelpOverlay";
 import { UpdateCheckButton } from "./UpdateCheckButton";
+import { AvatarStyleComparison } from "./AvatarStyleComparison";
 import { loadSettings, saveSettings } from "../engine/userSettings";
 
 const LANG_LABEL: Record<LangCode, string> = {
@@ -39,6 +40,7 @@ export function TrainerSelect({
   onSelect: (trainer: Trainer, langChoice?: { targetLang: LangCode; sourceLang: LangCode }, style?: "rigid" | "flexible") => void;
 }) {
   const saved = loadSettings();
+  const [showAvatarCompare, setShowAvatarCompare] = useState(false);
   const [langA, setLangA] = useState<LangCode | "">(saved.targetLang ?? "");
   const [langB, setLangB] = useState<LangCode | "">(saved.sourceLang ?? "");
   const [style, setStyle] = useState<"rigid" | "flexible">(saved.style ?? "rigid");
@@ -80,8 +82,14 @@ export function TrainerSelect({
     <div className="trainer-select">
       <VoiceHelpOverlay />
       <UpdateCheckButton />
+      {showAvatarCompare && <AvatarStyleComparison onClose={() => setShowAvatarCompare(false)} />}
       <h1>Choose your trainer</h1>
       <p className="subtitle">Each trainer teaches a fixed language pair, in either direction.</p>
+      {/* Temporary dev link — see AvatarStyleComparison.tsx. Remove once
+          a trainer-avatar style is picked and wired in for real. */}
+      <button className="avatar-compare-trigger" onClick={() => setShowAvatarCompare(true)}>
+        🎨 Preview avatar styles
+      </button>
 
       <div className="trainer-filters">
         <div className="trainer-filter-col">
