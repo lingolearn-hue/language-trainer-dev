@@ -127,7 +127,7 @@ export const topicFood: TopicLesson = {
         zh: "德语现在时大多是规则的：动词词干＋词尾（-e、-st、-t、-en、-t、-en）。一些动词的词干元音会变化，例如essen（吃）→ er/sie isst（e变i）。像möchten这样的情态动词表示愿望，类似「想要」。",
       },
       chunks: [
-        { id: "g1", translations: { de: "Ich esse jeden Tag Reis.", en: "I eat rice every day. (regular ich-form)", ja: "わたしは まいにち ごはんを たべます。（きそく：ich-form）", zh: "我每天吃米饭。（规则ich形）" } },
+        { id: "g1", translations: { de: "Ich esse jeden Tag Brot.", en: "I eat bread every day. (regular ich-form)", ja: "わたしは まいにち パンを たべます。（きそく：ich-form）", zh: "我每天吃面包。（规则ich形）" } },
         { id: "g2", translations: { de: "Er isst gern Fisch.", en: "He likes to eat fish. (irregular: essen → isst, stem vowel e→i)", ja: "かれは さかなを たべるのが すきです。（ふきそく：essen → isst）", zh: "他喜欢吃鱼。（不规则：essen → isst，词干元音e变i）" } },
         { id: "g3", translations: { de: "Wir trinken Wasser.", en: "We drink water. (regular wir-form)", ja: "わたしたちは みずを のみます。（きそく：wir-form）", zh: "我们喝水。（规则wir形）" } },
         { id: "g4", translations: { de: "Ich möchte Sushi essen.", en: "I would like to eat sushi. (modal: möchten)", ja: "すしを たべたいです。（じょどうし：möchten）", zh: "我想吃寿司。（情态动词：möchten）" } },
@@ -179,6 +179,17 @@ export const topicFood: TopicLesson = {
         { id: "z3", category: "z_ts", translations: { de: "Zwiebel", en: "onion (Z = ts)", ja: "たまねぎ（Z は「ts」）", zh: "洋葱（Z发音为ts）" } },
         { id: "z4", category: "z_ts", translations: { de: "würzig", en: "spicy, flavorful (Z-adjacent zw/z sound family)", ja: "あじわい ゆたかな（Z けいの おと）", zh: "味道浓郁的（Z相关音）" } },
       ],
+    },
+  },
+  // Mini-fork: v01's shared translations correctly gloss ごはん (rice/meal)
+  // for the Japanese course, but German-target learners don't need the
+  // rice-specific half of that gloss (v02 already teaches "Brot" — bread
+  // — separately). Overriding just the German field to the more general
+  // "Mahlzeit" (meal) avoids that overlap without touching the Japanese
+  // course's own translation. See topicTypes.ts.
+  overrides: {
+    de: {
+      v01: "Mahlzeit",
     },
   },
 };

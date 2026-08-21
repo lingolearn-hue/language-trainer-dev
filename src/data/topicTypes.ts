@@ -50,4 +50,16 @@ export interface TopicLesson {
   // is translated into it.
   grammar: Partial<Record<LangCode, TopicGrammar>>;
   pronunciation: Partial<Record<LangCode, TopicPronunciation>>;
+  // Small per-target-language text patches applied to the otherwise-fully
+  // -shared vocab/dialogueA/dialogueB/song content. For isolated cases
+  // where a single word or phrase in the shared content is specific to
+  // another language's cultural context (e.g. Yen pricing baked into a
+  // shared shopping dialogue) and shouldn't leak into a different target
+  // language's course — without forking the whole shared item, which
+  // would duplicate everything else about it and drift out of sync.
+  // Keyed by [targetLang][itemId], where itemId is the vocab item's or
+  // dialogue line's own id. The override replaces only that language's
+  // own translations entry for that one item; every other language's
+  // text for that item, and every other item, is untouched.
+  overrides?: Partial<Record<LangCode, Record<string, string>>>;
 }

@@ -31,6 +31,26 @@ function framingText(
   return out;
 }
 
+// Applies topic.overrides (see topicTypes.ts) for the given target
+// language: shallow-clones only the items whose id has an override,
+// replacing just that language's own translations field. Items with no
+// override, and all other languages on overridden items, pass through
+// as the exact same object references — cheap, and safe since nothing
+// downstream mutates these.
+function applyOverrides<T extends { id: string; translations: Translations }>(
+  items: T[],
+  targetLang: LangCode,
+  overrides?: Partial<Record<LangCode, Record<string, string>>>,
+): T[] {
+  const forLang = overrides?.[targetLang];
+  if (!forLang) return items;
+  return items.map((item) => {
+    const replacement = forLang[item.id];
+    if (replacement === undefined) return item;
+    return { ...item, translations: { ...item.translations, [targetLang]: replacement } };
+  });
+}
+
 export function buildLessonPlan(
   topic: TopicLesson,
   targetLang: LangCode,
@@ -103,7 +123,7 @@ export function buildLessonPlan(
     estimatedMinutes: 6,
     title: framingText((lang, p) => `${p.labels.vocabPrefix}${resolveTopicName(topic.topicName, lang)}`, (lang) => resolveTopicName(topic.topicName, lang)),
     spokenIntro: framingText((lang, p) => p.vocabIntro(resolveTopicName(topic.topicName, lang)), () => ""),
-    content: { items: topic.vocab },
+    content: { items: applyOverrides(topic.vocab, targetLang, topic.overrides) },
   };
 
   const grammarBlock: Block = {
@@ -123,7 +143,7 @@ export function buildLessonPlan(
     estimatedMinutes: 6,
     title: topic.dialogueA.title,
     spokenIntro: framingText((_, p) => p.dialogueIntro("generic"), () => ""),
-    content: { lines: topic.dialogueA.lines },
+    content: { lines: applyOverrides(topic.dialogueA.lines, targetLang, topic.overrides) },
   };
 
   const dialogueBBlock: Block = {
@@ -133,7 +153,7 @@ export function buildLessonPlan(
     estimatedMinutes: 6,
     title: topic.dialogueB.title,
     spokenIntro: framingText((_, p) => p.dialogueIntro("generic"), () => ""),
-    content: { lines: topic.dialogueB.lines },
+    content: { lines: applyOverrides(topic.dialogueB.lines, targetLang, topic.overrides) },
   };
 
   const pronunciationBlock: Block = {
@@ -175,7 +195,7 @@ export function buildLessonPlan(
       isSong: true,
       title: topic.song.title,
       spokenIntro: framingText((_, p) => p.songIntro, () => ""),
-      content: { lines: topic.song.lines },
+      content: { lines: applyOverrides(topic.song.lines, targetLang, topic.overrides) },
     });
   }
 

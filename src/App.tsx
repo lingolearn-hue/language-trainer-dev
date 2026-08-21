@@ -19,6 +19,9 @@ import { topicHealth } from "./data/topics/topic-10-health";
 import { topicTravel } from "./data/topics/topic-11-travel";
 import { topicDirections } from "./data/topics/topic-12-directions";
 import { topicTime } from "./data/topics/topic-13-time";
+import { topicCountries } from "./data/topics/topic-14-countries";
+import { topicLandscape } from "./data/topics/topic-15-landscape";
+import { topicTraffic } from "./data/topics/topic-16-traffic";
 import { buildLessonPlan } from "./engine/buildLesson";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan, LangCode } from "./types";
@@ -39,6 +42,7 @@ const ALL_TOPICS: TopicLesson[] = [
   topicFamily, topicBody, topicAppearance, topicEmotions, topicFood,
   topicHome, topicClothing, topicShopping, topicAnimals, topicHealth,
   topicTravel, topicDirections, topicTime,
+  topicCountries, topicLandscape, topicTraffic, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
 ];
 const generatedJapaneseLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))

@@ -750,9 +750,9 @@ export const topicShopping: TopicLesson = {
         {
           id: "g5",
           translations: {
-            de: "Der Preis ist hundert Yen.",
-            en: "The price is one hundred yen. (number)",
-            ja: "ねだんは ひゃくえんです。（すうじ）"
+            de: "Der Preis ist hundert Euro.",
+            en: "The price is one hundred euros. (number)",
+            ja: "ねだんは ひゃくユーロです。（すうじ）"
           }
         },
         {
@@ -1453,5 +1453,24 @@ export const topicShopping: TopicLesson = {
         ]
       }
     ]
+  },
+  // Mini-fork: the shared dialogue prices everything in Yen, correctly
+  // for the Japanese-target course — but that shouldn't leak into the
+  // German course. These overrides swap just the German field of the
+  // affected vocab/dialogue items to Euro amounts, keeping the same
+  // internal math as the original (3x1 + 2 = 5 in dialogueA; a realistic
+  // bag-price negotiation in dialogueB) — everything else about these
+  // items, and every other item, is untouched. See topicTypes.ts.
+  overrides: {
+    de: {
+      v12: "Euro",
+      d5: "Ein Euro pro Stück.",
+      d9: "Ja, sechs für zwei Euro.",
+      d11: "Insgesamt fünf Euro.",
+      e2: "Sie kostet dreißig Euro.",
+      e6: "Hmm, wie wäre es mit fünfundzwanzig Euro?",
+      e7: "Geht zwanzig Euro nicht?",
+      e8: "Hmm, gut. Zwanzig Euro sind in Ordnung."
+    }
   }
 };
