@@ -16,11 +16,10 @@ const LANG_LABEL: Record<LangCode, string> = {
 
 const ALL_LANGS: LangCode[] = ["de", "en", "zh", "ja"];
 
-// Every trainer is bilingual and teaches BOTH directions of their pair
-// (e.g. Max = de<->en, works for a "speak en / learn de" student just as
-// well as "speak de / learn en") — so matching ignores which of the two
-// filter dropdowns is "source" vs "target" and just checks pair
-// membership.
+// Every trainer teaches every direction among their own languages (e.g.
+// Vincent = en/zh/de, works for "speak en / learn de" just as well as
+// "speak zh / learn en") — so matching ignores which of the two filter
+// dropdowns is "source" vs "target" and just checks language membership.
 function matchesFilter(t: Trainer, langA: LangCode | "", langB: LangCode | ""): boolean {
   if (!langA && !langB) return true; // no filter set — everyone matches
   if (langA && langB) return t.languages.includes(langA) && t.languages.includes(langB);
@@ -69,7 +68,7 @@ export function TrainerSelect({
         <TrainerAvatar trainer={t} />
         <div className="trainer-name">{t.name}</div>
         <div className="trainer-languages">
-          {LANG_LABEL[t.languages[0]]} ↔ {LANG_LABEL[t.languages[1]]}
+          {t.languages.map((l) => LANG_LABEL[l]).join(" ↔ ")}
         </div>
         <div className="trainer-style">
           {t.defaultStyle === "rigid" ? "Structured" : "Flexible"} · {t.hobby.split(".")[0]}
@@ -84,7 +83,7 @@ export function TrainerSelect({
       <UpdateCheckButton />
       {showAvatarCompare && <AvatarStyleComparison onClose={() => setShowAvatarCompare(false)} />}
       <h1>Choose your trainer</h1>
-      <p className="subtitle">Each trainer teaches a fixed language pair, in either direction.</p>
+      <p className="subtitle">Each trainer teaches a set of languages, in any direction.</p>
       {/* Temporary dev link — see AvatarStyleComparison.tsx. Remove once
           a trainer-avatar style is picked and wired in for real. */}
       <button className="avatar-compare-trigger" onClick={() => setShowAvatarCompare(true)}>

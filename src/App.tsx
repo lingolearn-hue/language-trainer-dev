@@ -92,10 +92,11 @@ function App() {
     );
   }
 
-  // Trainer's language pair becomes the session's target/source. The
-  // student's explicit choice from the filter dropdowns wins if they set
-  // both; otherwise falls back to the languages[0]=target/[1]=source
-  // convention.
+  // Trainer's first two listed languages become the session's default
+  // target/source if the student didn't set both filter dropdowns. With
+  // 3-language trainers this is just a default, not the full set — the
+  // explicit langChoice (when both dropdowns are set) can pick any pair
+  // among the trainer's languages, not just the first two.
   const lang = langChoice ?? { targetLang: trainer.languages[0], sourceLang: trainer.languages[1] };
 
   return (
