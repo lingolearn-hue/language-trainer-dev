@@ -658,6 +658,68 @@ export const topicClothing: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Demonstrativpronomen: dieser / das ... da",
+        en: "Demonstratives: this / that",
+        ja: "しじ だいめいし：これ／それ"
+      },
+      explanation: {
+        de: "dieser/diese/dieses (\"this\") stimmt im Geschlecht mit dem Nomen überein, genau wie der/die/das: dieser Mantel (m), diese Hose (f), dieses Hemd (n). Für \"that\" fügt man im Deutschen meist einfach da oder dort nach dem Nomen hinzu, statt ein eigenes Wort zu benutzen: die Schuhe da (those shoes).",
+        en: "dieser/diese/dieses (\"this\") matches the noun's gender, just like der/die/das: dieser Mantel (m), diese Hose (f), dieses Hemd (n). For \"that\", German usually just adds da or dort after the noun instead of using a separate word: die Schuhe da (those shoes).",
+        ja: "dieser/diese/dieses（これ）は、der/die/das と おなじように めいしの せいに あわせます：dieser Mantel（だんせい）、diese Hose（じょせい）、dieses Hemd（ちゅうせい）。「それ」を あらわす ときは、べつの ことばを つかわず、めいしの あとに da や dort を つけるのが ふつうです：die Schuhe da（あの くつ）。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Dieses Hemd ist schön.",
+            en: "This shirt is nice. (dieses — neuter)",
+            ja: "この シャツは すてきです。（dieses — ちゅうせい）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Diese Hose ist zu eng.",
+            en: "These pants are too tight. (diese — feminine)",
+            ja: "この ズボンは きつすぎます。（diese — じょせい）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Dieser Mantel ist warm.",
+            en: "This coat is warm. (dieser — masculine)",
+            ja: "この コートは あたたかいです。（dieser — だんせい）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Das Kleid dort ist schön.",
+            en: "That dress (over there) is pretty. (das ... dort)",
+            ja: "あの ドレスは すてきです。（das ... dort）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Die Schuhe da sind neu.",
+            en: "Those shoes (there) are new. (die ... da, plural)",
+            ja: "その くつは あたらしいです。（die ... da、ふくすう）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Ist das dein Hut?",
+            en: "Is that your hat? (das as a demonstrative pronoun)",
+            ja: "それは きみの ぼうし ですか？（しじ だいめいしの das）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -750,6 +812,72 @@ export const topicClothing: TopicLesson = {
             ja: "がっか",
             en: "disappointment (with っ)",
             de: "Enttäuschung (mit っ)"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        l_r: {
+          de: "L vs. R",
+          en: "L vs. R",
+          ja: "L と R"
+        },
+        uvular_r: {
+          de: "Das deutsche R (Zäpfchen-R, nicht wie im Englischen)",
+          en: "The German R (uvular, not like English R)",
+          ja: "ドイツごの R（のどおくの R、えいごとは ちがう）"
+        }
+      },
+      items: [
+        {
+          id: "l1",
+          category: "l_r",
+          translations: {
+            de: "locker",
+            en: "loose-fitting (L)",
+            ja: "ゆったりした（L）"
+          }
+        },
+        {
+          id: "r1",
+          category: "l_r",
+          translations: {
+            de: "Rock",
+            en: "skirt (R, contrast with L)",
+            ja: "スカート（R、L との たいひ）"
+          }
+        },
+        {
+          id: "ur1",
+          category: "uvular_r",
+          translations: {
+            de: "Regenschirm",
+            en: "umbrella (uvular R)",
+            ja: "かさ（のどおくの R）"
+          }
+        },
+        {
+          id: "ur2",
+          category: "uvular_r",
+          translations: {
+            de: "Krawatte",
+            en: "necktie (uvular R)",
+            ja: "ネクタイ（のどおくの R）"
+          }
+        },
+        {
+          id: "ur3",
+          category: "uvular_r",
+          translations: {
+            de: "tragen",
+            en: "to wear (uvular R)",
+            ja: "きる（のどおくの R）"
           }
         }
       ]

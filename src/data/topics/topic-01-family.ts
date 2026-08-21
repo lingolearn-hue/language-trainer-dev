@@ -786,6 +786,76 @@ export const topicFamily: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Sein / Haben",
+        en: "To Be / To Have",
+        ja: "sein と haben",
+        zh: "sein／haben"
+      },
+      explanation: {
+        de: "sein (\"to be\") wird benutzt, um jemanden oder etwas zu beschreiben oder zu identifizieren: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind. haben (\"to have\") drückt Besitz aus und funktioniert für Menschen, Tiere und Dinge gleichermaßen — anders als im Japanischen, wo います (belebt) und あります (unbelebt) getrennt sind, gibt es im Deutschen nur ein einziges Verb: ich habe, du hast, er/sie/es hat.",
+        en: "sein (\"to be\") is used to describe or identify someone or something: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind. haben (\"to have\") expresses possession and works the same way for people, animals, and things — unlike Japanese, which splits います (animate) and あります (inanimate), German has just one verb: ich habe, du hast, er/sie/es hat.",
+        ja: "sein（〜だ）は、だれか・なにかを せつめいしたり とくていしたり する ときに つかいます：ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind。haben（もっている）は しょゆうを あらわし、ひとにも どうぶつにも ものにも おなじように つかいます — にほんごの います（せいぶつ）と あります（むせいぶつ）の くべつは ドイツごには なく、どうし ひとつだけです：ich habe, du hast, er/sie/es hat。",
+        zh: "sein（是）用于描述或说明某人或某物：ich bin，du bist，er/sie/es ist，wir sind，ihr seid，sie sind。haben（有）表示拥有，对人、动物和物品都一样使用——不像日语区分います（有生命）和あります（无生命），德语只有一个动词：ich habe，du hast，er/sie/es hat。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Das ist mein Vater.",
+            en: "This is my father. (sein — identifying)",
+            ja: "これは わたしの ちちです。（sein — とくてい）",
+            zh: "这是我爸爸。（sein — 说明身份）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Meine Familie ist groß.",
+            en: "My family is big. (sein — describing)",
+            ja: "わたしの かぞくは おおきいです。（sein — せつめい）",
+            zh: "我家很大。（sein — 描述）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Ich habe einen Bruder.",
+            en: "I have a brother. (haben — people, same verb as for things)",
+            ja: "わたしには あにが います。（haben — ひとも ものも おなじ どうし）",
+            zh: "我有一个哥哥。（haben — 对人也用同一个动词）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Wir haben eine Katze.",
+            en: "We have a cat. (haben — animals, same verb)",
+            ja: "わたしたちには ねこが います。（haben — どうぶつも おなじ どうし）",
+            zh: "我们有一只猫。（haben — 动物也用同一个动词）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Meine Eltern haben ein Haus.",
+            en: "My parents have a house. (haben — things, same verb again)",
+            ja: "わたしの りょうしんには いえが あります。（haben — ものも おなじ どうし）",
+            zh: "我父母有一栋房子。（haben — 物品也用同一个动词）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Meine Eltern sind freundlich.",
+            en: "My parents are friendly. (sein — plural description)",
+            ja: "わたしの りょうしんは しんせつです。（sein — ふくすうの せつめい）",
+            zh: "我父母很友善。（sein — 复数描述）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -909,6 +979,110 @@ export const topicFamily: TopicLesson = {
             zh: "秋天（低高）／空闲（高低）",
             de: "Herbst (LH) / leer, frei (HL)",
             en: "autumn (LH) / vacant, empty (HL)"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
+      },
+      groupLabels: {
+        b_p: {
+          de: "B (stimmhaft) vs. P (stimmlos)",
+          en: "B (voiced) vs. P (unvoiced)",
+          ja: "B（ゆうせいおん）と P（むせいおん）",
+          zh: "B（浊音）与P（清音）"
+        },
+        devoicing: {
+          de: "Auslautverhärtung: b/d/g am Wortende klingen wie p/t/k",
+          en: "Final devoicing: b/d/g at word end sound like p/t/k",
+          ja: "ごびの むせいか：ごびの b/d/g は p/t/k のように きこえる",
+          zh: "词尾清化：词尾的b/d/g读作p/t/k"
+        }
+      },
+      items: [
+        {
+          id: "b1",
+          category: "b_p",
+          translations: {
+            de: "Bruder",
+            en: "brother (B voiced)",
+            ja: "あに／おとうと（ゆうせいの B）",
+            zh: "兄弟（浊音B）"
+          }
+        },
+        {
+          id: "b2",
+          category: "b_p",
+          translations: {
+            de: "Bild",
+            en: "picture (B voiced)",
+            ja: "しゃしん（ゆうせいの B）",
+            zh: "照片（浊音B）"
+          }
+        },
+        {
+          id: "b3",
+          category: "b_p",
+          translations: {
+            de: "Baby",
+            en: "baby (B voiced)",
+            ja: "あかちゃん（ゆうせいの B）",
+            zh: "婴儿（浊音B）"
+          }
+        },
+        {
+          id: "p1",
+          category: "b_p",
+          translations: {
+            de: "Papa",
+            en: "dad, informal (P unvoiced)",
+            ja: "パパ（むせいの P）",
+            zh: "爸爸，非正式（清音P）"
+          }
+        },
+        {
+          id: "p2",
+          category: "b_p",
+          translations: {
+            de: "Party",
+            en: "party (P unvoiced)",
+            ja: "パーティー（むせいの P）",
+            zh: "聚会（清音P）"
+          }
+        },
+        {
+          id: "dv1",
+          category: "devoicing",
+          translations: {
+            de: "Hund",
+            en: "dog (final d sounds like t)",
+            ja: "いぬ（ごびの d は t のよう）",
+            zh: "狗（词尾d读作t）"
+          }
+        },
+        {
+          id: "dv2",
+          category: "devoicing",
+          translations: {
+            de: "Kind",
+            en: "child (final d sounds like t)",
+            ja: "こども（ごびの d は t のよう）",
+            zh: "孩子（词尾d读作t）"
+          }
+        },
+        {
+          id: "dv3",
+          category: "devoicing",
+          translations: {
+            de: "Tag",
+            en: "day (final g sounds like k)",
+            ja: "ひ（ごびの g は k のよう）",
+            zh: "天（词尾g读作k）"
           }
         }
       ]

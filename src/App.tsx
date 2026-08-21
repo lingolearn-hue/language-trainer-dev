@@ -27,32 +27,33 @@ import "./App.css";
 
 const display = { density: "dense" as const };
 
-// All 13 built Japanese lessons (rows 1-13 of the A1 master table) now
-// go through the topic-based system (see docs/topic-lesson-system.md)
-// instead of separate hand-written per-language files — this is the
-// real migration the proof of concept (Food, topic-05) was building
-// toward. Only Japanese grammar/pronunciation exist for these topics so
-// far (German/English/Chinese would need their own grammar/pronunciation
-// authored — vocab/dialogue/song are already there, ready for that).
-// Food additionally has real German grammar/pronunciation, so it builds
-// both a ja-target and a de-target lesson from the same file.
-const JAPANESE_TOPICS: TopicLesson[] = [
+// All 13 built lessons (rows 1-13 of the A1 master table) go through the
+// topic-based system (see docs/topic-lesson-system.md) instead of
+// separate hand-written per-language files. Every topic now has both
+// Japanese and German grammar/pronunciation authored, so buildLessonPlan
+// produces a full ja-target AND de-target lesson from each one — 26
+// generated lessons total. Chinese/English grammar+pronunciation aren't
+// authored yet for any topic (vocab/dialogue/song already are, ready for
+// that whenever it happens).
+const ALL_TOPICS: TopicLesson[] = [
   topicFamily, topicBody, topicAppearance, topicEmotions, topicFood,
   topicHome, topicClothing, topicShopping, topicAnimals, topicHealth,
   topicTravel, topicDirections, topicTime,
 ];
-const generatedJapaneseLessons = JAPANESE_TOPICS
+const generatedJapaneseLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))
   .filter((l): l is LessonPlan => l !== null);
 
-const generatedFoodDe = buildLessonPlan(topicFood, "de", "en", "german-beginner");
+const generatedGermanLessons = ALL_TOPICS
+  .map((topic) => buildLessonPlan(topic, "de", "en", "german-beginner"))
+  .filter((l): l is LessonPlan => l !== null);
 
 const allLessons: LessonPlan[] = [
   lesson2,
   lesson11,
   lessonEnglishSpace,
   ...generatedJapaneseLessons,
-  ...(generatedFoodDe ? [generatedFoodDe] : []),
+  ...generatedGermanLessons,
 ]; // grows as more lessons are built
 
 function App() {

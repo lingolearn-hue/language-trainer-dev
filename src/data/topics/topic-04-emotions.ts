@@ -766,6 +766,76 @@ export const topicEmotions: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Verneinung: nicht / kein",
+        en: "Negation: nicht / kein",
+        ja: "ひてい：nicht と kein",
+        zh: "否定：nicht／kein"
+      },
+      explanation: {
+        de: "nicht verneint Verben, Adjektive und Adverbien: Ich bin nicht traurig. kein verneint Nomen, die mit ein/eine stehen oder ganz ohne Artikel: Ich habe keine Sorge. Als Faustregel: gibt es ein Nomen ohne bestimmten Artikel, wird kein benutzt; sonst nicht.",
+        en: "nicht negates verbs, adjectives, and adverbs: Ich bin nicht traurig (I am not sad). kein negates nouns that take ein/eine or no article at all: Ich habe keine Sorge (I have no worry). Rule of thumb: if there's a noun without a definite article, use kein; otherwise, use nicht.",
+        ja: "nicht は どうし・けいようし・ふくしを ひていします：Ich bin nicht traurig（かなしくない）。kein は ein/eine が つく めいし、または むかんしの めいしを ひていします：Ich habe keine Sorge（しんぱいが ない）。めやす：ふていかんしの めいしが あれば kein、それ いがいは nicht。",
+        zh: "nicht否定动词、形容词和副词：Ich bin nicht traurig（我不难过）。kein否定带ein/eine或不带冠词的名词：Ich habe keine Sorge（我没有担心）。经验法则：如果是不带定冠词的名词，用kein；其他情况用nicht。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Ich bin nicht traurig.",
+            en: "I am not sad. (nicht + adjective)",
+            ja: "わたしは かなしく ないです。（nicht + けいようし）",
+            zh: "我不难过。（nicht + 形容词）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Er ist nicht müde.",
+            en: "He is not tired. (nicht + adjective)",
+            ja: "かれは つかれて いません。（nicht + けいようし）",
+            zh: "他不累。（nicht + 形容词）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Ich habe keine Sorge.",
+            en: "I have no worry. (kein + noun)",
+            ja: "わたしは しんぱいが ありません。（kein + めいし）",
+            zh: "我没有担心。（kein + 名词）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Sie hat keine Angst.",
+            en: "She has no fear. (kein + noun)",
+            ja: "かのじょは こわがって いません。（kein + めいし）",
+            zh: "她不害怕。（kein + 名词）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Ich weine nicht.",
+            en: "I am not crying. (nicht + verb)",
+            ja: "わたしは ないて いません。（nicht + どうし）",
+            zh: "我没有哭。（nicht + 动词）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Das ist nicht schwierig.",
+            en: "That is not difficult. (nicht + adjective)",
+            ja: "それは むずかしく ないです。（nicht + けいようし）",
+            zh: "这不难。（nicht + 形容词）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -869,6 +939,90 @@ export const topicEmotions: TopicLesson = {
             zh: "担心——4个音拍，ん算作独立的一拍",
             de: "Sorge — 4 Morae, ん zählt als eigener Schlag",
             en: "worry — 4 morae, ん counts as its own beat"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
+      },
+      groupLabels: {
+        a_length: {
+          de: "A — lang vs. kurz",
+          en: "A — long vs. short",
+          ja: "A — ながい と みじかい",
+          zh: "A——长音与短音"
+        },
+        au: {
+          de: "AU-Diphthong",
+          en: "AU diphthong",
+          ja: "AU の にじゅうぼいん",
+          zh: "AU双元音"
+        }
+      },
+      items: [
+        {
+          id: "a1",
+          category: "a_length",
+          translations: {
+            de: "sagen",
+            en: "to say (long A)",
+            ja: "いう（ながい A）",
+            zh: "说（长音A）"
+          }
+        },
+        {
+          id: "a2",
+          category: "a_length",
+          translations: {
+            de: "angenehm",
+            en: "pleasant (short A)",
+            ja: "こころよい（みじかい A）",
+            zh: "愉快的（短音A）"
+          }
+        },
+        {
+          id: "a3",
+          category: "a_length",
+          translations: {
+            de: "Angst",
+            en: "fear (short A)",
+            ja: "きょうふ（みじかい A）",
+            zh: "恐惧（短音A）"
+          }
+        },
+        {
+          id: "au1",
+          category: "au",
+          translations: {
+            de: "traurig",
+            en: "sad (AU diphthong)",
+            ja: "かなしい（AU の にじゅうぼいん）",
+            zh: "难过的（AU双元音）"
+          }
+        },
+        {
+          id: "au2",
+          category: "au",
+          translations: {
+            de: "aushalten",
+            en: "to endure (AU diphthong)",
+            ja: "たえる（AU の にじゅうぼいん）",
+            zh: "忍受（AU双元音）"
+          }
+        },
+        {
+          id: "au3",
+          category: "au",
+          translations: {
+            de: "auch",
+            en: "also, too (AU diphthong)",
+            ja: "〜も（AU の にじゅうぼいん）",
+            zh: "也（AU双元音）"
           }
         }
       ]

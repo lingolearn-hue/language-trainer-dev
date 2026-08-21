@@ -674,6 +674,68 @@ export const topicAnimals: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Pluralbildung",
+        en: "Plural Formation",
+        ja: "ふくすうけいの つくりかた"
+      },
+      explanation: {
+        de: "Deutsche Pluralformen folgen keiner einzigen Regel wie das englische -s. Häufige Muster sind: -e (der Hund → die Hunde), -en/-n (die Katze → die Katzen), Umlaut ohne Endung oder mit -er (der Vogel → die Vögel), und -s meist bei Lehnwörtern (der Panda → die Pandas). Die Pluralform wird am besten zusammen mit jedem Nomen gelernt.",
+        en: "German plurals don't follow one single rule like English -s. Common patterns include: -e (der Hund → die Hunde), -en/-n (die Katze → die Katzen), umlaut with no ending or with -er (der Vogel → die Vögel), and -s mostly for loanwords (der Panda → die Pandas). It's best to learn the plural form together with each noun.",
+        ja: "ドイツごの ふくすうけいは、えいごの -s のような ひとつの ルールに したがいません。よく ある パターンは：-e（der Hund → die Hunde）、-en/-n（die Katze → die Katzen）、うむらうと＋ごびなし または -er（der Vogel → die Vögel）、そして がいらいごに おおい -s（der Panda → die Pandas）です。ふくすうけいは、めいしごとに いっしょに おぼえるのが いちばんです。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "ein Hund, zwei Hunde",
+            en: "one dog, two dogs (-e plural)",
+            ja: "いぬ いっぴき、いぬ にひき（-e の ふくすう）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "eine Katze, zwei Katzen",
+            en: "one cat, two cats (-n plural)",
+            ja: "ねこ いっぴき、ねこ にひき（-n の ふくすう）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "ein Vogel, zwei Vögel",
+            en: "one bird, two birds (umlaut, no ending)",
+            ja: "とり いちわ、とり にわ（うむらうと、ごびなし）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "ein Schaf, zwei Schafe",
+            en: "one sheep, two sheep (-e plural)",
+            ja: "ひつじ いっぴき、ひつじ にひき（-e の ふくすう）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "ein Pferd, zwei Pferde",
+            en: "one horse, two horses (-e plural)",
+            ja: "うま いっとう、うま にとう（-e の ふくすう）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "ein Panda, zwei Pandas",
+            en: "one panda, two pandas (-s plural, loanword)",
+            ja: "パンダ いっとう、パンダ にとう（-s の ふくすう、がいらいご）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -784,6 +846,81 @@ export const topicAnimals: TopicLesson = {
             ja: "かう",
             en: "to keep a pet (HL) / to buy (LH) — reinforced a third time, contrast now with L5",
             de: "ein Haustier halten (HL) / kaufen (LH) — zum dritten Mal vertieft, Kontrast zu L5"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        sh_s_ch: {
+          de: "SCH vs. S vs. CH (dreifacher Kontrast)",
+          en: "SCH vs. S vs. CH (three-way contrast)",
+          ja: "SCH と S と CH（さんしゅの たいひ）"
+        },
+        ich_ach: {
+          de: "Ich-Laut vs. Ach-Laut",
+          en: "Ich-laut vs. Ach-laut",
+          ja: "Ich-Laut と Ach-Laut"
+        }
+      },
+      items: [
+        {
+          id: "sch1",
+          category: "sh_s_ch",
+          translations: {
+            de: "Schaf",
+            en: "sheep (SCH → \"sh\")",
+            ja: "ひつじ（SCH → 「sh」）"
+          }
+        },
+        {
+          id: "sch2",
+          category: "sh_s_ch",
+          translations: {
+            de: "Schwein",
+            en: "pig (SCH → \"sh\")",
+            ja: "ぶた（SCH → 「sh」）"
+          }
+        },
+        {
+          id: "s1",
+          category: "sh_s_ch",
+          translations: {
+            de: "süß",
+            en: "cute, sweet (plain S)",
+            ja: "かわいい（ふつうの S）"
+          }
+        },
+        {
+          id: "s2",
+          category: "sh_s_ch",
+          translations: {
+            de: "sanft",
+            en: "gentle (plain S)",
+            ja: "おだやかな（ふつうの S）"
+          }
+        },
+        {
+          id: "ich1",
+          category: "ich_ach",
+          translations: {
+            de: "Kaninchen",
+            en: "rabbit (Ich-laut — CH after i/n)",
+            ja: "うさぎ（Ich-Laut — i/n の あとの CH）"
+          }
+        },
+        {
+          id: "ach1",
+          category: "ich_ach",
+          translations: {
+            de: "Bauch",
+            en: "belly (Ach-laut — CH after a/o/u)",
+            ja: "おなか（Ach-Laut — a/o/u の あとの CH）"
           }
         }
       ]

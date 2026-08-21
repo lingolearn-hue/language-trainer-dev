@@ -820,6 +820,76 @@ export const topicBody: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Personalpronomen",
+        en: "Personal Pronouns",
+        ja: "にんしょうだいめいし",
+        zh: "人称代词"
+      },
+      explanation: {
+        de: "Die deutschen Personalpronomen sind: ich, du, er/sie/es, wir, ihr, sie (Plural) und Sie (höflich). Anders als im Japanischen kann das Pronomen im Deutschen nie weggelassen werden — jeder Satz braucht ein Subjekt — und das Verb ändert seine Endung je nach Pronomen (ich habe, du hast, er/sie/es hat).",
+        en: "German personal pronouns are: ich, du, er/sie/es, wir, ihr, sie (plural), and Sie (polite). Unlike Japanese, the pronoun can never be dropped in German — every sentence needs a subject — and the verb ending changes depending on the pronoun (ich habe, du hast, er/sie/es hat).",
+        ja: "ドイツごの にんしょうだいめいしは：ich（わたし）、du（きみ）、er/sie/es（かれ／かのじょ／それ）、wir（わたしたち）、ihr（きみたち）、sie（かれら）、Sie（ていねいな あなた）です。にほんごと ちがい、ドイツごでは だいめいしを はぶく ことは できません — すべての ぶんに しゅごが ひつようです。どうしの ごびも だいめいしに よって かわります（ich habe, du hast, er/sie/es hat）。",
+        zh: "德语的人称代词有：ich（我）、du（你）、er/sie/es（他/她/它）、wir（我们）、ihr（你们）、sie（他们）、Sie（您，礼貌形式）。与日语不同，德语中代词绝不能省略——每个句子都需要主语——而且动词词尾会随代词变化（ich habe，du hast，er/sie/es hat）。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Ich habe einen starken Rücken.",
+            en: "I have a strong back. (ich)",
+            ja: "わたしは せなかが つよいです。（ich）",
+            zh: "我的背很强壮。（ich）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Du hast große Hände.",
+            en: "You have big hands. (du)",
+            ja: "きみは てが おおきいです。（du）",
+            zh: "你的手很大。（du）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Er hat lange Beine.",
+            en: "He has long legs. (er)",
+            ja: "かれは あしが ながいです。（er）",
+            zh: "他的腿很长。（er）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Sie hat kurze Arme.",
+            en: "She has short arms. (sie)",
+            ja: "かのじょは うでが みじかいです。（sie）",
+            zh: "她的手臂很短。（sie）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Wir bewegen unsere Arme.",
+            en: "We move our arms. (wir)",
+            ja: "わたしたちは うでを うごかします。（wir）",
+            zh: "我们活动我们的手臂。（wir）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Sie haben starke Finger.",
+            en: "They have strong fingers. (sie, plural)",
+            ja: "かれらは ゆびが つよいです。（sie、ふくすう）",
+            zh: "他们的手指很有力。（sie，复数）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -1009,6 +1079,110 @@ export const topicBody: TopicLesson = {
             zh: "嗯（口语）",
             de: "ja (locker)",
             en: "yes (casual)"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
+      },
+      groupLabels: {
+        d_t: {
+          de: "D (stimmhaft) vs. T (stimmlos)",
+          en: "D (voiced) vs. T (unvoiced)",
+          ja: "D（ゆうせいおん）と T（むせいおん）",
+          zh: "D（浊音）与T（清音）"
+        },
+        sp_st: {
+          de: "SP/ST am Wortanfang klingt wie \"shp\"/\"sht\"",
+          en: "SP/ST at word start sounds like \"shp\"/\"sht\"",
+          ja: "ごとうの SP/ST は「shp」「sht」の よう",
+          zh: "词首的SP/ST读作「shp」「sht」"
+        }
+      },
+      items: [
+        {
+          id: "d1",
+          category: "d_t",
+          translations: {
+            de: "du",
+            en: "you, informal (D voiced)",
+            ja: "きみ（ゆうせいの D）",
+            zh: "你，非正式（浊音D）"
+          }
+        },
+        {
+          id: "d2",
+          category: "d_t",
+          translations: {
+            de: "dehnen",
+            en: "to stretch (D voiced)",
+            ja: "のばす（ゆうせいの D）",
+            zh: "伸展（浊音D）"
+          }
+        },
+        {
+          id: "t1",
+          category: "d_t",
+          translations: {
+            de: "tut weh",
+            en: "hurts (T unvoiced)",
+            ja: "いたい（むせいの T）",
+            zh: "疼（清音T）"
+          }
+        },
+        {
+          id: "t2",
+          category: "d_t",
+          translations: {
+            de: "trainieren",
+            en: "to train, exercise (T unvoiced)",
+            ja: "トレーニングする（むせいの T）",
+            zh: "锻炼（清音T）"
+          }
+        },
+        {
+          id: "sp1",
+          category: "sp_st",
+          translations: {
+            de: "Sport",
+            en: "sport (SP → \"shp\")",
+            ja: "スポーツ（SP → 「shp」）",
+            zh: "运动（SP读作「shp」）"
+          }
+        },
+        {
+          id: "sp2",
+          category: "sp_st",
+          translations: {
+            de: "spüren",
+            en: "to sense, feel (SP → \"shp\")",
+            ja: "かんじる（SP → 「shp」）",
+            zh: "感觉到（SP读作「shp」）"
+          }
+        },
+        {
+          id: "st1",
+          category: "sp_st",
+          translations: {
+            de: "stark",
+            en: "strong (ST → \"sht\")",
+            ja: "つよい（ST → 「sht」）",
+            zh: "强壮（ST读作「sht」）"
+          }
+        },
+        {
+          id: "st2",
+          category: "sp_st",
+          translations: {
+            de: "strecken",
+            en: "to stretch out (ST → \"sht\")",
+            ja: "のばす（ST → 「sht」）",
+            zh: "伸展（ST读作「sht」）"
           }
         }
       ]

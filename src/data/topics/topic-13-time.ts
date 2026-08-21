@@ -658,6 +658,68 @@ export const topicTime: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Zeitpräpositionen",
+        en: "Prepositions of Time",
+        ja: "じかんの ぜんちし"
+      },
+      explanation: {
+        de: "um steht bei Uhrzeiten (um neun Uhr). am steht bei Tagen und Tagesabschnitten (am Montag, am Vormittag). im steht bei Monaten und Jahreszeiten (im Winter). vor und nach beschreiben \"before\"/\"after\" einer Zeit oder eines Ereignisses. zwischen ... und beschreibt eine Zeitspanne.",
+        en: "um is used with clock times (um neun Uhr). am is used with days and parts of the day (am Montag, am Vormittag). im is used with months and seasons (im Winter). vor and nach describe \"before\"/\"after\" a time or event. zwischen ... und describes a time range.",
+        ja: "um は じこくに つかいます（um neun Uhr）。am は ようびや いちにちの じかんたいに つかいます（am Montag、am Vormittag）。im は つきや きせつに つかいます（im Winter）。vor と nach は じこくや できごとの「まえ」「あと」を あらわします。zwischen ... und は きかんを あらわします。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Um neun Uhr beginnt die Besprechung.",
+            en: "The meeting starts at nine o'clock. (um + clock time)",
+            ja: "くじに かいぎが はじまります。（um + じこく）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Am Wochenende bin ich frei.",
+            en: "I'm free on the weekend. (am + day-type period)",
+            ja: "しゅうまつは ひまです。（am + きかん）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Am Vormittag habe ich Zeit.",
+            en: "I have time in the morning. (am + part of day)",
+            ja: "ごぜんちゅうは じかんが あります。（am + いちにちの じかんたい）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Vor der Besprechung bereite ich mich vor.",
+            en: "I prepare before the meeting. (vor + noun)",
+            ja: "かいぎの まえに じゅんびします。（vor + めいし）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Nach dem Treffen habe ich frei.",
+            en: "I'm free after the meeting. (nach + noun)",
+            ja: "かいぎの あとは ひまです。（nach + めいし）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Zwischen zwei und drei Uhr habe ich Zeit.",
+            en: "I have time between two and three o'clock. (zwischen ... und)",
+            ja: "にじから さんじの あいだ じかんが あります。（zwischen ... und）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -768,6 +830,72 @@ export const topicTime: TopicLesson = {
             ja: "にほん",
             en: "Japan (ん at the end of the word)",
             de: "Japan (ん am Wortende)"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        h: {
+          de: "H gesprochen vs. stumm (Dehnungs-H)",
+          en: "H pronounced vs. silent (vowel-lengthening H)",
+          ja: "はつおんされる H と むおんの H（ぼいん を のばす H）"
+        },
+        ch: {
+          de: "CH in Buch vs. ich, revisited",
+          en: "CH in Buch vs. ich, revisited",
+          ja: "Buch と ich の CH（ふくしゅう）"
+        }
+      },
+      items: [
+        {
+          id: "h1",
+          category: "h",
+          translations: {
+            de: "heute",
+            en: "today (H pronounced, syllable-initial)",
+            ja: "きょう（H は はつおんされる）"
+          }
+        },
+        {
+          id: "h2",
+          category: "h",
+          translations: {
+            de: "Uhr",
+            en: "clock, o'clock (H silent, lengthens the U)",
+            ja: "とけい（H は むおん、U を のばす）"
+          }
+        },
+        {
+          id: "h3",
+          category: "h",
+          translations: {
+            de: "früh",
+            en: "early (H silent, lengthens the Ü)",
+            ja: "はやい（H は むおん、Ü を のばす）"
+          }
+        },
+        {
+          id: "ch1",
+          category: "ch",
+          translations: {
+            de: "Woche",
+            en: "week (Ich-laut — CH after e)",
+            ja: "しゅう（Ich-Laut — e の あとの CH）"
+          }
+        },
+        {
+          id: "ch2",
+          category: "ch",
+          translations: {
+            de: "Buch",
+            en: "book (Ach-laut — CH after u, the classic contrast pair with ich)",
+            ja: "ほん（Ach-Laut — u の あとの CH、ich との だいひょうてきな たいひ）"
           }
         }
       ]

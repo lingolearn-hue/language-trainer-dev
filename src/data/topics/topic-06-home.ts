@@ -617,6 +617,68 @@ export const topicHome: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Possessivpronomen",
+        en: "Possessives",
+        ja: "しょゆう だいめいし"
+      },
+      explanation: {
+        de: "Possessivpronomen zeigen, wem etwas gehört: mein(e) (my), dein(e) (your, informal), sein(e) (his), ihr(e) (her), unser(e) (our), euer/eure (your, plural), ihr(e) (their) und Ihr(e) (your, formal). Die Endung -e kommt bei femininen und pluralen Nomen dazu, sonst bleibt die Grundform.",
+        en: "Possessive pronouns show who owns something: mein(e) (my), dein(e) (your, informal), sein(e) (his), ihr(e) (her), unser(e) (our), euer/eure (your, plural), ihr(e) (their), and Ihr(e) (your, formal). The -e ending is added for feminine and plural nouns; otherwise the base form is used.",
+        ja: "しょゆう だいめいしは、なにが だれの ものかを しめします：mein(e)（わたしの）、dein(e)（きみの）、sein(e)（かれの）、ihr(e)（かのじょの）、unser(e)（わたしたちの）、euer/eure（きみたちの）、ihr(e)（かれらの）、Ihr(e)（ていねいな あなたの）。じょせいけい・ふくすうの めいしには -e が つき、それ いがいは きほんけいの ままです。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Das ist mein Zimmer.",
+            en: "This is my room. (mein)",
+            ja: "これは わたしの へやです。（mein）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Ist das dein Schlüssel?",
+            en: "Is that your key? (dein)",
+            ja: "それは きみの かぎ ですか？（dein）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Das ist sein Bett.",
+            en: "That is his bed. (sein)",
+            ja: "それは かれの ベッドです。（sein）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Das ist ihr Tisch.",
+            en: "That is her table. (ihr)",
+            ja: "それは かのじょの テーブルです。（ihr）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Das ist unser Haus.",
+            en: "That is our house. (unser)",
+            ja: "それは わたしたちの いえです。（unser）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Wo ist euer Stuhl?",
+            en: "Where is your (plural) chair? (euer)",
+            ja: "きみたちの いすは どこ ですか？（euer）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -709,6 +771,72 @@ export const topicHome: TopicLesson = {
             ja: "かぎ",
             en: "key (LH) — new word, single pitch pattern to notice",
             de: "Schlüssel (LH) — neues Wort, einzelnes Tonmuster"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        f_v: {
+          de: "F und V klingen beide meist wie \"f\"",
+          en: "F and V both usually sound like \"f\"",
+          ja: "F と V は どちらも たいてい「f」の おと"
+        },
+        w: {
+          de: "W klingt wie englisches V",
+          en: "W sounds like English V",
+          ja: "W は えいごの V のように きこえる"
+        }
+      },
+      items: [
+        {
+          id: "f1",
+          category: "f_v",
+          translations: {
+            de: "Fenster",
+            en: "window (letter F)",
+            ja: "まど（もじ F）"
+          }
+        },
+        {
+          id: "f2",
+          category: "f_v",
+          translations: {
+            de: "Vater",
+            en: "father (letter V, sounds like F)",
+            ja: "ちち（もじ V、f の おと）"
+          }
+        },
+        {
+          id: "f3",
+          category: "f_v",
+          translations: {
+            de: "verleihen",
+            en: "to lend out (letter V, sounds like F)",
+            ja: "かす（もじ V、f の おと）"
+          }
+        },
+        {
+          id: "w1",
+          category: "w",
+          translations: {
+            de: "wohnen",
+            en: "to live, reside (W sounds like English V)",
+            ja: "すむ（W は えいごの V のよう）"
+          }
+        },
+        {
+          id: "w2",
+          category: "w",
+          translations: {
+            de: "Wasser",
+            en: "water (W sounds like English V)",
+            ja: "みず（W は えいごの V のよう）"
           }
         }
       ]

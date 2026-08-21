@@ -1,8 +1,10 @@
+import { useState } from "react";
 import type { LessonPlan, LangCode } from "../types";
 import type { Trainer } from "../data/trainers";
 import { LanguageSamples } from "./LanguageSamples";
 import { summarizeLesson } from "../data/lessonSummary";
 import { primeSpeechSynthesis } from "../engine/speech";
+import { isLessonHiddenByDefault } from "../engine/lessonStatus";
 
 // Course/lesson picker, shown after trainer selection. Only lessons whose
 // courseId is in the trainer's courseIds are offered — currently there's
@@ -20,7 +22,24 @@ export function LessonSelect({
   onSelect: (lesson: LessonPlan) => void;
   onBack: () => void;
 }) {
-  const available = lessons.filter((l) => trainer.courseIds.includes(l.courseId));
+  const [statusFilter, setStatusFilter] = useState<"recommended" | "all" | "hidden">(
+    "recommended"
+  );
+  const [levelFilter, setLevelFilter] = useState<string>("all");
+
+  const courseLessons = lessons.filter((l) => trainer.courseIds.includes(l.courseId));
+  const levels = Array.from(
+    new Set(courseLessons.map((l) => l.level).filter((v): v is string => !!v))
+  ).sort();
+
+  const byStatus = courseLessons.filter((l) => {
+    const hidden = isLessonHiddenByDefault(l.id);
+    if (statusFilter === "hidden") return hidden;
+    if (statusFilter === "recommended") return !hidden;
+    return true; // "all"
+  });
+  const available =
+    levelFilter === "all" ? byStatus : byStatus.filter((l) => l.level === levelFilter);
   const displayLang: LangCode = trainer.languages[0];
 
   return (
@@ -33,8 +52,47 @@ export function LessonSelect({
 
       <LanguageSamples trainer={trainer} />
 
+      <div className="filter-chip-row">
+        <button
+          className={`chip${levelFilter === "all" ? " active" : ""}`}
+          onClick={() => setLevelFilter("all")}
+        >
+          All levels
+        </button>
+        {levels.map((lv) => (
+          <button
+            key={lv}
+            className={`chip${levelFilter === lv ? " active" : ""}`}
+            onClick={() => setLevelFilter(lv)}
+          >
+            {lv}
+          </button>
+        ))}
+      </div>
+
+      <div className="filter-chip-row">
+        <button
+          className={`chip${statusFilter === "recommended" ? " active" : ""}`}
+          onClick={() => setStatusFilter("recommended")}
+        >
+          Recommended
+        </button>
+        <button
+          className={`chip${statusFilter === "all" ? " active" : ""}`}
+          onClick={() => setStatusFilter("all")}
+        >
+          All
+        </button>
+        <button
+          className={`chip${statusFilter === "hidden" ? " active" : ""}`}
+          onClick={() => setStatusFilter("hidden")}
+        >
+          Hidden
+        </button>
+      </div>
+
       {available.length === 0 ? (
-        <p>No lessons available for this trainer's course yet.</p>
+        <p>No lessons match these filters.</p>
       ) : (
         <div className="trainer-grid">
           {available.map((lesson) => {

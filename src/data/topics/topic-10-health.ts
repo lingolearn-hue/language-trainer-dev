@@ -680,6 +680,68 @@ export const topicHealth: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Imperativ",
+        en: "Imperatives",
+        ja: "めいれいけい"
+      },
+      explanation: {
+        de: "Der deutsche Imperativ hat drei Formen, je nachdem, wen man anspricht. du-Form: Pronomen weglassen, oft auch die Endung -st (du ruhst → Ruh dich aus!). ihr-Form: die normale ihr-Form ohne Pronomen (ihr geht → Geht!). Höfliche Sie-Form: Verb und Sie tauschen die Reihenfolge (Sie gehen → Gehen Sie!).",
+        en: "German has three imperative forms depending on who you're addressing. du-form: drop the pronoun, often the -st ending too (du ruhst → Ruh dich aus!). ihr-form: the normal ihr-form without the pronoun (ihr geht → Geht!). Polite Sie-form: verb and Sie swap order (Sie gehen → Gehen Sie!).",
+        ja: "ドイツごの めいれいけいは、だれに はなすかで 3しゅるい あります。du-けい：だいめいしを はぶき、-st も おおくは はぶきます（du ruhst → Ruh dich aus!）。ihr-けい：だいめいしなしの ふつうの ihr-けい（ihr geht → Geht!）。ていねいな Sie-けい：どうしと Sie の じゅんばんを いれかえます（Sie gehen → Gehen Sie!）。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Ruh dich aus!",
+            en: "Rest! (du-imperative)",
+            ja: "やすんで ください！（du-けい）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Schlaf gut!",
+            en: "Sleep well! (du-imperative)",
+            ja: "よく ねて ください！（du-けい）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Legen Sie sich hin!",
+            en: "Lie down! (formal Sie-imperative)",
+            ja: "よこに なって ください！（ていねいな Sie-けい）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Nehmen Sie die Medikamente ein!",
+            en: "Take the medicine! (formal Sie-imperative)",
+            ja: "くすりを のんで ください！（ていねいな Sie-けい）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Geht ins Krankenhaus!",
+            en: "Go to the hospital! (ihr-imperative, plural)",
+            ja: "びょういんに いって ください！（ihr-けい、ふくすう）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Machen Sie sich keine Sorgen!",
+            en: "Don't worry! (formal Sie-imperative, negative)",
+            ja: "しんぱいしないで ください！（ていねいな Sie-けい、ひてい）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -836,6 +898,81 @@ export const topicHealth: TopicLesson = {
             ja: "まった",
             de: "gewartet",
             en: "waited"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        n_ng: {
+          de: "N vs. NG",
+          en: "N vs. NG",
+          ja: "N と NG"
+        },
+        devoicing: {
+          de: "Auslautverhärtung, vertieft: b/d/g am Wortende klingen wie p/t/k",
+          en: "Final devoicing, reinforced: b/d/g at word end sound like p/t/k",
+          ja: "ごびの むせいか（ふくしゅう）：ごびの b/d/g は p/t/k のように きこえる"
+        }
+      },
+      items: [
+        {
+          id: "n1",
+          category: "n_ng",
+          translations: {
+            de: "Verband",
+            en: "bandage (plain N)",
+            ja: "ほうたい（ふつうの N）"
+          }
+        },
+        {
+          id: "n2",
+          category: "n_ng",
+          translations: {
+            de: "Medikament",
+            en: "medicine (plain N)",
+            ja: "くすり（ふつうの N）"
+          }
+        },
+        {
+          id: "ng1",
+          category: "n_ng",
+          translations: {
+            de: "Übung",
+            en: "exercise, practice (NG)",
+            ja: "れんしゅう（NG）"
+          }
+        },
+        {
+          id: "ng2",
+          category: "n_ng",
+          translations: {
+            de: "Achtung",
+            en: "caution, attention (NG)",
+            ja: "ちゅうい（NG）"
+          }
+        },
+        {
+          id: "dv1",
+          category: "devoicing",
+          translations: {
+            de: "gesund",
+            en: "healthy (final d sounds like t)",
+            ja: "けんこうな（ごびの d は t のよう）"
+          }
+        },
+        {
+          id: "dv2",
+          category: "devoicing",
+          translations: {
+            de: "Verband",
+            en: "bandage (final d sounds like t)",
+            ja: "ほうたい（ごびの d は t のよう）"
           }
         }
       ]

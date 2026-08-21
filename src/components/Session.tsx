@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useSession } from "../context/SessionContext";
 import { VocabDrillBlock } from "./VocabDrillBlock";
 import { ReadalongBlock } from "./ReadalongBlock";
@@ -10,12 +10,18 @@ import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
 import { RateControls } from "./RateControls";
 import { TeacherCaption } from "./TeacherCaption";
-import { cancelSpeech, setCurrentTargetLang } from "../engine/speech";
+import { cancelSpeech, setCurrentTargetLang, speak } from "../engine/speech";
 import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
 import { SlideControlsContext } from "../context/SlideControlsContext";
 import { useIsLandscape } from "../hooks/useIsLandscape";
 import { subscribeSlideSize, type SlideRect } from "../engine/slideSize";
 import type { Trainer } from "../data/trainers";
+import { lessonWelcome, lessonThanks } from "../data/sessionFraming";
+import {
+  incrementGlobalSessionCount,
+  setLessonStatus,
+  type LessonMasteryStatus,
+} from "../engine/lessonStatus";
 
 export function Session({
   trainer,
@@ -71,6 +77,28 @@ export function Session({
   // every block change. Declared above the early returns below so hook
   // order stays stable regardless of session status.
   const [autoPlayReady, setAutoPlayReady] = useState(false);
+
+  // Session-level welcome, spoken once per lesson start: source language
+  // first, then target language (per user request). Gates the first
+  // block's autoplay so narration never overlaps it. Plays once on mount
+  // regardless of resume state — keeps the logic simple; a resumed
+  // mid-lesson session still gets the same short welcome.
+  const [welcomeDone, setWelcomeDone] = useState(false);
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const source = lessonWelcome[lang.sourceLang];
+      const target = lessonWelcome[lang.targetLang];
+      if (source) await speak(source, lang.sourceLang, trainer.voiceProfile);
+      if (cancelled) return;
+      if (target && target !== source) await speak(target, lang.targetLang, trainer.voiceProfile);
+      if (!cancelled) setWelcomeDone(true);
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // useLayoutEffect (not useEffect) is required here, not stylistic: a
   // real race existed against TeacherCaption's own effect. When a block
   // has no spokenIntro, TeacherCaption's effect calls onFinished()
@@ -122,13 +150,12 @@ export function Session({
 
   if (status === "complete") {
     return (
-      <div className="session complete">
-        <h2>Lesson complete 🎉</h2>
-        <button className="back-link" onClick={handleExit}>
-          ← Back to lessons
-        </button>
-        <AuditBar />
-      </div>
+      <LessonCompleteScreen
+        lesson={lesson}
+        lang={lang}
+        trainer={trainer}
+        onExit={handleExit}
+      />
     );
   }
 
@@ -211,7 +238,7 @@ export function Session({
                 block={block}
                 lang={lang}
                 trainer={trainer}
-                autoPlay={autoPlayReady}
+                autoPlay={autoPlayReady && welcomeDone}
                 onComplete={handleComplete}
               />
             )}
@@ -220,7 +247,7 @@ export function Session({
                 block={block}
                 lang={lang}
                 trainer={trainer}
-                autoPlay={autoPlayReady}
+                autoPlay={autoPlayReady && welcomeDone}
                 onComplete={handleComplete}
               />
             )}
@@ -229,7 +256,7 @@ export function Session({
                 block={block}
                 lang={lang}
                 trainer={trainer}
-                autoPlay={autoPlayReady}
+                autoPlay={autoPlayReady && welcomeDone}
                 onComplete={handleComplete}
               />
             )}
@@ -239,7 +266,7 @@ export function Session({
                 lang={lang}
                 display={display}
                 trainer={trainer}
-                autoPlay={autoPlayReady}
+                autoPlay={autoPlayReady && welcomeDone}
                 onComplete={handleComplete}
               />
             )}
@@ -248,7 +275,7 @@ export function Session({
                 block={block}
                 lang={lang}
                 trainer={trainer}
-                autoPlay={autoPlayReady}
+                autoPlay={autoPlayReady && welcomeDone}
                 onComplete={handleComplete}
               />
             )}
@@ -257,7 +284,7 @@ export function Session({
                 block={block}
                 lang={lang}
                 trainer={trainer}
-                autoPlay={autoPlayReady}
+                autoPlay={autoPlayReady && welcomeDone}
                 onComplete={handleComplete}
               />
             )}
@@ -328,6 +355,77 @@ export function Session({
         </div>
       </SlideControlsContext.Provider>
 
+      <AuditBar />
+    </div>
+  );
+}
+
+// Lesson completion screen: plays the session-level "thanks" outro once
+// (source language then target language), then offers the three mastery
+// choices — see engine/lessonStatus.ts for what each one does to the
+// lesson's visibility in LessonSelect.
+function LessonCompleteScreen({
+  lesson,
+  lang,
+  trainer,
+  onExit,
+}: {
+  lesson: import("../types").LessonPlan;
+  lang: import("../types").LanguageSettings;
+  trainer: Trainer;
+  onExit: () => void;
+}) {
+  const [chosen, setChosen] = useState<LessonMasteryStatus | null>(null);
+  const countedRef = useRef(false);
+
+  useEffect(() => {
+    if (countedRef.current) return;
+    countedRef.current = true;
+    incrementGlobalSessionCount();
+
+    let cancelled = false;
+    (async () => {
+      const source = lessonThanks[lang.sourceLang];
+      const target = lessonThanks[lang.targetLang];
+      if (source) await speak(source, lang.sourceLang, trainer.voiceProfile);
+      if (cancelled) return;
+      if (target && target !== source) await speak(target, lang.targetLang, trainer.voiceProfile);
+    })();
+    return () => {
+      cancelled = true;
+      cancelSpeech();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  function choose(status: LessonMasteryStatus) {
+    setLessonStatus(lesson.id, status);
+    setChosen(status);
+  }
+
+  return (
+    <div className="session complete">
+      <h2>Lesson complete 🎉</h2>
+      <p className="intro-text">{lessonThanks[lang.sourceLang]}</p>
+      <p className="intro-text source">{lessonThanks[lang.targetLang]}</p>
+
+      {chosen ? (
+        <p className="mastery-confirm">
+          {chosen === "mastered" && "Marked as mastered — hidden from your lesson list."}
+          {chosen === "revisitLater" && "Snoozed — hidden for your next 5 sessions."}
+          {chosen === "revisitSoon" && "Got it — you'll keep seeing this lesson."}
+        </p>
+      ) : (
+        <div className="mastery-buttons">
+          <button onClick={() => choose("mastered")}>✅ Mastered</button>
+          <button onClick={() => choose("revisitLater")}>🕒 Revisit later</button>
+          <button onClick={() => choose("revisitSoon")}>🔁 Revisit soon</button>
+        </div>
+      )}
+
+      <button className="back-link" onClick={onExit}>
+        ← Back to lessons
+      </button>
       <AuditBar />
     </div>
   );

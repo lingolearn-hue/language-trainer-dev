@@ -631,6 +631,68 @@ export const topicTravel: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Richtung und Ort: wo / wohin",
+        en: "Direction and Location: wo / wohin",
+        ja: "ほうこう と ばしょ：wo と wohin"
+      },
+      explanation: {
+        de: "wo fragt nach einem festen Ort (Antwort im Dativ: im Hotel). wohin fragt nach einer Richtung oder einem Ziel (Antwort im Akkusativ: ins Hotel, zum Bahnhof). Für Städte und Länder ohne Artikel benutzt man nach: nach Berlin, nach Deutschland.",
+        en: "wo asks about a fixed location (answer in dative: im Hotel). wohin asks about a direction or destination (answer in accusative: ins Hotel, zum Bahnhof). For cities and countries without an article, use nach: nach Berlin, nach Deutschland.",
+        ja: "wo は きまった ばしょを たずねます（こたえは よかく：im Hotel）。wohin は ほうこうや もくてきちを たずねます（こたえは たいかく：ins Hotel、zum Bahnhof）。かんしのない とし・くにの ばあいは nach を つかいます：nach Berlin、nach Deutschland。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Wo ist der Bahnhof?",
+            en: "Where is the train station? (wo — fixed location)",
+            ja: "えきは どこ ですか？（wo — きまった ばしょ）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Wohin fährst du?",
+            en: "Where are you going? (wohin — direction)",
+            ja: "どこへ いきますか？（wohin — ほうこう）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Ich fahre zum Bahnhof.",
+            en: "I'm going to the train station. (zum — direction, dative-fused)",
+            ja: "えきへ いきます。（zum — ほうこう）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Ich bin im Hotel.",
+            en: "I am at the hotel. (im — fixed location, dative)",
+            ja: "ホテルに います。（im — きまった ばしょ、よかく）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Wir fahren nach Berlin.",
+            en: "We're going to Berlin. (nach — city, no article)",
+            ja: "ベルリンへ いきます。（nach — とし、かんしなし）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Der Zug fährt in die Stadt.",
+            en: "The train is going into the city. (in die — direction, accusative)",
+            ja: "でんしゃは まちへ いきます。（in die — ほうこう、たいかく）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -723,6 +785,81 @@ export const topicTravel: TopicLesson = {
             ja: "へや",
             en: "room (へ here is NOT the particle — normal \"he\")",
             de: "Zimmer (へ ist hier KEIN Partikel — normales „he\")"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        cluster: {
+          de: "Anlaut-Konsonantencluster vs. Einzelkonsonant",
+          en: "Initial consonant cluster vs. single consonant",
+          ja: "ごとうの しいん クラスター と たんいつしいん"
+        },
+        schw_schr: {
+          de: "SCHW-/SCHR-Cluster",
+          en: "SCHW-/SCHR- clusters",
+          ja: "SCHW-／SCHR- クラスター"
+        }
+      },
+      items: [
+        {
+          id: "c1",
+          category: "cluster",
+          translations: {
+            de: "Flugzeug",
+            en: "airplane (initial cluster Fl-)",
+            ja: "ひこうき（ごとうクラスター Fl-）"
+          }
+        },
+        {
+          id: "c2",
+          category: "cluster",
+          translations: {
+            de: "Grenze",
+            en: "border (initial cluster Gr-)",
+            ja: "こっきょう（ごとうクラスター Gr-）"
+          }
+        },
+        {
+          id: "c3",
+          category: "cluster",
+          translations: {
+            de: "Zug",
+            en: "train (single initial consonant Z)",
+            ja: "でんしゃ（たんいつしいん Z）"
+          }
+        },
+        {
+          id: "c4",
+          category: "cluster",
+          translations: {
+            de: "Koffer",
+            en: "suitcase (single initial consonant K)",
+            ja: "スーツケース（たんいつしいん K）"
+          }
+        },
+        {
+          id: "sw1",
+          category: "schw_schr",
+          translations: {
+            de: "schwer",
+            en: "heavy (SCHW- cluster, e.g. heavy luggage)",
+            ja: "おもい（SCHW- クラスター、おもい にもつ）"
+          }
+        },
+        {
+          id: "sr1",
+          category: "schw_schr",
+          translations: {
+            de: "Schranke",
+            en: "barrier, gate (SCHR- cluster, e.g. at a crossing)",
+            ja: "しゃだんき（SCHR- クラスター、ふみきりなど）"
           }
         }
       ]

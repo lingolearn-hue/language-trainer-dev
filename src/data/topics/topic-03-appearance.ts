@@ -796,6 +796,76 @@ export const topicAppearance: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Adjektive: Grundform und Angleichung",
+        en: "Adjectives: Basics and Agreement",
+        ja: "けいようし：きほん と いっち",
+        zh: "形容词：基础与变格"
+      },
+      explanation: {
+        de: "Nach sein (er ist, sie ist) bleibt das Adjektiv unverändert: Er ist groß. Steht das Adjektiv aber direkt vor einem Nomen, bekommt es eine Endung, die zum Geschlecht des Nomens passt: ein großer Mann (maskulin, -er), eine schlanke Frau (feminin, -e), ein kleines Kind (neutral, -es).",
+        en: "After sein (er ist, sie ist), the adjective stays unchanged: Er ist groß. But when the adjective comes directly before a noun, it takes an ending matching the noun's gender: ein großer Mann (masculine, -er), eine schlanke Frau (feminine, -e), ein kleines Kind (neuter, -es).",
+        ja: "sein（er ist, sie ist）の あとでは、けいようしは かたちを かえません：Er ist groß。しかし けいようしが めいしの まえに くる ときは、めいしの せいに あわせた ごびが つきます：ein großer Mann（だんせいけい、-er）、eine schlanke Frau（じょせいけい、-e）、ein kleines Kind（ちゅうせいけい、-es）。",
+        zh: "在sein（er ist，sie ist）之后，形容词保持不变：Er ist groß。但当形容词直接放在名词前面时，需要加上与名词性别一致的词尾：ein großer Mann（阳性，-er）、eine schlanke Frau（阴性，-e）、ein kleines Kind（中性，-es）。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Er ist groß.",
+            en: "He is tall. (predicate — no ending)",
+            ja: "かれは せが たかいです。（じゅつご — ごびなし）",
+            zh: "他很高。（表语位置——无词尾）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Ein großer Mann.",
+            en: "A tall man. (attributive, masculine -er)",
+            ja: "せの たかい おとこのひと。（しゅうしょくご、だんせい -er）",
+            zh: "一个高个子男人。（定语位置，阳性-er）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Sie ist schlank.",
+            en: "She is slim. (predicate — no ending)",
+            ja: "かのじょは ほっそりしています。（じゅつご — ごびなし）",
+            zh: "她很苗条。（表语位置——无词尾）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Eine schlanke Frau.",
+            en: "A slim woman. (attributive, feminine -e)",
+            ja: "ほっそりした おんなのひと。（しゅうしょくご、じょせい -e）",
+            zh: "一个苗条的女人。（定语位置，阴性-e）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Das Kind ist klein.",
+            en: "The child is small. (predicate — no ending)",
+            ja: "そのこどもは ちいさいです。（じゅつご — ごびなし）",
+            zh: "这个孩子很小。（表语位置——无词尾）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Ein kleines Kind.",
+            en: "A small child. (attributive, neuter -es)",
+            ja: "ちいさい こども。（しゅうしょくご、ちゅうせい -es）",
+            zh: "一个小孩子。（定语位置，中性-es）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -919,6 +989,100 @@ export const topicAppearance: TopicLesson = {
             zh: "穿戴（高低）／剪（低高）——巩固自第2课，现结合外貌语境",
             de: "tragen (HL) / schneiden (LH) — vertieft aus L2, jetzt im Kontext Aussehen",
             en: "to wear (HL) / to cut (LH) — reinforced from L2, now with appearance context"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
+      },
+      groupLabels: {
+        g_k: {
+          de: "G (stimmhaft) vs. K (stimmlos)",
+          en: "G (voiced) vs. K (unvoiced)",
+          ja: "G（ゆうせいおん）と K（むせいおん）",
+          zh: "G（浊音）与K（清音）"
+        },
+        pf: {
+          de: "PF-Konsonantencluster",
+          en: "PF consonant cluster",
+          ja: "PF の しいん クラスター",
+          zh: "PF辅音连缀"
+        }
+      },
+      items: [
+        {
+          id: "g1",
+          category: "g_k",
+          translations: {
+            de: "groß",
+            en: "tall, big (G voiced)",
+            ja: "おおきい（ゆうせいの G）",
+            zh: "高大的（浊音G）"
+          }
+        },
+        {
+          id: "g2",
+          category: "g_k",
+          translations: {
+            de: "gepflegt",
+            en: "well-groomed (G voiced)",
+            ja: "みだしなみの よい（ゆうせいの G）",
+            zh: "打扮整洁的（浊音G）"
+          }
+        },
+        {
+          id: "k1",
+          category: "g_k",
+          translations: {
+            de: "klein",
+            en: "small (K unvoiced)",
+            ja: "ちいさい（むせいの K）",
+            zh: "小的（清音K）"
+          }
+        },
+        {
+          id: "k2",
+          category: "g_k",
+          translations: {
+            de: "kräftig",
+            en: "sturdy, strong-built (K unvoiced)",
+            ja: "がっしりした（むせいの K）",
+            zh: "健壮的（清音K）"
+          }
+        },
+        {
+          id: "pf1",
+          category: "pf",
+          translations: {
+            de: "Kopf",
+            en: "head (PF cluster)",
+            ja: "あたま（PF クラスター）",
+            zh: "头（PF辅音连缀）"
+          }
+        },
+        {
+          id: "pf2",
+          category: "pf",
+          translations: {
+            de: "Apfel",
+            en: "apple (PF cluster)",
+            ja: "りんご（PF クラスター）",
+            zh: "苹果（PF辅音连缀）"
+          }
+        },
+        {
+          id: "pf3",
+          category: "pf",
+          translations: {
+            de: "Pferd",
+            en: "horse (PF cluster)",
+            ja: "うま（PF クラスター）",
+            zh: "马（PF辅音连缀）"
           }
         }
       ]

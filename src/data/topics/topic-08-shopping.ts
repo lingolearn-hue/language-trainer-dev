@@ -702,6 +702,68 @@ export const topicShopping: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Zahlen und Mengenangaben",
+        en: "Numbers and Quantity",
+        ja: "すうじ と りょう"
+      },
+      explanation: {
+        de: "Die Grundzahlen 1-12 sind: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf. Sie stehen direkt vor dem gezählten Nomen, ohne Zählwort wie im Japanischen. Mengenwörter wie viel(e) (\"much/many\") und wenig(e) (\"little/few\") stehen ebenfalls vor dem Nomen — bei zählbaren Nomen im Plural bekommen sie ein -e: viele Äpfel, wenige Äpfel.",
+        en: "Cardinal numbers 1-12 are: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf. They go directly before the counted noun, with no counter word like in Japanese. Quantity words like viel(e) (\"much/many\") and wenig(e) (\"little/few\") also go before the noun — with countable plural nouns they take an -e: viele Äpfel, wenige Äpfel.",
+        ja: "きすうし 1〜12は：eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf です。にほんごの じょすうしと ちがい、かぞえる めいしの まえに ちょくせつ おきます。viel(e)（おおい）や wenig(e)（すくない）のような りょうを あらわす ことばも めいしの まえに おきます — ふくすうの かぞえられる めいしには -e が つきます：viele Äpfel、wenige Äpfel。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Das kostet zehn Euro.",
+            en: "That costs ten euros. (number)",
+            ja: "それは じゅうユーロです。（すうじ）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Ich brauche zwei Tomaten.",
+            en: "I need two tomatoes. (number + counted noun, no counter word)",
+            ja: "トマトが ふたつ ひつようです。（すうじ、じょすうしなし）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Es gibt viele Sonderangebote.",
+            en: "There are many special offers. (viele — plural quantity)",
+            ja: "とくばいひんが たくさん あります。（viele — ふくすうの りょう）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Wir haben wenig Geld.",
+            en: "We have little money. (wenig — uncountable quantity)",
+            ja: "わたしたちは おかねが すくないです。（wenig — かぞえられない りょう）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Der Preis ist hundert Yen.",
+            en: "The price is one hundred yen. (number)",
+            ja: "ねだんは ひゃくえんです。（すうじ）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Ich kaufe ein paar Tomaten.",
+            en: "I'm buying a few tomatoes. (ein paar — a few)",
+            ja: "トマトを すこし かいます。（ein paar — すこし）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -871,6 +933,81 @@ export const topicShopping: TopicLesson = {
             ja: "じゅっぽん",
             de: "zehn (lange Gegenstände)",
             en: "ten (long objects)"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        e_length: {
+          de: "E — lang vs. kurz",
+          en: "E — long vs. short",
+          ja: "E — ながい と みじかい"
+        },
+        ei: {
+          de: "EI-Diphthong",
+          en: "EI diphthong",
+          ja: "EI の にじゅうぼいん"
+        }
+      },
+      items: [
+        {
+          id: "e1",
+          category: "e_length",
+          translations: {
+            de: "wenig",
+            en: "little, few (short E)",
+            ja: "すくない（みじかい E）"
+          }
+        },
+        {
+          id: "e2",
+          category: "e_length",
+          translations: {
+            de: "Geld",
+            en: "money (short E)",
+            ja: "おかね（みじかい E）"
+          }
+        },
+        {
+          id: "e3",
+          category: "e_length",
+          translations: {
+            de: "lesen",
+            en: "to read (long E)",
+            ja: "よむ（ながい E）"
+          }
+        },
+        {
+          id: "ei1",
+          category: "ei",
+          translations: {
+            de: "Preis",
+            en: "price (EI diphthong)",
+            ja: "ねだん（EI の にじゅうぼいん）"
+          }
+        },
+        {
+          id: "ei2",
+          category: "ei",
+          translations: {
+            de: "einpacken",
+            en: "to pack, wrap (EI diphthong)",
+            ja: "つつむ（EI の にじゅうぼいん）"
+          }
+        },
+        {
+          id: "ei3",
+          category: "ei",
+          translations: {
+            de: "Ei",
+            en: "egg (EI diphthong)",
+            ja: "たまご（EI の にじゅうぼいん）"
           }
         }
       ]

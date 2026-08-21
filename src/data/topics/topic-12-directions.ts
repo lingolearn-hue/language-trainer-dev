@@ -658,6 +658,68 @@ export const topicDirections: TopicLesson = {
           }
         }
       ]
+    },
+    de: {
+      title: {
+        de: "Wechselpräpositionen (Ort)",
+        en: "Two-Way Prepositions (Place)",
+        ja: "りょうよう ぜんちし（ばしょ）"
+      },
+      explanation: {
+        de: "Wechselpräpositionen (in, an, auf, unter, über, vor, hinter, neben, zwischen) stehen mit Dativ, wenn sie einen festen Ort beschreiben (wo?), und mit Akkusativ, wenn sie eine Bewegung zu einem Ziel beschreiben (wohin?) — dieselbe wo/wohin-Unterscheidung wie in Lektion 11, jetzt sichtbar an der Endung der Präposition selbst.",
+        en: "Two-way prepositions (in, an, auf, unter, über, vor, hinter, neben, zwischen) take dative when describing a fixed location (wo?) and accusative when describing motion toward a destination (wohin?) — the same wo/wohin distinction from Lesson 11, now visible in the preposition's own case ending.",
+        ja: "りょうよう ぜんちし（in, an, auf, unter, über, vor, hinter, neben, zwischen）は、きまった ばしょを あらわす とき よかく（wo?）、いどうの もくてきちを あらわす とき たいかく（wohin?）に なります — レッスン11 と おなじ wo/wohin の くべつが、ぜんちしの かくへんかとして あらわれます。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Die Ampel ist an der Ecke.",
+            en: "The traffic light is at the corner. (an + dative, fixed location)",
+            ja: "しんごうは かどに あります。（an + よかく、きまった ばしょ）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Gehen Sie an die Ecke.",
+            en: "Go to the corner. (an + accusative, motion)",
+            ja: "かどまで いって ください。（an + たいかく、いどう）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Der Weg ist neben der Straße.",
+            en: "The path is next to the street. (neben + dative)",
+            ja: "みちは どおりの となりに あります。（neben + よかく）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Das Café ist zwischen der Bank und der Post.",
+            en: "The café is between the bank and the post office. (zwischen + dative)",
+            ja: "カフェは ぎんこうと ゆうびんきょくの あいだに あります。（zwischen + よかく）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Biegen Sie vor der Kreuzung ab.",
+            en: "Turn before the intersection. (vor + dative)",
+            ja: "こうさてんの てまえで まがって ください。（vor + よかく）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Der Parkplatz ist hinter dem Gebäude.",
+            en: "The parking lot is behind the building. (hinter + dative)",
+            ja: "ちゅうしゃじょうは たてものの うしろに あります。（hinter + よかく）"
+          }
+        }
+      ]
     }
   },
   pronunciation: {
@@ -764,6 +826,72 @@ export const topicDirections: TopicLesson = {
             ja: "まがる",
             en: "to turn (LHL) — new word, single pattern",
             de: "abbiegen (LHL) — neues Wort, einzelnes Muster"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        i_length: {
+          de: "I — lang vs. kurz",
+          en: "I — long vs. short",
+          ja: "I — ながい と みじかい"
+        },
+        eu: {
+          de: "EU/ÄU-Diphthong",
+          en: "EU/ÄU diphthong",
+          ja: "EU／ÄU の にじゅうぼいん"
+        }
+      },
+      items: [
+        {
+          id: "i1",
+          category: "i_length",
+          translations: {
+            de: "Linie",
+            en: "line, route (long I)",
+            ja: "せん、ろせん（ながい I）"
+          }
+        },
+        {
+          id: "i2",
+          category: "i_length",
+          translations: {
+            de: "Richtung",
+            en: "direction (short I)",
+            ja: "ほうこう（みじかい I）"
+          }
+        },
+        {
+          id: "i3",
+          category: "i_length",
+          translations: {
+            de: "sich verirren",
+            en: "to get lost (short I)",
+            ja: "みちに まよう（みじかい I）"
+          }
+        },
+        {
+          id: "eu1",
+          category: "eu",
+          translations: {
+            de: "Kreuzung",
+            en: "intersection (EU diphthong)",
+            ja: "こうさてん（EU の にじゅうぼいん）"
+          }
+        },
+        {
+          id: "eu2",
+          category: "eu",
+          translations: {
+            de: "überqueren",
+            en: "to cross (ÄU diphthong)",
+            ja: "わたる（ÄU の にじゅうぼいん）"
           }
         }
       ]
