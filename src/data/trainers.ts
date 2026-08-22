@@ -17,7 +17,7 @@ export interface Trainer {
     lang: string; // BCP-47 — documentation only; actual voice is resolved per-utterance by the spoken text's own language (see engine/speech.ts resolveVoice), not this field
     pitch: number;
     rate: number;
-    voiceURI?: string | string[]; // preferred voice name(s), tried in order — resolved at runtime if available (see engine/speech.ts resolveVoice)
+    voicesByLang?: Partial<Record<LangCode, string | string[]>>; // preferred voice name(s) per language, tried in order — see engine/speech.ts resolveVoice
   };
 }
 
@@ -43,6 +43,27 @@ export interface Trainer {
 // sides (ja + de). Vincent and Yui list courseIds for what exists now;
 // their zh/en-beginner coverage is real in `languages` (so the trainer-
 // select filters surface them correctly) but has no lessons behind it yet.
+// Known male voice names, per language, across platforms — best-effort:
+// naming isn't standardized and has changed across OS versions, so these
+// are ordered candidate lists to try, not guarantees. Confidence varies:
+// de/en names are well-documented and stable across several iOS/macOS
+// generations; ja/zh names are less certain (fewer public references) —
+// if "Otoya"/"Li-mu" turn out wrong or renamed on a given device, the
+// trainer just falls through to that device's default voice, same as
+// having no preference at all, so there's no downside to trying.
+//
+// de is shared between Vincent and Max (both speak German) as two
+// differently-prioritized lists — same underlying pool of real voices,
+// so if only one candidate is ever installed on a given device both
+// trainers converge on it (correct, not a bug); if a device happens to
+// have more than one installed, this gives them distinct voices instead
+// of both defaulting to identical output.
+const MALE_VOICE_DE_MAX = ["Markus", "Yannick", "Google Deutsch"];
+const MALE_VOICE_DE_VINCENT = ["Yannick", "Markus", "Google Deutsch"];
+const MALE_VOICE_EN = ["Alex", "Aaron", "Fred", "Daniel"]; // Daniel is Apple's en-GB male voice — included because resolveVoice's language match is prefix-based (en-GB still counts as "en"), broadening the net legitimately rather than restricting to en-US only
+const MALE_VOICE_JA = ["Otoya"];
+const MALE_VOICE_ZH = ["Li-mu"];
+
 export const trainers: Trainer[] = [
   {
     id: "t-vincent",
@@ -56,7 +77,12 @@ export const trainers: Trainer[] = [
     courseIds: ["german-beginner", "english-advanced-c1"],
     personalityNote:
       "Measured and methodical, explains grammar step by step, rarely rushes ahead.",
-    voiceProfile: { lang: "en-US", pitch: 1.0, rate: 1.0, voiceURI: ["Aaron", "Fred", "Nathan", "Evan"] }, // male en-US voice names Apple has used across iOS/macOS versions, tried in order — first one actually installed wins; only applies if the user has downloaded one (see VoiceHelpOverlay.tsx)
+    voiceProfile: {
+      lang: "en-US",
+      pitch: 1.0,
+      rate: 1.0,
+      voicesByLang: { en: MALE_VOICE_EN, zh: MALE_VOICE_ZH, de: MALE_VOICE_DE_VINCENT },
+    },
   },
   {
     id: "t-max",
@@ -70,7 +96,12 @@ export const trainers: Trainer[] = [
     courseIds: ["japanese-beginner", "german-beginner"],
     personalityNote:
       "Precise and a little formal. Corrects mistakes immediately, expects full sentences.",
-    voiceProfile: { lang: "de-DE", pitch: 0.95, rate: 0.95, voiceURI: ["Markus", "Yannick", "Google Deutsch"] }, // "Markus"/"Yannick" are Apple male de-DE voice names across iOS/macOS versions; "Google Deutsch" is Android/Chrome's single de-DE voice (not reliably gendered, but the only named option that platform offers) — first one actually installed wins, harmlessly falls back to the device default otherwise
+    voiceProfile: {
+      lang: "de-DE",
+      pitch: 0.95,
+      rate: 0.95,
+      voicesByLang: { de: MALE_VOICE_DE_MAX, ja: MALE_VOICE_JA },
+    },
   },
   {
     id: "t-yui",

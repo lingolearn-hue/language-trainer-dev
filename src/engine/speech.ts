@@ -8,14 +8,21 @@ const bcp47: Record<LangCode, string> = {
 };
 
 export interface VoicePreference {
-  // A single preferred name, or a list to try in order (first installed
-  // match wins). Voice naming isn't stable across OS versions/regions —
-  // e.g. Apple's male English voice has been "Fred", "Daniel" (actually
-  // en-GB), and "Aaron" across different iOS releases — so a single
-  // hardcoded name is fragile. A list lets a trainer's preference survive
-  // OS updates without needing a code change every time Apple/Google
-  // renames or reshuffles their voice roster.
-  voiceURI?: string | string[];
+  // Ordered candidate voice names PER LANGUAGE, tried in order — first
+  // one actually installed wins. Keyed by LangCode so a multi-language
+  // trainer (Vincent: en/zh/de, Max: ja/de) gets real coverage for every
+  // language they speak, not just whichever one voiceProfile.lang names
+  // as "primary". Before this, a trainer's single flat voiceURI list
+  // only ever matched their primary language — resolveVoice's lang guard
+  // correctly stopped it from misfiring on other languages, but that
+  // also meant those other languages had NO preference at all and
+  // always fell straight to the device default (usually female).
+  //
+  // Voice naming isn't stable across OS versions/regions — e.g. Apple's
+  // male English voice has been "Fred", "Alex", and "Aaron" across
+  // different macOS/iOS releases — so each list has multiple names to
+  // try, not just one.
+  voicesByLang?: Partial<Record<LangCode, string | string[]>>;
   pitch?: number;
   rate?: number;
 }
@@ -63,11 +70,8 @@ async function resolveVoice(
   const matchesRequestedLang = (v: SpeechSynthesisVoice) =>
     v.lang === target || v.lang?.startsWith(lang);
 
-  const candidates = preference?.voiceURI
-    ? Array.isArray(preference.voiceURI)
-      ? preference.voiceURI
-      : [preference.voiceURI]
-    : [];
+  const forLang = preference?.voicesByLang?.[lang];
+  const candidates = forLang ? (Array.isArray(forLang) ? forLang : [forLang]) : [];
   for (const candidate of candidates) {
     const exact = voices.find((v) => v.voiceURI === candidate && matchesRequestedLang(v));
     if (exact) return exact;
