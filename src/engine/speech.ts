@@ -8,7 +8,14 @@ const bcp47: Record<LangCode, string> = {
 };
 
 export interface VoicePreference {
-  voiceURI?: string;
+  // A single preferred name, or a list to try in order (first installed
+  // match wins). Voice naming isn't stable across OS versions/regions —
+  // e.g. Apple's male English voice has been "Fred", "Daniel" (actually
+  // en-GB), and "Aaron" across different iOS releases — so a single
+  // hardcoded name is fragile. A list lets a trainer's preference survive
+  // OS updates without needing a code change every time Apple/Google
+  // renames or reshuffles their voice roster.
+  voiceURI?: string | string[];
   pitch?: number;
   rate?: number;
 }
@@ -40,18 +47,39 @@ function getVoices(): Promise<SpeechSynthesisVoice[]> {
 }
 
 // Picks the trainer's preferred voice by voiceURI if the browser has it
-// installed; otherwise falls back to the first voice matching the target
-// language, then to no explicit voice (browser default for that lang).
+// installed AND it's actually a voice for the requested language;
+// otherwise falls back to the first voice matching the target language,
+// then to no explicit voice (browser default for that lang). The
+// language check on the exact match matters now that a single trainer
+// can speak 2-3 languages with one shared voiceProfile — without it, a
+// voiceURI preference picked for one language could wrongly hijack
+// speech in a completely different language.
 async function resolveVoice(
   lang: LangCode,
   preference?: VoicePreference
 ): Promise<SpeechSynthesisVoice | undefined> {
   const voices = await getVoices();
-  if (preference?.voiceURI) {
-    const exact = voices.find((v) => v.voiceURI === preference.voiceURI);
-    if (exact) return exact;
-  }
   const target = bcp47[lang];
+  const matchesRequestedLang = (v: SpeechSynthesisVoice) =>
+    v.lang === target || v.lang?.startsWith(lang);
+
+  const candidates = preference?.voiceURI
+    ? Array.isArray(preference.voiceURI)
+      ? preference.voiceURI
+      : [preference.voiceURI]
+    : [];
+  for (const candidate of candidates) {
+    const exact = voices.find((v) => v.voiceURI === candidate && matchesRequestedLang(v));
+    if (exact) return exact;
+    // Fallback: Safari's voiceURI is usually the same string as its plain
+    // name (e.g. "Markus"), but not guaranteed on every version — also
+    // try a case-insensitive name match, still gated to the requested
+    // language for the same reason as above.
+    const byName = voices.find(
+      (v) => v.name.toLowerCase() === candidate.toLowerCase() && matchesRequestedLang(v)
+    );
+    if (byName) return byName;
+  }
   return voices.find((v) => v.lang === target) ?? voices.find((v) => v.lang?.startsWith(lang));
 }
 

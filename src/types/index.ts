@@ -129,6 +129,11 @@ export interface Block {
   // tell a song apart from a dialogue. Undefined/false = not a song
   // (dialogue, or any other block type where the question doesn't apply).
   isSong?: boolean;
+  // Extra content-only display scale — set on sub-blocks produced by the
+  // flexible-style split (see engine/flexibleStyle.ts): each original
+  // slide becomes 3 smaller-content slides, shown bigger to match.
+  // Undefined/1 = normal size, no effect.
+  fontScale?: number;
   content: BlockContent;
 }
 
@@ -148,6 +153,13 @@ export interface LessonPlan {
   // trainer's framing lines — actual lesson content (vocab, dialogue,
   // song lyrics) is always narrated in the target language regardless.
   framingLanguage?: "source" | "target";
+  // The lesson's actual target language, as a LangCode — used to pick
+  // which key of `title` (and other Translations fields) to display.
+  // Distinct from the human-readable `language` string below (e.g.
+  // "German") which is just display text. Optional for older/hand-authored
+  // lessons that predate this field; LessonSelect falls back to the
+  // trainer's own primary language in that case.
+  targetLangCode?: LangCode;
   // Display metadata for the slide footer (e.g. "German A1 — Lesson 2"):
   // human-readable target-language name, CEFR-style level, and lesson
   // number within that course. All optional — Slide falls back to

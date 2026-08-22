@@ -203,6 +203,7 @@ export function buildLessonPlan(
     id: `lesson-${idSuffix}`,
     courseId,
     language: LANGUAGE_DISPLAY_NAME[targetLang],
+    targetLangCode: targetLang,
     level: CEFR_LEVEL[targetLang] ?? "A1",
     lessonNumber: topic.lessonNumber,
     title: topic.topicName,

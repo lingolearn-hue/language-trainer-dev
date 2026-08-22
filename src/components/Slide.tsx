@@ -17,10 +17,12 @@ export function Slide({
   title,
   footer,
   children,
+  fontScale,
 }: {
   title?: ReactNode;
   footer?: ReactNode;
   children: ReactNode;
+  fontScale?: number; // extra content-only scale, for flexible-style split slides — independent of the fit-to-screen scale below, doesn't affect reportSlideSize
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
@@ -58,7 +60,12 @@ export function Slide({
         style={{ transform: `scale(${scale})`, transformOrigin: "center center" }}
       >
         {title && <h2 className="slide-title">{title}</h2>}
-        <div className="slide-content">{children}</div>
+        <div
+          className="slide-content"
+          style={fontScale && fontScale !== 1 ? { transform: `scale(${fontScale})`, transformOrigin: "center center" } : undefined}
+        >
+          {children}
+        </div>
         {/* Landscape: footer portals into the right-hand rail (see
             SlideControlsContext) so buttons render at real size, not
             scaled down with the slide transform above. Portrait (or no

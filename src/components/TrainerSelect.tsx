@@ -4,7 +4,6 @@ import type { LangCode } from "../types";
 import { TrainerAvatar } from "./TrainerAvatar";
 import { VoiceHelpOverlay } from "./VoiceHelpOverlay";
 import { UpdateCheckButton } from "./UpdateCheckButton";
-import { AvatarStyleComparison } from "./AvatarStyleComparison";
 import { loadSettings, saveSettings } from "../engine/userSettings";
 
 const LANG_LABEL: Record<LangCode, string> = {
@@ -36,13 +35,13 @@ export function TrainerSelect({
   // trainer.languages[0]/[1] regardless of what the student actually
   // said they wanted, which could silently teach the wrong direction of
   // a trainer's pair. Now the student's stated intent wins when given.
-  onSelect: (trainer: Trainer, langChoice?: { targetLang: LangCode; sourceLang: LangCode }, style?: "rigid" | "flexible") => void;
+  // Style (rigid/flexible) is chosen on the lesson-select screen now, not
+  // here — see LessonSelect.tsx.
+  onSelect: (trainer: Trainer, langChoice?: { targetLang: LangCode; sourceLang: LangCode }) => void;
 }) {
   const saved = loadSettings();
-  const [showAvatarCompare, setShowAvatarCompare] = useState(false);
   const [langA, setLangA] = useState<LangCode | "">(saved.targetLang ?? "");
   const [langB, setLangB] = useState<LangCode | "">(saved.sourceLang ?? "");
-  const [style, setStyle] = useState<"rigid" | "flexible">(saved.style ?? "rigid");
 
   const matching = trainers.filter((t) => matchesFilter(t, langA, langB));
   const nonMatching = trainers.filter((t) => !matchesFilter(t, langA, langB));
@@ -53,9 +52,8 @@ export function TrainerSelect({
       trainerId: t.id,
       targetLang: langA || undefined,
       sourceLang: langB || undefined,
-      style,
     });
-    onSelect(t, langChoice, style);
+    onSelect(t, langChoice);
   }
 
   function renderCard(t: Trainer, dimmed: boolean) {
@@ -65,7 +63,7 @@ export function TrainerSelect({
         className={`trainer-card${dimmed ? " trainer-card-dimmed" : ""}`}
         onClick={() => handleSelect(t)}
       >
-        <TrainerAvatar trainer={t} />
+        <TrainerAvatar avatarSeed={t.avatarSeed} avatarType={t.avatarType} />
         <div className="trainer-name">{t.name}</div>
         <div className="trainer-languages">
           {t.languages.map((l) => LANG_LABEL[l]).join(" ↔ ")}
@@ -81,14 +79,8 @@ export function TrainerSelect({
     <div className="trainer-select">
       <VoiceHelpOverlay />
       <UpdateCheckButton />
-      {showAvatarCompare && <AvatarStyleComparison onClose={() => setShowAvatarCompare(false)} />}
       <h1>Choose your trainer</h1>
       <p className="subtitle">Each trainer teaches a set of languages, in any direction.</p>
-      {/* Temporary dev link — see AvatarStyleComparison.tsx. Remove once
-          a trainer-avatar style is picked and wired in for real. */}
-      <button className="avatar-compare-trigger" onClick={() => setShowAvatarCompare(true)}>
-        🎨 Preview avatar styles
-      </button>
 
       <div className="trainer-filters">
         <div className="trainer-filter-col">
@@ -117,35 +109,6 @@ export function TrainerSelect({
       <p className="trainer-filter-hint">
         Pick what you want to learn and what you already know — matching trainers are highlighted below.
       </p>
-
-      <div className="trainer-style-toggle">
-        <label>Teaching style</label>
-        <div className="trainer-style-buttons">
-          <button
-            className={style === "rigid" ? "active" : ""}
-            onClick={() => {
-              setStyle("rigid");
-              saveSettings({ style: "rigid" });
-            }}
-          >
-            📏 Structured
-          </button>
-          <button
-            className={style === "flexible" ? "active" : ""}
-            onClick={() => {
-              setStyle("flexible");
-              saveSettings({ style: "flexible" });
-            }}
-          >
-            🌿 Flexible
-          </button>
-        </div>
-        <p className="trainer-style-hint">
-          {style === "rigid"
-            ? "Vocabulary shown all at once, in dense columns."
-            : "Vocabulary broken into smaller chunks — one word group at a time."}
-        </p>
-      </div>
 
       <div className="trainer-grid">
         {matching.map((t) => renderCard(t, false))}

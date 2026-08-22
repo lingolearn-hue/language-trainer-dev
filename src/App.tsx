@@ -23,6 +23,7 @@ import { topicCountries } from "./data/topics/topic-14-countries";
 import { topicLandscape } from "./data/topics/topic-15-landscape";
 import { topicTraffic } from "./data/topics/topic-16-traffic";
 import { buildLessonPlan } from "./engine/buildLesson";
+import { applyFlexibleStyle } from "./engine/flexibleStyle";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan, LangCode } from "./types";
 import type { TopicLesson } from "./data/topicTypes";
@@ -67,15 +68,20 @@ function App() {
   // (via the "I want to learn" / "I already know" filters), if both were
   // set — falls back to trainer.languages[0]/[1] convention otherwise.
   const [langChoice, setLangChoice] = useState<{ targetLang: LangCode; sourceLang: LangCode } | null>(null);
+  // Style is chosen on the lesson-select screen now (compact toggle at
+  // the top), not trainer-select — see LessonSelect.tsx. Actually applied
+  // here via applyFlexibleStyle: "flexible" splits each splittable slide
+  // into 3 smaller-content slides at a higher font scale; "rigid" leaves
+  // the lesson untouched. Previously this was captured but never used
+  // anywhere — a real no-op bug, not by design.
   const [styleChoice, setStyleChoice] = useState<"rigid" | "flexible" | null>(null);
 
   if (!trainer) {
     return (
       <TrainerSelect
-        onSelect={(t, chosenLang, chosenStyle) => {
+        onSelect={(t, chosenLang) => {
           setTrainer(t);
           setLangChoice(chosenLang ?? null);
-          setStyleChoice(chosenStyle ?? null);
         }}
       />
     );
@@ -86,7 +92,10 @@ function App() {
       <LessonSelect
         trainer={trainer}
         lessons={allLessons}
-        onSelect={setLesson}
+        onSelect={(chosenLesson, chosenStyle) => {
+          setStyleChoice(chosenStyle);
+          setLesson(chosenStyle === "flexible" ? applyFlexibleStyle(chosenLesson) : chosenLesson);
+        }}
         onBack={() => setTrainer(null)}
       />
     );

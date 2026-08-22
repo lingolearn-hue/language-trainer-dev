@@ -97,6 +97,7 @@ export function GrammarBlock({
 
   return (
     <Slide
+      fontScale={block.fontScale}
       title={block.title?.[lang.targetLang] ?? block.title?.en}
       footer={
         <>

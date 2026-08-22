@@ -17,7 +17,7 @@ export interface Trainer {
     lang: string; // BCP-47 — documentation only; actual voice is resolved per-utterance by the spoken text's own language (see engine/speech.ts resolveVoice), not this field
     pitch: number;
     rate: number;
-    voiceURI?: string; // preferred voice, resolved at runtime if available
+    voiceURI?: string | string[]; // preferred voice name(s), tried in order — resolved at runtime if available (see engine/speech.ts resolveVoice)
   };
 }
 
@@ -29,11 +29,11 @@ export interface Trainer {
 // Avatars are real now: TrainerAvatar.tsx renders the Lorelei DiceBear
 // style (Lisa Wischofsky, CC0), keyed by avatarSeed — same seed always
 // generates the same face. Vincent reuses the old Hiro trainer's seed,
-// Yui reuses the old Jonas trainer's seed (both were previously in
-// AvatarStyleComparison.tsx's preview list), Max gets a newly picked seed
-// that wasn't used by anyone before. See AvatarStyleComparison.tsx (the
-// "🎨 Preview avatar styles" dev tool on the trainer-select screen) to
-// browse other seeds/styles before settling on final ones.
+// Yui reuses the old Jonas trainer's seed, Max gets a newly picked seed
+// that wasn't used by anyone before. (The dev-only comparison tool used
+// to pick these has been removed now that a style is settled and wired
+// in for real — pick new seed strings and preview via createAvatar
+// directly if a different look is wanted later.)
 //
 // courseIds reflect what content actually exists today, not the full
 // aspirational language coverage: no Chinese-target or English-beginner
@@ -56,7 +56,7 @@ export const trainers: Trainer[] = [
     courseIds: ["german-beginner", "english-advanced-c1"],
     personalityNote:
       "Measured and methodical, explains grammar step by step, rarely rushes ahead.",
-    voiceProfile: { lang: "en-US", pitch: 1.0, rate: 1.0 },
+    voiceProfile: { lang: "en-US", pitch: 1.0, rate: 1.0, voiceURI: ["Aaron", "Fred", "Nathan", "Evan"] }, // male en-US voice names Apple has used across iOS/macOS versions, tried in order — first one actually installed wins; only applies if the user has downloaded one (see VoiceHelpOverlay.tsx)
   },
   {
     id: "t-max",
@@ -70,7 +70,7 @@ export const trainers: Trainer[] = [
     courseIds: ["japanese-beginner", "german-beginner"],
     personalityNote:
       "Precise and a little formal. Corrects mistakes immediately, expects full sentences.",
-    voiceProfile: { lang: "de-DE", pitch: 0.95, rate: 0.95, voiceURI: "Google Deutsch" },
+    voiceProfile: { lang: "de-DE", pitch: 0.95, rate: 0.95, voiceURI: ["Markus", "Yannick", "Google Deutsch"] }, // "Markus"/"Yannick" are Apple male de-DE voice names across iOS/macOS versions; "Google Deutsch" is Android/Chrome's single de-DE voice (not reliably gendered, but the only named option that platform offers) — first one actually installed wins, harmlessly falls back to the device default otherwise
   },
   {
     id: "t-yui",

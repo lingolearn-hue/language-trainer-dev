@@ -4,7 +4,20 @@ import type { Trainer } from "../data/trainers";
 import { LanguageSamples } from "./LanguageSamples";
 import { summarizeLesson } from "../data/lessonSummary";
 import { primeSpeechSynthesis } from "../engine/speech";
-import { isLessonHiddenByDefault } from "../engine/lessonStatus";
+import { isLessonHiddenByDefault, getLessonStatus } from "../engine/lessonStatus";
+import { loadSettings, saveSettings } from "../engine/userSettings";
+
+// Maps the internal mastery states (engine/lessonStatus.ts) to the 3
+// labels shown in the lesson list: no record yet -> "Unseen"; either
+// revisit state -> "For review" (both mean "keep this around, come back
+// to it", just with different hide timing — the list doesn't need to
+// distinguish them); "mastered" -> "Archived".
+function statusLabel(lessonId: string): string {
+  const rec = getLessonStatus(lessonId);
+  if (!rec) return "Unseen";
+  if (rec.status === "mastered") return "Archived";
+  return "For review";
+}
 
 // Course/lesson picker, shown after trainer selection. Only lessons whose
 // courseId is in the trainer's courseIds are offered — currently there's
@@ -19,9 +32,11 @@ export function LessonSelect({
 }: {
   trainer: Trainer;
   lessons: LessonPlan[];
-  onSelect: (lesson: LessonPlan) => void;
+  onSelect: (lesson: LessonPlan, style: "rigid" | "flexible") => void;
   onBack: () => void;
 }) {
+  const saved = loadSettings();
+  const [style, setStyle] = useState<"rigid" | "flexible">(saved.style ?? trainer.defaultStyle);
   const [statusFilter, setStatusFilter] = useState<"recommended" | "all" | "hidden">(
     "recommended"
   );
@@ -40,7 +55,6 @@ export function LessonSelect({
   });
   const available =
     levelFilter === "all" ? byStatus : byStatus.filter((l) => l.level === levelFilter);
-  const displayLang: LangCode = trainer.languages[0];
 
   return (
     <div className="trainer-select">
@@ -51,6 +65,28 @@ export function LessonSelect({
       <p className="subtitle">with {trainer.name}</p>
 
       <LanguageSamples trainer={trainer} />
+
+      <div className="style-toggle-compact">
+        <span className="style-toggle-label">Style</span>
+        <button
+          className={`chip${style === "rigid" ? " active" : ""}`}
+          onClick={() => {
+            setStyle("rigid");
+            saveSettings({ style: "rigid" });
+          }}
+        >
+          📏 Structured
+        </button>
+        <button
+          className={`chip${style === "flexible" ? " active" : ""}`}
+          onClick={() => {
+            setStyle("flexible");
+            saveSettings({ style: "flexible" });
+          }}
+        >
+          🌿 Flexible
+        </button>
+      </div>
 
       <div className="filter-chip-row">
         <button
@@ -94,24 +130,37 @@ export function LessonSelect({
       {available.length === 0 ? (
         <p>No lessons match these filters.</p>
       ) : (
-        <div className="trainer-grid">
+        <div className="lesson-list">
           {available.map((lesson) => {
+            const displayLang: LangCode = lesson.targetLangCode ?? trainer.languages[0];
             const summary = summarizeLesson(lesson, displayLang);
+            const numberLabel = lesson.lessonNumber
+              ? String(lesson.lessonNumber).padStart(3, "0")
+              : "—";
             return (
               <button
                 key={lesson.id}
-                className="trainer-card"
+                className="lesson-row"
                 onClick={() => {
                   primeSpeechSynthesis(); // see engine/speech.ts — unlocks TTS before Session's autoplay narration fires
-                  onSelect(lesson);
+                  onSelect(lesson, style);
                 }}
               >
-                <div className="trainer-name">{lesson.title[displayLang]}</div>
-                <div className="trainer-style">{lesson.blocks.length} slides</div>
-                <div className="lesson-summary">
-                  {summary.vocabTopic && <div>📚 {summary.vocabTopic}</div>}
-                  {summary.grammarItems.length > 0 && <div>✏️ {summary.grammarItems.join(", ")}</div>}
-                  {summary.songTitle && <div>🎵 {summary.songTitle}</div>}
+                <div className="lesson-row-number">
+                  <div className="lesson-row-number-value">{numberLabel}</div>
+                  {lesson.level && <div className="lesson-row-level">{lesson.level}</div>}
+                </div>
+                <div className="lesson-row-body">
+                  <div className="lesson-row-title">{lesson.title[displayLang] ?? lesson.title.en}</div>
+                  {summary.vocabTopic && <div className="lesson-row-line">📚 {summary.vocabTopic}</div>}
+                  {summary.grammarItems.length > 0 && (
+                    <div className="lesson-row-line">✏️ {summary.grammarItems.join(", ")}</div>
+                  )}
+                  {summary.songTitle && <div className="lesson-row-line">🎵 {summary.songTitle}</div>}
+                </div>
+                <div className="lesson-row-status">
+                  <div className="lesson-row-status-value">{statusLabel(lesson.id)}</div>
+                  <div className="lesson-row-slides">{lesson.blocks.length} slides</div>
                 </div>
               </button>
             );

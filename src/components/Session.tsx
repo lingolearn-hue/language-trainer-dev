@@ -344,8 +344,8 @@ export function Session({
           </div>
 
           <div className="right-rail">
-            <LessonAvatars trainer={trainer} />
             <RateControls />
+            <LessonAvatars trainer={trainer} />
             {/* Portal target for the active block's footer controls —
                 see SlideControlsContext / Slide.tsx. Only actually used
                 (non-null in context) in landscape; harmless empty div

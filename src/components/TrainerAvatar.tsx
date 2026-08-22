@@ -1,13 +1,12 @@
 import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
-import type { Trainer } from "../data/trainers";
+import type { AvatarType } from "../data/trainers";
 
 // Real generated avatar, not a placeholder anymore — Lorelei style (Lisa
-// Wischofsky, CC0), keyed by trainer.avatarSeed so the same trainer always
-// renders the same face. Mouth options are the exact pair hand-picked in
-// AvatarStyleComparison.tsx (closed: happy01, open: sad01) so the talking
-// animation in LessonAvatars.tsx swaps to a real mouth-open variant
-// instead of only the CSS scaleY stand-in.
+// Wischofsky, CC0), keyed by avatarSeed so the same seed always renders
+// the same face. Mouth options are the exact pair originally hand-picked
+// by rendering several variants and visually confirming which read as
+// "mouth closed" (happy01) vs "mouth open / talking" (sad01).
 const MOUTH_CLOSED = { mouth: ["happy01"] };
 const MOUTH_OPEN = { mouth: ["sad01"] };
 
@@ -20,21 +19,27 @@ function avatarSvg(seed: string, size: number, mouthOpen: boolean): string {
   } as any).toString();
 }
 
-// Shared avatar circle — used on the trainer-select grid and again in the
-// in-lesson corner badge.
+// Shared avatar circle — used for both trainers (trainer-select grid,
+// in-lesson corner badge) and the student's own placeholder avatar
+// (in-lesson corner, below the trainer). Takes just a seed + avatarType
+// rather than a full Trainer so the student placeholder — which has no
+// Trainer record at all — can render through the exact same component,
+// guaranteeing identical size/style rather than a hand-matched copy.
 export function TrainerAvatar({
-  trainer,
+  avatarSeed,
+  avatarType,
   size = 84,
   mouthOpen = false,
 }: {
-  trainer: Trainer;
+  avatarSeed: string;
+  avatarType: AvatarType;
   size?: number;
   mouthOpen?: boolean;
 }) {
-  const svg = avatarSvg(trainer.avatarSeed, size, mouthOpen);
+  const svg = avatarSvg(avatarSeed, size, mouthOpen);
   return (
     <div
-      className={`trainer-avatar avatar-${trainer.avatarType}`}
+      className={`trainer-avatar avatar-${avatarType}`}
       style={{ width: size, height: size }}
       dangerouslySetInnerHTML={{ __html: svg }}
     />

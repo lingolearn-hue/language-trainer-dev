@@ -468,6 +468,7 @@ export const lesson2: LessonPlan = {
   id: "lesson-2",
   courseId: "german-beginner",
   language: "German",
+  targetLangCode: "de",
   level: "A1",
   lessonNumber: 2,
   title: { de: "Lektion 2", en: "Lesson 2", zh: "第二课" },

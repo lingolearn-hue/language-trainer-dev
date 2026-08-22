@@ -26,6 +26,14 @@ export function VoiceHelpOverlay() {
               This app uses your device's built-in text-to-speech. Some languages sound much
               better once you've downloaded their voice pack — here's how, per platform.
             </p>
+            <p className="voice-help-intro">
+              <strong>Note:</strong> on most devices, the voice that's installed by default for
+              a language is female — a male voice usually exists too, but has to be downloaded
+              separately. Look for these names when downloading (exact names vary a bit by OS
+              version): German → <strong>Markus</strong>, Japanese → <strong>Otoya</strong>,
+              Chinese → <strong>Li-mu</strong>, English → <strong>Aaron</strong> or{" "}
+              <strong>Daniel</strong>.
+            </p>
 
             <h4>📱 iOS (iPhone / iPad)</h4>
             <ol>

@@ -312,6 +312,7 @@ export const lessonEnglishSpace: LessonPlan = {
   id: "lesson-en-space-c1",
   courseId: "english-advanced-c1",
   language: "English",
+  targetLangCode: "en",
   level: "C1",
   lessonNumber: 1,
   title: { en: "Voices from Orbit", de: "Stimmen aus dem Orbit", zh: "轨道上的声音" },
