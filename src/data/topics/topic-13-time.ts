@@ -900,5 +900,91 @@ export const topicTime: TopicLesson = {
         }
       ]
     }
+  },
+  extraDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          h_spoken: { de: "H gesprochen", en: "H pronounced", ja: "はつおんされる H", zh: "发音的H" },
+          h_silent: { de: "H stumm", en: "H silent", ja: "むおんの H", zh: "不发音的H" },
+          ich: { de: "Ich-Laut /ç/", en: "Ich-laut /ç/", ja: "Ich-Laut /ç/", zh: "Ich音 /ç/" },
+          ach: { de: "Ach-Laut /x/", en: "Ach-laut /x/", ja: "Ach-Laut /x/", zh: "Ach音 /x/" }
+        },
+        items: [
+          { id: "hs1", category: "h_spoken", translations: { de: "Haus", en: "house", ja: "いえ", zh: "房子" } },
+          { id: "hs2", category: "h_spoken", translations: { de: "Hand", en: "hand", ja: "て", zh: "手" } },
+          { id: "hs3", category: "h_spoken", translations: { de: "Hund", en: "dog", ja: "いぬ", zh: "狗" } },
+          { id: "hs4", category: "h_spoken", translations: { de: "Hals", en: "neck, throat", ja: "くび", zh: "脖子" } },
+          { id: "hs5", category: "h_spoken", translations: { de: "Haar", en: "hair", ja: "かみのけ", zh: "头发" } },
+          { id: "hs6", category: "h_spoken", translations: { de: "Hase", en: "rabbit, hare", ja: "うさぎ", zh: "兔子" } },
+          { id: "hs7", category: "h_spoken", translations: { de: "Hafen", en: "harbor", ja: "みなと", zh: "港口" } },
+          { id: "hs8", category: "h_spoken", translations: { de: "haben", en: "to have", ja: "もつ", zh: "拥有" } },
+          { id: "hs9", category: "h_spoken", translations: { de: "heute", en: "today", ja: "きょう", zh: "今天" } },
+          { id: "hs10", category: "h_spoken", translations: { de: "helfen", en: "to help", ja: "たすける", zh: "帮助" } },
+          { id: "hs11", category: "h_spoken", translations: { de: "holen", en: "to fetch, get", ja: "とりにいく", zh: "去取" } },
+          { id: "hs12", category: "h_spoken", translations: { de: "hören", en: "to hear", ja: "きく", zh: "听" } },
+          { id: "hs13", category: "h_spoken", translations: { de: "Hunger", en: "hunger", ja: "くうふく", zh: "饥饿" } },
+          { id: "hs14", category: "h_spoken", translations: { de: "Himmel", en: "sky, heaven", ja: "そら", zh: "天空" } },
+
+          { id: "hst1", category: "h_silent", translations: { de: "sehen", en: "to see", ja: "みる", zh: "看" } },
+          { id: "hst2", category: "h_silent", translations: { de: "gehen", en: "to go", ja: "いく", zh: "去" } },
+          { id: "hst3", category: "h_silent", translations: { de: "stehen", en: "to stand", ja: "たつ", zh: "站立" } },
+          { id: "hst4", category: "h_silent", translations: { de: "zehn", en: "ten", ja: "じゅう", zh: "十" } },
+          { id: "hst5", category: "h_silent", translations: { de: "nehmen", en: "to take", ja: "とる", zh: "拿" } },
+          { id: "hst6", category: "h_silent", translations: { de: "Zahl", en: "number", ja: "かず", zh: "数字" } },
+          { id: "hst7", category: "h_silent", translations: { de: "fahren", en: "to drive, go", ja: "のる、うんてんする", zh: "乘坐；驾驶" } },
+          { id: "hst8", category: "h_silent", translations: { de: "wohnen", en: "to live, reside", ja: "すむ", zh: "居住" } },
+          { id: "hst9", category: "h_silent", translations: { de: "fühlen", en: "to feel", ja: "かんじる", zh: "感觉" } },
+          { id: "hst10", category: "h_silent", translations: { de: "erzählen", en: "to tell, narrate", ja: "はなす", zh: "讲述" } },
+          { id: "hst11", category: "h_silent", translations: { de: "fehlen", en: "to be missing", ja: "たりない", zh: "缺少" } },
+          { id: "hst12", category: "h_silent", translations: { de: "bezahlen", en: "to pay", ja: "はらう", zh: "支付" } },
+          { id: "hst13", category: "h_silent", translations: { de: "verstehen", en: "to understand", ja: "りかいする", zh: "理解" } },
+          { id: "hst14", category: "h_silent", translations: { de: "sehen", en: "to see", ja: "みる", zh: "看" } },
+
+          { id: "ic1", category: "ich", translations: { de: "ich", en: "I", ja: "わたし", zh: "我" } },
+          { id: "ic2", category: "ich", translations: { de: "nicht", en: "not", ja: "〜ない", zh: "不" } },
+          { id: "ic3", category: "ich", translations: { de: "Licht", en: "light", ja: "ひかり", zh: "光" } },
+          { id: "ic4", category: "ich", translations: { de: "mich", en: "me", ja: "わたしを", zh: "我（宾格）" } },
+          { id: "ic5", category: "ich", translations: { de: "sicher", en: "safe, certain", ja: "あんぜんな、たしかな", zh: "安全的；确定的" } },
+          { id: "ic6", category: "ich", translations: { de: "wichtig", en: "important", ja: "じゅうような", zh: "重要的" } },
+          { id: "ic7", category: "ich", translations: { de: "richtig", en: "correct", ja: "ただしい", zh: "正确的" } },
+          { id: "ic8", category: "ich", translations: { de: "Geschichte", en: "history, story", ja: "れきし、ものがたり", zh: "历史；故事" } },
+          { id: "ic9", category: "ich", translations: { de: "Mädchen", en: "girl", ja: "おんなのこ", zh: "女孩" } },
+          { id: "ic10", category: "ich", translations: { de: "rechnen", en: "to calculate", ja: "けいさんする", zh: "计算" } },
+          { id: "ic11", category: "ich", translations: { de: "sprechen", en: "to speak", ja: "はなす", zh: "说话" } },
+          { id: "ic12", category: "ich", translations: { de: "welche", en: "which", ja: "どの、どれ", zh: "哪个" } },
+          { id: "ic13", category: "ich", translations: { de: "Milch", en: "milk", ja: "ぎゅうにゅう", zh: "牛奶" } },
+          { id: "ic14", category: "ich", translations: { de: "Teich", en: "pond", ja: "いけ", zh: "池塘" } },
+
+          { id: "ac1", category: "ach", translations: { de: "ach", en: "oh (interjection)", ja: "ああ", zh: "啊（感叹词）" } },
+          { id: "ac2", category: "ach", translations: { de: "machen", en: "to make, do", ja: "する", zh: "做" } },
+          { id: "ac3", category: "ach", translations: { de: "Bach", en: "stream, brook", ja: "おがわ", zh: "小溪" } },
+          { id: "ac4", category: "ach", translations: { de: "Dach", en: "roof", ja: "やね", zh: "屋顶" } },
+          { id: "ac5", category: "ach", translations: { de: "Nacht", en: "night", ja: "よる", zh: "夜晚" } },
+          { id: "ac6", category: "ach", translations: { de: "Sache", en: "thing, matter", ja: "もの、こと", zh: "事情；东西" } },
+          { id: "ac7", category: "ach", translations: { de: "lachen", en: "to laugh", ja: "わらう", zh: "笑" } },
+          { id: "ac8", category: "ach", translations: { de: "suchen", en: "to search", ja: "さがす", zh: "寻找" } },
+          { id: "ac9", category: "ach", translations: { de: "Buch", en: "book", ja: "ほん", zh: "书" } },
+          { id: "ac10", category: "ach", translations: { de: "Kuchen", en: "cake", ja: "ケーキ", zh: "蛋糕" } },
+          { id: "ac11", category: "ach", translations: { de: "hoch", en: "high", ja: "たかい", zh: "高的" } },
+          { id: "ac12", category: "ach", translations: { de: "doch", en: "however, yet", ja: "でも", zh: "但是" } },
+          { id: "ac13", category: "ach", translations: { de: "noch", en: "still, yet", ja: "まだ", zh: "还" } },
+          { id: "ac14", category: "ach", translations: { de: "kochen", en: "to cook", ja: "りょうりする", zh: "做饭" } }
+        ]
+      }
+    ]
   }
 };

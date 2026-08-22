@@ -1087,5 +1087,91 @@ export const topicFamily: TopicLesson = {
         }
       ]
     }
+  },
+  extraDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          b: { de: "B", en: "B", ja: "B", zh: "B" },
+          p: { de: "P", en: "P", ja: "P", zh: "P" },
+          dt: { de: "d → t", en: "d → t", ja: "d → t", zh: "d → t" },
+          gk: { de: "g → k", en: "g → k", ja: "g → k", zh: "g → k" }
+        },
+        items: [
+          { id: "b1", category: "b", translations: { de: "Bruder", en: "brother", ja: "きょうだい（あに・おとうと）", zh: "兄弟" } },
+          { id: "b2", category: "b", translations: { de: "Brille", en: "glasses", ja: "めがね", zh: "眼镜" } },
+          { id: "b3", category: "b", translations: { de: "Brot", en: "bread", ja: "パン", zh: "面包" } },
+          { id: "b4", category: "b", translations: { de: "Buch", en: "book", ja: "ほん", zh: "书" } },
+          { id: "b5", category: "b", translations: { de: "Bein", en: "leg", ja: "あし", zh: "腿" } },
+          { id: "b6", category: "b", translations: { de: "Ball", en: "ball", ja: "ボール", zh: "球" } },
+          { id: "b7", category: "b", translations: { de: "Bett", en: "bed", ja: "ベッド", zh: "床" } },
+          { id: "b8", category: "b", translations: { de: "Brot", en: "bread", ja: "パン", zh: "面包" } },
+          { id: "b9", category: "b", translations: { de: "Blume", en: "flower", ja: "はな", zh: "花" } },
+          { id: "b10", category: "b", translations: { de: "Baum", en: "tree", ja: "き", zh: "树" } },
+          { id: "b11", category: "b", translations: { de: "Bahnhof", en: "train station", ja: "えき", zh: "火车站" } },
+          { id: "b12", category: "b", translations: { de: "Beruf", en: "profession, job", ja: "しょくぎょう", zh: "职业" } },
+          { id: "b13", category: "b", translations: { de: "bleiben", en: "to stay", ja: "とどまる", zh: "留下；停留" } },
+          { id: "b14", category: "b", translations: { de: "brauchen", en: "to need", ja: "ひつようとする", zh: "需要" } },
+
+          { id: "p1", category: "p", translations: { de: "Papa", en: "dad", ja: "パパ", zh: "爸爸" } },
+          { id: "p2", category: "p", translations: { de: "Park", en: "park", ja: "こうえん", zh: "公园" } },
+          { id: "p3", category: "p", translations: { de: "Papier", en: "paper", ja: "かみ", zh: "纸" } },
+          { id: "p4", category: "p", translations: { de: "Paket", en: "package", ja: "こづつみ", zh: "包裹" } },
+          { id: "p5", category: "p", translations: { de: "Pass", en: "passport", ja: "パスポート", zh: "护照" } },
+          { id: "p6", category: "p", translations: { de: "Pizza", en: "pizza", ja: "ピザ", zh: "比萨" } },
+          { id: "p7", category: "p", translations: { de: "Plan", en: "plan", ja: "けいかく", zh: "计划" } },
+          { id: "p8", category: "p", translations: { de: "Platz", en: "place, square", ja: "ばしょ、ひろば", zh: "地方；广场" } },
+          { id: "p9", category: "p", translations: { de: "Polizei", en: "police", ja: "けいさつ", zh: "警察" } },
+          { id: "p10", category: "p", translations: { de: "Post", en: "post office, mail", ja: "ゆうびんきょく", zh: "邮局；邮件" } },
+          { id: "p11", category: "p", translations: { de: "Problem", en: "problem", ja: "もんだい", zh: "问题" } },
+          { id: "p12", category: "p", translations: { de: "Preis", en: "price", ja: "ねだん", zh: "价格" } },
+          { id: "p13", category: "p", translations: { de: "Prüfung", en: "exam", ja: "しけん", zh: "考试" } },
+          { id: "p14", category: "p", translations: { de: "Person", en: "person", ja: "ひと", zh: "人" } },
+
+          { id: "dt1", category: "dt", translations: { de: "Hund", en: "dog", ja: "いぬ", zh: "狗" } },
+          { id: "dt2", category: "dt", translations: { de: "Kind", en: "child", ja: "こども", zh: "孩子" } },
+          { id: "dt3", category: "dt", translations: { de: "Bild", en: "picture", ja: "え", zh: "图片" } },
+          { id: "dt4", category: "dt", translations: { de: "Geld", en: "money", ja: "おかね", zh: "钱" } },
+          { id: "dt5", category: "dt", translations: { de: "Hand", en: "hand", ja: "て", zh: "手" } },
+          { id: "dt6", category: "dt", translations: { de: "Wand", en: "wall", ja: "かべ", zh: "墙" } },
+          { id: "dt7", category: "dt", translations: { de: "Wind", en: "wind", ja: "かぜ", zh: "风" } },
+          { id: "dt8", category: "dt", translations: { de: "Abend", en: "evening", ja: "ゆうがた", zh: "傍晚" } },
+          { id: "dt9", category: "dt", translations: { de: "Freund", en: "friend", ja: "ともだち", zh: "朋友" } },
+          { id: "dt10", category: "dt", translations: { de: "Stadt", en: "city", ja: "まち", zh: "城市" } },
+          { id: "dt11", category: "dt", translations: { de: "und", en: "and", ja: "そして、〜と", zh: "和" } },
+          { id: "dt12", category: "dt", translations: { de: "rot", en: "red", ja: "あかい", zh: "红色" } },
+          { id: "dt13", category: "dt", translations: { de: "Hemd", en: "shirt", ja: "シャツ", zh: "衬衫" } },
+          { id: "dt14", category: "dt", translations: { de: "Bad", en: "bath, bathroom", ja: "おふろ", zh: "浴室；洗澡" } },
+
+          { id: "gk1", category: "gk", translations: { de: "Tag", en: "day", ja: "ひ", zh: "天" } },
+          { id: "gk2", category: "gk", translations: { de: "Weg", en: "way, path", ja: "みち", zh: "路" } },
+          { id: "gk3", category: "gk", translations: { de: "Berg", en: "mountain", ja: "やま", zh: "山" } },
+          { id: "gk4", category: "gk", translations: { de: "Krieg", en: "war", ja: "せんそう", zh: "战争" } },
+          { id: "gk5", category: "gk", translations: { de: "Flug", en: "flight", ja: "フライト", zh: "航班" } },
+          { id: "gk6", category: "gk", translations: { de: "Zug", en: "train", ja: "でんしゃ", zh: "火车" } },
+          { id: "gk7", category: "gk", translations: { de: "Steg", en: "footbridge, jetty", ja: "さんばし", zh: "栈桥" } },
+          { id: "gk8", category: "gk", translations: { de: "Teig", en: "dough", ja: "きじ", zh: "面团" } },
+          { id: "gk9", category: "gk", translations: { de: "Dialog", en: "dialogue", ja: "たいわ", zh: "对话" } },
+          { id: "gk10", category: "gk", translations: { de: "Erfolg", en: "success", ja: "せいこう", zh: "成功" } },
+          { id: "gk11", category: "gk", translations: { de: "Anfang", en: "beginning", ja: "はじめ", zh: "开始" } },
+          { id: "gk12", category: "gk", translations: { de: "Vertrag", en: "contract", ja: "けいやく", zh: "合同" } },
+          { id: "gk13", category: "gk", translations: { de: "Anzug", en: "suit", ja: "スーツ", zh: "西装" } },
+          { id: "gk14", category: "gk", translations: { de: "Einzug", en: "move-in", ja: "ひっこし", zh: "搬入；入住" } }
+        ]
+      }
+    ]
   }
 };

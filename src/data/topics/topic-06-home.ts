@@ -841,5 +841,91 @@ export const topicHome: TopicLesson = {
         }
       ]
     }
+  },
+  extraDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          f: { de: "F = /f/", en: "F = /f/", ja: "F = /f/", zh: "F = /f/" },
+          v_f: { de: "V = /f/", en: "V = /f/", ja: "V = /f/", zh: "V = /f/" },
+          v_v: { de: "V = /v/", en: "V = /v/", ja: "V = /v/", zh: "V = /v/" },
+          w: { de: "W = /v/", en: "W = /v/", ja: "W = /v/", zh: "W = /v/" }
+        },
+        items: [
+          { id: "f1", category: "f", translations: { de: "Familie", en: "family", ja: "かぞく", zh: "家庭" } },
+          { id: "f2", category: "f", translations: { de: "Frau", en: "woman, Mrs.", ja: "じょせい、〜さん", zh: "女人；女士" } },
+          { id: "f3", category: "f", translations: { de: "Freund", en: "friend", ja: "ともだち", zh: "朋友" } },
+          { id: "f4", category: "f", translations: { de: "Fisch", en: "fish", ja: "さかな", zh: "鱼" } },
+          { id: "f5", category: "f", translations: { de: "Fuß", en: "foot", ja: "あし", zh: "脚" } },
+          { id: "f6", category: "f", translations: { de: "Finger", en: "finger", ja: "ゆび", zh: "手指" } },
+          { id: "f7", category: "f", translations: { de: "Fenster", en: "window", ja: "まど", zh: "窗户" } },
+          { id: "f8", category: "f", translations: { de: "Farbe", en: "color", ja: "いろ", zh: "颜色" } },
+          { id: "f9", category: "f", translations: { de: "Foto", en: "photo", ja: "しゃしん", zh: "照片" } },
+          { id: "f10", category: "f", translations: { de: "fahren", en: "to drive, go", ja: "うんてんする、のる", zh: "驾驶；乘坐" } },
+          { id: "f11", category: "f", translations: { de: "Frage", en: "question", ja: "しつもん", zh: "问题" } },
+          { id: "f12", category: "f", translations: { de: "früh", en: "early", ja: "はやい", zh: "早的" } },
+          { id: "f13", category: "f", translations: { de: "Feld", en: "field", ja: "はたけ", zh: "田地" } },
+          { id: "f14", category: "f", translations: { de: "Feuer", en: "fire", ja: "ひ", zh: "火" } },
+
+          { id: "vf1", category: "v_f", translations: { de: "Vater", en: "father", ja: "ちち", zh: "父亲" } },
+          { id: "vf2", category: "v_f", translations: { de: "Vogel", en: "bird", ja: "とり", zh: "鸟" } },
+          { id: "vf3", category: "v_f", translations: { de: "vier", en: "four", ja: "よん", zh: "四" } },
+          { id: "vf4", category: "v_f", translations: { de: "viel", en: "much, a lot", ja: "たくさん", zh: "很多" } },
+          { id: "vf5", category: "v_f", translations: { de: "voll", en: "full", ja: "いっぱいの", zh: "满的" } },
+          { id: "vf6", category: "v_f", translations: { de: "vor", en: "in front of, before", ja: "〜のまえに", zh: "在……之前" } },
+          { id: "vf7", category: "v_f", translations: { de: "von", en: "from, of", ja: "〜から", zh: "从……" } },
+          { id: "vf8", category: "v_f", translations: { de: "vergessen", en: "to forget", ja: "わすれる", zh: "忘记" } },
+          { id: "vf9", category: "v_f", translations: { de: "verkaufen", en: "to sell", ja: "うる", zh: "卖" } },
+          { id: "vf10", category: "v_f", translations: { de: "verlieren", en: "to lose", ja: "なくす", zh: "丢失" } },
+          { id: "vf11", category: "v_f", translations: { de: "verstehen", en: "to understand", ja: "りかいする", zh: "理解" } },
+          { id: "vf12", category: "v_f", translations: { de: "Verkehr", en: "traffic", ja: "こうつう", zh: "交通" } },
+          { id: "vf13", category: "v_f", translations: { de: "Vorsicht", en: "caution", ja: "ちゅうい", zh: "小心" } },
+          { id: "vf14", category: "v_f", translations: { de: "Verband", en: "bandage", ja: "ほうたい", zh: "绷带" } },
+
+          { id: "vv1", category: "v_v", translations: { de: "Vase", en: "vase", ja: "かびん", zh: "花瓶" } },
+          { id: "vv2", category: "v_v", translations: { de: "Video", en: "video", ja: "ビデオ", zh: "视频" } },
+          { id: "vv3", category: "v_v", translations: { de: "Villa", en: "villa", ja: "べっそう", zh: "别墅" } },
+          { id: "vv4", category: "v_v", translations: { de: "Visum", en: "visa", ja: "ビザ", zh: "签证" } },
+          { id: "vv5", category: "v_v", translations: { de: "Vitamin", en: "vitamin", ja: "ビタミン", zh: "维生素" } },
+          { id: "vv6", category: "v_v", translations: { de: "Violine", en: "violin", ja: "バイオリン", zh: "小提琴" } },
+          { id: "vv7", category: "v_v", translations: { de: "Vulkan", en: "volcano", ja: "かざん", zh: "火山" } },
+          { id: "vv8", category: "v_v", translations: { de: "Veteran", en: "veteran", ja: "たいえきぐんじん、ベテラン", zh: "老兵；资深人士" } },
+          { id: "vv9", category: "v_v", translations: { de: "Virus", en: "virus", ja: "ウイルス", zh: "病毒" } },
+          { id: "vv10", category: "v_v", translations: { de: "Vokal", en: "vowel", ja: "ぼいん", zh: "元音" } },
+          { id: "vv11", category: "v_v", translations: { de: "Veranda", en: "veranda, porch", ja: "ベランダ", zh: "阳台" } },
+          { id: "vv12", category: "v_v", translations: { de: "Vanille", en: "vanilla", ja: "バニラ", zh: "香草" } },
+          { id: "vv13", category: "v_v", translations: { de: "Universität", en: "university", ja: "だいがく", zh: "大学" } },
+          { id: "vv14", category: "v_v", translations: { de: "November", en: "November", ja: "じゅういちがつ", zh: "十一月" } },
+
+          { id: "w3", category: "w", translations: { de: "Wasser", en: "water", ja: "みず", zh: "水" } },
+          { id: "w4b", category: "w", translations: { de: "Wand", en: "wall", ja: "かべ", zh: "墙" } },
+          { id: "w4", category: "w", translations: { de: "Woche", en: "week", ja: "しゅう", zh: "星期" } },
+          { id: "w5", category: "w", translations: { de: "Wohnung", en: "apartment", ja: "アパート", zh: "公寓" } },
+          { id: "w6", category: "w", translations: { de: "Welt", en: "world", ja: "せかい", zh: "世界" } },
+          { id: "w7", category: "w", translations: { de: "Wetter", en: "weather", ja: "てんき", zh: "天气" } },
+          { id: "w8", category: "w", translations: { de: "Winter", en: "winter", ja: "ふゆ", zh: "冬天" } },
+          { id: "w9", category: "w", translations: { de: "Wald", en: "forest", ja: "もり", zh: "森林" } },
+          { id: "w10", category: "w", translations: { de: "Wein", en: "wine", ja: "ワイン", zh: "葡萄酒" } },
+          { id: "w11", category: "w", translations: { de: "Wind", en: "wind", ja: "かぜ", zh: "风" } },
+          { id: "w12", category: "w", translations: { de: "Wort", en: "word", ja: "たんご", zh: "单词" } },
+          { id: "w13", category: "w", translations: { de: "Weg", en: "way, path", ja: "みち", zh: "路" } },
+          { id: "w14", category: "w", translations: { de: "wohnen", en: "to live", ja: "すむ", zh: "居住" } },
+          { id: "w15", category: "w", translations: { de: "werden", en: "to become", ja: "なる", zh: "变成" } }
+        ]
+      }
+    ]
   }
 };

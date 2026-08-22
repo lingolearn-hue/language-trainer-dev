@@ -864,5 +864,91 @@ export const topicTravel: TopicLesson = {
         }
       ]
     }
+  },
+  extraDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          cluster: { de: "Anfangscluster", en: "Initial cluster", ja: "ごとうクラスター", zh: "词首辅音连缀" },
+          single: { de: "Einzelkonsonant", en: "Single consonant", ja: "たんいつしいん", zh: "单辅音" },
+          schw: { de: "SCHW- = /ʃv/", en: "SCHW- = /ʃv/", ja: "SCHW- = /ʃv/", zh: "SCHW- = /ʃv/" },
+          schr: { de: "SCHR- = /ʃʁ/", en: "SCHR- = /ʃʁ/", ja: "SCHR- = /ʃʁ/", zh: "SCHR- = /ʃʁ/" }
+        },
+        items: [
+          { id: "cl1", category: "cluster", translations: { de: "Straße", en: "street", ja: "どうろ", zh: "街道" } },
+          { id: "cl2", category: "cluster", translations: { de: "Stadt", en: "city", ja: "まち", zh: "城市" } },
+          { id: "cl3", category: "cluster", translations: { de: "sprechen", en: "to speak", ja: "はなす", zh: "说话" } },
+          { id: "cl4", category: "cluster", translations: { de: "Spiel", en: "game", ja: "ゲーム", zh: "游戏" } },
+          { id: "cl5", category: "cluster", translations: { de: "Stein", en: "stone", ja: "いし", zh: "石头" } },
+          { id: "cl6", category: "cluster", translations: { de: "Schule", en: "school", ja: "がっこう", zh: "学校" } },
+          { id: "cl7", category: "cluster", translations: { de: "Schrank", en: "closet, cabinet", ja: "たんす", zh: "衣柜" } },
+          { id: "cl8", category: "cluster", translations: { de: "Bruder", en: "brother", ja: "きょうだい", zh: "兄弟" } },
+          { id: "cl9", category: "cluster", translations: { de: "brauchen", en: "to need", ja: "ひつようとする", zh: "需要" } },
+          { id: "cl10", category: "cluster", translations: { de: "trinken", en: "to drink", ja: "のむ", zh: "喝" } },
+          { id: "cl11", category: "cluster", translations: { de: "drei", en: "three", ja: "さん", zh: "三" } },
+          { id: "cl12", category: "cluster", translations: { de: "Frage", en: "question", ja: "しつもん", zh: "问题" } },
+          { id: "cl13", category: "cluster", translations: { de: "Blume", en: "flower", ja: "はな", zh: "花" } },
+          { id: "cl14", category: "cluster", translations: { de: "Klasse", en: "class", ja: "クラス", zh: "班级" } },
+
+          { id: "si1", category: "single", translations: { de: "Ball", en: "ball", ja: "ボール", zh: "球" } },
+          { id: "si2", category: "single", translations: { de: "Tag", en: "day", ja: "ひ", zh: "天" } },
+          { id: "si3", category: "single", translations: { de: "Tisch", en: "table", ja: "テーブル", zh: "桌子" } },
+          { id: "si4", category: "single", translations: { de: "Kopf", en: "head", ja: "あたま", zh: "头" } },
+          { id: "si5", category: "single", translations: { de: "Kind", en: "child", ja: "こども", zh: "孩子" } },
+          { id: "si6", category: "single", translations: { de: "Haus", en: "house", ja: "いえ", zh: "房子" } },
+          { id: "si7", category: "single", translations: { de: "Fisch", en: "fish", ja: "さかな", zh: "鱼" } },
+          { id: "si8", category: "single", translations: { de: "Mann", en: "man", ja: "おとこ", zh: "男人" } },
+          { id: "si9", category: "single", translations: { de: "Nase", en: "nose", ja: "はな", zh: "鼻子" } },
+          { id: "si10", category: "single", translations: { de: "Sonne", en: "sun", ja: "たいよう", zh: "太阳" } },
+          { id: "si11", category: "single", translations: { de: "Lampe", en: "lamp", ja: "ランプ", zh: "灯" } },
+          { id: "si12", category: "single", translations: { de: "Radio", en: "radio", ja: "ラジオ", zh: "收音机" } },
+          { id: "si13", category: "single", translations: { de: "Mutter", en: "mother", ja: "はは", zh: "母亲" } },
+          { id: "si14", category: "single", translations: { de: "Auto", en: "car", ja: "くるま", zh: "汽车" } },
+
+          { id: "sw1", category: "schw", translations: { de: "schwer", en: "heavy", ja: "おもい", zh: "重的" } },
+          { id: "sw2", category: "schw", translations: { de: "Schwester", en: "sister", ja: "しまい（あね・いもうと）", zh: "姐妹" } },
+          { id: "sw3", category: "schw", translations: { de: "schwimmen", en: "to swim", ja: "およぐ", zh: "游泳" } },
+          { id: "sw4", category: "schw", translations: { de: "Schwein", en: "pig", ja: "ぶた", zh: "猪" } },
+          { id: "sw5", category: "schw", translations: { de: "Schweden", en: "Sweden", ja: "スウェーデン", zh: "瑞典" } },
+          { id: "sw6", category: "schw", translations: { de: "schwarz", en: "black", ja: "くろ", zh: "黑色" } },
+          { id: "sw7", category: "schw", translations: { de: "schwach", en: "weak", ja: "よわい", zh: "弱的" } },
+          { id: "sw8", category: "schw", translations: { de: "schwanger", en: "pregnant", ja: "にんしんした", zh: "怀孕的" } },
+          { id: "sw9", category: "schw", translations: { de: "schweigen", en: "to be silent", ja: "だまる", zh: "沉默" } },
+          { id: "sw10", category: "schw", translations: { de: "schweben", en: "to float, hover", ja: "うかぶ", zh: "漂浮" } },
+          { id: "sw11", category: "schw", translations: { de: "schwitzen", en: "to sweat", ja: "あせをかく", zh: "出汗" } },
+          { id: "sw12", category: "schw", translations: { de: "Schwamm", en: "sponge", ja: "スポンジ", zh: "海绵" } },
+          { id: "sw13", category: "schw", translations: { de: "Schwert", en: "sword", ja: "けん", zh: "剑" } },
+          { id: "sw14", category: "schw", translations: { de: "Schweinchen", en: "piglet", ja: "こぶた", zh: "小猪" } },
+
+          { id: "sr2", category: "schr", translations: { de: "schreiben", en: "to write", ja: "かく", zh: "写" } },
+          { id: "sr2b", category: "schr", translations: { de: "Schrank", en: "closet, cabinet", ja: "たんす", zh: "衣柜" } },
+          { id: "sr3", category: "schr", translations: { de: "Schraube", en: "screw", ja: "ねじ", zh: "螺丝" } },
+          { id: "sr4", category: "schr", translations: { de: "Schritt", en: "step", ja: "いっぽ", zh: "步" } },
+          { id: "sr5", category: "schr", translations: { de: "Schrift", en: "writing, script", ja: "もじ", zh: "文字" } },
+          { id: "sr6", category: "schr", translations: { de: "Schreck", en: "fright, shock", ja: "おどろき", zh: "惊吓" } },
+          { id: "sr7", category: "schr", translations: { de: "Schrot", en: "groats, buckshot", ja: "ひきわりこくもつ", zh: "碎谷物；霰弹" } },
+          { id: "sr8", category: "schr", translations: { de: "Schraubenzieher", en: "screwdriver", ja: "ドライバー", zh: "螺丝刀" } },
+          { id: "sr9", category: "schr", translations: { de: "Schriftsteller", en: "writer, author", ja: "さっか", zh: "作家" } },
+          { id: "sr10", category: "schr", translations: { de: "Schreibheft", en: "notebook", ja: "ノート", zh: "笔记本" } },
+          { id: "sr11", category: "schr", translations: { de: "Schreibtisch", en: "desk", ja: "つくえ", zh: "书桌" } },
+          { id: "sr12", category: "schr", translations: { de: "Schranke", en: "barrier, gate", ja: "しゃだんき", zh: "栏杆；屏障" } },
+          { id: "sr13", category: "schr", translations: { de: "Schriftsprache", en: "written language", ja: "もじげんご", zh: "书面语" } },
+          { id: "sr14", category: "schr", translations: { de: "Schraube", en: "screw", ja: "ねじ", zh: "螺丝" } }
+        ]
+      }
+    ]
   }
 };

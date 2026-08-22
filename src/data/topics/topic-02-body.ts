@@ -1187,5 +1187,167 @@ export const topicBody: TopicLesson = {
         }
       ]
     }
+  },
+  extraDrills: {
+    ja: [
+      {
+        id: "sound-drill",
+        title: {
+          ja: "はつおんの れんしゅう２",
+          en: "Pronunciation Practice 2",
+          de: "Aussprachetraining 2",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          en: "Next, let's practice with a lot more examples.",
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          short: { ja: "短母音", en: "Short vowel", de: "Kurzer Vokal", zh: "短母音" },
+          long: { ja: "長母音", en: "Long vowel", de: "Langer Vokal", zh: "长母音" },
+          pitch_hl: { ja: "HL（高→低）", en: "HL (high→low)", de: "HL (hoch→tief)", zh: "高低（HL）" },
+          pitch_lh: { ja: "LH（低→高）", en: "LH (low→high)", de: "LH (tief→hoch)", zh: "低高（LH）" }
+        },
+        items: [
+          { id: "s1", category: "short", translations: { ja: "くび", en: "neck", de: "Hals", zh: "脖子" } },
+          { id: "s2", category: "short", translations: { ja: "くち", en: "mouth", de: "Mund", zh: "嘴巴" } },
+          { id: "s3", category: "short", translations: { ja: "あし", en: "leg, foot", de: "Bein; Fuß", zh: "腿；脚" } },
+          { id: "s4", category: "short", translations: { ja: "ひざ", en: "knee", de: "Knie", zh: "膝盖" } },
+          { id: "s5", category: "short", translations: { ja: "ひじ", en: "elbow", de: "Ellbogen", zh: "手肘" } },
+          { id: "s6", category: "short", translations: { ja: "はな", en: "nose", de: "Nase", zh: "鼻子" } },
+          { id: "s7", category: "short", translations: { ja: "みみ", en: "ear", de: "Ohr", zh: "耳朵" } },
+          { id: "s8", category: "short", translations: { ja: "かお", en: "face", de: "Gesicht", zh: "脸" } },
+          { id: "s9", category: "short", translations: { ja: "おなか", en: "belly, stomach", de: "Bauch", zh: "肚子" } },
+          { id: "s10", category: "short", translations: { ja: "こころ", en: "heart", de: "Herz", zh: "心" } },
+          { id: "s11", category: "short", translations: { ja: "からだ", en: "body", de: "Körper", zh: "身体" } },
+          { id: "s12", category: "short", translations: { ja: "あたま", en: "head", de: "Kopf", zh: "头" } },
+
+          { id: "l1", category: "long", translations: { ja: "せなか", en: "back", de: "Rücken", zh: "背部" } },
+          { id: "l2", category: "long", translations: { ja: "おでこ", en: "forehead", de: "Stirn", zh: "额头" } },
+          { id: "l3", category: "long", translations: { ja: "おなか", en: "belly, stomach", de: "Bauch", zh: "肚子" } },
+          { id: "l4", category: "long", translations: { ja: "こうこう", en: "high school", de: "Oberstufe", zh: "高中" } },
+          { id: "l5", category: "long", translations: { ja: "ほお", en: "cheek", de: "Wange", zh: "脸颊" } },
+          { id: "l6", category: "long", translations: { ja: "ほほ", en: "cheek", de: "Wange", zh: "脸颊" } },
+          { id: "l7", category: "long", translations: { ja: "ゆび", en: "finger", de: "Finger", zh: "手指" } },
+          { id: "l8", category: "long", translations: { ja: "かかと", en: "heel", de: "Ferse", zh: "脚后跟" } },
+          { id: "l9", category: "long", translations: { ja: "むね", en: "chest", de: "Brust", zh: "胸部" } },
+          { id: "l10", category: "long", translations: { ja: "こえ", en: "voice", de: "Stimme", zh: "声音" } },
+          { id: "l11", category: "long", translations: { ja: "からだ", en: "body", de: "Körper", zh: "身体" } },
+          { id: "l12", category: "long", translations: { ja: "ひふ", en: "skin", de: "Haut", zh: "皮肤" } },
+
+          { id: "hl1", category: "pitch_hl", translations: { ja: "はし", en: "chopsticks", de: "Essstäbchen", zh: "筷子" } },
+          { id: "hl2", category: "pitch_hl", translations: { ja: "はな", en: "nose", de: "Nase", zh: "鼻子" } },
+          { id: "hl3", category: "pitch_hl", translations: { ja: "みみ", en: "ear", de: "Ohr", zh: "耳朵" } },
+          { id: "hl4", category: "pitch_hl", translations: { ja: "かみ", en: "hair", de: "Haar", zh: "头发" } },
+          { id: "hl5", category: "pitch_hl", translations: { ja: "あたま", en: "head", de: "Kopf", zh: "头" } },
+          { id: "hl6", category: "pitch_hl", translations: { ja: "こころ", en: "heart, mind", de: "Herz", zh: "心；内心" } },
+          { id: "hl7", category: "pitch_hl", translations: { ja: "からだ", en: "body", de: "Körper", zh: "身体" } },
+          { id: "hl8", category: "pitch_hl", translations: { ja: "ひざ", en: "knee", de: "Knie", zh: "膝盖" } },
+          { id: "hl9", category: "pitch_hl", translations: { ja: "ひじ", en: "elbow", de: "Ellbogen", zh: "手肘" } },
+          { id: "hl10", category: "pitch_hl", translations: { ja: "くち", en: "mouth", de: "Mund", zh: "嘴巴" } },
+          { id: "hl11", category: "pitch_hl", translations: { ja: "むね", en: "chest", de: "Brust", zh: "胸部" } },
+          { id: "hl12", category: "pitch_hl", translations: { ja: "おなか", en: "belly", de: "Bauch", zh: "肚子" } },
+
+          { id: "lh1", category: "pitch_lh", translations: { ja: "はし", en: "bridge", de: "Brücke", zh: "桥" } },
+          { id: "lh2", category: "pitch_lh", translations: { ja: "はな", en: "flower", de: "Blume", zh: "花" } },
+          { id: "lh3", category: "pitch_lh", translations: { ja: "かみ", en: "paper", de: "Papier", zh: "纸" } },
+          { id: "lh4", category: "pitch_lh", translations: { ja: "かお", en: "face", de: "Gesicht", zh: "脸" } },
+          { id: "lh5", category: "pitch_lh", translations: { ja: "みみ", en: "ear", de: "Ohr", zh: "耳朵" } },
+          { id: "lh6", category: "pitch_lh", translations: { ja: "あし", en: "leg, foot", de: "Bein; Fuß", zh: "腿；脚" } },
+          { id: "lh7", category: "pitch_lh", translations: { ja: "ひざ", en: "knee", de: "Knie", zh: "膝盖" } },
+          { id: "lh8", category: "pitch_lh", translations: { ja: "ひじ", en: "elbow", de: "Ellbogen", zh: "手肘" } },
+          { id: "lh9", category: "pitch_lh", translations: { ja: "くち", en: "mouth", de: "Mund", zh: "嘴巴" } },
+          { id: "lh10", category: "pitch_lh", translations: { ja: "むね", en: "chest", de: "Brust", zh: "胸部" } },
+          { id: "lh11", category: "pitch_lh", translations: { ja: "からだ", en: "body", de: "Körper", zh: "身体" } },
+          { id: "lh12", category: "pitch_lh", translations: { ja: "せなか", en: "back", de: "Rücken", zh: "背部" } }
+        ]
+      }
+    ],
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          d: { de: "D = /d/", en: "D = /d/", ja: "D = /d/", zh: "D = /d/" },
+          t: { de: "T = /t/", en: "T = /t/", ja: "T = /t/", zh: "T = /t/" },
+          sp: { de: "SP- = /ʃp/", en: "SP- = /ʃp/", ja: "SP- = /ʃp/", zh: "SP- = /ʃp/" },
+          st: { de: "ST- = /ʃt/", en: "ST- = /ʃt/", ja: "ST- = /ʃt/", zh: "ST- = /ʃt/" }
+        },
+        items: [
+          { id: "d1", category: "d", translations: { de: "danke", en: "thanks", ja: "ありがとう", zh: "谢谢" } },
+          { id: "d2", category: "d", translations: { de: "du", en: "you (informal)", ja: "きみ、あなた", zh: "你" } },
+          { id: "d3", category: "d", translations: { de: "drei", en: "three", ja: "さん、みっつ", zh: "三" } },
+          { id: "d4", category: "d", translations: { de: "Dorf", en: "village", ja: "むら", zh: "村庄" } },
+          { id: "d5", category: "d", translations: { de: "Dach", en: "roof", ja: "やね", zh: "屋顶" } },
+          { id: "d6", category: "d", translations: { de: "denken", en: "to think", ja: "かんがえる", zh: "思考" } },
+          { id: "d7", category: "d", translations: { de: "deutsch", en: "German (language/adj.)", ja: "ドイツの、ドイツご", zh: "德语；德国的" } },
+          { id: "d8", category: "d", translations: { de: "Donnerstag", en: "Thursday", ja: "もくようび", zh: "星期四" } },
+          { id: "d9", category: "d", translations: { de: "Bruder", en: "brother", ja: "きょうだい（あに・おとうと）", zh: "兄弟" } },
+          { id: "d10", category: "d", translations: { de: "oder", en: "or", ja: "または、それとも", zh: "或者" } },
+          { id: "d11", category: "d", translations: { de: "Laden", en: "shop, store", ja: "みせ", zh: "商店" } },
+          { id: "d12", category: "d", translations: { de: "Kind", en: "child", ja: "こども", zh: "孩子" } },
+          { id: "d13", category: "d", translations: { de: "Bild", en: "picture, image", ja: "え、しゃしん", zh: "图片；照片" } },
+          { id: "d14", category: "d", translations: { de: "Hand", en: "hand", ja: "て", zh: "手" } },
+
+          { id: "t1", category: "t", translations: { de: "Tag", en: "day", ja: "ひ", zh: "天" } },
+          { id: "t2", category: "t", translations: { de: "Tee", en: "tea", ja: "おちゃ", zh: "茶" } },
+          { id: "t3", category: "t", translations: { de: "Tisch", en: "table", ja: "テーブル", zh: "桌子" } },
+          { id: "t4", category: "t", translations: { de: "Tasche", en: "bag", ja: "かばん", zh: "包" } },
+          { id: "t5", category: "t", translations: { de: "Tür", en: "door", ja: "ドア", zh: "门" } },
+          { id: "t6", category: "t", translations: { de: "Tier", en: "animal", ja: "どうぶつ", zh: "动物" } },
+          { id: "t7", category: "t", translations: { de: "Tochter", en: "daughter", ja: "むすめ", zh: "女儿" } },
+          { id: "t8", category: "t", translations: { de: "trinken", en: "to drink", ja: "のむ", zh: "喝" } },
+          { id: "t9", category: "t", translations: { de: "telefonieren", en: "to make a phone call", ja: "でんわする", zh: "打电话" } },
+          { id: "t10", category: "t", translations: { de: "Mutter", en: "mother", ja: "はは", zh: "母亲" } },
+          { id: "t11", category: "t", translations: { de: "Bruder", en: "brother", ja: "きょうだい（あに・おとうと）", zh: "兄弟" } },
+          { id: "t12", category: "t", translations: { de: "Katze", en: "cat", ja: "ねこ", zh: "猫" } },
+          { id: "t13", category: "t", translations: { de: "Stadt", en: "city", ja: "まち", zh: "城市" } },
+          { id: "t14", category: "t", translations: { de: "Arbeit", en: "work", ja: "しごと", zh: "工作" } },
+
+          { id: "sp1", category: "sp", translations: { de: "Spaß", en: "fun", ja: "たのしみ", zh: "乐趣" } },
+          { id: "sp2", category: "sp", translations: { de: "Spiegel", en: "mirror", ja: "かがみ", zh: "镜子" } },
+          { id: "sp3", category: "sp", translations: { de: "Spiel", en: "game", ja: "ゲーム", zh: "游戏" } },
+          { id: "sp4", category: "sp", translations: { de: "spielen", en: "to play", ja: "あそぶ", zh: "玩" } },
+          { id: "sp5", category: "sp", translations: { de: "Sport", en: "sport", ja: "スポーツ", zh: "运动" } },
+          { id: "sp6", category: "sp", translations: { de: "Sprache", en: "language", ja: "げんご", zh: "语言" } },
+          { id: "sp7", category: "sp", translations: { de: "sprechen", en: "to speak", ja: "はなす", zh: "说话" } },
+          { id: "sp8", category: "sp", translations: { de: "Spannung", en: "tension, suspense", ja: "きんちょう", zh: "紧张；悬念" } },
+          { id: "sp9", category: "sp", translations: { de: "später", en: "later", ja: "あとで", zh: "之后" } },
+          { id: "sp10", category: "sp", translations: { de: "spazieren", en: "to go for a walk", ja: "さんぽする", zh: "散步" } },
+          { id: "sp11", category: "sp", translations: { de: "Spinne", en: "spider", ja: "くも", zh: "蜘蛛" } },
+          { id: "sp12", category: "sp", translations: { de: "Spitze", en: "tip, point; top-notch", ja: "さき、トップ", zh: "尖端；顶尖" } },
+          { id: "sp13", category: "sp", translations: { de: "Spruch", en: "saying, quote", ja: "ことわざ、めいげん", zh: "格言；名言" } },
+          { id: "sp14", category: "sp", translations: { de: "Spülmaschine", en: "dishwasher", ja: "しょっきあらいき", zh: "洗碗机" } },
+
+          { id: "st1", category: "st", translations: { de: "Stadt", en: "city", ja: "まち", zh: "城市" } },
+          { id: "st2", category: "st", translations: { de: "Stuhl", en: "chair", ja: "いす", zh: "椅子" } },
+          { id: "st3", category: "st", translations: { de: "stehen", en: "to stand", ja: "たつ", zh: "站立" } },
+          { id: "st4", category: "st", translations: { de: "stellen", en: "to place, put", ja: "おく", zh: "放置" } },
+          { id: "st5", category: "st", translations: { de: "Stein", en: "stone", ja: "いし", zh: "石头" } },
+          { id: "st6", category: "st", translations: { de: "Stern", en: "star", ja: "ほし", zh: "星星" } },
+          { id: "st7", category: "st", translations: { de: "Stunde", en: "hour", ja: "じかん", zh: "小时" } },
+          { id: "st8", category: "st", translations: { de: "Student", en: "student", ja: "がくせい", zh: "大学生" } },
+          { id: "st9", category: "st", translations: { de: "Stimme", en: "voice", ja: "こえ", zh: "声音" } },
+          { id: "st10", category: "st", translations: { de: "Straße", en: "street", ja: "どうろ", zh: "街道" } },
+          { id: "st11", category: "st", translations: { de: "Strand", en: "beach", ja: "はまべ", zh: "海滩" } },
+          { id: "st12", category: "st", translations: { de: "Strumpf", en: "stocking, sock", ja: "くつした", zh: "长袜" } },
+          { id: "st13", category: "st", translations: { de: "Strom", en: "electricity, current", ja: "でんき", zh: "电流；电" } },
+          { id: "st14", category: "st", translations: { de: "Stück", en: "piece", ja: "ひとつ、ぶぶん", zh: "一块；部分" } }
+        ]
+      }
+    ]
   }
 };

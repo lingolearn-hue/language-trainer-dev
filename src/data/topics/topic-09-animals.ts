@@ -925,5 +925,91 @@ export const topicAnimals: TopicLesson = {
         }
       ]
     }
+  },
+  extraDrills: {
+    ja: [
+      {
+        id: "sound-drill",
+        title: {
+          ja: "はつおんの れんしゅう２",
+          en: "Pronunciation Practice 2",
+          de: "Aussprachetraining 2",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          en: "Next, let's practice with a lot more examples.",
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          youon: { ja: "拗音（ようおん）", en: "Youon (contracted sounds)", de: "Youon (zusammengezogene Laute)", zh: "拗音" },
+          hiyouon: { ja: "非拗音（ひようおん）", en: "Non-youon (plain sounds)", de: "Nicht-Youon (einfache Laute)", zh: "非拗音" },
+          pitch_hl: { ja: "HL（高→低）", en: "HL (high→low)", de: "HL (hoch→tief)", zh: "高低（HL）" },
+          pitch_lh: { ja: "LH（低→高）", en: "LH (low→high)", de: "LH (tief→hoch)", zh: "低高（LH）" }
+        },
+        items: [
+          { id: "yo1", category: "youon", translations: { ja: "きゃく", en: "customer, guest", de: "Kunde, Gast", zh: "客；客人" } },
+          { id: "yo2", category: "youon", translations: { ja: "きゅう", en: "nine", de: "neun", zh: "九；休" } },
+          { id: "yo3", category: "youon", translations: { ja: "きょう", en: "today", de: "heute", zh: "今天" } },
+          { id: "yo4", category: "youon", translations: { ja: "しゃしん", en: "photo", de: "Foto", zh: "照片" } },
+          { id: "yo5", category: "youon", translations: { ja: "しゅくだい", en: "homework", de: "Hausaufgabe", zh: "作业" } },
+          { id: "yo6", category: "youon", translations: { ja: "しょくどう", en: "cafeteria", de: "Kantine, Speisesaal", zh: "食堂" } },
+          { id: "yo7", category: "youon", translations: { ja: "ちゃわん", en: "rice bowl", de: "Reisschale, Teeschale", zh: "茶碗；饭碗" } },
+          { id: "yo8", category: "youon", translations: { ja: "ちゅうごく", en: "China", de: "China", zh: "中国" } },
+          { id: "yo9", category: "youon", translations: { ja: "にゅうがく", en: "school enrollment", de: "Schuleintritt, Einschulung", zh: "入学" } },
+          { id: "yo10", category: "youon", translations: { ja: "ひゃく", en: "hundred", de: "hundert", zh: "一百" } },
+          { id: "yo11", category: "youon", translations: { ja: "びょういん", en: "hospital", de: "Krankenhaus", zh: "医院" } },
+          { id: "yo12", category: "youon", translations: { ja: "りょこう", en: "travel", de: "Reise", zh: "旅行" } },
+          { id: "yo13", category: "youon", translations: { ja: "りゅうがく", en: "studying abroad", de: "Auslandsstudium", zh: "留学" } },
+          { id: "yo14", category: "youon", translations: { ja: "じゅぎょう", en: "class, lesson", de: "Unterricht", zh: "课程；上课" } },
+
+          { id: "hy1", category: "hiyouon", translations: { ja: "かく", en: "to write, to draw", de: "schreiben, zeichnen", zh: "写；画" } },
+          { id: "hy2", category: "hiyouon", translations: { ja: "きのう", en: "yesterday", de: "gestern", zh: "昨天" } },
+          { id: "hy3", category: "hiyouon", translations: { ja: "すし", en: "sushi", de: "Sushi", zh: "寿司" } },
+          { id: "hy4", category: "hiyouon", translations: { ja: "しごと", en: "work, job", de: "Arbeit", zh: "工作" } },
+          { id: "hy5", category: "hiyouon", translations: { ja: "しょく", en: "food, meal", de: "Essen, Mahlzeit", zh: "食；饮食" } },
+          { id: "hy6", category: "hiyouon", translations: { ja: "たび", en: "trip, journey", de: "Reise", zh: "旅行；旅途" } },
+          { id: "hy7", category: "hiyouon", translations: { ja: "ちゃ", en: "tea", de: "Tee", zh: "茶" } },
+          { id: "hy8", category: "hiyouon", translations: { ja: "ちこく", en: "being late", de: "Verspätung", zh: "迟到" } },
+          { id: "hy9", category: "hiyouon", translations: { ja: "にほん", en: "Japan", de: "Japan", zh: "日本" } },
+          { id: "hy10", category: "hiyouon", translations: { ja: "はく", en: "to put on (shoes/pants), to vomit", de: "anziehen (Schuhe/Hose), erbrechen", zh: "穿；吐" } },
+          { id: "hy11", category: "hiyouon", translations: { ja: "びょう", en: "second (time); illness", de: "Sekunde; Krankheit", zh: "秒；病" } },
+          { id: "hy12", category: "hiyouon", translations: { ja: "りこう", en: "clever, smart", de: "klug", zh: "聪明；乖巧" } },
+          { id: "hy13", category: "hiyouon", translations: { ja: "りか", en: "science (school subject)", de: "Naturwissenschaften (Schulfach)", zh: "理科" } },
+          { id: "hy14", category: "hiyouon", translations: { ja: "じゆう", en: "freedom", de: "Freiheit", zh: "自由" } },
+
+          { id: "hl1", category: "pitch_hl", translations: { ja: "はし（箸）", en: "chopsticks", de: "Essstäbchen", zh: "筷子" } },
+          { id: "hl2", category: "pitch_hl", translations: { ja: "あめ（雨）", en: "rain", de: "Regen", zh: "雨" } },
+          { id: "hl3", category: "pitch_hl", translations: { ja: "かき（牡蠣）", en: "oyster", de: "Auster", zh: "牡蛎" } },
+          { id: "hl4", category: "pitch_hl", translations: { ja: "かみ（紙）", en: "paper", de: "Papier", zh: "纸" } },
+          { id: "hl5", category: "pitch_hl", translations: { ja: "かぜ（風）", en: "wind", de: "Wind", zh: "风" } },
+          { id: "hl6", category: "pitch_hl", translations: { ja: "かわ（川）", en: "river", de: "Fluss", zh: "河；河流" } },
+          { id: "hl7", category: "pitch_hl", translations: { ja: "いま（今）", en: "now", de: "jetzt", zh: "现在" } },
+          { id: "hl8", category: "pitch_hl", translations: { ja: "ねこ", en: "cat", de: "Katze", zh: "猫" } },
+          { id: "hl9", category: "pitch_hl", translations: { ja: "いぬ", en: "dog", de: "Hund", zh: "狗" } },
+          { id: "hl10", category: "pitch_hl", translations: { ja: "とり", en: "bird", de: "Vogel", zh: "鸟" } },
+          { id: "hl11", category: "pitch_hl", translations: { ja: "やま", en: "mountain", de: "Berg", zh: "山" } },
+          { id: "hl12", category: "pitch_hl", translations: { ja: "そら", en: "sky", de: "Himmel", zh: "天空" } },
+          { id: "hl13", category: "pitch_hl", translations: { ja: "はな（花）", en: "flower", de: "Blume", zh: "花" } },
+          { id: "hl14", category: "pitch_hl", translations: { ja: "ふゆ", en: "winter", de: "Winter", zh: "冬天" } },
+
+          { id: "lh1", category: "pitch_lh", translations: { ja: "はし（橋）", en: "bridge", de: "Brücke", zh: "桥" } },
+          { id: "lh2", category: "pitch_lh", translations: { ja: "あめ（飴）", en: "candy", de: "Süßigkeit", zh: "糖；糖果" } },
+          { id: "lh3", category: "pitch_lh", translations: { ja: "かき（柿）", en: "persimmon", de: "Kaki (Frucht)", zh: "柿子" } },
+          { id: "lh4", category: "pitch_lh", translations: { ja: "かみ（髪）", en: "hair", de: "Haar", zh: "头发" } },
+          { id: "lh5", category: "pitch_lh", translations: { ja: "かぜ（風邪）", en: "cold (illness)", de: "Erkältung", zh: "感冒" } },
+          { id: "lh6", category: "pitch_lh", translations: { ja: "かわ（皮）", en: "skin, peel", de: "Haut, Schale", zh: "皮；外皮" } },
+          { id: "lh7", category: "pitch_lh", translations: { ja: "いま（居間）", en: "living room", de: "Wohnzimmer", zh: "客厅" } },
+          { id: "lh8", category: "pitch_lh", translations: { ja: "うみ", en: "sea", de: "Meer", zh: "海" } },
+          { id: "lh9", category: "pitch_lh", translations: { ja: "さかな", en: "fish", de: "Fisch", zh: "鱼" } },
+          { id: "lh10", category: "pitch_lh", translations: { ja: "ともだち", en: "friend", de: "Freund/in", zh: "朋友" } },
+          { id: "lh11", category: "pitch_lh", translations: { ja: "さくら", en: "cherry blossom", de: "Kirschblüte", zh: "樱花" } },
+          { id: "lh12", category: "pitch_lh", translations: { ja: "なまえ", en: "name", de: "Name", zh: "名字" } },
+          { id: "lh13", category: "pitch_lh", translations: { ja: "おとこ", en: "man", de: "Mann", zh: "男人" } },
+          { id: "lh14", category: "pitch_lh", translations: { ja: "こころ", en: "heart, mind", de: "Herz", zh: "心；内心" } }
+        ]
+      }
+    ]
   }
 };
