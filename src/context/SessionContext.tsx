@@ -7,7 +7,7 @@ interface SessionState {
   status: "running" | "paused" | "complete";
   lang: LanguageSettings;
   display: DisplaySettings;
-  style: "rigid" | "flexible"; // session-level override of trainer default
+  style: "computer" | "phone"; // session-level override of trainer default
   mode: SessionMode;
 }
 
@@ -17,7 +17,7 @@ type Action =
   | { type: "GOTO_BLOCK"; index: number }
   | { type: "PAUSE" }
   | { type: "RESUME" }
-  | { type: "SET_STYLE"; style: "rigid" | "flexible" }
+  | { type: "SET_STYLE"; style: "computer" | "phone" }
   | { type: "SET_MODE"; mode: SessionMode }
   | { type: "RESTORE"; blockIndex: number };
 
@@ -107,7 +107,7 @@ export function SessionProvider({
   lesson: LessonPlan;
   lang: LanguageSettings;
   display: DisplaySettings;
-  initialStyle: "rigid" | "flexible";
+  initialStyle: "computer" | "phone";
   children: React.ReactNode;
 }) {
   const [state, dispatch] = useReducer(reducer, {

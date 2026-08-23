@@ -30,6 +30,10 @@ interface DisplayColumn {
   items: VocabItem[];
 }
 
+type ColumnGroup =
+  | { kind: "single"; column: DisplayColumn }
+  | { kind: "paired"; left: DisplayColumn; right: DisplayColumn };
+
 // Vocab now gets the same 3-phase treatment as readalong (dialogue/song):
 // echo (word + long pause to repeat), shadow (word, no pause, read
 // together), silent (no trainer voice, timed pace to read alone). Same
@@ -101,19 +105,60 @@ export function VocabDrillBlock({
     }
   }
 
+  // Fold any declared pairedColumns (see types/index.ts) into merged
+  // "paired" groups for row-by-row comparison rendering — everything not
+  // part of a declared pair stays a "single" group, rendered exactly as
+  // before. Matched by exact category key, so this only applies when a
+  // category wasn't also split into "Label 1"/"Label 2" sub-columns above
+  // (a paired category large enough to need splitting would need a
+  // different design — not attempted here, since none currently are).
+  const consumedKeys = new Set<string>();
+  const columnGroups: ColumnGroup[] = [];
+  for (const col of columns) {
+    if (consumedKeys.has(col.key)) continue;
+    const pair = content.pairedColumns?.find(([a, b]) => a === col.key || b === col.key);
+    if (pair) {
+      const [leftKey, rightKey] = pair;
+      const left = columns.find((c) => c.key === leftKey);
+      const right = columns.find((c) => c.key === rightKey);
+      if (left && right) {
+        columnGroups.push({ kind: "paired", left, right });
+        consumedKeys.add(leftKey);
+        consumedKeys.add(rightKey);
+        continue;
+      }
+    }
+    columnGroups.push({ kind: "single", column: col });
+    consumedKeys.add(col.key);
+  }
+
   // Narration order MUST match the visual column order above — flatten
-  // the same `columns` structure the render uses, rather than iterating
-  // content.items in raw data-file order. Real bug this fixes: once a
-  // lesson's vocab audit appends new items to the END of the array
-  // instead of keeping same-category items contiguous (e.g. more nouns
-  // added after verbs/adjectives were already appended), narrating
-  // content.items directly would jump to a later column, continue into
-  // a third, then jump BACK to finish the first column's leftover
-  // items — audibly "skipping to the next column, then returning
-  // later." Deriving narration order from the same grouped/columned
-  // structure as the visual layout makes that class of bug structurally
-  // impossible, regardless of how items are ordered in the source data.
-  const narrationOrder: VocabItem[] = columns.flatMap((c) => c.items);
+  // the same `columnGroups` structure the render uses, rather than
+  // iterating content.items in raw data-file order (see comment below for
+  // why). Paired groups narrate interleaved (left[0], right[0], left[1],
+  // right[1]...) to match the side-by-side comparison being shown, rather
+  // than reading straight through one side and then the other.
+  //
+  // Real bug this fixes: once a lesson's vocab audit appends new items to
+  // the END of the array instead of keeping same-category items
+  // contiguous (e.g. more nouns added after verbs/adjectives were already
+  // appended), narrating content.items directly would jump to a later
+  // column, continue into a third, then jump BACK to finish the first
+  // column's leftover items — audibly "skipping to the next column, then
+  // returning later." Deriving narration order from the same
+  // grouped/columned structure as the visual layout makes that class of
+  // bug structurally impossible, regardless of how items are ordered in
+  // the source data.
+  const narrationOrder: VocabItem[] = columnGroups.flatMap((g) => {
+    if (g.kind === "single") return g.column.items;
+    const interleaved: VocabItem[] = [];
+    const len = Math.max(g.left.items.length, g.right.items.length);
+    for (let i = 0; i < len; i++) {
+      if (g.left.items[i]) interleaved.push(g.left.items[i]);
+      if (g.right.items[i]) interleaved.push(g.right.items[i]);
+    }
+    return interleaved;
+  });
 
   const phase = PHASES[phaseIdx];
 
@@ -209,26 +254,83 @@ export function VocabDrillBlock({
       }
     >
       <div className="vocab-groups" style={{ "--vocab-font-size": `${vocabFontPx}px` } as CSSProperties}>
-        {columns.map((col) => (
-          <div className="vocab-group" key={col.key}>
-            <div className="vocab-group-label">
-              {col.label[lang.targetLang]}
-              {lang.sourceLang !== lang.targetLang && (
-                <span className="source"> · {col.label[lang.sourceLang]}</span>
-              )}
+        {columnGroups.map((group) => {
+          if (group.kind === "single") {
+            const col = group.column;
+            return (
+              <div className="vocab-group" key={col.key}>
+                <div className="vocab-group-label">
+                  {col.label[lang.targetLang]}
+                  {lang.sourceLang !== lang.targetLang && (
+                    <span className="source"> · {col.label[lang.sourceLang]}</span>
+                  )}
+                </div>
+                <table>
+                  <tbody>
+                    {col.items.map((item) => (
+                      <tr key={item.id} className={item.id === activeId ? "active" : ""}>
+                        <td className="target">
+                          {item.translations[lang.targetLang]}
+                          {item.tag && <span className="vocab-tag">{item.tag}</span>}
+                        </td>
+                        <td className="source">{item.translations[lang.sourceLang]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+          // Paired group: one merged table, row i = left.items[i] next to
+          // right.items[i] — the actual "compare 橋 vs 箸 side by side"
+          // layout, rather than two separately-flowing columns.
+          const { left, right } = group;
+          const rowCount = Math.max(left.items.length, right.items.length);
+          return (
+            <div className="vocab-group vocab-group-paired" key={`${left.key}|${right.key}`}>
+              <div className="vocab-group-label vocab-group-label-paired">
+                <span>
+                  {left.label[lang.targetLang]}
+                  {lang.sourceLang !== lang.targetLang && <span className="source"> · {left.label[lang.sourceLang]}</span>}
+                </span>
+                <span>
+                  {right.label[lang.targetLang]}
+                  {lang.sourceLang !== lang.targetLang && <span className="source"> · {right.label[lang.sourceLang]}</span>}
+                </span>
+              </div>
+              <table className="vocab-table-paired">
+                <tbody>
+                  {Array.from({ length: rowCount }).map((_, i) => {
+                    const l = left.items[i];
+                    const r = right.items[i];
+                    return (
+                      <tr key={i} className={l?.id === activeId || r?.id === activeId ? "active" : ""}>
+                        <td className="target paired-cell">
+                          {l && (
+                            <>
+                              {l.translations[lang.targetLang]}
+                              {l.tag && <span className="vocab-tag">{l.tag}</span>}
+                              <span className="paired-source">{l.translations[lang.sourceLang]}</span>
+                            </>
+                          )}
+                        </td>
+                        <td className="target paired-cell">
+                          {r && (
+                            <>
+                              {r.translations[lang.targetLang]}
+                              {r.tag && <span className="vocab-tag">{r.tag}</span>}
+                              <span className="paired-source">{r.translations[lang.sourceLang]}</span>
+                            </>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
-            <table>
-              <tbody>
-                {col.items.map((item) => (
-                  <tr key={item.id} className={item.id === activeId ? "active" : ""}>
-                    <td className="target">{item.translations[lang.targetLang]}</td>
-                    <td className="source">{item.translations[lang.sourceLang]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </Slide>
   );

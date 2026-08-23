@@ -48,7 +48,7 @@ export function TrainerSelect({
           {t.languages.map((l) => LANG_LABEL[l]).join(" ↔ ")}
         </div>
         <div className="trainer-style">
-          {t.defaultStyle === "rigid" ? "Structured" : "Flexible"} · {t.hobby.split(".")[0]}
+          {t.defaultStyle === "computer" ? "Computer" : "Phone"} · {t.hobby.split(".")[0]}
         </div>
       </button>
     );

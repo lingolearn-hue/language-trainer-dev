@@ -43,11 +43,11 @@ export function LessonSelect({
   sourceLang: LangCode | "";
   onTargetChange: (lang: LangCode | "") => void;
   onSourceChange: (lang: LangCode | "") => void;
-  onSelect: (lesson: LessonPlan, style: "rigid" | "flexible") => void;
+  onSelect: (lesson: LessonPlan, style: "computer" | "phone") => void;
   onBack: () => void;
 }) {
   const saved = loadSettings();
-  const [style, setStyle] = useState<"rigid" | "flexible">(saved.style ?? trainer.defaultStyle);
+  const [style, setStyle] = useState<"computer" | "phone">(saved.style ?? trainer.defaultStyle);
   const [statusFilter, setStatusFilter] = useState<"recommended" | "all" | "hidden">(
     "recommended"
   );
@@ -92,24 +92,24 @@ export function LessonSelect({
       />
 
       <div className="style-toggle-compact">
-        <span className="style-toggle-label">Style</span>
+        <span className="style-toggle-label">View</span>
         <button
-          className={`chip${style === "rigid" ? " active" : ""}`}
+          className={`chip${style === "computer" ? " active" : ""}`}
           onClick={() => {
-            setStyle("rigid");
-            saveSettings({ style: "rigid" });
+            setStyle("computer");
+            saveSettings({ style: "computer" });
           }}
         >
-          📏 Structured
+          💻 Computer
         </button>
         <button
-          className={`chip${style === "flexible" ? " active" : ""}`}
+          className={`chip${style === "phone" ? " active" : ""}`}
           onClick={() => {
-            setStyle("flexible");
-            saveSettings({ style: "flexible" });
+            setStyle("phone");
+            saveSettings({ style: "phone" });
           }}
         >
-          🌿 Flexible
+          📱 Phone
         </button>
       </div>
 

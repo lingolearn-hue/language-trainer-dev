@@ -1210,6 +1210,7 @@ export const topicBody: TopicLesson = {
           pitch_hl: { ja: "HL（高→低）", en: "HL (high→low)", de: "HL (hoch→tief)", zh: "高低（HL）" },
           pitch_lh: { ja: "LH（低→高）", en: "LH (low→high)", de: "LH (tief→hoch)", zh: "低高（LH）" }
         },
+        pairedColumns: [["pitch_hl", "pitch_lh"]],
         items: [
           { id: "s1", category: "short", translations: { ja: "くび", en: "neck", de: "Hals", zh: "脖子" } },
           { id: "s2", category: "short", translations: { ja: "くち", en: "mouth", de: "Mund", zh: "嘴巴" } },
@@ -1237,8 +1238,8 @@ export const topicBody: TopicLesson = {
           { id: "l11", category: "long", translations: { ja: "からだ", en: "body", de: "Körper", zh: "身体" } },
           { id: "l12", category: "long", translations: { ja: "ひふ", en: "skin", de: "Haut", zh: "皮肤" } },
 
-          { id: "hl1", category: "pitch_hl", translations: { ja: "はし", en: "chopsticks", de: "Essstäbchen", zh: "筷子" } },
-          { id: "hl2", category: "pitch_hl", translations: { ja: "はな", en: "nose", de: "Nase", zh: "鼻子" } },
+          { id: "hl1", category: "pitch_hl", translations: { ja: "はし", en: "chopsticks", de: "Essstäbchen", zh: "筷子" }, tag: "箸" },
+          { id: "hl2", category: "pitch_hl", translations: { ja: "はな", en: "nose", de: "Nase", zh: "鼻子" }, tag: "鼻" },
           { id: "hl3", category: "pitch_hl", translations: { ja: "みみ", en: "ear", de: "Ohr", zh: "耳朵" } },
           { id: "hl4", category: "pitch_hl", translations: { ja: "かみ", en: "hair", de: "Haar", zh: "头发" } },
           { id: "hl5", category: "pitch_hl", translations: { ja: "あたま", en: "head", de: "Kopf", zh: "头" } },
@@ -1250,8 +1251,8 @@ export const topicBody: TopicLesson = {
           { id: "hl11", category: "pitch_hl", translations: { ja: "むね", en: "chest", de: "Brust", zh: "胸部" } },
           { id: "hl12", category: "pitch_hl", translations: { ja: "おなか", en: "belly", de: "Bauch", zh: "肚子" } },
 
-          { id: "lh1", category: "pitch_lh", translations: { ja: "はし", en: "bridge", de: "Brücke", zh: "桥" } },
-          { id: "lh2", category: "pitch_lh", translations: { ja: "はな", en: "flower", de: "Blume", zh: "花" } },
+          { id: "lh1", category: "pitch_lh", translations: { ja: "はし", en: "bridge", de: "Brücke", zh: "桥" }, tag: "橋" },
+          { id: "lh2", category: "pitch_lh", translations: { ja: "はな", en: "flower", de: "Blume", zh: "花" }, tag: "花" },
           { id: "lh3", category: "pitch_lh", translations: { ja: "かみ", en: "paper", de: "Papier", zh: "纸" } },
           { id: "lh4", category: "pitch_lh", translations: { ja: "かお", en: "face", de: "Gesicht", zh: "脸" } },
           { id: "lh5", category: "pitch_lh", translations: { ja: "みみ", en: "ear", de: "Ohr", zh: "耳朵" } },

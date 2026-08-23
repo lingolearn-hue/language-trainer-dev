@@ -19,6 +19,7 @@ export interface VocabItem {
   id: string;
   translations: Translations;
   category?: string; // e.g. "noun"/"verb"/"adjective", or a sound-group key for pronunciation slides
+  tag?: string; // small disambiguating label shown next to the word — e.g. the kanji form, to tell apart same-kana pitch-accent pairs like はし(橋) vs はし(箸)
 }
 
 export interface VocabDrillContent {
@@ -27,6 +28,13 @@ export interface VocabDrillContent {
   // VocabItem.category. If omitted, the component falls back to its
   // built-in noun/verb/adjective labels.
   groupLabels?: Record<string, Translations>;
+  // Optional list of category-key pairs that should render as ONE merged
+  // table with shared rows (item i of category A next to item i of
+  // category B), instead of two independently-flowing columns — for
+  // direct row-by-row comparison, e.g. a pitch-accent HL/LH pair like
+  // はし(橋, bridge) vs はし(箸, chopsticks) shown side by side on the
+  // same row rather than in two separate stacked lists.
+  pairedColumns?: [string, string][];
 }
 
 export interface ReadalongLine {
@@ -130,7 +138,7 @@ export interface Block {
   // (dialogue, or any other block type where the question doesn't apply).
   isSong?: boolean;
   // Extra content-only display scale — set on sub-blocks produced by the
-  // flexible-style split (see engine/flexibleStyle.ts): each original
+  // phone-style split (see engine/phoneStyle.ts): each original
   // slide becomes 3 smaller-content slides, shown bigger to match.
   // Undefined/1 = normal size, no effect.
   fontScale?: number;

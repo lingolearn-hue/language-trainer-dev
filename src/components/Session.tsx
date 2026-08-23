@@ -163,11 +163,11 @@ export function Session({
     const classroom = mode === "classroom";
     return (
       <div className="session paused">
-        <h2>{style === "rigid" ? "Paused" : "Taking a break?"}</h2>
+        <h2>{style === "computer" ? "Paused" : "Taking a break?"}</h2>
         <p>
           {classroom
             ? `Class is paused on slide ${blockIndex + 1} of ${lesson.blocks.length}.`
-            : style === "rigid"
+            : style === "computer"
             ? `Block ${blockIndex + 1} / ${lesson.blocks.length}`
             : `You're on block ${blockIndex + 1} of ${lesson.blocks.length} — resume whenever you're ready.`}
         </p>

@@ -310,6 +310,23 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .vocab-group tr.active td { background: #dde6ff; }
 .vocab-count { opacity: 0.55; font-size: 0.85em; margin: 0 auto; }
 
+.vocab-tag {
+  font-size: 0.75em; opacity: 0.6; margin-left: 0.3em; font-weight: 400;
+}
+/* Paired comparison group (e.g. pitch-accent HL/LH shown row by row) —
+   takes double width since it visually replaces two single columns. */
+.vocab-group-paired { flex: 2; }
+.vocab-group-label-paired { display: flex; justify-content: space-around; border-bottom: 1px solid #d5d5db; padding-bottom: 0.2em; }
+.vocab-table-paired { width: 100%; margin: 0; border-collapse: collapse; }
+.vocab-table-paired td.paired-cell {
+  font-weight: 600; text-align: center; width: 50%;
+  border-right: 1px solid #c8c8d0; padding: 0.2em 0.4em;
+}
+.vocab-table-paired td.paired-cell:last-child { border-right: none; }
+.paired-source {
+  display: block; font-weight: 400; opacity: 0.6; font-size: 0.8em; margin-top: 0.1em;
+}
+
 /* Self-intro slide (e.g. Lesson 2's "Selbstvorstellung") — two independent
    columns side by side: fixed self-intro template on the left (readalong,
    target-language only, no translation shown), a list of "reason" options

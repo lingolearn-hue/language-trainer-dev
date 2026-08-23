@@ -22,7 +22,7 @@ export function Slide({
   title?: ReactNode;
   footer?: ReactNode;
   children: ReactNode;
-  fontScale?: number; // extra content-only scale, for flexible-style split slides — independent of the fit-to-screen scale below, doesn't affect reportSlideSize
+  fontScale?: number; // extra content-only scale, for phone-style split slides — independent of the fit-to-screen scale below, doesn't affect reportSlideSize
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);

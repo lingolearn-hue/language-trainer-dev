@@ -948,6 +948,7 @@ export const topicAnimals: TopicLesson = {
           pitch_hl: { ja: "HL（高→低）", en: "HL (high→low)", de: "HL (hoch→tief)", zh: "高低（HL）" },
           pitch_lh: { ja: "LH（低→高）", en: "LH (low→high)", de: "LH (tief→hoch)", zh: "低高（LH）" }
         },
+        pairedColumns: [["pitch_hl", "pitch_lh"]],
         items: [
           { id: "yo1", category: "youon", translations: { ja: "きゃく", en: "customer, guest", de: "Kunde, Gast", zh: "客；客人" } },
           { id: "yo2", category: "youon", translations: { ja: "きゅう", en: "nine", de: "neun", zh: "九；休" } },

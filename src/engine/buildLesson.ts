@@ -163,7 +163,7 @@ export function buildLessonPlan(
     estimatedMinutes: 4,
     title: pronunciation.title,
     spokenIntro: framingText((_, p) => p.pronunciationIntro, () => ""),
-    content: { items: pronunciation.items, groupLabels: pronunciation.groupLabels },
+    content: { items: pronunciation.items, groupLabels: pronunciation.groupLabels, pairedColumns: pronunciation.pairedColumns },
   };
 
   const blocks: Block[] = [
@@ -181,7 +181,7 @@ export function buildLessonPlan(
         estimatedMinutes: 6,
         title: drill.title,
         spokenIntro: drill.spokenIntro ?? framingText((_, p) => p.pronunciationIntro, () => ""),
-        content: { items: drill.items, groupLabels: drill.groupLabels },
+        content: { items: drill.items, groupLabels: drill.groupLabels, pairedColumns: drill.pairedColumns },
       });
     }
   }

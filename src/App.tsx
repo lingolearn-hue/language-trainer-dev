@@ -26,7 +26,7 @@ import { topicWork } from "./data/topics/topic-17-work";
 import { topicSchool } from "./data/topics/topic-18-school";
 import { topicWeather } from "./data/topics/topic-19-weather";
 import { buildLessonPlan } from "./engine/buildLesson";
-import { applyFlexibleStyle } from "./engine/flexibleStyle";
+import { applyPhoneStyle } from "./engine/phoneStyle";
 import { loadSettings, saveSettings } from "./engine/userSettings";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan, LangCode } from "./types";
@@ -86,11 +86,13 @@ function App() {
   }
   // Style is chosen on the lesson-select screen now (compact toggle at
   // the top), not trainer-select — see LessonSelect.tsx. Actually applied
-  // here via applyFlexibleStyle: "flexible" splits each splittable slide
-  // into 3 smaller-content slides at a higher font scale; "rigid" leaves
-  // the lesson untouched. Previously this was captured but never used
-  // anywhere — a real no-op bug, not by design.
-  const [styleChoice, setStyleChoice] = useState<"rigid" | "flexible" | null>(null);
+  // here via applyPhoneStyle: "phone" splits multi-column vocab/
+  // pronunciation slides so each column (or paired-comparison group)
+  // becomes its own slide at a higher font scale, and still 3-ways-splits
+  // dialogue/grammar blocks (no column concept there); "computer" leaves
+  // the lesson completely untouched. Previously this was captured but
+  // never used anywhere — a real no-op bug, not by design.
+  const [styleChoice, setStyleChoice] = useState<"computer" | "phone" | null>(null);
 
   if (!trainer) {
     return (
@@ -118,7 +120,7 @@ function App() {
         onSourceChange={setSourceLang}
         onSelect={(chosenLesson, chosenStyle) => {
           setStyleChoice(chosenStyle);
-          setLesson(chosenStyle === "flexible" ? applyFlexibleStyle(chosenLesson) : chosenLesson);
+          setLesson(chosenStyle === "phone" ? applyPhoneStyle(chosenLesson) : chosenLesson);
         }}
         onBack={() => setTrainer(null)}
       />

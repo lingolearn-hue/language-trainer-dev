@@ -10,7 +10,7 @@ export interface Trainer {
   avatarSeed: string; // seed for the Lorelei (Lisa Wischofsky, CC0) DiceBear avatar — see TrainerAvatar.tsx. Deterministic: same seed always renders the same face.
   appearance: string;
   hobby: string;
-  defaultStyle: "rigid" | "flexible";
+  defaultStyle: "computer" | "phone";
   personalityNote: string;
   courseIds: string[]; // course(s) this trainer can teach — matched against LessonPlan.courseId
   voiceProfile: {
@@ -73,7 +73,7 @@ export const trainers: Trainer[] = [
     avatarSeed: "t-hiro", // reuses the old Hiro trainer's generated look
     appearance: "Late 20s, Caucasian, short tidy black hair, round glasses, plain button-up shirt, calm posture.",
     hobby: "Amateur woodworker — builds small furniture on weekends.",
-    defaultStyle: "rigid",
+    defaultStyle: "computer",
     courseIds: ["german-beginner", "english-advanced-c1"],
     personalityNote:
       "Measured and methodical, explains grammar step by step, rarely rushes ahead.",
@@ -92,7 +92,7 @@ export const trainers: Trainer[] = [
     avatarSeed: "t-max-mueller", // newly picked — not reused from any prior trainer
     appearance: "Early 30s, Caucasian, short dark-blond hair, glasses, casual cardigan over a plain shirt.",
     hobby: "Amateur astronomer — often relates grammar drills to star names.",
-    defaultStyle: "rigid",
+    defaultStyle: "computer",
     courseIds: ["japanese-beginner", "german-beginner"],
     personalityNote:
       "Precise and a little formal. Corrects mistakes immediately, expects full sentences.",
@@ -111,7 +111,7 @@ export const trainers: Trainer[] = [
     avatarSeed: "t-jonas", // reuses the old Jonas trainer's generated look
     appearance: "Early 20s, Asian, straight black bob, oversized cardigan, tends to sketch kanji in the air while explaining.",
     hobby: "Collects stationery — pens and notebooks in particular.",
-    defaultStyle: "flexible",
+    defaultStyle: "phone",
     courseIds: ["japanese-beginner"],
     personalityNote:
       "Patient and encouraging, repeats readings without being asked, celebrates small wins.",
