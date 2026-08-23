@@ -6,7 +6,7 @@
 // pronunciation are NOT shareable (each teaches that language's own
 // actual mechanics) and are keyed per target language, populated only
 // where real content has been authored.
-import type { LangCode, Translations, VocabItem, ReadalongLine, GrammarContent, VocabDrillContent } from "../types";
+import type { LangCode, Translations, VocabItem, ReadalongLine, GrammarContent, VocabDrillContent, SelfIntroContent } from "../types";
 
 export interface TopicDialogue {
   title: Translations;
@@ -32,6 +32,10 @@ export interface TopicExtraDrill extends VocabDrillContent {
   spokenIntro?: Translations;
 }
 
+export interface TopicSelfIntro extends SelfIntroContent {
+  title: Translations;
+}
+
 export interface TopicLesson {
   id: string; // "topic-05-food"
   lessonNumber: number; // master table row
@@ -45,6 +49,12 @@ export interface TopicLesson {
   // language, since these are usually language-specific practice content
   // just like grammar/pronunciation.
   extraDrills?: Partial<Record<LangCode, TopicExtraDrill[]>>;
+  // Self-introduction template slide (fill-in-the-blank name/hometown/etc
+  // read by the student, plus a silent word-bank and a spoken "reasons"
+  // demonstration) — per target language, same as grammar/pronunciation,
+  // since the template phrasing is language-specific. Optional: topics
+  // without one just skip this slide (see buildLesson.ts).
+  selfIntro?: Partial<Record<LangCode, TopicSelfIntro>>;
   // Per-target-language only — see file header. A language missing here
   // means no LessonPlan can be built for that target yet, even if vocab
   // is translated into it.

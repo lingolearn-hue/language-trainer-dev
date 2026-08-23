@@ -18,12 +18,14 @@ const PHASE_LABEL: Record<ReadalongPhase, string> = {
 //  same 3-phase mechanic as ReadalongBlock (echo/shadow/silent). No
 //  translation shown — student fills in their own name/hometown live.
 //
-//  Right (options): each "reason" line is narrated once in the target
-//  language, immediately followed by a SPOKEN-ONLY translation in the
-//  source language — this slide never displays a translation on screen.
-//  After all options, `choosePrompt` is spoken in the source language,
-//  inviting the student to pick their own reason. No selection UI, no
-//  recorded choice — purely a demonstration pass.
+//  Right: an optional silent word bank (small labelled word lists for
+//  template blanks — e.g. eye colors, sports — shown on screen but NEVER
+//  spoken), followed by the "reasons" options: each line narrated once in
+//  the target language, immediately followed by a SPOKEN-ONLY translation
+//  in the source language — this slide never displays a translation for
+//  these on screen. After all options, `choosePrompt` is spoken in the
+//  source language, inviting the student to pick their own reason. No
+//  selection UI, no recorded choice — purely a demonstration pass.
 export function SelfIntroBlock({
   block,
   lang,
@@ -148,6 +150,22 @@ export function SelfIntroBlock({
           ))}
         </div>
         <div className="self-intro-options">
+          {content.wordBank && content.wordBank.length > 0 && (
+            <div className="self-intro-wordbank">
+              {content.wordBank.map((group) => (
+                <div key={group.id} className="self-intro-wordbank-group">
+                  <div className="self-intro-wordbank-label">{group.label[lang.targetLang]}</div>
+                  <div className="self-intro-wordbank-words">
+                    {group.words.map((w, i) => (
+                      <span key={i} className="self-intro-wordbank-word">
+                        {w[lang.targetLang]} <span className="source">{w[lang.sourceLang]}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
           <p className="self-intro-lead">{content.optionsIntro[lang.targetLang]}</p>
           {content.options.map((opt, i) => (
             <p

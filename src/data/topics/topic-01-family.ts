@@ -716,6 +716,44 @@ export const topicFamily: TopicLesson = {
       }
     ]
   },
+  selfIntro: {
+    ja: {
+      title: {
+        ja: "じこしょうかい",
+        en: "Self-Introduction",
+        de: "Selbstvorstellung",
+        zh: "自我介绍"
+      },
+      template: [
+        { id: "si1", translations: { ja: "こんにちは！" } },
+        { id: "si2", translations: { ja: "わたしは［なまえ］です。" } },
+        { id: "si3", translations: { ja: "［しゅっしんち］から きました。" } },
+        { id: "si4", translations: { ja: "［しゅっしんち］は［くに］に あります。" } },
+        { id: "si5", translations: { ja: "わたしは［げんご］を はなします。" } },
+        { id: "si6", translations: { ja: "にほんごも すこし はなします。" } },
+        { id: "si7", translations: { ja: "わたしには［にんずう］にんの きょうだいが います。" } },
+        { id: "si8", translations: { ja: "わたしの かぞくは ぜんぶで［にんずう］にんです。" } }
+      ],
+      optionsIntro: {
+        ja: "わたしが にほんごを べんきょうする りゆうは…",
+        en: "The reason I'm studying Japanese is…",
+        de: "Der Grund, warum ich Japanisch lerne, ist…",
+        zh: "我学习日语的原因是…"
+      },
+      options: [
+        { id: "opt1", translations: { ja: "…アニメが すきだから です。", en: "…because I like anime.", de: "…weil ich Anime mag.", zh: "…因为我喜欢动漫。" } },
+        { id: "opt2", translations: { ja: "…にほんに りょこうしたいから です。", en: "…because I want to travel to Japan.", de: "…weil ich nach Japan reisen möchte.", zh: "…因为我想去日本旅行。" } },
+        { id: "opt3", translations: { ja: "…しごとで ひつようだから です。", en: "…because I need it for work.", de: "…weil ich es für die Arbeit brauche.", zh: "…因为工作需要。" } },
+        { id: "opt4", translations: { ja: "…にほんの ぶんかに きょうみが あるから です。", en: "…because I'm interested in Japanese culture.", de: "…weil ich mich für die japanische Kultur interessiere.", zh: "…因为我对日本文化感兴趣。" } }
+      ],
+      choosePrompt: {
+        ja: "さあ、あなたの りゆうを えらんで はなしてみましょう。",
+        en: "Now, pick your own reason and try saying it.",
+        de: "Wähle jetzt deinen eigenen Grund und versuche, ihn zu sagen.",
+        zh: "现在，选一个你自己的理由试着说说看。"
+      }
+    }
+  },
   grammar: {
     ja: {
       title: {

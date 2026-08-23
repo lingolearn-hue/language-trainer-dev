@@ -310,6 +310,7 @@ export function Session({
                 lang={lang}
                 trainer={trainer}
                 framingLanguage={lesson.framingLanguage}
+                bilingual={block.spokenIntroBilingual ?? false}
                 showCaptionText={block.type !== "agenda"}
                 onFinished={() => setAutoPlayReady(true)}
               />

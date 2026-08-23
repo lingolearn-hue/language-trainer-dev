@@ -36,6 +36,7 @@ export function TeacherCaption({
   trainer,
   framingLanguage = "target",
   showCaptionText = true,
+  bilingual = false,
   onFinished,
 }: {
   block: Block;
@@ -43,10 +44,18 @@ export function TeacherCaption({
   trainer: Trainer;
   framingLanguage?: "source" | "target";
   showCaptionText?: boolean;
+  // When true, BOTH languages of spokenIntro are actually spoken, one
+  // after the other (source fully, then target fully) — not just one
+  // spoken with the other shown as an unspoken secondary caption line.
+  // Used for the intro block's framing message, which is meant to be
+  // heard in both languages before the block's own content narration
+  // begins. framingLanguage still decides which one speaks FIRST.
+  bilingual?: boolean;
   onFinished?: () => void;
 }) {
   const [speaking, setSpeaking] = useState(false);
   const [sentenceIdx, setSentenceIdx] = useState(0);
+  const [stage, setStage] = useState<"spoken" | "other">("spoken"); // which language is currently playing, bilingual mode only
   // Without this, the caption kept showing the LAST intro sentence for
   // the entire rest of the block (through the whole vocab drill,
   // dialogue, etc.) once `speaking` went false — it only stopped
@@ -106,7 +115,7 @@ export function TeacherCaption({
       }
       if (cancelled) return;
 
-      if (sentences.length === 0) {
+      if (sentences.length === 0 && (!bilingual || otherSentences.length === 0)) {
         // No spoken intro on this block — signal "done" now that the
         // title primer has run, so the rest of the auto-play sequence
         // (content narration) isn't stuck waiting on something that
@@ -116,10 +125,20 @@ export function TeacherCaption({
       }
 
       setSpeaking(true);
+      setStage("spoken");
       for (let i = 0; i < sentences.length; i++) {
         if (cancelled) return;
         setSentenceIdx(i);
         await speak(sentences[i], spokenLangCode, trainer.voiceProfile);
+      }
+      if (bilingual && otherSentences.length > 0) {
+        if (cancelled) return;
+        setStage("other");
+        for (let i = 0; i < otherSentences.length; i++) {
+          if (cancelled) return;
+          setSentenceIdx(i);
+          await speak(otherSentences[i], otherLangCode, trainer.voiceProfile);
+        }
       }
       if (!cancelled) {
         setSpeaking(false);
@@ -136,24 +155,34 @@ export function TeacherCaption({
   }, [block.id]);
 
   async function replay() {
-    if (sentences.length === 0) return;
+    if (sentences.length === 0 && (!bilingual || otherSentences.length === 0)) return;
     cancelSpeech();
     setFinished(false);
     setSpeaking(true);
+    setStage("spoken");
     for (let i = 0; i < sentences.length; i++) {
       setSentenceIdx(i);
       await speak(sentences[i], spokenLangCode, trainer.voiceProfile);
+    }
+    if (bilingual && otherSentences.length > 0) {
+      setStage("other");
+      for (let i = 0; i < otherSentences.length; i++) {
+        setSentenceIdx(i);
+        await speak(otherSentences[i], otherLangCode, trainer.voiceProfile);
+      }
     }
     setSpeaking(false);
     setFinished(true);
   }
 
-  if (sentences.length === 0) return null;
+  if (sentences.length === 0 && (!bilingual || otherSentences.length === 0)) return null;
   if (!showCaptionText) return null; // audio already played above; no visible bubble for this block
   if (finished) return null; // intro's done — don't linger through the rest of the block's content
 
-  const currentText = sentences[sentenceIdx];
-  const currentOther = otherSentences[sentenceIdx];
+  const currentText = bilingual
+    ? (stage === "spoken" ? sentences[sentenceIdx] : otherSentences[sentenceIdx])
+    : sentences[sentenceIdx];
+  const currentOther = bilingual ? undefined : otherSentences[sentenceIdx]; // bilingual mode shows one language at a time, full-size, not a primary/secondary pair
 
   return (
     <div className={`teacher-caption${speaking ? " speaking" : ""}`}>

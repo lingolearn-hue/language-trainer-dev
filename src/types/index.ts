@@ -73,8 +73,21 @@ export interface SelfIntroOption {
   translations: Translations; // target-language line; other langs used only for spoken narration, never displayed
 }
 
+// A small labelled word list for one template blank (e.g. "eye color" ->
+// brown/black/blue/green) — shown on screen as a silent reference, NEVER
+// spoken by the trainer (unlike `options` below, which is a spoken
+// demonstration pass). Both label and each word are full Translations
+// objects, same as everywhere else in the data, so target+source can be
+// shown together as a real translation pair rather than target-only.
+export interface SelfIntroWordBankGroup {
+  id: string;
+  label: Translations;
+  words: Translations[];
+}
+
 export interface SelfIntroContent {
   template: ReadalongLine[];
+  wordBank?: SelfIntroWordBankGroup[];
   optionsIntro: Translations; // e.g. "Ich lerne Deutsch, weil ..." lead-in line, narrated once before options
   options: SelfIntroOption[];
   choosePrompt: Translations; // spoken in source language after all options are demonstrated
@@ -142,6 +155,12 @@ export interface Block {
   // slide becomes 3 smaller-content slides, shown bigger to match.
   // Undefined/1 = normal size, no effect.
   fontScale?: number;
+  // When true, spokenIntro is actually spoken in BOTH languages in
+  // sequence (source fully, then target fully) instead of just one
+  // spoken with the other as an unspoken secondary caption — see
+  // TeacherCaption.tsx's bilingual prop. Used for the intro block's
+  // framing message, which is meant to be heard in both languages.
+  spokenIntroBilingual?: boolean;
   content: BlockContent;
 }
 
