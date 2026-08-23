@@ -516,19 +516,18 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 /* Language-pair filter — two plain dropdowns, order-independent (a
    trainer matches regardless of which dropdown holds which of their two
    languages, since every trainer teaches both directions). */
-.trainer-filters {
-  display: flex; gap: 12px; justify-content: center; margin-bottom: 8px;
+.lang-filter-buttons {
+  display: flex; flex-direction: column; gap: 10px; align-items: center;
+  margin-bottom: 8px;
 }
-.trainer-filter-col {
-  display: flex; flex-direction: column; gap: 4px; align-items: flex-start;
+.lang-filter-row {
+  display: flex; flex-direction: column; gap: 4px; align-items: center;
 }
-.trainer-filter-col label {
-  font-size: 12px; opacity: 0.65; padding-left: 2px;
-}
-.trainer-filters select {
-  padding: 8px 12px; border-radius: 8px; border: 1px solid #d5d5db;
-  background: #ffffff; color: #1a1a22; font-size: 14px; min-width: 160px;
-}
+.lang-filter-row-label { font-size: 12px; opacity: 0.65; }
+.lang-filter-chips { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.lang-filter-buttons.compact { gap: 6px; margin-bottom: 12px; }
+.lang-filter-buttons.compact .lang-filter-row-label { font-size: 10px; }
+.lang-filter-buttons.compact .chip { padding: 4px 10px; font-size: 12px; }
 .trainer-filter-hint {
   text-align: center; font-size: 12px; opacity: 0.6; margin: 0 0 24px;
 }
@@ -583,7 +582,8 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .lesson-row {
   display: flex; align-items: stretch; text-align: left; cursor: pointer;
   background: #ffffff; border: 1px solid #d5d5db; border-radius: 10px;
-  padding: 8px 0; color: #1a1a22;
+  padding: 8px 0; color: #1a1a22; width: 100%; box-sizing: border-box;
+  max-width: 100%; overflow: hidden;
   transition: transform 0.12s ease, border-color 0.12s ease;
 }
 .lesson-row:hover { transform: translateY(-1px); border-color: #3355e0; }

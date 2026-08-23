@@ -22,8 +22,12 @@ import { topicTime } from "./data/topics/topic-13-time";
 import { topicCountries } from "./data/topics/topic-14-countries";
 import { topicLandscape } from "./data/topics/topic-15-landscape";
 import { topicTraffic } from "./data/topics/topic-16-traffic";
+import { topicWork } from "./data/topics/topic-17-work";
+import { topicSchool } from "./data/topics/topic-18-school";
+import { topicWeather } from "./data/topics/topic-19-weather";
 import { buildLessonPlan } from "./engine/buildLesson";
 import { applyFlexibleStyle } from "./engine/flexibleStyle";
+import { loadSettings, saveSettings } from "./engine/userSettings";
 import type { Trainer } from "./data/trainers";
 import type { LessonPlan, LangCode } from "./types";
 import type { TopicLesson } from "./data/topicTypes";
@@ -43,7 +47,7 @@ const ALL_TOPICS: TopicLesson[] = [
   topicFamily, topicBody, topicAppearance, topicEmotions, topicFood,
   topicHome, topicClothing, topicShopping, topicAnimals, topicHealth,
   topicTravel, topicDirections, topicTime,
-  topicCountries, topicLandscape, topicTraffic, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
+  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
 ];
 const generatedJapaneseLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))
@@ -64,10 +68,22 @@ const allLessons: LessonPlan[] = [
 function App() {
   const [trainer, setTrainer] = useState<Trainer | null>(null);
   const [lesson, setLesson] = useState<LessonPlan | null>(null);
-  // Explicit direction the student picked on the trainer-select screen
-  // (via the "I want to learn" / "I already know" filters), if both were
-  // set — falls back to trainer.languages[0]/[1] convention otherwise.
-  const [langChoice, setLangChoice] = useState<{ targetLang: LangCode; sourceLang: LangCode } | null>(null);
+  // Lifted here (not owned by TrainerSelect or LessonSelect individually)
+  // so the same "I want to learn" / "I already know" choice is linked
+  // across both screens — changing it on either one updates this single
+  // source of truth, and both write through to localStorage via
+  // saveSettings so it's also persistent across reloads.
+  const saved = loadSettings();
+  const [targetLang, setTargetLangState] = useState<LangCode | "">(saved.targetLang ?? "");
+  const [sourceLang, setSourceLangState] = useState<LangCode | "">(saved.sourceLang ?? "");
+  function setTargetLang(l: LangCode | "") {
+    setTargetLangState(l);
+    saveSettings({ targetLang: l || undefined });
+  }
+  function setSourceLang(l: LangCode | "") {
+    setSourceLangState(l);
+    saveSettings({ sourceLang: l || undefined });
+  }
   // Style is chosen on the lesson-select screen now (compact toggle at
   // the top), not trainer-select — see LessonSelect.tsx. Actually applied
   // here via applyFlexibleStyle: "flexible" splits each splittable slide
@@ -79,9 +95,13 @@ function App() {
   if (!trainer) {
     return (
       <TrainerSelect
-        onSelect={(t, chosenLang) => {
+        targetLang={targetLang}
+        sourceLang={sourceLang}
+        onTargetChange={setTargetLang}
+        onSourceChange={setSourceLang}
+        onSelect={(t) => {
           setTrainer(t);
-          setLangChoice(chosenLang ?? null);
+          saveSettings({ trainerId: t.id });
         }}
       />
     );
@@ -92,6 +112,10 @@ function App() {
       <LessonSelect
         trainer={trainer}
         lessons={allLessons}
+        targetLang={targetLang}
+        sourceLang={sourceLang}
+        onTargetChange={setTargetLang}
+        onSourceChange={setSourceLang}
         onSelect={(chosenLesson, chosenStyle) => {
           setStyleChoice(chosenStyle);
           setLesson(chosenStyle === "flexible" ? applyFlexibleStyle(chosenLesson) : chosenLesson);
@@ -102,11 +126,17 @@ function App() {
   }
 
   // Trainer's first two listed languages become the session's default
-  // target/source if the student didn't set both filter dropdowns. With
+  // target/source if the student didn't set both language buttons. With
   // 3-language trainers this is just a default, not the full set — the
-  // explicit langChoice (when both dropdowns are set) can pick any pair
-  // among the trainer's languages, not just the first two.
-  const lang = langChoice ?? { targetLang: trainer.languages[0], sourceLang: trainer.languages[1] };
+  // explicit targetLang/sourceLang (when both are set) can pick any pair
+  // among the trainer's languages, not just the first two. Live-derived
+  // from the same lifted state on every render, not a frozen snapshot —
+  // so a change made on LessonSelect (after the trainer is already
+  // picked) still takes effect here.
+  const lang =
+    targetLang && sourceLang
+      ? { targetLang, sourceLang }
+      : { targetLang: trainer.languages[0], sourceLang: trainer.languages[1] };
 
   return (
     <SessionProvider

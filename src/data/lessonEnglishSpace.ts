@@ -135,7 +135,7 @@ export const grammarInversionBlock: Block = {
   type: "grammar",
   displayMode: "content",
   estimatedMinutes: 6,
-  title: { en: "Inversion After Negative Adverbials", de: "Inversion nach negativen Adverbien", zh: "否定副词后的倒装" },
+  title: { en: "Negative Inversion", de: "Negative Inversion", zh: "否定倒装" },
   spokenIntro: {
     en: "Let's look at a hallmark of formal, dramatic English: inversion.",
     de: "Schauen wir uns ein Merkmal formeller, dramatischer englischer Sprache an: die Inversion.",
@@ -163,7 +163,7 @@ export const grammarCleftBlock: Block = {
   type: "grammar",
   displayMode: "content",
   estimatedMinutes: 6,
-  title: { en: "Cleft Sentences for Emphasis", de: "Spaltsätze zur Betonung", zh: "强调用分裂句" },
+  title: { en: "Cleft Sentences", de: "Spaltsätze", zh: "分裂句" },
   spokenIntro: {
     en: "Now let's split a sentence in two to emphasize exactly what matters.",
     de: "Jetzt teilen wir einen Satz in zwei, um genau das zu betonen, was zählt.",
@@ -190,7 +190,7 @@ export const grammarNominalizationBlock: Block = {
   type: "grammar",
   displayMode: "content",
   estimatedMinutes: 4,
-  title: { en: "Nominalization: A Formal Register", de: "Nominalisierung: ein formeller Sprachstil", zh: "名词化：正式语体" },
+  title: { en: "Nominalization", de: "Nominalisierung", zh: "名词化" },
   spokenIntro: {
     en: "One more tool for formal writing: turning verbs into nouns.",
     de: "Noch ein Werkzeug für formelles Schreiben: Verben in Nomen verwandeln.",

@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { LessonPlan, LangCode } from "../types";
 import type { Trainer } from "../data/trainers";
 import { LanguageSamples } from "./LanguageSamples";
+import { LanguageFilterButtons } from "./LanguageFilterButtons";
 import { summarizeLesson } from "../data/lessonSummary";
 import { primeSpeechSynthesis } from "../engine/speech";
 import { isLessonHiddenByDefault, getLessonStatus } from "../engine/lessonStatus";
@@ -27,11 +28,21 @@ function statusLabel(lessonId: string): string {
 export function LessonSelect({
   trainer,
   lessons,
+  targetLang,
+  sourceLang,
+  onTargetChange,
+  onSourceChange,
   onSelect,
   onBack,
 }: {
   trainer: Trainer;
   lessons: LessonPlan[];
+  // Same lifted state as TrainerSelect — linked and persistent across
+  // both screens, see App.tsx.
+  targetLang: LangCode | "";
+  sourceLang: LangCode | "";
+  onTargetChange: (lang: LangCode | "") => void;
+  onSourceChange: (lang: LangCode | "") => void;
   onSelect: (lesson: LessonPlan, style: "rigid" | "flexible") => void;
   onBack: () => void;
 }) {
@@ -55,6 +66,11 @@ export function LessonSelect({
   });
   const available =
     levelFilter === "all" ? byStatus : byStatus.filter((l) => l.level === levelFilter);
+  const sorted = [...available].sort((a, b) => {
+    const levelCompare = (a.level ?? "").localeCompare(b.level ?? "");
+    if (levelCompare !== 0) return levelCompare;
+    return (a.lessonNumber ?? Infinity) - (b.lessonNumber ?? Infinity);
+  });
 
   return (
     <div className="trainer-select">
@@ -65,6 +81,15 @@ export function LessonSelect({
       <p className="subtitle">with {trainer.name}</p>
 
       <LanguageSamples trainer={trainer} />
+
+      <LanguageFilterButtons
+        targetLang={targetLang}
+        sourceLang={sourceLang}
+        onTargetChange={onTargetChange}
+        onSourceChange={onSourceChange}
+        availableLangs={trainer.languages}
+        compact
+      />
 
       <div className="style-toggle-compact">
         <span className="style-toggle-label">Style</span>
@@ -127,11 +152,11 @@ export function LessonSelect({
         </button>
       </div>
 
-      {available.length === 0 ? (
+      {sorted.length === 0 ? (
         <p>No lessons match these filters.</p>
       ) : (
         <div className="lesson-list">
-          {available.map((lesson) => {
+          {sorted.map((lesson) => {
             const displayLang: LangCode = lesson.targetLangCode ?? trainer.languages[0];
             const summary = summarizeLesson(lesson, displayLang);
             const numberLabel = lesson.lessonNumber
