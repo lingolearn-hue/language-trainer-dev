@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { Block, ReadalongContent, LanguageSettings, ReadalongPhase } from "../types";
 import type { Trainer } from "../data/trainers";
-import { speak, wait } from "../engine/speech";
+import { speak, wait, setStudentTurn } from "../engine/speech";
 import { isRecognitionSupported, listenAndCompare } from "../engine/recognition";
 import { playMelodyLine, stopMelody } from "../engine/melodyPlayer";
 import { isMelodyOn, toggleMelody, subscribeMelody } from "../engine/melodyToggle";
@@ -80,7 +80,9 @@ export function ReadalongBlock({
           await speak(text, lang.targetLang, trainer.voiceProfile);
         }
         if (shouldCancel()) break;
+        setStudentTurn(true);
         await wait(pauseFor(text, 2800, 90, 7000)); // long pause for student to repeat, scaled by sentence length
+        setStudentTurn(false);
       } else if (p === "shadow") {
         if (melody && melodyOn) {
           await playMelodyLine(melody, content.lines[i].id);
@@ -93,11 +95,14 @@ export function ReadalongBlock({
         // silent: no trainer voice, timed pace for student to read alone —
         // needs the most generous scaling since there's no audio cue at
         // all to pace against.
+        setStudentTurn(true);
         await wait(pauseFor(text, 2800, 120, 8000));
+        setStudentTurn(false);
       }
     }
     setActiveLine(null);
     setRunning(false);
+    setStudentTurn(false); // safety: guarantees the ring clears even if the loop broke early via shouldCancel()
   }
 
   async function runPhase() {
@@ -132,6 +137,7 @@ export function ReadalongBlock({
     return () => {
       cancelledRef.current = true;
       stopMelody(); // cuts off any notes still scheduled ahead if the block changes mid-line
+      setStudentTurn(false); // safety: block changed mid-turn, don't leave the ring stuck on
     };
   }, [block.id]);
 

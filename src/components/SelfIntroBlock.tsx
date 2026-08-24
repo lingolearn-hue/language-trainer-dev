@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Block, SelfIntroContent, LanguageSettings, ReadalongPhase } from "../types";
 import type { Trainer } from "../data/trainers";
-import { speak, wait } from "../engine/speech";
+import { speak, wait, setStudentTurn } from "../engine/speech";
 import { Slide } from "./Slide";
 
 const PHASES: ReadalongPhase[] = ["echo", "shadow", "silent"];
@@ -61,16 +61,21 @@ export function SelfIntroBlock({
       if (p === "echo") {
         await speak(text, lang.targetLang, trainer.voiceProfile);
         if (shouldCancel()) break;
+        setStudentTurn(true);
         await wait(2500); // long pause for student to repeat
+        setStudentTurn(false);
       } else if (p === "shadow") {
         await speak(text, lang.targetLang, trainer.voiceProfile);
       } else {
         // silent: no trainer voice, just a timed pace for student to read alone
+        setStudentTurn(true);
         await wait(1800);
+        setStudentTurn(false);
       }
     }
     setTemplateRunning(false);
     setActiveTemplateLine(null);
+    setStudentTurn(false); // safety: guarantees the ring clears even if the loop broke early
   }
 
   async function runOptions(shouldCancel: () => boolean) {
@@ -122,6 +127,7 @@ export function SelfIntroBlock({
     return () => {
       cancelled = true;
       cancelledRef.current = true;
+      setStudentTurn(false); // safety: don't leave the ring stuck on if the block changes mid-turn
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoPlay, block.id]);

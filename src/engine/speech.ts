@@ -106,6 +106,28 @@ export function subscribeSpeaking(listener: Listener): () => void {
   return () => listeners.delete(listener);
 }
 
+// Same pattern, separate store: "is it the student's turn to talk right
+// now" — true during a readalong's echo-repeat pause (trainer just said
+// the line, student repeats into the silence) and during the silent
+// phase's read-alone window; false the rest of the time (including
+// during shadow, which is read together rather than as a distinct
+// student-only turn). Sets the green ring around the student's avatar —
+// see LessonAvatars.tsx.
+type TurnListener = (yourTurn: boolean) => void;
+const turnListeners = new Set<TurnListener>();
+let currentlyStudentTurn = false;
+
+export function setStudentTurn(value: boolean) {
+  currentlyStudentTurn = value;
+  turnListeners.forEach((l) => l(value));
+}
+
+export function subscribeStudentTurn(listener: TurnListener): () => void {
+  turnListeners.add(listener);
+  listener(currentlyStudentTurn);
+  return () => turnListeners.delete(listener);
+}
+
 // A run of "..." (or the single-char "…") in lesson text is meant as a
 // spoken PAUSE, not literal dots — German TTS in particular reads "..."
 // aloud as "Punkt Punkt Punkt", which is wrong. speak() below strips
@@ -173,13 +195,36 @@ export function subscribeRate(listener: RateListener): () => void {
 
 export { RATE_MIN, RATE_MAX, RATE_STEP };
 
+// Real bug fix: on some browsers/conditions (tab backgrounding, Chrome's
+// speechSynthesis engine occasionally going idle/stuck after many
+// consecutive utterances, assorted iOS quirks), onend/onerror can
+// silently never fire at all — the returned promise then hangs forever.
+// Every block's auto-play is a sequential `await speak(...)` chain, so
+// one stuck utterance anywhere stalls the whole chain permanently: no
+// error, no crash, just the "next slide" never arriving. Reported
+// symptom was exactly this ("sometimes the next slide isn't activated"),
+// and got more likely to trigger once lesson-intro speech sequences got
+// longer (bilingual framing, 14-line monologue, self-intro block) —
+// more sequential utterances per lesson means more chances to hit it.
+//
+// Fix: race the speech promise against a generous timeout scaled to the
+// text's own length (with a floor and ceiling) — if the browser hasn't
+// fired onend/onerror by then, resolve anyway so the calling chain can
+// continue. Deliberately does NOT call speechSynthesis.cancel() on
+// timeout: if the utterance is just running slow rather than truly
+// stuck, letting it keep playing in the background is harmless, whereas
+// cutting it off would audibly clip mid-word for no benefit.
+function estimateMaxSpeechMs(text: string): number {
+  return Math.min(20000, Math.max(4000, text.length * 300));
+}
+
 async function speakSegment(
   text: string,
   lang: LangCode,
   preference?: VoicePreference
 ): Promise<void> {
   const voice = await resolveVoice(lang, preference);
-  return new Promise((resolve) => {
+  const speechPromise = new Promise<void>((resolve) => {
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = bcp47[lang];
     if (voice) utter.voice = voice;
@@ -190,6 +235,10 @@ async function speakSegment(
     utter.onerror = () => resolve();
     window.speechSynthesis.speak(utter);
   });
+  const timeoutPromise = new Promise<void>((resolve) => {
+    setTimeout(resolve, estimateMaxSpeechMs(text));
+  });
+  return Promise.race([speechPromise, timeoutPromise]);
 }
 
 // Real bug fix: many grammar-note and framing sentences intentionally
