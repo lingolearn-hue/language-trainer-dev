@@ -74,8 +74,8 @@ export function GrammarBlock({
     if (!autoPlay) return;
     let cancelled = false;
     (async () => {
-      const explanation = content.explanation[lang.targetLang];
-      if (explanation) await speak(explanation, lang.targetLang, trainer.voiceProfile);
+      const explanationTarget = content.explanation[lang.targetLang];
+      if (explanationTarget) await speak(explanationTarget, lang.targetLang, trainer.voiceProfile);
       if (cancelled) return;
 
       for (const chunk of content.chunks) {
@@ -87,6 +87,34 @@ export function GrammarBlock({
         await wait(500);
       }
       setActiveChunkId(null);
+      if (cancelled) return;
+
+      // Second pass, once through in the source language — previously
+      // grammar was only ever spoken in the target language; the source
+      // translation was shown on screen but never actually read aloud.
+      const explanationSource = content.explanation[lang.sourceLang];
+      if (explanationSource && explanationSource !== explanationTarget) {
+        await speak(explanationSource, lang.sourceLang, trainer.voiceProfile);
+      }
+      if (cancelled) return;
+      for (const chunk of content.chunks) {
+        if (cancelled) return;
+        setActiveChunkId(chunk.id);
+        const sourceText = chunk.translations[lang.sourceLang];
+        const targetText = chunk.translations[lang.targetLang];
+        if (sourceText && sourceText !== targetText) {
+          await speak(sourceText, lang.sourceLang, trainer.voiceProfile);
+        }
+        if (cancelled) return;
+        await wait(400);
+      }
+      setActiveChunkId(null);
+      if (cancelled) return;
+
+      // Both passes done — hold on the slide for about a minute so the
+      // student actually has time to look it over, instead of auto-
+      // advancing the moment narration finishes.
+      await wait(60000);
       if (!cancelled) onComplete();
     })();
     return () => {

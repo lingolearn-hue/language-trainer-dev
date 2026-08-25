@@ -10,7 +10,7 @@ import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
 import { RateControls } from "./RateControls";
 import { TeacherCaption } from "./TeacherCaption";
-import { cancelSpeech, setCurrentTargetLang, speak } from "../engine/speech";
+import { cancelSpeech, setCurrentTargetLang, speak, requestSkipForward } from "../engine/speech";
 import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
 import { SlideControlsContext } from "../context/SlideControlsContext";
 import { useIsLandscape } from "../hooks/useIsLandscape";
@@ -33,6 +33,32 @@ export function Session({
   const { state, dispatch } = useSession();
   const { lesson, blockIndex, status, lang, display, style, mode } = state;
   const block = lesson.blocks[blockIndex];
+
+  // Bumped by the overlay's -10s ("restart this slide") control — folded
+  // into every block component's key below, so React fully unmounts and
+  // remounts the block on restart instead of just updating props. That's
+  // what makes "restart" actually re-run each block's own auto-play
+  // effect from the top, reusing existing per-block mount logic rather
+  // than needing bespoke rewind support in every block component.
+  const [restartTick, setRestartTick] = useState(0);
+  const sessionKey = `${block.id}-r${restartTick}`;
+
+  // YouTube-style tap overlay: tapping the slide shows playback controls
+  // (rather than immediately toggling pause itself, matching how video
+  // players actually behave), auto-hiding after a few seconds of no
+  // further interaction.
+  const [overlayVisible, setOverlayVisible] = useState(false);
+  const overlayHideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  function showOverlay() {
+    setOverlayVisible(true);
+    if (overlayHideTimer.current) clearTimeout(overlayHideTimer.current);
+    overlayHideTimer.current = setTimeout(() => setOverlayVisible(false), 3000);
+  }
+  useEffect(() => {
+    return () => {
+      if (overlayHideTimer.current) clearTimeout(overlayHideTimer.current);
+    };
+  }, []);
 
   // Tells engine/speech.ts which language is the "target" (learning)
   // language so it can apply the slower target-rate to it and the
@@ -196,6 +222,40 @@ export function Session({
     dispatch({ type: "NEXT_BLOCK" });
   }
 
+  // Overlay controls (YouTube-style tap-to-reveal). Previous/Next reuse
+  // the same GOTO_BLOCK action the audit bar's arrows already use.
+  const canGoPrev = blockIndex > 0;
+  const canGoNext = blockIndex < lesson.blocks.length - 1;
+  function handleOverlayPrev() {
+    if (!canGoPrev) return;
+    cancelSpeech();
+    dispatch({ type: "GOTO_BLOCK", index: blockIndex - 1 });
+    showOverlay();
+  }
+  function handleOverlayNext() {
+    if (!canGoNext) return;
+    cancelSpeech();
+    dispatch({ type: "GOTO_BLOCK", index: blockIndex + 1 });
+    showOverlay();
+  }
+  function handleOverlayPause() {
+    handlePause();
+    showOverlay();
+  }
+  function handleSkipForward() {
+    // No real audio timeline to scrub in a TTS-driven lesson — approximated
+    // as "cut short whatever's happening right now" (see requestSkipForward).
+    requestSkipForward();
+    showOverlay();
+  }
+  function handleSkipBack() {
+    // Same reasoning in reverse: no timeline to rewind, so "back 10s" is
+    // approximated as restarting the current slide from its beginning.
+    cancelSpeech();
+    setRestartTick((t) => t + 1);
+    showOverlay();
+  }
+
   return (
     <div
       className={`session mode-${block.displayMode}${chromeHidden ? " chrome-hidden" : ""}${subtitlesHidden ? " subtitles-hidden" : ""}`}
@@ -232,9 +292,10 @@ export function Session({
 
       <SlideControlsContext.Provider value={landscape ? controlsRail : null}>
         <div className="session-layout">
-          <div className="slide-area">
+          <div className="slide-area" onClick={showOverlay}>
             {block.type === "vocabDrill" && (
               <VocabDrillBlock
+                key={sessionKey}
                 block={block}
                 lang={lang}
                 trainer={trainer}
@@ -244,6 +305,7 @@ export function Session({
             )}
             {block.type === "readalong" && (
               <ReadalongBlock
+                key={sessionKey}
                 block={block}
                 lang={lang}
                 trainer={trainer}
@@ -253,6 +315,7 @@ export function Session({
             )}
             {block.type === "intro" && (
               <IntroBlock
+                key={sessionKey}
                 block={block}
                 lang={lang}
                 trainer={trainer}
@@ -262,6 +325,7 @@ export function Session({
             )}
             {block.type === "grammar" && (
               <GrammarBlock
+                key={sessionKey}
                 block={block}
                 lang={lang}
                 display={display}
@@ -272,6 +336,7 @@ export function Session({
             )}
             {block.type === "agenda" && (
               <AgendaBlock
+                key={sessionKey}
                 block={block}
                 lang={lang}
                 trainer={trainer}
@@ -281,6 +346,7 @@ export function Session({
             )}
             {block.type === "selfIntro" && (
               <SelfIntroBlock
+                key={sessionKey}
                 block={block}
                 lang={lang}
                 trainer={trainer}
@@ -305,7 +371,7 @@ export function Session({
               }
             >
               <TeacherCaption
-                key={block.id}
+                key={sessionKey}
                 block={block}
                 lang={lang}
                 trainer={trainer}
@@ -342,6 +408,44 @@ export function Session({
                 </div>
               </div>
             </div>
+
+            {overlayVisible && (
+              <div
+                className="slide-tap-overlay"
+                style={
+                  slideSize.width > 0
+                    ? { width: slideSize.width, height: slideSize.height }
+                    : { width: "100%", height: "100%" }
+                }
+                onClick={(e) => e.stopPropagation()} // clicking a control shouldn't also re-trigger the slide-area's own show-overlay handler
+              >
+                <button
+                  className="slide-tap-btn"
+                  onClick={handleOverlayPrev}
+                  disabled={!canGoPrev}
+                  title="Previous slide"
+                >
+                  ⏮
+                </button>
+                <button className="slide-tap-btn" onClick={handleSkipBack} title="Restart this slide">
+                  ⏪ 10
+                </button>
+                <button className="slide-tap-btn slide-tap-btn-main" onClick={handleOverlayPause} title="Pause">
+                  ⏸
+                </button>
+                <button className="slide-tap-btn" onClick={handleSkipForward} title="Skip ahead">
+                  10 ⏩
+                </button>
+                <button
+                  className="slide-tap-btn"
+                  onClick={handleOverlayNext}
+                  disabled={!canGoNext}
+                  title="Next slide"
+                >
+                  ⏭
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="right-rail">

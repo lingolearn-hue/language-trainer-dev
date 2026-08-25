@@ -682,6 +682,24 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 }
 .slide-overlay-bounds > * { pointer-events: auto; }
 
+/* YouTube-style tap-to-reveal playback overlay — same positioning
+   pattern as .slide-overlay-bounds above (anchored to the slide's own
+   rendered pixel box, not the outer container), semi-transparent scrim
+   with a row of controls centered on top. */
+.slide-tap-overlay {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  background: rgba(0,0,0,0.35); border-radius: 8px; z-index: 40;
+}
+.slide-tap-btn {
+  background: rgba(255,255,255,0.15); color: #fff; border: none;
+  border-radius: 50%; width: 44px; height: 44px; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.slide-tap-btn:disabled { opacity: 0.3; cursor: default; }
+.slide-tap-btn-main { width: 56px; height: 56px; font-size: 24px; background: rgba(255,255,255,0.25); }
+
 /* Teacher audio caption — plays the block's spoken framing line as TTS
    audio and shows it as a subtitle. */
 .teacher-caption {

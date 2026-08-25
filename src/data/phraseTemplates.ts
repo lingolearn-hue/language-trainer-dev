@@ -55,7 +55,7 @@ export const PHRASES: Partial<Record<LangCode, PhraseSet>> = {
     welcomeTitle: (topic) => `ようこそ！きょうは ${topic}について べんきょうしましょう。`,
     lessonLabel: (n, topic) => `だい${n}か — ${topic}`,
     agendaSpoken: (topic, grammarTitle) =>
-      `きょうは まず じこしょうかい、それから ${topic}の たんごを べんきょうします。そのあと ${grammarTitle}を みて、ふたつの かいわを れんしゅうし、さいごに はつおんの れんしゅうを します。`,
+      `きょうは まず はじめの あいさつ、それから ${topic}の たんごを べんきょうします。そのあと ${grammarTitle}を みて、ふたつの かいわを れんしゅうし、さいごに はつおんの れんしゅうを します。`,
     warmup: "はじめる まえに、すこし はなしましょう。",
     introTransition:
       "まず、わたしの ぶんしょうを いっしょに よみましょう。そのあと、もういちど よんでも いいし、じぶんの ことばで はなしても いいですよ。",
@@ -81,7 +81,7 @@ export const PHRASES: Partial<Record<LangCode, PhraseSet>> = {
     pronunciationIntro: "はつおんの れんしゅうを しましょう。",
     songIntro: "さいごに、うたを うたいましょう。",
     agendaLabels: {
-      intro: "じこしょうかい",
+      intro: "はじめに",
       selfIntro: "あなたの じこしょうかい",
       vocab: (topic) => `たんご：${topic}`,
       grammar: (title) => `ぶんぽう：${title}`,
@@ -90,7 +90,7 @@ export const PHRASES: Partial<Record<LangCode, PhraseSet>> = {
       pronunciation: "はつおんの れんしゅう",
       song: "うた",
     },
-    labels: { intro: "じこしょうかい", agenda: "ながれ", vocabPrefix: "たんご：", pronunciation: "はつおんの れんしゅう", song: "うた" },
+    labels: { intro: "はじめに", agenda: "ながれ", vocabPrefix: "たんご：", pronunciation: "はつおんの れんしゅう", song: "うた" },
   },
   de: {
     welcomeTitle: (topic) => `Willkommen! Heute lernen wir Wörter rund um ${topic}.`,

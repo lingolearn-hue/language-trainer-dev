@@ -120,5 +120,75 @@ export const topicLandscape: TopicLesson = {
         { id: "p4", category: "pitch", translations: { ja: "のぼる", en: "to climb (LHL) — new word, single pattern", de: "besteigen (LHL) — neues Wort, einzelnes Muster", zh: "攀登（低高低）——新词，单一声调" } }
       ]
     }
+  },
+  extraDrills: {
+    ja: [
+      {
+        id: "grammar-drill",
+        title: {
+          ja: "ぶんぽうの れんしゅう",
+          en: "Grammar Practice",
+          de: "Grammatiktraining",
+          zh: "语法练习"
+        },
+        spokenIntro: {
+          ja: "つぎは、ひかくの ひょうげんを もっと れんしゅうしましょう。",
+          en: "Next, let's practice comparative expressions some more.",
+          de: "Als Nächstes üben wir Vergleichsausdrücke noch etwas mehr.",
+          zh: "接下来，让我们再多练习一下比较句型。"
+        },
+        groupLabels: {
+          yori: { ja: "より", en: "より (more ~ than)", de: "より (mehr ~ als)", zh: "より（比~更）" },
+          nohouga: { ja: "のほうが", en: "のほうが (the ~er one)", de: "のほうが (der/die/das ~ere)", zh: "のほうが（更~的那个）" },
+          ichiban: { ja: "いちばん", en: "いちばん (the most ~)", de: "いちばん (der/die/das ~ste)", zh: "いちばん（最~）" },
+          hodonai: { ja: "ほど〜ない", en: "ほど〜ない (not as ~ as)", de: "ほど〜ない (nicht so ~ wie)", zh: "ほど〜ない（没有~那么）" }
+        },
+        items: [
+          { id: "y1", category: "yori", translations: { ja: "やまは うみより たかいです。", en: "The mountain is taller than the sea.", de: "Der Berg ist höher als das Meer.", zh: "山比海更高。" } },
+          { id: "y2", category: "yori", translations: { ja: "かわは みずうみより ながいです。", en: "The river is longer than the lake.", de: "Der Fluss ist länger als der See.", zh: "河流比湖更长。" } },
+          { id: "y3", category: "yori", translations: { ja: "もりは こうえんより おおきいです。", en: "The forest is bigger than the park.", de: "Der Wald ist größer als der Park.", zh: "森林比公园更大。" } },
+          { id: "y4", category: "yori", translations: { ja: "しまは たにより ちいさいです。", en: "The island is smaller than the valley.", de: "Die Insel ist kleiner als das Tal.", zh: "岛屿比山谷更小。" } },
+          { id: "y5", category: "yori", translations: { ja: "なつは ふゆより あついです。", en: "Summer is hotter than winter.", de: "Der Sommer ist heißer als der Winter.", zh: "夏天比冬天更热。" } },
+          { id: "y6", category: "yori", translations: { ja: "とうきょうは きょうとより にぎやかです。", en: "Tokyo is livelier than Kyoto.", de: "Tokio ist lebhafter als Kyoto.", zh: "东京比京都更热闹。" } },
+          { id: "y7", category: "yori", translations: { ja: "この みちは あの みちより みじかいです。", en: "This path is shorter than that path.", de: "Dieser Weg ist kürzer als jener Weg.", zh: "这条路比那条路更短。" } },
+          { id: "y8", category: "yori", translations: { ja: "うみは かわより ふかいです。", en: "The sea is deeper than the river.", de: "Das Meer ist tiefer als der Fluss.", zh: "海比河更深。" } },
+          { id: "y9", category: "yori", translations: { ja: "けさは きのうより さむいです。", en: "This morning is colder than yesterday.", de: "Heute Morgen ist es kälter als gestern.", zh: "今天早上比昨天更冷。" } },
+          { id: "y10", category: "yori", translations: { ja: "でんしゃは バスより はやいです。", en: "The train is faster than the bus.", de: "Der Zug ist schneller als der Bus.", zh: "电车比公交车更快。" } },
+
+          { id: "n1", category: "nohouga", translations: { ja: "やまのほうが うみより しずかです。", en: "The mountain is quieter than the sea.", de: "Der Berg ist ruhiger als das Meer.", zh: "山比海更安静。" } },
+          { id: "n2", category: "nohouga", translations: { ja: "もりのほうが たにより きけんです。", en: "The forest is more dangerous than the valley.", de: "Der Wald ist gefährlicher als das Tal.", zh: "森林比山谷更危险。" } },
+          { id: "n3", category: "nohouga", translations: { ja: "はまのほうが しまより ひろいです。", en: "The beach is wider than the island.", de: "Der Strand ist weitläufiger als die Insel.", zh: "海滩比岛屿更宽阔。" } },
+          { id: "n4", category: "nohouga", translations: { ja: "でんしゃのほうが バスより べんりです。", en: "The train is more convenient than the bus.", de: "Der Zug ist praktischer als der Bus.", zh: "电车比公交车更方便。" } },
+          { id: "n5", category: "nohouga", translations: { ja: "こっちのほうが あっちより ちかいです。", en: "This one is closer than that one.", de: "Dieses hier ist näher als jenes dort.", zh: "这边比那边更近。" } },
+          { id: "n6", category: "nohouga", translations: { ja: "あさのほうが よるより すずしいです。", en: "Morning is cooler than night.", de: "Der Morgen ist kühler als die Nacht.", zh: "早上比晚上更凉爽。" } },
+          { id: "n7", category: "nohouga", translations: { ja: "さかなのほうが にくより やすいです。", en: "Fish is cheaper than meat.", de: "Fisch ist billiger als Fleisch.", zh: "鱼比肉更便宜。" } },
+          { id: "n8", category: "nohouga", translations: { ja: "とざんのほうが かいすいよくより たいへんです。", en: "Mountain climbing is harder than swimming in the sea.", de: "Bergsteigen ist anstrengender als Meerbaden.", zh: "爬山比海泳更辛苦。" } },
+          { id: "n9", category: "nohouga", translations: { ja: "かわのほうが うみより あさいです。", en: "The river is shallower than the sea.", de: "Der Fluss ist flacher als das Meer.", zh: "河比海更浅。" } },
+          { id: "n10", category: "nohouga", translations: { ja: "きゅうかのほうが しごとより たのしいです。", en: "Vacation is more fun than work.", de: "Urlaub macht mehr Spaß als Arbeit.", zh: "假期比工作更有趣。" } },
+
+          { id: "i1", category: "ichiban", translations: { ja: "ふじさんは にほんで いちばん たかい やまです。", en: "Mt. Fuji is the tallest mountain in Japan.", de: "Der Fuji ist der höchste Berg in Japan.", zh: "富士山是日本最高的山。" } },
+          { id: "i2", category: "ichiban", translations: { ja: "これは いちばん うつくしい けしきです。", en: "This is the most beautiful scenery.", de: "Das ist die schönste Aussicht.", zh: "这是最美的风景。" } },
+          { id: "i3", category: "ichiban", translations: { ja: "なつが いちばん あつい きせつです。", en: "Summer is the hottest season.", de: "Der Sommer ist die heißeste Jahreszeit.", zh: "夏天是最热的季节。" } },
+          { id: "i4", category: "ichiban", translations: { ja: "あの しまが いちばん ちいさいです。", en: "That island is the smallest.", de: "Jene Insel ist die kleinste.", zh: "那个岛屿最小。" } },
+          { id: "i5", category: "ichiban", translations: { ja: "この みちが いちばん あんぜんです。", en: "This path is the safest.", de: "Dieser Weg ist der sicherste.", zh: "这条路最安全。" } },
+          { id: "i6", category: "ichiban", translations: { ja: "びわこは にほんで いちばん おおきい みずうみです。", en: "Lake Biwa is the biggest lake in Japan.", de: "Der Biwa-See ist der größte See Japans.", zh: "琵琶湖是日本最大的湖。" } },
+          { id: "i7", category: "ichiban", translations: { ja: "あの やまが いちばん きけんです。", en: "That mountain is the most dangerous.", de: "Jener Berg ist der gefährlichste.", zh: "那座山最危险。" } },
+          { id: "i8", category: "ichiban", translations: { ja: "けさが いちばん さむかったです。", en: "This morning was the coldest.", de: "Heute Morgen war es am kältesten.", zh: "今天早上最冷。" } },
+          { id: "i9", category: "ichiban", translations: { ja: "この たびさきが いちばん にんきです。", en: "This travel destination is the most popular.", de: "Dieses Reiseziel ist am beliebtesten.", zh: "这个旅游目的地最受欢迎。" } },
+          { id: "i10", category: "ichiban", translations: { ja: "かれが いちばん はやく はしります。", en: "He runs the fastest.", de: "Er läuft am schnellsten.", zh: "他跑得最快。" } },
+
+          { id: "h1", category: "hodonai", translations: { ja: "この やまは あの やまほど たかくないです。", en: "This mountain isn't as tall as that mountain.", de: "Dieser Berg ist nicht so hoch wie jener Berg.", zh: "这座山没有那座山高。" } },
+          { id: "h2", category: "hodonai", translations: { ja: "かわは うみほど ふかくないです。", en: "The river isn't as deep as the sea.", de: "Der Fluss ist nicht so tief wie das Meer.", zh: "河没有海深。" } },
+          { id: "h3", category: "hodonai", translations: { ja: "しまは たいりくほど おおきくないです。", en: "The island isn't as big as the continent.", de: "Die Insel ist nicht so groß wie der Kontinent.", zh: "岛屿没有大陆大。" } },
+          { id: "h4", category: "hodonai", translations: { ja: "きょうは きのうほど あつくないです。", en: "Today isn't as hot as yesterday.", de: "Heute ist es nicht so heiß wie gestern.", zh: "今天没有昨天热。" } },
+          { id: "h5", category: "hodonai", translations: { ja: "この みちは あの みちほど けわしくないです。", en: "This path isn't as steep as that path.", de: "Dieser Weg ist nicht so steil wie jener Weg.", zh: "这条路没有那条路陡。" } },
+          { id: "h6", category: "hodonai", translations: { ja: "もりは まちほど にぎやかじゃないです。", en: "The forest isn't as lively as the city.", de: "Der Wald ist nicht so belebt wie die Stadt.", zh: "森林没有城市热闹。" } },
+          { id: "h7", category: "hodonai", translations: { ja: "はまは プールほど きれいじゃないです。", en: "The beach isn't as clean as the pool.", de: "Der Strand ist nicht so sauber wie das Schwimmbad.", zh: "海滩没有游泳池干净。" } },
+          { id: "h8", category: "hodonai", translations: { ja: "たにの けしきは やまほど うつくしくないです。", en: "The valley's scenery isn't as beautiful as the mountain's.", de: "Die Aussicht des Tals ist nicht so schön wie die des Bergs.", zh: "山谷的风景没有山上美。" } },
+          { id: "h9", category: "hodonai", translations: { ja: "でんしゃは ひこうきほど はやくないです。", en: "The train isn't as fast as the airplane.", de: "Der Zug ist nicht so schnell wie das Flugzeug.", zh: "电车没有飞机快。" } },
+          { id: "h10", category: "hodonai", translations: { ja: "ことしの ふゆは きょねんほど さむくないです。", en: "This winter isn't as cold as last year.", de: "Dieser Winter ist nicht so kalt wie letztes Jahr.", zh: "今年冬天没有去年冷。" } }
+        ]
+      }
+    ]
   }
 };

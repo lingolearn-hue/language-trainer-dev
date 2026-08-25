@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 76 — 2026-08-21
+Version: 83 — 2026-08-25
 
 React-based long-form language tutor simulation (45-90 min sessions).
 Static content, multiple trainer personas, block-based session engine
@@ -9,9 +9,9 @@ with pause/resume, fully auto-playing by default.
 See `/spec` (in project history) for concept, trainer, and lesson-structure docs.
 
 See `docs/topic-lesson-system.md` for the topic-based lesson architecture
-(proof of concept — vocab/dialogue/song shared across target languages,
-grammar/pronunciation authored per language). Status and next steps for
-migrating the rest of the built lessons are documented there.
+(vocab/dialogue/song shared across target languages, grammar/pronunciation
+authored per language) — 19 topics built. Status and next steps are
+documented there.
 
 See `docs/song-melodies.md` for how song melody playback works and how
 to add melody data for a new song.
@@ -22,72 +22,77 @@ tracked in the repo itself instead of only existing in session
 workspace. Build status there reflects what's actually implemented vs
 still planned.
 
-## Current state (as of v70 — see note below on changelog staleness)
+## Current state (as of v83 — see note below on changelog staleness)
 
-- **Languages**: de, en, zh, ja (`LangCode`). All 6 possible pairs among
-  these 4 languages have at least one trainer.
-- **Trainers**: 9 — Max, Jonas, Lena, Mei, Orb-A, Orb-B (original 6,
-  covering all ordered de/en/zh pairs), Yui (ja↔en), Hiro (ja↔de), Lin
-  (zh↔ja). Male/female/orb avatars (currently CSS circle + initials —
-  see `docs/` for an in-progress illustrated-avatar exploration, not
-  wired in yet), each bilingual with its own voice profile and default
-  teaching style.
-- **Lessons**: 16 hand-written + 1 generated (topic-based, see below) —
-  - **Japanese (`japanese-beginner`)**: 13 lessons, rows 1–13 of the A1
-    master table (Family, Body, Appearance, Emotions, Food, Home,
-    Clothing, Shopping, Animals, Health, Travel, Directions, Time). Full
-    ja/en/de coverage on all 13; zh done for lessons 1–5, still pending
-    for 6–13. Grammar/pronunciation are genuinely Japanese-specific per
-    lesson (pitch accent, sokuon, particle assimilation, etc.), not
-    translated German content.
-  - **German (`german-beginner`)**: 2 lessons — Lektion 2 (predates the
-    master table, self-intro + general vocab) and Lektion 11 (Travel,
-    built directly from the table: wo/wohin case grammar,
-    consonant-cluster pronunciation).
-  - **English (`english-advanced-c1`)**: 1 lesson, "Voices from Orbit"
-    (space-travel themed, C1 grammar: inversion, cleft sentences,
-    nominalization) — standalone, not on the A1 track.
-  - **Topic-based (proof of concept)**: `topic-05-food.ts` generates a
-    ja-target AND a de-target `LessonPlan` from one shared vocab/dialogue
-    file — see `docs/topic-lesson-system.md` for the architecture and
-    what's still needed to migrate the rest.
-- **Songs**: 9 song blocks across the built lessons, each with real
-  melody data (`data/songMelodies.ts`) — a toggle on the song's footer
-  switches between spoken-lyric narration (TTS, as before) and
-  melody-only playback (Web Audio oscillator tones, synced to the exact
-  same lyric lines). Melodies are plain note-sequence transcriptions of
-  public-domain tunes, not sourced from external MIDI files (see the doc
-  section below for why).
-- **Vocab sourcing**: `scripts/lookup_vocab.py` cross-references English
-  glosses against `vocab-games-dev`'s real HSK/JLPT/CEFR-tagged word
-  lists (zh/de/ja/fr/es) — a review aid, not full automation; every
-  suggestion still needs a human pick (documented false-positive cases
-  exist, e.g. English "chest" matching a suitcase word).
+- **Languages**: de, en, zh, ja (`LangCode`). Only `ja` and `de` have any
+  grammar/pronunciation authored anywhere — `en`/`zh` exist as shared
+  vocab/dialogue/song data and in trainer language lists, but no
+  `en`-/`zh`-target lesson can be generated yet.
+- **Trainers**: 3 — **Vincent** (en/zh/de), **Max** (ja/de, the only
+  trainer whose full language set already has matching lesson content
+  both ways), **Yui** (ja/en/zh). Each teaches every direction among
+  their own languages, not a fixed pair. Real generated avatars
+  (Lorelei/DiceBear, CC0, keyed by seed) — not placeholders. A blue ring
+  appears around the trainer's avatar while speaking; a green ring
+  appears around the student's (plain grey silhouette) during genuine
+  "your turn" windows. Per-language ordered voice-name fallback lists
+  (`voicesByLang`), since most platforms default to a female voice per
+  locale unless the user has downloaded an alternative.
+- **Lessons**: 19 topic-based (topic-lesson system, all Japanese; 13 of
+  those also German) + 3 hand-written standalone (German Lektion 2,
+  German Lektion 11, English C1 "Voices from Orbit") = 32 total. See
+  `docs/topic-lesson-system.md` for the full architecture, current
+  per-feature coverage (self-intro slides, extra drill slides,
+  row-by-row pronunciation comparison, per-language content overrides),
+  and known gaps.
+- **Songs**: 8 of 19 topics have one; 7 have real melody data
+  (`data/songMelodies.ts`, Web Audio oscillator playback synced to
+  lyric lines) — 1 (Topic 19, Weather) doesn't yet. See
+  `docs/song-melodies.md`.
+- **Lesson picker**: single-column compact rows (number+level | title+
+  content summary | status+slide-count), sorted by level then lesson
+  number. Lesson mastery status (Unseen / For review / Archived) persists
+  per lesson, hiding mastered/snoozed lessons from the default view. A
+  compact language-filter (two button rows, "I want to learn"/"I already
+  know") is lifted to shared state between the trainer-select and
+  lesson-select screens — linked and persisted, not two independently
+  drifting copies.
+- **Display style**: Computer/Phone toggle (was Structured/Flexible).
+  Phone mode splits multi-column vocab/pronunciation slides one column
+  per slide (by category, not an arbitrary split), at a higher font
+  scale. Landscape/portrait orientation is a separate, unrelated CSS
+  mechanism — both display styles support both orientations.
 - **Session engine**: fully auto-plays end to end once started, with
-  pause/resume, tap-to-pause (tapping the slide center), a screen wake
-  lock, session-level style (structured/flexible) and mode (1:1/
-  classroom) toggles, a declutter toggle (hides header/controls, keeps
-  the avatar row), a subtitles toggle, and an audit bar for QA. User
-  settings (trainer, language pair, style) persist across sessions via
-  `localStorage` (`engine/userSettings.ts`).
-- **Narration engine**: mixed-script sentences (e.g. English grammar
-  notes embedding Japanese particles) are spoken with each script routed
-  to its correct voice automatically; every block speaks its own title
-  as a sacrificial "primer" utterance before real content, working
-  around a browser quirk where the first utterance per navigation can
-  silently fail to play; dialogue/vocab pause timing scales with actual
-  sentence length instead of a fixed value.
-- **Slide rendering**: 960×600 (16:10) Beamer-style frame, scaled via
-  `ResizeObserver` to always fully fill the available width or height in
-  any orientation. Vocab/pronunciation tables use LaTeX-style r|l
-  alignment (target right-aligned, source left-aligned, divider between)
-  and auto-split into "Label 1"/"Label 2" sub-columns past 16 rows.
-  Dialogue font size is computed per-slide from estimated wrapped-row
-  count, not a fixed size. A persistent slide footer shows
-  language/level/lesson-number/date/page-count, with prev/next arrows.
+  pause/resume, tap-to-pause, a screen wake lock, session-level style
+  and mode (1:1/classroom) toggles, a declutter toggle (speed controls
+  stay visible even when decluttered), a subtitles toggle, and an audit
+  bar for QA. User settings persist via `localStorage`
+  (`engine/userSettings.ts`).
+- **Narration engine**: mixed-script sentences routed to the correct
+  voice per segment automatically; every block speaks its own title as
+  a sacrificial "primer" utterance before real content (works around a
+  browser quirk where the first utterance per navigation can silently
+  fail); dialogue/vocab pause timing scales with sentence length. Real
+  bug fixed: `speak()` used to be able to hang forever if the browser
+  silently never fired `onend`/`onerror` (tab backgrounding, Chrome
+  speech-engine idle bugs, iOS quirks) — every block's auto-play is a
+  sequential await-chain, so one stuck utterance stalled the whole
+  lesson. Now races against a generous length-scaled timeout instead.
+- **Intro slide**: no longer a near-empty static caption. Opens with a
+  short framing message spoken in both languages in sequence (source
+  fully, then target fully), then a 14-line monologue as a real 3-phase
+  (echo/shadow/silent) read-along, reusing the same target-left/
+  source-right layout dialogues already use.
+- **Slide rendering**: 960×600 scaled via `ResizeObserver` to always
+  fully fill the available width or height in any orientation.
+  Vocab/pronunciation tables group into independent columns by category,
+  with an opt-in `pairedColumns` mode for genuine row-by-row minimal-pair
+  comparison (e.g. pitch-accent HL/LH shown side by side) instead of two
+  separately-flowing lists. Dialogue font size is computed per-slide from
+  estimated wrapped-row count.
 - **PWA**: installable, offline-capable (manifest + service worker via
-  `vite-plugin-pwa`), with a "Check for updates" button on the front
-  page (updates never apply silently mid-session).
+  `vite-plugin-pwa`), with a "Check for updates" button (updates never
+  apply silently mid-session).
 
 ### Changelog note
 

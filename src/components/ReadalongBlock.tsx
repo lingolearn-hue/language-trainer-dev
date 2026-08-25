@@ -181,9 +181,17 @@ export function ReadalongBlock({
   // (a wrapped line takes 2+ visual rows, which a row-count-only estimate
   // would miss) — so this estimates each line's likely VISUAL row count
   // from its text length, not just counts 14 logical lines as 14 rows.
-  // ~28 characters is a rough per-row budget for the target/source column
-  // width; long lines that would wrap are counted as 2+ rows accordingly.
-  const CHARS_PER_ROW_ESTIMATE = 28;
+  // Per-row character budget differs by layout: no-speakers ("solo")
+  // mode gives target/source columns the full grid (1fr + 1fr), while
+  // speaker mode shares that same width with a minmax(36px, auto)
+  // speaker column — so a fixed budget either under- or over-estimates
+  // wrapping depending on which layout is active, causing a visible font
+  // size jump specifically when a slide switches between dialogue
+  // (speakers) and monologue (no speakers) content, even for similar
+  // text length. Wider columns in solo mode get a proportionally larger
+  // budget so the estimate — and the resulting font size — stays
+  // consistent across both layouts instead of jumping at the switch.
+  const CHARS_PER_ROW_ESTIMATE = hasSpeakers ? 26 : 32;
   const totalVisualRows = content.lines.reduce((sum, line) => {
     const targetLen = (line.translations[lang.targetLang] ?? "").length;
     const sourceLen = (line.translations[lang.sourceLang] ?? "").length;

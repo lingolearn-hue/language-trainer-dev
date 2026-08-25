@@ -71,12 +71,18 @@ spoken-lyric playback only.
 
 ## Current coverage
 
-All 9 currently-live song blocks have melody data, verified
-programmatically (every lyric line id has a matching melody entry, zero
-gaps): Row Row Row Your Boat (German + Japanese versions — same tune,
-duplicated under both block ids), Frère Jacques / Bruder Jakob, Alle
-meine Entchen, London Bridge, Twinkle Twinkle Little Star, Head
-Shoulders Knees and Toes, Itsy Bitsy Spider, Old MacDonald Had a Farm.
+7 of 8 currently-live song blocks have melody data (verified
+programmatically — every lyric line id has a matching melody entry, zero
+gaps, for the ones that do): Row Row Row Your Boat (German + Japanese
+versions — same tune, duplicated under both block ids), Frère Jacques /
+Bruder Jakob, Alle meine Entchen, London Bridge, Twinkle Twinkle Little
+Star, Head Shoulders Knees and Toes, Itsy Bitsy Spider, Old MacDonald Had
+a Farm.
+
+**Known gap:** Topic 19 (Weather)'s song — "てんきの うた" / "The Weather
+Song" — has no melody entry yet. Falls back gracefully to spoken-lyric
+playback only (no toggle button appears, per the design below), but
+still needs an actual melody transcribed.
 
 ## Adding a melody for a new song
 

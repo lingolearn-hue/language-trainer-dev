@@ -326,8 +326,34 @@ export function primeSpeechSynthesis() {
   window.speechSynthesis.speak(utter);
 }
 
+// "Skip forward" pub/sub: any currently-pending wait() resolves
+// immediately when this fires, instead of running out its full timer.
+// Used by the slide overlay's +10s control — there's no real audio
+// timeline to scrub in a TTS-driven lesson, so "skip forward" is
+// approximated as "cut short whatever pause is happening right now and
+// let the auto-play sequence move on," combined with cancelSpeech() to
+// also cut off any utterance currently mid-sentence.
+type SkipListener = () => void;
+const skipListeners = new Set<SkipListener>();
+
+export function requestSkipForward() {
+  cancelSpeech();
+  skipListeners.forEach((l) => l());
+}
+
 export function wait(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  return new Promise((resolve) => {
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      skipListeners.delete(finish);
+      clearTimeout(timer);
+      resolve();
+    };
+    const timer = setTimeout(finish, ms);
+    skipListeners.add(finish);
+  });
 }
 
 // Splits narration text into individual sentences, for callers (currently
