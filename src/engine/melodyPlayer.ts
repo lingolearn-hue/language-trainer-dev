@@ -48,18 +48,19 @@ export function stopMelody(): void {
   currentStopFns = [];
 }
 
-// Plays one line's note sequence and resolves once it's done playing —
-// awaited the same way speak() is, so it drops into ReadalongBlock's
-// existing phase loop (pauses, cancellation checks, etc.) with no other
-// changes needed there.
-export function playMelodyLine(melody: SongMelody, lineId: string): Promise<void> {
-  const notes = melody.lines[lineId];
+// Schedules a group of notes starting right now (ctx.currentTime),
+// back-to-back per their own beat durations — used both by
+// playMelodyLine (the whole line, melody-only mode) and by
+// speakLineWithMelody in engine/speech.ts (one word's worth of notes at
+// a time, anchored to real onboundary event timing, for the voice+
+// melody overlay mode). Returns how long the group takes to play, in ms.
+export function playNoteGroup(bpm: number, notes: MelodyNote[]): number {
   const ctx = getCtx();
-  if (!notes || !ctx) return Promise.resolve();
+  if (!ctx || notes.length === 0) return 0;
 
-  const beatSec = 60 / melody.bpm;
+  const beatSec = 60 / bpm;
   let cursor = ctx.currentTime;
-  const stopFns: Array<() => void> = [];
+  const startedAt = cursor;
 
   for (const note of notes) {
     const dur = note.beats * beatSec;
@@ -77,7 +78,7 @@ export function playMelodyLine(melody: SongMelody, lineId: string): Promise<void
       osc.connect(gain).connect(ctx.destination);
       osc.start(cursor);
       osc.stop(cursor + dur);
-      stopFns.push(() => {
+      currentStopFns.push(() => {
         try {
           osc.stop();
         } catch {
@@ -88,7 +89,35 @@ export function playMelodyLine(melody: SongMelody, lineId: string): Promise<void
     cursor += dur;
   }
 
-  currentStopFns = stopFns;
-  const totalMs = (cursor - ctx.currentTime) * 1000;
-  return new Promise((resolve) => setTimeout(resolve, Math.max(0, totalMs)));
+  return (cursor - startedAt) * 1000;
+}
+
+// Splits an ordered note list into `groupCount` groups, as evenly as
+// possible, using every note exactly once — e.g. 7 notes into 3 groups
+// gives [3, 2, 2] rather than an uneven [1, 1, 5]. Used to map a line's
+// melody notes onto its words for the voice+melody overlay mode, since
+// melody data is written one note per syllable while word-boundary
+// events only give word-level timing — see engine/speech.ts's
+// speakLineWithMelody for the honest limitation this implies.
+export function distributeNotes<T>(notes: T[], groupCount: number): T[][] {
+  const groups: T[][] = [];
+  let idx = 0;
+  for (let g = 1; g <= groupCount; g++) {
+    const end = Math.round((g * notes.length) / groupCount);
+    groups.push(notes.slice(idx, end));
+    idx = end;
+  }
+  return groups;
+}
+
+// Plays one line's note sequence and resolves once it's done playing —
+// awaited the same way speak() is, so it drops into ReadalongBlock's
+// existing phase loop (pauses, cancellation checks, etc.) with no other
+// changes needed there.
+export function playMelodyLine(melody: SongMelody, lineId: string): Promise<void> {
+  const notes = melody.lines[lineId];
+  if (!notes) return Promise.resolve();
+  currentStopFns = []; // fresh line — previous line's (already-finished) stop fns don't need to accumulate forever
+  const durationMs = playNoteGroup(melody.bpm, notes);
+  return new Promise((resolve) => setTimeout(resolve, durationMs));
 }

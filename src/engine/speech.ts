@@ -241,6 +241,8 @@ async function speakSegment(
   return Promise.race([speechPromise, timeoutPromise]);
 }
 
+import { playNoteGroup, distributeNotes, type SongMelody } from "./melodyPlayer";
+
 // Real bug fix: many grammar-note and framing sentences intentionally
 // embed a target-language word inside otherwise English/German/Chinese
 // text for teaching clarity (e.g. "Today's grammar is how to use です
@@ -292,6 +294,100 @@ export async function speak(
     if (i < segments.length - 1) await wait(ELLIPSIS_PAUSE_MS);
   }
   setSpeaking(false);
+}
+
+// Voice+melody overlay mode ("both" in engine/melodyToggle.ts) — speaks
+// the line normally (one natural utterance, full prosody intact) while
+// anchoring melody notes to REAL word-boundary event timing instead of
+// the fixed BPM schedule playMelodyLine uses. Real limitation, not a bug:
+// melody data is written one note per syllable, but onboundary only
+// fires at word boundaries — so a multi-syllable word's notes all fire
+// together at that word's start rather than spread across its actual
+// syllables. See the engineering discussion this came from: this is
+// "option 2" (keep per-syllable melody data, approximate sub-word
+// spacing) rather than "option 1" (flatten melody data to one note per
+// word for exact sync).
+//
+// Word-boundary sync only makes sense for space-delimited text — ja/zh
+// don't use spaces, and Web Speech API word-boundary detection for those
+// languages is unreliable-to-meaningless in most browsers. Rather than
+// pretend to segment words that don't exist as such in the raw string,
+// this falls straight through to the honest version: speech and melody
+// both start together, no per-word anchoring attempted.
+export async function speakLineWithMelody(
+  text: string,
+  lang: LangCode,
+  preference: VoicePreference | undefined,
+  melody: SongMelody,
+  lineId: string
+): Promise<void> {
+  const notes = melody.lines[lineId];
+  if (!notes || notes.length === 0) {
+    return speak(text, lang, preference); // no melody for this specific line — just speak it
+  }
+
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (words.length <= 1) {
+    // No spaces to anchor to (ja/zh, or a one-word line) — both start
+    // together, honestly no finer sync than that.
+    playNoteGroup(melody.bpm, notes);
+    return speak(text, lang, preference);
+  }
+
+  const groups = distributeNotes(notes, words.length);
+  const voice = await resolveVoice(lang, preference);
+
+  return new Promise((resolve) => {
+    let done = false;
+    let wordIndex = 0;
+    let gotAnyBoundary = false;
+
+    function finish() {
+      if (done) return;
+      done = true;
+      setSpeaking(false);
+      resolve();
+    }
+
+    function fireGroup(i: number) {
+      if (i < groups.length) playNoteGroup(melody.bpm, groups[i]);
+    }
+
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = bcp47[lang];
+    if (voice) utter.voice = voice;
+    if (preference?.pitch !== undefined) utter.pitch = preference.pitch;
+    const roleMultiplier = lang === currentTargetLang ? currentRates().target : currentRates().source;
+    utter.rate = (preference?.rate ?? 1) * roleMultiplier;
+
+    utter.onstart = () => {
+      fireGroup(0);
+      wordIndex = 1;
+      // Grace period: if the browser never fires a single onboundary
+      // event (support is inconsistent, especially on Safari/iOS and
+      // many Android WebViews), give up on per-word anchoring after a
+      // beat and just play everything else now rather than leaving most
+      // of the melody silent for the rest of the line.
+      setTimeout(() => {
+        if (!gotAnyBoundary && !done) {
+          for (let i = wordIndex; i < groups.length; i++) fireGroup(i);
+          wordIndex = groups.length;
+        }
+      }, 600);
+    };
+    utter.onboundary = (event) => {
+      if (event.name && event.name !== "word") return; // ignore sentence-level boundaries some browsers also report
+      gotAnyBoundary = true;
+      fireGroup(wordIndex);
+      wordIndex++;
+    };
+    utter.onend = finish;
+    utter.onerror = finish;
+
+    setSpeaking(true);
+    window.speechSynthesis.speak(utter);
+    setTimeout(finish, estimateMaxSpeechMs(text)); // same anti-hang safety net as speakSegment
+  });
 }
 
 export function cancelSpeech() {

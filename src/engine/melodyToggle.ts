@@ -1,26 +1,38 @@
-// Shared on/off state for the "play melody instead of spoken lyrics"
-// toggle shown on song slides — same lightweight pub/sub pattern as
-// engine/speech.ts's rate controls, so any component can read/set it
-// without prop-drilling.
-type Listener = (on: boolean) => void;
+// Shared state for the song-slide toggle — 3 modes now instead of a
+// boolean: "lyrics" (spoken, no melody — the old off), "melody" (tones
+// only, no voice — the old on), and "both" (spoken AND melody together,
+// notes anchored to real word-boundary timing — see
+// engine/melodyPlayer.ts's speakLineWithMelody). Same lightweight
+// pub/sub pattern as engine/speech.ts's rate controls.
+export type MelodyMode = "lyrics" | "melody" | "both";
+
+type Listener = (mode: MelodyMode) => void;
 const listeners = new Set<Listener>();
-let melodyOn = false;
+let mode: MelodyMode = "lyrics";
 
-export function isMelodyOn(): boolean {
-  return melodyOn;
+export function getMelodyMode(): MelodyMode {
+  return mode;
 }
 
-export function setMelodyOn(on: boolean): void {
-  melodyOn = on;
-  listeners.forEach((l) => l(on));
+export function setMelodyMode(next: MelodyMode): void {
+  mode = next;
+  listeners.forEach((l) => l(next));
 }
 
-export function toggleMelody(): void {
-  setMelodyOn(!melodyOn);
+export function cycleMelodyMode(): void {
+  const order: MelodyMode[] = ["lyrics", "melody", "both"];
+  setMelodyMode(order[(order.indexOf(mode) + 1) % order.length]);
 }
 
 export function subscribeMelody(listener: Listener): () => void {
   listeners.add(listener);
-  listener(melodyOn);
+  listener(mode);
   return () => listeners.delete(listener);
+}
+
+// Back-compat shim for any remaining boolean-style checks —
+// "on" now means either melody-only or overlay mode, since both
+// involve the melody actually sounding.
+export function isMelodyOn(): boolean {
+  return mode !== "lyrics";
 }

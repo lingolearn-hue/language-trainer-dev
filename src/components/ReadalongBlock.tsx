@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { Block, ReadalongContent, LanguageSettings, ReadalongPhase } from "../types";
 import type { Trainer } from "../data/trainers";
-import { speak, wait, setStudentTurn } from "../engine/speech";
+import { speak, wait, setStudentTurn, speakLineWithMelody } from "../engine/speech";
 import { isRecognitionSupported, listenAndCompare } from "../engine/recognition";
 import { playMelodyLine, stopMelody } from "../engine/melodyPlayer";
-import { isMelodyOn, toggleMelody, subscribeMelody } from "../engine/melodyToggle";
+import { getMelodyMode, cycleMelodyMode, subscribeMelody, type MelodyMode } from "../engine/melodyToggle";
 import { SONG_MELODIES } from "../data/songMelodies";
 import { Slide } from "./Slide";
 
@@ -40,10 +40,10 @@ export function ReadalongBlock({
   // the student is reading alone and might want to check themselves.
   const [checkState, setCheckState] = useState<Record<string, CheckState>>({});
   const cancelledRef = useRef(false); // interrupts a manual phase play on a real block change
-  const [melodyOn, setMelodyOnState] = useState(isMelodyOn());
+  const [melodyMode, setMelodyModeState] = useState<MelodyMode>(getMelodyMode());
   const melody = block.isSong ? SONG_MELODIES[block.id] : undefined;
 
-  useEffect(() => subscribeMelody(setMelodyOnState), []);
+  useEffect(() => subscribeMelody(setMelodyModeState), []);
 
   const phase = PHASES[phaseIdx];
 
@@ -74,8 +74,10 @@ export function ReadalongBlock({
       if (!text) continue;
 
       if (p === "echo") {
-        if (melody && melodyOn) {
+        if (melody && melodyMode === "melody") {
           await playMelodyLine(melody, content.lines[i].id);
+        } else if (melody && melodyMode === "both") {
+          await speakLineWithMelody(text, lang.targetLang, trainer.voiceProfile, melody, content.lines[i].id);
         } else {
           await speak(text, lang.targetLang, trainer.voiceProfile);
         }
@@ -84,8 +86,10 @@ export function ReadalongBlock({
         await wait(pauseFor(text, 2800, 90, 7000)); // long pause for student to repeat, scaled by sentence length
         setStudentTurn(false);
       } else if (p === "shadow") {
-        if (melody && melodyOn) {
+        if (melody && melodyMode === "melody") {
           await playMelodyLine(melody, content.lines[i].id);
+        } else if (melody && melodyMode === "both") {
+          await speakLineWithMelody(text, lang.targetLang, trainer.voiceProfile, melody, content.lines[i].id);
         } else {
           await speak(text, lang.targetLang, trainer.voiceProfile);
         }
@@ -210,11 +214,11 @@ export function ReadalongBlock({
           <span className="phase-label">{PHASE_LABEL[phase]}</span>
           {melody && (
             <button
-              className={`melody-toggle-btn${melodyOn ? " active" : ""}`}
-              onClick={toggleMelody}
-              title={melodyOn ? "Switch to spoken lyrics" : "Switch to melody"}
+              className={`melody-toggle-btn${melodyMode !== "lyrics" ? " active" : ""}`}
+              onClick={cycleMelodyMode}
+              title="Cycle: spoken lyrics -> melody only -> both together"
             >
-              {melodyOn ? "🎵 Melody" : "🗣️ Lyrics"}
+              {melodyMode === "lyrics" ? "🗣️ Lyrics" : melodyMode === "melody" ? "🎵 Melody" : "🗣️🎵 Both"}
             </button>
           )}
           <button disabled={running} onClick={runPhase}>
