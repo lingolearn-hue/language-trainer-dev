@@ -754,6 +754,21 @@ export const topicFamily: TopicLesson = {
       }
     }
   },
+  song: {
+    // Per docs/a1-master-lesson-table-v05.md's assignment for row 1.
+    // de/en/zh lyrics reused verbatim from lesson2.ts's own Bruder Jakob
+    // block (readalongBruderJakobBlock) — same song, not retranslated.
+    // ja is new (lesson2 has no ja).
+    title: { ja: "フレール・ジャックさん", en: "Brother John", de: "Bruder Jakob", zh: "雅各弟兄" },
+    lines: [
+      { id: "sg1", translations: { ja: "ねえ ジャックさん、ねえ ジャックさん", en: "Brother John, Brother John,", de: "Bruder Jakob, Bruder Jakob,", zh: "雅各弟兄，雅各弟兄，" } },
+      { id: "sg2", translations: { ja: "ねていますか", en: "are you sleeping?", de: "schläfst du noch?", zh: "你还在睡觉吗？" } },
+      { id: "sg3", translations: { ja: "ねていますか", en: "are you sleeping?", de: "schläfst du noch?", zh: "你还在睡觉吗？" } },
+      { id: "sg4", translations: { ja: "かねが なってるよ", en: "Don't you hear the bells?", de: "Hörst du nicht die Glocken?", zh: "你没听见钟声吗？" } },
+      { id: "sg5", translations: { ja: "キン コン カン", en: "Ding, dang, dong.", de: "Ding, dang, dong.", zh: "叮，当，咚。" } },
+      { id: "sg6", translations: { ja: "キン コン カン", en: "Ding, dang, dong.", de: "Ding, dang, dong.", zh: "叮，当，咚。" } }
+    ]
+  },
   grammar: {
     ja: {
       title: {

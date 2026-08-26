@@ -555,6 +555,18 @@ export const topicHome: TopicLesson = {
       }
     ]
   },
+  song: {
+    // Row 6 is an open slot in docs/a1-master-lesson-table-v05.md —
+    // filled with a repeat so every lesson has a song.
+    title: { ja: "アルエット", en: "Alouette", de: "Alouette", zh: "云雀之歌" },
+    lines: [
+      { id: "sg1", translations: { ja: "アルエット、やさしい アルエットよ", en: "Alouette, gentle Alouette", de: "Alouette, liebe Alouette", zh: "云雀啊，可爱的云雀啊" } },
+      { id: "sg2", translations: { ja: "アルエット、はねを むしってしまうよ", en: "Alouette, I shall pluck your feathers", de: "Alouette, ich werde dich rupfen", zh: "云雀啊，我要拔掉你的羽毛" } },
+      { id: "sg3", translations: { ja: "あたまの はねを むしるよ", en: "I shall pluck the feathers from your head", de: "Ich rupfe die Federn von deinem Kopf", zh: "我要拔掉你头上的羽毛" } },
+      { id: "sg4", translations: { ja: "あたまを、あたまを", en: "From your head, from your head", de: "Von deinem Kopf, von deinem Kopf", zh: "从你的头上，从你的头上" } },
+      { id: "sg5", translations: { ja: "アルエット、アルエット、ああ！", en: "Alouette, Alouette, oh!", de: "Alouette, Alouette, oh!", zh: "云雀啊，云雀啊，哦！" } }
+    ]
+  },
   grammar: {
     ja: {
       title: {

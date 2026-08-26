@@ -326,6 +326,31 @@ export function primeSpeechSynthesis() {
   window.speechSynthesis.speak(utter);
 }
 
+// In-place pause/resume: distinct from SessionContext's status="paused"
+// (which swaps to a separate full-screen view) — this is the tap
+// overlay's lighter "pause without changing the view" control. Every
+// active wait() genuinely suspends (tracks remaining time, doesn't just
+// let the timer run out silently in the background) and resumes with
+// whatever time was left when unpaused; in-flight speech uses the
+// browser's native speechSynthesis.pause()/resume().
+type PauseListener = (paused: boolean) => void;
+const pauseListeners = new Set<PauseListener>();
+let globallyPaused = false;
+
+export function setGlobalPaused(paused: boolean) {
+  if (paused === globallyPaused) return;
+  globallyPaused = paused;
+  if ("speechSynthesis" in window) {
+    if (paused) window.speechSynthesis.pause();
+    else window.speechSynthesis.resume();
+  }
+  pauseListeners.forEach((l) => l(paused));
+}
+
+export function isGloballyPaused(): boolean {
+  return globallyPaused;
+}
+
 // "Skip forward" pub/sub: any currently-pending wait() resolves
 // immediately when this fires, instead of running out its full timer.
 // Used by the slide overlay's +10s control — there's no real audio
@@ -344,15 +369,37 @@ export function requestSkipForward() {
 export function wait(ms: number): Promise<void> {
   return new Promise((resolve) => {
     let done = false;
-    const finish = () => {
+    let remaining = ms;
+    let startedAt = 0;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
+    function finish() {
       if (done) return;
       done = true;
+      if (timer) clearTimeout(timer);
       skipListeners.delete(finish);
-      clearTimeout(timer);
+      pauseListeners.delete(onPauseChange);
       resolve();
-    };
-    const timer = setTimeout(finish, ms);
+    }
+    function startTimer() {
+      startedAt = Date.now();
+      timer = setTimeout(finish, remaining);
+    }
+    function onPauseChange(paused: boolean) {
+      if (paused) {
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
+        remaining = Math.max(0, remaining - (Date.now() - startedAt));
+      } else {
+        startTimer();
+      }
+    }
+
     skipListeners.add(finish);
+    pauseListeners.add(onPauseChange);
+    if (!globallyPaused) startTimer();
   });
 }
 

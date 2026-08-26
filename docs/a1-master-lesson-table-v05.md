@@ -43,16 +43,64 @@ skeleton with language-specific substitutions where noted.
   translation of Alouette if this row's song is added there later — not done in this
   version, flagged as follow-up work.
 
-## Build status (as of v05 — see changelog below)
+## Build status (as of v05a — see changelog below)
 
 | Course | Lessons built | Notes |
 |---|---|---|
-| German (A1) | 2, 11 | Lesson 2 predates this table's row numbering (self-intro/general vocab); Lesson 11 (Travel) built directly from row 11 |
+| German (A1) | 1–13 (all, via topic system) + 2, 11 (standalone, predate the table) | See docs/topic-lesson-system.md |
 | English (C1) | 1 | Standalone "Voices from Orbit" space course, not on the A1 track |
-| Japanese (A1) | 1–13 (all) | Rows 1–13 complete. ja/en/de on all 13; zh done for 1–5, still pending for 6–13. All vocab-audited against their own dialogues. |
+| Japanese (A1) | 1–19 (all) | Rows 1–19 complete. All have ja; 1–13 also have de. zh done for 1–5 and 14–19, still pending for 6–13. |
 
-Trainers: 9 total — Hiro (ja↔de) and Lin (zh↔ja) added specifically to
-make the Japanese lessons' German and Chinese translations reachable.
+**Songs — implemented status (v05a):** every one of rows 1–19 now has a
+song, using only the real songs already assigned somewhere in this
+table (rows 1–19's own assignments, or reused from another row) — no
+invented songs. This required two kinds of changes to the plan below:
+
+1. **7 rows that were "open slot" in v05 (4, 5, 6, 10, 14, 16, 17) were
+   filled with a repeat**, since every lesson needing a song took
+   priority over strictly preserving which rows stay songless. These
+   repeats aren't tied to any particular grammar/theme pairing — they're
+   simply distributed round-robin across the already-assigned real
+   songs. If a more deliberate pairing is wanted later, these seven are
+   the ones to revisit first.
+2. **Row 15's "Ten Little Indians" was substituted with "Ten Little
+   Fingers,"** a well-documented neutral variant using the identical
+   counting-song melody and structure. The original's traditional
+   lyrics are built on ethnic caricature of Native Americans; the
+   substitute teaches the same numbers without that content. Not a
+   silent swap — flagged here and in the source file
+   (`topic-15-landscape.ts`).
+
+Final assignment actually implemented:
+
+| Row | Song | Status |
+|---|---|---|
+| 1 | Frère Jacques / Bruder Jakob | as planned |
+| 2 | Head, Shoulders, Knees and Toes | as planned |
+| 3 | Alouette | as planned |
+| 4 | Bruder Jakob *(repeat)* | filled, was open slot |
+| 5 | Head, Shoulders, Knees and Toes *(repeat)* | filled, was open slot |
+| 6 | Alouette *(repeat)* | filled, was open slot |
+| 7 | Itsy Bitsy Spider | as planned |
+| 8 | This Old Man | as planned |
+| 9 | Old MacDonald Had a Farm | as planned |
+| 10 | This Old Man *(repeat)* | filled, was open slot |
+| 11 | Row, Row, Row Your Boat | as planned |
+| 12 | London Bridge Is Falling Down | as planned |
+| 13 | Twinkle Twinkle Little Star | as planned |
+| 14 | Old MacDonald Had a Farm *(repeat)* | filled, was open slot |
+| 15 | **Ten Little Fingers** | substituted, see above |
+| 16 | Row, Row, Row Your Boat *(repeat)* | filled, was open slot |
+| 17 | London Bridge Is Falling Down *(repeat)* | filled, was open slot |
+| 18 | Happy Birthday to You | as planned |
+| 19 | Alouette *(reused from row 3, as planned)* | as planned |
+
+All 19 rows now have both lyrics and a working melody transcription —
+see `docs/song-melodies.md` for the full melody-coverage list.
+
+Trainers: 3 total (Vincent, Max, Yui) as of the trainer-roster
+consolidation — see README.md. The "9 trainers" note in the v05
+changelog below predates that consolidation.
 
 **Changes from v04:**
 - Japanese build-out completed through row 13 (was 1,2,3,4,5,8,10 — added

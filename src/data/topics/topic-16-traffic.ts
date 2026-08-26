@@ -83,6 +83,18 @@ export const topicTraffic: TopicLesson = {
       { id: "e14", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "つかいたいけど、うんちんが たかいんだ。", en: "I'd like to, but the fare is expensive.", de: "Ich würde gerne, aber der Fahrpreis ist teuer.", zh: "想坐，但是车费太贵了。" } }
     ]
   },
+  song: {
+    // Row 16 is an open slot in docs/a1-master-lesson-table-v05.md —
+    // filled with a repeat so every lesson has a song (also a thematic
+    // fit here, given the vehicle/movement theme).
+    title: { ja: "こげよ マイケル", en: "Row, Row, Row Your Boat", de: "Rudert, rudert" },
+    lines: [
+      { id: "sg1", translations: { ja: "こげ こげ ボートを", en: "Row, row, row your boat", de: "Rudert, rudert, rudert das Boot" } },
+      { id: "sg2", translations: { ja: "しずかに かわを くだる", en: "Gently down the stream", de: "sanft den Fluss hinab" } },
+      { id: "sg3", translations: { ja: "たのしく たのしく たのしく たのしく", en: "Merrily, merrily, merrily, merrily", de: "Fröhlich, fröhlich, fröhlich, fröhlich" } },
+      { id: "sg4", translations: { ja: "じんせいは ゆめの よう", en: "Life is but a dream", de: "das Leben ist ein Traum" } }
+    ]
+  },
   grammar: {
     ja: {
       title: { ja: "いどうの どうしと じょし", en: "Movement Verbs and Direction Particles", de: "Bewegungsverben und Richtungspartikel", zh: "移动动词与方向助词" },

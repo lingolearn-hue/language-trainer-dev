@@ -85,6 +85,19 @@ export const topicCountries: TopicLesson = {
       { id: "e14", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "いちねんに いっかい くらいです。", en: "About once a year.", de: "Ungefähr einmal im Jahr.", zh: "大概一年一次。" } }
     ]
   },
+  song: {
+    // Row 14 is an open slot in docs/a1-master-lesson-table-v05.md —
+    // filled with a repeat so every lesson has a song.
+    title: { ja: "マクドナルドじいさんの のうじょう", en: "Old MacDonald Had a Farm", de: "Onkel Jörg hat einen Bauernhof" },
+    lines: [
+      { id: "sg1", translations: { ja: "マクドナルドじいさんの のうじょうで", en: "Old MacDonald had a farm", de: "Onkel Jörg hat einen Bauernhof" } },
+      { id: "sg2", translations: { ja: "イーアイ イーアイ オー", en: "E-I-E-I-O", de: "Ija-ija-oh" } },
+      { id: "sg3", translations: { ja: "そこには いぬが いて", en: "And on that farm he had a dog", de: "Und auf dem Hof, da hat er einen Hund" } },
+      { id: "sg4", translations: { ja: "イーアイ イーアイ オー", en: "E-I-E-I-O", de: "Ija-ija-oh" } },
+      { id: "sg5", translations: { ja: "ワンワン ここで、ワンワン そこで", en: "With a woof-woof here and a woof-woof there", de: "Hier wau-wau, da wau-wau" } },
+      { id: "sg6", translations: { ja: "マクドナルドじいさんの のうじょうで", en: "Old MacDonald had a farm", de: "Onkel Jörg hat einen Bauernhof" } }
+    ]
+  },
   grammar: {
     ja: {
       title: { ja: "はい・いいえ と ぎもんし の しつもん", en: "Yes/No and Wh-Questions", de: "Ja/Nein- und W-Fragen", zh: "是非问句与疑问词问句" },

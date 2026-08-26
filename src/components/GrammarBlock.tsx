@@ -74,44 +74,40 @@ export function GrammarBlock({
     if (!autoPlay) return;
     let cancelled = false;
     (async () => {
+      // Explanation: target once, then source once — same per-sentence
+      // pattern as the chunks below, not a separate full pass at the end.
       const explanationTarget = content.explanation[lang.targetLang];
+      const explanationSource = content.explanation[lang.sourceLang];
       if (explanationTarget) await speak(explanationTarget, lang.targetLang, trainer.voiceProfile);
       if (cancelled) return;
+      if (explanationSource && explanationSource !== explanationTarget) {
+        await speak(explanationSource, lang.sourceLang, trainer.voiceProfile);
+      }
+      if (cancelled) return;
 
+      // Each chunk: target once, then source once, before moving to the
+      // next chunk — previously this was two separate full passes (every
+      // chunk in target, then every chunk again in source), which meant
+      // a long wait before ever hearing a translation. Reading each
+      // sentence's own translation right after it keeps target and
+      // source paired together, sentence by sentence.
       for (const chunk of content.chunks) {
         if (cancelled) return;
         setActiveChunkId(chunk.id);
-        const text = chunk.translations[lang.targetLang];
-        if (text) await speak(text, lang.targetLang, trainer.voiceProfile);
+        const targetText = chunk.translations[lang.targetLang];
+        const sourceText = chunk.translations[lang.sourceLang];
+        if (targetText) await speak(targetText, lang.targetLang, trainer.voiceProfile);
+        if (cancelled) return;
+        if (sourceText && sourceText !== targetText) {
+          await speak(sourceText, lang.sourceLang, trainer.voiceProfile);
+        }
         if (cancelled) return;
         await wait(500);
       }
       setActiveChunkId(null);
       if (cancelled) return;
 
-      // Second pass, once through in the source language — previously
-      // grammar was only ever spoken in the target language; the source
-      // translation was shown on screen but never actually read aloud.
-      const explanationSource = content.explanation[lang.sourceLang];
-      if (explanationSource && explanationSource !== explanationTarget) {
-        await speak(explanationSource, lang.sourceLang, trainer.voiceProfile);
-      }
-      if (cancelled) return;
-      for (const chunk of content.chunks) {
-        if (cancelled) return;
-        setActiveChunkId(chunk.id);
-        const sourceText = chunk.translations[lang.sourceLang];
-        const targetText = chunk.translations[lang.targetLang];
-        if (sourceText && sourceText !== targetText) {
-          await speak(sourceText, lang.sourceLang, trainer.voiceProfile);
-        }
-        if (cancelled) return;
-        await wait(400);
-      }
-      setActiveChunkId(null);
-      if (cancelled) return;
-
-      // Both passes done — hold on the slide for about a minute so the
+      // Narration done — hold on the slide for about a minute so the
       // student actually has time to look it over, instead of auto-
       // advancing the moment narration finishes.
       await wait(60000);

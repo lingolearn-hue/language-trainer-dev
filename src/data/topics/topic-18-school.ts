@@ -89,6 +89,18 @@ export const topicSchool: TopicLesson = {
       { id: "e14", speaker: { ja: "せんせい", en: "Teacher", de: "Lehrer", zh: "老师" }, translations: { ja: "いいですね。これからも がんばってください。", en: "Good. Keep doing your best from now on too.", de: "Gut. Geben Sie auch weiterhin Ihr Bestes.", zh: "很好。以后也要继续努力哦。" } }
     ]
   },
+  song: {
+    // Per docs/a1-master-lesson-table-v05.md's assignment for row 18.
+    // Confirmed public domain (Good Morning to You Productions Corp. v.
+    // Warner/Chappell Music, 2015-2016).
+    title: { ja: "ハッピーバースデー トゥー ユー", en: "Happy Birthday to You", de: "Zum Geburtstag viel Glück" },
+    lines: [
+      { id: "sg1", translations: { ja: "ハッピー バースデー トゥー ユー", en: "Happy birthday to you", de: "Zum Geburtstag viel Glück" } },
+      { id: "sg2", translations: { ja: "ハッピー バースデー トゥー ユー", en: "Happy birthday to you", de: "Zum Geburtstag viel Glück" } },
+      { id: "sg3", translations: { ja: "ハッピー バースデー ディア［なまえ］", en: "Happy birthday dear [name]", de: "Zum Geburtstag liebe/r ［なまえ］" } },
+      { id: "sg4", translations: { ja: "ハッピー バースデー トゥー ユー", en: "Happy birthday to you", de: "Zum Geburtstag viel Glück" } }
+    ]
+  },
   grammar: {
     ja: {
       title: { ja: "きょか と きんし：〜てもいいですか／〜てはいけません", en: "Permission and Prohibition", de: "Erlaubnis und Verbot", zh: "许可与禁止" },

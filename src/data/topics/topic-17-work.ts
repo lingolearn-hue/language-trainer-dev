@@ -89,6 +89,17 @@ export const topicWork: TopicLesson = {
       { id: "e14", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "ありがとう。そうするよ。", en: "Thanks. I will.", de: "Danke. Das werde ich.", zh: "谢谢。我会的。" } }
     ]
   },
+  song: {
+    // Row 17 is an open slot in docs/a1-master-lesson-table-v05.md —
+    // filled with a repeat so every lesson has a song.
+    title: { ja: "ロンドンばし", en: "London Bridge is Falling Down", de: "Die London Bridge fällt herunter" },
+    lines: [
+      { id: "sg1", translations: { ja: "ロンドンばしが おちる", en: "London Bridge is falling down", de: "Die London Bridge fällt herunter" } },
+      { id: "sg2", translations: { ja: "おちる おちる", en: "Falling down, falling down", de: "fällt herunter, fällt herunter" } },
+      { id: "sg3", translations: { ja: "ロンドンばしが おちる", en: "London Bridge is falling down", de: "Die London Bridge fällt herunter" } },
+      { id: "sg4", translations: { ja: "マイ フェア レディー", en: "My fair lady", de: "meine schöne Dame" } }
+    ]
+  },
   grammar: {
     ja: {
       title: { ja: "て-けい：れんぞくした どうさ", en: "Te-Form: Sequential Actions", de: "Te-Form: Aufeinanderfolgende Handlungen", zh: "て形：连续动作" },

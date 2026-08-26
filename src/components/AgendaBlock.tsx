@@ -24,17 +24,16 @@ export function AgendaBlock({
 }) {
   const content = block.content as AgendaContent;
 
-  // No `played`-once guard here (deliberately) — an earlier version used
-  // one and had a real bug: on a block transition, this component can
-  // briefly mount with a stale `autoPlay=true` carried over from the
-  // previous block (Session's reset-effect that clears it hasn't
-  // committed yet). That stale run gets correctly cancelled a moment
-  // later when autoPlay flips back to false — but a `played` ref marked
-  // "already ran" during that aborted attempt would permanently block the
-  // real run once autoPlay genuinely turns true, hanging the lesson.
-  // Relying only on the `cancelled` flag (which resets fresh on every
-  // real effect re-run) handles the stale-then-real transition correctly
-  // without any persistent "already played" state.
+  // No `played`-once guard here (deliberately). Session.tsx's autoPlay
+  // gate now compares a "which block finished its intro" id directly
+  // against this block's own id, so autoPlay is correctly false from the
+  // very first render of a new block — no transient stale-true window to
+  // tolerate anymore (an earlier version relied on a reset effect firing
+  // "a moment later" to correct a brief stale-true state; that window no
+  // longer exists). Still relying only on the `cancelled` flag here
+  // rather than a `played` ref, since that's simple and correct
+  // regardless — no particular reason to reintroduce more state than
+  // necessary now that the race itself is gone.
   useEffect(() => {
     if (!autoPlay) return;
     let cancelled = false;

@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSession } from "../context/SessionContext";
 import { VocabDrillBlock } from "./VocabDrillBlock";
 import { ReadalongBlock } from "./ReadalongBlock";
@@ -10,7 +10,7 @@ import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
 import { RateControls } from "./RateControls";
 import { TeacherCaption } from "./TeacherCaption";
-import { cancelSpeech, setCurrentTargetLang, speak, requestSkipForward } from "../engine/speech";
+import { cancelSpeech, setCurrentTargetLang, speak, requestSkipForward, setGlobalPaused } from "../engine/speech";
 import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
 import { SlideControlsContext } from "../context/SlideControlsContext";
 import { useIsLandscape } from "../hooks/useIsLandscape";
@@ -43,22 +43,45 @@ export function Session({
   const [restartTick, setRestartTick] = useState(0);
   const sessionKey = `${block.id}-r${restartTick}`;
 
-  // YouTube-style tap overlay: tapping the slide shows playback controls
-  // (rather than immediately toggling pause itself, matching how video
-  // players actually behave), auto-hiding after a few seconds of no
-  // further interaction.
+  // YouTube-style tap overlay: tapping the slide toggles playback
+  // controls (rather than immediately toggling pause itself, matching
+  // how video players actually behave). "Pause" from the overlay is a
+  // lighter in-place pause (engine/speech.ts's setGlobalPaused) — it
+  // does NOT swap to the separate full-screen paused view; the slide
+  // stays exactly as it is, narration/timers genuinely suspend, and the
+  // button just flips to a play icon. Auto-hides after 1s of no
+  // interaction, including while soft-paused.
   const [overlayVisible, setOverlayVisible] = useState(false);
+  const [softPaused, setSoftPaused] = useState(false);
   const overlayHideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  function armHideTimer() {
+    if (overlayHideTimer.current) clearTimeout(overlayHideTimer.current);
+    overlayHideTimer.current = setTimeout(() => setOverlayVisible(false), 1000);
+  }
   function showOverlay() {
     setOverlayVisible(true);
+    armHideTimer();
+  }
+  function hideOverlay() {
     if (overlayHideTimer.current) clearTimeout(overlayHideTimer.current);
-    overlayHideTimer.current = setTimeout(() => setOverlayVisible(false), 3000);
+    setOverlayVisible(false);
+  }
+  function handleSlideAreaClick() {
+    if (overlayVisible) hideOverlay();
+    else showOverlay();
   }
   useEffect(() => {
     return () => {
       if (overlayHideTimer.current) clearTimeout(overlayHideTimer.current);
     };
   }, []);
+
+  // A fresh block should never silently start paused, regardless of how
+  // we got here (auto-advance, overlay prev/next, restart).
+  useEffect(() => {
+    setSoftPaused(false);
+    setGlobalPaused(false);
+  }, [block.id]);
 
   // Tells engine/speech.ts which language is the "target" (learning)
   // language so it can apply the slower target-rate to it and the
@@ -102,7 +125,14 @@ export function Session({
   // any) has finished, so the two never talk over each other. Resets on
   // every block change. Declared above the early returns below so hook
   // order stays stable regardless of session status.
-  const [autoPlayReady, setAutoPlayReady] = useState(false);
+  // Tracks WHICH block's own TeacherCaption instance has finished, rather
+  // than a plain boolean — comparing against block.id directly means a
+  // new block's autoPlay is correctly false from its very first render,
+  // with no reliance on a corrective re-render after a brief stale-true
+  // flash (which a separate reset-effect would still leave, since the
+  // effect only fires after the initial render has already happened).
+  const [autoPlayReadyForBlockId, setAutoPlayReadyForBlockId] = useState<string | null>(null);
+  const autoPlayReady = autoPlayReadyForBlockId === block.id;
 
   // Session-level welcome, spoken once per lesson start: source language
   // first, then target language (per user request). Gates the first
@@ -125,21 +155,12 @@ export function Session({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // useLayoutEffect (not useEffect) is required here, not stylistic: a
-  // real race existed against TeacherCaption's own effect. When a block
-  // has no spokenIntro, TeacherCaption's effect calls onFinished()
-  // *synchronously* (setAutoPlayReady(true)) — and since passive effects
-  // run child-before-parent within the same commit, this reset effect
-  // (parent) would then fire right after and clobber it back to false,
-  // permanently starving autoplay for that block (most visible on the
-  // very first slide, which typically has no spokenIntro). Layout
-  // effects run before ANY passive effect across the whole tree, so
-  // this reset is now guaranteed to happen first, and a child's later
-  // (synchronous-in-its-own-effect or async-via-speech) true always
-  // wins instead of losing the race.
-  useLayoutEffect(() => {
-    setAutoPlayReady(false);
-  }, [block?.id]);
+  // No separate reset effect needed here (there used to be one, a
+  // useLayoutEffect specifically to win a timing race against
+  // TeacherCaption's onFinished) — comparing autoPlayReadyForBlockId
+  // against block.id directly makes a new block's autoPlay correctly
+  // false from its very first render, with no dependency on effect
+  // ordering at all.
 
   // Sessions run long (45-90 min) with passive listening stretches — keep
   // the screen from auto-dimming/locking while actively running, release
@@ -238,22 +259,24 @@ export function Session({
     dispatch({ type: "GOTO_BLOCK", index: blockIndex + 1 });
     showOverlay();
   }
-  function handleOverlayPause() {
-    handlePause();
-    showOverlay();
+  function handleOverlayPauseToggle() {
+    const next = !softPaused;
+    setSoftPaused(next);
+    setGlobalPaused(next);
+    armHideTimer();
   }
   function handleSkipForward() {
     // No real audio timeline to scrub in a TTS-driven lesson — approximated
     // as "cut short whatever's happening right now" (see requestSkipForward).
     requestSkipForward();
-    showOverlay();
+    armHideTimer();
   }
   function handleSkipBack() {
     // Same reasoning in reverse: no timeline to rewind, so "back 10s" is
     // approximated as restarting the current slide from its beginning.
     cancelSpeech();
     setRestartTick((t) => t + 1);
-    showOverlay();
+    armHideTimer();
   }
 
   return (
@@ -292,7 +315,7 @@ export function Session({
 
       <SlideControlsContext.Provider value={landscape ? controlsRail : null}>
         <div className="session-layout">
-          <div className="slide-area" onClick={showOverlay}>
+          <div className="slide-area" onClick={handleSlideAreaClick}>
             {block.type === "vocabDrill" && (
               <VocabDrillBlock
                 key={sessionKey}
@@ -378,7 +401,7 @@ export function Session({
                 framingLanguage={lesson.framingLanguage}
                 bilingual={block.spokenIntroBilingual ?? false}
                 showCaptionText={block.type !== "agenda"}
-                onFinished={() => setAutoPlayReady(true)}
+                onFinished={() => setAutoPlayReadyForBlockId(block.id)}
               />
               <div className="slide-nav-footer">
                 <button
@@ -428,13 +451,13 @@ export function Session({
                   ⏮
                 </button>
                 <button className="slide-tap-btn" onClick={handleSkipBack} title="Restart this slide">
-                  ⏪ 10
+                  ↺
                 </button>
-                <button className="slide-tap-btn slide-tap-btn-main" onClick={handleOverlayPause} title="Pause">
-                  ⏸
+                <button className="slide-tap-btn slide-tap-btn-main" onClick={handleOverlayPauseToggle} title={softPaused ? "Play" : "Pause"}>
+                  {softPaused ? "▶" : "⏸"}
                 </button>
                 <button className="slide-tap-btn" onClick={handleSkipForward} title="Skip ahead">
-                  10 ⏩
+                  ↻
                 </button>
                 <button
                   className="slide-tap-btn"

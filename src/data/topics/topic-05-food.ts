@@ -94,6 +94,20 @@ export const topicFood: TopicLesson = {
     ],
   },
 
+  song: {
+    // Row 5 is an open slot in docs/a1-master-lesson-table-v05.md —
+    // filled with a repeat so every lesson has a song.
+    title: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, Shoulders, Knees and Toes" },
+    lines: [
+      { id: "sg1", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes" } },
+      { id: "sg2", translations: { ja: "ひざ あし", zh: "膝盖、脚趾", de: "Knie und Zehen", en: "Knees and toes" } },
+      { id: "sg3", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes" } },
+      { id: "sg4", translations: { ja: "ひざ あし", zh: "膝盖、脚趾", de: "Knie und Zehen", en: "Knees and toes" } },
+      { id: "sg5", translations: { ja: "め と みみと くちと はな", zh: "眼睛、耳朵、嘴巴、鼻子", de: "Augen und Ohren und Mund und Nase", en: "Eyes and ears and mouth and nose" } },
+      { id: "sg6", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes" } }
+    ]
+  },
+
   grammar: {
     ja: {
       title: { ja: "げんざいけい", zh: "现在时", de: "Gegenwartsform", en: "Present Tense" },

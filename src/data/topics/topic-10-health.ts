@@ -618,6 +618,18 @@ export const topicHealth: TopicLesson = {
       }
     ]
   },
+  song: {
+    // Row 10 is an open slot in docs/a1-master-lesson-table-v05.md —
+    // filled with a repeat so every lesson has a song.
+    title: { ja: "この おじいさん", en: "This Old Man", de: "Der alte Mann" },
+    lines: [
+      { id: "sg1", translations: { ja: "この おじいさん、いちで あそんだ", en: "This old man, he played one", de: "Der alte Mann, er spielte eins" } },
+      { id: "sg2", translations: { ja: "ゆびで トン トン ならしたよ", en: "He played knick-knack on my thumb", de: "Er klopfte knick-knack auf meinen Daumen" } },
+      { id: "sg3", translations: { ja: "トン トン パディーワック", en: "With a knick-knack paddywhack", de: "Mit einem knick-knack paddywhack" } },
+      { id: "sg4", translations: { ja: "いぬに ほねを あげよう", en: "Give a dog a bone", de: "gib dem Hund einen Knochen" } },
+      { id: "sg5", translations: { ja: "この おじいさん、おうちに かえった", en: "This old man came rolling home", de: "Der alte Mann kam nach Hause gerollt" } }
+    ]
+  },
   grammar: {
     ja: {
       title: {

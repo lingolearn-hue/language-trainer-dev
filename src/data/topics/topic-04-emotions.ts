@@ -696,6 +696,20 @@ export const topicEmotions: TopicLesson = {
       }
     ]
   },
+  song: {
+    // Row 4 is an open slot in docs/a1-master-lesson-table-v05.md —
+    // filled with a repeat (not in the original v05 plan) so every
+    // lesson has a song; see that doc's changelog for this addition.
+    title: { ja: "フレール・ジャックさん", en: "Brother John", de: "Bruder Jakob", zh: "雅各弟兄" },
+    lines: [
+      { id: "sg1", translations: { ja: "ねえ ジャックさん、ねえ ジャックさん", en: "Brother John, Brother John,", de: "Bruder Jakob, Bruder Jakob,", zh: "雅各弟兄，雅各弟兄，" } },
+      { id: "sg2", translations: { ja: "ねていますか", en: "are you sleeping?", de: "schläfst du noch?", zh: "你还在睡觉吗？" } },
+      { id: "sg3", translations: { ja: "ねていますか", en: "are you sleeping?", de: "schläfst du noch?", zh: "你还在睡觉吗？" } },
+      { id: "sg4", translations: { ja: "かねが なってるよ", en: "Don't you hear the bells?", de: "Hörst du nicht die Glocken?", zh: "你没听见钟声吗？" } },
+      { id: "sg5", translations: { ja: "キン コン カン", en: "Ding, dang, dong.", de: "Ding, dang, dong.", zh: "叮，当，咚。" } },
+      { id: "sg6", translations: { ja: "キン コン カン", en: "Ding, dang, dong.", de: "Ding, dang, dong.", zh: "叮，当，咚。" } }
+    ]
+  },
   grammar: {
     ja: {
       title: {

@@ -32,6 +32,20 @@ export interface TopicExtraDrill extends VocabDrillContent {
   spokenIntro?: Translations;
 }
 
+// A reinforcement slide in dialogue format (target left / source right,
+// 3-phase echo/shadow/silent) instead of extraDrills' column-grouped
+// vocab-table format — for content that reads better as a flowing list
+// of example sentences than as short word-bank columns. Each line's
+// translations are a full Translations object, same as everywhere else,
+// so any language can be picked as target/source at session time — not
+// fixed to whichever pair the sentences were originally drafted for.
+export interface TopicExtraReadalong {
+  id: string; // suffix for the generated block id
+  title: Translations;
+  spokenIntro?: Translations;
+  lines: ReadalongLine[];
+}
+
 export interface TopicSelfIntro extends SelfIntroContent {
   title: Translations;
 }
@@ -49,6 +63,11 @@ export interface TopicLesson {
   // language, since these are usually language-specific practice content
   // just like grammar/pronunciation.
   extraDrills?: Partial<Record<LangCode, TopicExtraDrill[]>>;
+  // Same idea as extraDrills, but dialogue-format (see
+  // TopicExtraReadalong) instead of column-grouped vocab tables — e.g.
+  // grammar reinforcement as flowing example sentences, one grammar
+  // sub-concept per slide, rather than one dense multi-column table.
+  extraReadalongs?: Partial<Record<LangCode, TopicExtraReadalong[]>>;
   // Self-introduction template slide (fill-in-the-blank name/hometown/etc
   // read by the student, plus a silent word-bank and a spoken "reasons"
   // demonstration) — per target language, same as grammar/pronunciation,

@@ -130,21 +130,15 @@ export const topicWeather: TopicLesson = {
     }
   },
   song: {
-    title: {
-      ja: "てんきの うた",
-      en: "The Weather Song",
-      de: "Das Wetterlied",
-      zh: "天气之歌"
-    },
+    // Per docs/a1-master-lesson-table-v05.md's assignment for row 19:
+    // reuses row 3's song exactly, not an original composition.
+    title: { ja: "アルエット", en: "Alouette", de: "Alouette", zh: "云雀之歌" },
     lines: [
-      { id: "sg1", translations: { ja: "てんき てんき どんな てんき", en: "Weather, weather, what's the weather", de: "Wetter, Wetter, wie ist das Wetter", zh: "天气，天气，是什么天气" } },
-      { id: "sg2", translations: { ja: "きょうは はれ あしたは あめ", en: "Today is sunny, tomorrow is rain", de: "Heute ist es sonnig, morgen regnet es", zh: "今天晴天，明天下雨" } },
-      { id: "sg3", translations: { ja: "はれ はれ たいようが でる", en: "Sunny, sunny, the sun comes out", de: "Sonnig, sonnig, die Sonne kommt heraus", zh: "晴天，晴天，太阳出来了" } },
-      { id: "sg4", translations: { ja: "あめ あめ かさを さす", en: "Rain, rain, open your umbrella", de: "Regen, Regen, spann deinen Schirm auf", zh: "下雨，下雨，撑起雨伞" } },
-      { id: "sg5", translations: { ja: "くもり くもり そらが グレー", en: "Cloudy, cloudy, the sky is grey", de: "Bewölkt, bewölkt, der Himmel ist grau", zh: "阴天，阴天，天空是灰色的" } },
-      { id: "sg6", translations: { ja: "ゆき ゆき しろく なる", en: "Snow, snow, it turns white", de: "Schnee, Schnee, es wird weiß", zh: "下雪，下雪，变成白色" } },
-      { id: "sg7", translations: { ja: "てんき てんき どんな てんき", en: "Weather, weather, what's the weather", de: "Wetter, Wetter, wie ist das Wetter", zh: "天气，天气，是什么天气" } },
-      { id: "sg8", translations: { ja: "きせつが かわる たのしいね", en: "The seasons change, isn't it fun", de: "Die Jahreszeiten wechseln, ist das nicht schön", zh: "季节在变化，真有趣呢" } }
+      { id: "sg1", translations: { ja: "アルエット、やさしい アルエットよ", en: "Alouette, gentle Alouette", de: "Alouette, liebe Alouette", zh: "云雀啊，可爱的云雀啊" } },
+      { id: "sg2", translations: { ja: "アルエット、はねを むしってしまうよ", en: "Alouette, I shall pluck your feathers", de: "Alouette, ich werde dich rupfen", zh: "云雀啊，我要拔掉你的羽毛" } },
+      { id: "sg3", translations: { ja: "あたまの はねを むしるよ", en: "I shall pluck the feathers from your head", de: "Ich rupfe die Federn von deinem Kopf", zh: "我要拔掉你头上的羽毛" } },
+      { id: "sg4", translations: { ja: "あたまを、あたまを", en: "From your head, from your head", de: "Von deinem Kopf, von deinem Kopf", zh: "从你的头上，从你的头上" } },
+      { id: "sg5", translations: { ja: "アルエット、アルエット、ああ！", en: "Alouette, Alouette, oh!", de: "Alouette, Alouette, oh!", zh: "云雀啊，云雀啊，哦！" } }
     ]
   }
 };

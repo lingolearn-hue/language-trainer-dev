@@ -51,7 +51,7 @@ exact same ids already used for the spoken/displayed lyric text in
 ```ts
 // src/data/songMelodies.ts
 export const SONG_MELODIES: Record<string, SongMelody> = {
-  "ja13-song": {
+  "topic-13-time-ja-song": {
     bpm: 100,
     lines: {
       sg1: [{ pitch: "C4", beats: 1 }, { pitch: "C4", beats: 1 }, /* ... */],
@@ -60,6 +60,12 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   },
 };
 ```
+
+Named constants (e.g. `HEAD_SHOULDERS`, `ALOUETTE`) hold each melody
+once; the exported `SONG_MELODIES` map then aliases every block id that
+reuses that song to the same constant, rather than copy-pasting the note
+data per repeat — see songMelodies.ts's own comments for which topic
+originated each song and which topics repeat it.
 
 ## The toggle
 
@@ -71,18 +77,21 @@ spoken-lyric playback only.
 
 ## Current coverage
 
-7 of 8 currently-live song blocks have melody data (verified
-programmatically — every lyric line id has a matching melody entry, zero
-gaps, for the ones that do): Row Row Row Your Boat (German + Japanese
-versions — same tune, duplicated under both block ids), Frère Jacques /
-Bruder Jakob, Alle meine Entchen, London Bridge, Twinkle Twinkle Little
-Star, Head Shoulders Knees and Toes, Itsy Bitsy Spider, Old MacDonald Had
-a Farm.
-
-**Known gap:** Topic 19 (Weather)'s song — "てんきの うた" / "The Weather
-Song" — has no melody entry yet. Falls back gracefully to spoken-lyric
-playback only (no toggle button appears, per the design below), but
-still needs an actual melody transcribed.
+**Every one of the 19 topics has a song, and every one of those songs
+has working melody data** — verified programmatically (every lyric line
+id has a matching melody entry, zero gaps, checked separately for each
+topic's ja and de variant where both exist). 8 distinct real songs in
+total: Frère Jacques / Bruder Jakob, Head Shoulders Knees and Toes,
+Alouette, Itsy Bitsy Spider, This Old Man, Old MacDonald Had a Farm, Row
+Row Row Your Boat, London Bridge Is Falling Down, Twinkle Twinkle Little
+Star, Ten Little Fingers, Happy Birthday to You (plus lesson2.ts's own
+Alle meine Entchen, a standalone hand-written lesson outside the topic
+system). See `docs/a1-master-lesson-table-v05.md` for the full per-row
+assignment, including which topics repeat another topic's song to
+ensure full coverage, and the one deliberate lyric substitution (Topic
+15: "Ten Little Fingers" instead of the traditional "Ten Little
+Indians," whose lyrics are built on ethnic caricature — same melody and
+counting-song structure, different words).
 
 ## Adding a melody for a new song
 

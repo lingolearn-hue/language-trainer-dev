@@ -238,10 +238,22 @@ export function buildLessonPlan(
     content: { items: pronunciation.items, groupLabels: pronunciation.groupLabels, pairedColumns: pronunciation.pairedColumns },
   };
 
+  const extraReadalongs = topic.extraReadalongs?.[targetLang];
+  const extraReadalongBlocks: Block[] = (extraReadalongs ?? []).map((r) => ({
+    id: `${idSuffix}-${r.id}`,
+    type: "readalong",
+    displayMode: "content",
+    estimatedMinutes: 4,
+    title: r.title,
+    spokenIntro: r.spokenIntro ?? framingText((_, p) => p.grammarIntro, () => ""),
+    content: { lines: r.lines },
+  }));
+
   const blocks: Block[] = [
     titleBlock, agendaBlock, introBlock,
     ...(selfIntroBlock ? [selfIntroBlock] : []),
     vocabBlock, grammarBlock,
+    ...extraReadalongBlocks,
     dialogueABlock, dialogueBBlock, pronunciationBlock,
   ];
 
