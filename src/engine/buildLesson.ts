@@ -93,7 +93,6 @@ export function buildLessonPlan(
     ),
     content: {
       items: [
-        { id: "a1", translations: framingText((_, p) => p.agendaLabels.intro, () => "Introduction") },
         ...(topic.selfIntro?.[targetLang]
           ? [{ id: "a1b", translations: framingText((_: LangCode, p: NonNullable<ReturnType<typeof getPhrases>>) => p.agendaLabels.selfIntro, () => "Your Self-Introduction") }]
           : []),
@@ -250,7 +249,7 @@ export function buildLessonPlan(
   }));
 
   const blocks: Block[] = [
-    titleBlock, agendaBlock, introBlock,
+    titleBlock, introBlock, agendaBlock,
     ...(selfIntroBlock ? [selfIntroBlock] : []),
     vocabBlock, grammarBlock,
     ...extraReadalongBlocks,

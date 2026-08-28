@@ -3,6 +3,8 @@ import type { Block, VocabDrillContent, VocabItem, LanguageSettings, ReadalongPh
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
+import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
+import { resolveDisplayText } from "../engine/scriptDisplay";
 
 const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string; ja: string }> = {
   noun: { de: "Nomen", en: "Nouns", zh: "名词", ja: "名詞" },
@@ -52,6 +54,7 @@ export function VocabDrillBlock({
   onComplete: () => void;
 }) {
   const content = block.content as VocabDrillContent;
+  const showAlt = useShowAlternateScript();
   const [phaseIdx, setPhaseIdx] = useState(0);
   const [running, setRunning] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -239,7 +242,7 @@ export function VocabDrillBlock({
   return (
     <Slide
       fontScale={block.fontScale}
-      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      title={resolveDisplayText(block.title ?? {}, lang.targetLang, showAlt) ?? block.title?.en}
       footer={
         <>
           <span className="phase-label">{PHASE_LABEL[phase]}</span>
@@ -260,9 +263,9 @@ export function VocabDrillBlock({
             return (
               <div className="vocab-group" key={col.key}>
                 <div className="vocab-group-label">
-                  {col.label[lang.targetLang]}
+                  {resolveDisplayText(col.label, lang.targetLang, showAlt)}
                   {lang.sourceLang !== lang.targetLang && (
-                    <span className="source"> · {col.label[lang.sourceLang]}</span>
+                    <span className="source"> · {resolveDisplayText(col.label, lang.sourceLang, showAlt)}</span>
                   )}
                 </div>
                 <table>
@@ -270,10 +273,10 @@ export function VocabDrillBlock({
                     {col.items.map((item) => (
                       <tr key={item.id} className={item.id === activeId ? "active" : ""}>
                         <td className="target">
-                          {item.translations[lang.targetLang]}
+                          {resolveDisplayText(item.translations, lang.targetLang, showAlt)}
                           {item.tag && <span className="vocab-tag">{item.tag}</span>}
                         </td>
-                        <td className="source">{item.translations[lang.sourceLang]}</td>
+                        <td className="source">{resolveDisplayText(item.translations, lang.sourceLang, showAlt)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -290,12 +293,12 @@ export function VocabDrillBlock({
             <div className="vocab-group vocab-group-paired" key={`${left.key}|${right.key}`}>
               <div className="vocab-group-label vocab-group-label-paired">
                 <span>
-                  {left.label[lang.targetLang]}
-                  {lang.sourceLang !== lang.targetLang && <span className="source"> · {left.label[lang.sourceLang]}</span>}
+                  {resolveDisplayText(left.label, lang.targetLang, showAlt)}
+                  {lang.sourceLang !== lang.targetLang && <span className="source"> · {resolveDisplayText(left.label, lang.sourceLang, showAlt)}</span>}
                 </span>
                 <span>
-                  {right.label[lang.targetLang]}
-                  {lang.sourceLang !== lang.targetLang && <span className="source"> · {right.label[lang.sourceLang]}</span>}
+                  {resolveDisplayText(right.label, lang.targetLang, showAlt)}
+                  {lang.sourceLang !== lang.targetLang && <span className="source"> · {resolveDisplayText(right.label, lang.sourceLang, showAlt)}</span>}
                 </span>
               </div>
               <table className="vocab-table-paired">
@@ -308,18 +311,18 @@ export function VocabDrillBlock({
                         <td className="target paired-cell">
                           {l && (
                             <>
-                              {l.translations[lang.targetLang]}
+                              {resolveDisplayText(l.translations, lang.targetLang, showAlt)}
                               {l.tag && <span className="vocab-tag">{l.tag}</span>}
-                              <span className="paired-source">{l.translations[lang.sourceLang]}</span>
+                              <span className="paired-source">{resolveDisplayText(l.translations, lang.sourceLang, showAlt)}</span>
                             </>
                           )}
                         </td>
                         <td className="target paired-cell">
                           {r && (
                             <>
-                              {r.translations[lang.targetLang]}
+                              {resolveDisplayText(r.translations, lang.targetLang, showAlt)}
                               {r.tag && <span className="vocab-tag">{r.tag}</span>}
-                              <span className="paired-source">{r.translations[lang.sourceLang]}</span>
+                              <span className="paired-source">{resolveDisplayText(r.translations, lang.sourceLang, showAlt)}</span>
                             </>
                           )}
                         </td>

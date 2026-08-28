@@ -3,6 +3,8 @@ import type { Block, IntroContent, LanguageSettings } from "../types";
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
+import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
+import { resolveDisplayText } from "../engine/scriptDisplay";
 
 export function IntroBlock({
   block,
@@ -18,6 +20,7 @@ export function IntroBlock({
   onComplete: () => void;
 }) {
   const content = block.content as IntroContent;
+  const showAlt = useShowAlternateScript();
 
   // No `played`-once ref guard here (deliberately) — see AgendaBlock.tsx
   // for the full explanation of a real bug that pattern caused: a block
@@ -46,11 +49,11 @@ export function IntroBlock({
 
   return (
     <Slide
-      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      title={resolveDisplayText(block.title ?? {}, lang.targetLang, showAlt) ?? block.title?.en}
       footer={<button onClick={onComplete}>Continue →</button>}
     >
-      <p className="intro-text">{content.text[lang.targetLang]}</p>
-      <p className="intro-text source">{content.text[lang.sourceLang]}</p>
+      <p className="intro-text">{resolveDisplayText(content.text, lang.targetLang, showAlt)}</p>
+      <p className="intro-text source">{resolveDisplayText(content.text, lang.sourceLang, showAlt)}</p>
     </Slide>
   );
 }

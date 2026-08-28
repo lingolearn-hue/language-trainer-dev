@@ -2,7 +2,15 @@
 
 export type LangCode = "de" | "en" | "zh" | "ja";
 
-export type Translations = Partial<Record<LangCode, string>>;
+export type Translations = Partial<Record<LangCode, string>> & {
+  // Optional kanji form of the ja field, which is otherwise kana-only
+  // throughout this app. Authored explicitly per string (not derived) —
+  // kana-to-kanji is genuinely ambiguous without full NLP (many words
+  // share a reading but map to different kanji depending on meaning),
+  // so this is never auto-generated. Falls back to the kana `ja` field
+  // wherever not yet authored. See engine/scriptDisplay.ts.
+  jaKanji?: string;
+};
 
 // Block model ------------------------------------------------------------
 

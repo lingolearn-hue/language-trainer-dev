@@ -214,8 +214,21 @@ export { RATE_MIN, RATE_MAX, RATE_STEP };
 // timeout: if the utterance is just running slow rather than truly
 // stuck, letting it keep playing in the background is harmless, whereas
 // cutting it off would audibly clip mid-word for no benefit.
-function estimateMaxSpeechMs(text: string): number {
-  return Math.min(20000, Math.max(4000, text.length * 300));
+// Real bug fix: the estimate only ever scaled with text length, never
+// with the actual playback rate — but target-language speech is
+// deliberately slowed (0.85x by default, down to 0.5x if the student
+// turns speed down), so a sentence genuinely takes longer to finish at
+// a slower rate. The old fixed 20s ceiling could be reached by the
+// nominal (unscaled) estimate alone for a sufficiently long sentence
+// (e.g. the agenda's framing paragraph, ~100 characters) even before
+// slowdown was factored in at all — meaning the timeout could fire
+// before the real (slower) speech had actually finished, letting the
+// auto-play chain advance to the next block while the previous
+// utterance kept audibly playing underneath it. Reported as "the agenda
+// [audio] is still heard on the next slide."
+function estimateMaxSpeechMs(text: string, rate: number = 1): number {
+  const perCharMs = 300 / rate; // slower rate -> proportionally more time budgeted per character
+  return Math.min(45000, Math.max(4000, text.length * perCharMs));
 }
 
 async function speakSegment(
@@ -224,19 +237,20 @@ async function speakSegment(
   preference?: VoicePreference
 ): Promise<void> {
   const voice = await resolveVoice(lang, preference);
+  const roleMultiplier = lang === currentTargetLang ? currentRates().target : currentRates().source;
+  const effectiveRate = (preference?.rate ?? 1) * roleMultiplier;
   const speechPromise = new Promise<void>((resolve) => {
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = bcp47[lang];
     if (voice) utter.voice = voice;
     if (preference?.pitch !== undefined) utter.pitch = preference.pitch;
-    const roleMultiplier = lang === currentTargetLang ? currentRates().target : currentRates().source;
-    utter.rate = (preference?.rate ?? 1) * roleMultiplier;
+    utter.rate = effectiveRate;
     utter.onend = () => resolve();
     utter.onerror = () => resolve();
     window.speechSynthesis.speak(utter);
   });
   const timeoutPromise = new Promise<void>((resolve) => {
-    setTimeout(resolve, estimateMaxSpeechMs(text));
+    setTimeout(resolve, estimateMaxSpeechMs(text, effectiveRate));
   });
   return Promise.race([speechPromise, timeoutPromise]);
 }
@@ -386,7 +400,7 @@ export async function speakLineWithMelody(
 
     setSpeaking(true);
     window.speechSynthesis.speak(utter);
-    setTimeout(finish, estimateMaxSpeechMs(text)); // same anti-hang safety net as speakSegment
+    setTimeout(finish, estimateMaxSpeechMs(text, (preference?.rate ?? 1) * roleMultiplier)); // same anti-hang safety net as speakSegment
   });
 }
 

@@ -55,7 +55,7 @@ export const PHRASES: Partial<Record<LangCode, PhraseSet>> = {
     welcomeTitle: (topic) => `ようこそ！きょうは ${topic}について べんきょうしましょう。`,
     lessonLabel: (n, topic) => `だい${n}か — ${topic}`,
     agendaSpoken: (topic, grammarTitle) =>
-      `きょうは まず はじめの あいさつ、それから ${topic}の たんごを べんきょうします。そのあと ${grammarTitle}を みて、ふたつの かいわを れんしゅうし、さいごに はつおんの れんしゅうを します。`,
+      `きょうは まず ${topic}の たんごを べんきょうします。そのあと ${grammarTitle}を みて、ふたつの かいわを れんしゅうし、さいごに はつおんの れんしゅうを します。`,
     warmup: "はじめる まえに、すこし はなしましょう。",
     introTransition:
       "まず、わたしの ぶんしょうを いっしょに よみましょう。そのあと、もういちど よんでも いいし、じぶんの ことばで はなしても いいですよ。",

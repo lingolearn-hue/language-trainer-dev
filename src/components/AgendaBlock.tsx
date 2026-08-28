@@ -3,6 +3,8 @@ import type { Block, AgendaContent, LanguageSettings } from "../types";
 import type { Trainer } from "../data/trainers";
 import { wait } from "../engine/speech";
 import { Slide } from "./Slide";
+import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
+import { resolveDisplayText } from "../engine/scriptDisplay";
 
 // Table of contents — deliberately never narrated verbatim (reading out
 // "1 Introduction, 2 Vocabulary, 3 Grammar..." as a run-on sentence sounds
@@ -23,6 +25,7 @@ export function AgendaBlock({
   onComplete: () => void;
 }) {
   const content = block.content as AgendaContent;
+  const showAlt = useShowAlternateScript();
 
   // No `played`-once guard here (deliberately). Session.tsx's autoPlay
   // gate now compares a "which block finished its intro" id directly
@@ -52,15 +55,15 @@ export function AgendaBlock({
 
   return (
     <Slide
-      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      title={resolveDisplayText(block.title ?? {}, lang.targetLang, showAlt) ?? block.title?.en}
       footer={<button onClick={onComplete}>Continue →</button>}
     >
       <ol className="agenda-list">
         {content.items.map((item, i) => (
           <li key={item.id} className="agenda-item">
             <span className="agenda-number">{item.number ?? i + 1}</span>
-            <span className="agenda-target">{item.translations[lang.targetLang]}</span>
-            <span className="agenda-source">{item.translations[lang.sourceLang]}</span>
+            <span className="agenda-target">{resolveDisplayText(item.translations, lang.targetLang, showAlt)}</span>
+            <span className="agenda-source">{resolveDisplayText(item.translations, lang.sourceLang, showAlt)}</span>
           </li>
         ))}
       </ol>

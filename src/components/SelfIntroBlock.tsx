@@ -3,6 +3,8 @@ import type { Block, SelfIntroContent, LanguageSettings, ReadalongPhase } from "
 import type { Trainer } from "../data/trainers";
 import { speak, wait, setStudentTurn } from "../engine/speech";
 import { Slide } from "./Slide";
+import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
+import { resolveDisplayText } from "../engine/scriptDisplay";
 
 const PHASES: ReadalongPhase[] = ["echo", "shadow", "silent"];
 
@@ -40,6 +42,7 @@ export function SelfIntroBlock({
   onComplete: () => void;
 }) {
   const content = block.content as SelfIntroContent;
+  const showAlt = useShowAlternateScript();
 
   const [phaseIdx, setPhaseIdx] = useState(0);
   const [templateRunning, setTemplateRunning] = useState(false);
@@ -134,7 +137,7 @@ export function SelfIntroBlock({
 
   return (
     <Slide
-      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      title={resolveDisplayText(block.title ?? {}, lang.targetLang, showAlt) ?? block.title?.en}
       footer={
         <>
           <span className="phase-label">
@@ -151,7 +154,7 @@ export function SelfIntroBlock({
               key={line.id}
               className={`self-intro-line${activeTemplateLine === i && templateRunning ? " active" : ""}`}
             >
-              {line.translations[lang.targetLang]}
+              {resolveDisplayText(line.translations, lang.targetLang, showAlt)}
             </p>
           ))}
         </div>
@@ -160,11 +163,11 @@ export function SelfIntroBlock({
             <div className="self-intro-wordbank">
               {content.wordBank.map((group) => (
                 <div key={group.id} className="self-intro-wordbank-group">
-                  <div className="self-intro-wordbank-label">{group.label[lang.targetLang]}</div>
+                  <div className="self-intro-wordbank-label">{resolveDisplayText(group.label, lang.targetLang, showAlt)}</div>
                   <div className="self-intro-wordbank-words">
                     {group.words.map((w, i) => (
                       <span key={i} className="self-intro-wordbank-word">
-                        {w[lang.targetLang]} <span className="source">{w[lang.sourceLang]}</span>
+                        {resolveDisplayText(w, lang.targetLang, showAlt)} <span className="source">{resolveDisplayText(w, lang.sourceLang, showAlt)}</span>
                       </span>
                     ))}
                   </div>
@@ -172,13 +175,13 @@ export function SelfIntroBlock({
               ))}
             </div>
           )}
-          <p className="self-intro-lead">{content.optionsIntro[lang.targetLang]}</p>
+          <p className="self-intro-lead">{resolveDisplayText(content.optionsIntro, lang.targetLang, showAlt)}</p>
           {content.options.map((opt, i) => (
             <p
               key={opt.id}
               className={`self-intro-line${activeOption === i ? " active" : ""}`}
             >
-              {opt.translations[lang.targetLang]}
+              {resolveDisplayText(opt.translations, lang.targetLang, showAlt)}
             </p>
           ))}
         </div>

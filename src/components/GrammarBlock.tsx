@@ -3,6 +3,8 @@ import type { Block, GrammarContent, LanguageSettings, DisplaySettings } from ".
 import type { Trainer } from "../data/trainers";
 import { speak, wait } from "../engine/speech";
 import { Slide } from "./Slide";
+import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
+import { resolveDisplayText } from "../engine/scriptDisplay";
 
 // Per spec (03-lessons.md pacing rules): grammar = explain -> drill -> quiz,
 // no 3-phase read-along — examples don't need to be learned like vocab
@@ -29,6 +31,7 @@ export function GrammarBlock({
   onComplete: () => void;
 }) {
   const content = block.content as GrammarContent;
+  const showAlt = useShowAlternateScript();
   const [stepMode, setStepMode] = useState(false); // opt-in progressive reveal
   const [revealed, setRevealed] = useState(content.chunks.length); // dense default: all shown
   const [activeChunkId, setActiveChunkId] = useState<string | null>(null);
@@ -122,7 +125,7 @@ export function GrammarBlock({
   return (
     <Slide
       fontScale={block.fontScale}
-      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      title={resolveDisplayText(block.title ?? {}, lang.targetLang, showAlt) ?? block.title?.en}
       footer={
         <>
           <span className="phase-label">{PHASE_LABEL}</span>
@@ -135,7 +138,7 @@ export function GrammarBlock({
       }
     >
       <div className="explanation-row">
-        <p className="explanation">{content.explanation[lang.targetLang]}</p>
+        <p className="explanation">{resolveDisplayText(content.explanation, lang.targetLang, showAlt)}</p>
         <button
           className="listen"
           onClick={() => readChunk(content.explanation[lang.targetLang])}
@@ -144,13 +147,13 @@ export function GrammarBlock({
           🔊
         </button>
       </div>
-      <p className="explanation source">{content.explanation[lang.sourceLang]}</p>
+      <p className="explanation source">{resolveDisplayText(content.explanation, lang.sourceLang, showAlt)}</p>
 
       <div className={`chunks density-${display.density}`}>
         {visibleChunks.map((chunk) => (
           <div key={chunk.id} className={`chunk${chunk.id === activeChunkId ? " active" : ""}`}>
-            <span className="target">{chunk.translations[lang.targetLang]}</span>
-            <span className="source">{chunk.translations[lang.sourceLang]}</span>
+            <span className="target">{resolveDisplayText(chunk.translations, lang.targetLang, showAlt)}</span>
+            <span className="source">{resolveDisplayText(chunk.translations, lang.sourceLang, showAlt)}</span>
             <button
               className="listen"
               onClick={() => readChunk(chunk.translations[lang.targetLang])}

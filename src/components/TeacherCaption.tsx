@@ -2,6 +2,22 @@ import { useEffect, useState } from "react";
 import type { Block, LanguageSettings } from "../types";
 import type { Trainer } from "../data/trainers";
 import { speak, cancelSpeech, splitIntoSentences } from "../engine/speech";
+import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
+import { pinyin } from "pinyin-pro";
+
+// TeacherCaption already extracts individual sentences as raw strings
+// tied to a known langCode (not full Translations objects), so it can't
+// reuse engine/scriptDisplay.ts's resolveDisplayText directly. Chinese
+// is still straightforward — convert the extracted sentence on the fly.
+// Japanese is intentionally left as kana here: block.spokenIntro is
+// framing/announcement text (not the vocab/dialogue content kanji is
+// being authored for), and even if a kanji form existed, splitting it
+// into sentences independently wouldn't reliably line up 1:1 with the
+// kana version's own sentence boundaries.
+function displaySentence(sentence: string | undefined, lang: LanguageSettings["targetLang"], showAlt: boolean): string | undefined {
+  if (!sentence || !showAlt || lang !== "zh") return sentence;
+  return pinyin(sentence, { toneType: "symbol" });
+}
 
 // Audio playback for the trainer, delivered as a subtitle first (real TTS
 // speech + on-screen caption) rather than a full avatar/lip-sync system.
@@ -54,6 +70,7 @@ export function TeacherCaption({
   onFinished?: () => void;
 }) {
   const [speaking, setSpeaking] = useState(false);
+  const showAlt = useShowAlternateScript();
   const [sentenceIdx, setSentenceIdx] = useState(0);
   const [stage, setStage] = useState<"spoken" | "other">("spoken"); // which language is currently playing, bilingual mode only
   // Without this, the caption kept showing the LAST intro sentence for
@@ -179,10 +196,12 @@ export function TeacherCaption({
   if (!showCaptionText) return null; // audio already played above; no visible bubble for this block
   if (finished) return null; // intro's done — don't linger through the rest of the block's content
 
-  const currentText = bilingual
-    ? (stage === "spoken" ? sentences[sentenceIdx] : otherSentences[sentenceIdx])
-    : sentences[sentenceIdx];
-  const currentOther = bilingual ? undefined : otherSentences[sentenceIdx]; // bilingual mode shows one language at a time, full-size, not a primary/secondary pair
+  const currentText = displaySentence(
+    bilingual ? (stage === "spoken" ? sentences[sentenceIdx] : otherSentences[sentenceIdx]) : sentences[sentenceIdx],
+    bilingual ? (stage === "spoken" ? spokenLangCode : otherLangCode) : spokenLangCode,
+    showAlt
+  );
+  const currentOther = bilingual ? undefined : displaySentence(otherSentences[sentenceIdx], otherLangCode, showAlt); // bilingual mode shows one language at a time, full-size, not a primary/secondary pair
 
   return (
     <div className={`teacher-caption${speaking ? " speaking" : ""}`}>

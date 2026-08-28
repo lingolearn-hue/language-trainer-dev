@@ -9,6 +9,7 @@ import { SelfIntroBlock } from "./SelfIntroBlock";
 import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
 import { RateControls } from "./RateControls";
+import { ScriptToggle } from "./ScriptToggle";
 import { TeacherCaption } from "./TeacherCaption";
 import { cancelSpeech, setCurrentTargetLang, speak, requestSkipForward, setGlobalPaused } from "../engine/speech";
 import { acquireWakeLock, releaseWakeLock } from "../engine/wakeLock";
@@ -473,6 +474,7 @@ export function Session({
 
           <div className="right-rail">
             <RateControls />
+            <ScriptToggle targetLang={lang.targetLang} sourceLang={lang.sourceLang} />
             <LessonAvatars trainer={trainer} />
             {/* Portal target for the active block's footer controls —
                 see SlideControlsContext / Slide.tsx. Only actually used

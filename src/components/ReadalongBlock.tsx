@@ -7,6 +7,8 @@ import { playMelodyLine, stopMelody } from "../engine/melodyPlayer";
 import { getMelodyMode, cycleMelodyMode, subscribeMelody, type MelodyMode } from "../engine/melodyToggle";
 import { SONG_MELODIES } from "../data/songMelodies";
 import { Slide } from "./Slide";
+import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
+import { resolveDisplayText } from "../engine/scriptDisplay";
 
 const PHASES: ReadalongPhase[] = ["echo", "shadow", "silent"];
 
@@ -32,6 +34,7 @@ export function ReadalongBlock({
   onComplete: () => void;
 }) {
   const content = block.content as ReadalongContent;
+  const showAlt = useShowAlternateScript();
   const [phaseIdx, setPhaseIdx] = useState(0);
   const [running, setRunning] = useState(false);
   const [activeLine, setActiveLine] = useState<number | null>(null);
@@ -197,8 +200,8 @@ export function ReadalongBlock({
   // consistent across both layouts instead of jumping at the switch.
   const CHARS_PER_ROW_ESTIMATE = hasSpeakers ? 26 : 32;
   const totalVisualRows = content.lines.reduce((sum, line) => {
-    const targetLen = (line.translations[lang.targetLang] ?? "").length;
-    const sourceLen = (line.translations[lang.sourceLang] ?? "").length;
+    const targetLen = (resolveDisplayText(line.translations, lang.targetLang, showAlt) ?? "").length;
+    const sourceLen = (resolveDisplayText(line.translations, lang.sourceLang, showAlt) ?? "").length;
     const longer = Math.max(targetLen, sourceLen);
     return sum + Math.max(1, Math.ceil(longer / CHARS_PER_ROW_ESTIMATE));
   }, 0);
@@ -208,7 +211,7 @@ export function ReadalongBlock({
   return (
     <Slide
       fontScale={block.fontScale}
-      title={block.title?.[lang.targetLang] ?? block.title?.en}
+      title={resolveDisplayText(block.title ?? {}, lang.targetLang, showAlt) ?? block.title?.en}
       footer={
         <>
           <span className="phase-label">{PHASE_LABEL[phase]}</span>
@@ -235,7 +238,8 @@ export function ReadalongBlock({
         style={{ "--dialogue-font-size": `${dialogueFontPx}px` } as CSSProperties}
       >
         {content.lines.map((line, i) => {
-          const text = line.translations[lang.targetLang];
+          const text = line.translations[lang.targetLang]; // canonical form — used for selfCheck comparison, must not be the toggled display variant
+          const displayTarget = resolveDisplayText(line.translations, lang.targetLang, showAlt);
           const speakerText =
             typeof line.speaker === "string" ? line.speaker : line.speaker?.[lang.targetLang];
           const check = checkState[line.id] ?? "idle";
@@ -243,7 +247,7 @@ export function ReadalongBlock({
             <div key={line.id} className={i === activeLine ? "line active" : "line"}>
               {hasSpeakers && <div className="speaker">{speakerText ?? ""}</div>}
               <div className="target">
-                {text}
+                {displayTarget}
                 {phase === "silent" && (
                   <button
                     className={`self-check-btn ${check}`}
@@ -263,7 +267,7 @@ export function ReadalongBlock({
                   </button>
                 )}
               </div>
-              <div className="source">{line.translations[lang.sourceLang]}</div>
+              <div className="source">{resolveDisplayText(line.translations, lang.sourceLang, showAlt)}</div>
             </div>
           );
         })}
