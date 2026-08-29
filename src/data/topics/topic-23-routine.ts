@@ -105,6 +105,76 @@ export const topicRoutine: TopicLesson = {
       ]
     }
   },
+  extraReadalongs: {
+    ja: [
+      {
+        id: "grammar-drill-progressive",
+        title: { ja: "れんしゅう：しんこうけい", en: "Practice: Progressive", de: "Übung: Verlaufsform", zh: "练习：进行时" },
+        spokenIntro: {
+          ja: "つぎは、いま している ことを あらわす れいぶんを れんしゅうしましょう。",
+          en: "Next, let's practice sentences expressing what's happening right now.",
+          de: "Als Nächstes üben wir Sätze, die ausdrücken, was gerade passiert.",
+          zh: "接下来，让我们练习表示正在发生的事情的例句。"
+        },
+        lines: [
+          { id: "pr1", translations: { ja: "いま ごはんを たべています。", jaKanji: "今ご飯を食べています。", en: "I'm eating right now.", de: "Ich esse gerade.", zh: "我现在正在吃饭。" } },
+          { id: "pr2", translations: { ja: "いま べんきょうしています。", jaKanji: "今勉強しています。", en: "I'm studying right now.", de: "Ich lerne gerade.", zh: "我现在正在学习。" } },
+          { id: "pr3", translations: { ja: "あめが ふっています。", jaKanji: "雨が降っています。", en: "It's raining.", de: "Es regnet.", zh: "正在下雨。" } },
+          { id: "pr4", translations: { ja: "こどもが あそんでいます。", jaKanji: "子供が遊んでいます。", en: "The child is playing.", de: "Das Kind spielt.", zh: "孩子在玩。" } },
+          { id: "pr5", translations: { ja: "なにを していますか。", jaKanji: "何をしていますか。", en: "What are you doing?", de: "Was machen Sie?", zh: "你在做什么？" } },
+          { id: "pr6", translations: { ja: "でんわで はなしています。", jaKanji: "電話で話しています。", en: "I'm talking on the phone.", de: "Ich telefoniere gerade.", zh: "我正在打电话。" } },
+          { id: "pr7", translations: { ja: "しゃしんを とっています。", jaKanji: "写真を撮っています。", en: "I'm taking a photo.", de: "Ich mache gerade ein Foto.", zh: "我正在拍照。" } },
+          { id: "pr8", translations: { ja: "かいぎで はなしています。", jaKanji: "会議で話しています。", en: "I'm speaking at the meeting.", de: "Ich spreche gerade auf der Besprechung.", zh: "我正在会议上发言。" } },
+          { id: "pr9", translations: { ja: "おんがくを ききながら はたらいています。", jaKanji: "音楽を聞きながら働いています。", en: "I'm working while listening to music.", de: "Ich arbeite, während ich Musik höre.", zh: "我正边听音乐边工作。" } },
+          { id: "pr10", translations: { ja: "いま でかけています。", jaKanji: "今出かけています。", en: "I'm out right now.", de: "Ich bin gerade unterwegs.", zh: "我现在正在外面。" } }
+        ]
+      },
+      {
+        id: "grammar-drill-habitual",
+        title: { ja: "れんしゅう：しゅうかん", en: "Practice: Habitual", de: "Übung: Gewohnheit", zh: "练习：习惯" },
+        spokenIntro: {
+          ja: "つぎは、いつもの しゅうかんを あらわす れいぶんを れんしゅうしましょう。",
+          en: "Next, let's practice sentences expressing habitual actions.",
+          de: "Als Nächstes üben wir Sätze, die gewohnheitsmäßige Handlungen ausdrücken.",
+          zh: "接下来，让我们练习表示习惯性动作的例句。"
+        },
+        lines: [
+          { id: "ha1", translations: { ja: "まいあさ はしっています。", jaKanji: "毎朝走っています。", en: "I run every morning.", de: "Ich laufe jeden Morgen.", zh: "我每天早上跑步。" } },
+          { id: "ha2", translations: { ja: "まいにち にっきを かいています。", jaKanji: "毎日日記を書いています。", en: "I write in a diary every day.", de: "Ich schreibe jeden Tag Tagebuch.", zh: "我每天写日记。" } },
+          { id: "ha3", translations: { ja: "まいしゅう にほんごを べんきょうしています。", jaKanji: "毎週日本語を勉強しています。", en: "I study Japanese every week.", de: "Ich lerne jede Woche Japanisch.", zh: "我每周学习日语。" } },
+          { id: "ha4", translations: { ja: "まいばん ほんを よんでいます。", jaKanji: "毎晩本を読んでいます。", en: "I read a book every night.", de: "Ich lese jeden Abend ein Buch.", zh: "我每晚读书。" } },
+          { id: "ha5", translations: { ja: "しゅうまつごとに テニスを しています。", jaKanji: "週末ごとにテニスをしています。", en: "I play tennis every weekend.", de: "Ich spiele jedes Wochenende Tennis.", zh: "我每个周末打网球。" } },
+          { id: "ha6", translations: { ja: "まいつき びじゅつかんに いっています。", jaKanji: "毎月美術館に行っています。", en: "I go to the art museum every month.", de: "Ich gehe jeden Monat ins Kunstmuseum.", zh: "我每月去美术馆。" } },
+          { id: "ha7", translations: { ja: "まいあさ コーヒーを のんでいます。", jaKanji: "毎朝コーヒーを飲んでいます。", en: "I drink coffee every morning.", de: "Ich trinke jeden Morgen Kaffee.", zh: "我每天早上喝咖啡。" } },
+          { id: "ha8", translations: { ja: "しごとの あとで ジムに かよっています。", jaKanji: "仕事の後でジムに通っています。", en: "I go to the gym after work.", de: "Ich gehe nach der Arbeit ins Fitnessstudio.", zh: "我下班后去健身房。" } },
+          { id: "ha9", translations: { ja: "まいねん りょこうを しています。", jaKanji: "毎年旅行をしています。", en: "I travel every year.", de: "Ich reise jedes Jahr.", zh: "我每年都去旅行。" } },
+          { id: "ha10", translations: { ja: "まいばん シャワーを あびています。", jaKanji: "毎晩シャワーを浴びています。", en: "I take a shower every night.", de: "Ich dusche jeden Abend.", zh: "我每晚洗澡。" } }
+        ]
+      },
+      {
+        id: "grammar-drill-resultant",
+        title: { ja: "れんしゅう：けっかの じょうたい", en: "Practice: Resultant State", de: "Übung: Zustand", zh: "练习：结果状态" },
+        spokenIntro: {
+          ja: "つぎは、けっかの じょうたいを あらわす れいぶんを れんしゅうしましょう。",
+          en: "Next, let's practice sentences expressing a resultant state.",
+          de: "Als Nächstes üben wir Sätze, die einen resultierenden Zustand ausdrücken.",
+          zh: "接下来，让我们练习表示结果状态的例句。"
+        },
+        lines: [
+          { id: "re1", translations: { ja: "かれは けっこんしています。", jaKanji: "彼は結婚しています。", en: "He is married.", de: "Er ist verheiratet.", zh: "他已经结婚了。" } },
+          { id: "re2", translations: { ja: "わたしは とうきょうに すんでいます。", jaKanji: "私は東京に住んでいます。", en: "I live in Tokyo.", de: "Ich wohne in Tokio.", zh: "我住在东京。" } },
+          { id: "re3", translations: { ja: "まどが あいています。", jaKanji: "窓が開いています。", en: "The window is open.", de: "Das Fenster ist offen.", zh: "窗户开着。" } },
+          { id: "re4", translations: { ja: "みせが しまっています。", jaKanji: "店が閉まっています。", en: "The store is closed.", de: "Das Geschäft ist geschlossen.", zh: "商店关着门。" } },
+          { id: "re5", translations: { ja: "でんきが ついています。", jaKanji: "電気がついています。", en: "The light is on.", de: "Das Licht ist an.", zh: "灯开着。" } },
+          { id: "re6", translations: { ja: "くるまが とまっています。", jaKanji: "車が止まっています。", en: "The car is parked.", de: "Das Auto steht.", zh: "车停着。" } },
+          { id: "re7", translations: { ja: "かべに えが かかっています。", jaKanji: "壁に絵がかかっています。", en: "A picture is hanging on the wall.", de: "An der Wand hängt ein Bild.", zh: "墙上挂着一幅画。" } },
+          { id: "re8", translations: { ja: "かのじょは めがねを かけています。", jaKanji: "彼女はめがねをかけています。", en: "She is wearing glasses.", de: "Sie trägt eine Brille.", zh: "她戴着眼镜。" } },
+          { id: "re9", translations: { ja: "つくえの うえに ほんが のっています。", jaKanji: "机の上に本が乗っています。", en: "A book is on the desk.", de: "Auf dem Schreibtisch liegt ein Buch.", zh: "桌子上放着一本书。" } },
+          { id: "re10", translations: { ja: "かれは しごとを やめています。", jaKanji: "彼は仕事を辞めています。", en: "He has quit his job.", de: "Er hat seinen Job aufgegeben.", zh: "他已经辞职了。" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice", de: "Aussprachetraining", zh: "发音练习" },
@@ -167,12 +237,12 @@ export const topicRoutine: TopicLesson = {
           { id: "l2", category: "long_vowel", translations: { ja: "おばあさん", en: "grandmother", de: "Großmutter", zh: "奶奶，外婆" } },
           { id: "l3", category: "long_vowel", translations: { ja: "ビール", en: "beer", de: "Bier", zh: "啤酒" } },
           { id: "l4", category: "long_vowel", translations: { ja: "ゆうき", en: "courage", de: "Mut", zh: "勇气" } },
-          { id: "l5", category: "long_vowel", translations: { ja: "こうこう", en: "high school", de: "Oberschule", zh: "高中" } },
+          { id: "l5", category: "long_vowel", translations: { ja: "とけい", en: "clock, watch", de: "Uhr", zh: "钟表" } },
           { id: "l6", category: "long_vowel", translations: { ja: "きいて", en: "listen, ask (te-form)", de: "hör zu, frag (te-Form)", zh: "听，问（て形）" } },
           { id: "l7", category: "long_vowel", translations: { ja: "ええ", en: "yes, indeed", de: "ja, genau", zh: "是，嗯" } },
           { id: "l8", category: "long_vowel", translations: { ja: "おばあちゃん", en: "grandma", de: "Oma", zh: "奶奶" } },
           { id: "l9", category: "long_vowel", translations: { ja: "おじいちゃん", en: "grandpa", de: "Opa", zh: "爷爷" } },
-          { id: "l10", category: "long_vowel", translations: { ja: "とおる", en: "to pass through", de: "durchqueren", zh: "通过" } },
+          { id: "l10", category: "long_vowel", translations: { ja: "ゆうびん", en: "mail, postal service", de: "Post", zh: "邮件" } },
           { id: "l11", category: "long_vowel", translations: { ja: "くうき", en: "air", de: "Luft", zh: "空气" } },
           { id: "l12", category: "long_vowel", translations: { ja: "すうじ", en: "number", de: "Zahl", zh: "数字" } },
           { id: "l13", category: "long_vowel", translations: { ja: "カード", en: "card", de: "Karte", zh: "卡片" } },

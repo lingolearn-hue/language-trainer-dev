@@ -104,6 +104,32 @@ export const topicHobbies: TopicLesson = {
       ]
     }
   },
+  extraReadalongs: {
+    ja: [
+      {
+        id: "grammar-drill-taritari",
+        title: { ja: "れんしゅう：〜たり〜たりする", en: "Practice: ~Tari~Tari Suru", de: "Übung: ~Tari~Tari Suru", zh: "练习：〜たり〜たりする" },
+        spokenIntro: {
+          ja: "つぎは、「〜たり〜たりする」を つかった れいぶんを れんしゅうしましょう。",
+          en: "Next, let's practice example sentences using ~tari~tari suru.",
+          de: "Als Nächstes üben wir Beispielsätze mit ~tari~tari suru.",
+          zh: "接下来，让我们练习使用「〜たり〜たりする」的例句。"
+        },
+        lines: [
+          { id: "tt1", translations: { ja: "しゅうまつは えいがを みたり、りょうりを したり します。", jaKanji: "週末は映画を見たり、料理をしたりします。", en: "On weekends, I do things like watch movies and cook.", de: "Am Wochenende mache ich Dinge wie Filme schauen und kochen.", zh: "周末会看电影、做饭之类的。" } },
+          { id: "tt2", translations: { ja: "しゅみは しゃしんを とったり、さんぽしたり することです。", jaKanji: "趣味は写真を撮ったり、散歩したりすることです。", en: "My hobby is things like taking photos and taking walks.", de: "Mein Hobby ist es, Fotos zu machen und spazieren zu gehen.", zh: "我的爱好是拍照、散步之类的。" } },
+          { id: "tt3", translations: { ja: "こどもは えを えがいたり、うたを うたったり します。", jaKanji: "子供は絵を描いたり、歌を歌ったりします。", en: "Children do things like drawing pictures and singing songs.", de: "Kinder machen Dinge wie Bilder malen und Lieder singen.", zh: "孩子们会画画、唱歌之类的。" } },
+          { id: "tt4", translations: { ja: "ひまな とき、ほんを よんだり、テレビを みたり します。", jaKanji: "暇な時、本を読んだり、テレビを見たりします。", en: "In my free time, I do things like reading books and watching TV.", de: "In meiner Freizeit mache ich Dinge wie Bücher lesen und fernsehen.", zh: "空闲的时候，会读书、看电视之类的。" } },
+          { id: "tt5", translations: { ja: "かれは がっきを ひいたり、おどったり するのが すきです。", jaKanji: "彼は楽器を弾いたり、踊ったりするのが好きです。", en: "He likes doing things like playing instruments and dancing.", de: "Er mag es, Instrumente zu spielen und zu tanzen.", zh: "他喜欢弹乐器、跳舞之类的。" } },
+          { id: "tt6", translations: { ja: "なつやすみは やまに のぼったり、うみで およいだり しました。", jaKanji: "夏休みは山に登ったり、海で泳いだりしました。", en: "During summer vacation, I did things like climbing mountains and swimming in the sea.", de: "Im Sommerurlaub habe ich Dinge wie Berge besteigen und im Meer schwimmen gemacht.", zh: "暑假的时候，爬了山，也在海里游了泳。" } },
+          { id: "tt7", translations: { ja: "あさは さんぽしたり、しんぶんを よんだり します。", jaKanji: "朝は散歩したり、新聞を読んだりします。", en: "In the morning, I do things like taking a walk and reading the newspaper.", de: "Morgens mache ich Dinge wie spazieren gehen und Zeitung lesen.", zh: "早上会散步、看报纸之类的。" } },
+          { id: "tt8", translations: { ja: "りょこうさきで しゃしんを とったり、かいものを したり しました。", jaKanji: "旅行先で写真を撮ったり、買い物をしたりしました。", en: "At the travel destination, I did things like taking photos and shopping.", de: "Am Reiseziel habe ich Fotos gemacht und eingekauft.", zh: "在旅行的地方，拍了照片，也购物了。" } },
+          { id: "tt9", translations: { ja: "ともだちと はなしたり、わらったり しました。", jaKanji: "友達と話したり、笑ったりしました。", en: "I did things like talking and laughing with friends.", de: "Ich habe mit Freunden geredet und gelacht.", zh: "和朋友聊天、大笑了。" } },
+          { id: "tt10", translations: { ja: "いえで おんがくを きいたり、りょうりを したり します。", jaKanji: "家で音楽を聞いたり、料理をしたりします。", en: "At home, I do things like listening to music and cooking.", de: "Zu Hause höre ich Musik und koche.", zh: "在家会听音乐、做饭之类的。" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice", de: "Aussprachetraining", zh: "发音练习" },

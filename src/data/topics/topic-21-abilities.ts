@@ -103,6 +103,32 @@ export const topicAbilities: TopicLesson = {
       ]
     }
   },
+  extraReadalongs: {
+    ja: [
+      {
+        id: "grammar-drill-potential",
+        title: { ja: "れんしゅう：かのうけい", en: "Practice: Potential Form", de: "Übung: Potentialform", zh: "练习：可能形" },
+        spokenIntro: {
+          ja: "つぎは、かのうけいを つかった れいぶんを れんしゅうしましょう。",
+          en: "Next, let's practice example sentences using the potential form.",
+          de: "Als Nächstes üben wir Beispielsätze mit der Potentialform.",
+          zh: "接下来，让我们练习使用可能形的例句。"
+        },
+        lines: [
+          { id: "po1", translations: { ja: "わたしは およげます。", jaKanji: "私は泳げます。", en: "I can swim.", de: "Ich kann schwimmen.", zh: "我会游泳。" } },
+          { id: "po2", translations: { ja: "にほんごが はなせます。", jaKanji: "日本語が話せます。", en: "I can speak Japanese.", de: "Ich kann Japanisch sprechen.", zh: "我会说日语。" } },
+          { id: "po3", translations: { ja: "ピアノが ひけます。", jaKanji: "ピアノが弾けます。", en: "I can play piano.", de: "Ich kann Klavier spielen.", zh: "我会弹钢琴。" } },
+          { id: "po4", translations: { ja: "かんじが よめますか。", jaKanji: "漢字が読めますか。", en: "Can you read kanji?", de: "Können Sie Kanji lesen?", zh: "你会读汉字吗？" } },
+          { id: "po5", translations: { ja: "コンピューターが つかえます。", jaKanji: "コンピューターが使えます。", en: "I can use a computer.", de: "Ich kann einen Computer benutzen.", zh: "我会用电脑。" } },
+          { id: "po6", translations: { ja: "うんてんが できません。", jaKanji: "運転ができません。", en: "I can't drive.", de: "Ich kann nicht Auto fahren.", zh: "我不会开车。" } },
+          { id: "po7", translations: { ja: "はやく はしれません。", jaKanji: "速く走れません。", en: "I can't run fast.", de: "Ich kann nicht schnell laufen.", zh: "我跑不快。" } },
+          { id: "po8", translations: { ja: "りょうりが できます。", jaKanji: "料理ができます。", en: "I can cook.", de: "Ich kann kochen.", zh: "我会做饭。" } },
+          { id: "po9", translations: { ja: "がいこくごが はなせますか。", jaKanji: "外国語が話せますか。", en: "Can you speak a foreign language?", de: "Können Sie eine Fremdsprache sprechen?", zh: "你会说外语吗？" } },
+          { id: "po10", translations: { ja: "むずかしい しごとも できます。", jaKanji: "難しい仕事もできます。", en: "I can handle difficult work too.", de: "Ich kann auch mit schwieriger Arbeit umgehen.", zh: "我也能应付困难的工作。" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice", de: "Aussprachetraining", zh: "发音练习" },
@@ -175,23 +201,23 @@ export const topicAbilities: TopicLesson = {
           { id: "p13", category: "pitch", translations: { ja: "つづける", en: "to continue — new word, single pattern", de: "fortsetzen — neues Wort, einzelnes Muster", zh: "继续——新词，单一声调" } },
           { id: "p14", category: "pitch", translations: { ja: "むずかしい", en: "difficult — new word, single pattern", de: "schwierig — neues Wort, einzelnes Muster", zh: "难的——新词，单一声调" } },
 
-          { id: "vl1", category: "vowel_length", translations: { ja: "のうりょく", en: "ability (long おう)", de: "Fähigkeit (langes おう)", zh: "能力（长音おう）" } },
-          { id: "vl2", category: "vowel_length", translations: { ja: "すいえい", en: "swimming (long えい)", de: "Schwimmen (langes えい)", zh: "游泳（长音えい）" } },
-          { id: "vl3", category: "vowel_length", translations: { ja: "やきゅう", en: "baseball (long ゅう)", de: "Baseball (langes ゅう)", zh: "棒球（长音ゅう）" } },
-          { id: "vl4", category: "vowel_length", translations: { ja: "しゅみ", en: "hobby (short vowels)", de: "Hobby (kurze Vokale)", zh: "爱好（短元音）" } },
+          { id: "vl1", category: "vowel_length", translations: { ja: "こうこう", en: "high school (long こう)", de: "Oberschule (langes こう)", zh: "高中（长音こう）" } },
+          { id: "vl2", category: "vowel_length", translations: { ja: "けいけん", en: "experience (long けい)", de: "Erfahrung (langes けい)", zh: "经验（长音けい）" } },
+          { id: "vl3", category: "vowel_length", translations: { ja: "きゅうか", en: "vacation, day off (long きゅう)", de: "Urlaub (langes きゅう)", zh: "休假（长音きゅう）" } },
+          { id: "vl4", category: "vowel_length", translations: { ja: "せいかつ", en: "life, lifestyle (short vowels)", de: "Leben (kurze Vokale)", zh: "生活（短元音）" } },
           { id: "vl5", category: "vowel_length", translations: { ja: "コンピューター", en: "computer (long ー twice)", de: "Computer (zweimal langes ー)", zh: "电脑（两次长音ー）" } },
           { id: "vl6", category: "vowel_length", translations: { ja: "がいこくご", en: "foreign language (short vowels)", de: "Fremdsprache (kurze Vokale)", zh: "外语（短元音）" } },
           { id: "vl7", category: "vowel_length", translations: { ja: "けいさん", en: "calculation (long けい)", de: "Rechnen (langes けい)", zh: "计算（长音けい）" } },
           { id: "vl8", category: "vowel_length", translations: { ja: "たいそう", en: "gymnastics (long たい and そう)", de: "Turnen (langes たい und そう)", zh: "体操（长音たい和そう）" } },
-          { id: "vl9", category: "vowel_length", translations: { ja: "がんばる", en: "to try hard (short vowels)", de: "sich anstrengen (kurze Vokale)", zh: "努力（短元音）" } },
+          { id: "vl9", category: "vowel_length", translations: { ja: "はしる", en: "to run (short vowels)", de: "laufen (kurze Vokale)", zh: "跑步（短元音）" } },
           { id: "vl10", category: "vowel_length", translations: { ja: "れんしゅうする", en: "to practice (long しゅう)", de: "üben (langes しゅう)", zh: "练习（长音しゅう）" } },
-          { id: "vl11", category: "vowel_length", translations: { ja: "とくい", en: "good at (short vowels)", de: "gut in etwas (kurze Vokale)", zh: "擅长（短元音）" } },
-          { id: "vl12", category: "vowel_length", translations: { ja: "にがて", en: "bad at (short vowels)", de: "schlecht in etwas (kurze Vokale)", zh: "不擅长（短元音）" } },
-          { id: "vl13", category: "vowel_length", translations: { ja: "ダンス", en: "dance (short vowels, contrast word)", de: "Tanz (kurze Vokale, Vergleichswort)", zh: "舞蹈（短元音，对比词）" } },
-          { id: "vl14", category: "vowel_length", translations: { ja: "テニス", en: "tennis (short vowels)", de: "Tennis (kurze Vokale)", zh: "网球（短元音）" } },
+          { id: "vl11", category: "vowel_length", translations: { ja: "げんき", en: "healthy, energetic (short vowels)", de: "gesund, energiegeladen (kurze Vokale)", zh: "健康（短元音）" } },
+          { id: "vl12", category: "vowel_length", translations: { ja: "しんせつ", en: "kind (short vowels)", de: "freundlich (kurze Vokale)", zh: "亲切（短元音）" } },
+          { id: "vl13", category: "vowel_length", translations: { ja: "ホテル", en: "hotel (short vowels)", de: "Hotel (kurze Vokale)", zh: "酒店（短元音）" } },
+          { id: "vl14", category: "vowel_length", translations: { ja: "ざっし", en: "magazine (short vowels)", de: "Zeitschrift (kurze Vokale)", zh: "杂志（短元音）" } },
 
-          { id: "so1", category: "sokuon", translations: { ja: "サッカー", en: "soccer", de: "Fußball", zh: "足球" } },
-          { id: "so2", category: "sokuon", translations: { ja: "しっぱいする", en: "to fail", de: "scheitern", zh: "失败" } },
+          { id: "so1", category: "sokuon", translations: { ja: "けっせき", en: "absence", de: "Abwesenheit", zh: "缺席" } },
+          { id: "so2", category: "sokuon", translations: { ja: "きって", en: "stamp", de: "Briefmarke", zh: "邮票" } },
           { id: "so3", category: "sokuon", translations: { ja: "けっか", en: "result", de: "Ergebnis", zh: "结果" } },
           { id: "so4", category: "sokuon", translations: { ja: "がっき", en: "musical instrument", de: "Musikinstrument", zh: "乐器" } },
           { id: "so5", category: "sokuon", translations: { ja: "はっぴょう", en: "presentation, announcement", de: "Präsentation", zh: "发表" } },

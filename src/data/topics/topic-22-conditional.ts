@@ -102,6 +102,32 @@ export const topicConditional: TopicLesson = {
       ]
     }
   },
+  extraReadalongs: {
+    ja: [
+      {
+        id: "grammar-drill-tara",
+        title: { ja: "れんしゅう：〜たら", en: "Practice: ~Tara", de: "Übung: ~Tara", zh: "练习：〜たら" },
+        spokenIntro: {
+          ja: "つぎは、「〜たら」を つかった れいぶんを れんしゅうしましょう。",
+          en: "Next, let's practice example sentences using ~tara.",
+          de: "Als Nächstes üben wir Beispielsätze mit ~tara.",
+          zh: "接下来，让我们练习使用「〜たら」的例句。"
+        },
+        lines: [
+          { id: "ta1", translations: { ja: "あめが ふったら、うちに います。", jaKanji: "雨が降ったら、家にいます。", en: "If it rains, I'll stay home.", de: "Wenn es regnet, bleibe ich zu Hause.", zh: "如果下雨，我就待在家里。" } },
+          { id: "ta2", translations: { ja: "じかんが あったら、てつだいます。", jaKanji: "時間があったら、手伝います。", en: "If I have time, I'll help.", de: "Wenn ich Zeit habe, helfe ich.", zh: "如果有时间，我就帮忙。" } },
+          { id: "ta3", translations: { ja: "やすかったら、かいます。", jaKanji: "安かったら、買います。", en: "If it's cheap, I'll buy it.", de: "Wenn es billig ist, kaufe ich es.", zh: "如果便宜的话，我就买。" } },
+          { id: "ta4", translations: { ja: "ひまだったら、あそびに きてください。", jaKanji: "暇だったら、遊びに来てください。", en: "If you're free, please come hang out.", de: "Wenn du frei hast, komm doch vorbei.", zh: "如果有空的话，请来玩。" } },
+          { id: "ta5", translations: { ja: "しつもんが あったら、きいてください。", jaKanji: "質問があったら、聞いてください。", en: "If you have a question, please ask.", de: "Wenn Sie eine Frage haben, fragen Sie bitte.", zh: "如果有问题，请提问。" } },
+          { id: "ta6", translations: { ja: "うちに ついたら、れんらくします。", jaKanji: "家に着いたら、連絡します。", en: "When I get home, I'll contact you.", de: "Sobald ich zu Hause ankomme, melde ich mich.", zh: "到家以后，我会联系你。" } },
+          { id: "ta7", translations: { ja: "しごとが おわったら、たべに いきましょう。", jaKanji: "仕事が終わったら、食べに行きましょう。", en: "When work is over, let's go eat.", de: "Wenn die Arbeit fertig ist, lass uns essen gehen.", zh: "工作结束以后，一起去吃饭吧。" } },
+          { id: "ta8", translations: { ja: "わからなかったら、おしえてください。", jaKanji: "分からなかったら、教えてください。", en: "If you don't understand, please tell me.", de: "Wenn Sie es nicht verstehen, sagen Sie es mir bitte.", zh: "如果不明白的话，请告诉我。" } },
+          { id: "ta9", translations: { ja: "てんきが よかったら、さんぽしましょう。", jaKanji: "天気が良かったら、散歩しましょう。", en: "If the weather is good, let's take a walk.", de: "Wenn das Wetter gut ist, lass uns spazieren gehen.", zh: "如果天气好的话，一起去散步吧。" } },
+          { id: "ta10", translations: { ja: "なにか あったら、でんわしてください。", jaKanji: "何かあったら、電話してください。", en: "If something happens, please call me.", de: "Wenn etwas passiert, rufen Sie mich bitte an.", zh: "如果发生什么事，请给我打电话。" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice", de: "Aussprachetraining", zh: "发音练习" },
@@ -174,22 +200,22 @@ export const topicConditional: TopicLesson = {
           { id: "p13", category: "pitch", translations: { ja: "びょうき", en: "illness — new word, single pattern", de: "Krankheit — neues Wort, einzelnes Muster", zh: "疾病——新词，单一声调" } },
           { id: "p14", category: "pitch", translations: { ja: "たりない", en: "insufficient — new word, single pattern", de: "unzureichend — neues Wort, einzelnes Muster", zh: "不够的——新词，单一声调" } },
 
-          { id: "vl1", category: "vowel_length", translations: { ja: "びょういん", en: "hospital (long ょう)", de: "Krankenhaus (langes ょう)", zh: "医院（长音ょう）" } },
-          { id: "vl2", category: "vowel_length", translations: { ja: "びょうき", en: "illness (long ょう)", de: "Krankheit (langes ょう)", zh: "疾病（长音ょう）" } },
+          { id: "vl1", category: "vowel_length", translations: { ja: "しょうがっこう", en: "elementary school (long しょう)", de: "Grundschule (langes しょう)", zh: "小学（长音しょう）" } },
+          { id: "vl2", category: "vowel_length", translations: { ja: "しょうたい", en: "invitation (long しょう)", de: "Einladung (langes しょう)", zh: "邀请（长音しょう）" } },
           { id: "vl3", category: "vowel_length", translations: { ja: "てんきよほう", en: "weather forecast (long おう)", de: "Wettervorhersage (langes おう)", zh: "天气预报（长音おう）" } },
           { id: "vl4", category: "vowel_length", translations: { ja: "じかん", en: "time (short vowels)", de: "Zeit (kurze Vokale)", zh: "时间（短元音）" } },
           { id: "vl5", category: "vowel_length", translations: { ja: "きんちょうする", en: "to get nervous (long ちょう)", de: "nervös werden (langes ちょう)", zh: "紧张（长音ちょう）" } },
           { id: "vl6", category: "vowel_length", translations: { ja: "せいこうする", en: "to succeed (long せい)", de: "erfolgreich sein (langes せい)", zh: "成功（长音せい）" } },
-          { id: "vl7", category: "vowel_length", translations: { ja: "しっぱいする", en: "to fail (short vowels)", de: "scheitern (kurze Vokale)", zh: "失败（短元音）" } },
+          { id: "vl7", category: "vowel_length", translations: { ja: "はんこ", en: "stamp, seal (short vowels)", de: "Stempel (kurze Vokale)", zh: "印章（短元音）" } },
           { id: "vl8", category: "vowel_length", translations: { ja: "かいけつする", en: "to solve (long かい)", de: "lösen (langes かい)", zh: "解决（长音かい）" } },
           { id: "vl9", category: "vowel_length", translations: { ja: "れんらくする", en: "to contact (short vowels)", de: "kontaktieren (kurze Vokale)", zh: "联系（短元音）" } },
-          { id: "vl10", category: "vowel_length", translations: { ja: "けいかく", en: "plan (long けい)", de: "Plan (langes けい)", zh: "计划（长音けい）" } },
-          { id: "vl11", category: "vowel_length", translations: { ja: "しあい", en: "match, game (short vowels)", de: "Spiel (kurze Vokale)", zh: "比赛（短元音）" } },
+          { id: "vl10", category: "vowel_length", translations: { ja: "けいけん", en: "experience (long けい)", de: "Erfahrung (langes けい)", zh: "经验（长音けい）" } },
+          { id: "vl11", category: "vowel_length", translations: { ja: "からだ", en: "body (short vowels)", de: "Körper (kurze Vokale)", zh: "身体（短元音）" } },
           { id: "vl12", category: "vowel_length", translations: { ja: "おかね", en: "money (short vowels)", de: "Geld (kurze Vokale)", zh: "钱（短元音）" } },
-          { id: "vl13", category: "vowel_length", translations: { ja: "アドバイス", en: "advice (long バイ, diphthong-like)", de: "Ratschlag (Diphthong-artig)", zh: "建议（类似双元音）" } },
-          { id: "vl14", category: "vowel_length", translations: { ja: "あきらめる", en: "to give up (short vowels)", de: "aufgeben (kurze Vokale)", zh: "放弃（短元音）" } },
+          { id: "vl13", category: "vowel_length", translations: { ja: "サイズ", en: "size (diphthong-like)", de: "Größe (Diphthong-artig)", zh: "尺寸（类似双元音）" } },
+          { id: "vl14", category: "vowel_length", translations: { ja: "しんせつ", en: "kind (short vowels)", de: "freundlich (kurze Vokale)", zh: "亲切（短元音）" } },
 
-          { id: "so1", category: "sokuon", translations: { ja: "しっぱいする", en: "to fail", de: "scheitern", zh: "失败" } },
+          { id: "so1", category: "sokuon", translations: { ja: "けっせき", en: "absence", de: "Abwesenheit", zh: "缺席" } },
           { id: "so2", category: "sokuon", translations: { ja: "きっと", en: "surely, certainly", de: "sicherlich", zh: "一定" } },
           { id: "so3", category: "sokuon", translations: { ja: "けっか", en: "result", de: "Ergebnis", zh: "结果" } },
           { id: "so4", category: "sokuon", translations: { ja: "けっこん", en: "marriage", de: "Heirat", zh: "结婚" } },

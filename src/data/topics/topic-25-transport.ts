@@ -103,6 +103,54 @@ export const topicTransport: TopicLesson = {
       ]
     }
   },
+  extraReadalongs: {
+    ja: [
+      {
+        id: "grammar-drill-tekara",
+        title: { ja: "れんしゅう：〜てから", en: "Practice: ~Te Kara", de: "Übung: ~Te Kara", zh: "练习：〜てから" },
+        spokenIntro: {
+          ja: "つぎは、「〜てから」を つかった れいぶんを れんしゅうしましょう。",
+          en: "Next, let's practice example sentences using ~te kara.",
+          de: "Als Nächstes üben wir Beispielsätze mit ~te kara.",
+          zh: "接下来，让我们练习使用「〜てから」的例句。"
+        },
+        lines: [
+          { id: "tk1", translations: { ja: "きっぷを かってから、ホームに はいります。", jaKanji: "切符を買ってから、ホームに入ります。", en: "After buying the ticket, I go onto the platform.", de: "Nachdem ich die Fahrkarte gekauft habe, gehe ich auf den Bahnsteig.", zh: "买了票之后进站台。" } },
+          { id: "tk2", translations: { ja: "パスポートを かくにんしてから、つめます。", jaKanji: "パスポートを確認してから、詰めます。", en: "After confirming my passport, I pack.", de: "Nachdem ich meinen Reisepass bestätigt habe, packe ich.", zh: "确认好护照之后收拾行李。" } },
+          { id: "tk3", translations: { ja: "チェックインしてから、セキュリティチェックを うけます。", jaKanji: "チェックインしてから、セキュリティチェックを受けます。", en: "After checking in, I go through security.", de: "Nach dem Check-in gehe ich durch die Sicherheitskontrolle.", zh: "办理手续之后接受安检。" } },
+          { id: "tk4", translations: { ja: "でんしゃに のってから、ざせきに すわります。", jaKanji: "電車に乗ってから、座席に座ります。", en: "After boarding the train, I sit in my seat.", de: "Nachdem ich in den Zug eingestiegen bin, setze ich mich auf meinen Platz.", zh: "上了电车之后坐到座位上。" } },
+          { id: "tk5", translations: { ja: "しゅっぱつしてから、れんらくします。", jaKanji: "出発してから、連絡します。", en: "After departing, I'll contact you.", de: "Nachdem ich abgefahren bin, melde ich mich.", zh: "出发之后联系你。" } },
+          { id: "tk6", translations: { ja: "にもつを うけとってから、ホテルに いきます。", jaKanji: "荷物を受け取ってから、ホテルに行きます。", en: "After picking up my luggage, I go to the hotel.", de: "Nachdem ich mein Gepäck abgeholt habe, fahre ich zum Hotel.", zh: "取了行李之后去酒店。" } },
+          { id: "tk7", translations: { ja: "くうこうに ついてから、でんわします。", jaKanji: "空港に着いてから、電話します。", en: "After arriving at the airport, I'll call.", de: "Nachdem ich am Flughafen angekommen bin, rufe ich an.", zh: "到达机场之后打电话。" } },
+          { id: "tk8", translations: { ja: "じゅんびしてから、でかけます。", jaKanji: "準備してから、出かけます。", en: "After preparing, I'll go out.", de: "Nachdem ich mich vorbereitet habe, gehe ich raus.", zh: "准备好之后出门。" } },
+          { id: "tk9", translations: { ja: "よやくしてから、きっぷを かいます。", jaKanji: "予約してから、切符を買います。", en: "After reserving, I'll buy the ticket.", de: "Nachdem ich reserviert habe, kaufe ich die Fahrkarte.", zh: "预订之后买票。" } },
+          { id: "tk10", translations: { ja: "のりかえてから、ホテルに つきます。", jaKanji: "乗り換えてから、ホテルに着きます。", en: "After transferring, I'll arrive at the hotel.", de: "Nachdem ich umgestiegen bin, komme ich im Hotel an.", zh: "换乘之后到达酒店。" } }
+        ]
+      },
+      {
+        id: "grammar-drill-atode",
+        title: { ja: "れんしゅう：〜あとで", en: "Practice: ~Ato De", de: "Übung: ~Ato De", zh: "练习：〜あとで" },
+        spokenIntro: {
+          ja: "つぎは、「〜あとで」を つかった れいぶんを れんしゅうしましょう。",
+          en: "Next, let's practice example sentences using ~ato de.",
+          de: "Als Nächstes üben wir Beispielsätze mit ~ato de.",
+          zh: "接下来，让我们练习使用「〜あとで」的例句。"
+        },
+        lines: [
+          { id: "at1", translations: { ja: "かいぎが おわったあとで、れんらくします。", jaKanji: "会議が終わったあとで、連絡します。", en: "After the meeting ends, I'll contact you.", de: "Nachdem die Besprechung beendet ist, melde ich mich.", zh: "会议结束之后再联系。" } },
+          { id: "at2", translations: { ja: "ごはんを たべたあとで、さんぽに いきます。", jaKanji: "ご飯を食べたあとで、散歩に行きます。", en: "After eating, I'll go for a walk.", de: "Nachdem ich gegessen habe, gehe ich spazieren.", zh: "吃完饭之后去散步。" } },
+          { id: "at3", translations: { ja: "きっぷを かったあとで、ホームに いきます。", jaKanji: "切符を買ったあとで、ホームに行きます。", en: "After buying the ticket, I go to the platform.", de: "Nachdem ich die Fahrkarte gekauft habe, gehe ich zum Bahnsteig.", zh: "买了票之后去站台。" } },
+          { id: "at4", translations: { ja: "とうちゃくしたあとで、チェックインします。", jaKanji: "到着したあとで、チェックインします。", en: "After arriving, I'll check in.", de: "Nachdem ich angekommen bin, checke ich ein.", zh: "到达之后办理登机手续。" } },
+          { id: "at5", translations: { ja: "にもつを つめたあとで、かくにんします。", jaKanji: "荷物を詰めたあとで、確認します。", en: "After packing, I'll check.", de: "Nachdem ich gepackt habe, überprüfe ich alles.", zh: "收拾好行李之后再确认。" } },
+          { id: "at6", translations: { ja: "チェックインの あとで、セキュリティチェックを うけます。", jaKanji: "チェックインのあとで、セキュリティチェックを受けます。", en: "After check-in, I go through security.", de: "Nach dem Check-in gehe ich durch die Sicherheitskontrolle.", zh: "办理手续之后接受安检。" } },
+          { id: "at7", translations: { ja: "しゅっぱつの あとで、ねます。", jaKanji: "出発のあとで、寝ます。", en: "After departure, I'll sleep.", de: "Nach der Abfahrt schlafe ich.", zh: "出发之后睡觉。" } },
+          { id: "at8", translations: { ja: "じゅんびが おわったあとで、すぐ でます。", jaKanji: "準備が終わったあとで、すぐ出ます。", en: "After finishing preparations, I'll leave right away.", de: "Nachdem die Vorbereitungen fertig sind, gehe ich sofort los.", zh: "准备好之后马上出发。" } },
+          { id: "at9", translations: { ja: "にほんに ついたあとで、れんらくを ください。", jaKanji: "日本に着いたあとで、連絡をください。", en: "Please contact me after arriving in Japan.", de: "Bitte melden Sie sich, nachdem Sie in Japan angekommen sind.", zh: "到达日本之后请联系我。" } },
+          { id: "at10", translations: { ja: "のりかえた あとで、ホテルに つきます。", jaKanji: "乗り換えたあとで、ホテルに着きます。", en: "After transferring, I'll arrive at the hotel.", de: "Nachdem ich umgestiegen bin, komme ich im Hotel an.", zh: "换乘之后到达酒店。" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice", de: "Aussprachetraining", zh: "发音练习" },

@@ -106,6 +106,54 @@ export const topicWeekend: TopicLesson = {
       ]
     }
   },
+  extraReadalongs: {
+    ja: [
+      {
+        id: "grammar-drill-polite",
+        title: { ja: "れんしゅう：ていねいけい", en: "Practice: Polite Past Tense", de: "Übung: Höfliche Vergangenheitsform", zh: "练习：敬体过去时" },
+        spokenIntro: {
+          ja: "つぎは、ていねいけいの かこけいを れんしゅうしましょう。",
+          en: "Next, let's practice the polite past tense.",
+          de: "Als Nächstes üben wir die höfliche Vergangenheitsform.",
+          zh: "接下来，让我们练习敬体的过去时。"
+        },
+        lines: [
+          { id: "pl1", translations: { ja: "えいがを みました。", jaKanji: "映画を見ました。", en: "I watched a movie.", de: "Ich habe einen Film gesehen.", zh: "看电影了。" } },
+          { id: "pl2", translations: { ja: "こうえんを さんぽしました。", jaKanji: "公園を散歩しました。", en: "I took a walk in the park.", de: "Ich bin im Park spazieren gegangen.", zh: "在公园散步了。" } },
+          { id: "pl3", translations: { ja: "そうじを しました。", jaKanji: "掃除をしました。", en: "I did the cleaning.", de: "Ich habe geputzt.", zh: "打扫了。" } },
+          { id: "pl4", translations: { ja: "せんたくを しました。", jaKanji: "洗濯をしました。", en: "I did the laundry.", de: "Ich habe Wäsche gewaschen.", zh: "洗衣服了。" } },
+          { id: "pl5", translations: { ja: "かいものに いきました。", jaKanji: "買い物に行きました。", en: "I went shopping.", de: "Ich bin einkaufen gegangen.", zh: "去购物了。" } },
+          { id: "pl6", translations: { ja: "りょうりを つくりました。", jaKanji: "料理を作りました。", en: "I made a meal.", de: "Ich habe eine Mahlzeit zubereitet.", zh: "做饭了。" } },
+          { id: "pl7", translations: { ja: "ほんを よみました。", jaKanji: "本を読みました。", en: "I read a book.", de: "Ich habe ein Buch gelesen.", zh: "读书了。" } },
+          { id: "pl8", translations: { ja: "パーティーに いきました。", jaKanji: "パーティーに行きました。", en: "I went to a party.", de: "Ich bin auf eine Party gegangen.", zh: "去派对了。" } },
+          { id: "pl9", translations: { ja: "とても たのしかったです。", jaKanji: "とても楽しかったです。", en: "It was very fun.", de: "Es hat sehr viel Spaß gemacht.", zh: "非常开心。" } },
+          { id: "pl10", translations: { ja: "しずかな しゅうまつでした。", jaKanji: "静かな週末でした。", en: "It was a quiet weekend.", de: "Es war ein ruhiges Wochenende.", zh: "是个安静的周末。" } }
+        ]
+      },
+      {
+        id: "grammar-drill-plain",
+        title: { ja: "れんしゅう：ふつうけい", en: "Practice: Plain Past Tense", de: "Übung: Plain-Vergangenheitsform", zh: "练习：简体过去时" },
+        spokenIntro: {
+          ja: "つぎは、ふつうけいの かこけいを れんしゅうしましょう。",
+          en: "Next, let's practice the plain past tense.",
+          de: "Als Nächstes üben wir die Plain-Vergangenheitsform.",
+          zh: "接下来，让我们练习简体的过去时。"
+        },
+        lines: [
+          { id: "pn1", translations: { ja: "えいがを みた。", jaKanji: "映画を見た。", en: "I watched a movie.", de: "Ich habe einen Film gesehen.", zh: "看电影了。" } },
+          { id: "pn2", translations: { ja: "こうえんを さんぽした。", jaKanji: "公園を散歩した。", en: "I took a walk in the park.", de: "Ich bin im Park spazieren gegangen.", zh: "在公园散步了。" } },
+          { id: "pn3", translations: { ja: "そうじを した。", jaKanji: "掃除をした。", en: "I did the cleaning.", de: "Ich habe geputzt.", zh: "打扫了。" } },
+          { id: "pn4", translations: { ja: "せんたくを した。", jaKanji: "洗濯をした。", en: "I did the laundry.", de: "Ich habe Wäsche gewaschen.", zh: "洗衣服了。" } },
+          { id: "pn5", translations: { ja: "かいものに いった。", jaKanji: "買い物に行った。", en: "I went shopping.", de: "Ich bin einkaufen gegangen.", zh: "去购物了。" } },
+          { id: "pn6", translations: { ja: "りょうりを つくった。", jaKanji: "料理を作った。", en: "I made a meal.", de: "Ich habe eine Mahlzeit zubereitet.", zh: "做饭了。" } },
+          { id: "pn7", translations: { ja: "ほんを よんだ。", jaKanji: "本を読んだ。", en: "I read a book.", de: "Ich habe ein Buch gelesen.", zh: "读书了。" } },
+          { id: "pn8", translations: { ja: "パーティーに いった。", jaKanji: "パーティーに行った。", en: "I went to a party.", de: "Ich bin auf eine Party gegangen.", zh: "去派对了。" } },
+          { id: "pn9", translations: { ja: "すごく たのしかった。", jaKanji: "すごく楽しかった。", en: "It was really fun.", de: "Es hat echt Spaß gemacht.", zh: "特别开心。" } },
+          { id: "pn10", translations: { ja: "しずかな しゅうまつだった。", jaKanji: "静かな週末だった。", en: "It was a quiet weekend.", de: "Es war ein ruhiges Wochenende.", zh: "是个安静的周末。" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: { ja: "はつおんの れんしゅう", en: "Pronunciation Practice", de: "Aussprachetraining", zh: "发音练习" },
@@ -191,16 +239,16 @@ export const topicWeekend: TopicLesson = {
           { id: "p13", category: "pitch", translations: { ja: "どくしょ", en: "reading — new word, single pattern", de: "Lesen — neues Wort, einzelnes Muster", zh: "读书——新词，单一声调" } },
           { id: "p14", category: "pitch", translations: { ja: "さんぽ", en: "walk, stroll — new word, single pattern", de: "Spaziergang — neues Wort, einzelnes Muster", zh: "散步——新词，单一声调" } },
 
-          { id: "vl1", category: "vowel_length", translations: { ja: "コンサート", en: "concert (long ー)", de: "Konzert (langes ー)", zh: "音乐会（长音ー）" } },
-          { id: "vl2", category: "vowel_length", translations: { ja: "パーティー", en: "party (long ー twice)", de: "Party (zweimal langes ー)", zh: "派对（两次长音ー）" } },
-          { id: "vl3", category: "vowel_length", translations: { ja: "びじゅつかん", en: "art museum (long ゅう)", de: "Kunstmuseum (langes ゅう)", zh: "美术馆（长音ゅう）" } },
+          { id: "vl1", category: "vowel_length", translations: { ja: "ノート", en: "notebook (long ー)", de: "Notizbuch (langes ー)", zh: "笔记本（长音ー）" } },
+          { id: "vl2", category: "vowel_length", translations: { ja: "スポーツ", en: "sports (long ー)", de: "Sport (langes ー)", zh: "体育运动（长音ー）" } },
+          { id: "vl3", category: "vowel_length", translations: { ja: "べんきょう", en: "study (long きょう)", de: "Lernen (langes きょう)", zh: "学习（长音きょう）" } },
           { id: "vl4", category: "vowel_length", translations: { ja: "はくぶつかん", en: "museum (short vowels)", de: "Museum (kurze Vokale)", zh: "博物馆（短元音）" } },
           { id: "vl5", category: "vowel_length", translations: { ja: "こうえん", en: "park (long おう)", de: "Park (langes おう)", zh: "公园（长音おう）" } },
-          { id: "vl6", category: "vowel_length", translations: { ja: "どようび", en: "Saturday (short vowels)", de: "Samstag (kurze Vokale)", zh: "星期六（短元音）" } },
+          { id: "vl6", category: "vowel_length", translations: { ja: "からだ", en: "body (short vowels)", de: "Körper (kurze Vokale)", zh: "身体（短元音）" } },
           { id: "vl7", category: "vowel_length", translations: { ja: "にちようび", en: "Sunday (long ちよ)", de: "Sonntag (langes ちよ)", zh: "星期日（长音）" } },
           { id: "vl8", category: "vowel_length", translations: { ja: "ゆうめい", en: "famous (long ゆう and えい)", de: "berühmt (langes ゆう und えい)", zh: "有名（长音ゆう和えい）" } },
           { id: "vl9", category: "vowel_length", translations: { ja: "きのう", en: "yesterday (long のう)", de: "gestern (langes のう)", zh: "昨天（长音のう）" } },
-          { id: "vl10", category: "vowel_length", translations: { ja: "がっこう", en: "school (long こう)", de: "Schule (langes こう)", zh: "学校（长音こう）" } },
+          { id: "vl10", category: "vowel_length", translations: { ja: "とうきょう", en: "Tokyo (long とう and きょう)", de: "Tokio (langes とう und きょう)", zh: "东京（长音とう和きょう）" } },
           { id: "vl11", category: "vowel_length", translations: { ja: "おうえん", en: "cheering, support (long おう)", de: "Anfeuern, Unterstützung (langes おう)", zh: "加油，支持（长音おう）" } },
           { id: "vl12", category: "vowel_length", translations: { ja: "せんせい", en: "teacher (long せい)", de: "Lehrer (langes せい)", zh: "老师（长音せい）" } },
           { id: "vl13", category: "vowel_length", translations: { ja: "とけい", en: "clock, watch (long けい)", de: "Uhr (langes けい)", zh: "钟表（长音けい）" } },
