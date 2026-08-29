@@ -25,6 +25,9 @@ import { topicTraffic } from "./data/topics/topic-16-traffic";
 import { topicWork } from "./data/topics/topic-17-work";
 import { topicSchool } from "./data/topics/topic-18-school";
 import { topicWeather } from "./data/topics/topic-19-weather";
+import { topicWeekend } from "./data/topics/topic-20-weekend";
+import { topicAbilities } from "./data/topics/topic-21-abilities";
+import { topicConditional } from "./data/topics/topic-22-conditional";
 import { buildLessonPlan } from "./engine/buildLesson";
 import { applyPhoneStyle } from "./engine/phoneStyle";
 import { loadSettings, saveSettings } from "./engine/userSettings";
@@ -47,7 +50,7 @@ const ALL_TOPICS: TopicLesson[] = [
   topicFamily, topicBody, topicAppearance, topicEmotions, topicFood,
   topicHome, topicClothing, topicShopping, topicAnimals, topicHealth,
   topicTravel, topicDirections, topicTime,
-  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
+  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, topicWeekend, topicAbilities, topicConditional, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
 ];
 const generatedJapaneseLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))

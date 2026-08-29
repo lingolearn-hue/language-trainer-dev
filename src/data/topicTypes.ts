@@ -54,6 +54,10 @@ export interface TopicLesson {
   id: string; // "topic-05-food"
   lessonNumber: number; // master table row
   topicName: Translations; // {en:"Food", ja:"たべもの", de:"Essen", zh:"食物"}
+  // CEFR level, e.g. "A1", "A2". Optional — defaults to the target
+  // language's usual level (buildLesson.ts's CEFR_LEVEL) when not set,
+  // since every topic before A2 lessons existed was implicitly A1.
+  level?: string;
   vocab: VocabItem[];
   dialogueA: TopicDialogue;
   dialogueB: TopicDialogue;

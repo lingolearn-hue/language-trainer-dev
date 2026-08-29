@@ -51,6 +51,12 @@ skeleton with language-specific substitutions where noted.
 | English (C1) | 1 | Standalone "Voices from Orbit" space course, not on the A1 track |
 | Japanese (A1) | 1–19 (all) | Rows 1–19 complete. All have ja; 1–13 also have de. zh done for 1–5 and 14–19, still pending for 6–13. |
 
+**Every lesson complete is the goal** (self-intro slide, grammar
+reinforcement, a full 4×14 second pronunciation drill, a song with real
+melody, kanji authored) — see `docs/topic-lesson-system.md`'s "Goal:
+every lesson complete" section for the exact standard and current
+per-topic status against it.
+
 **Songs — implemented status (v05a):** every one of rows 1–19 now has a
 song, using only the real songs already assigned somewhere in this
 table (rows 1–19's own assignments, or reused from another row) — no

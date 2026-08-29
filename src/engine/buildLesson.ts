@@ -289,7 +289,7 @@ export function buildLessonPlan(
     courseId,
     language: LANGUAGE_DISPLAY_NAME[targetLang],
     targetLangCode: targetLang,
-    level: CEFR_LEVEL[targetLang] ?? "A1",
+    level: topic.level ?? CEFR_LEVEL[targetLang] ?? "A1",
     lessonNumber: topic.lessonNumber,
     title: topic.topicName,
     framingLanguage: "source",

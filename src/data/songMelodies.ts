@@ -174,6 +174,39 @@ const HAPPY_BIRTHDAY: SongMelody = {
   },
 };
 
+// If You're Happy and You Know It — traditional, simple repeating tune.
+const IF_YOURE_HAPPY: SongMelody = {
+  bpm: 120,
+  lines: {
+    sg1: [{ pitch: "C4", beats: 0.5 }, { pitch: "C4", beats: 0.5 }, { pitch: "C4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "G4", beats: 2 }],
+    sg2: [{ pitch: "C4", beats: 0.5 }, { pitch: "C4", beats: 0.5 }, { pitch: "C4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "G4", beats: 2 }],
+    sg3: [{ pitch: "C5", beats: 0.5 }, { pitch: "C5", beats: 0.5 }, { pitch: "C5", beats: 0.5 }, { pitch: "G4", beats: 0.5 }, { pitch: "A4", beats: 0.5 }, { pitch: "A4", beats: 0.5 }, { pitch: "G4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "A4", beats: 1 }, { pitch: "G4", beats: 1 }],
+    sg4: [{ pitch: "C4", beats: 0.5 }, { pitch: "C4", beats: 0.5 }, { pitch: "C4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "G4", beats: 2 }],
+  },
+};
+
+// The Wheels on the Bus — traditional, simple repeating tune.
+const WHEELS_ON_THE_BUS: SongMelody = {
+  bpm: 112,
+  lines: {
+    sg1: [{ pitch: "C4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "E4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "G4", beats: 2 }],
+    sg2: [{ pitch: "G4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "E4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "G4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "E4", beats: 2 }],
+    sg3: [{ pitch: "C4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "E4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "G4", beats: 2 }],
+    sg4: [{ pitch: "F4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "C4", beats: 2 }],
+  },
+};
+
+// Mary Had a Little Lamb — traditional, simple stepwise tune.
+const MARY_HAD_A_LITTLE_LAMB: SongMelody = {
+  bpm: 110,
+  lines: {
+    sg1: [{ pitch: "E4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "C4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "E4", beats: 1 }, { pitch: "E4", beats: 1 }, { pitch: "E4", beats: 2 }],
+    sg2: [{ pitch: "D4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "D4", beats: 2 }, { pitch: "E4", beats: 1 }, { pitch: "G4", beats: 1 }, { pitch: "G4", beats: 2 }],
+    sg3: [{ pitch: "E4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "C4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "E4", beats: 1 }, { pitch: "E4", beats: 1 }, { pitch: "E4", beats: 1 }, { pitch: "E4", beats: 1 }],
+    sg4: [{ pitch: "D4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "E4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "C4", beats: 4 }],
+  },
+};
+
 export const SONG_MELODIES: Record<string, SongMelody> = {
   // Row, Row, Row Your Boat — Topic 11 (Travel, original home) and
   // German lesson11, repeated onto Topic 16 (Traffic) since row 16 is
@@ -250,4 +283,9 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   // Happy Birthday to You — Topic 18 (School, documented home). Not
   // currently repeated elsewhere.
   "topic-18-school-ja-song": HAPPY_BIRTHDAY,
+
+  // A2 topics each get their own song, not a repeat of an A1 one.
+  "topic-20-weekend-ja-song": IF_YOURE_HAPPY,
+  "topic-21-abilities-ja-song": WHEELS_ON_THE_BUS,
+  "topic-22-conditional-ja-song": MARY_HAD_A_LITTLE_LAMB,
 };

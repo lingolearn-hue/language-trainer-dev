@@ -5,6 +5,32 @@ full Japanese content; 13 (rows 1–13) also have German. Rows 14–19 are
 Japanese-only for now. German Lessons 2/11 and the English C1 lesson
 remain hand-written, outside this system — see "Known gaps" below.**
 
+## Goal: every lesson complete
+
+A **complete** lesson has all of the following, not just the minimum
+6-block spine (title, intro, agenda, vocab, grammar, two dialogues,
+pronunciation) that every topic already has:
+
+1. **Self-introduction slide** — fill-in-the-blank template, plus a
+   silent word bank for any blank with a natural finite category (e.g.
+   eye color, sport)
+2. **Grammar reinforcement slide(s)** — dialogue-format, ~10 example
+   sentences per grammar sub-concept, one slide per concept (never
+   crammed into a single dense table)
+3. **Second pronunciation drill — full 4 columns × 14 words (56 total)**,
+   not a smaller or uneven set. Row-paired comparison (`pairedColumns`)
+   where the columns are genuine minimal pairs (e.g. pitch-accent
+   contrasts); otherwise four independent 14-word lists is the standard
+   shape regardless.
+4. **Song** — real melody data, not just lyrics
+5. **Kanji authored** for every `ja` string outside pronunciation-focused
+   content (vocab, dialogue, grammar, self-intro — not the pronunciation
+   drills themselves, where kana is the actual point)
+
+This is the target for every topic, not just the ones that happen to
+have it already. See "Known gaps" below for exactly which topics are
+still missing which pieces.
+
 ## The problem this solves
 
 Every lesson so far was authored as a single file for ONE target language
@@ -110,7 +136,9 @@ open-ended) and 2 (Body, 2 word-bank groups: eye color, sport/exercise).
 
 `topic.extraDrills[lang]` — an array of additional `vocabDrill`-type
 slides beyond the standard vocab+pronunciation pair, appended right after
-the pronunciation block. Two uses so far:
+the pronunciation block. **Standard shape: 4 columns × 14 words = 56
+total**, not a smaller or uneven set — see "Goal: every lesson complete"
+above. Two uses so far:
 1. A hand-curated word list reinforcing that lesson's specific
    pronunciation focus at scale (e.g. Topic 1's B/P/d→t/g→k drill,
    56 words across 4 columns) — pulled from real German-course slide
@@ -118,7 +146,15 @@ the pronunciation block. Two uses so far:
    other 3 languages.
 2. Row-by-row pitch-accent comparison (see next section).
 
-Currently authored for topics 1, 2 (both ja and de), 6, 8, 9, 11, 13.
+**Current status against the 4×14 standard:**
+- **Full 56-word, 4-column drills**: Topic 1 (de), Topic 3 (ja), Topic 6
+  (de), Topic 9 (ja), Topic 11 (de), Topic 13 (de)
+- **Below standard, needs expansion**: Topic 2's ja drill (48 words —
+  its short/long-vowel columns have 12 each instead of 14); Topic 8's ja
+  drill (45 words across only 3 columns instead of 4)
+- **Missing entirely**: Topics 4, 5, 7, 10, 12, 14, 16, 17, 18, 19, and
+  the `de` side of Topics 2, 3, 8, 9 (these currently only have a `ja`
+  drill, or vice versa)
 
 ## Row-by-row comparison columns (`pairedColumns`)
 
@@ -213,6 +249,21 @@ the background rather than getting audibly clipped.
 
 ## Known gaps — not yet resolved
 
+Against the "every lesson complete" standard above, per-feature status:
+
+- **Kanji**: only Topic 3 has `jaKanji` authored (all 41 vocab items,
+  both dialogues, grammar). The other 18 topics are kana-only — see
+  `engine/scriptDisplay.ts` for the toggle mechanism, already built and
+  ready to receive kanji for any topic.
+- **Self-introduction slides**: only Topics 1 and 2 have one.
+- **Grammar reinforcement (`extraReadalongs`)**: only Topic 15 has one
+  (4 slides, より/のほうが/いちばん/ほど〜ない, 10 sentences each).
+- **Second pronunciation drill (`extraDrills`)**: see the dedicated
+  section above for exact per-topic status — 6 topics meet the full
+  4×14 standard, 2 are below it, the rest have none at all.
+- **Songs**: all 19 topics have one (see `docs/song-melodies.md`), and
+  17 of 19 have real melody data — Topics 10 and 19 share the one song
+  that still has no melody transcribed.
 - **Only `ja` and `de` have phrase templates**, and only those two
   languages have any grammar/pronunciation authored anywhere. A topic
   with vocab translated into `en`/`zh` still can't generate an `en`- or
@@ -229,15 +280,24 @@ the background rather than getting audibly clipped.
 - **`fr`/`es` have no lessons or phrase templates at all** — the topic
   system's `LangCode` type already supports them structurally, but
   nothing has been authored.
-- **Only 8 of 19 topics have a song**, and one of those (Topic 19,
-  Weather) has no melody data yet — see `docs/song-melodies.md`.
-- **Only 2 of 19 topics have a self-introduction slide** (Family, Body).
-- **Only 7 of 19 topics have a second (extra-drill) pronunciation
-  slide.**
 
 ## For a future session picking this up
 
-The fastest path to "every built topic works for every trainer pair" is:
+Toward "every lesson complete" (see that section above), in rough
+priority order:
+1. Bring every topic's second pronunciation drill up to the full 4×14
+   standard — expand Topic 2 (48→56) and Topic 8 (3 cols→4), then author
+   one from scratch for the 11 topics that have none, on both `ja` and
+   `de` sides wherever that topic has German content.
+2. Author self-introduction slides and grammar-reinforcement slides for
+   the topics that don't have one yet.
+3. Author kanji for the remaining 18 topics, one at a time, same process
+   as Topic 3 (vocab, then dialogue, then grammar — never pronunciation
+   content).
+4. Author a melody for Topic 19's song (also used by Topic 10).
+
+Separately, the fastest path to "every built topic works for every
+trainer pair" is:
 1. Author German grammar/pronunciation for topics 14–19 (same pattern as
    1–13 — substitute genuinely German-native grammar/pronunciation
    concepts where the master table's assigned concept doesn't map,
@@ -248,5 +308,3 @@ The fastest path to "every built topic works for every trainer pair" is:
    and Yui's stated language coverage real rather than aspirational
 3. Backfill Chinese vocab/dialogue/song for topics 6–13
 4. Extract German Lesson 11 and the English C1 lesson into topic files
-5. Author melody data for Topic 19's song; author self-intro slides and
-   extra-drill slides for the remaining topics that don't have them yet
