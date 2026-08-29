@@ -214,6 +214,7 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   "de11-song": ROW_ROW_ROW_YOUR_BOAT,
   "topic-11-travel-ja-song": ROW_ROW_ROW_YOUR_BOAT,
   "topic-11-travel-de-song": ROW_ROW_ROW_YOUR_BOAT,
+  "topic-24-hobbies-ja-song": ROW_ROW_ROW_YOUR_BOAT,
   "topic-16-traffic-ja-song": ROW_ROW_ROW_YOUR_BOAT,
 
   // Frère Jacques / Bruder Jakob — lesson2.ts's own block keeps its
@@ -239,6 +240,7 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   // currently repeated elsewhere.
   "topic-13-time-ja-song": TWINKLE_TWINKLE,
   "topic-13-time-de-song": TWINKLE_TWINKLE,
+  "topic-23-routine-ja-song": TWINKLE_TWINKLE,
 
   // Head, Shoulders, Knees and Toes — Topic 2 (Body, original home),
   // repeated onto Topic 5 (Food, an open slot).

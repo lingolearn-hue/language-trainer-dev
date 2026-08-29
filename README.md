@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 83 — 2026-08-25
+Version: 89 — 2026-08-29
 
 React-based long-form language tutor simulation (45-90 min sessions).
 Static content, multiple trainer personas, block-based session engine
@@ -38,16 +38,17 @@ still planned.
   "your turn" windows. Per-language ordered voice-name fallback lists
   (`voicesByLang`), since most platforms default to a female voice per
   locale unless the user has downloaded an alternative.
-- **Lessons**: 19 topic-based (topic-lesson system, all Japanese; 13 of
-  those also German) + 3 hand-written standalone (German Lektion 2,
-  German Lektion 11, English C1 "Voices from Orbit") = 32 total. See
-  `docs/topic-lesson-system.md` for the full architecture, current
-  per-feature coverage (self-intro slides, extra drill slides,
-  row-by-row pronunciation comparison, per-language content overrides),
-  and known gaps.
-- **Songs**: 8 of 19 topics have one; 7 have real melody data
-  (`data/songMelodies.ts`, Web Audio oscillator playback synced to
-  lyric lines) — 1 (Topic 19, Weather) doesn't yet. See
+- **Lessons**: 24 topic-based (topic-lesson system — 19 A1, all
+  Japanese, 13 of those also German; 5 A2, Japanese only) + 3
+  hand-written standalone (German Lektion 2, German Lektion 11, English
+  C1 "Voices from Orbit") = 37 total. See `docs/topic-lesson-system.md`
+  for the full architecture, current per-feature coverage (self-intro
+  slides, extra drill slides, row-by-row pronunciation comparison,
+  per-language content overrides), the A2 topics section, and known
+  gaps.
+- **Songs**: every A1 topic has one (17 of 19 with real melody data —
+  2 share the one song still missing a melody transcription); every A2
+  topic built so far also has one. See
   `docs/song-melodies.md`.
 - **Lesson picker**: single-column compact rows (number+level | title+
   content summary | status+slide-count), sorted by level then lesson

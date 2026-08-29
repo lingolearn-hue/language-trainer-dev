@@ -1,8 +1,8 @@
 # Topic-Based Lesson System
 
-**Status: 19 topics built (rows 1–19 of the A1 master table). All 19 have
-full Japanese content; 13 (rows 1–13) also have German. Rows 14–19 are
-Japanese-only for now. German Lessons 2/11 and the English C1 lesson
+**Status: 24 topics built. 19 are the A1 master table (rows 1–19), all
+with full Japanese content, 13 (rows 1–13) also German. 5 are A2 (see
+"A2 topics" below). German Lessons 2/11 and the English C1 lesson
 remain hand-written, outside this system — see "Known gaps" below.**
 
 ## Goal: every lesson complete
@@ -247,7 +247,36 @@ by racing the speech promise against a generous length-scaled timeout
 so a merely-slow (not truly stuck) utterance keeps playing harmlessly in
 the background rather than getting audibly clipped.
 
-## Known gaps — not yet resolved
+## A2 topics
+
+`docs/a2-master-lesson-table-v01.md` — a 34-row A2 plan, saved verbatim
+as given. 5 A2 topics built so far, using the same `TopicLesson.level`
+field (defaults to the target language's usual level when unset, so
+A1 topics didn't need any change).
+
+- **Topics 20–22 (Weekend/past-tense, Abilities/potential-form,
+  Conditional/たら-form)** were built *before* the A2 table existed,
+  picked ad hoc from `docs/grammar-items-a1-to-c2-v01.md`'s A2 grammar
+  list. They don't match the table's actual row 8 (Travel, potential
+  form) or row 27 (Environment, たら) — themes and vocab differ. Not
+  reconciled yet; flagged for a future session.
+- **Topics 23–24 (Routine, Hobbies)** are built directly from the
+  table's rows 1–2, including their exact pronunciation assignments.
+  These are the reference examples for what a table-aligned A2 lesson
+  looks like — every future A2 topic should follow rows 3+ in order,
+  not be picked ad hoc.
+
+All 5 A2 topics have the full 56-word (4×14) second pronunciation
+drill built directly (not deferred), plus base pronunciation, full
+vocab/dialogue/grammar, and a song. None yet have a self-intro slide,
+grammar reinforcement slide, or kanji.
+
+A pronunciation-drill repeat-fix was proposed (the A2 table reuses
+several basic contrasts — K vs G, S vs SH, long/short vowels — up to
+6 times each with no "reinforced" marking) but not yet applied to any
+row; rows 1–2 didn't need it since both were first occurrences.
+
+
 
 Against the "every lesson complete" standard above, per-feature status:
 
