@@ -36,6 +36,8 @@ import { topicSeasons } from "./data/topics/topic-27-seasons";
 import { topicLearning } from "./data/topics/topic-28-learning";
 import { topicRelationships } from "./data/topics/topic-29-relationships";
 import { topicExperiences } from "./data/topics/topic-30-experiences";
+import { topicMemories } from "./data/topics/topic-31-memories";
+import { topicRecommendations } from "./data/topics/topic-32-recommendations";
 import { buildLessonPlan } from "./engine/buildLesson";
 import { applyPhoneStyle } from "./engine/phoneStyle";
 import { loadSettings, saveSettings } from "./engine/userSettings";
@@ -58,7 +60,7 @@ const ALL_TOPICS: TopicLesson[] = [
   topicFamily, topicBody, topicAppearance, topicEmotions, topicFood,
   topicHome, topicClothing, topicShopping, topicAnimals, topicHealth,
   topicTravel, topicDirections, topicTime,
-  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, topicWeekend, topicAbilities, topicConditional, topicRoutine, topicHobbies, topicTransport, topicCooking, topicSeasons, topicLearning, topicRelationships, topicExperiences, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
+  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, topicWeekend, topicAbilities, topicConditional, topicRoutine, topicHobbies, topicTransport, topicCooking, topicSeasons, topicLearning, topicRelationships, topicExperiences, topicMemories, topicRecommendations, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
 ];
 const generatedJapaneseLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))
