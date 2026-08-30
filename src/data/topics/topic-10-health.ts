@@ -11,7 +11,8 @@ export const topicHealth: TopicLesson = {
   topicName: {
     ja: "びょうきと けんこう",
     de: "Gesundheit & Anweisungen",
-    en: "Health & Instructions"
+    en: "Health & Instructions",
+    zh: "疾病与健康"
   },
   vocab: [
     {
@@ -20,7 +21,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "びょうき",
         de: "Krankheit",
-        en: "illness, sickness"
+        en: "illness, sickness",
+        zh: "疾病"
       }
     },
     {
@@ -29,7 +31,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "ねつ",
         de: "Fieber",
-        en: "fever"
+        en: "fever",
+        zh: "发烧"
       }
     },
     {
@@ -38,7 +41,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "せき",
         de: "Husten",
-        en: "cough"
+        en: "cough",
+        zh: "咳嗽"
       }
     },
     {
@@ -47,7 +51,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "あたま",
         de: "Kopf",
-        en: "head"
+        en: "head",
+        zh: "头"
       }
     },
     {
@@ -56,7 +61,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "おなか",
         de: "Bauch",
-        en: "stomach"
+        en: "stomach",
+        zh: "肚子"
       }
     },
     {
@@ -65,7 +71,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "のど",
         de: "Hals",
-        en: "throat"
+        en: "throat",
+        zh: "喉咙"
       }
     },
     {
@@ -74,7 +81,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "くすり",
         de: "Medikament",
-        en: "medicine"
+        en: "medicine",
+        zh: "药"
       }
     },
     {
@@ -83,7 +91,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "びょういん",
         de: "Krankenhaus, Klinik",
-        en: "hospital, clinic"
+        en: "hospital, clinic",
+        zh: "医院"
       }
     },
     {
@@ -92,7 +101,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "いしゃ",
         de: "Arzt/Ärztin",
-        en: "doctor"
+        en: "doctor",
+        zh: "医生"
       }
     },
     {
@@ -101,7 +111,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "かんごし",
         de: "Krankenpfleger(in)",
-        en: "nurse"
+        en: "nurse",
+        zh: "护士"
       }
     },
     {
@@ -110,7 +121,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "きゅうきゅうしゃ",
         de: "Krankenwagen",
-        en: "ambulance"
+        en: "ambulance",
+        zh: "救护车"
       }
     },
     {
@@ -119,7 +131,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "けが",
         de: "Verletzung",
-        en: "injury"
+        en: "injury",
+        zh: "受伤"
       }
     },
     {
@@ -128,7 +141,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "ばんそうこう",
         de: "Verband, Pflaster",
-        en: "bandage, plaster"
+        en: "bandage, plaster",
+        zh: "创可贴"
       }
     },
     {
@@ -137,7 +151,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "たいおん",
         de: "Körpertemperatur",
-        en: "body temperature"
+        en: "body temperature",
+        zh: "体温"
       }
     },
     {
@@ -146,7 +161,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "アレルギー",
         de: "Allergie",
-        en: "allergy"
+        en: "allergy",
+        zh: "过敏"
       }
     },
     {
@@ -155,7 +171,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "びょうしつ",
         de: "Krankenzimmer",
-        en: "hospital room"
+        en: "hospital room",
+        zh: "病房"
       }
     },
     {
@@ -164,7 +181,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "いたい",
         de: "wehtun (Adjektiv, verbal gebraucht)",
-        en: "to hurt (adjective, used verbally)"
+        en: "to hurt (adjective, used verbally)",
+        zh: "疼"
       }
     },
     {
@@ -173,7 +191,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "やすむ",
         de: "sich ausruhen",
-        en: "to rest"
+        en: "to rest",
+        zh: "休息"
       }
     },
     {
@@ -182,7 +201,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "ねる",
         de: "schlafen, sich hinlegen",
-        en: "to sleep, lie down"
+        en: "to sleep, lie down",
+        zh: "睡觉，躺下"
       }
     },
     {
@@ -191,7 +211,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "くすりを のむ",
         de: "Medikamente einnehmen",
-        en: "to take medicine"
+        en: "to take medicine",
+        zh: "吃药"
       }
     },
     {
@@ -200,7 +221,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "びょういんへ いく",
         de: "ins Krankenhaus gehen",
-        en: "to go to the hospital"
+        en: "to go to the hospital",
+        zh: "去医院"
       }
     },
     {
@@ -209,7 +231,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "みてもらう",
         de: "sich untersuchen lassen",
-        en: "to be examined (by a doctor)"
+        en: "to be examined (by a doctor)",
+        zh: "接受检查（看医生）"
       }
     },
     {
@@ -218,7 +241,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "しんぱいする",
         de: "sich sorgen",
-        en: "to worry"
+        en: "to worry",
+        zh: "担心"
       }
     },
     {
@@ -227,7 +251,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "なおる",
         de: "genesen, heilen",
-        en: "to recover, heal"
+        en: "to recover, heal",
+        zh: "痊愈"
       }
     },
     {
@@ -236,7 +261,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "だいじょうぶ",
         de: "okay, in Ordnung",
-        en: "okay, fine"
+        en: "okay, fine",
+        zh: "没事，可以"
       }
     },
     {
@@ -245,7 +271,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "げんき",
         de: "gesund, wohlauf",
-        en: "healthy, well"
+        en: "healthy, well",
+        zh: "健康，精神好"
       }
     },
     {
@@ -254,7 +281,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "しんぱい",
         de: "besorgt",
-        en: "worried"
+        en: "worried",
+        zh: "担心的"
       }
     },
     {
@@ -263,7 +291,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "つらい",
         de: "schmerzhaft, schwer zu ertragen",
-        en: "painful, hard to bear"
+        en: "painful, hard to bear",
+        zh: "痛苦，难受"
       }
     },
     {
@@ -272,7 +301,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "きけん",
         de: "gefährlich",
-        en: "dangerous"
+        en: "dangerous",
+        zh: "危险"
       }
     },
     {
@@ -281,7 +311,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "あんぜん",
         de: "sicher",
-        en: "safe"
+        en: "safe",
+        zh: "安全"
       }
     },
     {
@@ -290,7 +321,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "しごと",
         de: "Arbeit, Job",
-        en: "work, job"
+        en: "work, job",
+        zh: "工作"
       }
     },
     {
@@ -299,7 +331,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "て",
         de: "Hand",
-        en: "hand"
+        en: "hand",
+        zh: "手"
       }
     },
     {
@@ -308,7 +341,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "ち",
         de: "Blut",
-        en: "blood"
+        en: "blood",
+        zh: "血"
       }
     },
     {
@@ -317,7 +351,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "みず",
         de: "Wasser",
-        en: "water"
+        en: "water",
+        zh: "水"
       }
     },
     {
@@ -326,7 +361,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "みせる",
         de: "zeigen",
-        en: "to show"
+        en: "to show",
+        zh: "给……看"
       }
     },
     {
@@ -335,7 +371,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "すわる",
         de: "sich setzen",
-        en: "to sit"
+        en: "to sit",
+        zh: "坐"
       }
     },
     {
@@ -344,7 +381,8 @@ export const topicHealth: TopicLesson = {
       translations: {
         ja: "はる",
         de: "aufkleben, anbringen",
-        en: "to apply, stick on"
+        en: "to apply, stick on",
+        zh: "贴上"
       }
     }
   ],
@@ -352,7 +390,8 @@ export const topicHealth: TopicLesson = {
     title: {
       ja: "かいわ：びょういんで",
       de: "Dialog A: Beim Arzt",
-      en: "Dialogue A: At the Doctor"
+      en: "Dialogue A: At the Doctor",
+      zh: "会话：在医院"
     },
     lines: [
       {
@@ -361,7 +400,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "どうしましたか？",
           de: "Was fehlt Ihnen?",
-          en: "What's wrong?"
+          en: "What's wrong?",
+          zh: "怎么了？"
         }
       },
       {
@@ -370,7 +410,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "あたまが いたくて、ねつも あります。",
           de: "Mein Kopf tut weh, und ich habe auch Fieber.",
-          en: "My head hurts, and I have a fever too."
+          en: "My head hurts, and I have a fever too.",
+          zh: "头疼，还发烧。"
         }
       },
       {
@@ -379,7 +420,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "いつから ですか？",
           de: "Seit wann?",
-          en: "Since when?"
+          en: "Since when?",
+          zh: "从什么时候开始的？"
         }
       },
       {
@@ -388,7 +430,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "きのうの よるから です。",
           de: "Seit gestern Abend.",
-          en: "Since last night."
+          en: "Since last night.",
+          zh: "从昨晚开始的。"
         }
       },
       {
@@ -397,7 +440,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "せきも ありますか？",
           de: "Haben Sie auch Husten?",
-          en: "Do you have a cough too?"
+          en: "Do you have a cough too?",
+          zh: "也咳嗽吗？"
         }
       },
       {
@@ -406,7 +450,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "いいえ、せきは ありません。",
           de: "Nein, ich habe keinen Husten.",
-          en: "No, I don't have a cough."
+          en: "No, I don't have a cough.",
+          zh: "不，没有咳嗽。"
         }
       },
       {
@@ -415,7 +460,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "わかりました。そうですか。この くすりを のんで ください。",
           de: "Verstehe. Bitte nehmen Sie dieses Medikament.",
-          en: "I see. Please take this medicine."
+          en: "I see. Please take this medicine.",
+          zh: "我明白了。请吃这个药。"
         }
       },
       {
@@ -424,7 +470,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "はい。いつ のみますか？",
           de: "Gut. Wann soll ich es einnehmen?",
-          en: "Okay. When should I take it?"
+          en: "Okay. When should I take it?",
+          zh: "好的。什么时候吃？"
         }
       },
       {
@@ -433,7 +480,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "まいにち あさと よる、のんで ください。",
           de: "Nehmen Sie es jeden Tag, morgens und abends.",
-          en: "Take it every day, morning and evening."
+          en: "Take it every day, morning and evening.",
+          zh: "请每天早晚各吃一次。"
         }
       },
       {
@@ -442,7 +490,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "しごとを やすんだ ほうが いいですか？",
           de: "Soll ich mir bei der Arbeit freinehmen?",
-          en: "Should I take a day off work?"
+          en: "Should I take a day off work?",
+          zh: "要请假不上班比较好吗？"
         }
       },
       {
@@ -451,7 +500,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "はい、きょうは やすんで ください。",
           de: "Ja, ruhen Sie sich heute aus.",
-          en: "Yes, please rest today."
+          en: "Yes, please rest today.",
+          zh: "是的，今天请休息。"
         }
       },
       {
@@ -460,7 +510,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "わかりました。あした びょういんへ きても いいですか？",
           de: "Verstanden. Darf ich morgen wieder ins Krankenhaus kommen?",
-          en: "Understood. May I come back to the hospital tomorrow?"
+          en: "Understood. May I come back to the hospital tomorrow?",
+          zh: "明白了。明天可以再来医院吗？"
         }
       },
       {
@@ -469,7 +520,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "もし まだ ねつが あったら、きて ください。",
           de: "Falls Sie noch Fieber haben, kommen Sie bitte vorbei.",
-          en: "If you still have a fever, please come."
+          en: "If you still have a fever, please come.",
+          zh: "如果还发烧的话，请再来。"
         }
       },
       {
@@ -478,7 +530,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "はい、わかりました。ありがとうございます。",
           de: "Gut, verstanden. Danke.",
-          en: "Okay, understood. Thank you."
+          en: "Okay, understood. Thank you.",
+          zh: "好的，明白了。谢谢您。"
         }
       }
     ]
@@ -487,7 +540,8 @@ export const topicHealth: TopicLesson = {
     title: {
       ja: "かいわ：おうきゅうしょち",
       de: "Dialog B: Erste Hilfe",
-      en: "Dialogue B: First Aid"
+      en: "Dialogue B: First Aid",
+      zh: "会话：急救"
     },
     lines: [
       {
@@ -496,7 +550,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "いたい！てを けがしました。",
           de: "Aua! Ich habe mir die Hand verletzt.",
-          en: "Ow! I hurt my hand."
+          en: "Ow! I hurt my hand.",
+          zh: "疼！我的手受伤了。"
         }
       },
       {
@@ -505,7 +560,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "だいじょうぶ？みせて。",
           de: "Geht es dir gut? Zeig mal.",
-          en: "Are you okay? Let me see."
+          en: "Are you okay? Let me see.",
+          zh: "你没事吧？给我看看。"
         }
       },
       {
@@ -514,7 +570,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "ちょっと いたいです。",
           de: "Es tut ein bisschen weh.",
-          en: "It hurts a little."
+          en: "It hurts a little.",
+          zh: "有点疼。"
         }
       },
       {
@@ -523,7 +580,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "ちが でていますね。",
           de: "Du blutest.",
-          en: "You're bleeding."
+          en: "You're bleeding.",
+          zh: "在流血呢。"
         }
       },
       {
@@ -532,7 +590,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "ちょっと きけんかもしれません。",
           de: "Das könnte etwas ernst sein.",
-          en: "It might be a bit dangerous (serious)."
+          en: "It might be a bit dangerous (serious).",
+          zh: "可能有点危险。"
         }
       },
       {
@@ -541,7 +600,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "だいじょうぶです。まず、ここに すわって ください。",
           de: "Das ist okay. Setz dich erstmal hierhin.",
-          en: "It's okay. First, please sit here."
+          en: "It's okay. First, please sit here.",
+          zh: "没事的。首先，请坐在这里。"
         }
       },
       {
@@ -550,7 +610,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "はい、すわりました。",
           de: "Okay, ich sitze.",
-          en: "Okay, I'm sitting."
+          en: "Okay, I'm sitting.",
+          zh: "好的，坐好了。"
         }
       },
       {
@@ -559,7 +620,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "それから、みずで あらって ください。",
           de: "Dann wasch es bitte mit Wasser ab.",
-          en: "Then, please wash it with water."
+          en: "Then, please wash it with water.",
+          zh: "然后，请用水冲洗。"
         }
       },
       {
@@ -568,7 +630,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "わかりました。",
           de: "Verstanden.",
-          en: "Understood."
+          en: "Understood.",
+          zh: "明白了。"
         }
       },
       {
@@ -577,7 +640,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "つぎに、ばんそうこうを はって ください。",
           de: "Als Nächstes, mach bitte ein Pflaster drauf.",
-          en: "Next, please put on a bandage."
+          en: "Next, please put on a bandage.",
+          zh: "接下来，请贴上创可贴。"
         }
       },
       {
@@ -586,7 +650,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "はい。ありがとう。",
           de: "Okay. Danke.",
-          en: "Okay. Thank you."
+          en: "Okay. Thank you.",
+          zh: "好的。谢谢。"
         }
       },
       {
@@ -595,7 +660,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "まだ いたいですか？",
           de: "Tut es noch weh?",
-          en: "Does it still hurt?"
+          en: "Does it still hurt?",
+          zh: "还疼吗？"
         }
       },
       {
@@ -604,7 +670,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "すこし いたいです。",
           de: "Ein bisschen.",
-          en: "A little."
+          en: "A little.",
+          zh: "有点疼。"
         }
       },
       {
@@ -613,7 +680,8 @@ export const topicHealth: TopicLesson = {
         translations: {
           ja: "まだ いたかったら、びょういんへ いって ください。",
           de: "Falls es noch wehtut, geh bitte ins Krankenhaus.",
-          en: "If it still hurts, please go to the hospital."
+          en: "If it still hurts, please go to the hospital.",
+          zh: "如果还疼的话，请去医院。"
         }
       }
     ]
@@ -621,13 +689,13 @@ export const topicHealth: TopicLesson = {
   song: {
     // Row 10 is an open slot in docs/a1-master-lesson-table-v05.md —
     // filled with a repeat so every lesson has a song.
-    title: { ja: "この おじいさん", en: "This Old Man", de: "Der alte Mann" },
+    title: { ja: "この おじいさん", en: "This Old Man", de: "Der alte Mann", zh: "这位老爷爷" },
     lines: [
-      { id: "sg1", translations: { ja: "この おじいさん、いちで あそんだ", en: "This old man, he played one", de: "Der alte Mann, er spielte eins" } },
-      { id: "sg2", translations: { ja: "ゆびで トン トン ならしたよ", en: "He played knick-knack on my thumb", de: "Er klopfte knick-knack auf meinen Daumen" } },
-      { id: "sg3", translations: { ja: "トン トン パディーワック", en: "With a knick-knack paddywhack", de: "Mit einem knick-knack paddywhack" } },
-      { id: "sg4", translations: { ja: "いぬに ほねを あげよう", en: "Give a dog a bone", de: "gib dem Hund einen Knochen" } },
-      { id: "sg5", translations: { ja: "この おじいさん、おうちに かえった", en: "This old man came rolling home", de: "Der alte Mann kam nach Hause gerollt" } }
+      { id: "sg1", translations: { ja: "この おじいさん、いちで あそんだ", en: "This old man, he played one", de: "Der alte Mann, er spielte eins", zh: "这位老爷爷，用一玩耍" } },
+      { id: "sg2", translations: { ja: "ゆびで トン トン ならしたよ", en: "He played knick-knack on my thumb", de: "Er klopfte knick-knack auf meinen Daumen", zh: "用手指敲了敲" } },
+      { id: "sg3", translations: { ja: "トン トン パディーワック", en: "With a knick-knack paddywhack", de: "Mit einem knick-knack paddywhack", zh: "咚咚，帕迪瓦克" } },
+      { id: "sg4", translations: { ja: "いぬに ほねを あげよう", en: "Give a dog a bone", de: "gib dem Hund einen Knochen", zh: "给狗狗一根骨头吧" } },
+      { id: "sg5", translations: { ja: "この おじいさん、おうちに かえった", en: "This old man came rolling home", de: "Der alte Mann kam nach Hause gerollt", zh: "这位老爷爷，回家去了" } }
     ]
   },
   grammar: {

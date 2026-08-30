@@ -11,7 +11,8 @@ export const topicHome: TopicLesson = {
   topicName: {
     ja: "いえ",
     en: "Home",
-    de: "Zuhause"
+    de: "Zuhause",
+    zh: "家"
   },
   vocab: [
     {
@@ -20,7 +21,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "へや",
         en: "room",
-        de: "Zimmer"
+        de: "Zimmer",
+        zh: "房间"
       }
     },
     {
@@ -29,7 +31,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "だいどころ",
         en: "kitchen",
-        de: "Küche"
+        de: "Küche",
+        zh: "厨房"
       }
     },
     {
@@ -38,7 +41,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "ふろば",
         en: "bathroom (bath)",
-        de: "Badezimmer"
+        de: "Badezimmer",
+        zh: "浴室"
       }
     },
     {
@@ -47,7 +51,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "トイレ",
         en: "toilet",
-        de: "Toilette"
+        de: "Toilette",
+        zh: "厕所"
       }
     },
     {
@@ -56,7 +61,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "にわ",
         en: "garden, yard",
-        de: "Garten"
+        de: "Garten",
+        zh: "院子"
       }
     },
     {
@@ -65,7 +71,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "ドア",
         en: "door",
-        de: "Tür"
+        de: "Tür",
+        zh: "门"
       }
     },
     {
@@ -74,7 +81,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "まど",
         en: "window",
-        de: "Fenster"
+        de: "Fenster",
+        zh: "窗户"
       }
     },
     {
@@ -83,7 +91,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "かぎ",
         en: "key",
-        de: "Schlüssel"
+        de: "Schlüssel",
+        zh: "钥匙"
       }
     },
     {
@@ -92,7 +101,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "でんき",
         en: "electricity, light",
-        de: "Strom, Licht"
+        de: "Strom, Licht",
+        zh: "电，灯"
       }
     },
     {
@@ -101,7 +111,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "かがみ",
         en: "mirror",
-        de: "Spiegel"
+        de: "Spiegel",
+        zh: "镜子"
       }
     },
     {
@@ -110,7 +121,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "ベッド",
         en: "bed",
-        de: "Bett"
+        de: "Bett",
+        zh: "床"
       }
     },
     {
@@ -119,7 +131,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "テーブル",
         en: "table",
-        de: "Tisch"
+        de: "Tisch",
+        zh: "桌子"
       }
     },
     {
@@ -128,7 +141,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "いす",
         en: "chair",
-        de: "Stuhl"
+        de: "Stuhl",
+        zh: "椅子"
       }
     },
     {
@@ -137,7 +151,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "ほんだな",
         en: "bookshelf",
-        de: "Bücherregal"
+        de: "Bücherregal",
+        zh: "书架"
       }
     },
     {
@@ -146,7 +161,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "れいぞうこ",
         en: "refrigerator",
-        de: "Kühlschrank"
+        de: "Kühlschrank",
+        zh: "冰箱"
       }
     },
     {
@@ -155,7 +171,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "すむ",
         en: "to live (reside)",
-        de: "wohnen"
+        de: "wohnen",
+        zh: "居住"
       }
     },
     {
@@ -164,7 +181,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "そうじする",
         en: "to clean",
-        de: "putzen"
+        de: "putzen",
+        zh: "打扫"
       }
     },
     {
@@ -173,7 +191,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "かたづける",
         en: "to tidy up",
-        de: "aufräumen"
+        de: "aufräumen",
+        zh: "收拾"
       }
     },
     {
@@ -182,7 +201,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "かりる",
         en: "to borrow, rent",
-        de: "leihen, mieten"
+        de: "leihen, mieten",
+        zh: "借"
       }
     },
     {
@@ -191,7 +211,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "かす",
         en: "to lend",
-        de: "verleihen"
+        de: "verleihen",
+        zh: "借出"
       }
     },
     {
@@ -200,7 +221,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "もつ",
         en: "to have, hold",
-        de: "besitzen, halten"
+        de: "besitzen, halten",
+        zh: "拥有，拿着"
       }
     },
     {
@@ -209,7 +231,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "さがす",
         en: "to look for",
-        de: "suchen"
+        de: "suchen",
+        zh: "寻找"
       }
     },
     {
@@ -218,7 +241,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "なくす",
         en: "to lose (an object)",
-        de: "verlieren"
+        de: "verlieren",
+        zh: "丢失"
       }
     },
     {
@@ -227,7 +251,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "きれい",
         en: "clean, pretty",
-        de: "sauber, hübsch"
+        de: "sauber, hübsch",
+        zh: "干净，漂亮"
       }
     },
     {
@@ -236,7 +261,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "きたない",
         en: "dirty",
-        de: "schmutzig"
+        de: "schmutzig",
+        zh: "脏"
       }
     },
     {
@@ -245,7 +271,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "ひろい",
         en: "spacious",
-        de: "geräumig"
+        de: "geräumig",
+        zh: "宽敞"
       }
     },
     {
@@ -254,7 +281,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "せまい",
         en: "narrow, cramped",
-        de: "eng"
+        de: "eng",
+        zh: "狭窄"
       }
     },
     {
@@ -263,7 +291,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "あかるい",
         en: "bright",
-        de: "hell"
+        de: "hell",
+        zh: "明亮"
       }
     },
     {
@@ -272,7 +301,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "くらい",
         en: "dark",
-        de: "dunkel"
+        de: "dunkel",
+        zh: "黑暗"
       }
     },
     {
@@ -281,7 +311,8 @@ export const topicHome: TopicLesson = {
       translations: {
         ja: "べんり",
         en: "convenient",
-        de: "praktisch"
+        de: "praktisch",
+        zh: "方便"
       }
     }
   ],
@@ -289,7 +320,8 @@ export const topicHome: TopicLesson = {
     title: {
       ja: "かいわ：いえを あんないする",
       en: "Dialogue A: House Tour",
-      de: "Dialog A: Hausführung"
+      de: "Dialog A: Hausführung",
+      zh: "会话：参观房子"
     },
     lines: [
       {
@@ -298,7 +330,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "どうぞ、はいってください。",
           en: "Please, come in.",
-          de: "Bitte, kommen Sie herein."
+          de: "Bitte, kommen Sie herein.",
+          zh: "请进。"
         }
       },
       {
@@ -307,7 +340,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "おじゃまします。ひろい いえですね。",
           en: "Excuse me for intruding. What a spacious house.",
-          de: "Entschuldigen Sie die Störung. Was für ein geräumiges Haus."
+          de: "Entschuldigen Sie die Störung. Was für ein geräumiges Haus.",
+          zh: "打扰了。好宽敞的房子啊。"
         }
       },
       {
@@ -316,7 +350,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "ありがとう。こちらが リビングです。",
           en: "Thank you. This is the living room.",
-          de: "Danke. Hier ist das Wohnzimmer."
+          de: "Danke. Hier ist das Wohnzimmer.",
+          zh: "谢谢。这是客厅。"
         }
       },
       {
@@ -325,7 +360,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "とても あかるいですね。",
           en: "It's very bright.",
-          de: "Es ist sehr hell."
+          de: "Es ist sehr hell.",
+          zh: "很明亮呢。"
         }
       },
       {
@@ -334,7 +370,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "はい、まどが おおいです。こちらは だいどころです。",
           en: "Yes, there are a lot of windows. This is the kitchen.",
-          de: "Ja, es gibt viele Fenster. Hier ist die Küche."
+          de: "Ja, es gibt viele Fenster. Hier ist die Küche.",
+          zh: "是的，窗户很多。这是厨房。"
         }
       },
       {
@@ -343,7 +380,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "きれいな だいどころですね。",
           en: "What a clean kitchen.",
-          de: "Was für eine saubere Küche."
+          de: "Was für eine saubere Küche.",
+          zh: "好干净的厨房啊。"
         }
       },
       {
@@ -352,7 +390,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "いつも そうじしています。",
           en: "I always clean it.",
-          de: "Ich putze sie immer."
+          de: "Ich putze sie immer.",
+          zh: "我一直在打扫。"
         }
       },
       {
@@ -361,7 +400,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "にかいには なにが ありますか？",
           en: "What's upstairs?",
-          de: "Was ist im Obergeschoss?"
+          de: "Was ist im Obergeschoss?",
+          zh: "二楼有什么？"
         }
       },
       {
@@ -370,7 +410,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "わたしの へやと しんしつが あります。",
           en: "My room and the bedroom are there.",
-          de: "Mein Zimmer und das Schlafzimmer sind dort."
+          de: "Mein Zimmer und das Schlafzimmer sind dort.",
+          zh: "有我的房间和卧室。"
         }
       },
       {
@@ -379,7 +420,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "あなたの へやを みても いいですか？",
           en: "May I see your room?",
-          de: "Darf ich dein Zimmer sehen?"
+          de: "Darf ich dein Zimmer sehen?",
+          zh: "我可以看看你的房间吗？"
         }
       },
       {
@@ -388,7 +430,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "もちろん。すこし せまいですが。",
           en: "Of course. Though it's a bit small.",
-          de: "Natürlich. Auch wenn es etwas eng ist."
+          de: "Natürlich. Auch wenn es etwas eng ist.",
+          zh: "当然。不过有点小。"
         }
       },
       {
@@ -397,7 +440,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "でも とても べんりそうです。",
           en: "But it looks very convenient.",
-          de: "Aber es sieht sehr praktisch aus."
+          de: "Aber es sieht sehr praktisch aus.",
+          zh: "不过看起来很方便。"
         }
       },
       {
@@ -406,7 +450,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "にわも あります。みますか？",
           en: "There's a garden too. Want to see it?",
-          de: "Es gibt auch einen Garten. Möchtest du ihn sehen?"
+          de: "Es gibt auch einen Garten. Möchtest du ihn sehen?",
+          zh: "还有院子。要看看吗？"
         }
       },
       {
@@ -415,7 +460,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "はい、ぜひ みたいです！",
           en: "Yes, I'd love to see it!",
-          de: "Ja, das möchte ich unbedingt sehen!"
+          de: "Ja, das möchte ich unbedingt sehen!",
+          zh: "好的，一定要看看！"
         }
       }
     ]
@@ -424,7 +470,8 @@ export const topicHome: TopicLesson = {
     title: {
       ja: "かいわ：だれの もの？",
       en: "Dialogue B: Whose Is It?",
-      de: "Dialog B: Wem gehört das?"
+      de: "Dialog B: Wem gehört das?",
+      zh: "会话：这是谁的？"
     },
     lines: [
       {
@@ -433,7 +480,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "これ、だれの かぎ？",
           en: "Whose key is this?",
-          de: "Wessen Schlüssel ist das?"
+          de: "Wessen Schlüssel ist das?",
+          zh: "这是谁的钥匙？"
         }
       },
       {
@@ -442,7 +490,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "それは ぼくのだよ。",
           en: "That's mine.",
-          de: "Das ist meiner."
+          de: "Das ist meiner.",
+          zh: "那是我的。"
         }
       },
       {
@@ -451,7 +500,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "ほんとう？わたしのに にてるね。",
           en: "Really? It looks like mine.",
-          de: "Wirklich? Er sieht meinem ähnlich."
+          de: "Wirklich? Er sieht meinem ähnlich.",
+          zh: "真的？跟我的很像呢。"
         }
       },
       {
@@ -460,7 +510,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "いや、ぼくのには しるしが あるよ。",
           en: "No, mine has a mark on it.",
-          de: "Nein, meiner hat eine Markierung."
+          de: "Nein, meiner hat eine Markierung.",
+          zh: "不，我的有记号。"
         }
       },
       {
@@ -469,7 +520,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "あ、ほんとうだ。ごめん。",
           en: "Oh, you're right. Sorry.",
-          de: "Oh, stimmt. Entschuldigung."
+          de: "Oh, stimmt. Entschuldigung.",
+          zh: "啊，真的呢。抱歉。"
         }
       },
       {
@@ -478,7 +530,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "だいじょうぶ。これは だれの かばん？",
           en: "It's okay. Whose bag is this?",
-          de: "Kein Problem. Wessen Tasche ist das?"
+          de: "Kein Problem. Wessen Tasche ist das?",
+          zh: "没关系。这是谁的包？"
         }
       },
       {
@@ -487,7 +540,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "それは わたしのよ。",
           en: "That's mine.",
-          de: "Die ist meine."
+          de: "Die ist meine.",
+          zh: "那是我的。"
         }
       },
       {
@@ -496,7 +550,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "じゃあ、この ほんは？",
           en: "Then what about this book?",
-          de: "Und was ist mit diesem Buch?"
+          de: "Und was ist mit diesem Buch?",
+          zh: "那这本书呢？"
         }
       },
       {
@@ -505,7 +560,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "それは たぶん おとうとのよ。",
           en: "That's probably my brother's.",
-          de: "Das gehört wahrscheinlich meinem Bruder."
+          de: "Das gehört wahrscheinlich meinem Bruder.",
+          zh: "那大概是我弟弟的。"
         }
       },
       {
@@ -514,7 +570,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "なんで ここに あるの？",
           en: "Why is it here?",
-          de: "Warum ist es hier?"
+          de: "Warum ist es hier?",
+          zh: "为什么会在这里？"
         }
       },
       {
@@ -523,7 +580,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "わからない。かれに きいてみる。",
           en: "I don't know. I'll ask him.",
-          de: "Ich weiß nicht. Ich frage ihn."
+          de: "Ich weiß nicht. Ich frage ihn.",
+          zh: "不知道。我问问他。"
         }
       },
       {
@@ -532,7 +590,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "この かさも かれのかな？",
           en: "Is this umbrella his too?",
-          de: "Gehört dieser Regenschirm auch ihm?"
+          de: "Gehört dieser Regenschirm auch ihm?",
+          zh: "这把伞也是他的吗？"
         }
       },
       {
@@ -541,7 +600,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "ううん、それは わたしたちのよ。",
           en: "No, that's ours.",
-          de: "Nein, der gehört uns."
+          de: "Nein, der gehört uns.",
+          zh: "不，那是我们的。"
         }
       },
       {
@@ -550,7 +610,8 @@ export const topicHome: TopicLesson = {
         translations: {
           ja: "なるほど。ぜんぶ わかったよ。",
           en: "I see. Now I understand everything.",
-          de: "Verstehe. Jetzt habe ich alles verstanden."
+          de: "Verstehe. Jetzt habe ich alles verstanden.",
+          zh: "原来如此。全都明白了。"
         }
       }
     ]

@@ -11,7 +11,8 @@ export const topicClothing: TopicLesson = {
   topicName: {
     ja: "ふく",
     en: "Clothing",
-    de: "Kleidung"
+    de: "Kleidung",
+    zh: "衣服"
   },
   vocab: [
     {
@@ -20,7 +21,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "シャツ",
         en: "shirt",
-        de: "Hemd"
+        de: "Hemd",
+        zh: "衬衫"
       }
     },
     {
@@ -29,7 +31,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "ズボン",
         en: "pants",
-        de: "Hose"
+        de: "Hose",
+        zh: "裤子"
       }
     },
     {
@@ -38,7 +41,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "スカート",
         en: "skirt",
-        de: "Rock"
+        de: "Rock",
+        zh: "裙子"
       }
     },
     {
@@ -47,7 +51,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "ドレス",
         en: "dress",
-        de: "Kleid"
+        de: "Kleid",
+        zh: "连衣裙"
       }
     },
     {
@@ -56,7 +61,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "くつ",
         en: "shoes",
-        de: "Schuhe"
+        de: "Schuhe",
+        zh: "鞋子"
       }
     },
     {
@@ -65,7 +71,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "くつした",
         en: "socks",
-        de: "Socken"
+        de: "Socken",
+        zh: "袜子"
       }
     },
     {
@@ -74,7 +81,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "ぼうし",
         en: "hat",
-        de: "Hut, Mütze"
+        de: "Hut, Mütze",
+        zh: "帽子"
       }
     },
     {
@@ -83,7 +91,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "コート",
         en: "coat",
-        de: "Mantel"
+        de: "Mantel",
+        zh: "大衣"
       }
     },
     {
@@ -92,7 +101,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "セーター",
         en: "sweater",
-        de: "Pullover"
+        de: "Pullover",
+        zh: "毛衣"
       }
     },
     {
@@ -101,7 +111,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "てぶくろ",
         en: "gloves",
-        de: "Handschuhe"
+        de: "Handschuhe",
+        zh: "手套"
       }
     },
     {
@@ -110,7 +121,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "ネクタイ",
         en: "necktie",
-        de: "Krawatte"
+        de: "Krawatte",
+        zh: "领带"
       }
     },
     {
@@ -119,7 +131,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "かさ",
         en: "umbrella",
-        de: "Regenschirm"
+        de: "Regenschirm",
+        zh: "雨伞"
       }
     },
     {
@@ -128,7 +141,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "サイズ",
         en: "size",
-        de: "Größe"
+        de: "Größe",
+        zh: "尺寸"
       }
     },
     {
@@ -137,7 +151,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "しちゃくしつ",
         en: "fitting room",
-        de: "Umkleidekabine"
+        de: "Umkleidekabine",
+        zh: "试衣间"
       }
     },
     {
@@ -146,7 +161,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "きる",
         en: "to wear (upper body)",
-        de: "tragen (Oberkörper)"
+        de: "tragen (Oberkörper)",
+        zh: "穿（上身）"
       }
     },
     {
@@ -155,7 +171,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "はく",
         en: "to wear (lower body, shoes)",
-        de: "tragen (Beine, Schuhe)"
+        de: "tragen (Beine, Schuhe)",
+        zh: "穿（下身、鞋）"
       }
     },
     {
@@ -164,7 +181,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "ぬぐ",
         en: "to take off (clothes)",
-        de: "ausziehen"
+        de: "ausziehen",
+        zh: "脱下"
       }
     },
     {
@@ -173,7 +191,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "しちゃくする",
         en: "to try on",
-        de: "anprobieren"
+        de: "anprobieren",
+        zh: "试穿"
       }
     },
     {
@@ -182,7 +201,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "かえる",
         en: "to exchange, return",
-        de: "umtauschen"
+        de: "umtauschen",
+        zh: "更换，退换"
       }
     },
     {
@@ -191,7 +211,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "つける",
         en: "to put on (accessories)",
-        de: "anlegen (Accessoires)"
+        de: "anlegen (Accessoires)",
+        zh: "佩戴（配饰）"
       }
     },
     {
@@ -200,7 +221,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "えらぶ",
         en: "to choose",
-        de: "auswählen"
+        de: "auswählen",
+        zh: "选择"
       }
     },
     {
@@ -209,7 +231,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "にあう",
         en: "to suit, look good on",
-        de: "gut stehen"
+        de: "gut stehen",
+        zh: "适合，好看"
       }
     },
     {
@@ -218,7 +241,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "おおきい",
         en: "big",
-        de: "groß"
+        de: "groß",
+        zh: "大的"
       }
     },
     {
@@ -227,7 +251,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "ちいさい",
         en: "small",
-        de: "klein"
+        de: "klein",
+        zh: "小的"
       }
     },
     {
@@ -236,7 +261,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "きつい",
         en: "tight",
-        de: "eng"
+        de: "eng",
+        zh: "紧的"
       }
     },
     {
@@ -245,7 +271,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "ゆるい",
         en: "loose",
-        de: "locker"
+        de: "locker",
+        zh: "松的"
       }
     },
     {
@@ -254,7 +281,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "はで",
         en: "flashy, showy",
-        de: "auffällig"
+        de: "auffällig",
+        zh: "花哨"
       }
     },
     {
@@ -263,7 +291,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "じみ",
         en: "plain, subdued",
-        de: "schlicht"
+        de: "schlicht",
+        zh: "朴素"
       }
     },
     {
@@ -272,7 +301,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "おしゃれ",
         en: "stylish",
-        de: "modisch"
+        de: "modisch",
+        zh: "时髦"
       }
     },
     {
@@ -281,7 +311,8 @@ export const topicClothing: TopicLesson = {
       translations: {
         ja: "あたたかい",
         en: "warm",
-        de: "warm"
+        de: "warm",
+        zh: "暖和"
       }
     }
   ],
@@ -289,7 +320,8 @@ export const topicClothing: TopicLesson = {
     title: {
       ja: "かいわ：ともだちと ふくを かう",
       en: "Dialogue A: Shopping for Clothes",
-      de: "Dialog A: Kleidung kaufen"
+      de: "Dialog A: Kleidung kaufen",
+      zh: "会话：和朋友买衣服"
     },
     lines: [
       {
@@ -298,7 +330,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "この シャツ、かわいいね。",
           en: "This shirt is cute.",
-          de: "Dieses Hemd ist süß."
+          de: "Dieses Hemd ist süß.",
+          zh: "这件衬衫真可爱呢。"
         }
       },
       {
@@ -307,7 +340,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "うん、いろも いいね。",
           en: "Yeah, the color's nice too.",
-          de: "Ja, die Farbe ist auch schön."
+          de: "Ja, die Farbe ist auch schön.",
+          zh: "嗯，颜色也不错呢。"
         }
       },
       {
@@ -316,7 +350,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "しちゃくしても いいですか？",
           en: "May I try it on?",
-          de: "Darf ich es anprobieren?"
+          de: "Darf ich es anprobieren?",
+          zh: "可以试穿吗？"
         }
       },
       {
@@ -325,7 +360,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "はい、どうぞ。しちゃくしつは あちらです。",
           en: "Yes, please. The fitting room is over there.",
-          de: "Ja, bitte. Die Umkleidekabine ist dort drüben."
+          de: "Ja, bitte. Die Umkleidekabine ist dort drüben.",
+          zh: "可以，请。试衣间在那边。"
         }
       },
       {
@@ -334,7 +370,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "どうかな？すこし きついかも。",
           en: "How is it? Maybe a bit tight.",
-          de: "Wie sieht es aus? Vielleicht etwas eng."
+          de: "Wie sieht es aus? Vielleicht etwas eng.",
+          zh: "怎么样？可能有点紧。"
         }
       },
       {
@@ -343,7 +380,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "うん、もう すこし おおきい サイズは ありますか？",
           en: "Yeah, is there a bigger size?",
-          de: "Ja, gibt es eine größere Größe?"
+          de: "Ja, gibt es eine größere Größe?",
+          zh: "嗯，有大一点的尺寸吗？"
         }
       },
       {
@@ -352,7 +390,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "はい、こちらは いかがですか？",
           en: "Yes, how about this one?",
-          de: "Ja, wie wäre es mit diesem hier?"
+          de: "Ja, wie wäre es mit diesem hier?",
+          zh: "有的，这件怎么样？"
         }
       },
       {
@@ -361,7 +400,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "あ、これは ちょうど いいです！",
           en: "Oh, this is just right!",
-          de: "Oh, das passt genau!"
+          de: "Oh, das passt genau!",
+          zh: "啊，这件正合适！"
         }
       },
       {
@@ -370,7 +410,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "にあってるよ！",
           en: "It suits you!",
-          de: "Es steht dir!"
+          de: "Es steht dir!",
+          zh: "很适合你哦！"
         }
       },
       {
@@ -379,7 +420,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "ほんとう？ありがとう。",
           en: "Really? Thank you.",
-          de: "Wirklich? Danke."
+          de: "Wirklich? Danke.",
+          zh: "真的吗？谢谢。"
         }
       },
       {
@@ -388,7 +430,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "これを ください。",
           en: "I'll take this.",
-          de: "Ich nehme das hier."
+          de: "Ich nehme das hier.",
+          zh: "请给我这件。"
         }
       },
       {
@@ -397,7 +440,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "かしこまりました。げんきんですか、カードですか？",
           en: "Understood. Cash or card?",
-          de: "Verstanden. Bar oder Karte?"
+          de: "Verstanden. Bar oder Karte?",
+          zh: "好的。现金还是刷卡？"
         }
       },
       {
@@ -406,7 +450,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "カードで おねがいします。",
           en: "Card, please.",
-          de: "Mit Karte, bitte."
+          de: "Mit Karte, bitte.",
+          zh: "请刷卡。"
         }
       },
       {
@@ -415,7 +460,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "たのしい かいものだったね。",
           en: "That was fun shopping.",
-          de: "Das war ein schönes Einkaufen."
+          de: "Das war ein schönes Einkaufen.",
+          zh: "购物真开心呢。"
         }
       }
     ]
@@ -424,7 +470,8 @@ export const topicClothing: TopicLesson = {
     title: {
       ja: "かいわ：ふくそうを えらぶ",
       en: "Dialogue B: Choosing an Outfit",
-      de: "Dialog B: Ein Outfit wählen"
+      de: "Dialog B: Ein Outfit wählen",
+      zh: "会话：选择服装"
     },
     lines: [
       {
@@ -433,7 +480,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "こんばんの パーティーに なにを きようかな。",
           en: "What should I wear to tonight's party?",
-          de: "Was soll ich zur heutigen Party anziehen?"
+          de: "Was soll ich zur heutigen Party anziehen?",
+          zh: "今晚的派对穿什么好呢。"
         }
       },
       {
@@ -442,7 +490,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "あの ドレスは どう？",
           en: "How about that dress?",
-          de: "Wie wäre es mit dem Kleid dort?"
+          de: "Wie wäre es mit dem Kleid dort?",
+          zh: "那件连衣裙怎么样？"
         }
       },
       {
@@ -451,7 +500,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "うーん、ちょっと はでかな。",
           en: "Hmm, maybe a bit flashy.",
-          de: "Hmm, vielleicht etwas zu auffällig."
+          de: "Hmm, vielleicht etwas zu auffällig.",
+          zh: "嗯……可能有点花哨。"
         }
       },
       {
@@ -460,7 +510,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "じゃあ、この セーターは？",
           en: "Then how about this sweater?",
-          de: "Und wie wäre es mit diesem Pullover?"
+          de: "Und wie wäre es mit diesem Pullover?",
+          zh: "那这件毛衣呢？"
         }
       },
       {
@@ -469,7 +520,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "それは カジュアルすぎるかも。",
           en: "That might be too casual.",
-          de: "Der könnte zu leger sein."
+          de: "Der könnte zu leger sein.",
+          zh: "那个可能太随意了。"
         }
       },
       {
@@ -478,7 +530,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "パーティーは どんな パーティー？",
           en: "What kind of party is it?",
-          de: "Was für eine Party ist es?"
+          de: "Was für eine Party ist es?",
+          zh: "是什么样的派对？"
         }
       },
       {
@@ -487,7 +540,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "しごとの パーティーだから、ちょっと フォーマルが いい。",
           en: "It's a work party, so something a bit formal is good.",
-          de: "Es ist eine Arbeitsparty, also wäre etwas Formelleres gut."
+          de: "Es ist eine Arbeitsparty, also wäre etwas Formelleres gut.",
+          zh: "因为是工作上的派对，稍微正式一点比较好。"
         }
       },
       {
@@ -496,7 +550,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "じみな いろの ドレスは どう？",
           en: "How about a dress in a subdued color?",
-          de: "Wie wäre es mit einem Kleid in gedeckter Farbe?"
+          de: "Wie wäre es mit einem Kleid in gedeckter Farbe?",
+          zh: "颜色朴素一点的连衣裙怎么样？"
         }
       },
       {
@@ -505,7 +560,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "いいね！あの くろい ドレスに する。",
           en: "Good idea! I'll go with that black dress.",
-          de: "Gute Idee! Ich nehme das schwarze Kleid."
+          de: "Gute Idee! Ich nehme das schwarze Kleid.",
+          zh: "好主意！我就选那件黑色连衣裙。"
         }
       },
       {
@@ -514,7 +570,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "くつは どうする？",
           en: "What about shoes?",
-          de: "Was ist mit Schuhen?"
+          de: "Was ist mit Schuhen?",
+          zh: "鞋子怎么办？"
         }
       },
       {
@@ -523,7 +580,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "この くろい くつが あうと おもう。",
           en: "I think these black shoes will go well.",
-          de: "Ich glaube, diese schwarzen Schuhe passen gut."
+          de: "Ich glaube, diese schwarzen Schuhe passen gut.",
+          zh: "我觉得这双黑色的鞋子很搭。"
         }
       },
       {
@@ -532,7 +590,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "さむいから コートも もっていって。",
           en: "It's cold, so bring a coat too.",
-          de: "Es ist kalt, also nimm auch einen Mantel mit."
+          de: "Es ist kalt, also nimm auch einen Mantel mit.",
+          zh: "因为冷，也带上大衣吧。"
         }
       },
       {
@@ -541,7 +600,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "そうだね。あたたかい コートを えらぶよ。",
           en: "Good point. I'll choose a warm coat.",
-          de: "Stimmt. Ich wähle einen warmen Mantel."
+          de: "Stimmt. Ich wähle einen warmen Mantel.",
+          zh: "说得对。我选一件暖和的大衣。"
         }
       },
       {
@@ -550,7 +610,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "きっと すてきに なるよ！",
           en: "You'll definitely look great!",
-          de: "Du wirst bestimmt toll aussehen!"
+          de: "Du wirst bestimmt toll aussehen!",
+          zh: "一定会很漂亮的！"
         }
       }
     ]
@@ -559,7 +620,8 @@ export const topicClothing: TopicLesson = {
     title: {
       ja: "ちいさな くも",
       en: "Itsy Bitsy Spider",
-      de: "Die kleine Spinne"
+      de: "Die kleine Spinne",
+      zh: "小蜘蛛"
     },
     lines: [
       {
@@ -567,7 +629,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "ちいさな くもが といを のぼる",
           en: "The itsy bitsy spider climbed up the water spout",
-          de: "Die kleine Spinne klettert die Regenrinne hoch"
+          de: "Die kleine Spinne klettert die Regenrinne hoch",
+          zh: "小蜘蛛爬上水管"
         }
       },
       {
@@ -575,7 +638,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "あめが ふって くもは おちた",
           en: "Down came the rain and washed the spider out",
-          de: "Der Regen kam und spülte die Spinne herunter"
+          de: "Der Regen kam und spülte die Spinne herunter",
+          zh: "下雨了，蜘蛛掉了下来"
         }
       },
       {
@@ -583,7 +647,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "おひさま でて みずが かわいた",
           en: "Out came the sun and dried up all the rain",
-          de: "Die Sonne kam heraus und trocknete den Regen"
+          de: "Die Sonne kam heraus und trocknete den Regen",
+          zh: "太阳出来了，水干了"
         }
       },
       {
@@ -591,7 +656,8 @@ export const topicClothing: TopicLesson = {
         translations: {
           ja: "ちいさな くもが また のぼる",
           en: "So the itsy bitsy spider climbed up again",
-          de: "Also klettert die kleine Spinne wieder hoch"
+          de: "Also klettert die kleine Spinne wieder hoch",
+          zh: "小蜘蛛又爬了上去"
         }
       }
     ]

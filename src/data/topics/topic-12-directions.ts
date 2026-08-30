@@ -11,7 +11,8 @@ export const topicDirections: TopicLesson = {
   topicName: {
     ja: "ほうこう",
     en: "Directions",
-    de: "Wegbeschreibung"
+    de: "Wegbeschreibung",
+    zh: "方向"
   },
   vocab: [
     {
@@ -20,7 +21,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "みち",
         en: "road, way",
-        de: "Straße, Weg"
+        de: "Straße, Weg",
+        zh: "道路"
       }
     },
     {
@@ -29,7 +31,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "かど",
         en: "corner",
-        de: "Ecke"
+        de: "Ecke",
+        zh: "拐角"
       }
     },
     {
@@ -38,7 +41,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "しんごう",
         en: "traffic light",
-        de: "Ampel"
+        de: "Ampel",
+        zh: "红绿灯"
       }
     },
     {
@@ -47,7 +51,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "こうさてん",
         en: "intersection",
-        de: "Kreuzung"
+        de: "Kreuzung",
+        zh: "十字路口"
       }
     },
     {
@@ -56,7 +61,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "ちず",
         en: "map",
-        de: "Karte"
+        de: "Karte",
+        zh: "地图"
       }
     },
     {
@@ -65,7 +71,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "めじるし",
         en: "landmark",
-        de: "Orientierungspunkt"
+        de: "Orientierungspunkt",
+        zh: "地标"
       }
     },
     {
@@ -74,7 +81,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "ほうこう",
         en: "direction",
-        de: "Richtung"
+        de: "Richtung",
+        zh: "方向"
       }
     },
     {
@@ -83,7 +91,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "きた",
         en: "north",
-        de: "Norden"
+        de: "Norden",
+        zh: "北"
       }
     },
     {
@@ -92,7 +101,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "みなみ",
         en: "south",
-        de: "Süden"
+        de: "Süden",
+        zh: "南"
       }
     },
     {
@@ -101,7 +111,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "ひがし",
         en: "east",
-        de: "Osten"
+        de: "Osten",
+        zh: "东"
       }
     },
     {
@@ -110,7 +121,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "にし",
         en: "west",
-        de: "Westen"
+        de: "Westen",
+        zh: "西"
       }
     },
     {
@@ -119,7 +131,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "まえ",
         en: "front",
-        de: "vorne"
+        de: "vorne",
+        zh: "前面"
       }
     },
     {
@@ -128,7 +141,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "うしろ",
         en: "back",
-        de: "hinten"
+        de: "hinten",
+        zh: "后面"
       }
     },
     {
@@ -137,7 +151,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "となり",
         en: "next to",
-        de: "daneben"
+        de: "daneben",
+        zh: "旁边"
       }
     },
     {
@@ -146,7 +161,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "まがる",
         en: "to turn",
-        de: "abbiegen"
+        de: "abbiegen",
+        zh: "转弯"
       }
     },
     {
@@ -155,7 +171,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "わたる",
         en: "to cross",
-        de: "überqueren"
+        de: "überqueren",
+        zh: "穿过"
       }
     },
     {
@@ -164,7 +181,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "すすむ",
         en: "to go straight, proceed",
-        de: "vorwärtsgehen"
+        de: "vorwärtsgehen",
+        zh: "前进，直走"
       }
     },
     {
@@ -173,7 +191,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "もどる",
         en: "to go back",
-        de: "zurückgehen"
+        de: "zurückgehen",
+        zh: "返回"
       }
     },
     {
@@ -182,7 +201,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "つづく",
         en: "to continue",
-        de: "sich fortsetzen"
+        de: "sich fortsetzen",
+        zh: "继续"
       }
     },
     {
@@ -191,7 +211,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "みつかる",
         en: "to be found",
-        de: "gefunden werden"
+        de: "gefunden werden",
+        zh: "被找到"
       }
     },
     {
@@ -200,7 +221,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "まよう",
         en: "to get lost",
-        de: "sich verirren"
+        de: "sich verirren",
+        zh: "迷路"
       }
     },
     {
@@ -209,7 +231,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "ちかい",
         en: "close, near",
-        de: "nah"
+        de: "nah",
+        zh: "近的"
       }
     },
     {
@@ -218,7 +241,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "とおい",
         en: "far",
-        de: "weit"
+        de: "weit",
+        zh: "远的"
       }
     },
     {
@@ -227,7 +251,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "まっすぐ",
         en: "straight",
-        de: "gerade"
+        de: "gerade",
+        zh: "直走"
       }
     },
     {
@@ -236,7 +261,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "べんり",
         en: "convenient",
-        de: "praktisch"
+        de: "praktisch",
+        zh: "方便"
       }
     },
     {
@@ -245,7 +271,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "わかりやすい",
         en: "easy to understand",
-        de: "leicht verständlich"
+        de: "leicht verständlich",
+        zh: "容易理解"
       }
     },
     {
@@ -254,7 +281,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "ふくざつ",
         en: "complicated",
-        de: "kompliziert"
+        de: "kompliziert",
+        zh: "复杂"
       }
     },
     {
@@ -263,7 +291,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "しずか",
         en: "quiet",
-        de: "ruhig"
+        de: "ruhig",
+        zh: "安静"
       }
     },
     {
@@ -272,7 +301,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "にぎやか",
         en: "lively, bustling",
-        de: "belebt"
+        de: "belebt",
+        zh: "热闹"
       }
     },
     {
@@ -281,7 +311,8 @@ export const topicDirections: TopicLesson = {
       translations: {
         ja: "あんぜん",
         en: "safe",
-        de: "sicher"
+        de: "sicher",
+        zh: "安全"
       }
     }
   ],
@@ -289,7 +320,8 @@ export const topicDirections: TopicLesson = {
     title: {
       ja: "かいわ：みちに まよった かんこうきゃく",
       en: "Dialogue A: A Lost Tourist",
-      de: "Dialog A: Ein verirrter Tourist"
+      de: "Dialog A: Ein verirrter Tourist",
+      zh: "会话：迷路的游客"
     },
     lines: [
       {
@@ -298,7 +330,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "すみません、みちに まよってしまいました。",
           en: "Excuse me, I've gotten lost.",
-          de: "Entschuldigung, ich habe mich verirrt."
+          de: "Entschuldigung, ich habe mich verirrt.",
+          zh: "不好意思，我迷路了。"
         }
       },
       {
@@ -307,7 +340,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "だいじょうぶですか？どこへ いきたいですか？",
           en: "Are you okay? Where do you want to go?",
-          de: "Geht es Ihnen gut? Wohin möchten Sie?"
+          de: "Geht es Ihnen gut? Wohin möchten Sie?",
+          zh: "您没事吧？想去哪里？"
         }
       },
       {
@@ -316,7 +350,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "びじゅつかんを さがしています。",
           en: "I'm looking for the museum.",
-          de: "Ich suche das Museum."
+          de: "Ich suche das Museum.",
+          zh: "我在找美术馆。"
         }
       },
       {
@@ -325,7 +360,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "ああ、びじゅつかんですね。こうえんの となりに あります。",
           en: "Ah, the museum. It's next to the park.",
-          de: "Ah, das Museum. Es ist neben dem Park."
+          de: "Ah, das Museum. Es ist neben dem Park.",
+          zh: "啊，美术馆啊。就在公园旁边。"
         }
       },
       {
@@ -334,7 +370,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "こうえんは どこですか？",
           en: "Where's the park?",
-          de: "Wo ist der Park?"
+          de: "Wo ist der Park?",
+          zh: "公园在哪里？"
         }
       },
       {
@@ -343,7 +380,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "このみちを きたへ すすんでください。",
           en: "Please go north along this road.",
-          de: "Gehen Sie diese Straße nach Norden."
+          de: "Gehen Sie diese Straße nach Norden.",
+          zh: "请沿着这条路往北走。"
         }
       },
       {
@@ -352,7 +390,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "こうさてんで まがりますか？",
           en: "Do I turn at the intersection?",
-          de: "Muss ich an der Kreuzung abbiegen?"
+          de: "Muss ich an der Kreuzung abbiegen?",
+          zh: "要在十字路口转弯吗？"
         }
       },
       {
@@ -361,7 +400,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "はい、こうさてんで みぎに まがってください。",
           en: "Yes, turn right at the intersection.",
-          de: "Ja, biegen Sie an der Kreuzung rechts ab."
+          de: "Ja, biegen Sie an der Kreuzung rechts ab.",
+          zh: "是的，请在十字路口右转。"
         }
       },
       {
@@ -370,7 +410,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "それから まっすぐですか？",
           en: "Then straight ahead?",
-          de: "Und dann geradeaus?"
+          de: "Und dann geradeaus?",
+          zh: "然后直走吗？"
         }
       },
       {
@@ -379,7 +420,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "はい、こうえんが みえるまで まっすぐです。",
           en: "Yes, straight until you see the park.",
-          de: "Ja, geradeaus, bis Sie den Park sehen."
+          de: "Ja, geradeaus, bis Sie den Park sehen.",
+          zh: "是的，一直走到能看见公园为止。"
         }
       },
       {
@@ -388,7 +430,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "びじゅつかんは わかりやすい ばしょに ありますか？",
           en: "Is the museum in an easy-to-find place?",
-          de: "Ist das Museum leicht zu finden?"
+          de: "Ist das Museum leicht zu finden?",
+          zh: "美术馆在容易找到的地方吗？"
         }
       },
       {
@@ -397,7 +440,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "はい、おおきい たてものなので すぐ みつかりますよ。",
           en: "Yes, since it's a big building, you'll find it right away.",
-          de: "Ja, da es ein großes Gebäude ist, finden Sie es sofort."
+          de: "Ja, da es ein großes Gebäude ist, finden Sie es sofort.",
+          zh: "是的，因为是大建筑，很快就能找到。"
         }
       },
       {
@@ -406,7 +450,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "たすかりました。ありがとうございます。",
           en: "That's a big help. Thank you.",
-          de: "Das hilft sehr. Vielen Dank."
+          de: "Das hilft sehr. Vielen Dank.",
+          zh: "帮了我大忙。谢谢您。"
         }
       },
       {
@@ -415,7 +460,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "どういたしまして。きを つけて！",
           en: "You're welcome. Take care!",
-          de: "Gern geschehen. Passen Sie auf sich auf!"
+          de: "Gern geschehen. Passen Sie auf sich auf!",
+          zh: "不客气。路上小心！"
         }
       }
     ]
@@ -424,7 +470,8 @@ export const topicDirections: TopicLesson = {
     title: {
       ja: "かいわ：じむしょの ばしょ",
       en: "Dialogue B: Where the Office Is",
-      de: "Dialog B: Wo das Büro ist"
+      de: "Dialog B: Wo das Büro ist",
+      zh: "会话：办公室的位置"
     },
     lines: [
       {
@@ -433,7 +480,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "あなたの じむしょは どこに ありますか？",
           en: "Where is your office?",
-          de: "Wo ist dein Büro?"
+          de: "Wo ist dein Büro?",
+          zh: "你的办公室在哪里？"
         }
       },
       {
@@ -442,7 +490,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "えきの まえの ビルの なかに あります。",
           en: "It's inside the building in front of the station.",
-          de: "Es ist im Gebäude vor dem Bahnhof."
+          de: "Es ist im Gebäude vor dem Bahnhof.",
+          zh: "在车站前面的大楼里。"
         }
       },
       {
@@ -451,7 +500,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "なんかいに ありますか？",
           en: "What floor is it on?",
-          de: "In welchem Stockwerk ist es?"
+          de: "In welchem Stockwerk ist es?",
+          zh: "在几楼？"
         }
       },
       {
@@ -460,7 +510,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "ごかいです。エレベーターの となりです。",
           en: "The fifth floor. Next to the elevator.",
-          de: "Fünfter Stock. Neben dem Fahrstuhl."
+          de: "Fünfter Stock. Neben dem Fahrstuhl.",
+          zh: "五楼。在电梯旁边。"
         }
       },
       {
@@ -469,7 +520,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "えきから ちかいですか？",
           en: "Is it close from the station?",
-          de: "Ist es nah vom Bahnhof?"
+          de: "Ist es nah vom Bahnhof?",
+          zh: "离车站近吗？"
         }
       },
       {
@@ -478,7 +530,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "はい、あるいて さんぷんぐらいです。",
           en: "Yes, about three minutes on foot.",
-          de: "Ja, etwa drei Minuten zu Fuß."
+          de: "Ja, etwa drei Minuten zu Fuß.",
+          zh: "是的，走路大概三分钟。"
         }
       },
       {
@@ -487,7 +540,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "べんりな ばしょですね。",
           en: "That's a convenient location.",
-          de: "Das ist eine praktische Lage."
+          de: "Das ist eine praktische Lage.",
+          zh: "真是个方便的地方呢。"
         }
       },
       {
@@ -496,7 +550,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "はい、でも あたりは すこし にぎやかです。",
           en: "Yes, but the area is a bit lively.",
-          de: "Ja, aber die Gegend ist etwas belebt."
+          de: "Ja, aber die Gegend ist etwas belebt.",
+          zh: "是的，不过周围有点热闹。"
         }
       },
       {
@@ -505,7 +560,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "ちかくに レストランは ありますか？",
           en: "Are there restaurants nearby?",
-          de: "Gibt es Restaurants in der Nähe?"
+          de: "Gibt es Restaurants in der Nähe?",
+          zh: "附近有餐厅吗？"
         }
       },
       {
@@ -514,7 +570,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "はい、ビルの したに いくつか あります。",
           en: "Yes, there are a few below the building.",
-          de: "Ja, unter dem Gebäude gibt es einige."
+          de: "Ja, unter dem Gebäude gibt es einige.",
+          zh: "有的，大楼下面有几家。"
         }
       },
       {
@@ -523,7 +580,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "ちゅうしゃじょうは ありますか？",
           en: "Is there a parking lot?",
-          de: "Gibt es einen Parkplatz?"
+          de: "Gibt es einen Parkplatz?",
+          zh: "有停车场吗？"
         }
       },
       {
@@ -532,7 +590,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "はい、ビルの うしろに あります。",
           en: "Yes, it's behind the building.",
-          de: "Ja, er ist hinter dem Gebäude."
+          de: "Ja, er ist hinter dem Gebäude.",
+          zh: "有的，在大楼后面。"
         }
       },
       {
@@ -541,7 +600,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "こんど あそびに いっても いい？",
           en: "Can I come visit sometime?",
-          de: "Darf ich dich mal besuchen kommen?"
+          de: "Darf ich dich mal besuchen kommen?",
+          zh: "下次可以去玩吗？"
         }
       },
       {
@@ -550,7 +610,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "もちろん！いつでも きてね。",
           en: "Of course! Come anytime.",
-          de: "Natürlich! Komm jederzeit."
+          de: "Natürlich! Komm jederzeit.",
+          zh: "当然！随时欢迎来。"
         }
       }
     ]
@@ -559,7 +620,8 @@ export const topicDirections: TopicLesson = {
     title: {
       ja: "ロンドンばし",
       en: "London Bridge is Falling Down",
-      de: "Die London Bridge fällt herunter"
+      de: "Die London Bridge fällt herunter",
+      zh: "伦敦桥"
     },
     lines: [
       {
@@ -567,7 +629,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "ロンドンばしが おちる",
           en: "London Bridge is falling down",
-          de: "Die London Bridge fällt herunter"
+          de: "Die London Bridge fällt herunter",
+          zh: "伦敦桥要塌下来了"
         }
       },
       {
@@ -575,7 +638,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "おちる おちる",
           en: "Falling down, falling down",
-          de: "fällt herunter, fällt herunter"
+          de: "fällt herunter, fällt herunter",
+          zh: "塌下来，塌下来"
         }
       },
       {
@@ -583,7 +647,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "ロンドンばしが おちる",
           en: "London Bridge is falling down",
-          de: "Die London Bridge fällt herunter"
+          de: "Die London Bridge fällt herunter",
+          zh: "伦敦桥要塌下来了"
         }
       },
       {
@@ -591,7 +656,8 @@ export const topicDirections: TopicLesson = {
         translations: {
           ja: "マイ フェア レディー",
           en: "My fair lady",
-          de: "meine schöne Dame"
+          de: "meine schöne Dame",
+          zh: "我美丽的女士"
         }
       }
     ]
