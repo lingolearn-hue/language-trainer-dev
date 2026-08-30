@@ -901,7 +901,7 @@ export const topicTime: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     de: [
       {
         id: "sound-drill",

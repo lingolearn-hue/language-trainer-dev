@@ -102,7 +102,7 @@ export const topicConditional: TopicLesson = {
       ]
     }
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-tara",
@@ -140,14 +140,14 @@ export const topicConditional: TopicLesson = {
         { id: "s2", category: "suru_verbs", translations: { ja: "きんちょうする", en: "to get nervous", de: "nervös werden", zh: "紧张" } },
         { id: "s3", category: "suru_verbs", translations: { ja: "せいこうする", en: "to succeed", de: "erfolgreich sein", zh: "成功" } },
         { id: "s4", category: "suru_verbs", translations: { ja: "しっぱいする", en: "to fail", de: "scheitern", zh: "失败" } },
-        { id: "o1", category: "other", translations: { ja: "こまる", en: "to be in trouble (native verb, no する)", de: "in Schwierigkeiten sein (natives Verb, kein する)", zh: "为难（本土动词，无する）" } },
-        { id: "o2", category: "other", translations: { ja: "あきらめる", en: "to give up (native verb, no する)", de: "aufgeben (natives Verb, kein する)", zh: "放弃（本土动词，无する）" } },
-        { id: "o3", category: "other", translations: { ja: "たすける", en: "to help (native verb, no する)", de: "helfen (natives Verb, kein する)", zh: "帮助（本土动词，无する）" } },
-        { id: "o4", category: "other", translations: { ja: "きめる", en: "to decide (native verb, no する)", de: "entscheiden (natives Verb, kein する)", zh: "决定（本土动词，无する）" } }
+        { id: "o1", category: "other", translations: { ja: "こまる", en: "to be in trouble", de: "in Schwierigkeiten sein", zh: "为难" } },
+        { id: "o2", category: "other", translations: { ja: "あきらめる", en: "to give up", de: "aufgeben", zh: "放弃" } },
+        { id: "o3", category: "other", translations: { ja: "たすける", en: "to help", de: "helfen", zh: "帮助" } },
+        { id: "o4", category: "other", translations: { ja: "きめる", en: "to decide", de: "entscheiden", zh: "决定" } }
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -170,50 +170,50 @@ export const topicConditional: TopicLesson = {
           sokuon: { ja: "促音（そくおん）（ふくしゅう）", en: "Sokuon (reinforced)", de: "Sokuon (vertieft)", zh: "促音（巩固）" }
         },
         items: [
-          { id: "shi1", category: "shi_chi", translations: { ja: "しつもん", en: "question (し)", de: "Frage (し)", zh: "问题（し）" } },
-          { id: "shi2", category: "shi_chi", translations: { ja: "しあい", en: "match, game (し)", de: "Spiel (し)", zh: "比赛（し）" } },
-          { id: "shi3", category: "shi_chi", translations: { ja: "しっぱいする", en: "to fail (し)", de: "scheitern (し)", zh: "失败（し）" } },
-          { id: "shi4", category: "shi_chi", translations: { ja: "しんぱい", en: "worry (し)", de: "Sorge (し)", zh: "担心（し）" } },
-          { id: "shi5", category: "shi_chi", translations: { ja: "しごと", en: "job, work (し)", de: "Arbeit (し)", zh: "工作（し）" } },
-          { id: "shi6", category: "shi_chi", translations: { ja: "しんせつな", en: "kind (し)", de: "freundlich (し)", zh: "亲切的（し）" } },
-          { id: "shi7", category: "shi_chi", translations: { ja: "しんぶん", en: "newspaper (し)", de: "Zeitung (し)", zh: "报纸（し）" } },
-          { id: "chi1", category: "shi_chi", translations: { ja: "ちこくする", en: "to be late (ち)", de: "sich verspäten (ち)", zh: "迟到（ち）" } },
-          { id: "chi2", category: "shi_chi", translations: { ja: "ちず", en: "map (ち)", de: "Landkarte (ち)", zh: "地图（ち）" } },
-          { id: "chi3", category: "shi_chi", translations: { ja: "ちから", en: "strength, power (ち)", de: "Kraft (ち)", zh: "力量（ち）" } },
-          { id: "chi4", category: "shi_chi", translations: { ja: "ちいさい", en: "small (ち)", de: "klein (ち)", zh: "小的（ち）" } },
-          { id: "chi5", category: "shi_chi", translations: { ja: "ちかてつ", en: "subway (ち)", de: "U-Bahn (ち)", zh: "地铁（ち）" } },
-          { id: "chi6", category: "shi_chi", translations: { ja: "ちゃいろ", en: "brown (ち)", de: "braun (ち)", zh: "棕色（ち）" } },
-          { id: "chi7", category: "shi_chi", translations: { ja: "ちきゅう", en: "Earth (ち)", de: "Erde (ち)", zh: "地球（ち）" } },
+          { id: "shi1", category: "shi_chi", translations: { ja: "しつもん", en: "question", de: "Frage", zh: "问题" } },
+          { id: "shi2", category: "shi_chi", translations: { ja: "しあい", en: "match, game", de: "Spiel", zh: "比赛" } },
+          { id: "shi3", category: "shi_chi", translations: { ja: "しっぱいする", en: "to fail", de: "scheitern", zh: "失败" } },
+          { id: "shi4", category: "shi_chi", translations: { ja: "しんぱい", en: "worry", de: "Sorge", zh: "担心" } },
+          { id: "shi5", category: "shi_chi", translations: { ja: "しごと", en: "job, work", de: "Arbeit", zh: "工作" } },
+          { id: "shi6", category: "shi_chi", translations: { ja: "しんせつな", en: "kind", de: "freundlich", zh: "亲切的" } },
+          { id: "shi7", category: "shi_chi", translations: { ja: "しんぶん", en: "newspaper", de: "Zeitung", zh: "报纸" } },
+          { id: "chi1", category: "shi_chi", translations: { ja: "ちこくする", en: "to be late", de: "sich verspäten", zh: "迟到" } },
+          { id: "chi2", category: "shi_chi", translations: { ja: "ちず", en: "map", de: "Landkarte", zh: "地图" } },
+          { id: "chi3", category: "shi_chi", translations: { ja: "ちから", en: "strength, power", de: "Kraft", zh: "力量" } },
+          { id: "chi4", category: "shi_chi", translations: { ja: "ちいさい", en: "small", de: "klein", zh: "小的" } },
+          { id: "chi5", category: "shi_chi", translations: { ja: "ちかてつ", en: "subway", de: "U-Bahn", zh: "地铁" } },
+          { id: "chi6", category: "shi_chi", translations: { ja: "ちゃいろ", en: "brown", de: "braun", zh: "棕色" } },
+          { id: "chi7", category: "shi_chi", translations: { ja: "ちきゅう", en: "Earth", de: "Erde", zh: "地球" } },
 
-          { id: "p1", category: "pitch", translations: { ja: "けいかく", en: "plan — new word, single pattern", de: "Plan — neues Wort, einzelnes Muster", zh: "计划——新词，单一声调" } },
-          { id: "p2", category: "pitch", translations: { ja: "こまる", en: "to be in trouble — new word, single pattern", de: "in Schwierigkeiten sein — neues Wort, einzelnes Muster", zh: "为难——新词，单一声调" } },
-          { id: "p3", category: "pitch", translations: { ja: "あきらめる", en: "to give up — new word, single pattern", de: "aufgeben — neues Wort, einzelnes Muster", zh: "放弃——新词，单一声调" } },
-          { id: "p4", category: "pitch", translations: { ja: "たすける", en: "to help — new word, single pattern", de: "helfen — neues Wort, einzelnes Muster", zh: "帮助——新词，单一声调" } },
-          { id: "p5", category: "pitch", translations: { ja: "えらぶ", en: "to choose — new word, single pattern", de: "wählen — neues Wort, einzelnes Muster", zh: "选择——新词，单一声调" } },
-          { id: "p6", category: "pitch", translations: { ja: "きめる", en: "to decide — new word, single pattern", de: "entscheiden — neues Wort, einzelnes Muster", zh: "决定——新词，单一声调" } },
-          { id: "p7", category: "pitch", translations: { ja: "かんがえる", en: "to think — new word, single pattern", de: "nachdenken — neues Wort, einzelnes Muster", zh: "考虑——新词，单一声调" } },
-          { id: "p8", category: "pitch", translations: { ja: "まにあう", en: "to make it in time — new word, single pattern", de: "rechtzeitig ankommen — neues Wort, einzelnes Muster", zh: "赶得上——新词，单一声调" } },
-          { id: "p9", category: "pitch", translations: { ja: "おくれる", en: "to be late, delayed — new word, single pattern", de: "sich verspäten — neues Wort, einzelnes Muster", zh: "迟到——新词，单一声调" } },
-          { id: "p10", category: "pitch", translations: { ja: "ひま", en: "free time — new word, single pattern", de: "Freizeit — neues Wort, einzelnes Muster", zh: "空闲——新词，单一声调" } },
-          { id: "p11", category: "pitch", translations: { ja: "アドバイス", en: "advice — new word, single pattern", de: "Ratschlag — neues Wort, einzelnes Muster", zh: "建议——新词，单一声调" } },
-          { id: "p12", category: "pitch", translations: { ja: "もんだい", en: "problem — new word, single pattern", de: "Problem — neues Wort, einzelnes Muster", zh: "问题——新词，单一声调" } },
-          { id: "p13", category: "pitch", translations: { ja: "びょうき", en: "illness — new word, single pattern", de: "Krankheit — neues Wort, einzelnes Muster", zh: "疾病——新词，单一声调" } },
-          { id: "p14", category: "pitch", translations: { ja: "たりない", en: "insufficient — new word, single pattern", de: "unzureichend — neues Wort, einzelnes Muster", zh: "不够的——新词，单一声调" } },
+          { id: "p1", category: "pitch", translations: { ja: "けいかく", en: "plan", de: "Plan", zh: "计划" } },
+          { id: "p2", category: "pitch", translations: { ja: "こまる", en: "to be in trouble", de: "in Schwierigkeiten sein", zh: "为难" } },
+          { id: "p3", category: "pitch", translations: { ja: "あきらめる", en: "to give up", de: "aufgeben", zh: "放弃" } },
+          { id: "p4", category: "pitch", translations: { ja: "たすける", en: "to help", de: "helfen", zh: "帮助" } },
+          { id: "p5", category: "pitch", translations: { ja: "えらぶ", en: "to choose", de: "wählen", zh: "选择" } },
+          { id: "p6", category: "pitch", translations: { ja: "きめる", en: "to decide", de: "entscheiden", zh: "决定" } },
+          { id: "p7", category: "pitch", translations: { ja: "かんがえる", en: "to think", de: "nachdenken", zh: "考虑" } },
+          { id: "p8", category: "pitch", translations: { ja: "まにあう", en: "to make it in time", de: "rechtzeitig ankommen", zh: "赶得上" } },
+          { id: "p9", category: "pitch", translations: { ja: "おくれる", en: "to be late, delayed", de: "sich verspäten", zh: "迟到" } },
+          { id: "p10", category: "pitch", translations: { ja: "ひま", en: "free time", de: "Freizeit", zh: "空闲" } },
+          { id: "p11", category: "pitch", translations: { ja: "アドバイス", en: "advice", de: "Ratschlag", zh: "建议" } },
+          { id: "p12", category: "pitch", translations: { ja: "もんだい", en: "problem", de: "Problem", zh: "问题" } },
+          { id: "p13", category: "pitch", translations: { ja: "びょうき", en: "illness", de: "Krankheit", zh: "疾病" } },
+          { id: "p14", category: "pitch", translations: { ja: "たりない", en: "insufficient", de: "unzureichend", zh: "不够的" } },
 
-          { id: "vl1", category: "vowel_length", translations: { ja: "しょうがっこう", en: "elementary school (long しょう)", de: "Grundschule (langes しょう)", zh: "小学（长音しょう）" } },
-          { id: "vl2", category: "vowel_length", translations: { ja: "しょうたい", en: "invitation (long しょう)", de: "Einladung (langes しょう)", zh: "邀请（长音しょう）" } },
-          { id: "vl3", category: "vowel_length", translations: { ja: "てんきよほう", en: "weather forecast (long おう)", de: "Wettervorhersage (langes おう)", zh: "天气预报（长音おう）" } },
-          { id: "vl4", category: "vowel_length", translations: { ja: "じかん", en: "time (short vowels)", de: "Zeit (kurze Vokale)", zh: "时间（短元音）" } },
-          { id: "vl5", category: "vowel_length", translations: { ja: "きんちょうする", en: "to get nervous (long ちょう)", de: "nervös werden (langes ちょう)", zh: "紧张（长音ちょう）" } },
-          { id: "vl6", category: "vowel_length", translations: { ja: "せいこうする", en: "to succeed (long せい)", de: "erfolgreich sein (langes せい)", zh: "成功（长音せい）" } },
-          { id: "vl7", category: "vowel_length", translations: { ja: "はんこ", en: "stamp, seal (short vowels)", de: "Stempel (kurze Vokale)", zh: "印章（短元音）" } },
-          { id: "vl8", category: "vowel_length", translations: { ja: "かいけつする", en: "to solve (long かい)", de: "lösen (langes かい)", zh: "解决（长音かい）" } },
-          { id: "vl9", category: "vowel_length", translations: { ja: "れんらくする", en: "to contact (short vowels)", de: "kontaktieren (kurze Vokale)", zh: "联系（短元音）" } },
-          { id: "vl10", category: "vowel_length", translations: { ja: "けいけん", en: "experience (long けい)", de: "Erfahrung (langes けい)", zh: "经验（长音けい）" } },
-          { id: "vl11", category: "vowel_length", translations: { ja: "からだ", en: "body (short vowels)", de: "Körper (kurze Vokale)", zh: "身体（短元音）" } },
-          { id: "vl12", category: "vowel_length", translations: { ja: "おかね", en: "money (short vowels)", de: "Geld (kurze Vokale)", zh: "钱（短元音）" } },
-          { id: "vl13", category: "vowel_length", translations: { ja: "サイズ", en: "size (diphthong-like)", de: "Größe (Diphthong-artig)", zh: "尺寸（类似双元音）" } },
-          { id: "vl14", category: "vowel_length", translations: { ja: "しんせつ", en: "kind (short vowels)", de: "freundlich (kurze Vokale)", zh: "亲切（短元音）" } },
+          { id: "vl1", category: "vowel_length", translations: { ja: "しょうがっこう", en: "elementary school", de: "Grundschule", zh: "小学" } },
+          { id: "vl2", category: "vowel_length", translations: { ja: "しょうたい", en: "invitation", de: "Einladung", zh: "邀请" } },
+          { id: "vl3", category: "vowel_length", translations: { ja: "てんきよほう", en: "weather forecast", de: "Wettervorhersage", zh: "天气预报" } },
+          { id: "vl4", category: "vowel_length", translations: { ja: "じかん", en: "time", de: "Zeit", zh: "时间" } },
+          { id: "vl5", category: "vowel_length", translations: { ja: "きんちょうする", en: "to get nervous", de: "nervös werden", zh: "紧张" } },
+          { id: "vl6", category: "vowel_length", translations: { ja: "せいこうする", en: "to succeed", de: "erfolgreich sein", zh: "成功" } },
+          { id: "vl7", category: "vowel_length", translations: { ja: "はんこ", en: "stamp, seal", de: "Stempel", zh: "印章" } },
+          { id: "vl8", category: "vowel_length", translations: { ja: "かいけつする", en: "to solve", de: "lösen", zh: "解决" } },
+          { id: "vl9", category: "vowel_length", translations: { ja: "れんらくする", en: "to contact", de: "kontaktieren", zh: "联系" } },
+          { id: "vl10", category: "vowel_length", translations: { ja: "けいけん", en: "experience", de: "Erfahrung", zh: "经验" } },
+          { id: "vl11", category: "vowel_length", translations: { ja: "からだ", en: "body", de: "Körper", zh: "身体" } },
+          { id: "vl12", category: "vowel_length", translations: { ja: "おかね", en: "money", de: "Geld", zh: "钱" } },
+          { id: "vl13", category: "vowel_length", translations: { ja: "サイズ", en: "size", de: "Größe", zh: "尺寸" } },
+          { id: "vl14", category: "vowel_length", translations: { ja: "しんせつ", en: "kind", de: "freundlich", zh: "亲切" } },
 
           { id: "so1", category: "sokuon", translations: { ja: "けっせき", en: "absence", de: "Abwesenheit", zh: "缺席" } },
           { id: "so2", category: "sokuon", translations: { ja: "きっと", en: "surely, certainly", de: "sicherlich", zh: "一定" } },
@@ -229,7 +229,7 @@ export const topicConditional: TopicLesson = {
           { id: "so12", category: "sokuon", translations: { ja: "せっけん", en: "soap", de: "Seife", zh: "肥皂" } },
           { id: "so13", category: "sokuon", translations: { ja: "ざっし", en: "magazine", de: "Zeitschrift", zh: "杂志" } },
           { id: "so14", category: "sokuon", translations: { ja: "きって", en: "stamp", de: "Briefmarke", zh: "邮票" } }
-        ]
+      ]
       }
     ]
   },

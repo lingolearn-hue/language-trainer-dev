@@ -125,14 +125,14 @@ export const topicSeasons: TopicLesson = {
         { id: "d2", category: "d", translations: { ja: "でんき", en: "electricity, light", de: "Elektrizität, Licht", zh: "电，电灯" } },
         { id: "d3", category: "d", translations: { ja: "どうぶつ", en: "animal", de: "Tier", zh: "动物" } },
         { id: "d4", category: "d", translations: { ja: "どようび", en: "Saturday", de: "Samstag", zh: "星期六" } },
-        { id: "t1", category: "t", translations: { ja: "たいふう", en: "typhoon (this lesson's own vocab)", de: "Taifun (eigenes Vokabular dieser Lektion)", zh: "台风（本课词汇）" } },
+        { id: "t1", category: "t", translations: { ja: "たいふう", en: "typhoon", de: "Taifun", zh: "台风" } },
         { id: "t2", category: "t", translations: { ja: "てがみ", en: "letter", de: "Brief", zh: "信" } },
         { id: "t3", category: "t", translations: { ja: "とけい", en: "clock", de: "Uhr", zh: "钟表" } },
         { id: "t4", category: "t", translations: { ja: "つき", en: "moon", de: "Mond", zh: "月亮" } }
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -164,8 +164,8 @@ export const topicSeasons: TopicLesson = {
           { id: "b11", category: "b", translations: { ja: "びょうき", en: "illness", de: "Krankheit", zh: "疾病" } },
           { id: "b12", category: "b", translations: { ja: "ぶひん", en: "part, component", de: "Bauteil", zh: "部件" } },
           { id: "b13", category: "b", translations: { ja: "べんり", en: "convenient", de: "praktisch", zh: "方便" } },
-          { id: "b14", category: "b", translations: { ja: "ぼうえき", en: "trade (commerce)", de: "Handel", zh: "贸易" } },
-          { id: "b15", category: "b", translations: { ja: "ばい", en: "double, times (multiplier)", de: "Mal (Multiplikator)", zh: "倍" } },
+          { id: "b14", category: "b", translations: { ja: "ぼうえき", en: "trade", de: "Handel", zh: "贸易" } },
+          { id: "b15", category: "b", translations: { ja: "ばい", en: "double, times", de: "Mal", zh: "倍" } },
           { id: "b16", category: "b", translations: { ja: "びじん", en: "beautiful person", de: "schöne Person", zh: "美人" } },
           { id: "b17", category: "b", translations: { ja: "ぶんしょう", en: "sentence, writing", de: "Satz, Text", zh: "文章" } },
           { id: "b18", category: "b", translations: { ja: "ぼうはん", en: "crime prevention", de: "Verbrechensverhütung", zh: "防范犯罪" } },
@@ -173,7 +173,7 @@ export const topicSeasons: TopicLesson = {
           { id: "p5", category: "p", translations: { ja: "ぱそこん", en: "personal computer", de: "PC", zh: "电脑" } },
           { id: "p6", category: "p", translations: { ja: "ぴかぴか", en: "shiny, sparkling", de: "glänzend", zh: "闪闪发光" } },
           { id: "p7", category: "p", translations: { ja: "ぷりん", en: "pudding", de: "Pudding", zh: "布丁" } },
-          { id: "p8", category: "p", translations: { ja: "ぺらぺら", en: "fluent (speaking)", de: "fließend (sprechen)", zh: "流利" } },
+          { id: "p8", category: "p", translations: { ja: "ぺらぺら", en: "fluent", de: "fließend", zh: "流利" } },
           { id: "p9", category: "p", translations: { ja: "ぽけっと", en: "pocket", de: "Tasche", zh: "口袋" } },
           { id: "p10", category: "p", translations: { ja: "たんぽぽ", en: "dandelion", de: "Löwenzahn", zh: "蒲公英" } },
           { id: "p11", category: "p", translations: { ja: "えんぴつ", en: "pencil", de: "Bleistift", zh: "铅笔" } },
@@ -183,9 +183,9 @@ export const topicSeasons: TopicLesson = {
           { id: "p15", category: "p", translations: { ja: "さんぽ", en: "walk, stroll", de: "Spaziergang", zh: "散步" } },
           { id: "p16", category: "p", translations: { ja: "ぜんぶ", en: "all, everything", de: "alles", zh: "全部" } },
           { id: "p17", category: "p", translations: { ja: "きんぱつ", en: "blond hair", de: "blondes Haar", zh: "金发" } },
-          { id: "p18", category: "p", translations: { ja: "せんぱい", en: "senior (school/work)", de: "Senior (Schule/Arbeit)", zh: "前辈" } },
+          { id: "p18", category: "p", translations: { ja: "せんぱい", en: "senior", de: "Senior", zh: "前辈" } },
 
-          { id: "d5", category: "d", translations: { ja: "だんぼう", en: "heating (this lesson's own vocab)", de: "Heizung (eigenes Vokabular dieser Lektion)", zh: "暖气（本课词汇）" } },
+          { id: "d5", category: "d", translations: { ja: "だんぼう", en: "heating", de: "Heizung", zh: "暖气" } },
           { id: "d6", category: "d", translations: { ja: "でんしゃ", en: "train", de: "Zug", zh: "电车" } },
           { id: "d7", category: "d", translations: { ja: "どりょく", en: "effort", de: "Anstrengung", zh: "努力" } },
           { id: "d8", category: "d", translations: { ja: "だんち", en: "housing complex", de: "Wohnsiedlung", zh: "住宅区" } },
@@ -214,11 +214,11 @@ export const topicSeasons: TopicLesson = {
           { id: "t16", category: "t", translations: { ja: "つよい", en: "strong", de: "stark", zh: "强壮的" } },
           { id: "t17", category: "t", translations: { ja: "たいふうけいろ", en: "typhoon path", de: "Taifunbahn", zh: "台风路径" } },
           { id: "t18", category: "t", translations: { ja: "とうきょう", en: "Tokyo", de: "Tokio", zh: "东京" } }
-        ]
+      ]
       }
     ]
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-shishi",

@@ -865,7 +865,7 @@ export const topicTravel: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     de: [
       {
         id: "sound-drill",

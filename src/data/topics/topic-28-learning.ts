@@ -114,25 +114,25 @@ export const topicLearning: TopicLesson = {
       },
       items: [
         { id: "r1", category: "r", translations: { ja: "れんしゅう", en: "practice", de: "Übung", zh: "练习" } },
-        { id: "r2", category: "r", translations: { ja: "りかいする", en: "to understand (this lesson's own vocab)", de: "verstehen (eigenes Vokabular dieser Lektion)", zh: "理解（本课词汇）" } },
+        { id: "r2", category: "r", translations: { ja: "りかいする", en: "to understand", de: "verstehen", zh: "理解" } },
         { id: "r3", category: "r", translations: { ja: "りゆう", en: "reason", de: "Grund", zh: "理由" } },
         { id: "r4", category: "r", translations: { ja: "ろうか", en: "hallway", de: "Flur", zh: "走廊" } },
-        { id: "l1", category: "l", translations: { ja: "りんご", en: "apple (Japanese has no separate L sound — same flap as R)", de: "Apfel (Japanisch hat keinen eigenen L-Laut — gleicher Flap wie R)", zh: "苹果（日语无独立L音——与R同一闪音）" } },
+        { id: "l1", category: "l", translations: { ja: "りんご", en: "apple", de: "Apfel", zh: "苹果" } },
         { id: "l2", category: "l", translations: { ja: "りょこう", en: "trip", de: "Reise", zh: "旅行" } },
         { id: "l3", category: "l", translations: { ja: "らいねん", en: "next year", de: "nächstes Jahr", zh: "明年" } },
         { id: "l4", category: "l", translations: { ja: "れきし", en: "history", de: "Geschichte", zh: "历史" } },
-        { id: "h1", category: "h", translations: { ja: "はつおん", en: "pronunciation (this lesson's own vocab)", de: "Aussprache (eigenes Vokabular dieser Lektion)", zh: "发音（本课词汇）" } },
+        { id: "h1", category: "h", translations: { ja: "はつおん", en: "pronunciation", de: "Aussprache", zh: "发音" } },
         { id: "h2", category: "h", translations: { ja: "ひと", en: "person", de: "Person", zh: "人" } },
         { id: "h3", category: "h", translations: { ja: "へや", en: "room", de: "Zimmer", zh: "房间" } },
         { id: "h4", category: "h", translations: { ja: "ほし", en: "star", de: "Stern", zh: "星星" } },
-        { id: "f1", category: "f", translations: { ja: "ふくざつな", en: "complicated (this lesson's own vocab)", de: "kompliziert (eigenes Vokabular dieser Lektion)", zh: "复杂的（本课词汇）" } },
+        { id: "f1", category: "f", translations: { ja: "ふくざつな", en: "complicated", de: "kompliziert", zh: "复杂的" } },
         { id: "f2", category: "f", translations: { ja: "ふゆ", en: "winter", de: "Winter", zh: "冬天" } },
         { id: "f3", category: "f", translations: { ja: "ふね", en: "boat", de: "Boot", zh: "船" } },
         { id: "f4", category: "f", translations: { ja: "ふうとう", en: "envelope", de: "Umschlag", zh: "信封" } }
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -162,7 +162,7 @@ export const topicLearning: TopicLesson = {
           { id: "r9", category: "r", translations: { ja: "りそう", en: "ideal", de: "Ideal", zh: "理想" } },
           { id: "r10", category: "r", translations: { ja: "れいぎ", en: "manners", de: "Manieren", zh: "礼仪" } },
           { id: "r11", category: "r", translations: { ja: "ろうじん", en: "elderly person", de: "alter Mensch", zh: "老人" } },
-          { id: "r12", category: "r", translations: { ja: "りく", en: "land", de: "Land (Festland)", zh: "陆地" } },
+          { id: "r12", category: "r", translations: { ja: "りく", en: "land", de: "Land", zh: "陆地" } },
           { id: "r13", category: "r", translations: { ja: "れきだい", en: "successive generations", de: "aufeinanderfolgende Generationen", zh: "历代" } },
           { id: "r14", category: "r", translations: { ja: "りえき", en: "profit", de: "Gewinn", zh: "利润" } },
           { id: "r15", category: "r", translations: { ja: "ろじ", en: "alley", de: "Gasse", zh: "小巷" } },
@@ -182,7 +182,7 @@ export const topicLearning: TopicLesson = {
           { id: "l14", category: "l", translations: { ja: "りょかん", en: "traditional inn", de: "traditionelles Gasthaus", zh: "日式旅馆" } },
           { id: "l15", category: "l", translations: { ja: "るいべつ", en: "classification", de: "Klassifizierung", zh: "分类" } },
           { id: "l16", category: "l", translations: { ja: "れきほう", en: "calendar system", de: "Kalendersystem", zh: "历法" } },
-          { id: "l17", category: "l", translations: { ja: "らくご", en: "rakugo (comic storytelling)", de: "Rakugo (komisches Erzählen)", zh: "落语" } },
+          { id: "l17", category: "l", translations: { ja: "らくご", en: "rakugo", de: "Rakugo", zh: "落语" } },
           { id: "l18", category: "l", translations: { ja: "りんじ", en: "temporary, special", de: "vorübergehend", zh: "临时" } },
 
           { id: "h5", category: "h", translations: { ja: "はやい", en: "fast, early", de: "schnell, früh", zh: "快的，早的" } },
@@ -207,18 +207,18 @@ export const topicLearning: TopicLesson = {
           { id: "f9", category: "f", translations: { ja: "ふじさん", en: "Mount Fuji", de: "Fuji-Berg", zh: "富士山" } },
           { id: "f10", category: "f", translations: { ja: "ふまん", en: "dissatisfaction", de: "Unzufriedenheit", zh: "不满" } },
           { id: "f11", category: "f", translations: { ja: "ふつう", en: "usual, normal", de: "normal, üblich", zh: "普通" } },
-          { id: "f12", category: "f", translations: { ja: "ふえる", en: "to increase", de: "zunehmen (Anzahl)", zh: "增加" } },
+          { id: "f12", category: "f", translations: { ja: "ふえる", en: "to increase", de: "zunehmen", zh: "增加" } },
           { id: "f13", category: "f", translations: { ja: "ふさぐ", en: "to block, close up", de: "blockieren", zh: "堵住" } },
           { id: "f14", category: "f", translations: { ja: "ふせぐ", en: "to prevent", de: "verhindern", zh: "防止" } },
           { id: "f15", category: "f", translations: { ja: "ふえ", en: "flute", de: "Flöte", zh: "笛子" } },
           { id: "f16", category: "f", translations: { ja: "ふきん", en: "dish towel", de: "Geschirrtuch", zh: "抹布" } },
           { id: "f17", category: "f", translations: { ja: "ふろ", en: "bath", de: "Bad", zh: "澡堂" } },
           { id: "f18", category: "f", translations: { ja: "ふたり", en: "two people", de: "zwei Personen", zh: "两个人" } }
-        ]
+      ]
       }
     ]
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-younininaru",

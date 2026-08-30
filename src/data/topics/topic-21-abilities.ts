@@ -103,7 +103,7 @@ export const topicAbilities: TopicLesson = {
       ]
     }
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-potential",
@@ -137,18 +137,18 @@ export const topicAbilities: TopicLesson = {
         native_long: { ja: "わごの ながい ぼいん", en: "Native long vowel spelling", de: "Native Langvokal-Schreibweise", zh: "和语的长元音写法" }
       },
       items: [
-        { id: "k1", category: "katakana_long", translations: { ja: "ピアノ", en: "piano — no ー here, contrast word", de: "Klavier — kein ー, Vergleichswort", zh: "钢琴——无ー，对比词" } },
-        { id: "k2", category: "katakana_long", translations: { ja: "ギター", en: "guitar (ー marks the long vowel)", de: "Gitarre (ー markiert den Langvokal)", zh: "吉他（ー标记长音）" } },
-        { id: "k3", category: "katakana_long", translations: { ja: "コンピューター", en: "computer (ー twice)", de: "Computer (zweimal ー)", zh: "电脑（两次ー）" } },
-        { id: "k4", category: "katakana_long", translations: { ja: "スポーツ", en: "sports (ー marks the long vowel)", de: "Sport (ー markiert den Langvokal)", zh: "体育运动（ー标记长音）" } },
-        { id: "n1", category: "native_long", translations: { ja: "のうりょく", en: "ability (long おう, spelled with う, not ー)", de: "Fähigkeit (langes おう, mit う geschrieben, nicht ー)", zh: "能力（长音おう，用う而非ー书写）" } },
-        { id: "n2", category: "native_long", translations: { ja: "すいえい", en: "swimming (long えい, spelled with い, not ー)", de: "Schwimmen (langes えい, mit い geschrieben, nicht ー)", zh: "游泳（长音えい，用い而非ー书写）" } },
-        { id: "n3", category: "native_long", translations: { ja: "やきゅう", en: "baseball (long ゅう, spelled with う, not ー)", de: "Baseball (langes ゅう, mit う geschrieben, nicht ー)", zh: "棒球（长音ゅう，用う而非ー书写）" } },
-        { id: "n4", category: "native_long", translations: { ja: "がんばる", en: "to try hard (short vowels, no lengthening at all)", de: "sich anstrengen (kurze Vokale, keine Dehnung)", zh: "努力（短元音，完全无长音）" } }
+        { id: "k1", category: "katakana_long", translations: { ja: "ピアノ", en: "piano", de: "Klavier", zh: "钢琴" } },
+        { id: "k2", category: "katakana_long", translations: { ja: "ギター", en: "guitar", de: "Gitarre", zh: "吉他" } },
+        { id: "k3", category: "katakana_long", translations: { ja: "コンピューター", en: "computer", de: "Computer", zh: "电脑" } },
+        { id: "k4", category: "katakana_long", translations: { ja: "スポーツ", en: "sports", de: "Sport", zh: "体育运动" } },
+        { id: "n1", category: "native_long", translations: { ja: "のうりょく", en: "ability", de: "Fähigkeit", zh: "能力" } },
+        { id: "n2", category: "native_long", translations: { ja: "すいえい", en: "swimming", de: "Schwimmen", zh: "游泳" } },
+        { id: "n3", category: "native_long", translations: { ja: "やきゅう", en: "baseball", de: "Baseball", zh: "棒球" } },
+        { id: "n4", category: "native_long", translations: { ja: "がんばる", en: "to try hard", de: "sich anstrengen", zh: "努力" } }
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -186,35 +186,35 @@ export const topicAbilities: TopicLesson = {
           { id: "ra13", category: "ra_flap", translations: { ja: "ろうか", en: "hallway, corridor", de: "Flur, Korridor", zh: "走廊" } },
           { id: "ra14", category: "ra_flap", translations: { ja: "りんご", en: "apple", de: "Apfel", zh: "苹果" } },
 
-          { id: "p1", category: "pitch", translations: { ja: "とくい", en: "good at — new word, single pattern", de: "gut in etwas — neues Wort, einzelnes Muster", zh: "擅长——新词，单一声调" } },
-          { id: "p2", category: "pitch", translations: { ja: "にがて", en: "bad at — new word, single pattern", de: "schlecht in etwas — neues Wort, einzelnes Muster", zh: "不擅长——新词，单一声调" } },
-          { id: "p3", category: "pitch", translations: { ja: "できる", en: "to be able to — new word, single pattern", de: "können — neues Wort, einzelnes Muster", zh: "能——新词，单一声调" } },
-          { id: "p4", category: "pitch", translations: { ja: "しゅみ", en: "hobby — new word, single pattern", de: "Hobby — neues Wort, einzelnes Muster", zh: "爱好——新词，单一声调" } },
-          { id: "p5", category: "pitch", translations: { ja: "すいえい", en: "swimming — new word, single pattern", de: "Schwimmen — neues Wort, einzelnes Muster", zh: "游泳——新词，单一声调" } },
-          { id: "p6", category: "pitch", translations: { ja: "しっぱいする", en: "to fail — new word, single pattern", de: "scheitern — neues Wort, einzelnes Muster", zh: "失败——新词，单一声调" } },
-          { id: "p7", category: "pitch", translations: { ja: "せいこうする", en: "to succeed — new word, single pattern", de: "erfolgreich sein — neues Wort, einzelnes Muster", zh: "成功——新词，单一声调" } },
-          { id: "p8", category: "pitch", translations: { ja: "きんちょうする", en: "to get nervous — new word, single pattern", de: "nervös werden — neues Wort, einzelnes Muster", zh: "紧张——新词，单一声调" } },
-          { id: "p9", category: "pitch", translations: { ja: "サッカー", en: "soccer — new word, single pattern", de: "Fußball — neues Wort, einzelnes Muster", zh: "足球——新词，单一声调" } },
-          { id: "p10", category: "pitch", translations: { ja: "やきゅう", en: "baseball — new word, single pattern", de: "Baseball — neues Wort, einzelnes Muster", zh: "棒球——新词，单一声调" } },
-          { id: "p11", category: "pitch", translations: { ja: "へたな", en: "unskillful — new word, single pattern", de: "ungeschickt — neues Wort, einzelnes Muster", zh: "不擅长的——新词，单一声调" } },
-          { id: "p12", category: "pitch", translations: { ja: "じょうずな", en: "skillful — new word, single pattern", de: "geschickt — neues Wort, einzelnes Muster", zh: "擅长的——新词，单一声调" } },
-          { id: "p13", category: "pitch", translations: { ja: "つづける", en: "to continue — new word, single pattern", de: "fortsetzen — neues Wort, einzelnes Muster", zh: "继续——新词，单一声调" } },
-          { id: "p14", category: "pitch", translations: { ja: "むずかしい", en: "difficult — new word, single pattern", de: "schwierig — neues Wort, einzelnes Muster", zh: "难的——新词，单一声调" } },
+          { id: "p1", category: "pitch", translations: { ja: "とくい", en: "good at", de: "gut in etwas", zh: "擅长" } },
+          { id: "p2", category: "pitch", translations: { ja: "にがて", en: "bad at", de: "schlecht in etwas", zh: "不擅长" } },
+          { id: "p3", category: "pitch", translations: { ja: "できる", en: "to be able to", de: "können", zh: "能" } },
+          { id: "p4", category: "pitch", translations: { ja: "しゅみ", en: "hobby", de: "Hobby", zh: "爱好" } },
+          { id: "p5", category: "pitch", translations: { ja: "すいえい", en: "swimming", de: "Schwimmen", zh: "游泳" } },
+          { id: "p6", category: "pitch", translations: { ja: "しっぱいする", en: "to fail", de: "scheitern", zh: "失败" } },
+          { id: "p7", category: "pitch", translations: { ja: "せいこうする", en: "to succeed", de: "erfolgreich sein", zh: "成功" } },
+          { id: "p8", category: "pitch", translations: { ja: "きんちょうする", en: "to get nervous", de: "nervös werden", zh: "紧张" } },
+          { id: "p9", category: "pitch", translations: { ja: "サッカー", en: "soccer", de: "Fußball", zh: "足球" } },
+          { id: "p10", category: "pitch", translations: { ja: "やきゅう", en: "baseball", de: "Baseball", zh: "棒球" } },
+          { id: "p11", category: "pitch", translations: { ja: "へたな", en: "unskillful", de: "ungeschickt", zh: "不擅长的" } },
+          { id: "p12", category: "pitch", translations: { ja: "じょうずな", en: "skillful", de: "geschickt", zh: "擅长的" } },
+          { id: "p13", category: "pitch", translations: { ja: "つづける", en: "to continue", de: "fortsetzen", zh: "继续" } },
+          { id: "p14", category: "pitch", translations: { ja: "むずかしい", en: "difficult", de: "schwierig", zh: "难的" } },
 
-          { id: "vl1", category: "vowel_length", translations: { ja: "こうこう", en: "high school (long こう)", de: "Oberschule (langes こう)", zh: "高中（长音こう）" } },
-          { id: "vl2", category: "vowel_length", translations: { ja: "けいけん", en: "experience (long けい)", de: "Erfahrung (langes けい)", zh: "经验（长音けい）" } },
-          { id: "vl3", category: "vowel_length", translations: { ja: "きゅうか", en: "vacation, day off (long きゅう)", de: "Urlaub (langes きゅう)", zh: "休假（长音きゅう）" } },
-          { id: "vl4", category: "vowel_length", translations: { ja: "せいかつ", en: "life, lifestyle (short vowels)", de: "Leben (kurze Vokale)", zh: "生活（短元音）" } },
-          { id: "vl5", category: "vowel_length", translations: { ja: "コンピューター", en: "computer (long ー twice)", de: "Computer (zweimal langes ー)", zh: "电脑（两次长音ー）" } },
-          { id: "vl6", category: "vowel_length", translations: { ja: "がいこくご", en: "foreign language (short vowels)", de: "Fremdsprache (kurze Vokale)", zh: "外语（短元音）" } },
-          { id: "vl7", category: "vowel_length", translations: { ja: "けいさん", en: "calculation (long けい)", de: "Rechnen (langes けい)", zh: "计算（长音けい）" } },
-          { id: "vl8", category: "vowel_length", translations: { ja: "たいそう", en: "gymnastics (long たい and そう)", de: "Turnen (langes たい und そう)", zh: "体操（长音たい和そう）" } },
-          { id: "vl9", category: "vowel_length", translations: { ja: "はしる", en: "to run (short vowels)", de: "laufen (kurze Vokale)", zh: "跑步（短元音）" } },
-          { id: "vl10", category: "vowel_length", translations: { ja: "れんしゅうする", en: "to practice (long しゅう)", de: "üben (langes しゅう)", zh: "练习（长音しゅう）" } },
-          { id: "vl11", category: "vowel_length", translations: { ja: "げんき", en: "healthy, energetic (short vowels)", de: "gesund, energiegeladen (kurze Vokale)", zh: "健康（短元音）" } },
-          { id: "vl12", category: "vowel_length", translations: { ja: "しんせつ", en: "kind (short vowels)", de: "freundlich (kurze Vokale)", zh: "亲切（短元音）" } },
-          { id: "vl13", category: "vowel_length", translations: { ja: "ホテル", en: "hotel (short vowels)", de: "Hotel (kurze Vokale)", zh: "酒店（短元音）" } },
-          { id: "vl14", category: "vowel_length", translations: { ja: "ざっし", en: "magazine (short vowels)", de: "Zeitschrift (kurze Vokale)", zh: "杂志（短元音）" } },
+          { id: "vl1", category: "vowel_length", translations: { ja: "こうこう", en: "high school", de: "Oberschule", zh: "高中" } },
+          { id: "vl2", category: "vowel_length", translations: { ja: "けいけん", en: "experience", de: "Erfahrung", zh: "经验" } },
+          { id: "vl3", category: "vowel_length", translations: { ja: "きゅうか", en: "vacation, day off", de: "Urlaub", zh: "休假" } },
+          { id: "vl4", category: "vowel_length", translations: { ja: "せいかつ", en: "life, lifestyle", de: "Leben", zh: "生活" } },
+          { id: "vl5", category: "vowel_length", translations: { ja: "コンピューター", en: "computer", de: "Computer", zh: "电脑" } },
+          { id: "vl6", category: "vowel_length", translations: { ja: "がいこくご", en: "foreign language", de: "Fremdsprache", zh: "外语" } },
+          { id: "vl7", category: "vowel_length", translations: { ja: "けいさん", en: "calculation", de: "Rechnen", zh: "计算" } },
+          { id: "vl8", category: "vowel_length", translations: { ja: "たいそう", en: "gymnastics", de: "Turnen", zh: "体操" } },
+          { id: "vl9", category: "vowel_length", translations: { ja: "はしる", en: "to run", de: "laufen", zh: "跑步" } },
+          { id: "vl10", category: "vowel_length", translations: { ja: "れんしゅうする", en: "to practice", de: "üben", zh: "练习" } },
+          { id: "vl11", category: "vowel_length", translations: { ja: "げんき", en: "healthy, energetic", de: "gesund, energiegeladen", zh: "健康" } },
+          { id: "vl12", category: "vowel_length", translations: { ja: "しんせつ", en: "kind", de: "freundlich", zh: "亲切" } },
+          { id: "vl13", category: "vowel_length", translations: { ja: "ホテル", en: "hotel", de: "Hotel", zh: "酒店" } },
+          { id: "vl14", category: "vowel_length", translations: { ja: "ざっし", en: "magazine", de: "Zeitschrift", zh: "杂志" } },
 
           { id: "so1", category: "sokuon", translations: { ja: "けっせき", en: "absence", de: "Abwesenheit", zh: "缺席" } },
           { id: "so2", category: "sokuon", translations: { ja: "きって", en: "stamp", de: "Briefmarke", zh: "邮票" } },
@@ -230,7 +230,7 @@ export const topicAbilities: TopicLesson = {
           { id: "so12", category: "sokuon", translations: { ja: "しゅっぱつ", en: "departure", de: "Abfahrt", zh: "出发" } },
           { id: "so13", category: "sokuon", translations: { ja: "けっこん", en: "marriage", de: "Heirat", zh: "结婚" } },
           { id: "so14", category: "sokuon", translations: { ja: "がっこう", en: "school", de: "Schule", zh: "学校" } }
-        ]
+      ]
       }
     ]
   },

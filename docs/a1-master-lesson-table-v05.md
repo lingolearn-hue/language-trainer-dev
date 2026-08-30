@@ -51,8 +51,8 @@ skeleton with language-specific substitutions where noted.
 | English (C1) | 1 | Standalone "Voices from Orbit" space course, not on the A1 track |
 | Japanese (A1) | 1–19 (all) | Rows 1–19 complete. All have ja; 1–13 also have de. zh done for 1–5 and 14–19, still pending for 6–13. |
 
-**Every lesson complete is the goal** (self-intro slide, grammar
-reinforcement, a full 4×14 second pronunciation drill, a song with real
+**Every lesson complete is the goal** (self-intro slide, grammar drill
+slide(s), a full 4×14 second pronunciation drill, a song with real
 melody, kanji authored) — see `docs/topic-lesson-system.md`'s "Goal:
 every lesson complete" section for the exact standard and current
 per-topic status against it.
@@ -158,54 +158,24 @@ changelog below predates that consolidation.
 | 33 | Quantity | Numbers/quantity + Comparatives consolidation | Comparing prices while shopping | Splitting a bill among friends | Consonant | Full consonant recap, mixed vocabulary | Full German-specific recap: R, Z, ich-laut/ach-laut mixed | Ten Little Indians (counting) *(reused from L15)* |
 | 34 | Grammar (meta, optional) | Full-course grammar recap | Explaining grammar rules to a beginner | Quiz-style conversation reviewing the course | Consonant | Final German consonant spot-check, new vocabulary | Uvular R + Z (ts) mixed final recap | -- (open — no clean single-lesson reuse partner; L34 reviews everything at once, see "Changes from v03") |
 
-## Status summary
-- 34 lessons total in the plan; 7 actually built so far (Japanese 1,2,3,4,5,8,10 — see
-  Build status above)
-- Vocab: ~30 words/lesson is a floor, not a cap — built lessons range from 30 to 41
-  words once the dialogue-vs-vocab audit is applied (any word a dialogue actually uses
-  gets added if missing, regardless of running total). UI caps a single column at 16
-  rows before auto-splitting into sub-columns.
-- Grammar: all 15 universal + 7 language-specific A1 items introduced by Lesson 18,
-  Lessons 19–34 cycle back through in mixed review pairs/triples
-- Dialogue: 2 topic titles per lesson (A/B), each a uniform 14 lines in built lessons —
-  confirmed as the standing target for every future lesson
-- Pronunciation: German example track, C-C-C-V cycle, each lesson pairs a universal
-  contrast (Concept 1) with a German-specific item (Concept 2). Japanese track has its
-  own real two-concept pass for all 7 built lessons (pitch accent, long/short vowels,
-  sokuon, dakuten, devoicing, ん-assimilation, mora-timing, R-sound, and the ほん
-  counter's irregular sokuon pattern — no two lessons reuse the same concept pairing)
-- Song: 11 distinct songs total, each usable up to twice (its introducing lesson + one
-  reuse). Across all 34 lessons, 20 now have a song assigned and 14 remain open —
-  every song now originates in a new-grammar lesson (1–18) and is only ever reused in
-  a review lesson (19–34), no exceptions (see "Changes from v03" above for the fix).
-  Of the 9 built lessons total (Japanese 1,2,3,4,5,8,10; German 2,11), only Japanese
-  Lesson 2 (Head Shoulders Knees and Toes) and German Lesson 11 (Row Row Row Your
-  Boat) have their table-assigned song actually translated and wired in. Japanese
-  Lessons 1 and 8 are missing songs the table says they should have (Frere Jacques,
-  This Old Man — not yet translated). Japanese Lessons 3, 4, 5, 10 correctly have no
-  song (open slots). German Lesson 2 predates the table and doesn't map cleanly to
-  any single row (see "Build status"), so its own song (Bruder Jakob) isn't really
-  validated against this table either way — pre-existing, not a new issue.
+## Current status
 
-## Known open items (not yet resolved)
-- A2–C2 vocab-to-grammar mapping not yet attempted (A1 only so far)
-- Real per-category word counts checked for only 3 of 34 categories (Food, Shopping,
-  Health — see "Changes from v02" above); the other 31 are still unverified against
+See the "Build status" section near the top of this file (accurate as
+of v05a) and `docs/topic-lesson-system.md` for full per-topic detail —
+19 Japanese A1 rows built (13 also German), 9 A2 topics built. An
+earlier "Status summary"/"Known open items" pair that lived here was
+found to be a stale pre-v05a snapshot directly contradicting the Build
+status table above (it claimed only 7 lessons built); moved to
+`docs/ARCHIVE.md`.
+
+Remaining genuinely open items (carried forward, still accurate):
+- A2–C2 vocab-to-grammar mapping is now underway for A2 (see
+  `docs/a2-master-lesson-table-v01.md`), not yet started for B1+
+- Real per-category word counts checked for only 3 of 34 A1 categories
+  (Food, Shopping, Health); the other 31 are still unverified against
   the actual tagged vocab corpus
-- Pronunciation/song tracks are resolved for German (full) and Japanese (7 of 34
-  lessons) — Chinese and the remaining 27 Japanese rows still need their own
-  Concept 2 / native-song research pass
-- Pronunciation/song tracks are resolved for German (full) and Japanese (7 of 34
-  lessons) — Chinese and the remaining 27 Japanese rows still need their own
-  Concept 2 / native-song research pass
-- Japanese Lessons 1 and 8 (both built) are missing songs the table assigns them
-  (Frere Jacques, This Old Man) — translation not yet done, tracked above under Song
-- 14 lesson slots still have no song at all: 7 in 1–18 (lessons 4, 5, 6, 10, 14, 16,
-  17 — never filled) and 7 in 19–34 (lessons 23, 27, 29, 30, 31, 32, and now 34 —
-  either their nearest grammar-match song is already at its 2-use cap, or, for L34
-  specifically, no single-lesson reuse partner exists at all) — candidates for new
-  native-language song research, one tier below the reuse-mapping resolved in v02/v04
-- Vocab-column 16-row cap (new this version) hasn't been checked against every
-  planned category — a few of the 34 topics may produce lopsided columns once built
-  (e.g. a topic with many more nouns than verbs), which is fine functionally (it just
-  auto-splits) but worth a glance during authoring for balance
+- Chinese vocab/dialogue/song still missing for A1 topics 6–13 (see
+  `docs/topic-lesson-system.md`'s "Known gaps")
+- 14 of the 34 A1 song slots still have no song assigned at all (rows
+  4, 5, 6, 10, 14, 16, 17, 23, 27, 29, 30, 31, 32, 34) — candidates for
+  new native-language song research

@@ -4,10 +4,10 @@ import type { TopicLesson } from "../topicTypes";
 // Vocab/dialogue/song extracted verbatim (already fully multi-language
 // data); ja grammar/pronunciation carried over unchanged from the
 // original file. Also carries the lesson's extra number/R-sound drill
-// slide via extraDrills — the one lesson that has a slide beyond the
-// standard vocab+pronunciation pair, which is what extraDrills was added
-// to topicTypes.ts to support. No content was rewritten in this
-// migration.
+// slide via pronunciationDrills — the one lesson that has a slide
+// beyond the standard vocab+pronunciation pair, which is what this
+// field was added to topicTypes.ts to support. No content was
+// rewritten in this migration.
 
 export const topicShopping: TopicLesson = {
   id: "topic-08-shopping",
@@ -1025,7 +1025,7 @@ export const topicShopping: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "number-drill",

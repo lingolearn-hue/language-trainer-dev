@@ -1246,7 +1246,7 @@ export const topicBody: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",

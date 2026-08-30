@@ -137,7 +137,7 @@ export const topicLandscape: TopicLesson = {
       ]
     }
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-yori",

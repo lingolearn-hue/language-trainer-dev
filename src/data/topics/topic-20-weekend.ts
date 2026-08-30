@@ -106,7 +106,7 @@ export const topicWeekend: TopicLesson = {
       ]
     }
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-polite",
@@ -162,16 +162,16 @@ export const topicWeekend: TopicLesson = {
         no_rendaku: { ja: "れんだく なし（さんこう）", en: "No rendaku (for comparison)", de: "Ohne Rendaku (zum Vergleich)", zh: "无连浊（对比参考）" }
       },
       items: [
-        { id: "r1", category: "rendaku", translations: { ja: "おりがみ", en: "origami (紙 kami → がみ)", de: "Origami (紙 kami → がみ)", zh: "折纸（紙 kami→がみ）" } },
-        { id: "r2", category: "rendaku", translations: { ja: "てがみ", en: "letter (紙 kami → がみ)", de: "Brief (紙 kami → がみ)", zh: "信（紙 kami→がみ）" } },
-        { id: "r3", category: "rendaku", translations: { ja: "はなび", en: "fireworks (火 hi → び)", de: "Feuerwerk (火 hi → び)", zh: "烟花（火 hi→び）" } },
-        { id: "r4", category: "rendaku", translations: { ja: "あおぞら", en: "blue sky (空 sora → ぞら)", de: "blauer Himmel (空 sora → ぞら)", zh: "蓝天（空 sora→ぞら）" } },
-        { id: "no1", category: "no_rendaku", translations: { ja: "かいもの", en: "shopping (もの stays unvoiced — not every compound triggers rendaku)", de: "Einkaufen (もの bleibt unverändert — nicht jedes Kompositum löst Rendaku aus)", zh: "购物（もの未浊化——并非所有复合词都会连浊）" } },
-        { id: "no2", category: "no_rendaku", translations: { ja: "こうえん", en: "park (not a compound — no rendaku to compare)", de: "Park (kein Kompositum — kein Rendaku zum Vergleich)", zh: "公园（非复合词——无连浊现象）" } }
+        { id: "r1", category: "rendaku", translations: { ja: "おりがみ", en: "origami", de: "Origami", zh: "折纸" } },
+        { id: "r2", category: "rendaku", translations: { ja: "てがみ", en: "letter", de: "Brief", zh: "信" } },
+        { id: "r3", category: "rendaku", translations: { ja: "はなび", en: "fireworks", de: "Feuerwerk", zh: "烟花" } },
+        { id: "r4", category: "rendaku", translations: { ja: "あおぞら", en: "blue sky", de: "blauer Himmel", zh: "蓝天" } },
+        { id: "no1", category: "no_rendaku", translations: { ja: "かいもの", en: "shopping", de: "Einkaufen", zh: "购物" } },
+        { id: "no2", category: "no_rendaku", translations: { ja: "こうえん", en: "park", de: "Park", zh: "公园" } }
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -220,40 +220,40 @@ export const topicWeekend: TopicLesson = {
           { id: "so9", category: "sokuon", translations: { ja: "らっしゅあわー", en: "rush hour", de: "Stoßzeit", zh: "高峰时段" } },
           { id: "so10", category: "sokuon", translations: { ja: "けっせき", en: "absence", de: "Abwesenheit", zh: "缺席" } },
           { id: "so11", category: "sokuon", translations: { ja: "サッカー", en: "soccer", de: "Fußball", zh: "足球" } },
-          { id: "so12", category: "sokuon", translations: { ja: "みっつ", en: "three (things)", de: "drei (Dinge)", zh: "三个" } },
+          { id: "so12", category: "sokuon", translations: { ja: "みっつ", en: "three", de: "drei", zh: "三个" } },
           { id: "so13", category: "sokuon", translations: { ja: "あさって", en: "the day after tomorrow", de: "übermorgen", zh: "后天" } },
           { id: "so14", category: "sokuon", translations: { ja: "こっち", en: "this way, here", de: "hierher", zh: "这边" } },
 
-          { id: "p1", category: "pitch", translations: { ja: "はし", en: "chopsticks (HL) / bridge (LH) — reinforced contrast", de: "Essstäbchen (HL) / Brücke (LH) — vertiefter Kontrast", zh: "筷子（高低）／桥（低高）——巩固对比" } },
-          { id: "p2", category: "pitch", translations: { ja: "あめ", en: "rain (HL) / candy (LH) — reinforced contrast", de: "Regen (HL) / Süßigkeit (LH) — vertiefter Kontrast", zh: "雨（高低）／糖果（低高）——巩固对比" } },
-          { id: "p3", category: "pitch", translations: { ja: "しゅみ", en: "hobby — new word, single pattern", de: "Hobby — neues Wort, einzelnes Muster", zh: "爱好——新词，单一声调" } },
-          { id: "p4", category: "pitch", translations: { ja: "どようび", en: "Saturday — new word, single pattern", de: "Samstag — neues Wort, einzelnes Muster", zh: "星期六——新词，单一声调" } },
-          { id: "p5", category: "pitch", translations: { ja: "でかける", en: "to go out — new word, single pattern", de: "ausgehen — neues Wort, einzelnes Muster", zh: "外出——新词，单一声调" } },
-          { id: "p6", category: "pitch", translations: { ja: "のんびり", en: "leisurely, relaxed — new word, single pattern", de: "entspannt — neues Wort, einzelnes Muster", zh: "悠闲——新词，单一声调" } },
-          { id: "p7", category: "pitch", translations: { ja: "パーティー", en: "party — new word, single pattern", de: "Party — neues Wort, einzelnes Muster", zh: "派对——新词，单一声调" } },
-          { id: "p8", category: "pitch", translations: { ja: "コンサート", en: "concert — new word, single pattern", de: "Konzert — neues Wort, einzelnes Muster", zh: "音乐会——新词，单一声调" } },
-          { id: "p9", category: "pitch", translations: { ja: "やすむ", en: "to rest — new word, single pattern", de: "sich ausruhen — neues Wort, einzelnes Muster", zh: "休息——新词，单一声调" } },
-          { id: "p10", category: "pitch", translations: { ja: "たのしい", en: "fun — new word, single pattern", de: "unterhaltsam — neues Wort, einzelnes Muster", zh: "开心——新词，单一声调" } },
-          { id: "p11", category: "pitch", translations: { ja: "そうじ", en: "cleaning — new word, single pattern", de: "Putzen — neues Wort, einzelnes Muster", zh: "打扫——新词，单一声调" } },
-          { id: "p12", category: "pitch", translations: { ja: "せんたく", en: "laundry — new word, single pattern", de: "Wäsche — neues Wort, einzelnes Muster", zh: "洗衣服——新词，单一声调" } },
-          { id: "p13", category: "pitch", translations: { ja: "どくしょ", en: "reading — new word, single pattern", de: "Lesen — neues Wort, einzelnes Muster", zh: "读书——新词，单一声调" } },
-          { id: "p14", category: "pitch", translations: { ja: "さんぽ", en: "walk, stroll — new word, single pattern", de: "Spaziergang — neues Wort, einzelnes Muster", zh: "散步——新词，单一声调" } },
+          { id: "p1", category: "pitch", translations: { ja: "はし", en: "chopsticks (HL) / bridge", de: "Essstäbchen (HL) / Brücke", zh: "筷子（高低）／桥" } },
+          { id: "p2", category: "pitch", translations: { ja: "あめ", en: "rain (HL) / candy", de: "Regen (HL) / Süßigkeit", zh: "雨（高低）／糖果" } },
+          { id: "p3", category: "pitch", translations: { ja: "しゅみ", en: "hobby", de: "Hobby", zh: "爱好" } },
+          { id: "p4", category: "pitch", translations: { ja: "どようび", en: "Saturday", de: "Samstag", zh: "星期六" } },
+          { id: "p5", category: "pitch", translations: { ja: "でかける", en: "to go out", de: "ausgehen", zh: "外出" } },
+          { id: "p6", category: "pitch", translations: { ja: "のんびり", en: "leisurely, relaxed", de: "entspannt", zh: "悠闲" } },
+          { id: "p7", category: "pitch", translations: { ja: "パーティー", en: "party", de: "Party", zh: "派对" } },
+          { id: "p8", category: "pitch", translations: { ja: "コンサート", en: "concert", de: "Konzert", zh: "音乐会" } },
+          { id: "p9", category: "pitch", translations: { ja: "やすむ", en: "to rest", de: "sich ausruhen", zh: "休息" } },
+          { id: "p10", category: "pitch", translations: { ja: "たのしい", en: "fun", de: "unterhaltsam", zh: "开心" } },
+          { id: "p11", category: "pitch", translations: { ja: "そうじ", en: "cleaning", de: "Putzen", zh: "打扫" } },
+          { id: "p12", category: "pitch", translations: { ja: "せんたく", en: "laundry", de: "Wäsche", zh: "洗衣服" } },
+          { id: "p13", category: "pitch", translations: { ja: "どくしょ", en: "reading", de: "Lesen", zh: "读书" } },
+          { id: "p14", category: "pitch", translations: { ja: "さんぽ", en: "walk, stroll", de: "Spaziergang", zh: "散步" } },
 
-          { id: "vl1", category: "vowel_length", translations: { ja: "ノート", en: "notebook (long ー)", de: "Notizbuch (langes ー)", zh: "笔记本（长音ー）" } },
-          { id: "vl2", category: "vowel_length", translations: { ja: "スポーツ", en: "sports (long ー)", de: "Sport (langes ー)", zh: "体育运动（长音ー）" } },
-          { id: "vl3", category: "vowel_length", translations: { ja: "べんきょう", en: "study (long きょう)", de: "Lernen (langes きょう)", zh: "学习（长音きょう）" } },
-          { id: "vl4", category: "vowel_length", translations: { ja: "はくぶつかん", en: "museum (short vowels)", de: "Museum (kurze Vokale)", zh: "博物馆（短元音）" } },
-          { id: "vl5", category: "vowel_length", translations: { ja: "こうえん", en: "park (long おう)", de: "Park (langes おう)", zh: "公园（长音おう）" } },
-          { id: "vl6", category: "vowel_length", translations: { ja: "からだ", en: "body (short vowels)", de: "Körper (kurze Vokale)", zh: "身体（短元音）" } },
-          { id: "vl7", category: "vowel_length", translations: { ja: "にちようび", en: "Sunday (long ちよ)", de: "Sonntag (langes ちよ)", zh: "星期日（长音）" } },
-          { id: "vl8", category: "vowel_length", translations: { ja: "ゆうめい", en: "famous (long ゆう and えい)", de: "berühmt (langes ゆう und えい)", zh: "有名（长音ゆう和えい）" } },
-          { id: "vl9", category: "vowel_length", translations: { ja: "きのう", en: "yesterday (long のう)", de: "gestern (langes のう)", zh: "昨天（长音のう）" } },
-          { id: "vl10", category: "vowel_length", translations: { ja: "とうきょう", en: "Tokyo (long とう and きょう)", de: "Tokio (langes とう und きょう)", zh: "东京（长音とう和きょう）" } },
-          { id: "vl11", category: "vowel_length", translations: { ja: "おうえん", en: "cheering, support (long おう)", de: "Anfeuern, Unterstützung (langes おう)", zh: "加油，支持（长音おう）" } },
-          { id: "vl12", category: "vowel_length", translations: { ja: "せんせい", en: "teacher (long せい)", de: "Lehrer (langes せい)", zh: "老师（长音せい）" } },
-          { id: "vl13", category: "vowel_length", translations: { ja: "とけい", en: "clock, watch (long けい)", de: "Uhr (langes けい)", zh: "钟表（长音けい）" } },
-          { id: "vl14", category: "vowel_length", translations: { ja: "でんしゃ", en: "train (short vowels)", de: "Zug (kurze Vokale)", zh: "电车（短元音）" } }
-        ]
+          { id: "vl1", category: "vowel_length", translations: { ja: "ノート", en: "notebook", de: "Notizbuch", zh: "笔记本" } },
+          { id: "vl2", category: "vowel_length", translations: { ja: "スポーツ", en: "sports", de: "Sport", zh: "体育运动" } },
+          { id: "vl3", category: "vowel_length", translations: { ja: "べんきょう", en: "study", de: "Lernen", zh: "学习" } },
+          { id: "vl4", category: "vowel_length", translations: { ja: "はくぶつかん", en: "museum", de: "Museum", zh: "博物馆" } },
+          { id: "vl5", category: "vowel_length", translations: { ja: "こうえん", en: "park", de: "Park", zh: "公园" } },
+          { id: "vl6", category: "vowel_length", translations: { ja: "からだ", en: "body", de: "Körper", zh: "身体" } },
+          { id: "vl7", category: "vowel_length", translations: { ja: "にちようび", en: "Sunday", de: "Sonntag", zh: "星期日" } },
+          { id: "vl8", category: "vowel_length", translations: { ja: "ゆうめい", en: "famous", de: "berühmt", zh: "有名" } },
+          { id: "vl9", category: "vowel_length", translations: { ja: "きのう", en: "yesterday", de: "gestern", zh: "昨天" } },
+          { id: "vl10", category: "vowel_length", translations: { ja: "とうきょう", en: "Tokyo", de: "Tokio", zh: "东京" } },
+          { id: "vl11", category: "vowel_length", translations: { ja: "おうえん", en: "cheering, support", de: "Anfeuern, Unterstützung", zh: "加油，支持" } },
+          { id: "vl12", category: "vowel_length", translations: { ja: "せんせい", en: "teacher", de: "Lehrer", zh: "老师" } },
+          { id: "vl13", category: "vowel_length", translations: { ja: "とけい", en: "clock, watch", de: "Uhr", zh: "钟表" } },
+          { id: "vl14", category: "vowel_length", translations: { ja: "でんしゃ", en: "train", de: "Zug", zh: "电车" } }
+      ]
       }
     ]
   },

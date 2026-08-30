@@ -1141,7 +1141,7 @@ export const topicFamily: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     de: [
       {
         id: "sound-drill",

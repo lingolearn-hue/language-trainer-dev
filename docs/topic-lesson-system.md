@@ -1,9 +1,29 @@
 # Topic-Based Lesson System
 
-**Status: 24 topics built. 19 are the A1 master table (rows 1–19), all
-with full Japanese content, 13 (rows 1–13) also German. 5 are A2 (see
+**Status: 28 topics built. 19 are the A1 master table (rows 1–19), all
+with full Japanese content, 13 (rows 1–13) also German. 9 are A2 (see
 "A2 topics" below). German Lessons 2/11 and the English C1 lesson
 remain hand-written, outside this system — see "Known gaps" below.**
+
+## Terminology: primers vs. drills
+
+Each topic authors two paired concepts per target language:
+
+- **Grammar primer** (`TopicGrammarPrimer`, field `grammar`) — the
+  explanation + short example chunks shown once, and its reinforcement
+  counterpart, **grammar drill** (`TopicGrammarDrill`, field
+  `grammarDrills`) — dialogue-format slides with ~10 flowing example
+  sentences per grammar sub-concept.
+- **Pronunciation primer** (`TopicPronunciationPrimer`, field
+  `pronunciation`) — the first, smaller word-list slide, and its
+  reinforcement counterpart, **pronunciation drill**
+  (`TopicPronunciationDrill`, field `pronunciationDrills`) — the full
+  4×14 (56-word) second pronunciation slide.
+
+These were previously named `extraReadalongs`/`TopicExtraReadalong` and
+`extraDrills`/`TopicExtraDrill` respectively; renamed so the
+primer/drill pairing for each of grammar and pronunciation is clear
+from the name alone.
 
 ## Goal: every lesson complete
 
@@ -14,7 +34,7 @@ pronunciation) that every topic already has:
 1. **Self-introduction slide** — fill-in-the-blank template, plus a
    silent word bank for any blank with a natural finite category (e.g.
    eye color, sport)
-2. **Grammar reinforcement slide(s)** — dialogue-format, ~10 example
+2. **Grammar drill slide(s)** — dialogue-format, ~10 example
    sentences per grammar sub-concept, one slide per concept (never
    crammed into a single dense table)
 3. **Second pronunciation drill — full 4 columns × 14 words (56 total)**,
@@ -54,7 +74,7 @@ A lesson has several genuinely different kinds of content:
 | Vocab list | Grammar (Japanese teaches に/へ/で; German teaches wo/wohin cases — not translations of each other, different mechanics) |
 | Both dialogues | Pronunciation (pitch accent has no German equivalent; consonant clusters like SCHW-/SCHR- have no Japanese equivalent) |
 | Song (when present) | Self-introduction template + word bank (fill-in-the-blank phrasing is language-specific; topics without one just skip the slide) |
-| Framing text (title, agenda, intro, "let's look at some words about X") — follows a *strict, consistent template* across every lesson | Extra drill slides (e.g. a second pronunciation practice slide) — practice content is inherently language-specific |
+| Framing text (title, agenda, intro, "let's look at some words about X") — follows a *strict, consistent template* across every lesson | Drill slides (grammar drills and pronunciation drills) — practice content is inherently language-specific |
 
 That framing-text row was the real find: it isn't actually
 language-specific content, it's a template with the topic name and a
@@ -67,8 +87,9 @@ not hand-translated, for any language that has a template function.
 holding vocab/dialogueA/dialogueB/song ONCE (already full `{ja, en, de,
 zh}` Translations objects — genuinely shared data, not "Japanese content
 with translations bolted on"), plus `grammar`, `pronunciation`,
-`extraDrills`, and `selfIntro` as `Partial<Record<LangCode, ...>>` —
-populated only for languages that actually have real content authored.
+`pronunciationDrills`, `grammarDrills`, and `selfIntro` as
+`Partial<Record<LangCode, ...>>` — populated only for languages that
+actually have real content authored.
 
 **`src/data/phraseTemplates.ts`** — one `PhraseSet` per language (currently
 `ja`, `de`) with functions like `welcomeTitle(topic)`,
@@ -89,7 +110,7 @@ every hand-written lesson file already produces) by:
 4. Slotting in the shared vocab/dialogueA/dialogueB/song as-is (via
    `applyOverrides` — see "Mini-fork overrides" below)
 5. Slotting in that target language's own grammar/pronunciation content,
-   plus any `extraDrills` for that language
+   plus any `pronunciationDrills` for that language
 
 **Critically: `Session.tsx`, `VocabDrillBlock.tsx`, `ReadalongBlock.tsx`,
 `SelfIntroBlock.tsx`, and every other consumer needed ~zero structural
@@ -132,13 +153,13 @@ when a topic has one authored. Two panels:
 Currently authored for topics 1 (Family, no word bank — its blanks are
 open-ended) and 2 (Body, 2 word-bank groups: eye color, sport/exercise).
 
-## Extra drill slides (second pronunciation practice)
+## Pronunciation drill slides (second pronunciation practice)
 
-`topic.extraDrills[lang]` — an array of additional `vocabDrill`-type
-slides beyond the standard vocab+pronunciation pair, appended right after
-the pronunciation block. **Standard shape: 4 columns × 14 words = 56
-total**, not a smaller or uneven set — see "Goal: every lesson complete"
-above. Two uses so far:
+`topic.pronunciationDrills[lang]` — an array of additional
+`vocabDrill`-type slides beyond the standard vocab+pronunciation pair,
+appended right after the pronunciation block. **Standard shape: 4
+columns × 14 words = 56 total**, not a smaller or uneven set — see
+"Goal: every lesson complete" above. Two uses so far:
 1. A hand-curated word list reinforcing that lesson's specific
    pronunciation focus at scale (e.g. Topic 1's B/P/d→t/g→k drill,
    56 words across 4 columns) — pulled from real German-course slide
@@ -148,13 +169,30 @@ above. Two uses so far:
 
 **Current status against the 4×14 standard:**
 - **Full 56-word, 4-column drills**: Topic 1 (de), Topic 3 (ja), Topic 6
-  (de), Topic 9 (ja), Topic 11 (de), Topic 13 (de)
+  (de), Topic 9 (ja), Topic 11 (de), Topic 13 (de), and all 9 A2 topics
+  (20–28, ja)
 - **Below standard, needs expansion**: Topic 2's ja drill (48 words —
   its short/long-vowel columns have 12 each instead of 14); Topic 8's ja
   drill (45 words across only 3 columns instead of 4)
 - **Missing entirely**: Topics 4, 5, 7, 10, 12, 14, 16, 17, 18, 19, and
   the `de` side of Topics 2, 3, 8, 9 (these currently only have a `ja`
   drill, or vice versa)
+
+Items are kept to the plain word + gloss — no inline explanatory
+annotations (e.g. "(long vowel)", "— new word, single pattern"). The
+grouping/column headers already carry that information; repeating it
+per-item added clutter without adding recognition value. The one
+exception is pitch-accent minimal-pair items (Topics 2, 9) where the
+parenthetical (e.g. "chopsticks (HL) / bridge (LH)") encodes the actual
+pitch pattern being taught, not commentary about it.
+
+A duplicate-word audit (same word appearing twice within one drill's
+`items` array under two different categories) was run across all A2
+topics in the same session that renamed these fields; found and fixed
+~24 real duplicates across Topics 20–22, plus 2 in Topic 23. Topic 26's
+triple use of ふく (服/吹く/拭く, genuine homophones) was left as
+intentional. Worth re-running the same audit against the A1 topics
+(1, 2, 3, 11, 13, 16) at some point — spot-checked, not yet fixed.
 
 ## Row-by-row comparison columns (`pairedColumns`)
 
@@ -172,7 +210,8 @@ alone doesn't distinguish the pair. Both computer-mode (the merged table)
 and phone-mode (see below — a paired group stays together as ONE slide,
 never split across two) respect this.
 
-Currently declared for topics 2 and 9's HL/LH pitch-accent drills.
+Currently declared for topics 2 and 9's HL/LH pitch-accent drills, and
+topic 23's short/long vowel contrast drill.
 
 ## Mini-fork overrides (per-target-language content patches)
 
@@ -250,9 +289,10 @@ the background rather than getting audibly clipped.
 ## A2 topics
 
 `docs/a2-master-lesson-table-v01.md` — a 34-row A2 plan, saved verbatim
-as given. 5 A2 topics built so far, using the same `TopicLesson.level`
-field (defaults to the target language's usual level when unset, so
-A1 topics didn't need any change).
+as given except two rows' pronunciation-2 wording (see below). 9 A2
+topics built so far (lesson numbers 20–28), using the same
+`TopicLesson.level` field (defaults to the target language's usual
+level when unset, so A1 topics didn't need any change).
 
 - **Topics 20–22 (Weekend/past-tense, Abilities/potential-form,
   Conditional/たら-form)** were built *before* the A2 table existed,
@@ -260,39 +300,57 @@ A1 topics didn't need any change).
   list. They don't match the table's actual row 8 (Travel, potential
   form) or row 27 (Environment, たら) — themes and vocab differ. Not
   reconciled yet; flagged for a future session.
-- **Topics 23–24 (Routine, Hobbies)** are built directly from the
-  table's rows 1–2, including their exact pronunciation assignments.
-  These are the reference examples for what a table-aligned A2 lesson
-  looks like — every future A2 topic should follow rows 3+ in order,
-  not be picked ad hoc.
+- **Topics 23–28 (Routine, Hobbies, Transport, Cooking, Seasons,
+  Learning)** are built directly from the table's rows 1, 2, 4, 6, 7,
+  and 11 respectively (rows 3/5/8/9/10 were skipped — each conflicts
+  with an existing A1 topic name/theme: Home=Topic 6, Clothing=Topic 7,
+  Travel=Topic 11, Health=Topic 10, Work=Topic 17). These are the
+  reference examples for what a table-aligned A2 lesson looks like.
+- The table's "Japanese R vs L" pronunciation wording was corrected to
+  "Japanese R (two ら-row sets)" for rows 6 and 11 (the two rows
+  authored so far that used it) — Japanese has no true L phoneme, so
+  the drill actually contrasts two sets of ら-row words rather than a
+  genuine R/L distinction. Rows 22 and 31 still say "Japanese R vs L"
+  in the table since those aren't authored yet; apply the same fix
+  when building them.
 
-All 5 A2 topics have the full 56-word (4×14) second pronunciation
-drill built directly (not deferred), plus base pronunciation, full
-vocab/dialogue/grammar, and a song. None yet have a self-intro slide,
-grammar reinforcement slide, or kanji.
+All 9 A2 topics have the full 56-word (4×14) pronunciation drill built
+directly, plus base pronunciation, full vocab/dialogue/grammar, a song,
+and — as of this session — a grammar drill slide (10 sentences per
+grammar sub-concept, kana+kanji both authored). None yet have a
+self-intro slide or non-pronunciation-drill kanji (vocab/dialogue/
+grammar are still kana-only for all 9).
 
-A pronunciation-drill repeat-fix was proposed (the A2 table reuses
-several basic contrasts — K vs G, S vs SH, long/short vowels — up to
-6 times each with no "reinforced" marking) but not yet applied to any
-row; rows 1–2 didn't need it since both were first occurrences.
+The previously-proposed "pronunciation-drill repeat-fix" (the A2 table
+reuses several basic contrasts — K vs G, S vs SH, long/short vowels —
+up to 6 times each with no "reinforced" marking) has not been applied;
+still worth doing once more rows are built and repeats start to matter.
 
 
 
 Against the "every lesson complete" standard above, per-feature status:
 
-- **Kanji**: only Topic 3 has `jaKanji` authored (all 41 vocab items,
-  both dialogues, grammar). The other 18 topics are kana-only — see
-  `engine/scriptDisplay.ts` for the toggle mechanism, already built and
-  ready to receive kanji for any topic.
+- **Kanji**: only Topic 3 has `jaKanji` authored for vocab/dialogue/
+  grammar (all 41 vocab items, both dialogues, grammar). Topics 20–28
+  additionally have kanji in their grammar-drill lines only (not
+  vocab/dialogue/grammar-primer). The other 17 A1 topics are fully
+  kana-only — see `engine/scriptDisplay.ts` for the toggle mechanism,
+  already built and ready to receive kanji for any topic.
 - **Self-introduction slides**: only Topics 1 and 2 have one.
-- **Grammar reinforcement (`extraReadalongs`)**: only Topic 15 has one
-  (4 slides, より/のほうが/いちばん/ほど〜ない, 10 sentences each).
-- **Second pronunciation drill (`extraDrills`)**: see the dedicated
-  section above for exact per-topic status — 6 topics meet the full
-  4×14 standard, 2 are below it, the rest have none at all.
-- **Songs**: all 19 topics have one (see `docs/song-melodies.md`), and
-  17 of 19 have real melody data — Topics 10 and 19 share the one song
-  that still has no melody transcribed.
+- **Grammar drills (`grammarDrills`)**: Topic 15 (4 slides, より/の
+  ほうが/いちばん/ほど〜ない, 10 sentences each) and all of Topics
+  20–28 (1–3 slides each depending on how many grammar sub-concepts
+  that topic's point has).
+- **Pronunciation drills (`pronunciationDrills`)**: see the dedicated
+  section above for exact per-topic status — 15 topics meet the full
+  4×14 standard (6 from A1, all 9 from A2), 2 are below it, the rest
+  have none at all.
+- **Songs**: all 19 A1 topics have one (see `docs/song-melodies.md`),
+  and all 19 have real melody data (verified directly against
+  `src/data/songMelodies.ts` — `song-melodies.md`'s "zero gaps" claim is
+  the accurate one; an earlier version of this doc incorrectly claimed
+  Topics 10/19 were missing melody data). All 9 A2 topics also have a
+  song, melody data not yet added for any of them.
 - **Only `ja` and `de` have phrase templates**, and only those two
   languages have any grammar/pronunciation authored anywhere. A topic
   with vocab translated into `en`/`zh` still can't generate an `en`- or
@@ -303,7 +361,8 @@ Against the "every lesson complete" standard above, per-feature status:
   need to be authored per topic — genuine content work, not migration.
 - **Topics 6–13 have no Chinese vocab/dialogue/song at all** — a gap
   that predates the topic-14+ additions and hasn't been backfilled.
-  (Topics 1–5 and 14–19 do have full zh coverage.)
+  (Topics 1–5 and 14–19 do have full zh coverage.) A2 topics 20–28 are
+  ja-only entirely (no de/en/zh vocab/dialogue/song yet).
 - **German Lessons 2/11 and the English C1 lesson remain hand-written**,
   outside this system.
 - **`fr`/`es` have no lessons or phrase templates at all** — the topic
@@ -318,12 +377,13 @@ priority order:
    standard — expand Topic 2 (48→56) and Topic 8 (3 cols→4), then author
    one from scratch for the 11 topics that have none, on both `ja` and
    `de` sides wherever that topic has German content.
-2. Author self-introduction slides and grammar-reinforcement slides for
-   the topics that don't have one yet.
+2. Author self-introduction slides for the A1 topics that don't have
+   one yet (grammar drill slides are now done for Topics 15 and
+   20–28; still missing for the remaining A1 topics).
 3. Author kanji for the remaining 18 topics, one at a time, same process
    as Topic 3 (vocab, then dialogue, then grammar — never pronunciation
    content).
-4. Author a melody for Topic 19's song (also used by Topic 10).
+4. Author melody data for all 9 A2 topics' songs (none have any yet).
 
 Separately, the fastest path to "every built topic works for every
 trainer pair" is:

@@ -1179,7 +1179,7 @@ export const topicAppearance: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",

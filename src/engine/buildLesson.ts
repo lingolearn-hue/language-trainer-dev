@@ -237,8 +237,8 @@ export function buildLessonPlan(
     content: { items: pronunciation.items, groupLabels: pronunciation.groupLabels, pairedColumns: pronunciation.pairedColumns },
   };
 
-  const extraReadalongs = topic.extraReadalongs?.[targetLang];
-  const extraReadalongBlocks: Block[] = (extraReadalongs ?? []).map((r) => ({
+  const grammarDrills = topic.grammarDrills?.[targetLang];
+  const grammarDrillBlocks: Block[] = (grammarDrills ?? []).map((r) => ({
     id: `${idSuffix}-${r.id}`,
     type: "readalong",
     displayMode: "content",
@@ -252,13 +252,13 @@ export function buildLessonPlan(
     titleBlock, introBlock, agendaBlock,
     ...(selfIntroBlock ? [selfIntroBlock] : []),
     vocabBlock, grammarBlock,
-    ...extraReadalongBlocks,
+    ...grammarDrillBlocks,
     dialogueABlock, dialogueBBlock, pronunciationBlock,
   ];
 
-  const extraDrills = topic.extraDrills?.[targetLang];
-  if (extraDrills) {
-    for (const drill of extraDrills) {
+  const pronunciationDrills = topic.pronunciationDrills?.[targetLang];
+  if (pronunciationDrills) {
+    for (const drill of pronunciationDrills) {
       blocks.push({
         id: `${idSuffix}-${drill.id}`,
         type: "vocabDrill",

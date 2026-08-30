@@ -105,7 +105,7 @@ export const topicRoutine: TopicLesson = {
       ]
     }
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-progressive",
@@ -183,18 +183,18 @@ export const topicRoutine: TopicLesson = {
         ou_oo: { ja: "おう と おお", en: "おう vs おお", de: "おう vs おお", zh: "おう与おお" }
       },
       items: [
-        { id: "vl1", category: "vowel_length", translations: { ja: "かふん", en: "pollen (short vowels)", de: "Blütenstaub (kurze Vokale)", zh: "花粉（短元音）" } },
-        { id: "vl2", category: "vowel_length", translations: { ja: "スカーフ", en: "scarf (long ー — same か sound as かふん, but long)", de: "Schal (langes ー — gleicher か-Laut wie かふん, aber lang)", zh: "围巾（长音ー——与かふん同样的か音，但为长音）" } },
-        { id: "vl3", category: "vowel_length", translations: { ja: "かじ", en: "housework (short vowels)", de: "Hausarbeit (kurze Vokale)", zh: "家务（短元音）" } },
-        { id: "vl4", category: "vowel_length", translations: { ja: "すうじ", en: "number (long すう — contrast with かじ's short vowels)", de: "Zahl (langes すう — im Vergleich zu den kurzen Vokalen von かじ)", zh: "数字（长音すう——与かじ的短元音对比）" } },
-        { id: "ou1", category: "ou_oo", translations: { ja: "もう", en: "already, now (おう pattern)", de: "schon, jetzt (おう-Muster)", zh: "已经（おう型）" } },
-        { id: "ou2", category: "ou_oo", translations: { ja: "おおきい", en: "big (おお pattern — contrast with もう's おう)", de: "groß (おお-Muster — im Vergleich zu おう bei もう)", zh: "大的（おお型——与もう的おう对比）" } },
-        { id: "ou3", category: "ou_oo", translations: { ja: "こう", en: "like this, this way (おう pattern)", de: "so, auf diese Weise (おう-Muster)", zh: "这样（おう型）" } },
-        { id: "ou4", category: "ou_oo", translations: { ja: "こおり", en: "ice (おお pattern — same こ sound as こう, but おお)", de: "Eis (おお-Muster — gleicher こ-Laut wie こう, aber おお)", zh: "冰（おお型——与こう同样的こ音，但为おお）" } }
+        { id: "vl1", category: "vowel_length", translations: { ja: "かふん", en: "pollen", de: "Blütenstaub", zh: "花粉" } },
+        { id: "vl2", category: "vowel_length", translations: { ja: "スカーフ", en: "scarf", de: "Schal", zh: "围巾" } },
+        { id: "vl3", category: "vowel_length", translations: { ja: "かじ", en: "housework", de: "Hausarbeit", zh: "家务" } },
+        { id: "vl4", category: "vowel_length", translations: { ja: "すうじ", en: "number", de: "Zahl", zh: "数字" } },
+        { id: "ou1", category: "ou_oo", translations: { ja: "もう", en: "already, now", de: "schon, jetzt", zh: "已经" } },
+        { id: "ou2", category: "ou_oo", translations: { ja: "おおきい", en: "big", de: "groß", zh: "大的" } },
+        { id: "ou3", category: "ou_oo", translations: { ja: "こう", en: "like this, this way", de: "so, auf diese Weise", zh: "这样" } },
+        { id: "ou4", category: "ou_oo", translations: { ja: "こおり", en: "ice", de: "Eis", zh: "冰" } }
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -223,12 +223,12 @@ export const topicRoutine: TopicLesson = {
           { id: "s3", category: "short_vowel", translations: { ja: "ビル", en: "building", de: "Gebäude", zh: "大楼" } },
           { id: "s4", category: "short_vowel", translations: { ja: "ゆき", en: "snow", de: "Schnee", zh: "雪" } },
           { id: "s5", category: "short_vowel", translations: { ja: "ここ", en: "here", de: "hier", zh: "这里" } },
-          { id: "s6", category: "short_vowel", translations: { ja: "きて", en: "come (te-form)", de: "komm (te-Form)", zh: "来（て形）" } },
+          { id: "s6", category: "short_vowel", translations: { ja: "きて", en: "come", de: "komm", zh: "来" } },
           { id: "s7", category: "short_vowel", translations: { ja: "え", en: "picture", de: "Bild", zh: "画" } },
           { id: "s8", category: "short_vowel", translations: { ja: "おば", en: "aunt", de: "Tante", zh: "阿姨" } },
           { id: "s9", category: "short_vowel", translations: { ja: "おじ", en: "uncle", de: "Onkel", zh: "叔叔" } },
           { id: "s10", category: "short_vowel", translations: { ja: "とる", en: "to take", de: "nehmen", zh: "拿，取" } },
-          { id: "s11", category: "short_vowel", translations: { ja: "くき", en: "stem (of a plant)", de: "Stängel", zh: "茎" } },
+          { id: "s11", category: "short_vowel", translations: { ja: "くき", en: "stem", de: "Stängel", zh: "茎" } },
           { id: "s12", category: "short_vowel", translations: { ja: "すし", en: "sushi", de: "Sushi", zh: "寿司" } },
           { id: "s13", category: "short_vowel", translations: { ja: "かど", en: "corner", de: "Ecke", zh: "角落" } },
           { id: "s14", category: "short_vowel", translations: { ja: "ゆめ", en: "dream", de: "Traum", zh: "梦" } },
@@ -238,7 +238,7 @@ export const topicRoutine: TopicLesson = {
           { id: "l3", category: "long_vowel", translations: { ja: "ビール", en: "beer", de: "Bier", zh: "啤酒" } },
           { id: "l4", category: "long_vowel", translations: { ja: "ゆうき", en: "courage", de: "Mut", zh: "勇气" } },
           { id: "l5", category: "long_vowel", translations: { ja: "とけい", en: "clock, watch", de: "Uhr", zh: "钟表" } },
-          { id: "l6", category: "long_vowel", translations: { ja: "きいて", en: "listen, ask (te-form)", de: "hör zu, frag (te-Form)", zh: "听，问（て形）" } },
+          { id: "l6", category: "long_vowel", translations: { ja: "きいて", en: "listen, ask", de: "hör zu, frag", zh: "听，问" } },
           { id: "l7", category: "long_vowel", translations: { ja: "ええ", en: "yes, indeed", de: "ja, genau", zh: "是，嗯" } },
           { id: "l8", category: "long_vowel", translations: { ja: "おばあちゃん", en: "grandma", de: "Oma", zh: "奶奶" } },
           { id: "l9", category: "long_vowel", translations: { ja: "おじいちゃん", en: "grandpa", de: "Opa", zh: "爷爷" } },
@@ -265,7 +265,7 @@ export const topicRoutine: TopicLesson = {
 
           { id: "oo1", category: "oo", translations: { ja: "おおきい", en: "big", de: "groß", zh: "大的" } },
           { id: "oo2", category: "oo", translations: { ja: "おおい", en: "many", de: "viele", zh: "多的" } },
-          { id: "oo3", category: "oo", translations: { ja: "おおきな", en: "big (attributive)", de: "groß (attributiv)", zh: "大的（连体形）" } },
+          { id: "oo3", category: "oo", translations: { ja: "おおきな", en: "big", de: "groß", zh: "大的" } },
           { id: "oo4", category: "oo", translations: { ja: "とおい", en: "far", de: "weit", zh: "远的" } },
           { id: "oo5", category: "oo", translations: { ja: "とおる", en: "to pass through", de: "durchqueren", zh: "通过" } },
           { id: "oo6", category: "oo", translations: { ja: "おおむかし", en: "long, long ago", de: "vor langer Zeit", zh: "很久以前" } },
@@ -277,7 +277,7 @@ export const topicRoutine: TopicLesson = {
           { id: "oo12", category: "oo", translations: { ja: "おおやけ", en: "public, official", de: "öffentlich", zh: "公开的，官方的" } },
           { id: "oo13", category: "oo", translations: { ja: "おおどおり", en: "main street", de: "Hauptstraße", zh: "大街" } },
           { id: "oo14", category: "oo", translations: { ja: "おおさか", en: "Osaka", de: "Osaka", zh: "大阪" } }
-        ]
+      ]
       }
     ]
   },

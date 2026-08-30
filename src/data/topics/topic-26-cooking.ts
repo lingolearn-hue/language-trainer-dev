@@ -103,7 +103,7 @@ export const topicCooking: TopicLesson = {
       ]
     }
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-nagara",
@@ -180,7 +180,7 @@ export const topicCooking: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -210,13 +210,13 @@ export const topicCooking: TopicLesson = {
           { id: "h9", category: "h", translations: { ja: "はし", en: "bridge", de: "Brücke", zh: "桥" } },
           { id: "h10", category: "h", translations: { ja: "ひと", en: "person", de: "Person", zh: "人" } },
           { id: "h11", category: "h", translations: { ja: "へや", en: "room", de: "Zimmer", zh: "房间" } },
-          { id: "h12", category: "h", translations: { ja: "ほか", en: "other", de: "andere(r/s)", zh: "其他" } },
-          { id: "h13", category: "h", translations: { ja: "はく", en: "to put on, wear (shoes/pants)", de: "anziehen (Schuhe/Hose)", zh: "穿（鞋/裤）" } },
+          { id: "h12", category: "h", translations: { ja: "ほか", en: "other", de: "andere", zh: "其他" } },
+          { id: "h13", category: "h", translations: { ja: "はく", en: "to put on, wear", de: "anziehen", zh: "穿" } },
           { id: "h14", category: "h", translations: { ja: "ひろい", en: "spacious", de: "geräumig", zh: "宽敞的" } },
           { id: "h15", category: "h", translations: { ja: "はいる", en: "to enter", de: "eintreten", zh: "进入" } },
           { id: "h16", category: "h", translations: { ja: "へる", en: "to decrease", de: "abnehmen", zh: "减少" } },
           { id: "h17", category: "h", translations: { ja: "ほる", en: "to dig", de: "graben", zh: "挖" } },
-          { id: "h18", category: "h", translations: { ja: "ひく", en: "to pull, play (instrument)", de: "ziehen, spielen (Instrument)", zh: "拉，弹奏" } },
+          { id: "h18", category: "h", translations: { ja: "ひく", en: "to pull, play", de: "ziehen, spielen", zh: "拉，弹奏" } },
 
           { id: "f5", category: "f", translations: { ja: "ふね", en: "boat", de: "Boot", zh: "船" } },
           { id: "f6", category: "f", translations: { ja: "ふえ", en: "flute", de: "Flöte", zh: "笛子" } },
@@ -228,9 +228,9 @@ export const topicCooking: TopicLesson = {
           { id: "f12", category: "f", translations: { ja: "ふかい", en: "deep", de: "tief", zh: "深的" } },
           { id: "f13", category: "f", translations: { ja: "ふく", en: "to blow", de: "wehen, blasen", zh: "吹" } },
           { id: "f14", category: "f", translations: { ja: "ふろ", en: "bath", de: "Bad", zh: "澡堂" } },
-          { id: "f15", category: "f", translations: { ja: "ふるい", en: "old (thing)", de: "alt (Sache)", zh: "旧的" } },
+          { id: "f15", category: "f", translations: { ja: "ふるい", en: "old", de: "alt", zh: "旧的" } },
           { id: "f16", category: "f", translations: { ja: "ふれる", en: "to touch", de: "berühren", zh: "触碰" } },
-          { id: "f17", category: "f", translations: { ja: "ふる", en: "to fall (rain)", de: "fallen (Regen)", zh: "下（雨）" } },
+          { id: "f17", category: "f", translations: { ja: "ふる", en: "to fall", de: "fallen", zh: "下" } },
           { id: "f18", category: "f", translations: { ja: "ふく", en: "to wipe", de: "abwischen", zh: "擦拭" } },
 
           { id: "r1_1", category: "r1", translations: { ja: "らく", en: "easy, comfortable", de: "leicht, bequem", zh: "轻松" } },
@@ -241,7 +241,7 @@ export const topicCooking: TopicLesson = {
           { id: "r1_6", category: "r1", translations: { ja: "るすばん", en: "house-sitting", de: "Haus hüten", zh: "看家" } },
           { id: "r1_7", category: "r1", translations: { ja: "りょこう", en: "travel", de: "Reise", zh: "旅行" } },
           { id: "r1_8", category: "r1", translations: { ja: "れんしゅう", en: "practice", de: "Übung", zh: "练习" } },
-          { id: "r1_9", category: "r1", translations: { ja: "らくご", en: "rakugo (comic storytelling)", de: "Rakugo (komisches Erzählen)", zh: "落语" } },
+          { id: "r1_9", category: "r1", translations: { ja: "らくご", en: "rakugo", de: "Rakugo", zh: "落语" } },
           { id: "r1_10", category: "r1", translations: { ja: "りかい", en: "understanding", de: "Verständnis", zh: "理解" } },
           { id: "r1_11", category: "r1", translations: { ja: "ろうか", en: "corridor", de: "Flur", zh: "走廊" } },
           { id: "r1_12", category: "r1", translations: { ja: "るすばんでんわ", en: "answering machine", de: "Anrufbeantworter", zh: "电话答录机" } },
@@ -250,7 +250,7 @@ export const topicCooking: TopicLesson = {
 
           { id: "r2_1", category: "r2", translations: { ja: "りえき", en: "profit", de: "Gewinn", zh: "利润" } },
           { id: "r2_2", category: "r2", translations: { ja: "ろうじん", en: "elderly person", de: "alter Mensch", zh: "老人" } },
-          { id: "r2_3", category: "r2", translations: { ja: "りく", en: "land", de: "Land (Festland)", zh: "陆地" } },
+          { id: "r2_3", category: "r2", translations: { ja: "りく", en: "land", de: "Land", zh: "陆地" } },
           { id: "r2_4", category: "r2", translations: { ja: "らいげつ", en: "next month", de: "nächster Monat", zh: "下个月" } },
           { id: "r2_5", category: "r2", translations: { ja: "りゆう", en: "reason", de: "Grund", zh: "理由" } },
           { id: "r2_6", category: "r2", translations: { ja: "れいぞうこ", en: "refrigerator", de: "Kühlschrank", zh: "冰箱" } },
@@ -259,10 +259,10 @@ export const topicCooking: TopicLesson = {
           { id: "r2_9", category: "r2", translations: { ja: "るい", en: "type, kind", de: "Art, Sorte", zh: "种类" } },
           { id: "r2_10", category: "r2", translations: { ja: "れんらく", en: "contact", de: "Kontakt", zh: "联系" } },
           { id: "r2_11", category: "r2", translations: { ja: "らいしゅう", en: "next week", de: "nächste Woche", zh: "下周" } },
-          { id: "r2_12", category: "r2", translations: { ja: "りょうり", en: "cooking (this lesson's own vocab)", de: "Kochen (eigenes Vokabular dieser Lektion)", zh: "烹饪（本课词汇）" } },
+          { id: "r2_12", category: "r2", translations: { ja: "りょうり", en: "cooking", de: "Kochen", zh: "烹饪" } },
           { id: "r2_13", category: "r2", translations: { ja: "ろじ", en: "alley", de: "Gasse", zh: "小巷" } },
           { id: "r2_14", category: "r2", translations: { ja: "るいじ", en: "similarity", de: "Ähnlichkeit", zh: "类似" } }
-        ]
+      ]
       }
     ]
   },

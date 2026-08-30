@@ -926,7 +926,7 @@ export const topicAnimals: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",

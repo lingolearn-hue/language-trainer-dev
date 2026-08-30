@@ -854,7 +854,7 @@ export const topicHome: TopicLesson = {
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     de: [
       {
         id: "sound-drill",

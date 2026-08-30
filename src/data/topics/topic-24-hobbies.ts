@@ -104,7 +104,7 @@ export const topicHobbies: TopicLesson = {
       ]
     }
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-taritari",
@@ -152,14 +152,14 @@ export const topicHobbies: TopicLesson = {
         { id: "s2", category: "s", translations: { ja: "すき", en: "like", de: "mögen", zh: "喜欢" } },
         { id: "s3", category: "s", translations: { ja: "せんせい", en: "teacher", de: "Lehrer", zh: "老师" } },
         { id: "s4", category: "s", translations: { ja: "そら", en: "sky", de: "Himmel", zh: "天空" } },
-        { id: "sh1", category: "sh", translations: { ja: "しゃしん", en: "photography (this lesson's own vocab)", de: "Fotografie (eigenes Vokabular dieser Lektion)", zh: "摄影（本课词汇）" } },
-        { id: "sh2", category: "sh", translations: { ja: "しゅみ", en: "hobby (this lesson's own vocab)", de: "Hobby (eigenes Vokabular dieser Lektion)", zh: "爱好（本课词汇）" } },
-        { id: "sh3", category: "sh", translations: { ja: "まんが", en: "manga (this lesson's own vocab)", de: "Manga (eigenes Vokabular dieser Lektion)", zh: "漫画（本课词汇）" } },
+        { id: "sh1", category: "sh", translations: { ja: "しゃしん", en: "photography", de: "Fotografie", zh: "摄影" } },
+        { id: "sh2", category: "sh", translations: { ja: "しゅみ", en: "hobby", de: "Hobby", zh: "爱好" } },
+        { id: "sh3", category: "sh", translations: { ja: "まんが", en: "manga", de: "Manga", zh: "漫画" } },
         { id: "sh4", category: "sh", translations: { ja: "しごと", en: "job, work", de: "Arbeit", zh: "工作" } }
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -191,7 +191,7 @@ export const topicHobbies: TopicLesson = {
           { id: "k7", category: "k", translations: { ja: "くるま", en: "car", de: "Auto", zh: "车" } },
           { id: "k8", category: "k", translations: { ja: "けさ", en: "this morning", de: "heute Morgen", zh: "今天早上" } },
           { id: "k9", category: "k", translations: { ja: "こえ", en: "voice", de: "Stimme", zh: "声音" } },
-          { id: "k10", category: "k", translations: { ja: "ここのつ", en: "nine (things)", de: "neun (Dinge)", zh: "九个" } },
+          { id: "k10", category: "k", translations: { ja: "ここのつ", en: "nine", de: "neun", zh: "九个" } },
           { id: "k11", category: "k", translations: { ja: "かびん", en: "vase", de: "Vase", zh: "花瓶" } },
           { id: "k12", category: "k", translations: { ja: "きせつ", en: "season", de: "Jahreszeit", zh: "季节" } },
           { id: "k13", category: "k", translations: { ja: "くうき", en: "air", de: "Luft", zh: "空气" } },
@@ -210,7 +210,7 @@ export const topicHobbies: TopicLesson = {
           { id: "g15", category: "g", translations: { ja: "がまん", en: "patience, endurance", de: "Geduld", zh: "忍耐" } },
           { id: "g16", category: "g", translations: { ja: "げしゅく", en: "boarding house", de: "Pension", zh: "寄宿" } },
           { id: "g17", category: "g", translations: { ja: "ぎもん", en: "question, doubt", de: "Frage, Zweifel", zh: "疑问" } },
-          { id: "g18", category: "g", translations: { ja: "ごうかく", en: "passing (an exam)", de: "Bestehen (einer Prüfung)", zh: "合格" } },
+          { id: "g18", category: "g", translations: { ja: "ごうかく", en: "passing", de: "Bestehen", zh: "合格" } },
 
           { id: "s5", category: "s", translations: { ja: "さかな", en: "fish", de: "Fisch", zh: "鱼" } },
           { id: "s6", category: "s", translations: { ja: "すいか", en: "watermelon", de: "Wassermelone", zh: "西瓜" } },
@@ -241,7 +241,7 @@ export const topicHobbies: TopicLesson = {
           { id: "sh16", category: "sh", translations: { ja: "しょうかい", en: "introduction", de: "Vorstellung", zh: "介绍" } },
           { id: "sh17", category: "sh", translations: { ja: "しゃちょう", en: "company president", de: "Firmenchef", zh: "总经理" } },
           { id: "sh18", category: "sh", translations: { ja: "しゅじん", en: "husband, master", de: "Ehemann, Herr", zh: "丈夫，主人" } }
-        ]
+      ]
       }
     ]
   },

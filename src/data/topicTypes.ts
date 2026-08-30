@@ -18,28 +18,29 @@ export interface TopicSong {
   lines: ReadalongLine[];
 }
 
-export interface TopicGrammar extends GrammarContent {
+export interface TopicGrammarPrimer extends GrammarContent {
   title: Translations;
 }
 
-export interface TopicPronunciation extends VocabDrillContent {
+export interface TopicPronunciationPrimer extends VocabDrillContent {
   title: Translations;
 }
 
-export interface TopicExtraDrill extends VocabDrillContent {
+export interface TopicPronunciationDrill extends VocabDrillContent {
   id: string; // suffix for the generated block id
   title: Translations;
   spokenIntro?: Translations;
 }
 
 // A reinforcement slide in dialogue format (target left / source right,
-// 3-phase echo/shadow/silent) instead of extraDrills' column-grouped
-// vocab-table format — for content that reads better as a flowing list
-// of example sentences than as short word-bank columns. Each line's
-// translations are a full Translations object, same as everywhere else,
-// so any language can be picked as target/source at session time — not
-// fixed to whichever pair the sentences were originally drafted for.
-export interface TopicExtraReadalong {
+// 3-phase echo/shadow/silent) instead of TopicPronunciationDrill's
+// column-grouped vocab-table format — for content that reads better as
+// a flowing list of example sentences than as short word-bank columns.
+// Each line's translations are a full Translations object, same as
+// everywhere else, so any language can be picked as target/source at
+// session time — not fixed to whichever pair the sentences were
+// originally drafted for.
+export interface TopicGrammarDrill {
   id: string; // suffix for the generated block id
   title: Translations;
   spokenIntro?: Translations;
@@ -66,12 +67,12 @@ export interface TopicLesson {
   // pair (e.g. Japanese Lesson 8's number/R-sound drill) — per target
   // language, since these are usually language-specific practice content
   // just like grammar/pronunciation.
-  extraDrills?: Partial<Record<LangCode, TopicExtraDrill[]>>;
-  // Same idea as extraDrills, but dialogue-format (see
-  // TopicExtraReadalong) instead of column-grouped vocab tables — e.g.
+  pronunciationDrills?: Partial<Record<LangCode, TopicPronunciationDrill[]>>;
+  // Same idea as pronunciationDrills, but dialogue-format (see
+  // TopicGrammarDrill) instead of column-grouped vocab tables — e.g.
   // grammar reinforcement as flowing example sentences, one grammar
   // sub-concept per slide, rather than one dense multi-column table.
-  extraReadalongs?: Partial<Record<LangCode, TopicExtraReadalong[]>>;
+  grammarDrills?: Partial<Record<LangCode, TopicGrammarDrill[]>>;
   // Self-introduction template slide (fill-in-the-blank name/hometown/etc
   // read by the student, plus a silent word-bank and a spoken "reasons"
   // demonstration) — per target language, same as grammar/pronunciation,
@@ -81,8 +82,8 @@ export interface TopicLesson {
   // Per-target-language only — see file header. A language missing here
   // means no LessonPlan can be built for that target yet, even if vocab
   // is translated into it.
-  grammar: Partial<Record<LangCode, TopicGrammar>>;
-  pronunciation: Partial<Record<LangCode, TopicPronunciation>>;
+  grammar: Partial<Record<LangCode, TopicGrammarPrimer>>;
+  pronunciation: Partial<Record<LangCode, TopicPronunciationPrimer>>;
   // Small per-target-language text patches applied to the otherwise-fully
   // -shared vocab/dialogueA/dialogueB/song content. For isolated cases
   // where a single word or phrase in the shared content is specific to

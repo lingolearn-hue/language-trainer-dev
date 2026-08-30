@@ -103,7 +103,7 @@ export const topicTransport: TopicLesson = {
       ]
     }
   },
-  extraReadalongs: {
+  grammarDrills: {
     ja: [
       {
         id: "grammar-drill-tekara",
@@ -173,14 +173,14 @@ export const topicTransport: TopicLesson = {
         { id: "s2", category: "s", translations: { ja: "すし", en: "sushi", de: "Sushi", zh: "寿司" } },
         { id: "s3", category: "s", translations: { ja: "せかい", en: "world", de: "Welt", zh: "世界" } },
         { id: "s4", category: "s", translations: { ja: "そと", en: "outside", de: "draußen", zh: "外面" } },
-        { id: "sh1", category: "sh", translations: { ja: "しゅっぱつ", en: "departure (this lesson's own vocab)", de: "Abfahrt (eigenes Vokabular dieser Lektion)", zh: "出发（本课词汇）" } },
+        { id: "sh1", category: "sh", translations: { ja: "しゅっぱつ", en: "departure", de: "Abfahrt", zh: "出发" } },
         { id: "sh2", category: "sh", translations: { ja: "しゃしん", en: "photo", de: "Foto", zh: "照片" } },
         { id: "sh3", category: "sh", translations: { ja: "しんぶん", en: "newspaper", de: "Zeitung", zh: "报纸" } },
         { id: "sh4", category: "sh", translations: { ja: "しょくじ", en: "meal", de: "Mahlzeit", zh: "用餐" } }
       ]
     }
   },
-  extraDrills: {
+  pronunciationDrills: {
     ja: [
       {
         id: "sound-drill",
@@ -231,11 +231,11 @@ export const topicTransport: TopicLesson = {
           { id: "ch15", category: "ch", translations: { ja: "ちょうど", en: "exactly", de: "genau", zh: "正好" } },
           { id: "ch16", category: "ch", translations: { ja: "ちかづく", en: "to approach", de: "sich nähern", zh: "靠近" } },
           { id: "ch17", category: "ch", translations: { ja: "ちらす", en: "to scatter", de: "verstreuen", zh: "散开" } },
-          { id: "ch18", category: "ch", translations: { ja: "ちこくする", en: "to be late (this lesson's own vocab)", de: "sich verspäten (eigenes Vokabular dieser Lektion)", zh: "迟到（本课词汇）" } },
+          { id: "ch18", category: "ch", translations: { ja: "ちこくする", en: "to be late", de: "sich verspäten", zh: "迟到" } },
 
           { id: "s5", category: "s", translations: { ja: "さとう", en: "sugar", de: "Zucker", zh: "糖" } },
           { id: "s6", category: "s", translations: { ja: "すうがく", en: "math", de: "Mathematik", zh: "数学" } },
-          { id: "s7", category: "s", translations: { ja: "すずしい", en: "cool (weather)", de: "kühl", zh: "凉爽的" } },
+          { id: "s7", category: "s", translations: { ja: "すずしい", en: "cool", de: "kühl", zh: "凉爽的" } },
           { id: "s8", category: "s", translations: { ja: "せいと", en: "student", de: "Schüler", zh: "学生" } },
           { id: "s9", category: "s", translations: { ja: "せんもん", en: "specialty", de: "Fachgebiet", zh: "专业" } },
           { id: "s10", category: "s", translations: { ja: "そつぎょう", en: "graduation", de: "Abschluss", zh: "毕业" } },
@@ -262,7 +262,7 @@ export const topicTransport: TopicLesson = {
           { id: "sh16", category: "sh", translations: { ja: "しょうめい", en: "proof", de: "Nachweis", zh: "证明" } },
           { id: "sh17", category: "sh", translations: { ja: "しょり", en: "processing", de: "Verarbeitung", zh: "处理" } },
           { id: "sh18", category: "sh", translations: { ja: "しゃちょう", en: "company president", de: "Firmenchef", zh: "总经理" } }
-        ]
+      ]
       }
     ]
   },
