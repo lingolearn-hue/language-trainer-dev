@@ -179,6 +179,107 @@ export const topicWork: TopicLesson = {
         { id: "p3", category: "pitch", translations: { ja: "とる", en: "to take (LH) / — new word, single pattern", de: "nehmen (LH) / — neues Wort, einzelnes Muster", zh: "拿（低高）/ ——新词，单一声调" } },
         { id: "p4", category: "pitch", translations: { ja: "やめる", en: "to quit (LHL) — new word, single pattern", de: "kündigen (LHL) — neues Wort, einzelnes Muster", zh: "辞职（低高低）——新词，单一声调" } }
       ]
+    },
+    de: {
+      title: { de: "Aussprachetraining", en: "Pronunciation Practice", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        ch_sch: { de: "CH klingt wie SCH (frz. Lehnwörter)", en: "CH sounds like SCH (French loanwords)", ja: "CH は SCH の おと（フランスごの がいらいご）", zh: "CH发音像SCH（法语外来词）" },
+        ch_k: { de: "CH klingt wie K (griech./lat. Lehnwörter)", en: "CH sounds like K (Greek/Latin loanwords)", ja: "CH は K の おと（ギリシャ・ラテンごの がいらいご）", zh: "CH发音像K（希腊语/拉丁语外来词）" }
+      },
+      items: [
+        { id: "cs1", category: "ch_sch", translations: { de: "Chef", en: "boss", ja: "しゃちょう", zh: "老板" } },
+        { id: "cs2", category: "ch_sch", translations: { de: "Chance", en: "chance", ja: "チャンス", zh: "机会" } },
+        { id: "cs3", category: "ch_sch", translations: { de: "Champignon", en: "mushroom", ja: "マッシュルーム", zh: "蘑菇" } },
+        { id: "ck1", category: "ch_k", translations: { de: "Charakter", en: "character", ja: "せいかく", zh: "性格" } },
+        { id: "ck2", category: "ch_k", translations: { de: "Chor", en: "choir", ja: "がっしょうだん", zh: "合唱团" } },
+        { id: "ck3", category: "ch_k", translations: { de: "Chemie", en: "chemistry", ja: "かがく", zh: "化学" } }
+      ]
     }
+  },
+  pronunciationDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          ch_sch1: { de: "CH klingt wie SCH", en: "CH sounds like SCH", ja: "CH は SCH の おと", zh: "CH发音像SCH" },
+          ch_sch2: { de: "CH klingt wie SCH", en: "CH sounds like SCH", ja: "CH は SCH の おと", zh: "CH发音像SCH" },
+          ch_k1: { de: "CH klingt wie K", en: "CH sounds like K", ja: "CH は K の おと", zh: "CH发音像K" },
+          ch_k2: { de: "CH klingt wie K", en: "CH sounds like K", ja: "CH は K の おと", zh: "CH发音像K" }
+        },
+        items: [
+          { id: "cs1_1", category: "ch_sch1", translations: { de: "Chauffeur", en: "chauffeur", ja: "うんてんしゅ", zh: "司机" } },
+          { id: "cs1_2", category: "ch_sch1", translations: { de: "Champagner", en: "champagne", ja: "シャンパン", zh: "香槟" } },
+          { id: "cs1_3", category: "ch_sch1", translations: { de: "Charme", en: "charm", ja: "みりょく", zh: "魅力" } },
+          { id: "cs1_4", category: "ch_sch1", translations: { de: "chic", en: "chic, stylish", ja: "シックな", zh: "时髦的" } },
+          { id: "cs1_5", category: "ch_sch1", translations: { de: "Chalet", en: "chalet", ja: "やまごや", zh: "山间小屋" } },
+          { id: "cs1_6", category: "ch_sch1", translations: { de: "Chiffon", en: "chiffon", ja: "シフォン", zh: "雪纺" } },
+          { id: "cs1_7", category: "ch_sch1", translations: { de: "Chassis", en: "chassis", ja: "シャーシ", zh: "底盘" } },
+          { id: "cs1_8", category: "ch_sch1", translations: { de: "Chicorée", en: "chicory", ja: "チコリ", zh: "菊苣" } },
+          { id: "cs1_9", category: "ch_sch1", translations: { de: "Charge", en: "batch, rank", ja: "ロット、かいきゅう", zh: "批次，级别" } },
+          { id: "cs1_10", category: "ch_sch1", translations: { de: "Champion", en: "champion", ja: "チャンピオン", zh: "冠军" } },
+          { id: "cs1_11", category: "ch_sch1", translations: { de: "Chauvinist", en: "chauvinist", ja: "じこちゅうしんしゅぎしゃ", zh: "沙文主义者" } },
+          { id: "cs1_12", category: "ch_sch1", translations: { de: "Charterflug", en: "charter flight", ja: "チャーターびん", zh: "包机" } },
+          { id: "cs1_13", category: "ch_sch1", translations: { de: "Chartreuse", en: "chartreuse", ja: "シャルトリューズ", zh: "夏尔特勒酒" } },
+          { id: "cs1_14", category: "ch_sch1", translations: { de: "Chinchilla", en: "chinchilla", ja: "チンチラ", zh: "龙猫" } },
+
+          { id: "cs2_1", category: "ch_sch2", translations: { de: "Chartermaschine", en: "charter plane", ja: "チャーターき", zh: "包机" } },
+          { id: "cs2_2", category: "ch_sch2", translations: { de: "Charterboot", en: "charter boat", ja: "チャーターボート", zh: "包船" } },
+          { id: "cs2_3", category: "ch_sch2", translations: { de: "Charterreise", en: "charter trip", ja: "チャーターりょこう", zh: "包价旅行" } },
+          { id: "cs2_4", category: "ch_sch2", translations: { de: "Charterurlaub", en: "charter vacation", ja: "チャーターりょこうの きゅうか", zh: "包价度假" } },
+          { id: "cs2_5", category: "ch_sch2", translations: { de: "Charterbus", en: "charter bus", ja: "チャーターバス", zh: "包车大巴" } },
+          { id: "cs2_6", category: "ch_sch2", translations: { de: "Chartergesellschaft", en: "charter company", ja: "チャーターがいしゃ", zh: "包机公司" } },
+          { id: "cs2_7", category: "ch_sch2", translations: { de: "Charterflotte", en: "charter fleet", ja: "チャーターせんたい", zh: "包机机队" } },
+          { id: "cs2_8", category: "ch_sch2", translations: { de: "Charterpreis", en: "charter price", ja: "チャーターりょうきん", zh: "包机价格" } },
+          { id: "cs2_9", category: "ch_sch2", translations: { de: "Chartervertrag", en: "charter contract", ja: "チャーターけいやく", zh: "包机合同" } },
+          { id: "cs2_10", category: "ch_sch2", translations: { de: "Charterjacht", en: "charter yacht", ja: "チャーターヨット", zh: "包租游艇" } },
+          { id: "cs2_11", category: "ch_sch2", translations: { de: "Chartertarif", en: "charter rate", ja: "チャーターりょうきんひょう", zh: "包机费率" } },
+          { id: "cs2_12", category: "ch_sch2", translations: { de: "Charteranbieter", en: "charter provider", ja: "チャーターぎょうしゃ", zh: "包机服务商" } },
+          { id: "cs2_13", category: "ch_sch2", translations: { de: "Charterkosten", en: "charter costs", ja: "チャーターひよう", zh: "包机费用" } },
+          { id: "cs2_14", category: "ch_sch2", translations: { de: "Charterangebot", en: "charter offer", ja: "チャーターの もうしで", zh: "包机报价" } },
+
+          { id: "ck1_1", category: "ch_k1", translations: { de: "Christus", en: "Christ", ja: "キリスト", zh: "基督" } },
+          { id: "ck1_2", category: "ch_k1", translations: { de: "Chronik", en: "chronicle", ja: "ねんだいき", zh: "编年史" } },
+          { id: "ck1_3", category: "ch_k1", translations: { de: "Orchester", en: "orchestra", ja: "オーケストラ", zh: "管弦乐团" } },
+          { id: "ck1_4", category: "ch_k1", translations: { de: "Chaos", en: "chaos", ja: "こんとん", zh: "混乱" } },
+          { id: "ck1_5", category: "ch_k1", translations: { de: "Choleriker", en: "choleric person", ja: "たんきなひと", zh: "易怒的人" } },
+          { id: "ck1_6", category: "ch_k1", translations: { de: "Christ", en: "Christian", ja: "キリストきょうと", zh: "基督徒" } },
+          { id: "ck1_7", category: "ch_k1", translations: { de: "Chirurg", en: "surgeon", ja: "げかい", zh: "外科医生" } },
+          { id: "ck1_8", category: "ch_k1", translations: { de: "Cholesterin", en: "cholesterol", ja: "コレステロール", zh: "胆固醇" } },
+          { id: "ck1_9", category: "ch_k1", translations: { de: "Chlor", en: "chlorine", ja: "えんそ", zh: "氯" } },
+          { id: "ck1_10", category: "ch_k1", translations: { de: "Charisma", en: "charisma", ja: "カリスマせい", zh: "魅力，感召力" } },
+          { id: "ck1_11", category: "ch_k1", translations: { de: "Cholera", en: "cholera", ja: "コレラ", zh: "霍乱" } },
+          { id: "ck1_12", category: "ch_k1", translations: { de: "Chrom", en: "chrome", ja: "クロム", zh: "铬" } },
+          { id: "ck1_13", category: "ch_k1", translations: { de: "Chronologie", en: "chronology", ja: "ねんだいじゅん", zh: "年代顺序" } },
+          { id: "ck1_14", category: "ch_k1", translations: { de: "Choreografie", en: "choreography", ja: "ふりつけ", zh: "编舞" } },
+
+          { id: "ck2_1", category: "ch_k2", translations: { de: "Christbaum", en: "Christmas tree", ja: "クリスマスツリー", zh: "圣诞树" } },
+          { id: "ck2_2", category: "ch_k2", translations: { de: "Architekt", en: "architect", ja: "けんちくか", zh: "建筑师" } },
+          { id: "ck2_3", category: "ch_k2", translations: { de: "Mechanik", en: "mechanics", ja: "きかいこうがく", zh: "机械学" } },
+          { id: "ck2_4", category: "ch_k2", translations: { de: "Mechaniker", en: "mechanic", ja: "せいびし", zh: "机械师" } },
+          { id: "ck2_5", category: "ch_k2", translations: { de: "Chronometer", en: "chronometer", ja: "せいみつどけい", zh: "精密计时器" } },
+          { id: "ck2_6", category: "ch_k2", translations: { de: "Chirurgie", en: "surgery", ja: "げか", zh: "外科" } },
+          { id: "ck2_7", category: "ch_k2", translations: { de: "cholerisch", en: "choleric, irascible", ja: "たんきな", zh: "易怒的" } },
+          { id: "ck2_8", category: "ch_k2", translations: { de: "Technik", en: "technology, technique", ja: "ぎじゅつ", zh: "技术" } },
+          { id: "ck2_9", category: "ch_k2", translations: { de: "Techniker", en: "technician", ja: "ぎじゅつしゃ", zh: "技术员" } },
+          { id: "ck2_10", category: "ch_k2", translations: { de: "Christkind", en: "Christ child", ja: "キリストのようじ", zh: "圣婴" } },
+          { id: "ck2_11", category: "ch_k2", translations: { de: "Architektur", en: "architecture", ja: "けんちく", zh: "建筑（学）" } },
+          { id: "ck2_12", category: "ch_k2", translations: { de: "Chronist", en: "chronicler", ja: "ねんだいきさくしゃ", zh: "编年史作者" } },
+          { id: "ck2_13", category: "ch_k2", translations: { de: "Choral", en: "chorale", ja: "コラール", zh: "众赞歌" } },
+          { id: "ck2_14", category: "ch_k2", translations: { de: "Chlorophyll", en: "chlorophyll", ja: "ようりょくそ", zh: "叶绿素" } }
+        ]
+      }
+    ]
   }
 };

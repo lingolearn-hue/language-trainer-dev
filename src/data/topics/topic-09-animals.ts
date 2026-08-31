@@ -1064,7 +1064,7 @@ export const topicAnimals: TopicLesson = {
           { id: "hy3", category: "hiyouon", translations: { ja: "すし", en: "sushi", de: "Sushi", zh: "寿司" } },
           { id: "hy4", category: "hiyouon", translations: { ja: "しごと", en: "work, job", de: "Arbeit", zh: "工作" } },
           { id: "hy5", category: "hiyouon", translations: { ja: "しょく", en: "food, meal", de: "Essen, Mahlzeit", zh: "食；饮食" } },
-          { id: "hy6", category: "hiyouon", translations: { ja: "たび", en: "trip, journey", de: "Reise", zh: "旅行；旅途" } },
+          { id: "hy6", category: "hiyouon", translations: { ja: "たび", en: "trip, journey", de: "Ausflug", zh: "旅途" } },
           { id: "hy7", category: "hiyouon", translations: { ja: "ちゃ", en: "tea", de: "Tee", zh: "茶" } },
           { id: "hy8", category: "hiyouon", translations: { ja: "ちこく", en: "being late", de: "Verspätung", zh: "迟到" } },
           { id: "hy9", category: "hiyouon", translations: { ja: "にほん", en: "Japan", de: "Japan", zh: "日本" } },

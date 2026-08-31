@@ -177,6 +177,107 @@ export const topicCountries: TopicLesson = {
         { id: "p3", category: "pitch", translations: { ja: "かみ", en: "hair, paper (HL) / god (LH)", de: "Haar, Papier (HL) / Gott (LH)", zh: "头发、纸（高低）／神（低高）" } },
         { id: "p4", category: "pitch", translations: { ja: "すむ", en: "to live, reside (LH) — new word, single pattern", de: "wohnen (LH) — neues Wort, einzelnes Muster", zh: "居住（低高）——新词，单一声调" } }
       ]
+    },
+    de: {
+      title: { de: "Aussprachetraining", en: "Pronunciation Practice", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        j_y: { de: "J klingt wie englisches \"Y\"", en: "J sounds like English \"Y\"", ja: "J は えいごの「Y」の おと", zh: "J发音像英语的\"Y\"" },
+        stress: { de: "Wortbetonung bei Länder-Lehnwörtern", en: "Word stress in loanword country names", ja: "がいらいごの くにめいの アクセント", zh: "外来语国名的词重音" }
+      },
+      items: [
+        { id: "jy1", category: "j_y", translations: { de: "Jahr", en: "year", ja: "とし、ねん", zh: "年" } },
+        { id: "jy2", category: "j_y", translations: { de: "jung", en: "young", ja: "わかい", zh: "年轻" } },
+        { id: "jy3", category: "j_y", translations: { de: "Japan", en: "Japan", ja: "にほん", zh: "日本" } },
+        { id: "st1", category: "stress", translations: { de: "Amerika", en: "America", ja: "アメリカ", zh: "美国" } },
+        { id: "st2", category: "stress", translations: { de: "Europa", en: "Europe", ja: "ヨーロッパ", zh: "欧洲" } },
+        { id: "st3", category: "stress", translations: { de: "Kanada", en: "Canada", ja: "カナダ", zh: "加拿大" } }
+      ]
     }
+  },
+  pronunciationDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          jy1: { de: "J klingt wie \"Y\"", en: "J sounds like \"Y\"", ja: "J は「Y」の おと", zh: "J发音像\"Y\"" },
+          jy2: { de: "J klingt wie \"Y\"", en: "J sounds like \"Y\"", ja: "J は「Y」の おと", zh: "J发音像\"Y\"" },
+          stress1: { de: "Wortbetonung (Lehnwörter)", en: "Word stress (loanwords)", ja: "アクセント（がいらいご）", zh: "词重音（外来语）" },
+          stress2: { de: "Wortbetonung (Lehnwörter)", en: "Word stress (loanwords)", ja: "アクセント（がいらいご）", zh: "词重音（外来语）" }
+        },
+        items: [
+          { id: "jy1_1", category: "jy1", translations: { de: "Junge", en: "boy", ja: "おとこのこ", zh: "男孩" } },
+          { id: "jy1_2", category: "jy1", translations: { de: "jetzt", en: "now", ja: "いま", zh: "现在" } },
+          { id: "jy1_3", category: "jy1", translations: { de: "Jacke", en: "jacket", ja: "ジャケット", zh: "夹克" } },
+          { id: "jy1_4", category: "jy1", translations: { de: "Juli", en: "July", ja: "しちがつ", zh: "七月" } },
+          { id: "jy1_5", category: "jy1", translations: { de: "Juni", en: "June", ja: "ろくがつ", zh: "六月" } },
+          { id: "jy1_6", category: "jy1", translations: { de: "Januar", en: "January", ja: "いちがつ", zh: "一月" } },
+          { id: "jy1_7", category: "jy1", translations: { de: "jeder", en: "everyone", ja: "みんな", zh: "每个人" } },
+          { id: "jy1_8", category: "jy1", translations: { de: "Jugend", en: "youth", ja: "せいしゅん", zh: "青年时期" } },
+          { id: "jy1_9", category: "jy1", translations: { de: "Job", en: "job", ja: "しごと", zh: "工作" } },
+          { id: "jy1_10", category: "jy1", translations: { de: "Joghurt", en: "yogurt", ja: "ヨーグルト", zh: "酸奶" } },
+          { id: "jy1_11", category: "jy1", translations: { de: "jemand", en: "someone", ja: "だれか", zh: "某人" } },
+          { id: "jy1_12", category: "jy1", translations: { de: "Jäger", en: "hunter", ja: "りょうし", zh: "猎人" } },
+          { id: "jy1_13", category: "jy1", translations: { de: "jagen", en: "to hunt", ja: "かりを する", zh: "打猎" } },
+          { id: "jy1_14", category: "jy1", translations: { de: "Journalist", en: "journalist", ja: "きしゃ", zh: "记者" } },
+
+          { id: "jy2_1", category: "jy2", translations: { de: "Juwel", en: "jewel", ja: "ほうせき", zh: "珠宝" } },
+          { id: "jy2_2", category: "jy2", translations: { de: "Jubiläum", en: "anniversary", ja: "きねんび", zh: "周年纪念" } },
+          { id: "jy2_3", category: "jy2", translations: { de: "jonglieren", en: "to juggle", ja: "ジャグリングする", zh: "玩杂耍" } },
+          { id: "jy2_4", category: "jy2", translations: { de: "Jodler", en: "yodeler", ja: "ヨーデルうたい", zh: "约德尔歌手" } },
+          { id: "jy2_5", category: "jy2", translations: { de: "Jute", en: "jute", ja: "ジュート", zh: "黄麻" } },
+          { id: "jy2_6", category: "jy2", translations: { de: "Joker", en: "joker", ja: "ジョーカー", zh: "小丑牌" } },
+          { id: "jy2_7", category: "jy2", translations: { de: "Jupiter", en: "Jupiter", ja: "もくせい", zh: "木星" } },
+          { id: "jy2_8", category: "jy2", translations: { de: "Justiz", en: "justice", ja: "しほう", zh: "司法" } },
+          { id: "jy2_9", category: "jy2", translations: { de: "jeweils", en: "respectively", ja: "それぞれ", zh: "分别" } },
+          { id: "jy2_10", category: "jy2", translations: { de: "jederzeit", en: "anytime", ja: "いつでも", zh: "随时" } },
+          { id: "jy2_11", category: "jy2", translations: { de: "Jungfrau", en: "virgin, Virgo", ja: "おとめざ", zh: "处女座" } },
+          { id: "jy2_12", category: "jy2", translations: { de: "Jockey", en: "jockey", ja: "きしゅ", zh: "骑师" } },
+          { id: "jy2_13", category: "jy2", translations: { de: "Jubel", en: "cheering", ja: "かんせい", zh: "欢呼" } },
+          { id: "jy2_14", category: "jy2", translations: { de: "Jargon", en: "jargon", ja: "せんもんようご", zh: "行话" } },
+
+          { id: "st1_1", category: "stress1", translations: { de: "Asien", en: "Asia", ja: "アジア", zh: "亚洲" } },
+          { id: "st1_2", category: "stress1", translations: { de: "Australien", en: "Australia", ja: "オーストラリア", zh: "澳大利亚" } },
+          { id: "st1_3", category: "stress1", translations: { de: "Kolumbien", en: "Colombia", ja: "コロンビア", zh: "哥伦比亚" } },
+          { id: "st1_4", category: "stress1", translations: { de: "Argentinien", en: "Argentina", ja: "アルゼンチン", zh: "阿根廷" } },
+          { id: "st1_5", category: "stress1", translations: { de: "Brasilien", en: "Brazil", ja: "ブラジル", zh: "巴西" } },
+          { id: "st1_6", category: "stress1", translations: { de: "Mexiko", en: "Mexico", ja: "メキシコ", zh: "墨西哥" } },
+          { id: "st1_7", category: "stress1", translations: { de: "Ägypten", en: "Egypt", ja: "エジプト", zh: "埃及" } },
+          { id: "st1_8", category: "stress1", translations: { de: "Marokko", en: "Morocco", ja: "モロッコ", zh: "摩洛哥" } },
+          { id: "st1_9", category: "stress1", translations: { de: "Tunesien", en: "Tunisia", ja: "チュニジア", zh: "突尼斯" } },
+          { id: "st1_10", category: "stress1", translations: { de: "Indonesien", en: "Indonesia", ja: "インドネシア", zh: "印度尼西亚" } },
+          { id: "st1_11", category: "stress1", translations: { de: "Malaysia", en: "Malaysia", ja: "マレーシア", zh: "马来西亚" } },
+          { id: "st1_12", category: "stress1", translations: { de: "Thailand", en: "Thailand", ja: "タイ", zh: "泰国" } },
+          { id: "st1_13", category: "stress1", translations: { de: "Vietnam", en: "Vietnam", ja: "ベトナム", zh: "越南" } },
+          { id: "st1_14", category: "stress1", translations: { de: "Kambodscha", en: "Cambodia", ja: "カンボジア", zh: "柬埔寨" } },
+
+          { id: "st2_1", category: "stress2", translations: { de: "Mongolei", en: "Mongolia", ja: "モンゴル", zh: "蒙古" } },
+          { id: "st2_2", category: "stress2", translations: { de: "Kasachstan", en: "Kazakhstan", ja: "カザフスタン", zh: "哈萨克斯坦" } },
+          { id: "st2_3", category: "stress2", translations: { de: "Usbekistan", en: "Uzbekistan", ja: "ウズベキスタン", zh: "乌兹别克斯坦" } },
+          { id: "st2_4", category: "stress2", translations: { de: "Aserbaidschan", en: "Azerbaijan", ja: "アゼルバイジャン", zh: "阿塞拜疆" } },
+          { id: "st2_5", category: "stress2", translations: { de: "Georgien", en: "Georgia", ja: "ジョージア", zh: "格鲁吉亚" } },
+          { id: "st2_6", category: "stress2", translations: { de: "Armenien", en: "Armenia", ja: "アルメニア", zh: "亚美尼亚" } },
+          { id: "st2_7", category: "stress2", translations: { de: "Rumänien", en: "Romania", ja: "ルーマニア", zh: "罗马尼亚" } },
+          { id: "st2_8", category: "stress2", translations: { de: "Bulgarien", en: "Bulgaria", ja: "ブルガリア", zh: "保加利亚" } },
+          { id: "st2_9", category: "stress2", translations: { de: "Kroatien", en: "Croatia", ja: "クロアチア", zh: "克罗地亚" } },
+          { id: "st2_10", category: "stress2", translations: { de: "Slowenien", en: "Slovenia", ja: "スロベニア", zh: "斯洛文尼亚" } },
+          { id: "st2_11", category: "stress2", translations: { de: "Albanien", en: "Albania", ja: "アルバニア", zh: "阿尔巴尼亚" } },
+          { id: "st2_12", category: "stress2", translations: { de: "Mazedonien", en: "North Macedonia", ja: "マケドニア", zh: "北马其顿" } },
+          { id: "st2_13", category: "stress2", translations: { de: "Montenegro", en: "Montenegro", ja: "モンテネグロ", zh: "黑山" } },
+          { id: "st2_14", category: "stress2", translations: { de: "Afrika", en: "Africa", ja: "アフリカ", zh: "非洲" } }
+        ]
+      }
+    ]
   }
 };

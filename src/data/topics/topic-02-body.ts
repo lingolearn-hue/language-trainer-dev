@@ -1380,7 +1380,7 @@ export const topicBody: TopicLesson = {
           { id: "d6", category: "d", translations: { de: "denken", en: "to think", ja: "かんがえる", zh: "思考" } },
           { id: "d7", category: "d", translations: { de: "deutsch", en: "German (language/adj.)", ja: "ドイツの、ドイツご", zh: "德语；德国的" } },
           { id: "d8", category: "d", translations: { de: "Donnerstag", en: "Thursday", ja: "もくようび", zh: "星期四" } },
-          { id: "d9", category: "d", translations: { de: "Bruder", en: "brother", ja: "きょうだい（あに・おとうと）", zh: "兄弟" } },
+          { id: "d9", category: "d", translations: { de: "dunkel", en: "dark", ja: "くらい", zh: "黑暗的" } },
           { id: "d10", category: "d", translations: { de: "oder", en: "or", ja: "または、それとも", zh: "或者" } },
           { id: "d11", category: "d", translations: { de: "Laden", en: "shop, store", ja: "みせ", zh: "商店" } },
           { id: "d12", category: "d", translations: { de: "Kind", en: "child", ja: "こども", zh: "孩子" } },
@@ -1399,7 +1399,7 @@ export const topicBody: TopicLesson = {
           { id: "t10", category: "t", translations: { de: "Mutter", en: "mother", ja: "はは", zh: "母亲" } },
           { id: "t11", category: "t", translations: { de: "Bruder", en: "brother", ja: "きょうだい（あに・おとうと）", zh: "兄弟" } },
           { id: "t12", category: "t", translations: { de: "Katze", en: "cat", ja: "ねこ", zh: "猫" } },
-          { id: "t13", category: "t", translations: { de: "Stadt", en: "city", ja: "まち", zh: "城市" } },
+          { id: "t13", category: "t", translations: { de: "Tante", en: "aunt", ja: "おば", zh: "阿姨" } },
           { id: "t14", category: "t", translations: { de: "Arbeit", en: "work", ja: "しごと", zh: "工作" } },
 
           { id: "sp1", category: "sp", translations: { de: "Spaß", en: "fun", ja: "たのしみ", zh: "乐趣" } },

@@ -1044,7 +1044,7 @@ export const topicTime: TopicLesson = {
           { id: "hst11", category: "h_silent", translations: { de: "fehlen", en: "to be missing", ja: "たりない", zh: "缺少" } },
           { id: "hst12", category: "h_silent", translations: { de: "bezahlen", en: "to pay", ja: "はらう", zh: "支付" } },
           { id: "hst13", category: "h_silent", translations: { de: "verstehen", en: "to understand", ja: "りかいする", zh: "理解" } },
-          { id: "hst14", category: "h_silent", translations: { de: "sehen", en: "to see", ja: "みる", zh: "看" } },
+          { id: "hst14", category: "h_silent", translations: { de: "nahe", en: "near", ja: "ちかい", zh: "近的" } },
 
           { id: "ic1", category: "ich", translations: { de: "ich", en: "I", ja: "わたし", zh: "我" } },
           { id: "ic2", category: "ich", translations: { de: "nicht", en: "not", ja: "〜ない", zh: "不" } },

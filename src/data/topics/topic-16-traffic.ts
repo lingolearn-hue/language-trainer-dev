@@ -148,7 +148,108 @@ export const topicTraffic: TopicLesson = {
         { id: "p3", category: "pitch", translations: { ja: "かき", en: "persimmon (LH) / oyster (HL) — classic contrast pair", de: "Kaki (LH) / Auster (HL) — klassisches Kontrastpaar", zh: "柿子（低高）／牡蛎（高低）——经典对比词对" } },
         { id: "p4", category: "pitch", translations: { ja: "いそぐ", en: "to hurry (LHL) — new word, single pattern", de: "sich beeilen (LHL) — neues Wort, einzelnes Muster", zh: "赶紧（低高低）——新词，单一声调" } }
       ]
+    },
+    de: {
+      title: { de: "Aussprachetraining", en: "Pronunciation Practice", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        vf: { de: "V klingt wie F", en: "V sounds like F", ja: "V は F の おと", zh: "V发音像F" },
+        wv: { de: "W klingt wie V", en: "W sounds like V", ja: "W は V の おと", zh: "W发音像V" }
+      },
+      items: [
+        { id: "vf1", category: "vf", translations: { de: "Vater", en: "father", ja: "ちち", zh: "父亲" } },
+        { id: "vf2", category: "vf", translations: { de: "Vogel", en: "bird", ja: "とり", zh: "鸟" } },
+        { id: "vf3", category: "vf", translations: { de: "vier", en: "four", ja: "よん", zh: "四" } },
+        { id: "wv1", category: "wv", translations: { de: "Wasser", en: "water", ja: "みず", zh: "水" } },
+        { id: "wv2", category: "wv", translations: { de: "Woche", en: "week", ja: "しゅう", zh: "周" } },
+        { id: "wv3", category: "wv", translations: { de: "warten", en: "to wait", ja: "まつ", zh: "等待" } }
+      ]
     }
+  },
+  pronunciationDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          vf1: { de: "V klingt wie F", en: "V sounds like F", ja: "V は F の おと", zh: "V发音像F" },
+          vf2: { de: "V klingt wie F", en: "V sounds like F", ja: "V は F の おと", zh: "V发音像F" },
+          wv1: { de: "W klingt wie V", en: "W sounds like V", ja: "W は V の おと", zh: "W发音像V" },
+          wv2: { de: "W klingt wie V", en: "W sounds like V", ja: "W は V の おと", zh: "W发音像V" }
+        },
+        items: [
+          { id: "vf1_1", category: "vf1", translations: { de: "Verkehr", en: "traffic", ja: "こうつう", zh: "交通" } },
+          { id: "vf1_2", category: "vf1", translations: { de: "verstehen", en: "to understand", ja: "りかいする", zh: "理解" } },
+          { id: "vf1_3", category: "vf1", translations: { de: "Volk", en: "people, nation", ja: "こくみん", zh: "民族" } },
+          { id: "vf1_4", category: "vf1", translations: { de: "voll", en: "full", ja: "いっぱいの", zh: "满的" } },
+          { id: "vf1_5", category: "vf1", translations: { de: "vor", en: "before, in front of", ja: "まえに", zh: "在……前面" } },
+          { id: "vf1_6", category: "vf1", translations: { de: "verkaufen", en: "to sell", ja: "うる", zh: "卖" } },
+          { id: "vf1_7", category: "vf1", translations: { de: "Vorsicht", en: "caution", ja: "ちゅうい", zh: "小心" } },
+          { id: "vf1_8", category: "vf1", translations: { de: "vorwärts", en: "forward", ja: "まえへ", zh: "向前" } },
+          { id: "vf1_9", category: "vf1", translations: { de: "Vertrag", en: "contract", ja: "けいやく", zh: "合同" } },
+          { id: "vf1_10", category: "vf1", translations: { de: "Vergnügen", en: "pleasure", ja: "たのしみ", zh: "乐趣" } },
+          { id: "vf1_11", category: "vf1", translations: { de: "verlassen", en: "to leave", ja: "さる", zh: "离开" } },
+          { id: "vf1_12", category: "vf1", translations: { de: "vergessen", en: "to forget", ja: "わすれる", zh: "忘记" } },
+          { id: "vf1_13", category: "vf1", translations: { de: "verlieren", en: "to lose", ja: "なくす", zh: "丢失" } },
+          { id: "vf1_14", category: "vf1", translations: { de: "Vieh", en: "livestock", ja: "かちく", zh: "牲畜" } },
+
+          { id: "vf2_1", category: "vf2", translations: { de: "viel", en: "much, a lot", ja: "たくさん", zh: "很多" } },
+          { id: "vf2_2", category: "vf2", translations: { de: "vorbei", en: "past, over", ja: "すぎた", zh: "过去，结束" } },
+          { id: "vf2_3", category: "vf2", translations: { de: "Vorname", en: "first name", ja: "したのなまえ", zh: "名字" } },
+          { id: "vf2_4", category: "vf2", translations: { de: "Verein", en: "club, association", ja: "クラブ", zh: "俱乐部" } },
+          { id: "vf2_5", category: "vf2", translations: { de: "Vorschlag", en: "suggestion", ja: "ていあん", zh: "建议" } },
+          { id: "vf2_6", category: "vf2", translations: { de: "vollständig", en: "complete", ja: "かんぜんな", zh: "完整的" } },
+          { id: "vf2_7", category: "vf2", translations: { de: "Vorteil", en: "advantage", ja: "りてん", zh: "优点" } },
+          { id: "vf2_8", category: "vf2", translations: { de: "verboten", en: "forbidden", ja: "きんしされた", zh: "禁止的" } },
+          { id: "vf2_9", category: "vf2", translations: { de: "Vorhang", en: "curtain", ja: "カーテン", zh: "窗帘" } },
+          { id: "vf2_10", category: "vf2", translations: { de: "Vormittag", en: "morning, forenoon", ja: "ごぜん", zh: "上午" } },
+          { id: "vf2_11", category: "vf2", translations: { de: "Verantwortung", en: "responsibility", ja: "せきにん", zh: "责任" } },
+          { id: "vf2_12", category: "vf2", translations: { de: "vertrauen", en: "to trust", ja: "しんらいする", zh: "信任" } },
+          { id: "vf2_13", category: "vf2", translations: { de: "vorstellen", en: "to introduce", ja: "しょうかいする", zh: "介绍" } },
+          { id: "vf2_14", category: "vf2", translations: { de: "Vorfahrt", en: "right of way", ja: "ゆうせん", zh: "优先通行权" } },
+
+          { id: "wv1_1", category: "wv1", translations: { de: "Wagen", en: "car, wagon", ja: "くるま", zh: "车" } },
+          { id: "wv1_2", category: "wv1", translations: { de: "Wetter", en: "weather", ja: "てんき", zh: "天气" } },
+          { id: "wv1_3", category: "wv1", translations: { de: "wohnen", en: "to live, reside", ja: "すむ", zh: "居住" } },
+          { id: "wv1_4", category: "wv1", translations: { de: "Wein", en: "wine", ja: "ワイン", zh: "葡萄酒" } },
+          { id: "wv1_5", category: "wv1", translations: { de: "Winter", en: "winter", ja: "ふゆ", zh: "冬天" } },
+          { id: "wv1_6", category: "wv1", translations: { de: "Welt", en: "world", ja: "せかい", zh: "世界" } },
+          { id: "wv1_7", category: "wv1", translations: { de: "wichtig", en: "important", ja: "じゅうような", zh: "重要的" } },
+          { id: "wv1_8", category: "wv1", translations: { de: "Wort", en: "word", ja: "ことば", zh: "词语" } },
+          { id: "wv1_9", category: "wv1", translations: { de: "Weg", en: "way, path", ja: "みち", zh: "路" } },
+          { id: "wv1_10", category: "wv1", translations: { de: "Wand", en: "wall", ja: "かべ", zh: "墙" } },
+          { id: "wv1_11", category: "wv1", translations: { de: "weiß", en: "white", ja: "しろい", zh: "白色的" } },
+          { id: "wv1_12", category: "wv1", translations: { de: "Wunsch", en: "wish", ja: "ねがい", zh: "愿望" } },
+          { id: "wv1_13", category: "wv1", translations: { de: "Wolke", en: "cloud", ja: "くも", zh: "云" } },
+          { id: "wv1_14", category: "wv1", translations: { de: "Werk", en: "plant, factory", ja: "こうじょう", zh: "工厂" } },
+
+          { id: "wv2_1", category: "wv2", translations: { de: "Wunder", en: "miracle", ja: "きせき", zh: "奇迹" } },
+          { id: "wv2_2", category: "wv2", translations: { de: "Wirtschaft", en: "economy", ja: "けいざい", zh: "经济" } },
+          { id: "wv2_3", category: "wv2", translations: { de: "Werkzeug", en: "tool", ja: "どうぐ", zh: "工具" } },
+          { id: "wv2_4", category: "wv2", translations: { de: "Wahl", en: "choice, election", ja: "せんたく、せんきょ", zh: "选择，选举" } },
+          { id: "wv2_5", category: "wv2", translations: { de: "Wetterbericht", en: "weather report", ja: "てんきよほう", zh: "天气预报" } },
+          { id: "wv2_6", category: "wv2", translations: { de: "Wiese", en: "meadow", ja: "くさち", zh: "草地" } },
+          { id: "wv2_7", category: "wv2", translations: { de: "Wolf", en: "wolf", ja: "おおかみ", zh: "狼" } },
+          { id: "wv2_8", category: "wv2", translations: { de: "Warnung", en: "warning", ja: "けいこく", zh: "警告" } },
+          { id: "wv2_9", category: "wv2", translations: { de: "Weile", en: "a while", ja: "しばらく", zh: "一会儿" } },
+          { id: "wv2_10", category: "wv2", translations: { de: "wach", en: "awake", ja: "めがさめた", zh: "清醒的" } },
+          { id: "wv2_11", category: "wv2", translations: { de: "wecken", en: "to wake", ja: "おこす", zh: "叫醒" } },
+          { id: "wv2_12", category: "wv2", translations: { de: "Weizen", en: "wheat", ja: "こむぎ", zh: "小麦" } },
+          { id: "wv2_13", category: "wv2", translations: { de: "Wende", en: "U-turn, turning point", ja: "ターン、てんかんてん", zh: "转弯，转折点" } },
+          { id: "wv2_14", category: "wv2", translations: { de: "Wärter", en: "attendant, keeper", ja: "かんりにん", zh: "看守人" } }
+        ]
+      }
+    ]
   },
   grammarDrills: {
     de: [

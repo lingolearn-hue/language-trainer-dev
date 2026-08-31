@@ -180,6 +180,106 @@ export const topicSchool: TopicLesson = {
         { id: "so3", category: "sokuon", translations: { ja: "けしゴム", en: "eraser (っ-adjacent cluster, review)", de: "Radiergummi (っ-ähnliche Verbindung, Wiederholung)", zh: "橡皮擦（类似っ的连缀，复习）" } },
         { id: "so4", category: "sokuon", translations: { ja: "にゅうがくしき", en: "entrance ceremony (long word, sokuon-free contrast)", de: "Einschulungsfeier (langes Wort, ohne っ zum Vergleich)", zh: "入学典礼（长词，无促音对比）" } }
       ]
+    },
+    de: {
+      title: { de: "Aussprachetraining", en: "Pronunciation Practice", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        u_long: { de: "U — lang", en: "U — long", ja: "U — ながい", zh: "U——长音" },
+        u_short: { de: "U — kurz", en: "U — short", ja: "U — みじかい", zh: "U——短音" }
+      },
+      items: [
+        { id: "ul1", category: "u_long", translations: { de: "Schule", en: "school", ja: "がっこう", zh: "学校" } },
+        { id: "ul2", category: "u_long", translations: { de: "Blume", en: "flower", ja: "はな", zh: "花" } },
+        { id: "ul3", category: "u_long", translations: { de: "gut", en: "good", ja: "よい", zh: "好的" } },
+        { id: "us1", category: "u_short", translations: { de: "Mutter", en: "mother", ja: "はは", zh: "母亲" } },
+        { id: "us2", category: "u_short", translations: { de: "Suppe", en: "soup", ja: "スープ", zh: "汤" } },
+        { id: "us3", category: "u_short", translations: { de: "Hund", en: "dog", ja: "いぬ", zh: "狗" } }
+      ]
     }
+  },
+  pronunciationDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          u_long1: { de: "U — lang", en: "U — long", ja: "U — ながい", zh: "U——长音" },
+          u_short1: { de: "U — kurz", en: "U — short", ja: "U — みじかい", zh: "U——短音" },
+          u_long2: { de: "U — lang", en: "U — long", ja: "U — ながい", zh: "U——长音" },
+          u_short2: { de: "U — kurz", en: "U — short", ja: "U — みじかい", zh: "U——短音" }
+        },
+        pairedColumns: [["u_long1", "u_short1"], ["u_long2", "u_short2"]],
+        items: [
+          { id: "ul1_1", category: "u_long1", translations: { de: "Stunde", en: "hour", ja: "じかん", zh: "小时" } },
+          { id: "us1_1", category: "u_short1", translations: { de: "Butter", en: "butter", ja: "バター", zh: "黄油" } },
+          { id: "ul1_2", category: "u_long1", translations: { de: "Kuchen", en: "cake", ja: "ケーキ", zh: "蛋糕" } },
+          { id: "us1_2", category: "u_short1", translations: { de: "Nummer", en: "number", ja: "ばんごう", zh: "号码" } },
+          { id: "ul1_3", category: "u_long1", translations: { de: "Musik", en: "music", ja: "おんがく", zh: "音乐" } },
+          { id: "us1_3", category: "u_short1", translations: { de: "Puppe", en: "doll", ja: "にんぎょう", zh: "玩偶" } },
+          { id: "ul1_4", category: "u_long1", translations: { de: "Universität", en: "university", ja: "だいがく", zh: "大学" } },
+          { id: "us1_4", category: "u_short1", translations: { de: "Mund", en: "mouth", ja: "くち", zh: "嘴" } },
+          { id: "ul1_5", category: "u_long1", translations: { de: "Juli", en: "July", ja: "しちがつ", zh: "七月" } },
+          { id: "us1_5", category: "u_short1", translations: { de: "und", en: "and", ja: "そして", zh: "和" } },
+          { id: "ul1_6", category: "u_long1", translations: { de: "Juni", en: "June", ja: "ろくがつ", zh: "六月" } },
+          { id: "us1_6", category: "u_short1", translations: { de: "bunt", en: "colorful", ja: "カラフルな", zh: "五颜六色的" } },
+          { id: "ul1_7", category: "u_long1", translations: { de: "Minute", en: "minute", ja: "ふん", zh: "分钟" } },
+          { id: "us1_7", category: "u_short1", translations: { de: "Punkt", en: "point", ja: "てん", zh: "点" } },
+          { id: "ul1_8", category: "u_long1", translations: { de: "Natur", en: "nature", ja: "しぜん", zh: "自然" } },
+          { id: "us1_8", category: "u_short1", translations: { de: "Luft", en: "air", ja: "くうき", zh: "空气" } },
+          { id: "ul1_9", category: "u_long1", translations: { de: "Kultur", en: "culture", ja: "ぶんか", zh: "文化" } },
+          { id: "us1_9", category: "u_short1", translations: { de: "Kunst", en: "art", ja: "げいじゅつ", zh: "艺术" } },
+          { id: "ul1_10", category: "u_long1", translations: { de: "Ufer", en: "shore, bank", ja: "きしべ", zh: "岸边" } },
+          { id: "us1_10", category: "u_short1", translations: { de: "Wunsch", en: "wish", ja: "ねがい", zh: "愿望" } },
+          { id: "ul1_11", category: "u_long1", translations: { de: "Ruhe", en: "calm, quiet", ja: "しずけさ", zh: "安静" } },
+          { id: "us1_11", category: "u_short1", translations: { de: "Sturm", en: "storm", ja: "あらし", zh: "暴风雨" } },
+          { id: "ul1_12", category: "u_long1", translations: { de: "Blut", en: "blood", ja: "ち", zh: "血" } },
+          { id: "us1_12", category: "u_short1", translations: { de: "jung", en: "young", ja: "わかい", zh: "年轻" } },
+          { id: "ul1_13", category: "u_long1", translations: { de: "Hut", en: "hat", ja: "ぼうし", zh: "帽子" } },
+          { id: "us1_13", category: "u_short1", translations: { de: "Nuss", en: "nut", ja: "ナッツ", zh: "坚果" } },
+          { id: "ul1_14", category: "u_long1", translations: { de: "Fuß", en: "foot", ja: "あし", zh: "脚" } },
+          { id: "us1_14", category: "u_short1", translations: { de: "Busch", en: "bush", ja: "しげみ", zh: "灌木丛" } },
+
+          { id: "ul2_1", category: "u_long2", translations: { de: "Zug", en: "train", ja: "でんしゃ", zh: "火车" } },
+          { id: "us2_1", category: "u_short2", translations: { de: "Zunge", en: "tongue", ja: "した", zh: "舌头" } },
+          { id: "ul2_2", category: "u_long2", translations: { de: "Mut", en: "courage", ja: "ゆうき", zh: "勇气" } },
+          { id: "us2_2", category: "u_short2", translations: { de: "Junge", en: "boy", ja: "おとこのこ", zh: "男孩" } },
+          { id: "ul2_3", category: "u_long2", translations: { de: "Bruder", en: "brother", ja: "きょうだい", zh: "兄弟" } },
+          { id: "us2_3", category: "u_short2", translations: { de: "Rutsche", en: "slide (playground)", ja: "すべりだい", zh: "滑梯" } },
+          { id: "ul2_4", category: "u_long2", translations: { de: "Flug", en: "flight", ja: "ひこう", zh: "飞行" } },
+          { id: "us2_4", category: "u_short2", translations: { de: "Wurst", en: "sausage", ja: "ソーセージ", zh: "香肠" } },
+          { id: "ul2_5", category: "u_long2", translations: { de: "Juwel", en: "jewel", ja: "ほうせき", zh: "珠宝" } },
+          { id: "us2_5", category: "u_short2", translations: { de: "Kummer", en: "sorrow", ja: "なやみ", zh: "忧愁" } },
+          { id: "ul2_6", category: "u_long2", translations: { de: "Kuh", en: "cow", ja: "うし", zh: "奶牛" } },
+          { id: "us2_6", category: "u_short2", translations: { de: "Trumpf", en: "trump card", ja: "きりふだ", zh: "王牌" } },
+          { id: "ul2_7", category: "u_long2", translations: { de: "Buch", en: "book", ja: "ほん", zh: "书" } },
+          { id: "us2_7", category: "u_short2", translations: { de: "Sumpf", en: "swamp", ja: "ぬま", zh: "沼泽" } },
+          { id: "ul2_8", category: "u_long2", translations: { de: "Uhr", en: "clock", ja: "とけい", zh: "钟表" } },
+          { id: "us2_8", category: "u_short2", translations: { de: "Schluss", en: "end", ja: "おわり", zh: "结束" } },
+          { id: "ul2_9", category: "u_long2", translations: { de: "Ruf", en: "call, reputation", ja: "よびごえ、ひょうばん", zh: "呼喊，名声" } },
+          { id: "us2_9", category: "u_short2", translations: { de: "Kuss", en: "kiss", ja: "キス", zh: "亲吻" } },
+          { id: "ul2_10", category: "u_long2", translations: { de: "Kur", en: "spa treatment, cure", ja: "ほうようちりょう", zh: "疗养" } },
+          { id: "us2_10", category: "u_short2", translations: { de: "Fluss", en: "river", ja: "かわ", zh: "河流" } },
+          { id: "ul2_11", category: "u_long2", translations: { de: "Schuh", en: "shoe", ja: "くつ", zh: "鞋" } },
+          { id: "us2_11", category: "u_short2", translations: { de: "Schuss", en: "shot", ja: "しゃげき", zh: "射击" } },
+          { id: "ul2_12", category: "u_long2", translations: { de: "Wut", en: "rage", ja: "げきど", zh: "愤怒" } },
+          { id: "us2_12", category: "u_short2", translations: { de: "Mutti", en: "mommy", ja: "ママ", zh: "妈妈" } },
+          { id: "ul2_13", category: "u_long2", translations: { de: "Ruhm", en: "fame", ja: "めいせい", zh: "名声" } },
+          { id: "us2_13", category: "u_short2", translations: { de: "Grund", en: "reason, ground", ja: "りゆう、じばん", zh: "理由，地面" } },
+          { id: "ul2_14", category: "u_long2", translations: { de: "Krug", en: "jug", ja: "みずさし", zh: "水壶" } },
+          { id: "us2_14", category: "u_short2", translations: { de: "Bund", en: "alliance, league", ja: "どうめい", zh: "联盟" } }
+        ]
+      }
+    ]
   }
 };

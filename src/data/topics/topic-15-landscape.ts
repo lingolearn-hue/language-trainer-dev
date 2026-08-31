@@ -152,7 +152,109 @@ export const topicLandscape: TopicLesson = {
         { id: "p3", category: "pitch", translations: { ja: "あめ", en: "rain (HL) / candy (LH)", de: "Regen (HL) / Süßigkeit (LH)", zh: "雨（高低）／糖果（低高）" } },
         { id: "p4", category: "pitch", translations: { ja: "のぼる", en: "to climb (LHL) — new word, single pattern", de: "besteigen (LHL) — neues Wort, einzelnes Muster", zh: "攀登（低高低）——新词，单一声调" } }
       ]
+    },
+    de: {
+      title: { de: "Aussprachetraining", en: "Pronunciation Practice", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        ae: { de: "Ä", en: "Ä", ja: "Ä", zh: "Ä" },
+        ue_oe: { de: "Ü vs. Ö", en: "Ü vs. Ö", ja: "Ü と Ö", zh: "Ü与Ö" }
+      },
+      items: [
+        { id: "ae1", category: "ae", translations: { de: "Wälder", en: "forests", ja: "もりたち", zh: "森林（复数）" } },
+        { id: "ae2", category: "ae", translations: { de: "Bär", en: "bear", ja: "くま", zh: "熊" } },
+        { id: "ae3", category: "ae", translations: { de: "spät", en: "late", ja: "おそい", zh: "晚的" } },
+        { id: "uo1", category: "ue_oe", translations: { de: "Hügel", en: "hill", ja: "おか", zh: "小山" } },
+        { id: "uo2", category: "ue_oe", translations: { de: "schön", en: "beautiful", ja: "うつくしい", zh: "美丽的" } },
+        { id: "uo3", category: "ue_oe", translations: { de: "Höhe", en: "height, altitude", ja: "たかさ", zh: "高度" } }
+      ]
     }
+  },
+  pronunciationDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          ae1: { de: "Ä", en: "Ä", ja: "Ä", zh: "Ä" },
+          ae2: { de: "Ä", en: "Ä", ja: "Ä", zh: "Ä" },
+          ue: { de: "Ü", en: "Ü", ja: "Ü", zh: "Ü" },
+          oe: { de: "Ö", en: "Ö", ja: "Ö", zh: "Ö" }
+        },
+        pairedColumns: [["ue", "oe"]],
+        items: [
+          { id: "ae1_1", category: "ae1", translations: { de: "Gewässer", en: "body of water", ja: "みずうみ・かわなど", zh: "水域" } },
+          { id: "ae1_2", category: "ae1", translations: { de: "Städte", en: "cities", ja: "としたち", zh: "城市（复数）" } },
+          { id: "ae1_3", category: "ae1", translations: { de: "Mädchen", en: "girl", ja: "おんなのこ", zh: "女孩" } },
+          { id: "ae1_4", category: "ae1", translations: { de: "nächste", en: "next", ja: "つぎの", zh: "下一个" } },
+          { id: "ae1_5", category: "ae1", translations: { de: "Käse", en: "cheese", ja: "チーズ", zh: "奶酪" } },
+          { id: "ae1_6", category: "ae1", translations: { de: "Väter", en: "fathers", ja: "ちちたち", zh: "父亲们" } },
+          { id: "ae1_7", category: "ae1", translations: { de: "Erklärung", en: "explanation", ja: "せつめい", zh: "解释" } },
+          { id: "ae1_8", category: "ae1", translations: { de: "ähnlich", en: "similar", ja: "にている", zh: "相似的" } },
+          { id: "ae1_9", category: "ae1", translations: { de: "während", en: "during", ja: "〜のあいだ", zh: "在……期间" } },
+          { id: "ae1_10", category: "ae1", translations: { de: "Gespräch", en: "conversation", ja: "かいわ", zh: "对话" } },
+          { id: "ae1_11", category: "ae1", translations: { de: "Getränk", en: "drink", ja: "のみもの", zh: "饮料" } },
+          { id: "ae1_12", category: "ae1", translations: { de: "Länder", en: "countries", ja: "くにぐに", zh: "国家（复数）" } },
+          { id: "ae1_13", category: "ae1", translations: { de: "Wände", en: "walls", ja: "かべ", zh: "墙壁" } },
+          { id: "ae1_14", category: "ae1", translations: { de: "Fälle", en: "cases", ja: "ばあい", zh: "情况" } },
+
+          { id: "ae2_1", category: "ae2", translations: { de: "Räume", en: "rooms", ja: "へやたち", zh: "房间（复数）" } },
+          { id: "ae2_2", category: "ae2", translations: { de: "Bäcker", en: "baker", ja: "パンやさん", zh: "面包师" } },
+          { id: "ae2_3", category: "ae2", translations: { de: "Käfer", en: "beetle", ja: "こうちゅう", zh: "甲虫" } },
+          { id: "ae2_4", category: "ae2", translations: { de: "Träne", en: "tear", ja: "なみだ", zh: "眼泪" } },
+          { id: "ae2_5", category: "ae2", translations: { de: "Ärger", en: "anger, trouble", ja: "いかり", zh: "生气" } },
+          { id: "ae2_6", category: "ae2", translations: { de: "März", en: "March", ja: "さんがつ", zh: "三月" } },
+          { id: "ae2_7", category: "ae2", translations: { de: "Wärme", en: "warmth", ja: "あたたかさ", zh: "温暖" } },
+          { id: "ae2_8", category: "ae2", translations: { de: "Käufer", en: "buyer", ja: "かいて", zh: "买主" } },
+          { id: "ae2_9", category: "ae2", translations: { de: "Fähre", en: "ferry", ja: "フェリー", zh: "渡轮" } },
+          { id: "ae2_10", category: "ae2", translations: { de: "Säure", en: "acid", ja: "さん", zh: "酸" } },
+          { id: "ae2_11", category: "ae2", translations: { de: "Ähre", en: "ear of grain", ja: "ほ（いねの）", zh: "麦穗" } },
+          { id: "ae2_12", category: "ae2", translations: { de: "Wächter", en: "guard", ja: "けいびいん", zh: "守卫" } },
+          { id: "ae2_13", category: "ae2", translations: { de: "Träger", en: "carrier, porter", ja: "うんぱんにん", zh: "搬运工" } },
+          { id: "ae2_14", category: "ae2", translations: { de: "Änderung", en: "change", ja: "へんこう", zh: "变更" } },
+
+          { id: "ue1", category: "ue", translations: { de: "Tür", en: "door", ja: "ドア", zh: "门" } },
+          { id: "ue2", category: "ue", translations: { de: "Bücher", en: "books", ja: "ほんたち", zh: "书（复数）" } },
+          { id: "ue3", category: "ue", translations: { de: "Frühling", en: "spring", ja: "はる", zh: "春天" } },
+          { id: "ue4", category: "ue", translations: { de: "Süden", en: "south", ja: "みなみ", zh: "南方" } },
+          { id: "ue5", category: "ue", translations: { de: "Rücken", en: "back", ja: "せなか", zh: "背部" } },
+          { id: "ue6", category: "ue", translations: { de: "Glück", en: "luck", ja: "こううん", zh: "幸运" } },
+          { id: "ue7", category: "ue", translations: { de: "Gemüse", en: "vegetables", ja: "やさい", zh: "蔬菜" } },
+          { id: "ue8", category: "ue", translations: { de: "müde", en: "tired", ja: "つかれた", zh: "累的" } },
+          { id: "ue9", category: "ue", translations: { de: "früh", en: "early", ja: "はやい", zh: "早的" } },
+          { id: "ue10", category: "ue", translations: { de: "Prüfung", en: "exam", ja: "しけん", zh: "考试" } },
+          { id: "ue11", category: "ue", translations: { de: "Küche", en: "kitchen", ja: "だいどころ", zh: "厨房" } },
+          { id: "ue12", category: "ue", translations: { de: "Schüler", en: "student", ja: "がくせい", zh: "学生" } },
+          { id: "ue13", category: "ue", translations: { de: "Flüsse", en: "rivers", ja: "かわたち", zh: "河流（复数）" } },
+          { id: "ue14", category: "ue", translations: { de: "grün", en: "green", ja: "みどりいろ", zh: "绿色" } },
+
+          { id: "oe1", category: "oe", translations: { de: "Löwe", en: "lion", ja: "ライオン", zh: "狮子" } },
+          { id: "oe2", category: "oe", translations: { de: "können", en: "can, to be able to", ja: "できる", zh: "能够" } },
+          { id: "oe3", category: "oe", translations: { de: "König", en: "king", ja: "おう", zh: "国王" } },
+          { id: "oe4", category: "oe", translations: { de: "hören", en: "to hear", ja: "きく", zh: "听" } },
+          { id: "oe5", category: "oe", translations: { de: "Löffel", en: "spoon", ja: "スプーン", zh: "勺子" } },
+          { id: "oe6", category: "oe", translations: { de: "öffnen", en: "to open", ja: "あける", zh: "打开" } },
+          { id: "oe7", category: "oe", translations: { de: "größer", en: "bigger", ja: "もっと おおきい", zh: "更大的" } },
+          { id: "oe8", category: "oe", translations: { de: "Wörter", en: "words", ja: "ことば", zh: "词语" } },
+          { id: "oe9", category: "oe", translations: { de: "Möbel", en: "furniture", ja: "かぐ", zh: "家具" } },
+          { id: "oe10", category: "oe", translations: { de: "Röte", en: "redness", ja: "あかみ", zh: "红色" } },
+          { id: "oe11", category: "oe", translations: { de: "Österreich", en: "Austria", ja: "オーストリア", zh: "奥地利" } },
+          { id: "oe12", category: "oe", translations: { de: "Mönch", en: "monk", ja: "しゅうどうし", zh: "僧侣" } },
+          { id: "oe13", category: "oe", translations: { de: "Höhle", en: "cave", ja: "どうくつ", zh: "洞穴" } },
+          { id: "oe14", category: "oe", translations: { de: "Ökosystem", en: "ecosystem", ja: "せいたいけい", zh: "生态系统" } }
+        ]
+      }
+    ]
   },
   grammarDrills: {
     ja: [

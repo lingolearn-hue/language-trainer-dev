@@ -1076,9 +1076,9 @@ export const topicHealth: TopicLesson = {
           id: "dv2",
           category: "devoicing",
           translations: {
-            de: "Verband",
-            en: "bandage (final d sounds like t)",
-            ja: "ほうたい（ごびの d は t のよう）"
+            de: "Grad",
+            en: "degree (final d sounds like t)",
+            ja: "ど（おんど）（ごびの d は t のよう）"
           }
         }
       ]

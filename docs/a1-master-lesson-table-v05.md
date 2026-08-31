@@ -47,9 +47,9 @@ skeleton with language-specific substitutions where noted.
 
 | Course | Lessons built | Notes |
 |---|---|---|
-| German (A1) | 1–13 (all, via topic system) + 2, 11 (standalone, predate the table) | See docs/topic-lesson-system.md |
+| German (A1) | 1–19 (grammar; all via topic system) + 2, 11 (standalone, predate the table) | Grammar authored for all 19 rows as of this session (previously 1–13 only). Pronunciation still only 1–13; rows 14–19 have no German pronunciation content yet. See docs/topic-lesson-system.md |
 | English (C1) | 1 | Standalone "Voices from Orbit" space course, not on the A1 track |
-| Japanese (A1) | 1–19 (all) | Rows 1–19 complete. All have ja; 1–13 also have de. zh done for 1–5 and 14–19, still pending for 6–13. |
+| Japanese (A1) | 1–19 (all) | Rows 1–19 complete. All have ja; 1–13 also have de. zh now done for all 19 rows (6–13 backfilled this session). |
 
 **Every lesson complete is the goal** (self-intro slide, grammar drill
 slide(s), a full 4×14 second pronunciation drill, a song with real
@@ -162,11 +162,11 @@ changelog below predates that consolidation.
 
 See the "Build status" section near the top of this file (accurate as
 of v05a) and `docs/topic-lesson-system.md` for full per-topic detail —
-19 Japanese A1 rows built (13 also German), 9 A2 topics built. An
-earlier "Status summary"/"Known open items" pair that lived here was
-found to be a stale pre-v05a snapshot directly contradicting the Build
-status table above (it claimed only 7 lessons built); moved to
-`docs/ARCHIVE.md`.
+19 Japanese A1 rows built (all 19 also now have German grammar; 13 also
+have German pronunciation), 13 A2 topics built. An earlier "Status
+summary"/"Known open items" pair that lived here was found to be a
+stale pre-v05a snapshot directly contradicting the Build status table
+above (it claimed only 7 lessons built); moved to `docs/ARCHIVE.md`.
 
 Remaining genuinely open items (carried forward, still accurate):
 - A2–C2 vocab-to-grammar mapping is now underway for A2 (see
@@ -174,8 +174,10 @@ Remaining genuinely open items (carried forward, still accurate):
 - Real per-category word counts checked for only 3 of 34 A1 categories
   (Food, Shopping, Health); the other 31 are still unverified against
   the actual tagged vocab corpus
-- Chinese vocab/dialogue/song still missing for A1 topics 6–13 (see
-  `docs/topic-lesson-system.md`'s "Known gaps")
+- German pronunciation still missing for A1 topics 14–19 (grammar was
+  backfilled for all 19 rows this session — see
+  `docs/topic-lesson-system.md`'s "Known gaps" and "For a future
+  session")
 - 14 of the 34 A1 song slots still have no song assigned at all (rows
   4, 5, 6, 10, 14, 16, 17, 23, 27, 29, 30, 31, 32, 34) — candidates for
   new native-language song research

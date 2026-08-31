@@ -1219,7 +1219,7 @@ export const topicFamily: TopicLesson = {
           { id: "b5", category: "b", translations: { de: "Bein", en: "leg", ja: "あし", zh: "腿" } },
           { id: "b6", category: "b", translations: { de: "Ball", en: "ball", ja: "ボール", zh: "球" } },
           { id: "b7", category: "b", translations: { de: "Bett", en: "bed", ja: "ベッド", zh: "床" } },
-          { id: "b8", category: "b", translations: { de: "Brot", en: "bread", ja: "パン", zh: "面包" } },
+          { id: "b8", category: "b", translations: { de: "Boden", en: "floor, ground", ja: "ゆか、じめん", zh: "地板，地面" } },
           { id: "b9", category: "b", translations: { de: "Blume", en: "flower", ja: "はな", zh: "花" } },
           { id: "b10", category: "b", translations: { de: "Baum", en: "tree", ja: "き", zh: "树" } },
           { id: "b11", category: "b", translations: { de: "Bahnhof", en: "train station", ja: "えき", zh: "火车站" } },

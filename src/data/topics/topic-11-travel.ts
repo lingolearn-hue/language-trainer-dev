@@ -983,7 +983,7 @@ export const topicTravel: TopicLesson = {
           { id: "cl4", category: "cluster", translations: { de: "Spiel", en: "game", ja: "ゲーム", zh: "游戏" } },
           { id: "cl5", category: "cluster", translations: { de: "Stein", en: "stone", ja: "いし", zh: "石头" } },
           { id: "cl6", category: "cluster", translations: { de: "Schule", en: "school", ja: "がっこう", zh: "学校" } },
-          { id: "cl7", category: "cluster", translations: { de: "Schrank", en: "closet, cabinet", ja: "たんす", zh: "衣柜" } },
+          { id: "cl7", category: "cluster", translations: { de: "Platz", en: "place, square", ja: "ばしょ、ひろば", zh: "地方，广场" } },
           { id: "cl8", category: "cluster", translations: { de: "Bruder", en: "brother", ja: "きょうだい", zh: "兄弟" } },
           { id: "cl9", category: "cluster", translations: { de: "brauchen", en: "to need", ja: "ひつようとする", zh: "需要" } },
           { id: "cl10", category: "cluster", translations: { de: "trinken", en: "to drink", ja: "のむ", zh: "喝" } },
@@ -1035,7 +1035,7 @@ export const topicTravel: TopicLesson = {
           { id: "sr11", category: "schr", translations: { de: "Schreibtisch", en: "desk", ja: "つくえ", zh: "书桌" } },
           { id: "sr12", category: "schr", translations: { de: "Schranke", en: "barrier, gate", ja: "しゃだんき", zh: "栏杆；屏障" } },
           { id: "sr13", category: "schr", translations: { de: "Schriftsprache", en: "written language", ja: "もじげんご", zh: "书面语" } },
-          { id: "sr14", category: "schr", translations: { de: "Schraube", en: "screw", ja: "ねじ", zh: "螺丝" } }
+          { id: "sr14", category: "schr", translations: { de: "Schreiner", en: "carpenter", ja: "だいく", zh: "木匠" } }
         ]
       }
     ]

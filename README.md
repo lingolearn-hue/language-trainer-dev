@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 96 — 2026-08-30
+Version: 97 — 2026-08-30
 
 React-based long-form language tutor simulation (45-90 min sessions).
 Static content, multiple trainer personas, block-based session engine
@@ -10,7 +10,7 @@ See `/spec` (in project history) for concept, trainer, and lesson-structure docs
 
 See `docs/topic-lesson-system.md` for the topic-based lesson architecture
 (vocab/dialogue/song shared across target languages, grammar/pronunciation
-authored per language) — 19 topics built. Status and next steps are
+authored per language) — 32 topics built. Status and next steps are
 documented there.
 
 See `docs/song-melodies.md` for how song melody playback works and how
@@ -38,10 +38,11 @@ still planned.
   "your turn" windows. Per-language ordered voice-name fallback lists
   (`voicesByLang`), since most platforms default to a female voice per
   locale unless the user has downloaded an alternative.
-- **Lessons**: 28 topic-based (topic-lesson system — 19 A1, all
-  Japanese, 13 of those also German; 9 A2, Japanese only) + 3
-  hand-written standalone (German Lektion 2, German Lektion 11, English
-  C1 "Voices from Orbit") = 41 total. See `docs/topic-lesson-system.md`
+- **Lessons**: 32 topic-based (topic-lesson system — 19 A1, all
+  Japanese, now all 19 also have German grammar content (13 of those
+  also German pronunciation); 13 A2, Japanese only) + 3 hand-written
+  standalone (German Lektion 2, German Lektion 11, English C1 "Voices
+  from Orbit") = 35 total. See `docs/topic-lesson-system.md`
   for the full architecture, current per-feature coverage (self-intro
   slides, grammar/pronunciation drill slides, row-by-row pronunciation
   comparison, per-language content overrides), the A2 topics section,
