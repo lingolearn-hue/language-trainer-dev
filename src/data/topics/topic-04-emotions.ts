@@ -852,6 +852,32 @@ export const topicEmotions: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-verneinung",
+        title: { de: "Übung: nicht / kein", en: "Practice: Nicht / Kein", ja: "れんしゅう：nicht と kein", zh: "练习：nicht／kein" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit nicht und kein.",
+          en: "Next, let's practice example sentences using nicht and kein.",
+          ja: "つぎは、nicht と kein を つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用nicht和kein的例句。"
+        },
+        lines: [
+          { id: "n1", translations: { de: "Ich bin nicht traurig.", en: "I am not sad. (nicht + adjective)", ja: "わたしは かなしく ないです。（nicht + けいようし）", zh: "我不难过。（nicht + 形容词）" } },
+          { id: "n2", translations: { de: "Er ist nicht müde.", en: "He is not tired. (nicht + adjective)", ja: "かれは つかれて いません。（nicht + けいようし）", zh: "他不累。（nicht + 形容词）" } },
+          { id: "n3", translations: { de: "Sie lacht nicht.", en: "She is not laughing. (nicht + verb)", ja: "かのじょは わらって いません。（nicht + どうし）", zh: "她没有笑。（nicht + 动词）" } },
+          { id: "n4", translations: { de: "Wir weinen nicht mehr.", en: "We are not crying anymore. (nicht + verb)", ja: "わたしたちは もう ないて いません。（nicht + どうし）", zh: "我们不再哭了。（nicht + 动词）" } },
+          { id: "n5", translations: { de: "Ich habe keine Sorge.", en: "I have no worry. (kein + noun)", ja: "わたしには しんぱいが ありません。（kein + めいし）", zh: "我没有担心。（kein + 名词）" } },
+          { id: "n6", translations: { de: "Er hat keinen Stress.", en: "He has no stress. (kein + noun)", ja: "かれには ストレスが ありません。（kein + めいし）", zh: "他没有压力。（kein + 名词）" } },
+          { id: "n7", translations: { de: "Wir haben keine Tränen mehr.", en: "We have no more tears. (kein + noun)", ja: "わたしたちには もう なみだが ありません。（kein + めいし）", zh: "我们没有眼泪了。（kein + 名词）" } },
+          { id: "n8", translations: { de: "Das ist nicht schwierig.", en: "That is not difficult. (nicht + adjective)", ja: "それは むずかしく ないです。（nicht + けいようし）", zh: "那不难。（nicht + 形容词）" } },
+          { id: "n9", translations: { de: "Sie hat keine Angst.", en: "She has no fear. (kein + noun)", ja: "かのじょは こわく ないです。（kein + めいし）", zh: "她不害怕。（kein + 名词）" } },
+          { id: "n10", translations: { de: "Wir sind nicht wütend.", en: "We are not angry. (nicht + adjective)", ja: "わたしたちは おこって いません。（nicht + けいようし）", zh: "我们没有生气。（nicht + 形容词）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {

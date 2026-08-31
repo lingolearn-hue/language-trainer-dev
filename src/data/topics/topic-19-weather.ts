@@ -108,7 +108,50 @@ export const topicWeather: TopicLesson = {
         { id: "g5", translations: { ja: "きょうは きのうほど あつくないです。", en: "Today isn't as hot as yesterday. (ほど〜ない)", de: "Heute ist es nicht so heiß wie gestern. (ほど〜ない)", zh: "今天没有昨天那么热。（ほど〜ない）" } },
         { id: "g6", translations: { ja: "らいしゅうは こんしゅうより すずしいでしょう。", en: "Next week will probably be cooler than this week. (より + でしょう)", de: "Nächste Woche wird es wahrscheinlich kühler als diese Woche. (より + でしょう)", zh: "下周可能会比这周凉爽。（より + でしょう）" } }
       ]
+    },
+    de: {
+      title: { de: "Komparativ und Superlativ: Wetter (vertieft)", en: "Comparative and Superlative: Weather (Reinforced)", ja: "ひかくきゅう と さいじょうきゅう：てんき（ふくしゅう）", zh: "比较级与最高级：天气（巩固）" },
+      explanation: {
+        de: "Diese Lektion vertieft den Komparativ und Superlativ aus Lektion 15, diesmal mit Wetterthemen, und ergänzt die Adjektivendung: steht der Komparativ oder Superlativ direkt vor einem Nomen, bekommt er dieselbe Endung wie ein normales Adjektiv — der kälteste Tag (nicht \"der kältest Tag\").",
+        en: "This lesson reinforces the comparative and superlative from Lesson 15, this time with weather topics, and adds the adjective ending: when a comparative or superlative stands directly before a noun, it takes the same ending as a regular adjective — der kälteste Tag (not \"der kältest Tag\").",
+        ja: "この レッスンは、レッスン15の ひかくきゅうと さいじょうきゅうを てんきの わだいで もういちど れんしゅうし、けいようしの ごびも つけくわえます：ひかくきゅう・さいじょうきゅうが めいしの まえに くる ときは、ふつうの けいようしと おなじ ごびが つきます——der kälteste Tag（「der kältest Tag」では ない）。",
+        zh: "本课再次巩固第15课的比较级与最高级，这次以天气为主题，并补充形容词词尾：当比较级或最高级直接放在名词前面时，需要加上和普通形容词一样的词尾——der kälteste Tag（而不是「der kältest Tag」）。"
+      },
+      chunks: [
+        { id: "g1", translations: { de: "Heute ist es kälter als gestern.", en: "Today is colder than yesterday. (comparative, predicate)", ja: "きょうは きのうより さむいです。（ひかくきゅう、じゅつご）", zh: "今天比昨天冷。（比较级，谓语）" } },
+        { id: "g2", translations: { de: "Der Sommer ist heißer als der Winter.", en: "Summer is hotter than winter. (comparative, predicate)", ja: "なつのほうが ふゆより あついです。（ひかくきゅう、じゅつご）", zh: "夏天比冬天热。（比较级，谓语）" } },
+        { id: "g3", translations: { de: "Was ist heißer, Tokio oder Osaka?", en: "Which is hotter, Tokyo or Osaka? (comparative, question)", ja: "とうきょうと おおさか、どちらが あついですか？（ひかくきゅう、しつもん）", zh: "东京和大阪，哪个更热？（比较级，疑问句）" } },
+        { id: "g4", translations: { de: "Der kälteste Tag war im Januar.", en: "The coldest day was in January. (superlative, attributive with agreement)", ja: "いちばん さむい ひは いちがつでした。（さいじょうきゅう、しゅうしょくご、ごびの いっち）", zh: "最冷的一天是在一月。（最高级，定语形式，词尾一致）" } },
+        { id: "g5", translations: { de: "Heute ist es nicht so heiß wie gestern.", en: "Today isn't as hot as yesterday. (negative comparison)", ja: "きょうは きのうほど あつくないです。（ひていの ひかく）", zh: "今天没有昨天那么热。（否定比较）" } },
+        { id: "g6", translations: { de: "Nächste Woche wird es wahrscheinlich kühler.", en: "Next week will probably be cooler. (comparative + probably)", ja: "らいしゅうは たぶん すずしく なるでしょう。（ひかくきゅう + たぶん）", zh: "下周可能会更凉爽。（比较级 + 可能）" } }
+      ]
     }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-wetter-komparativ",
+        title: { de: "Übung: Wetter vergleichen", en: "Practice: Comparing Weather", ja: "れんしゅう：てんきを くらべる", zh: "练习：比较天气" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze zum Wettervergleich.",
+          en: "Next, let's practice example sentences comparing weather.",
+          ja: "つぎは、てんきを くらべる れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习比较天气的例句。"
+        },
+        lines: [
+          { id: "wk1", translations: { de: "Sapporo ist kälter als Tokio.", en: "Sapporo is colder than Tokyo.", ja: "さっぽろは とうきょうより さむいです。", zh: "札幌比东京冷。" } },
+          { id: "wk2", translations: { de: "Sapporos Sommer ist kühler als der von Tokio.", en: "Sapporo's summer is cooler than Tokyo's.", ja: "さっぽろの なつは とうきょうより すずしいです。", zh: "札幌的夏天比东京凉爽。" } },
+          { id: "wk3", translations: { de: "Tokio hat eine höhere Luftfeuchtigkeit.", en: "Tokyo has higher humidity.", ja: "とうきょうのほうが しつどが たかいです。", zh: "东京的湿度更高。" } },
+          { id: "wk4", translations: { de: "Der Frühling ist die schönste Jahreszeit.", en: "Spring is the most beautiful season.", ja: "はるが いちばん きれいな きせつです。", zh: "春天是最美的季节。" } },
+          { id: "wk5", translations: { de: "Sapporo ist eine der schneereichsten Städte Japans.", en: "Sapporo is one of the snowiest cities in Japan.", ja: "さっぽろは にほんで いちばん ゆきが おおい まちの ひとつです。", zh: "札幌是日本雪最多的城市之一。" } },
+          { id: "wk6", translations: { de: "Der Winter ist die kälteste Jahreszeit.", en: "Winter is the coldest season.", ja: "ふゆが いちばん さむい きせつです。", zh: "冬天是最冷的季节。" } },
+          { id: "wk7", translations: { de: "Heute ist es wärmer als gestern.", en: "Today is warmer than yesterday.", ja: "きょうは きのうより あたたかいです。", zh: "今天比昨天暖和。" } },
+          { id: "wk8", translations: { de: "Dieser Taifun ist stärker als der letzte.", en: "This typhoon is stronger than the last one.", ja: "この たいふうは まえのより つよいです。", zh: "这次台风比上次更强。" } },
+          { id: "wk9", translations: { de: "Der Herbst ist nicht so heiß wie der Sommer.", en: "Autumn isn't as hot as summer.", ja: "あきは なつほど あつくないです。", zh: "秋天没有夏天热。" } },
+          { id: "wk10", translations: { de: "Morgen wird es wahrscheinlich windiger.", en: "It will probably be windier tomorrow.", ja: "あしたは たぶん かぜが つよく なるでしょう。", zh: "明天可能风会更大。" } }
+        ]
+      }
+    ]
   },
   pronunciation: {
     ja: {

@@ -118,7 +118,50 @@ export const topicSchool: TopicLesson = {
         { id: "g5", translations: { ja: "じゅぎょうちゅうに ねては いけません。", en: "You must not sleep during class. (prohibition)", de: "Man darf während des Unterrichts nicht schlafen. (Verbot)", zh: "上课时不可以睡觉。（禁止）" } },
         { id: "g6", translations: { ja: "としょかんで はなしては いけません。", en: "You must not talk in the library. (prohibition)", de: "Man darf in der Bibliothek nicht sprechen. (Verbot)", zh: "不可以在图书馆说话。（禁止）" } }
       ]
+    },
+    de: {
+      title: { de: "Trennbare Verben: eine Einführung", en: "Separable Verbs: An Introduction", ja: "ぶんりどうし：にゅうもん", zh: "可分动词：入门" },
+      explanation: {
+        de: "Viele deutsche Verben haben ein trennbares Präfix (auf-, an-, mit-, ab-, vor- usw.). Im Präsens und Imperativ wandert das Präfix ans Satzende: aufpassen → Ich passe im Unterricht auf. Im Infinitiv bleibt das Verb zusammen: Ich möchte gut aufpassen. Der Wortakzent liegt immer auf dem Präfix.",
+        en: "Many German verbs have a separable prefix (auf-, an-, mit-, ab-, vor-, etc.). In the present tense and imperative, the prefix moves to the end of the sentence: aufpassen (to pay attention) → Ich passe im Unterricht auf. In the infinitive, the verb stays together: Ich möchte gut aufpassen. The word stress always falls on the prefix.",
+        ja: "おおくの ドイツごの どうしには ぶんりする せっとうじ（auf-、an-、mit-、ab-、vor- など）が あります。げんざいけいや めいれいけいでは、せっとうじが ぶんの さいごに いどうします：aufpassen → Ich passe im Unterricht auf。ふていしでは どうしは いっしょの ままです：Ich möchte gut aufpassen。ごの アクセントは いつも せっとうじに あります。",
+        zh: "许多德语动词带有可分离的前缀（auf-、an-、mit-、ab-、vor-等）。在现在时和命令式中，前缀会移到句末：aufpassen（专心）→ Ich passe im Unterricht auf。在不定式中，动词保持在一起：Ich möchte gut aufpassen。词重音总是落在前缀上。"
+      },
+      chunks: [
+        { id: "g1", translations: { de: "Ich passe im Unterricht auf.", en: "I pay attention in class. (aufpassen, separated)", ja: "じゅぎょうちゅうに きを つけます。（aufpassen、ぶんりした かたち）", zh: "我上课时专心听讲。（aufpassen，分离形式）" } },
+        { id: "g2", translations: { de: "Der Unterricht fängt um acht Uhr an.", en: "Class starts at eight o'clock. (anfangen, separated)", ja: "じゅぎょうは はちじに はじまります。（anfangen、ぶんりした かたち）", zh: "课程八点开始。（anfangen，分离形式）" } },
+        { id: "g3", translations: { de: "Wir hören um vier Uhr auf.", en: "We finish at four o'clock. (aufhören, separated)", ja: "よじに おわります。（aufhören、ぶんりした かたち）", zh: "我们四点结束。（aufhören，分离形式）" } },
+        { id: "g4", translations: { de: "Bring dein Buch mit!", en: "Bring your book! (mitbringen, imperative)", ja: "ほんを もってきて！（mitbringen、めいれいけい）", zh: "把书带来！（mitbringen，命令式）" } },
+        { id: "g5", translations: { de: "Ich gebe die Hausaufgabe ab.", en: "I hand in the homework. (abgeben, separated)", ja: "しゅくだいを だします。（abgeben、ぶんりした かたち）", zh: "我交作业。（abgeben，分离形式）" } },
+        { id: "g6", translations: { de: "Ich möchte mich gut vorbereiten.", en: "I want to prepare well. (vorbereiten, infinitive stays together)", ja: "よく じゅんびしたいです。（vorbereiten、ふていしは いっしょ）", zh: "我想好好准备。（vorbereiten，不定式保持完整）" } }
+      ]
     }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-trennbar",
+        title: { de: "Übung: Trennbare Verben", en: "Practice: Separable Verbs", ja: "れんしゅう：ぶんりどうし", zh: "练习：可分动词" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit trennbaren Verben.",
+          en: "Next, let's practice example sentences using separable verbs.",
+          ja: "つぎは、ぶんりどうしを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用可分动词的例句。"
+        },
+        lines: [
+          { id: "tv1", translations: { de: "Ich passe gut auf.", en: "I pay close attention.", ja: "しっかり きを つけます。", zh: "我很专心。" } },
+          { id: "tv2", translations: { de: "Die Prüfung fängt um neun Uhr an.", en: "The exam starts at nine o'clock.", ja: "テストは くじに はじまります。", zh: "考试九点开始。" } },
+          { id: "tv3", translations: { de: "Der Lehrer hört mit dem Unterricht auf.", en: "The teacher stops the class.", ja: "せんせいは じゅぎょうを おわります。", zh: "老师结束了课程。" } },
+          { id: "tv4", translations: { de: "Bring dein Heft mit!", en: "Bring your notebook!", ja: "ノートを もってきて！", zh: "把笔记本带来！" } },
+          { id: "tv5", translations: { de: "Ich gebe den Test ab.", en: "I hand in the test.", ja: "テストを だします。", zh: "我交考卷。" } },
+          { id: "tv6", translations: { de: "Wir bereiten uns auf die Prüfung vor.", en: "We prepare for the exam.", ja: "テストの じゅんびを します。", zh: "我们为考试做准备。" } },
+          { id: "tv7", translations: { de: "Der Schüler steht auf und antwortet.", en: "The student stands up and answers. (aufstehen)", ja: "がくせいは たちあがって こたえます。（aufstehen）", zh: "学生站起来回答。（aufstehen）" } },
+          { id: "tv8", translations: { de: "Ich schreibe die Antwort auf.", en: "I write down the answer. (aufschreiben)", ja: "こたえを かきます。（aufschreiben）", zh: "我写下答案。（aufschreiben）" } },
+          { id: "tv9", translations: { de: "Sie macht das Buch zu.", en: "She closes the book. (zumachen)", ja: "かのじょは ほんを とじます。（zumachen）", zh: "她合上书。（zumachen）" } },
+          { id: "tv10", translations: { de: "Wir machen die Tür auf.", en: "We open the door. (aufmachen)", ja: "わたしたちは ドアを あけます。（aufmachen）", zh: "我们打开门。（aufmachen）" } }
+        ]
+      }
+    ]
   },
   pronunciation: {
     ja: {

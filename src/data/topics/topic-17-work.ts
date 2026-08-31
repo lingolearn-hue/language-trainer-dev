@@ -117,7 +117,50 @@ export const topicWork: TopicLesson = {
         { id: "g5", translations: { ja: "しごとが おわって、いえに かえります。", en: "Work finishes, then I go home.", de: "Die Arbeit ist zu Ende, dann gehe ich nach Hause.", zh: "工作结束后，回家。" } },
         { id: "g6", translations: { ja: "つかれて、はやく ねます。", en: "I'm tired, so I go to sleep early. (て-form expressing reason)", de: "Ich bin müde, also gehe ich früh schlafen. (て-Form als Grundangabe)", zh: "因为累了，所以早点睡觉。（て形表示原因）" } }
       ]
+    },
+    de: {
+      title: { de: "Nominativ und Akkusativ: eine Einführung", en: "Nominative and Accusative: An Introduction", ja: "しゅかく と たいかく：にゅうもん", zh: "主格与宾格：入门" },
+      explanation: {
+        de: "Der Nominativ markiert das Subjekt eines Satzes (wer/was handelt): der Chef, die Kollegin, das Projekt. Der Akkusativ markiert das direkte Objekt (wen/was betrifft die Handlung): Ich sehe den Chef. Nur bei maskulinen Nomen ändert sich der Artikel (der → den, ein → einen); feminine, neutrale und Plural-Artikel bleiben im Akkusativ unverändert.",
+        en: "The nominative marks the subject of a sentence (who/what is doing the action): der Chef, die Kollegin, das Projekt. The accusative marks the direct object (who/what the action affects): Ich sehe den Chef (I see the boss). Only masculine nouns change their article (der → den, ein → einen); feminine, neuter, and plural articles stay the same in the accusative.",
+        ja: "しゅかくは ぶんの しゅご（だれが／なにが する か）を しめします：der Chef、die Kollegin、das Projekt。たいかくは ちょくせつもくてきご（だれを／なにを する か）を しめします：Ich sehe den Chef（じょうしを みます）。だんせいめいしだけ かんしが かわります（der → den、ein → einen）。じょせい・ちゅうせい・ふくすうの かんしは たいかくでも かわりません。",
+        zh: "主格标记句子的主语（谁/什么在做动作）：der Chef、die Kollegin、das Projekt。宾格标记直接宾语（动作影响谁/什么）：Ich sehe den Chef（我看见老板）。只有阳性名词的冠词会变化（der → den，ein → einen）；阴性、中性和复数冠词在宾格中保持不变。"
+      },
+      chunks: [
+        { id: "g1", translations: { de: "Der Chef ist streng.", en: "The boss is strict. (nominative, subject)", ja: "しゃちょうは きびしいです。（しゅかく、しゅご）", zh: "老板很严格。（主格，主语）" } },
+        { id: "g2", translations: { de: "Ich sehe den Chef.", en: "I see the boss. (accusative, der → den)", ja: "しゃちょうを みます。（たいかく、der → den）", zh: "我看见老板。（宾格，der → den）" } },
+        { id: "g3", translations: { de: "Die Kollegin hilft mir.", en: "The coworker helps me. (nominative, feminine — unchanged)", ja: "どうりょうが てつだって くれます。（しゅかく、じょせい——へんかなし）", zh: "同事帮助我。（主格，阴性——不变）" } },
+        { id: "g4", translations: { de: "Ich sehe die Kollegin.", en: "I see the coworker. (accusative, feminine — unchanged)", ja: "どうりょうを みます。（たいかく、じょせい——へんかなし）", zh: "我看见同事。（宾格，阴性——不变）" } },
+        { id: "g5", translations: { de: "Ich schreibe eine E-Mail.", en: "I write an email. (accusative, eine — unchanged)", ja: "メールを かきます。（たいかく、eine——へんかなし）", zh: "我写邮件。（宾格，eine——不变）" } },
+        { id: "g6", translations: { de: "Ich habe einen Kollegen getroffen.", en: "I met a coworker. (accusative, ein → einen)", ja: "どうりょうに あいました。（たいかく、ein → einen）", zh: "我遇到了一个同事。（宾格，ein → einen）" } }
+      ]
     }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-akkusativ",
+        title: { de: "Übung: Nominativ und Akkusativ", en: "Practice: Nominative and Accusative", ja: "れんしゅう：しゅかく と たいかく", zh: "练习：主格与宾格" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Nominativ und Akkusativ.",
+          en: "Next, let's practice example sentences using nominative and accusative.",
+          ja: "つぎは、しゅかくと たいかくを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用主格和宾格的例句。"
+        },
+        lines: [
+          { id: "ak1", translations: { de: "Der Kollege ist nett.", en: "The coworker is nice. (nominative)", ja: "どうりょうは しんせつです。（しゅかく）", zh: "同事很友善。（主格）" } },
+          { id: "ak2", translations: { de: "Ich sehe den Kollegen.", en: "I see the coworker. (accusative, der → den)", ja: "どうりょうを みます。（たいかく、der → den）", zh: "我看见同事。（宾格，der → den）" } },
+          { id: "ak3", translations: { de: "Die Firma ist groß.", en: "The company is big. (nominative, feminine)", ja: "かいしゃは おおきいです。（しゅかく、じょせい）", zh: "公司很大。（主格，阴性）" } },
+          { id: "ak4", translations: { de: "Ich mag die Firma.", en: "I like the company. (accusative, feminine — unchanged)", ja: "かいしゃが すきです。（たいかく、じょせい——へんかなし）", zh: "我喜欢这家公司。（宾格，阴性——不变）" } },
+          { id: "ak5", translations: { de: "Das Projekt ist wichtig.", en: "The project is important. (nominative, neuter)", ja: "プロジェクトは じゅうようです。（しゅかく、ちゅうせい）", zh: "项目很重要。（主格，中性）" } },
+          { id: "ak6", translations: { de: "Wir beginnen das Projekt.", en: "We start the project. (accusative, neuter — unchanged)", ja: "プロジェクトを はじめます。（たいかく、ちゅうせい——へんかなし）", zh: "我们开始这个项目。（宾格，中性——不变）" } },
+          { id: "ak7", translations: { de: "Der Chef schreibt einen Bericht.", en: "The boss writes a report. (accusative, ein → einen)", ja: "しゃちょうは レポートを かきます。（たいかく、ein → einen）", zh: "老板写报告。（宾格，ein → einen）" } },
+          { id: "ak8", translations: { de: "Ich habe eine E-Mail bekommen.", en: "I received an email. (accusative, eine — unchanged)", ja: "メールを もらいました。（たいかく、eine——へんかなし）", zh: "我收到了一封邮件。（宾格，eine——不变）" } },
+          { id: "ak9", translations: { de: "Die Sekretärin ruft den Chef an.", en: "The secretary calls the boss. (nominative subject + accusative object)", ja: "ひしょが しゃちょうに でんわします。（しゅかくの しゅご + たいかくの もくてきご）", zh: "秘书给老板打电话。（主格主语 + 宾格宾语）" } },
+          { id: "ak10", translations: { de: "Ich brauche einen Computer.", en: "I need a computer. (accusative, ein → einen)", ja: "パソコンが ひつようです。（たいかく、ein → einen）", zh: "我需要一台电脑。（宾格，ein → einen）" } }
+        ]
+      }
+    ]
   },
   pronunciation: {
     ja: {

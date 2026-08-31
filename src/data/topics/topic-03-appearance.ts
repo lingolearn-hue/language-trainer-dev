@@ -959,6 +959,32 @@ export const topicAppearance: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-adjektive",
+        title: { de: "Übung: Adjektive", en: "Practice: Adjectives", ja: "れんしゅう：けいようし", zh: "练习：形容词" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Adjektiven.",
+          en: "Next, let's practice example sentences using adjectives.",
+          ja: "つぎは、けいようしを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用形容词的例句。"
+        },
+        lines: [
+          { id: "a1", translations: { de: "Er ist groß.", en: "He is tall. (predicate, unchanged)", ja: "かれは せが たかいです。（じゅつご、へんかなし）", zh: "他个子高。（谓语，不变化）" } },
+          { id: "a2", translations: { de: "Sie ist dünn.", en: "She is thin. (predicate, unchanged)", ja: "かのじょは やせて います。（じゅつご、へんかなし）", zh: "她很瘦。（谓语，不变化）" } },
+          { id: "a3", translations: { de: "Das ist ein großer Mann.", en: "That is a tall man. (masculine, -er)", ja: "あれは せの たかい おとこの ひとです。（だんせいけい、-er）", zh: "那是一个高个子男人。（阳性，-er）" } },
+          { id: "a4", translations: { de: "Das ist eine schlanke Frau.", en: "That is a slender woman. (feminine, -e)", ja: "あれは ほっそりした おんなの ひとです。（じょせいけい、-e）", zh: "那是一个苗条的女人。（阴性，-e）" } },
+          { id: "a5", translations: { de: "Das ist ein kleines Kind.", en: "That is a small child. (neuter, -es)", ja: "あれは ちいさい こどもです。（ちゅうせいけい、-es）", zh: "那是一个小孩。（中性，-es）" } },
+          { id: "a6", translations: { de: "Er trägt eine auffällige Brille.", en: "He wears eye-catching glasses. (feminine, -e)", ja: "かれは めだつ めがねを かけて います。（じょせいけい、-e）", zh: "他戴着一副显眼的眼镜。（阴性，-e）" } },
+          { id: "a7", translations: { de: "Sie hat einen kräftigen Körperbau.", en: "She has a sturdy build. (masculine, -en)", ja: "かのじょは がっちりした たいけいです。（だんせいけい、-en）", zh: "她体格健壮。（阳性，-en）" } },
+          { id: "a8", translations: { de: "Das ist ein freundlicher Mensch.", en: "That is a friendly person. (masculine, -er)", ja: "あれは しんせつそうな ひとです。（だんせいけい、-er）", zh: "那是一个亲切的人。（阳性，-er）" } },
+          { id: "a9", translations: { de: "Die Person am Ausgang ist jung.", en: "The person at the exit is young. (predicate, unchanged)", ja: "でぐちの ひとは わかいです。（じゅつご、へんかなし）", zh: "出口那个人很年轻。（谓语，不变化）" } },
+          { id: "a10", translations: { de: "Das ist eine energisch wirkende Person.", en: "That is an energetic-looking person. (feminine, -e)", ja: "あれは げんきそうな ひとです。（じょせいけい、-e）", zh: "那是一个看起来很有活力的人。（阴性，-e）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {

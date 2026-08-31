@@ -151,6 +151,32 @@ export const topicFood: TopicLesson = {
     },
   },
 
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-praesens",
+        title: { de: "Übung: Präsens", en: "Practice: Present Tense", ja: "れんしゅう：げんざいけい", zh: "练习：现在时" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze im Präsens.",
+          en: "Next, let's practice example sentences in the present tense.",
+          ja: "つぎは、げんざいけいを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用现在时的例句。"
+        },
+        lines: [
+          { id: "pr1", translations: { de: "Ich esse jeden Tag Brot.", en: "I eat bread every day. (regular ich-form)", ja: "わたしは まいにち パンを たべます。（きそく：ich-form）", zh: "我每天吃面包。（规则ich形）" } },
+          { id: "pr2", translations: { de: "Er isst gern Fisch.", en: "He likes to eat fish. (irregular: essen → isst)", ja: "かれは さかなを たべるのが すきです。（ふきそく：essen → isst）", zh: "他喜欢吃鱼。（不规则：essen → isst）" } },
+          { id: "pr3", translations: { de: "Wir trinken Wasser.", en: "We drink water. (regular wir-form)", ja: "わたしたちは みずを のみます。（きそく：wir-form）", zh: "我们喝水。（规则wir形）" } },
+          { id: "pr4", translations: { de: "Du bestellst die Suppe.", en: "You order the soup. (regular du-form)", ja: "あなたは スープを ちゅうもんします。（きそく：du-form）", zh: "你点了汤。（规则du形）" } },
+          { id: "pr5", translations: { de: "Sie macht das Frühstück.", en: "She prepares breakfast. (regular sie-form)", ja: "かのじょは あさごはんを つくります。（きそく：sie-form）", zh: "她准备早餐。（规则sie形）" } },
+          { id: "pr6", translations: { de: "Ich möchte Reis essen.", en: "I would like to eat rice. (möchten + infinitive)", ja: "わたしは ごはんを たべたいです。（möchten + ふていし）", zh: "我想吃米饭。（möchten + 不定式）" } },
+          { id: "pr7", translations: { de: "Wir bezahlen im Restaurant.", en: "We pay at the restaurant. (regular wir-form)", ja: "わたしたちは レストランで はらいます。（きそく：wir-form）", zh: "我们在餐厅付款。（规则wir形）" } },
+          { id: "pr8", translations: { de: "Er trinkt gern Tee.", en: "He likes to drink tea. (regular er-form)", ja: "かれは おちゃを のむのが すきです。（きそく：er-form）", zh: "他喜欢喝茶。（规则er形）" } },
+          { id: "pr9", translations: { de: "Möchtest du Nachtisch?", en: "Would you like dessert? (möchten, question)", ja: "デザートを たべたいですか？（möchten、しつもん）", zh: "你想吃甜点吗？（möchten，疑问句）" } },
+          { id: "pr10", translations: { de: "Ich esse Gemüse und Obst.", en: "I eat vegetables and fruit. (regular ich-form)", ja: "わたしは やさいと くだものを たべます。（きそく：ich-form）", zh: "我吃蔬菜和水果。（规则ich形）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: { ja: "はつおんの れんしゅう", zh: "发音练习", de: "Aussprachetraining", en: "Pronunciation Practice" },

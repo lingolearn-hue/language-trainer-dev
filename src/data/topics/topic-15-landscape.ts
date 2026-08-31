@@ -116,6 +116,23 @@ export const topicLandscape: TopicLesson = {
         { id: "g5", translations: { ja: "この みずうみは あの みずうみほど おおきくないです。", en: "This lake isn't as big as that lake. (negative comparison: ほど〜ない)", de: "Dieser See ist nicht so groß wie jener See. (negativer Vergleich: ほど〜ない)", zh: "这个湖没有那个湖大。（否定比较：ほど〜ない）" } },
         { id: "g6", translations: { ja: "この みちが いちばん らくです。", en: "This path is the easiest. (superlative: いちばん)", de: "Dieser Weg ist der einfachste. (Superlativ: いちばん)", zh: "这条路最轻松。（最高级：いちばん）" } }
       ]
+    },
+    de: {
+      title: { de: "Komparativ und Superlativ", en: "Comparative and Superlative", ja: "ひかくきゅう と さいじょうきゅう", zh: "比较级与最高级" },
+      explanation: {
+        de: "Der Komparativ vergleicht zwei Dinge: Adjektiv + -er + als (Der Berg ist ruhiger als das Meer). Der Superlativ hebt eines unter mehreren hervor: am + Adjektiv + -sten (Der Fuji ist am höchsten) oder der/die/das + Adjektiv + -ste + Nomen (der höchste Berg). Manche Adjektive ändern dabei den Stammvokal (hoch → höher → am höchsten).",
+        en: "The comparative compares two things: adjective + -er + als (The mountain is quieter than the sea). The superlative picks out one among several: am + adjective + -sten (Mt. Fuji is the tallest) or der/die/das + adjective + -ste + noun (the tallest mountain). Some adjectives change their stem vowel (hoch → höher → am höchsten).",
+        ja: "ひかくきゅうは ふたつを くらべます：けいようし + -er + als（やまは うみより しずかです）。さいじょうきゅうは いくつかの なかで ひとつを えらびます：am + けいようし + -sten（ふじさんが いちばん たかいです）または der/die/das + けいようし + -ste + めいし（いちばん たかい やま）。いくつかの けいようしは ごかんの ぼいんが かわります（hoch → höher → am höchsten）。",
+        zh: "比较级用于比较两个事物：形容词+-er+als（山比海更安静）。最高级用于在多个中选出一个：am+形容词+-sten（富士山最高）或der/die/das+形容词+-ste+名词（最高的山）。有些形容词会改变词干元音（hoch → höher → am höchsten）。"
+      },
+      chunks: [
+        { id: "g1", translations: { de: "Der Berg ist ruhiger als das Meer.", en: "The mountain is quieter than the sea. (comparative: -er + als)", ja: "やまは うみより しずかです。（ひかくきゅう：-er + als）", zh: "山比海更安静。（比较级：-er + als）" } },
+        { id: "g2", translations: { de: "Das Meer hat die schönere Aussicht.", en: "The sea has the prettier view. (comparative, attributive)", ja: "うみのほうが けしきが きれいです。（ひかくきゅう、しゅうしょくご）", zh: "海边的风景更美。（比较级，定语形式）" } },
+        { id: "g3", translations: { de: "Was mögen Sie lieber, Berge oder Meer?", en: "Which do you like more, mountains or the sea? (comparative of gern: lieber)", ja: "やまと うみ、どちらが すきですか？（gern の ひかくきゅう：lieber）", zh: "山和海，你更喜欢哪个？（gern的比较级：lieber）" } },
+        { id: "g4", translations: { de: "Der Fuji ist der höchste Berg in Japan.", en: "Mt. Fuji is the tallest mountain in Japan. (superlative, attributive)", ja: "ふじさんは にほんで いちばん たかい やまです。（さいじょうきゅう、しゅうしょくご）", zh: "富士山是日本最高的山。（最高级，定语形式）" } },
+        { id: "g5", translations: { de: "Dieser See ist nicht so groß wie jener See.", en: "This lake isn't as big as that lake. (negative comparison: nicht so ... wie)", ja: "この みずうみは あの みずうみほど おおきくないです。（ひていの ひかく：nicht so ... wie）", zh: "这个湖没有那个湖大。（否定比较：nicht so ... wie）" } },
+        { id: "g6", translations: { de: "Dieser Weg ist am einfachsten.", en: "This path is the easiest. (superlative: am -sten)", ja: "この みちが いちばん らくです。（さいじょうきゅう：am -sten）", zh: "这条路最轻松。（最高级：am -sten）" } }
+      ]
     }
   },
   pronunciation: {
@@ -225,6 +242,52 @@ export const topicLandscape: TopicLesson = {
           { id: "h8", translations: { ja: "たにの けしきは やまほど うつくしくないです。", en: "The valley's scenery isn't as beautiful as the mountain's.", de: "Die Aussicht des Tals ist nicht so schön wie die des Bergs.", zh: "山谷的风景没有山上美。" } },
           { id: "h9", translations: { ja: "でんしゃは ひこうきほど はやくないです。", en: "The train isn't as fast as the airplane.", de: "Der Zug ist nicht so schnell wie das Flugzeug.", zh: "电车没有飞机快。" } },
           { id: "h10", translations: { ja: "ことしの ふゆは きょねんほど さむくないです。", en: "This winter isn't as cold as last year.", de: "Dieser Winter ist nicht so kalt wie letztes Jahr.", zh: "今年冬天没有去年冷。" } }
+        ]
+      }
+    ],
+    de: [
+      {
+        id: "grammar-drill-komparativ",
+        title: { de: "Übung: Komparativ", en: "Practice: Comparative", ja: "れんしゅう：ひかくきゅう", zh: "练习：比较级" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze im Komparativ.",
+          en: "Next, let's practice example sentences using the comparative.",
+          ja: "つぎは、ひかくきゅうを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用比较级的例句。"
+        },
+        lines: [
+          { id: "k1", translations: { de: "Der Berg ist höher als das Meer.", en: "The mountain is higher than the sea.", ja: "やまは うみより たかいです。", zh: "山比海更高。" } },
+          { id: "k2", translations: { de: "Der Fluss ist länger als der See.", en: "The river is longer than the lake.", ja: "かわは みずうみより ながいです。", zh: "河流比湖更长。" } },
+          { id: "k3", translations: { de: "Der Wald ist größer als der Park.", en: "The forest is bigger than the park.", ja: "もりは こうえんより おおきいです。", zh: "森林比公园更大。" } },
+          { id: "k4", translations: { de: "Die Insel ist kleiner als das Tal.", en: "The island is smaller than the valley.", ja: "しまは たにより ちいさいです。", zh: "岛屿比山谷更小。" } },
+          { id: "k5", translations: { de: "Der Sommer ist heißer als der Winter.", en: "Summer is hotter than winter.", ja: "なつは ふゆより あついです。", zh: "夏天比冬天更热。" } },
+          { id: "k6", translations: { de: "Dieser Weg ist kürzer als jener Weg.", en: "This path is shorter than that path.", ja: "この みちは あの みちより みじかいです。", zh: "这条路比那条路更短。" } },
+          { id: "k7", translations: { de: "Das Meer ist tiefer als der Fluss.", en: "The sea is deeper than the river.", ja: "うみは かわより ふかいです。", zh: "海比河更深。" } },
+          { id: "k8", translations: { de: "Heute Morgen ist es kälter als gestern.", en: "This morning is colder than yesterday.", ja: "けさは きのうより さむいです。", zh: "今天早上比昨天更冷。" } },
+          { id: "k9", translations: { de: "Der Zug ist schneller als der Bus.", en: "The train is faster than the bus.", ja: "でんしゃは バスより はやいです。", zh: "电车比公交车更快。" } },
+          { id: "k10", translations: { de: "Der Strand ist weitläufiger als die Insel.", en: "The beach is wider than the island.", ja: "はまは しまより ひろいです。", zh: "海滩比岛屿更宽阔。" } }
+        ]
+      },
+      {
+        id: "grammar-drill-superlativ",
+        title: { de: "Übung: Superlativ", en: "Practice: Superlative", ja: "れんしゅう：さいじょうきゅう", zh: "练习：最高级" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze im Superlativ.",
+          en: "Next, let's practice example sentences using the superlative.",
+          ja: "つぎは、さいじょうきゅうを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用最高级的例句。"
+        },
+        lines: [
+          { id: "sl1", translations: { de: "Der Fuji ist der höchste Berg in Japan.", en: "Mt. Fuji is the tallest mountain in Japan.", ja: "ふじさんは にほんで いちばん たかい やまです。", zh: "富士山是日本最高的山。" } },
+          { id: "sl2", translations: { de: "Das ist die schönste Aussicht.", en: "This is the most beautiful view.", ja: "これは いちばん うつくしい けしきです。", zh: "这是最美的风景。" } },
+          { id: "sl3", translations: { de: "Der Sommer ist die heißeste Jahreszeit.", en: "Summer is the hottest season.", ja: "なつが いちばん あつい きせつです。", zh: "夏天是最热的季节。" } },
+          { id: "sl4", translations: { de: "Jene Insel ist die kleinste.", en: "That island is the smallest.", ja: "あの しまが いちばん ちいさいです。", zh: "那个岛屿最小。" } },
+          { id: "sl5", translations: { de: "Dieser Weg ist der sicherste.", en: "This path is the safest.", ja: "この みちが いちばん あんぜんです。", zh: "这条路最安全。" } },
+          { id: "sl6", translations: { de: "Der Biwa-See ist der größte See Japans.", en: "Lake Biwa is the biggest lake in Japan.", ja: "びわこは にほんで いちばん おおきい みずうみです。", zh: "琵琶湖是日本最大的湖。" } },
+          { id: "sl7", translations: { de: "Jener Berg ist der gefährlichste.", en: "That mountain is the most dangerous.", ja: "あの やまが いちばん きけんです。", zh: "那座山最危险。" } },
+          { id: "sl8", translations: { de: "Heute Morgen war es am kältesten.", en: "This morning was the coldest.", ja: "けさが いちばん さむかったです。", zh: "今天早上最冷。" } },
+          { id: "sl9", translations: { de: "Dieses Reiseziel ist am beliebtesten.", en: "This travel destination is the most popular.", ja: "この たびさきが いちばん にんきです。", zh: "这个旅游目的地最受欢迎。" } },
+          { id: "sl10", translations: { de: "Er läuft am schnellsten.", en: "He runs the fastest.", ja: "かれが いちばん はやく はしります。", zh: "他跑得最快。" } }
         ]
       }
     ]

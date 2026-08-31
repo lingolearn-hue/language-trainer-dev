@@ -788,6 +788,32 @@ export const topicDirections: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-wechselpraep",
+        title: { de: "Übung: Wechselpräpositionen", en: "Practice: Two-Way Prepositions", ja: "れんしゅう：りょうよう ぜんちし", zh: "练习：双格介词" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Wechselpräpositionen.",
+          en: "Next, let's practice example sentences using two-way prepositions.",
+          ja: "つぎは、りょうよう ぜんちしを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用双格介词的例句。"
+        },
+        lines: [
+          { id: "wp1", translations: { de: "Die Karte ist auf dem Tisch.", en: "The map is on the table. (dative — fixed location)", ja: "ちずは テーブルの うえに あります。（よかく — きまった ばしょ）", zh: "地图在桌子上。（与格 — 固定位置）" } },
+          { id: "wp2", translations: { de: "Ich lege die Karte auf den Tisch.", en: "I put the map on the table. (accusative — motion)", ja: "ちずを テーブルの うえに おきます。（たいかく — うごき）", zh: "我把地图放在桌子上。（宾格 — 动作）" } },
+          { id: "wp3", translations: { de: "Die Ampel steht an der Kreuzung.", en: "The traffic light is at the intersection. (dative)", ja: "しんごうは こうさてんに あります。（よかく）", zh: "红绿灯在十字路口。（与格）" } },
+          { id: "wp4", translations: { de: "Geh an die Ecke!", en: "Go to the corner! (accusative — motion)", ja: "かどへ いって ください！（たいかく — うごき）", zh: "去拐角处！（宾格 — 动作）" } },
+          { id: "wp5", translations: { de: "Der Orientierungspunkt ist vor dem Gebäude.", en: "The landmark is in front of the building. (dative)", ja: "めじるしは たてものの まえに あります。（よかく）", zh: "地标在建筑物前面。（与格）" } },
+          { id: "wp6", translations: { de: "Stell dich vor die Tür!", en: "Stand in front of the door! (accusative — motion)", ja: "ドアの まえに たって ください！（たいかく — うごき）", zh: "站在门前面！（宾格 — 动作）" } },
+          { id: "wp7", translations: { de: "Das Café ist hinter dem Bahnhof.", en: "The café is behind the station. (dative)", ja: "きっさてんは えきの うしろに あります。（よかく）", zh: "咖啡馆在车站后面。（与格）" } },
+          { id: "wp8", translations: { de: "Geh hinter das Gebäude!", en: "Go behind the building! (accusative — motion)", ja: "たてものの うしろへ いって ください！（たいかく — うごき）", zh: "走到建筑物后面！（宾格 — 动作）" } },
+          { id: "wp9", translations: { de: "Der Laden ist neben der Kreuzung.", en: "The shop is next to the intersection. (dative)", ja: "みせは こうさてんの となりに あります。（よかく）", zh: "商店在十字路口旁边。（与格）" } },
+          { id: "wp10", translations: { de: "Setz dich zwischen uns!", en: "Sit down between us! (accusative — motion)", ja: "わたしたちの あいだに すわって ください！（たいかく — うごき）", zh: "坐在我们中间！（宾格 — 动作）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {

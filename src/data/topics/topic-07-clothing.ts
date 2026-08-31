@@ -788,6 +788,32 @@ export const topicClothing: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-demonstrativ",
+        title: { de: "Übung: dieser / das ... da", en: "Practice: This / That", ja: "れんしゅう：これ／それ", zh: "练习：这个／那个" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit dieser und da.",
+          en: "Next, let's practice example sentences using dieser and da.",
+          ja: "つぎは、dieser と da を つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用dieser和da的例句。"
+        },
+        lines: [
+          { id: "d1", translations: { de: "Dieser Mantel ist warm.", en: "This coat is warm. (masculine, dieser)", ja: "この コートは あたたかいです。（だんせいけい、dieser）", zh: "这件大衣很暖和。（阳性，dieser）" } },
+          { id: "d2", translations: { de: "Diese Hose ist eng.", en: "These pants are tight. (feminine, diese)", ja: "この ズボンは きついです。（じょせいけい、diese）", zh: "这条裤子很紧。（阴性，diese）" } },
+          { id: "d3", translations: { de: "Dieses Hemd ist modisch.", en: "This shirt is fashionable. (neuter, dieses)", ja: "この シャツは おしゃれです。（ちゅうせいけい、dieses）", zh: "这件衬衫很时髦。（中性，dieses）" } },
+          { id: "d4", translations: { de: "Die Schuhe da sind auffällig.", en: "Those shoes are eye-catching. (da for \"that\")", ja: "あの くつは はでです。（「あの」を あらわす da）", zh: "那双鞋很显眼。（da表示「那个」）" } },
+          { id: "d5", translations: { de: "Der Rock da ist locker.", en: "That skirt is loose. (da)", ja: "あの スカートは ゆるいです。（da）", zh: "那条裙子很宽松。（da）" } },
+          { id: "d6", translations: { de: "Dieser Hut passt gut.", en: "This hat fits well. (masculine, dieser)", ja: "この ぼうしは にあいます。（だんせいけい、dieser）", zh: "这顶帽子很合适。（阳性，dieser）" } },
+          { id: "d7", translations: { de: "Diese Handschuhe sind schlicht.", en: "These gloves are plain. (plural, diese)", ja: "この てぶくろは じみです。（ふくすう、diese）", zh: "这副手套很朴素。（复数，diese）" } },
+          { id: "d8", translations: { de: "Der Regenschirm da gehört mir.", en: "That umbrella belongs to me. (da)", ja: "あの かさは わたしの ものです。（da）", zh: "那把伞是我的。（da）" } },
+          { id: "d9", translations: { de: "Diese Krawatte steht dir gut.", en: "This tie looks good on you. (feminine, diese)", ja: "この ネクタイは にあって いますね。（じょせいけい、diese）", zh: "这条领带很适合你。（阴性，diese）" } },
+          { id: "d10", translations: { de: "Dieses Kleid ist zu klein.", en: "This dress is too small. (neuter, dieses)", ja: "この ドレスは ちいさすぎます。（ちゅうせいけい、dieses）", zh: "这条裙子太小了。（中性，dieses）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {

@@ -754,6 +754,32 @@ export const topicHome: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-possessiv",
+        title: { de: "Übung: Possessivpronomen", en: "Practice: Possessives", ja: "れんしゅう：しょゆう だいめいし", zh: "练习：物主代词" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Possessivpronomen.",
+          en: "Next, let's practice example sentences using possessives.",
+          ja: "つぎは、しょゆう だいめいしを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用物主代词的例句。"
+        },
+        lines: [
+          { id: "po1", translations: { de: "Das ist mein Zimmer.", en: "This is my room. (mein)", ja: "これは わたしの へやです。（mein）", zh: "这是我的房间。（mein）" } },
+          { id: "po2", translations: { de: "Ist das deine Küche?", en: "Is that your kitchen? (deine)", ja: "それは あなたの だいどころですか？（deine）", zh: "那是你的厨房吗？（deine）" } },
+          { id: "po3", translations: { de: "Sein Bett ist sauber.", en: "His bed is clean. (sein)", ja: "かれの ベッドは きれいです。（sein）", zh: "他的床很干净。（sein）" } },
+          { id: "po4", translations: { de: "Ihr Garten ist groß.", en: "Her garden is big. (ihr)", ja: "かのじょの にわは おおきいです。（ihr）", zh: "她的院子很大。（ihr）" } },
+          { id: "po5", translations: { de: "Unser Fenster ist hell.", en: "Our window is bright. (unser)", ja: "わたしたちの まどは あかるいです。（unser）", zh: "我们的窗户很明亮。（unser）" } },
+          { id: "po6", translations: { de: "Ist das euer Schlüssel?", en: "Is that your (plural) key? (euer)", ja: "それは あなたたちの かぎですか？（euer）", zh: "那是你们的钥匙吗？（euer）" } },
+          { id: "po7", translations: { de: "Ihr Kühlschrank ist praktisch.", en: "Their refrigerator is convenient. (ihr, plural)", ja: "かれらの れいぞうこは べんりです。（ihr、ふくすう）", zh: "他们的冰箱很方便。（ihr，复数）" } },
+          { id: "po8", translations: { de: "Haben Sie Ihren Spiegel gesehen?", en: "Have you seen your mirror? (Ihr, formal)", ja: "あなたの かがみを みましたか？（Ihr、ていねい）", zh: "您看到您的镜子了吗？（Ihr，礼貌）" } },
+          { id: "po9", translations: { de: "Meine Tür ist schmutzig.", en: "My door is dirty. (meine, feminine)", ja: "わたしの ドアは きたないです。（meine、じょせいけい）", zh: "我的门很脏。（meine，阴性）" } },
+          { id: "po10", translations: { de: "Sein Tisch ist eng.", en: "His table is cramped. (sein)", ja: "かれの テーブルは せまいです。（sein）", zh: "他的桌子很挤。（sein）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {

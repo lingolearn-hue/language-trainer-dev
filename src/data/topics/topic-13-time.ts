@@ -11,7 +11,8 @@ export const topicTime: TopicLesson = {
   topicName: {
     ja: "じかん",
     en: "Time",
-    de: "Zeit"
+    de: "Zeit",
+    zh: "时间"
   },
   vocab: [
     {
@@ -20,7 +21,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "じかん",
         en: "time",
-        de: "Zeit"
+        de: "Zeit",
+        zh: "时间"
       }
     },
     {
@@ -29,7 +31,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "よてい",
         en: "schedule, plan",
-        de: "Zeitplan"
+        de: "Zeitplan",
+        zh: "计划，日程"
       }
     },
     {
@@ -38,7 +41,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "かいぎ",
         en: "meeting",
-        de: "Besprechung"
+        de: "Besprechung",
+        zh: "会议"
       }
     },
     {
@@ -47,7 +51,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "やくそく",
         en: "promise, appointment",
-        de: "Verabredung"
+        de: "Verabredung",
+        zh: "约定"
       }
     },
     {
@@ -56,7 +61,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "しゅうまつ",
         en: "weekend",
-        de: "Wochenende"
+        de: "Wochenende",
+        zh: "周末"
       }
     },
     {
@@ -65,7 +71,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "へいじつ",
         en: "weekday",
-        de: "Wochentag"
+        de: "Wochentag",
+        zh: "平日"
       }
     },
     {
@@ -74,7 +81,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "ごぜん",
         en: "morning, AM",
-        de: "Vormittag"
+        de: "Vormittag",
+        zh: "上午"
       }
     },
     {
@@ -83,7 +91,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "ごご",
         en: "afternoon, PM",
-        de: "Nachmittag"
+        de: "Nachmittag",
+        zh: "下午"
       }
     },
     {
@@ -92,7 +101,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "いま",
         en: "now",
-        de: "jetzt"
+        de: "jetzt",
+        zh: "现在"
       }
     },
     {
@@ -101,7 +111,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "あとで",
         en: "later",
-        de: "später"
+        de: "später",
+        zh: "稍后"
       }
     },
     {
@@ -110,7 +121,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "きょう",
         en: "today (no particle)",
-        de: "heute (kein Partikel)"
+        de: "heute (kein Partikel)",
+        zh: "今天"
       }
     },
     {
@@ -119,7 +131,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "あした",
         en: "tomorrow (no particle)",
-        de: "morgen (kein Partikel)"
+        de: "morgen (kein Partikel)",
+        zh: "明天"
       }
     },
     {
@@ -128,7 +141,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "きのう",
         en: "yesterday (no particle)",
-        de: "gestern (kein Partikel)"
+        de: "gestern (kein Partikel)",
+        zh: "昨天"
       }
     },
     {
@@ -137,7 +151,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "きめる",
         en: "to decide",
-        de: "entscheiden"
+        de: "entscheiden",
+        zh: "决定"
       }
     },
     {
@@ -146,7 +161,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "へんこうする",
         en: "to change (a plan)",
-        de: "ändern (Plan)"
+        de: "ändern (Plan)",
+        zh: "更改"
       }
     },
     {
@@ -155,7 +171,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "まにあう",
         en: "to be on time",
-        de: "rechtzeitig sein"
+        de: "rechtzeitig sein",
+        zh: "赶得上，来得及"
       }
     },
     {
@@ -164,7 +181,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "おくれる",
         en: "to be late",
-        de: "sich verspäten"
+        de: "sich verspäten",
+        zh: "迟到"
       }
     },
     {
@@ -173,7 +191,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "じゅんびする",
         en: "to prepare",
-        de: "vorbereiten"
+        de: "vorbereiten",
+        zh: "准备"
       }
     },
     {
@@ -182,7 +201,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "はじまる",
         en: "to begin (something)",
-        de: "beginnen"
+        de: "beginnen",
+        zh: "开始"
       }
     },
     {
@@ -191,7 +211,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "おわる",
         en: "to end",
-        de: "enden"
+        de: "enden",
+        zh: "结束"
       }
     },
     {
@@ -200,7 +221,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "いそがしい",
         en: "busy",
-        de: "beschäftigt"
+        de: "beschäftigt",
+        zh: "忙的"
       }
     },
     {
@@ -209,7 +231,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "ひま",
         en: "free (time available)",
-        de: "frei (Zeit verfügbar)"
+        de: "frei (Zeit verfügbar)",
+        zh: "空闲"
       }
     },
     {
@@ -218,7 +241,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "はやい",
         en: "early",
-        de: "früh"
+        de: "früh",
+        zh: "早的"
       }
     },
     {
@@ -227,7 +251,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "おそい",
         en: "late",
-        de: "spät"
+        de: "spät",
+        zh: "晚的"
       }
     },
     {
@@ -236,7 +261,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "みじかい",
         en: "short (duration)",
-        de: "kurz (Dauer)"
+        de: "kurz (Dauer)",
+        zh: "短的"
       }
     },
     {
@@ -245,7 +271,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "ながい",
         en: "long (duration)",
-        de: "lang (Dauer)"
+        de: "lang (Dauer)",
+        zh: "长的"
       }
     },
     {
@@ -254,7 +281,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "べんり",
         en: "convenient",
-        de: "praktisch"
+        de: "praktisch",
+        zh: "方便"
       }
     },
     {
@@ -263,7 +291,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "じゅうよう",
         en: "important",
-        de: "wichtig"
+        de: "wichtig",
+        zh: "重要"
       }
     },
     {
@@ -272,7 +301,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "つごうが いい",
         en: "convenient (for scheduling)",
-        de: "passend (zeitlich)"
+        de: "passend (zeitlich)",
+        zh: "方便（时间上）"
       }
     },
     {
@@ -281,7 +311,8 @@ export const topicTime: TopicLesson = {
       translations: {
         ja: "つごうが わるい",
         en: "inconvenient (for scheduling)",
-        de: "unpassend (zeitlich)"
+        de: "unpassend (zeitlich)",
+        zh: "不方便（时间上）"
       }
     }
   ],
@@ -289,7 +320,8 @@ export const topicTime: TopicLesson = {
     title: {
       ja: "かいわ：どうりょうと よていを たてる",
       en: "Dialogue A: Planning a Schedule",
-      de: "Dialog A: Einen Zeitplan erstellen"
+      de: "Dialog A: Einen Zeitplan erstellen",
+      zh: "会话：和同事制定日程"
     },
     lines: [
       {
@@ -298,7 +330,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "こんしゅうの よていを かくにんしましょう。",
           en: "Let's confirm this week's schedule.",
-          de: "Lass uns den Zeitplan für diese Woche bestätigen."
+          de: "Lass uns den Zeitplan für diese Woche bestätigen.",
+          zh: "我们来确认一下本周的日程吧。"
         }
       },
       {
@@ -307,7 +340,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "はい、げつようびは なにが ありますか？",
           en: "Okay, what's on Monday?",
-          de: "Gut, was ist am Montag?"
+          de: "Gut, was ist am Montag?",
+          zh: "好的，星期一有什么安排？"
         }
       },
       {
@@ -316,7 +350,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "げつようびに かいぎが あります。10じからです。",
           en: "There's a meeting on Monday. It starts at 10.",
-          de: "Am Montag gibt es eine Besprechung. Sie beginnt um 10 Uhr."
+          de: "Am Montag gibt es eine Besprechung. Sie beginnt um 10 Uhr.",
+          zh: "星期一有会议。从十点开始。"
         }
       },
       {
@@ -325,7 +360,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "わかりました。かようびは？",
           en: "Understood. What about Tuesday?",
-          de: "Verstanden. Und Dienstag?"
+          de: "Verstanden. Und Dienstag?",
+          zh: "明白了。星期二呢？"
         }
       },
       {
@@ -334,7 +370,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "かようびは とくに よていが ありません。",
           en: "There's nothing special planned for Tuesday.",
-          de: "Für Dienstag ist nichts Besonderes geplant."
+          de: "Für Dienstag ist nichts Besonderes geplant.",
+          zh: "星期二没有特别的安排。"
         }
       },
       {
@@ -343,7 +380,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "じゃあ、じゅんびの じかんに つかえますね。",
           en: "Then we can use it as time to prepare.",
-          de: "Dann können wir es zur Vorbereitung nutzen."
+          de: "Dann können wir es zur Vorbereitung nutzen.",
+          zh: "那可以用来做准备了呢。"
         }
       },
       {
@@ -352,7 +390,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "いいですね。すいようびに もういちど かいぎが あります。",
           en: "Good idea. There's another meeting on Wednesday.",
-          de: "Gute Idee. Am Mittwoch gibt es noch eine Besprechung."
+          de: "Gute Idee. Am Mittwoch gibt es noch eine Besprechung.",
+          zh: "好主意。星期三还有一次会议。"
         }
       },
       {
@@ -361,7 +400,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "なんじからですか？",
           en: "What time does it start?",
-          de: "Um wie viel Uhr beginnt sie?"
+          de: "Um wie viel Uhr beginnt sie?",
+          zh: "从几点开始？"
         }
       },
       {
@@ -370,7 +410,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "ごごの 2じからです。",
           en: "From 2 in the afternoon.",
-          de: "Ab 14 Uhr nachmittags."
+          de: "Ab 14 Uhr nachmittags.",
+          zh: "从下午两点开始。"
         }
       },
       {
@@ -379,7 +420,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "きんようびは いそがしいですか？",
           en: "Are you busy on Friday?",
-          de: "Bist du am Freitag beschäftigt?"
+          de: "Bist du am Freitag beschäftigt?",
+          zh: "星期五忙吗？"
         }
       },
       {
@@ -388,7 +430,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "はい、きんようびに おおきな かいぎが あります。",
           en: "Yes, there's a big meeting on Friday.",
-          de: "Ja, am Freitag gibt es eine große Besprechung."
+          de: "Ja, am Freitag gibt es eine große Besprechung.",
+          zh: "是的，星期五有一个大会议。"
         }
       },
       {
@@ -397,7 +440,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "じゅんびは いつしますか？",
           en: "When will we prepare?",
-          de: "Wann bereiten wir uns vor?"
+          de: "Wann bereiten wir uns vor?",
+          zh: "什么时候做准备？"
         }
       },
       {
@@ -406,7 +450,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "もくようびに じゅんびしましょう。",
           en: "Let's prepare on Thursday.",
-          de: "Lass uns am Donnerstag vorbereiten."
+          de: "Lass uns am Donnerstag vorbereiten.",
+          zh: "我们星期四做准备吧。"
         }
       },
       {
@@ -415,7 +460,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "わかりました。よろしく おねがいします。",
           en: "Understood. Thank you in advance.",
-          de: "Verstanden. Vielen Dank im Voraus."
+          de: "Verstanden. Vielen Dank im Voraus.",
+          zh: "明白了。拜托了。"
         }
       }
     ]
@@ -424,7 +470,8 @@ export const topicTime: TopicLesson = {
     title: {
       ja: "かいわ：ともだちと やくそくを する",
       en: "Dialogue B: Arranging a Meeting",
-      de: "Dialog B: Ein Treffen vereinbaren"
+      de: "Dialog B: Ein Treffen vereinbaren",
+      zh: "会话：和朋友约定见面"
     },
     lines: [
       {
@@ -433,7 +480,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "こんど いつ あえる？",
           en: "When can we meet next?",
-          de: "Wann können wir uns als Nächstes treffen?"
+          de: "Wann können wir uns als Nächstes treffen?",
+          zh: "下次什么时候能见面？"
         }
       },
       {
@@ -442,7 +490,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "しゅうまつは どう？",
           en: "How about the weekend?",
-          de: "Wie wäre es am Wochenende?"
+          de: "Wie wäre es am Wochenende?",
+          zh: "周末怎么样？"
         }
       },
       {
@@ -451,7 +500,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "どようびは つごうが わるいの。",
           en: "Saturday doesn't work for me.",
-          de: "Samstag passt mir nicht."
+          de: "Samstag passt mir nicht.",
+          zh: "星期六不方便。"
         }
       },
       {
@@ -460,7 +510,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "にちようびは どう？",
           en: "What about Sunday?",
-          de: "Und Sonntag?"
+          de: "Und Sonntag?",
+          zh: "星期天怎么样？"
         }
       },
       {
@@ -469,7 +520,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "にちようびなら だいじょうぶ！なんじが いい？",
           en: "Sunday works! What time is good?",
-          de: "Sonntag geht! Welche Uhrzeit passt dir?"
+          de: "Sonntag geht! Welche Uhrzeit passt dir?",
+          zh: "星期天可以！几点比较好？"
         }
       },
       {
@@ -478,7 +530,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "ごごの 3じは どう？",
           en: "How about 3 in the afternoon?",
-          de: "Wie wäre es um 15 Uhr nachmittags?"
+          de: "Wie wäre es um 15 Uhr nachmittags?",
+          zh: "下午三点怎么样？"
         }
       },
       {
@@ -487,7 +540,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "いいね。どこで あう？",
           en: "Sounds good. Where should we meet?",
-          de: "Klingt gut. Wo treffen wir uns?"
+          de: "Klingt gut. Wo treffen wir uns?",
+          zh: "好呀。在哪里见面？"
         }
       },
       {
@@ -496,7 +550,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "えきの まえは どう？",
           en: "How about in front of the station?",
-          de: "Wie wäre es vor dem Bahnhof?"
+          de: "Wie wäre es vor dem Bahnhof?",
+          zh: "车站前面怎么样？"
         }
       },
       {
@@ -505,7 +560,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "わかった。おくれないでね。",
           en: "Got it. Don't be late.",
-          de: "Verstanden. Sei nicht zu spät."
+          de: "Verstanden. Sei nicht zu spät.",
+          zh: "知道了。不要迟到哦。"
         }
       },
       {
@@ -514,7 +570,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "だいじょうぶ、はやめに いくよ。",
           en: "It's okay, I'll go early.",
-          de: "Kein Problem, ich komme früh."
+          de: "Kein Problem, ich komme früh.",
+          zh: "没问题，我会早点去的。"
         }
       },
       {
@@ -523,7 +580,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "もし へんこうが あったら れんらくして。",
           en: "If there's any change, let me know.",
-          de: "Falls sich etwas ändert, sag mir Bescheid."
+          de: "Falls sich etwas ändert, sag mir Bescheid.",
+          zh: "如果有变化的话，请联系我。"
         }
       },
       {
@@ -532,7 +590,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "うん、わかった。",
           en: "Yeah, got it.",
-          de: "Ja, verstanden."
+          de: "Ja, verstanden.",
+          zh: "嗯，知道了。"
         }
       },
       {
@@ -541,7 +600,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "たのしみに してるね！",
           en: "I'm looking forward to it!",
-          de: "Ich freue mich darauf!"
+          de: "Ich freue mich darauf!",
+          zh: "很期待呢！"
         }
       },
       {
@@ -550,7 +610,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "うん、にちようびに ね！",
           en: "Yeah, see you Sunday!",
-          de: "Ja, bis Sonntag!"
+          de: "Ja, bis Sonntag!",
+          zh: "嗯，星期天见！"
         }
       }
     ]
@@ -559,7 +620,8 @@ export const topicTime: TopicLesson = {
     title: {
       ja: "きらきら ぼし",
       en: "Twinkle Twinkle Little Star",
-      de: "Funkle, funkle kleiner Stern"
+      de: "Funkle, funkle kleiner Stern",
+      zh: "一闪一闪亮晶晶"
     },
     lines: [
       {
@@ -567,7 +629,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "きらきら ひかる",
           en: "Twinkle, twinkle, little star",
-          de: "Funkle, funkle, kleiner Stern"
+          de: "Funkle, funkle, kleiner Stern",
+          zh: "一闪一闪亮晶晶"
         }
       },
       {
@@ -575,7 +638,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "おそらの ほしよ",
           en: "How I wonder what you are",
-          de: "wie ich mich frage, was du bist"
+          de: "wie ich mich frage, was du bist",
+          zh: "满天都是小星星"
         }
       },
       {
@@ -583,7 +647,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "まちの うえに たかく",
           en: "Up above the world so high",
-          de: "hoch über der Welt"
+          de: "hoch über der Welt",
+          zh: "高高挂在天空中"
         }
       },
       {
@@ -591,7 +656,8 @@ export const topicTime: TopicLesson = {
         translations: {
           ja: "ダイヤモンドの ように",
           en: "Like a diamond in the sky",
-          de: "wie ein Diamant am Himmel"
+          de: "wie ein Diamant am Himmel",
+          zh: "好像许多小眼睛"
         }
       }
     ]
@@ -721,6 +787,32 @@ export const topicTime: TopicLesson = {
         }
       ]
     }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-zeitpraep",
+        title: { de: "Übung: Zeitpräpositionen", en: "Practice: Prepositions of Time", ja: "れんしゅう：じかんの ぜんちし", zh: "练习：时间介词" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Zeitpräpositionen.",
+          en: "Next, let's practice example sentences using prepositions of time.",
+          ja: "つぎは、じかんの ぜんちしを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用时间介词的例句。"
+        },
+        lines: [
+          { id: "zp1", translations: { de: "Um neun Uhr beginnt die Besprechung.", en: "The meeting starts at nine o'clock. (um + clock time)", ja: "くじに かいぎが はじまります。（um + じこく）", zh: "会议九点开始。（um + 具体时刻）" } },
+          { id: "zp2", translations: { de: "Am Montag habe ich eine Verabredung.", en: "I have an appointment on Monday. (am + day)", ja: "げつようびに やくそくが あります。（am + ようび）", zh: "星期一我有约。（am + 星期）" } },
+          { id: "zp3", translations: { de: "Am Vormittag habe ich Zeit.", en: "I have time in the morning. (am + part of day)", ja: "ごぜんちゅうは じかんが あります。（am + いちにちの じかんたい）", zh: "上午我有时间。（am + 一天中的时段）" } },
+          { id: "zp4", translations: { de: "Im Winter bin ich beschäftigt.", en: "I'm busy in winter. (im + season)", ja: "ふゆは いそがしいです。（im + きせつ）", zh: "冬天我很忙。（im + 季节）" } },
+          { id: "zp5", translations: { de: "Vor der Besprechung bereite ich mich vor.", en: "I prepare before the meeting. (vor + event)", ja: "かいぎの まえに じゅんびします。（vor + できごと）", zh: "会议之前我做准备。（vor + 事件）" } },
+          { id: "zp6", translations: { de: "Nach dem Zeitplan ruhe ich mich aus.", en: "After the schedule, I rest. (nach + noun)", ja: "よていの あとで やすみます。（nach + めいし）", zh: "日程结束后我休息。（nach + 名词）" } },
+          { id: "zp7", translations: { de: "Zwischen zwei und drei Uhr habe ich frei.", en: "I'm free between two and three o'clock. (zwischen ... und)", ja: "にじから さんじの あいだは ひまです。（zwischen ... und）", zh: "两点到三点之间我有空。（zwischen ... und）" } },
+          { id: "zp8", translations: { de: "Am Wochenende ändere ich meinen Plan.", en: "I'm changing my plan on the weekend. (am + weekend)", ja: "しゅうまつに よていを へんこうします。（am + しゅうまつ）", zh: "周末我要更改计划。（am + 周末）" } },
+          { id: "zp9", translations: { de: "Am Nachmittag beginnt der Unterricht.", en: "Class starts in the afternoon. (am + part of day)", ja: "ごごに じゅぎょうが はじまります。（am + いちにちの じかんたい）", zh: "下午课程开始。（am + 一天中的时段）" } },
+          { id: "zp10", translations: { de: "Nach der Arbeit bin ich frei.", en: "I'm free after work. (nach + noun)", ja: "しごとの あとは ひまです。（nach + めいし）", zh: "下班后我有空。（nach + 名词）" } }
+        ]
+      }
+    ]
   },
   pronunciation: {
     ja: {

@@ -11,7 +11,8 @@ export const topicTravel: TopicLesson = {
   topicName: {
     ja: "りょこう",
     en: "Travel",
-    de: "Reisen"
+    de: "Reisen",
+    zh: "旅行"
   },
   vocab: [
     {
@@ -20,7 +21,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "りょこう",
         en: "trip, journey",
-        de: "Reise"
+        de: "Reise",
+        zh: "旅行"
       }
     },
     {
@@ -29,7 +31,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "でんしゃ",
         en: "train",
-        de: "Zug"
+        de: "Zug",
+        zh: "电车"
       }
     },
     {
@@ -38,7 +41,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "ひこうき",
         en: "airplane",
-        de: "Flugzeug"
+        de: "Flugzeug",
+        zh: "飞机"
       }
     },
     {
@@ -47,7 +51,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "きっぷ",
         en: "ticket",
-        de: "Fahrkarte"
+        de: "Fahrkarte",
+        zh: "票"
       }
     },
     {
@@ -56,7 +61,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "スーツケース",
         en: "suitcase",
-        de: "Koffer"
+        de: "Koffer",
+        zh: "行李箱"
       }
     },
     {
@@ -65,7 +71,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "にもつ",
         en: "luggage",
-        de: "Gepäck"
+        de: "Gepäck",
+        zh: "行李"
       }
     },
     {
@@ -74,7 +81,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "えき",
         en: "station",
-        de: "Bahnhof"
+        de: "Bahnhof",
+        zh: "车站"
       }
     },
     {
@@ -83,7 +91,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "ホテル",
         en: "hotel",
-        de: "Hotel"
+        de: "Hotel",
+        zh: "酒店"
       }
     },
     {
@@ -92,7 +101,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "パスポート",
         en: "passport",
-        de: "Reisepass"
+        de: "Reisepass",
+        zh: "护照"
       }
     },
     {
@@ -101,7 +111,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "こっきょう",
         en: "border",
-        de: "Grenze"
+        de: "Grenze",
+        zh: "国境"
       }
     },
     {
@@ -110,7 +121,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "ガイドブック",
         en: "travel guidebook",
-        de: "Reiseführer"
+        de: "Reiseführer",
+        zh: "旅行指南"
       }
     },
     {
@@ -119,7 +131,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "とうちゃく",
         en: "arrival",
-        de: "Ankunft"
+        de: "Ankunft",
+        zh: "到达"
       }
     },
     {
@@ -128,7 +141,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "しゅっぱつ",
         en: "departure",
-        de: "Abfahrt"
+        de: "Abfahrt",
+        zh: "出发"
       }
     },
     {
@@ -137,7 +151,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "りょこうする",
         en: "to travel",
-        de: "reisen"
+        de: "reisen",
+        zh: "旅行"
       }
     },
     {
@@ -146,7 +161,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "よやくする",
         en: "to reserve, book",
-        de: "reservieren"
+        de: "reservieren",
+        zh: "预订"
       }
     },
     {
@@ -155,7 +171,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "しゅっぱつする",
         en: "to depart",
-        de: "abfahren"
+        de: "abfahren",
+        zh: "出发"
       }
     },
     {
@@ -164,7 +181,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "とうちゃくする",
         en: "to arrive",
-        de: "ankommen"
+        de: "ankommen",
+        zh: "到达"
       }
     },
     {
@@ -173,7 +191,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "にづくりする",
         en: "to pack",
-        de: "packen"
+        de: "packen",
+        zh: "打包行李"
       }
     },
     {
@@ -182,7 +201,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "とまる",
         en: "to stay overnight",
-        de: "übernachten"
+        de: "übernachten",
+        zh: "住宿，过夜"
       }
     },
     {
@@ -191,7 +211,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "チェックインする",
         en: "to check in",
-        de: "einchecken"
+        de: "einchecken",
+        zh: "办理入住"
       }
     },
     {
@@ -200,7 +221,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "はやい",
         en: "fast",
-        de: "schnell"
+        de: "schnell",
+        zh: "快的"
       }
     },
     {
@@ -209,7 +231,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "おそい",
         en: "slow",
-        de: "langsam"
+        de: "langsam",
+        zh: "慢的"
       }
     },
     {
@@ -218,7 +241,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "ちょくつう",
         en: "direct (no transfers)",
-        de: "direkt"
+        de: "direkt",
+        zh: "直达"
       }
     },
     {
@@ -227,7 +251,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "こんざつ",
         en: "crowded",
-        de: "überfüllt"
+        de: "überfüllt",
+        zh: "拥挤"
       }
     },
     {
@@ -236,7 +261,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "やすい",
         en: "cheap, affordable",
-        de: "günstig"
+        de: "günstig",
+        zh: "便宜的"
       }
     },
     {
@@ -245,7 +271,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "じかんどおり",
         en: "punctual, on time",
-        de: "pünktlich"
+        de: "pünktlich",
+        zh: "准时"
       }
     },
     {
@@ -254,7 +281,8 @@ export const topicTravel: TopicLesson = {
       translations: {
         ja: "ちえん",
         en: "delayed",
-        de: "verspätet"
+        de: "verspätet",
+        zh: "延误"
       }
     }
   ],
@@ -262,7 +290,8 @@ export const topicTravel: TopicLesson = {
     title: {
       ja: "かいわ：ホテルへの みちを きく",
       en: "Dialogue A: Asking for the Hotel",
-      de: "Dialog A: Nach dem Hotel fragen"
+      de: "Dialog A: Nach dem Hotel fragen",
+      zh: "会话：问路去酒店"
     },
     lines: [
       {
@@ -271,7 +300,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "すみません、さくらホテルへの みちを おしえてください。",
           en: "Excuse me, could you tell me the way to Sakura Hotel?",
-          de: "Entschuldigung, können Sie mir den Weg zum Sakura-Hotel zeigen?"
+          de: "Entschuldigung, können Sie mir den Weg zum Sakura-Hotel zeigen?",
+          zh: "不好意思，请告诉我去樱花酒店的路。"
         }
       },
       {
@@ -280,7 +310,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "ああ、それなら ここから ちかいですよ。",
           en: "Ah, that's close from here.",
-          de: "Ah, das ist von hier aus nah."
+          de: "Ah, das ist von hier aus nah.",
+          zh: "啊，那从这里很近哦。"
         }
       },
       {
@@ -289,7 +320,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "どう いけば いいですか？",
           en: "How should I go?",
-          de: "Wie soll ich gehen?"
+          de: "Wie soll ich gehen?",
+          zh: "该怎么走呢？"
         }
       },
       {
@@ -298,7 +330,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "この みちを まっすぐ いってください。",
           en: "Go straight along this road.",
-          de: "Gehen Sie diese Straße geradeaus."
+          de: "Gehen Sie diese Straße geradeaus.",
+          zh: "请沿着这条路直走。"
         }
       },
       {
@@ -307,7 +340,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "はい、それから？",
           en: "Okay, and then?",
-          de: "Gut, und dann?"
+          de: "Gut, und dann?",
+          zh: "好的，然后呢？"
         }
       },
       {
@@ -316,7 +350,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "えきの まえで みぎに まがってください。",
           en: "Turn right in front of the station.",
-          de: "Biegen Sie vor dem Bahnhof rechts ab."
+          de: "Biegen Sie vor dem Bahnhof rechts ab.",
+          zh: "请在车站前右转。"
         }
       },
       {
@@ -325,7 +360,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "えきの まえで みぎ、わかりました。",
           en: "Right in front of the station, understood.",
-          de: "Vor dem Bahnhof rechts, verstanden."
+          de: "Vor dem Bahnhof rechts, verstanden.",
+          zh: "车站前右转，明白了。"
         }
       },
       {
@@ -334,7 +370,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "ホテルは その さきに あります。",
           en: "The hotel is further ahead from there.",
-          de: "Das Hotel ist weiter voraus."
+          de: "Das Hotel ist weiter voraus.",
+          zh: "酒店就在那前面。"
         }
       },
       {
@@ -343,7 +380,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "あるいて どのくらい かかりますか？",
           en: "How long does it take on foot?",
-          de: "Wie lange dauert es zu Fuß?"
+          de: "Wie lange dauert es zu Fuß?",
+          zh: "走路要多久？"
         }
       },
       {
@@ -352,7 +390,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "じゅっぷんぐらいです。",
           en: "About ten minutes.",
-          de: "Etwa zehn Minuten."
+          de: "Etwa zehn Minuten.",
+          zh: "大约十分钟。"
         }
       },
       {
@@ -361,7 +400,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "タクシーで いった ほうが いいですか？",
           en: "Would it be better to go by taxi?",
-          de: "Wäre es besser, mit dem Taxi zu fahren?"
+          de: "Wäre es besser, mit dem Taxi zu fahren?",
+          zh: "坐出租车去比较好吗？"
         }
       },
       {
@@ -370,7 +410,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "いいえ、あるいても だいじょうぶですよ。",
           en: "No, walking is fine.",
-          de: "Nein, zu Fuß geht das gut."
+          de: "Nein, zu Fuß geht das gut.",
+          zh: "不用，走路也没问题。"
         }
       },
       {
@@ -379,7 +420,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "わかりました。ありがとうございます。",
           en: "Understood. Thank you.",
-          de: "Verstanden. Vielen Dank."
+          de: "Verstanden. Vielen Dank.",
+          zh: "明白了。谢谢您。"
         }
       },
       {
@@ -388,7 +430,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "どういたしまして。よい たびを！",
           en: "You're welcome. Have a good trip!",
-          de: "Gern geschehen. Gute Reise!"
+          de: "Gern geschehen. Gute Reise!",
+          zh: "不客气。祝旅途愉快！"
         }
       }
     ]
@@ -397,7 +440,8 @@ export const topicTravel: TopicLesson = {
     title: {
       ja: "かいわ：りょこうの けいかくを たてる",
       en: "Dialogue B: Planning a Trip",
-      de: "Dialog B: Eine Reise planen"
+      de: "Dialog B: Eine Reise planen",
+      zh: "会话：制定旅行计划"
     },
     lines: [
       {
@@ -406,7 +450,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "なつやすみに どこかへ りょこうしない？",
           en: "Should we travel somewhere during summer vacation?",
-          de: "Sollen wir in den Sommerferien irgendwohin reisen?"
+          de: "Sollen wir in den Sommerferien irgendwohin reisen?",
+          zh: "暑假要不要去哪里旅行？"
         }
       },
       {
@@ -415,7 +460,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "いいね！どこへ いきたい？",
           en: "Sounds good! Where do you want to go?",
-          de: "Klingt gut! Wohin möchtest du?"
+          de: "Klingt gut! Wohin möchtest du?",
+          zh: "好啊！想去哪里？"
         }
       },
       {
@@ -424,7 +470,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "おきなわへ いきたいな。",
           en: "I'd like to go to Okinawa.",
-          de: "Ich möchte nach Okinawa."
+          de: "Ich möchte nach Okinawa.",
+          zh: "我想去冲绳。"
         }
       },
       {
@@ -433,7 +480,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "ひこうきで いく？でんしゃで いく？",
           en: "Should we go by plane or by train?",
-          de: "Fliegen wir oder fahren wir mit dem Zug?"
+          de: "Fliegen wir oder fahren wir mit dem Zug?",
+          zh: "坐飞机去还是坐电车去？"
         }
       },
       {
@@ -442,7 +490,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "ひこうきの ほうが はやいよ。",
           en: "The plane is faster.",
-          de: "Das Flugzeug ist schneller."
+          de: "Das Flugzeug ist schneller.",
+          zh: "飞机比较快哦。"
         }
       },
       {
@@ -451,7 +500,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "じゃあ、きっぷを よやくするね。",
           en: "Then I'll reserve the tickets.",
-          de: "Dann reserviere ich die Tickets."
+          de: "Dann reserviere ich die Tickets.",
+          zh: "那我来预订机票吧。"
         }
       },
       {
@@ -460,7 +510,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "ホテルも よやくしたほうが いいね。",
           en: "We should reserve a hotel too.",
-          de: "Wir sollten auch ein Hotel reservieren."
+          de: "Wir sollten auch ein Hotel reservieren.",
+          zh: "酒店也预订一下比较好呢。"
         }
       },
       {
@@ -469,7 +520,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "うみの ちかくの ホテルが いいな。",
           en: "A hotel near the sea would be nice.",
-          de: "Ein Hotel in Meeresnähe wäre schön."
+          de: "Ein Hotel in Meeresnähe wäre schön.",
+          zh: "靠近海边的酒店比较好。"
         }
       },
       {
@@ -478,7 +530,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "なんにち とまる よてい？",
           en: "How many days are we planning to stay?",
-          de: "Wie viele Tage sind wir geplant zu bleiben?"
+          de: "Wie viele Tage sind wir geplant zu bleiben?",
+          zh: "打算住几天？"
         }
       },
       {
@@ -487,7 +540,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "よっかぐらいは とまりたいな。",
           en: "I'd like to stay about four days.",
-          de: "Ich möchte etwa vier Tage bleiben."
+          de: "Ich möchte etwa vier Tage bleiben.",
+          zh: "想住四天左右。"
         }
       },
       {
@@ -496,7 +550,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "にもつは なにを もっていく？",
           en: "What luggage should we bring?",
-          de: "Welches Gepäck sollen wir mitnehmen?"
+          de: "Welches Gepäck sollen wir mitnehmen?",
+          zh: "要带什么行李？"
         }
       },
       {
@@ -505,7 +560,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "スーツケースと ガイドブックだね。",
           en: "A suitcase and a guidebook.",
-          de: "Einen Koffer und einen Reiseführer."
+          de: "Einen Koffer und einen Reiseführer.",
+          zh: "行李箱和旅行指南吧。"
         }
       },
       {
@@ -514,7 +570,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "パスポートも わすれないでね。",
           en: "Don't forget your passport either.",
-          de: "Vergiss auch deinen Reisepass nicht."
+          de: "Vergiss auch deinen Reisepass nicht.",
+          zh: "护照也别忘了哦。"
         }
       },
       {
@@ -523,7 +580,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "うん！たのしみに してるよ。",
           en: "Yeah! I'm looking forward to it.",
-          de: "Ja! Ich freue mich darauf."
+          de: "Ja! Ich freue mich darauf.",
+          zh: "嗯！我很期待呢。"
         }
       }
     ]
@@ -532,7 +590,8 @@ export const topicTravel: TopicLesson = {
     title: {
       ja: "こげよ マイケル",
       en: "Row, Row, Row Your Boat",
-      de: "Rudert, rudert"
+      de: "Rudert, rudert",
+      zh: "划呀，迈克尔"
     },
     lines: [
       {
@@ -540,7 +599,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "こげ こげ ボートを",
           en: "Row, row, row your boat",
-          de: "Rudert, rudert, rudert das Boot"
+          de: "Rudert, rudert, rudert das Boot",
+          zh: "划呀，划呀，划船"
         }
       },
       {
@@ -548,7 +608,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "しずかに かわを くだる",
           en: "Gently down the stream",
-          de: "sanft den Fluss hinab"
+          de: "sanft den Fluss hinab",
+          zh: "顺流而下，静静地"
         }
       },
       {
@@ -556,7 +617,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "たのしく たのしく たのしく たのしく",
           en: "Merrily, merrily, merrily, merrily",
-          de: "Fröhlich, fröhlich, fröhlich, fröhlich"
+          de: "Fröhlich, fröhlich, fröhlich, fröhlich",
+          zh: "快乐地，快乐地，快乐地，快乐地"
         }
       },
       {
@@ -564,7 +626,8 @@ export const topicTravel: TopicLesson = {
         translations: {
           ja: "じんせいは ゆめの よう",
           en: "Life is but a dream",
-          de: "das Leben ist ein Traum"
+          de: "das Leben ist ein Traum",
+          zh: "人生就像一场梦"
         }
       }
     ]
@@ -694,6 +757,32 @@ export const topicTravel: TopicLesson = {
         }
       ]
     }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-wowohin",
+        title: { de: "Übung: wo / wohin", en: "Practice: Wo / Wohin", ja: "れんしゅう：wo と wohin", zh: "练习：wo／wohin" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit wo und wohin.",
+          en: "Next, let's practice example sentences using wo and wohin.",
+          ja: "つぎは、wo と wohin を つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用wo和wohin的例句。"
+        },
+        lines: [
+          { id: "wh1", translations: { de: "Wo ist das Hotel?", en: "Where is the hotel? (wo — fixed location)", ja: "ホテルは どこですか？（wo — きまった ばしょ）", zh: "酒店在哪里？（wo — 固定位置）" } },
+          { id: "wh2", translations: { de: "Wohin fährst du?", en: "Where are you going? (wohin — destination)", ja: "どこへ いきますか？（wohin — もくてきち）", zh: "你要去哪里？（wohin — 目的地）" } },
+          { id: "wh3", translations: { de: "Ich bin im Hotel.", en: "I am at the hotel. (dative, fixed location)", ja: "わたしは ホテルに います。（よかく、きまった ばしょ）", zh: "我在酒店。（与格，固定位置）" } },
+          { id: "wh4", translations: { de: "Ich fahre ins Hotel.", en: "I'm going to the hotel. (accusative, destination)", ja: "ホテルへ いきます。（たいかく、もくてきち）", zh: "我要去酒店。（宾格，目的地）" } },
+          { id: "wh5", translations: { de: "Wir fahren zum Bahnhof.", en: "We're going to the station. (accusative, destination)", ja: "えきへ いきます。（たいかく、もくてきち）", zh: "我们要去车站。（宾格，目的地）" } },
+          { id: "wh6", translations: { de: "Der Zug ist am Bahnhof.", en: "The train is at the station. (dative, fixed location)", ja: "でんしゃは えきに あります。（よかく、きまった ばしょ）", zh: "火车在车站。（与格，固定位置）" } },
+          { id: "wh7", translations: { de: "Wir reisen nach Berlin.", en: "We're traveling to Berlin. (nach + city)", ja: "ベルリンへ りょこうします。（nach + とし）", zh: "我们要去柏林旅行。（nach + 城市）" } },
+          { id: "wh8", translations: { de: "Sie reist nach Deutschland.", en: "She's traveling to Germany. (nach + country)", ja: "かのじょは ドイツへ りょこうします。（nach + くに）", zh: "她要去德国旅行。（nach + 国家）" } },
+          { id: "wh9", translations: { de: "Wo ist mein Reisepass?", en: "Where is my passport? (wo — fixed location)", ja: "わたしの パスポートは どこですか？（wo — きまった ばしょ）", zh: "我的护照在哪里？（wo — 固定位置）" } },
+          { id: "wh10", translations: { de: "Wohin bringst du den Koffer?", en: "Where are you taking the suitcase? (wohin — destination)", ja: "スーツケースを どこへ もっていきますか？（wohin — もくてきち）", zh: "你要把行李箱带到哪里？（wohin — 目的地）" } }
+        ]
+      }
+    ]
   },
   pronunciation: {
     ja: {

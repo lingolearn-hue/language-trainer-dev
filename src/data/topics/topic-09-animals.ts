@@ -11,7 +11,8 @@ export const topicAnimals: TopicLesson = {
   topicName: {
     ja: "どうぶつ",
     en: "Animals",
-    de: "Tiere"
+    de: "Tiere",
+    zh: "动物"
   },
   vocab: [
     {
@@ -20,7 +21,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "いぬ",
         en: "dog",
-        de: "Hund"
+        de: "Hund",
+        zh: "狗"
       }
     },
     {
@@ -29,7 +31,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "ねこ",
         en: "cat",
-        de: "Katze"
+        de: "Katze",
+        zh: "猫"
       }
     },
     {
@@ -38,7 +41,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "とり",
         en: "bird",
-        de: "Vogel"
+        de: "Vogel",
+        zh: "鸟"
       }
     },
     {
@@ -47,7 +51,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "うさぎ",
         en: "rabbit",
-        de: "Kaninchen"
+        de: "Kaninchen",
+        zh: "兔子"
       }
     },
     {
@@ -56,7 +61,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "ぞう",
         en: "elephant",
-        de: "Elefant"
+        de: "Elefant",
+        zh: "大象"
       }
     },
     {
@@ -65,7 +71,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "ライオン",
         en: "lion",
-        de: "Löwe"
+        de: "Löwe",
+        zh: "狮子"
       }
     },
     {
@@ -74,7 +81,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "さる",
         en: "monkey",
-        de: "Affe"
+        de: "Affe",
+        zh: "猴子"
       }
     },
     {
@@ -83,7 +91,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "くま",
         en: "bear",
-        de: "Bär"
+        de: "Bär",
+        zh: "熊"
       }
     },
     {
@@ -92,7 +101,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "うま",
         en: "horse",
-        de: "Pferd"
+        de: "Pferd",
+        zh: "马"
       }
     },
     {
@@ -101,7 +111,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "ひつじ",
         en: "sheep",
-        de: "Schaf"
+        de: "Schaf",
+        zh: "羊"
       }
     },
     {
@@ -110,7 +121,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "ぶた",
         en: "pig",
-        de: "Schwein"
+        de: "Schwein",
+        zh: "猪"
       }
     },
     {
@@ -119,7 +131,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "にわとり",
         en: "chicken",
-        de: "Huhn"
+        de: "Huhn",
+        zh: "鸡"
       }
     },
     {
@@ -128,7 +141,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "きりん",
         en: "giraffe",
-        de: "Giraffe"
+        de: "Giraffe",
+        zh: "长颈鹿"
       }
     },
     {
@@ -137,7 +151,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "パンダ",
         en: "panda",
-        de: "Panda"
+        de: "Panda",
+        zh: "熊猫"
       }
     },
     {
@@ -146,7 +161,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "どうぶつえん",
         en: "zoo",
-        de: "Zoo"
+        de: "Zoo",
+        zh: "动物园"
       }
     },
     {
@@ -155,7 +171,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "かう",
         en: "to keep (a pet)",
-        de: "halten (Haustier)"
+        de: "halten (Haustier)",
+        zh: "饲养（宠物）"
       }
     },
     {
@@ -164,7 +181,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "えさを やる",
         en: "to feed (an animal)",
-        de: "füttern"
+        de: "füttern",
+        zh: "喂食"
       }
     },
     {
@@ -173,7 +191,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "なつく",
         en: "to become attached, tame",
-        de: "zutraulich werden"
+        de: "zutraulich werden",
+        zh: "变得亲近，驯服"
       }
     },
     {
@@ -182,7 +201,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "ほえる",
         en: "to bark",
-        de: "bellen"
+        de: "bellen",
+        zh: "吠叫"
       }
     },
     {
@@ -191,7 +211,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "なく",
         en: "to cry, make an animal sound",
-        de: "Laute von sich geben"
+        de: "Laute von sich geben",
+        zh: "叫（动物叫声）"
       }
     },
     {
@@ -200,7 +221,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "そだてる",
         en: "to raise",
-        de: "aufziehen"
+        de: "aufziehen",
+        zh: "养育"
       }
     },
     {
@@ -209,7 +231,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "さわる",
         en: "to touch",
-        de: "berühren"
+        de: "berühren",
+        zh: "触摸"
       }
     },
     {
@@ -218,7 +241,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "みる",
         en: "to look at, watch",
-        de: "ansehen"
+        de: "ansehen",
+        zh: "看"
       }
     },
     {
@@ -227,7 +251,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "かわいい",
         en: "cute",
-        de: "süß"
+        de: "süß",
+        zh: "可爱"
       }
     },
     {
@@ -236,7 +261,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "こわい",
         en: "scary",
-        de: "gruselig"
+        de: "gruselig",
+        zh: "可怕"
       }
     },
     {
@@ -245,7 +271,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "おとなしい",
         en: "gentle, docile",
-        de: "sanft, zahm"
+        de: "sanft, zahm",
+        zh: "温顺"
       }
     },
     {
@@ -254,7 +281,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "げんき",
         en: "energetic, healthy",
-        de: "energisch, gesund"
+        de: "energisch, gesund",
+        zh: "有活力，健康"
       }
     },
     {
@@ -263,7 +291,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "おおきい",
         en: "big",
-        de: "groß"
+        de: "groß",
+        zh: "大的"
       }
     },
     {
@@ -272,7 +301,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "ちいさい",
         en: "small",
-        de: "klein"
+        de: "klein",
+        zh: "小的"
       }
     },
     {
@@ -281,7 +311,8 @@ export const topicAnimals: TopicLesson = {
       translations: {
         ja: "はやい",
         en: "fast",
-        de: "schnell"
+        de: "schnell",
+        zh: "快的"
       }
     }
   ],
@@ -289,7 +320,8 @@ export const topicAnimals: TopicLesson = {
     title: {
       ja: "かいわ：こどもと どうぶつえんへ",
       en: "Dialogue A: Visiting the Zoo",
-      de: "Dialog A: Zoobesuch"
+      de: "Dialog A: Zoobesuch",
+      zh: "会话：和孩子去动物园"
     },
     lines: [
       {
@@ -298,7 +330,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "ぞうを みたい！",
           en: "I want to see the elephants!",
-          de: "Ich möchte die Elefanten sehen!"
+          de: "Ich möchte die Elefanten sehen!",
+          zh: "我想看大象！"
         }
       },
       {
@@ -307,7 +340,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "いいよ。あっちに いるよ。",
           en: "Okay. They're over there.",
-          de: "Gut. Sie sind dort drüben."
+          de: "Gut. Sie sind dort drüben.",
+          zh: "好啊。它们在那边。"
         }
       },
       {
@@ -316,7 +350,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "わあ、おおきいね！",
           en: "Wow, they're big!",
-          de: "Wow, sie sind groß!"
+          de: "Wow, sie sind groß!",
+          zh: "哇，好大啊！"
         }
       },
       {
@@ -325,7 +360,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "そうだね。つぎは ライオンを みようか。",
           en: "That's right. Should we see the lions next?",
-          de: "Genau. Sollen wir als Nächstes die Löwen sehen?"
+          de: "Genau. Sollen wir als Nächstes die Löwen sehen?",
+          zh: "是呢。接下来看看狮子吧。"
         }
       },
       {
@@ -334,7 +370,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "うん！ライオンは こわい？",
           en: "Yeah! Are lions scary?",
-          de: "Ja! Sind Löwen gruselig?"
+          de: "Ja! Sind Löwen gruselig?",
+          zh: "嗯！狮子可怕吗？"
         }
       },
       {
@@ -343,7 +380,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "だいじょうぶ、ガラスの むこうに いるよ。",
           en: "It's okay, they're behind glass.",
-          de: "Kein Problem, sie sind hinter Glas."
+          de: "Kein Problem, sie sind hinter Glas.",
+          zh: "没关系，它们在玻璃后面。"
         }
       },
       {
@@ -352,7 +390,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "うさぎたちも みたい。",
           en: "I want to see the rabbits too.",
-          de: "Ich möchte auch die Kaninchen sehen."
+          de: "Ich möchte auch die Kaninchen sehen.",
+          zh: "我也想看兔子们。"
         }
       },
       {
@@ -361,7 +400,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "うさぎは さわっても いいんだよ。",
           en: "You're allowed to touch the rabbits.",
-          de: "Du darfst die Kaninchen berühren."
+          de: "Du darfst die Kaninchen berühren.",
+          zh: "可以摸兔子哦。"
         }
       },
       {
@@ -370,7 +410,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "ほんとう？やってみたい！",
           en: "Really? I want to try!",
-          de: "Wirklich? Das möchte ich probieren!"
+          de: "Wirklich? Das möchte ich probieren!",
+          zh: "真的吗？我想试试！"
         }
       },
       {
@@ -379,7 +420,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "とても おとなしい どうぶつだよ。",
           en: "They're very gentle animals.",
-          de: "Es sind sehr sanfte Tiere."
+          de: "Es sind sehr sanfte Tiere.",
+          zh: "它们是非常温顺的动物哦。"
         }
       },
       {
@@ -388,7 +430,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "パンダも いる？",
           en: "Are there pandas too?",
-          de: "Gibt es auch Pandas?"
+          de: "Gibt es auch Pandas?",
+          zh: "也有熊猫吗？"
         }
       },
       {
@@ -397,7 +440,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "うん、あの たてものの なかに いるよ。",
           en: "Yes, they're inside that building.",
-          de: "Ja, sie sind in diesem Gebäude."
+          de: "Ja, sie sind in diesem Gebäude.",
+          zh: "有的，在那栋建筑里面。"
         }
       },
       {
@@ -406,7 +450,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "はやく みたい！",
           en: "I want to see them quickly!",
-          de: "Ich möchte sie schnell sehen!"
+          de: "Ich möchte sie schnell sehen!",
+          zh: "我想快点看！"
         }
       },
       {
@@ -415,7 +460,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "いこうか。きょうは たのしい ひだね。",
           en: "Shall we go? Today's a fun day.",
-          de: "Sollen wir gehen? Heute ist ein schöner Tag."
+          de: "Sollen wir gehen? Heute ist ein schöner Tag.",
+          zh: "走吧。今天真是开心的一天呢。"
         }
       }
     ]
@@ -424,7 +470,8 @@ export const topicAnimals: TopicLesson = {
     title: {
       ja: "かいわ：かってた ペット",
       en: "Dialogue B: Pets You've Had",
-      de: "Dialog B: Frühere Haustiere"
+      de: "Dialog B: Frühere Haustiere",
+      zh: "会话：以前养过的宠物"
     },
     lines: [
       {
@@ -433,7 +480,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "ペットを かったことが ある？",
           en: "Have you ever had a pet?",
-          de: "Hattest du schon mal ein Haustier?"
+          de: "Hattest du schon mal ein Haustier?",
+          zh: "养过宠物吗？"
         }
       },
       {
@@ -442,7 +490,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "うん、いぬを かっていたよ。",
           en: "Yeah, I had a dog.",
-          de: "Ja, ich hatte einen Hund."
+          de: "Ja, ich hatte einen Hund.",
+          zh: "嗯，我养过一只狗。"
         }
       },
       {
@@ -451,7 +500,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "どんな いぬだった？",
           en: "What kind of dog was it?",
-          de: "Was für ein Hund war es?"
+          de: "Was für ein Hund war es?",
+          zh: "是什么样的狗？"
         }
       },
       {
@@ -460,7 +510,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "ちいさくて、とても げんきな いぬだったよ。",
           en: "It was small and a very energetic dog.",
-          de: "Er war klein und ein sehr energischer Hund."
+          de: "Er war klein und ein sehr energischer Hund.",
+          zh: "个子小，是一只很有活力的狗。"
         }
       },
       {
@@ -469,7 +520,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "なまえは なんだったの？",
           en: "What was its name?",
-          de: "Wie hieß er?"
+          de: "Wie hieß er?",
+          zh: "叫什么名字？"
         }
       },
       {
@@ -478,7 +530,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "ポチだったよ。みかさんは？",
           en: "Pochi. What about you, Mika?",
-          de: "Pochi. Und du, Mika?"
+          de: "Pochi. Und du, Mika?",
+          zh: "叫波奇哦。美香你呢？"
         }
       },
       {
@@ -487,7 +540,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "わたしは ねこを にひき かっていたの。",
           en: "I had two cats.",
-          de: "Ich hatte zwei Katzen."
+          de: "Ich hatte zwei Katzen.",
+          zh: "我养过两只猫。"
         }
       },
       {
@@ -496,7 +550,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "なかは よかった？",
           en: "Did they get along?",
-          de: "Haben sie sich gut verstanden?"
+          de: "Haben sie sich gut verstanden?",
+          zh: "它们关系好吗？"
         }
       },
       {
@@ -505,7 +560,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "うん、しまいの ねこたちだったから。",
           en: "Yes, because they were sister cats.",
-          de: "Ja, weil es Schwesterkatzen waren."
+          de: "Ja, weil es Schwesterkatzen waren.",
+          zh: "嗯，因为是姐妹猫。"
         }
       },
       {
@@ -514,7 +570,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "とりを かったことは ある？",
           en: "Have you ever had a bird?",
-          de: "Hattest du schon mal einen Vogel?"
+          de: "Hattest du schon mal einen Vogel?",
+          zh: "养过鸟吗？"
         }
       },
       {
@@ -523,7 +580,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "ううん、ないよ。とりは かわいい？",
           en: "No, never. Are birds cute?",
-          de: "Nein, noch nie. Sind Vögel süß?"
+          de: "Nein, noch nie. Sind Vögel süß?",
+          zh: "不，没有过。鸟可爱吗？"
         }
       },
       {
@@ -532,7 +590,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "うん、とても かわいいよ。よく なくけどね。",
           en: "Yeah, very cute. Though they make noise a lot.",
-          de: "Ja, sehr süß. Auch wenn sie viel Lärm machen."
+          de: "Ja, sehr süß. Auch wenn sie viel Lärm machen.",
+          zh: "嗯，非常可爱哦。虽然经常叫。"
         }
       },
       {
@@ -541,7 +600,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "また ペットを かいたい？",
           en: "Do you want another pet?",
-          de: "Möchtest du wieder ein Haustier?"
+          de: "Möchtest du wieder ein Haustier?",
+          zh: "还想再养宠物吗？"
         }
       },
       {
@@ -550,7 +610,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "うん、いつか また いぬを かいたいな。",
           en: "Yeah, I'd like another dog someday.",
-          de: "Ja, irgendwann möchte ich wieder einen Hund."
+          de: "Ja, irgendwann möchte ich wieder einen Hund.",
+          zh: "嗯，希望将来还能再养一只狗。"
         }
       }
     ]
@@ -559,7 +620,8 @@ export const topicAnimals: TopicLesson = {
     title: {
       ja: "マクドナルドじいさんの のうじょう",
       en: "Old MacDonald Had a Farm",
-      de: "Onkel Jörg hat einen Bauernhof"
+      de: "Onkel Jörg hat einen Bauernhof",
+      zh: "麦克唐纳大叔的农场"
     },
     lines: [
       {
@@ -567,7 +629,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "マクドナルドじいさんの のうじょうで",
           en: "Old MacDonald had a farm",
-          de: "Onkel Jörg hat einen Bauernhof"
+          de: "Onkel Jörg hat einen Bauernhof",
+          zh: "在麦克唐纳大叔的农场里"
         }
       },
       {
@@ -575,7 +638,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "イーアイ イーアイ オー",
           en: "E-I-E-I-O",
-          de: "Ija-ija-oh"
+          de: "Ija-ija-oh",
+          zh: "咿呀咿呀哦"
         }
       },
       {
@@ -583,7 +647,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "そこには いぬが いて",
           en: "And on that farm he had a dog",
-          de: "Und auf dem Hof, da hat er einen Hund"
+          de: "Und auf dem Hof, da hat er einen Hund",
+          zh: "那里有一只狗"
         }
       },
       {
@@ -591,7 +656,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "イーアイ イーアイ オー",
           en: "E-I-E-I-O",
-          de: "Ija-ija-oh"
+          de: "Ija-ija-oh",
+          zh: "咿呀咿呀哦"
         }
       },
       {
@@ -599,7 +665,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "ワンワン ここで、ワンワン そこで",
           en: "With a woof-woof here and a woof-woof there",
-          de: "Hier wau-wau, da wau-wau"
+          de: "Hier wau-wau, da wau-wau",
+          zh: "这里汪汪，那里汪汪"
         }
       },
       {
@@ -607,7 +674,8 @@ export const topicAnimals: TopicLesson = {
         translations: {
           ja: "マクドナルドじいさんの のうじょうで",
           en: "Old MacDonald had a farm",
-          de: "Onkel Jörg hat einen Bauernhof"
+          de: "Onkel Jörg hat einen Bauernhof",
+          zh: "在麦克唐纳大叔的农场里"
         }
       }
     ]
@@ -737,6 +805,32 @@ export const topicAnimals: TopicLesson = {
         }
       ]
     }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-plural",
+        title: { de: "Übung: Pluralbildung", en: "Practice: Plural Formation", ja: "れんしゅう：ふくすうけい", zh: "练习：复数形式" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Pluralformen.",
+          en: "Next, let's practice example sentences using plural forms.",
+          ja: "つぎは、ふくすうけいを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用复数形式的例句。"
+        },
+        lines: [
+          { id: "pl1", translations: { de: "Wir haben zwei Hunde.", en: "We have two dogs. (der Hund → die Hunde, -e)", ja: "わたしたちは いぬを にひき かって います。（der Hund → die Hunde、-e）", zh: "我们有两只狗。（der Hund → die Hunde，-e）" } },
+          { id: "pl2", translations: { de: "Sie hat drei Katzen.", en: "She has three cats. (die Katze → die Katzen, -n)", ja: "かのじょは ねこを さんびき かって います。（die Katze → die Katzen、-n）", zh: "她有三只猫。（die Katze → die Katzen，-n）" } },
+          { id: "pl3", translations: { de: "Im Zoo gibt es viele Vögel.", en: "There are many birds at the zoo. (der Vogel → die Vögel, umlaut)", ja: "どうぶつえんには とりが たくさん います。（der Vogel → die Vögel、うむらうと）", zh: "动物园里有很多鸟。（der Vogel → die Vögel，变元音）" } },
+          { id: "pl4", translations: { de: "Wir sehen zwei Pandas.", en: "We see two pandas. (der Panda → die Pandas, -s loanword)", ja: "パンダを にひき みます。（der Panda → die Pandas、がいらいご -s）", zh: "我们看到两只熊猫。（der Panda → die Pandas，外来词-s）" } },
+          { id: "pl5", translations: { de: "Die Elefanten sind groß.", en: "The elephants are big. (der Elefant → die Elefanten, -en)", ja: "ぞうたちは おおきいです。（der Elefant → die Elefanten、-en）", zh: "大象们很大。（der Elefant → die Elefanten，-en）" } },
+          { id: "pl6", translations: { de: "Die Schafe sind sanft.", en: "The sheep are gentle. (das Schaf → die Schafe, -e)", ja: "ひつじたちは おとなしいです。（das Schaf → die Schafe、-e）", zh: "羊很温顺。（das Schaf → die Schafe，-e）" } },
+          { id: "pl7", translations: { de: "Er füttert die Hühner.", en: "He feeds the chickens. (das Huhn → die Hühner, umlaut+er)", ja: "かれは にわとりに えさを やります。（das Huhn → die Hühner、うむらうと+er）", zh: "他喂鸡。（das Huhn → die Hühner，变元音+er）" } },
+          { id: "pl8", translations: { de: "Die Affen sind energisch.", en: "The monkeys are energetic. (der Affe → die Affen, -n)", ja: "さるたちは げんきです。（der Affe → die Affen、-n）", zh: "猴子们很有活力。（der Affe → die Affen，-n）" } },
+          { id: "pl9", translations: { de: "Wir haben drei Pferde.", en: "We have three horses. (das Pferd → die Pferde, -e)", ja: "わたしたちは うまを さんとう かって います。（das Pferd → die Pferde、-e）", zh: "我们有三匹马。（das Pferd → die Pferde，-e）" } },
+          { id: "pl10", translations: { de: "Die Bären sind gruselig.", en: "The bears are scary. (der Bär → die Bären, -en)", ja: "くまたちは こわいです。（der Bär → die Bären、-en）", zh: "熊很吓人。（der Bär → die Bären，-en）" } }
+        ]
+      }
+    ]
   },
   pronunciation: {
     ja: {

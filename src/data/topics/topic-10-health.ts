@@ -824,6 +824,32 @@ export const topicHealth: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-imperativ",
+        title: { de: "Übung: Imperativ", en: "Practice: Imperatives", ja: "れんしゅう：めいれいけい", zh: "练习：命令式" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze im Imperativ.",
+          en: "Next, let's practice example sentences using the imperative.",
+          ja: "つぎは、めいれいけいを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用命令式的例句。"
+        },
+        lines: [
+          { id: "im1", translations: { de: "Ruh dich aus!", en: "Rest! (du-form)", ja: "やすんで ください！（du-けい）", zh: "休息一下！（du形）" } },
+          { id: "im2", translations: { de: "Nimm das Medikament!", en: "Take the medicine! (du-form)", ja: "くすりを のんで ください！（du-けい）", zh: "吃药！（du形）" } },
+          { id: "im3", translations: { de: "Geh ins Krankenhaus!", en: "Go to the hospital! (du-form)", ja: "びょういんへ いって ください！（du-けい）", zh: "去医院！（du形）" } },
+          { id: "im4", translations: { de: "Schlaft gut!", en: "Sleep well! (ihr-form)", ja: "よく ねてくださいね！（ihr-けい）", zh: "好好睡觉！（ihr形）" } },
+          { id: "im5", translations: { de: "Macht euch keine Sorgen!", en: "Don't worry! (ihr-form)", ja: "しんぱいしないで！（ihr-けい）", zh: "别担心！（ihr形）" } },
+          { id: "im6", translations: { de: "Lassen Sie sich untersuchen!", en: "Get examined! (Sie, polite)", ja: "みてもらって ください！（Sie、ていねい）", zh: "请去检查一下！（Sie，礼貌形式）" } },
+          { id: "im7", translations: { de: "Zeigen Sie mir Ihre Hand!", en: "Show me your hand! (Sie, polite)", ja: "てを みせて ください！（Sie、ていねい）", zh: "请给我看看您的手！（Sie，礼貌形式）" } },
+          { id: "im8", translations: { de: "Setz dich hin!", en: "Sit down! (du-form)", ja: "すわって ください！（du-けい）", zh: "坐下！（du形）" } },
+          { id: "im9", translations: { de: "Bleibt sicher!", en: "Stay safe! (ihr-form)", ja: "あんぜんに して くださいね！（ihr-けい）", zh: "保持安全！（ihr形）" } },
+          { id: "im10", translations: { de: "Rufen Sie den Krankenwagen!", en: "Call the ambulance! (Sie, polite)", ja: "きゅうきゅうしゃを よんで ください！（Sie、ていねい）", zh: "请叫救护车！（Sie，礼貌形式）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {

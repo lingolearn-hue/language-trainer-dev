@@ -848,6 +848,32 @@ export const topicShopping: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-zahlen",
+        title: { de: "Übung: Zahlen und Mengenangaben", en: "Practice: Numbers and Quantity", ja: "れんしゅう：すうじ と りょう", zh: "练习：数字与数量" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Zahlen und Mengenangaben.",
+          en: "Next, let's practice example sentences using numbers and quantities.",
+          ja: "つぎは、すうじと りょうを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用数字和数量的例句。"
+        },
+        lines: [
+          { id: "z1", translations: { de: "Ich kaufe drei Tomaten.", en: "I buy three tomatoes. (number before noun)", ja: "トマトを さんこ かいます。（すうじ＋めいし）", zh: "我买三个西红柿。（数字+名词）" } },
+          { id: "z2", translations: { de: "Sie hat zwei Eier gekauft.", en: "She bought two eggs. (number before noun)", ja: "かのじょは たまごを にこ かいました。（すうじ＋めいし）", zh: "她买了两个鸡蛋。（数字+名词）" } },
+          { id: "z3", translations: { de: "Wir brauchen viele Taschen.", en: "We need many bags. (viele, plural -e)", ja: "たくさんの ふくろが ひつようです。（viele、ふくすう -e）", zh: "我们需要很多袋子。（viele，复数-e）" } },
+          { id: "z4", translations: { de: "Er hat wenige Kunden heute.", en: "He has few customers today. (wenige, plural -e)", ja: "きょうは きゃくが すくないです。（wenige、ふくすう -e）", zh: "他今天顾客很少。（wenige，复数-e）" } },
+          { id: "z5", translations: { de: "Das Geschäft hat zehn Sonderangebote.", en: "The shop has ten special deals. (number before noun)", ja: "その みせには とくばいひんが じゅっこ あります。（すうじ＋めいし）", zh: "这家店有十个促销商品。（数字+名词）" } },
+          { id: "z6", translations: { de: "Ich habe viel Geld gespart.", en: "I have saved a lot of money. (viel, uncountable)", ja: "たくさん おかねを ためました。（viel、すうえられない めいし）", zh: "我攒了很多钱。（viel，不可数名词）" } },
+          { id: "z7", translations: { de: "Sie hat wenig Zeit heute.", en: "She has little time today. (wenig, uncountable)", ja: "きょうは じかんが すくないです。（wenig、すうえられない めいし）", zh: "她今天时间很少。（wenig，不可数名词）" } },
+          { id: "z8", translations: { de: "Der Markt hat zwölf Verkäufer.", en: "The market has twelve vendors. (number before noun)", ja: "その いちばには てんいんが じゅうにん います。（すうじ＋めいし）", zh: "市场有十二个卖家。（数字+名词）" } },
+          { id: "z9", translations: { de: "Wir haben fünf Yen Rabatt bekommen.", en: "We got a five-yen discount. (number before noun)", ja: "ごえん わりびきを もらいました。（すうじ＋めいし）", zh: "我们获得了五日元的折扣。（数字+名词）" } },
+          { id: "z10", translations: { de: "Es gibt wenige frische Äpfel.", en: "There are few fresh apples. (wenige, plural -e)", ja: "しんせんな りんごが すくないです。（wenige、ふくすう -e）", zh: "新鲜的苹果很少。（wenige，复数-e）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {

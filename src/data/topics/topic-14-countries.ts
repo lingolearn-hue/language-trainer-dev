@@ -115,7 +115,50 @@ export const topicCountries: TopicLesson = {
         { id: "g5", translations: { ja: "いつ にほんへ きましたか？", en: "When did you come to Japan? (wh-question: いつ)", de: "Wann sind Sie nach Japan gekommen? (W-Frage: いつ)", zh: "你是什么时候来日本的？（疑问词问句：いつ）" } },
         { id: "g6", translations: { ja: "にほんごの べんきょうは どうですか？", en: "How is your Japanese study going? (wh-question: どう)", de: "Wie läuft Ihr Japanisch-Lernen? (W-Frage: どう)", zh: "你学日语学得怎么样？（疑问词问句：どう）" } }
       ]
+    },
+    de: {
+      title: { de: "W-Fragen und Herkunft: woher, aus", en: "Wh-Questions and Origin: Woher, Aus", ja: "ぎもんし と しゅっしん：woher と aus", zh: "疑问词与出身：woher与aus" },
+      explanation: {
+        de: "Deutsche Ja/Nein-Fragen werden durch Umstellung gebildet — das Verb steht an erster Stelle: Sind Sie Japaner/in? (nicht \"Sie sind...?\"). W-Fragen benutzen ein Fragewort wie woher (wo + her, \"von wo\"), was, wer, wann oder wie, ebenfalls mit Verb an zweiter Stelle: Woher kommen Sie? Die Herkunft wird mit aus + Land ausgedrückt: Ich komme aus Frankreich — die meisten Ländernamen brauchen dabei keinen Artikel.",
+        en: "German yes/no questions are formed by inversion — the verb comes first: Sind Sie Japaner/in? (not \"Sie sind...?\"). Wh-questions use a question word like woher (wo + her, \"from where\"), was, wer, wann, or wie, with the verb still in second position: Woher kommen Sie? Origin is expressed with aus + country: Ich komme aus Frankreich — most country names need no article.",
+        ja: "ドイツごの はい・いいえの しつもんは、どうしを ぶんとうに もってくる ことで つくります：Sind Sie Japaner/in?（「Sie sind...?」では ない）。ぎもんしを つかう しつもんは woher（wo + her、「どこから」）、was、wer、wann、wie などを つかい、どうしは にばんめの いちに きます：Woher kommen Sie?　しゅっしんは aus + くにめいで あらわします：Ich komme aus Frankreich — ほとんどの くにめいには かんしが つきません。",
+        zh: "德语的是非疑问句通过倒装构成——动词放在句首：Sind Sie Japaner/in?（而不是「Sie sind...?」）。疑问词问句使用woher（wo+her，「从哪里」）、was、wer、wann或wie等疑问词，动词仍位于第二位：Woher kommen Sie?　出身用aus+国家表示：Ich komme aus Frankreich——大多数国家名不需要冠词。"
+      },
+      chunks: [
+        { id: "g1", translations: { de: "Woher kommen Sie?", en: "Where are you from? (wh-question: woher)", ja: "どこから きましたか？（ぎもんし：woher）", zh: "您从哪里来？（疑问词：woher）" } },
+        { id: "g2", translations: { de: "Ich komme aus Frankreich.", en: "I come from France. (aus + country)", ja: "フランスから きました。（aus + くに）", zh: "我从法国来。（aus + 国家）" } },
+        { id: "g3", translations: { de: "Sind Sie Japaner?", en: "Are you Japanese? (yes/no, verb-first)", ja: "にほんじんですか？（はい・いいえ、どうしが さいしょ）", zh: "您是日本人吗？（是非问句，动词提前）" } },
+        { id: "g4", translations: { de: "Nein, ich bin Koreaner.", en: "No, I'm Korean. (negative answer)", ja: "いいえ、かんこくじんです。（ひていの こたえ）", zh: "不，我是韩国人。（否定回答）" } },
+        { id: "g5", translations: { de: "Was gefällt Ihnen an der Kultur?", en: "What do you like about the culture? (wh-question: was)", ja: "ぶんかの なにが すきですか？（ぎもんし：was）", zh: "您喜欢文化中的什么？（疑问词：was）" } },
+        { id: "g6", translations: { de: "Wann sind Sie nach Japan gekommen?", en: "When did you come to Japan? (wh-question: wann)", ja: "いつ にほんへ きましたか？（ぎもんし：wann）", zh: "您是什么时候来日本的？（疑问词：wann）" } }
+      ]
     }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-woher",
+        title: { de: "Übung: woher / aus", en: "Practice: Woher / Aus", ja: "れんしゅう：woher と aus", zh: "练习：woher／aus" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit woher und aus.",
+          en: "Next, let's practice example sentences using woher and aus.",
+          ja: "つぎは、woher と aus を つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用woher和aus的例句。"
+        },
+        lines: [
+          { id: "w1", translations: { de: "Woher kommen Sie?", en: "Where are you from?", ja: "どこから きましたか？", zh: "您从哪里来？" } },
+          { id: "w2", translations: { de: "Ich komme aus Deutschland.", en: "I come from Germany.", ja: "ドイツから きました。", zh: "我从德国来。" } },
+          { id: "w3", translations: { de: "Er kommt aus China.", en: "He comes from China.", ja: "かれは ちゅうごくから きました。", zh: "他从中国来。" } },
+          { id: "w4", translations: { de: "Sie kommt aus Amerika.", en: "She comes from America.", ja: "かのじょは アメリカから きました。", zh: "她从美国来。" } },
+          { id: "w5", translations: { de: "Wir kommen aus Großbritannien.", en: "We come from the UK.", ja: "わたしたちは イギリスから きました。", zh: "我们从英国来。" } },
+          { id: "w6", translations: { de: "Was ist Ihre Staatsangehörigkeit?", en: "What is your nationality? (wh-question: was)", ja: "こくせきは なんですか？（ぎもんし：was）", zh: "您的国籍是什么？（疑问词：was）" } },
+          { id: "w7", translations: { de: "Wo sind Sie geboren?", en: "Where were you born? (wh-question: wo)", ja: "どこで うまれましたか？（ぎもんし：wo）", zh: "您在哪里出生？（疑问词：wo）" } },
+          { id: "w8", translations: { de: "Wie heißt die Hauptstadt?", en: "What is the capital called? (wh-question: wie)", ja: "しゅとは なんと いいますか？（ぎもんし：wie）", zh: "首都叫什么名字？（疑问词：wie）" } },
+          { id: "w9", translations: { de: "Sprechen Sie Deutsch?", en: "Do you speak German? (yes/no, verb-first)", ja: "ドイツごを はなしますか？（はい・いいえ、どうしが さいしょ）", zh: "您说德语吗？（是非问句，动词提前）" } },
+          { id: "w10", translations: { de: "Ja, ich spreche auch Englisch.", en: "Yes, I also speak English. (positive answer)", ja: "はい、えいごも はなします。（ひていでない こたえ）", zh: "是的，我也说英语。（肯定回答）" } }
+        ]
+      }
+    ]
   },
   pronunciation: {
     ja: {

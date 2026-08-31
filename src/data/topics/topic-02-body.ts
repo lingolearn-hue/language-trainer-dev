@@ -950,6 +950,32 @@ export const topicBody: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-pronomen",
+        title: { de: "Übung: Personalpronomen", en: "Practice: Personal Pronouns", ja: "れんしゅう：にんしょうだいめいし", zh: "练习：人称代词" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Personalpronomen.",
+          en: "Next, let's practice example sentences using personal pronouns.",
+          ja: "つぎは、にんしょうだいめいしを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用人称代词的例句。"
+        },
+        lines: [
+          { id: "p1", translations: { de: "Ich habe starke Arme.", en: "I have strong arms. (ich)", ja: "わたしは うでが つよいです。（ich）", zh: "我的手臂很有力。（ich）" } },
+          { id: "p2", translations: { de: "Du hast schöne Augen.", en: "You have beautiful eyes. (du)", ja: "あなたは めが きれいです。（du）", zh: "你的眼睛很漂亮。（du）" } },
+          { id: "p3", translations: { de: "Er hat lange Beine.", en: "He has long legs. (er)", ja: "かれは あしが ながいです。（er）", zh: "他的腿很长。（er）" } },
+          { id: "p4", translations: { de: "Sie hat kurze Haare.", en: "She has short hair. (sie)", ja: "かのじょは かみが みじかいです。（sie）", zh: "她的头发很短。（sie）" } },
+          { id: "p5", translations: { de: "Wir waschen unsere Hände.", en: "We wash our hands. (wir)", ja: "わたしたちは てを あらいます。（wir）", zh: "我们洗手。（wir）" } },
+          { id: "p6", translations: { de: "Ihr benutzt die Medikamente.", en: "You all use the medicine. (ihr)", ja: "あなたたちは くすりを つかいます。（ihr）", zh: "你们用药。（ihr）" } },
+          { id: "p7", translations: { de: "Sie dehnen ihre Beine.", en: "They stretch their legs. (sie, plural)", ja: "かれらは あしを のばします。（sie、ふくすう）", zh: "他们伸展腿。（sie，复数）" } },
+          { id: "p8", translations: { de: "Haben Sie Kopfschmerzen?", en: "Do you have a headache? (Sie, polite)", ja: "あたまが いたいですか？（Sie、ていねい）", zh: "您头疼吗？（Sie，礼貌形式）" } },
+          { id: "p9", translations: { de: "Es tut mir im Rücken weh.", en: "My back hurts. (es, impersonal)", ja: "せなかが いたいです。（es、ひじんしょう）", zh: "我背疼。（es，无人称）" } },
+          { id: "p10", translations: { de: "Wir beugen unsere Knie.", en: "We bend our knees. (wir)", ja: "わたしたちは ひざを まげます。（wir）", zh: "我们弯曲膝盖。（wir）" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {

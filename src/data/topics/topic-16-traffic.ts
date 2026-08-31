@@ -112,6 +112,23 @@ export const topicTraffic: TopicLesson = {
         { id: "g5", translations: { ja: "しちじに いえを でます。", en: "I leave home at seven o'clock. (に — time marker)", de: "Ich verlasse um sieben Uhr das Haus. (に — Zeitmarkierung)", zh: "我七点出门。（に——时间标记）" } },
         { id: "g6", translations: { ja: "かいしゃに ろくじに つきます。", en: "I arrive at the office at six o'clock. (に — destination and time together)", de: "Ich komme um sechs Uhr im Büro an. (に — Ziel und Zeit zusammen)", zh: "我六点到公司。（に——目的地与时间同时使用）" } }
       ]
+    },
+    de: {
+      title: { de: "Verkehrsmittel: mit / einsteigen / aussteigen", en: "Transportation: Mit / Einsteigen / Aussteigen", ja: "こうつうしゅだん：mit／einsteigen／aussteigen", zh: "交通工具：mit／einsteigen／aussteigen" },
+      explanation: {
+        de: "Um das Verkehrsmittel anzugeben, benutzt man mit + Dativ: mit dem Zug, mit dem Bus. Zum Einsteigen benutzt man einsteigen in + Akkusativ (in den Bus einsteigen), zum Aussteigen aussteigen aus + Dativ (aus dem Bus aussteigen). Beim Umsteigen benutzt man umsteigen in + Akkusativ für das neue Verkehrsmittel oder einfach den Ortsnamen: in Shinjuku umsteigen.",
+        en: "To indicate the means of transportation, use mit + dative: mit dem Zug, mit dem Bus. To board, use einsteigen in + accusative (get on the bus), and to get off, aussteigen aus + dative (get off the bus). When transferring, use umsteigen in + accusative for the new vehicle, or just the place name: in Shinjuku umsteigen.",
+        ja: "こうつうしゅだんを しめす ときは mit + よかくを つかいます：mit dem Zug、mit dem Bus。のる ときは einsteigen in + たいかく（バスに のる）、おりる ときは aussteigen aus + よかく（バスを おりる）。のりかえる ときは あたらしい のりものに umsteigen in + たいかく、または ばしょめいだけ：in Shinjuku umsteigen。",
+        zh: "表示交通方式时用mit+与格：mit dem Zug、mit dem Bus。上车用einsteigen in+宾格（上公交车），下车用aussteigen aus+与格（下公交车）。换乘时对新交通工具用umsteigen in+宾格，或者直接用地名：in Shinjuku umsteigen。"
+      },
+      chunks: [
+        { id: "g1", translations: { de: "Ich fahre mit dem Zug zur Schule.", en: "I go to school by train. (mit + dative — means of transport)", ja: "でんしゃで がっこうへ いきます。（mit + よかく——こうつうしゅだん）", zh: "我坐电车去学校。（mit + 与格——交通方式）" } },
+        { id: "g2", translations: { de: "Ich steige in den Bus ein.", en: "I get on the bus. (einsteigen in + accusative)", ja: "バスに のります。（einsteigen in + たいかく）", zh: "我上公交车。（einsteigen in + 宾格）" } },
+        { id: "g3", translations: { de: "Ich steige an der nächsten Station aus.", en: "I get off at the next station. (aussteigen — location)", ja: "つぎの えきで おります。（aussteigen——ばしょ）", zh: "我在下一站下车。（aussteigen——地点）" } },
+        { id: "g4", translations: { de: "Ich steige in Shinjuku um.", en: "I transfer trains at Shinjuku. (umsteigen — transfer location)", ja: "しんじゅくで でんしゃを のりかえます。（umsteigen——のりかえの ばしょ）", zh: "我在新宿换乘。（umsteigen——换乘地点）" } },
+        { id: "g5", translations: { de: "Ich verlasse um sieben Uhr das Haus.", en: "I leave home at seven o'clock. (um + time)", ja: "しちじに いえを でます。（um + じこく）", zh: "我七点出门。（um + 时刻）" } },
+        { id: "g6", translations: { de: "Ich komme um sechs Uhr im Büro an.", en: "I arrive at the office at six o'clock. (ankommen + im + dative, time)", ja: "かいしゃに ろくじに つきます。（ankommen + im + よかく、じこく）", zh: "我六点到公司。（ankommen + im + 与格，时间）" } }
+      ]
     }
   },
   pronunciation: {
@@ -132,5 +149,31 @@ export const topicTraffic: TopicLesson = {
         { id: "p4", category: "pitch", translations: { ja: "いそぐ", en: "to hurry (LHL) — new word, single pattern", de: "sich beeilen (LHL) — neues Wort, einzelnes Muster", zh: "赶紧（低高低）——新词，单一声调" } }
       ]
     }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-verkehrsmittel",
+        title: { de: "Übung: mit / einsteigen / aussteigen", en: "Practice: Mit / Einsteigen / Aussteigen", ja: "れんしゅう：mit／einsteigen／aussteigen", zh: "练习：mit／einsteigen／aussteigen" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Verkehrsmitteln.",
+          en: "Next, let's practice example sentences using transportation vocabulary.",
+          ja: "つぎは、こうつうしゅだんを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用交通工具的例句。"
+        },
+        lines: [
+          { id: "v1", translations: { de: "Ich fahre mit dem Bus zur Arbeit.", en: "I go to work by bus.", ja: "バスで しごとへ いきます。", zh: "我坐公交车去上班。" } },
+          { id: "v2", translations: { de: "Er fährt mit dem Fahrrad zur Schule.", en: "He goes to school by bicycle.", ja: "かれは じてんしゃで がっこうへ いきます。", zh: "他骑自行车去学校。" } },
+          { id: "v3", translations: { de: "Ich steige in den Zug ein.", en: "I board the train.", ja: "でんしゃに のります。", zh: "我上电车。" } },
+          { id: "v4", translations: { de: "Sie steigt in ein Taxi ein.", en: "She gets into a taxi.", ja: "かのじょは タクシーに のります。", zh: "她上出租车。" } },
+          { id: "v5", translations: { de: "Wir steigen am Bahnhof aus.", en: "We get off at the station.", ja: "わたしたちは えきで おります。", zh: "我们在车站下车。" } },
+          { id: "v6", translations: { de: "Er steigt an der nächsten Haltestelle aus.", en: "He gets off at the next stop.", ja: "かれは つぎの ていりゅうじょで おります。", zh: "他在下一站下车。" } },
+          { id: "v7", translations: { de: "Ich steige in Tokio um.", en: "I transfer in Tokyo.", ja: "とうきょうで のりかえます。", zh: "我在东京换乘。" } },
+          { id: "v8", translations: { de: "Wir steigen in einen anderen Bus um.", en: "We transfer to a different bus.", ja: "わたしたちは べつの バスに のりかえます。", zh: "我们换乘另一辆公交车。" } },
+          { id: "v9", translations: { de: "Der Zug kommt um acht Uhr an.", en: "The train arrives at eight o'clock.", ja: "でんしゃは はちじに つきます。", zh: "电车八点到达。" } },
+          { id: "v10", translations: { de: "Ich verlasse das Haus um sieben Uhr.", en: "I leave the house at seven o'clock.", ja: "しちじに いえを でます。", zh: "我七点出门。" } }
+        ]
+      }
+    ]
   }
 };

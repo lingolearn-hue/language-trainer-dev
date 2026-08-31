@@ -911,6 +911,54 @@ export const topicFamily: TopicLesson = {
       ]
     }
   },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-sein",
+        title: { de: "Übung: sein", en: "Practice: Sein", ja: "れんしゅう：sein", zh: "练习：sein" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit sein.",
+          en: "Next, let's practice example sentences using sein.",
+          ja: "つぎは、seinを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用sein的例句。"
+        },
+        lines: [
+          { id: "s1", translations: { de: "Das ist mein Vater.", en: "This is my father.", ja: "これは わたしの ちちです。", zh: "这是我爸爸。" } },
+          { id: "s2", translations: { de: "Das ist meine Mutter.", en: "This is my mother.", ja: "これは わたしの ははです。", zh: "这是我妈妈。" } },
+          { id: "s3", translations: { de: "Meine Familie ist groß.", en: "My family is big.", ja: "わたしの かぞくは おおきいです。", zh: "我家很大。" } },
+          { id: "s4", translations: { de: "Mein Bruder ist freundlich.", en: "My brother is friendly.", ja: "わたしの あには しんせつです。", zh: "我哥哥很友善。" } },
+          { id: "s5", translations: { de: "Meine Schwester ist ruhig.", en: "My sister is quiet.", ja: "わたしの あねは しずかです。", zh: "我姐姐很安静。" } },
+          { id: "s6", translations: { de: "Wir sind Studenten.", en: "We are students.", ja: "わたしたちは がくせいです。", zh: "我们是学生。" } },
+          { id: "s7", translations: { de: "Meine Eltern sind streng.", en: "My parents are strict.", ja: "わたしの りょうしんは きびしいです。", zh: "我父母很严格。" } },
+          { id: "s8", translations: { de: "Der Hund ist süß.", en: "The dog is cute.", ja: "その いぬは かわいいです。", zh: "那只狗很可爱。" } },
+          { id: "s9", translations: { de: "Ich bin Lehrerin.", en: "I am a teacher.", ja: "わたしは せんせいです。", zh: "我是老师。" } },
+          { id: "s10", translations: { de: "Meine Großeltern sind lebhaft.", en: "My grandparents are lively.", ja: "わたしの そふぼは げんきです。", zh: "我的祖父母很有活力。" } }
+        ]
+      },
+      {
+        id: "grammar-drill-haben",
+        title: { de: "Übung: haben", en: "Practice: Haben", ja: "れんしゅう：haben", zh: "练习：haben" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit haben.",
+          en: "Next, let's practice example sentences using haben.",
+          ja: "つぎは、habenを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用haben的例句。"
+        },
+        lines: [
+          { id: "h1", translations: { de: "Ich habe einen Bruder.", en: "I have a brother.", ja: "わたしには あにが います。", zh: "我有一个哥哥。" } },
+          { id: "h2", translations: { de: "Ich habe eine Schwester.", en: "I have a sister.", ja: "わたしには あねが います。", zh: "我有一个姐姐。" } },
+          { id: "h3", translations: { de: "Wir haben eine Katze.", en: "We have a cat.", ja: "わたしたちには ねこが います。", zh: "我们有一只猫。" } },
+          { id: "h4", translations: { de: "Meine Eltern haben ein Haus.", en: "My parents have a house.", ja: "わたしの りょうしんには いえが あります。", zh: "我父母有一栋房子。" } },
+          { id: "h5", translations: { de: "Ich habe zwei Kinder.", en: "I have two children.", ja: "わたしには こどもが ふたり います。", zh: "我有两个孩子。" } },
+          { id: "h6", translations: { de: "Meine Großmutter hat einen Hund.", en: "My grandmother has a dog.", ja: "わたしの そぼには いぬが います。", zh: "我奶奶有一只狗。" } },
+          { id: "h7", translations: { de: "Wir haben ein Haustier.", en: "We have a pet.", ja: "わたしたちには ペットが います。", zh: "我们有一只宠物。" } },
+          { id: "h8", translations: { de: "Ich habe einen Sohn und eine Tochter.", en: "I have a son and a daughter.", ja: "わたしには むすこと むすめが います。", zh: "我有一个儿子和一个女儿。" } },
+          { id: "h9", translations: { de: "Meine Familie hat ein großes Auto.", en: "My family has a big car.", ja: "わたしの かぞくには おおきい くるまが あります。", zh: "我家有一辆大车。" } },
+          { id: "h10", translations: { de: "Er hat viele Geschwister.", en: "He has many siblings.", ja: "かれには きょうだいが おおぜい います。", zh: "他有很多兄弟姐妹。" } }
+        ]
+      }
+    ]
+  },
   pronunciation: {
     ja: {
       title: {
