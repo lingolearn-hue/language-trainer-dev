@@ -44,7 +44,9 @@ export const topicSeasons: TopicLesson = {
     { id: "v27", category: "noun", translations: { ja: "とくちょう", en: "characteristic, feature", de: "Merkmal", zh: "特点" } },
     { id: "v28", category: "adjective", translations: { ja: "すきな", en: "favorite, liked", de: "beliebt, mögen", zh: "喜欢的" } },
     { id: "v29", category: "noun", translations: { ja: "しぜん", en: "nature", de: "Natur", zh: "自然" } },
-    { id: "v30", category: "noun", translations: { ja: "けしき", en: "scenery", de: "Landschaft", zh: "风景" } }
+    { id: "v30", category: "noun", translations: { ja: "けしき", en: "scenery", de: "Landschaft", zh: "风景" } },
+    { id: "v31", category: "adverb", translations: { ja: "だんだん", en: "gradually", de: "allmählich", zh: "逐渐" } },
+    { id: "v32", category: "adverb", translations: { ja: "もうすぐ", en: "soon", de: "bald", zh: "快要" } }
   ],
   dialogueA: {
     title: { ja: "すきな きせつに ついて はなす", en: "Explaining Why You Like a Season", de: "Warum man eine Jahreszeit mag", zh: "说说为什么喜欢一个季节" },

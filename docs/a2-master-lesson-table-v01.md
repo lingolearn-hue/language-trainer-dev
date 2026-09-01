@@ -34,3 +34,4 @@
 | 32 | Politeness     | Basic honorific expressions + polite requests  | Speaking to hotel/shop staff                    | Workplace or service interaction                 | Pitch accent: nouns   | Pitch accent: verbs   |
 | 33 | Restaurants    | Integrated A2: 〜たら / 〜なら + 〜てもいい / 〜てはいけない | Ordering and modifying an order | Discussing preferences and recommendations | S vs SH | Short vs long vowels |
 | 34 | Emergencies    | Integrated A2: potential + 〜なければならない + 〜ので/〜から | Reporting a lost wallet or phone | Dealing with a missed train or cancellation | K vs G | Sokuon vs no sokuon |
+| 35 | Conjunctions   | しかし／だから／それで／それに               | Explaining a change of plans                    | Giving reasons and additional information       | Devoicing (無声化)    | Pitch accent: adjectives |

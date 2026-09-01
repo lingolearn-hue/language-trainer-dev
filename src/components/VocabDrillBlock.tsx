@@ -9,8 +9,23 @@ import { resolveDisplayText } from "../engine/scriptDisplay";
 const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string; ja: string }> = {
   noun: { de: "Nomen", en: "Nouns", zh: "名词", ja: "名詞" },
   verb: { de: "Verben", en: "Verbs", zh: "动词", ja: "動詞" },
-  adjective: { de: "Adjektive", en: "Adjectives", zh: "形容词", ja: "形容詞" },
+  adjective: { de: "Adjektive/Adverbien", en: "Adjectives/Adverbs", zh: "形容词/副词", ja: "形容詞・副詞" },
+  conjunction: { de: "Konjunktionen", en: "Conjunctions", zh: "连词", ja: "接続詞" },
   other: { de: "Weitere", en: "Other", zh: "其他", ja: "その他" },
+};
+
+// Adverbs share the "adjective" column (relabeled "Adjectives/Adverbs")
+// rather than getting their own column — there typically aren't enough
+// adverbs in one lesson to justify a dedicated column, and adjectives/
+// adverbs are close enough in function that grouping them reads fine.
+// Conjunctions get their own column since they're a distinct part of
+// speech worth calling out separately (e.g. Topic 33's discourse
+// connectors). This mapping only affects which column an item's key
+// maps to — the item's own `category` field in the data stays whatever
+// part of speech it actually is (kept for clarity/documentation), this
+// is purely a display-grouping concern.
+const CATEGORY_MERGE: Record<string, string> = {
+  adverb: "adjective",
 };
 
 const PHASES: ReadalongPhase[] = ["echo", "shadow", "silent"];
@@ -76,7 +91,8 @@ export function VocabDrillBlock({
   const rawGroups = new Map<string, VocabItem[]>();
   const rawOrder: string[] = [];
   for (const item of content.items) {
-    const key = item.category ?? "other";
+    const rawKey = item.category ?? "other";
+    const key = CATEGORY_MERGE[rawKey] ?? rawKey;
     if (!rawGroups.has(key)) {
       rawGroups.set(key, []);
       rawOrder.push(key); // preserves first-seen order from the data

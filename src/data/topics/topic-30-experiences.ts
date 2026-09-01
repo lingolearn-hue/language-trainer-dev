@@ -46,7 +46,9 @@ export const topicExperiences: TopicLesson = {
     { id: "v27", category: "adjective", translations: { ja: "たのしい", en: "fun", de: "lustig", zh: "开心的" } },
     { id: "v28", category: "noun", translations: { ja: "いちど", en: "once, one time", de: "einmal", zh: "一次" } },
     { id: "v29", category: "noun", translations: { ja: "はじめて", en: "for the first time", de: "zum ersten Mal", zh: "第一次" } },
-    { id: "v30", category: "noun", translations: { ja: "いどう", en: "moving, transfer", de: "Umzug, Versetzung", zh: "调动" } }
+    { id: "v30", category: "noun", translations: { ja: "いどう", en: "moving, transfer", de: "Umzug, Versetzung", zh: "调动" } },
+    { id: "v31", category: "adverb", translations: { ja: "なんと", en: "what a... (exclamatory)", de: "was für... (ausrufend)", zh: "多么……（感叹）" } },
+    { id: "v32", category: "adverb", translations: { ja: "いがいと", en: "surprisingly", de: "überraschenderweise", zh: "出乎意料地" } }
   ],
   dialogueA: {
     title: { ja: "してみた ことを はなす", en: "Talking About Things You've Done", de: "Über Dinge sprechen, die man getan hat", zh: "聊聊做过的事情" },

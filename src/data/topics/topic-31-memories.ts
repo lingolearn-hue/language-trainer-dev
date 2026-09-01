@@ -46,7 +46,9 @@ export const topicMemories: TopicLesson = {
     { id: "v27", category: "adjective", translations: { ja: "なつかしい", en: "nostalgic", de: "nostalgisch", zh: "怀念的" } },
     { id: "v28", category: "adjective", translations: { ja: "たのしい", en: "fun", de: "lustig", zh: "开心的" } },
     { id: "v29", category: "adjective", translations: { ja: "こわい", en: "scary", de: "gruselig", zh: "可怕的" } },
-    { id: "v30", category: "noun", translations: { ja: "いちばん", en: "the most", de: "am meisten", zh: "最" } }
+    { id: "v30", category: "noun", translations: { ja: "いちばん", en: "the most", de: "am meisten", zh: "最" } },
+    { id: "v31", category: "adverb", translations: { ja: "いつのまにか", en: "before you know it", de: "unbemerkt", zh: "不知不觉" } },
+    { id: "v32", category: "adverb", translations: { ja: "まだ", en: "still", de: "noch", zh: "还，仍然" } }
   ],
   dialogueA: {
     title: { ja: "こどものころに ついて はなす", en: "Talking About Childhood", de: "Über die Kindheit sprechen", zh: "聊聊小时候" },

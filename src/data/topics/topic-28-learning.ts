@@ -44,7 +44,9 @@ export const topicLearning: TopicLesson = {
     { id: "v27", category: "noun", translations: { ja: "しゅくだい", en: "homework", de: "Hausaufgabe", zh: "作业" } },
     { id: "v28", category: "noun", translations: { ja: "アプリ", en: "app", de: "App", zh: "应用程序" } },
     { id: "v29", category: "noun", translations: { ja: "どりょく", en: "effort", de: "Anstrengung", zh: "努力" } },
-    { id: "v30", category: "verb", translations: { ja: "つづける", en: "to continue", de: "fortsetzen", zh: "继续" } }
+    { id: "v30", category: "verb", translations: { ja: "つづける", en: "to continue", de: "fortsetzen", zh: "继续" } },
+    { id: "v31", category: "adverb", translations: { ja: "どんどん", en: "steadily, rapidly", de: "stetig, zügig", zh: "不断地" } },
+    { id: "v32", category: "adverb", translations: { ja: "しっかり", en: "firmly, properly", de: "fest, richtig", zh: "牢固地，好好地" } }
   ],
   dialogueA: {
     title: { ja: "がいこくごの しんぽに ついて はなす", en: "Talking About Language Progress", de: "Über Sprachfortschritte sprechen", zh: "聊聊语言学习的进步" },

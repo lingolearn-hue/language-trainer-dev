@@ -45,7 +45,9 @@ export const topicRelationships: TopicLesson = {
     { id: "v27", category: "adjective", translations: { ja: "なかがいい", en: "to get along well", de: "gut miteinander auskommen", zh: "关系好" } },
     { id: "v28", category: "verb", translations: { ja: "きがあう", en: "to click, be compatible", de: "gut harmonieren", zh: "投缘" } },
     { id: "v29", category: "adjective", translations: { ja: "たよりになる", en: "to be reliable", de: "verlässlich sein", zh: "可靠" } },
-    { id: "v30", category: "adjective", translations: { ja: "だいじな", en: "important, precious", de: "wichtig, kostbar", zh: "重要的" } }
+    { id: "v30", category: "adjective", translations: { ja: "だいじな", en: "important, precious", de: "wichtig, kostbar", zh: "重要的" } },
+    { id: "v31", category: "adverb", translations: { ja: "おたがいに", en: "mutually", de: "gegenseitig", zh: "互相" } },
+    { id: "v32", category: "adverb", translations: { ja: "とくに", en: "especially", de: "besonders", zh: "特别" } }
   ],
   dialogueA: {
     title: { ja: "しっている ひとに ついて はなす", en: "Describing Someone You Know", de: "Über jemanden sprechen, den man kennt", zh: "说说认识的人" },

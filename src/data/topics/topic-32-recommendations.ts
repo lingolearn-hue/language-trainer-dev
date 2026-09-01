@@ -44,8 +44,8 @@ export const topicRecommendations: TopicLesson = {
     { id: "v26", category: "adjective", translations: { ja: "にぎやかな", en: "lively", de: "lebhaft", zh: "热闹" } },
     { id: "v27", category: "adjective", translations: { ja: "しずかな", en: "quiet", de: "ruhig", zh: "安静" } },
     { id: "v28", category: "adjective", translations: { ja: "ゆうめいな", en: "famous", de: "berühmt", zh: "有名" } },
-    { id: "v29", category: "adjective", translations: { ja: "かならず", en: "certainly", de: "sicherlich", zh: "一定" } },
-    { id: "v30", category: "adjective", translations: { ja: "もしかしたら", en: "maybe, perhaps", de: "vielleicht", zh: "也许" } }
+    { id: "v29", category: "adverb", translations: { ja: "かならず", en: "certainly", de: "sicherlich", zh: "一定" } },
+    { id: "v30", category: "adverb", translations: { ja: "もしかしたら", en: "maybe, perhaps", de: "vielleicht", zh: "也许" } }
   ],
   dialogueA: {
     title: { ja: "ばしょを すすめる", en: "Recommending Places", de: "Orte empfehlen", zh: "推荐地方" },

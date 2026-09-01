@@ -44,7 +44,9 @@ export const topicCooking: TopicLesson = {
     { id: "v27", category: "adjective", translations: { ja: "しょっぱい", en: "salty", de: "salzig", zh: "咸的" } },
     { id: "v28", category: "adjective", translations: { ja: "うまい", en: "delicious (casual)", de: "lecker (locker)", zh: "好吃（口语）" } },
     { id: "v29", category: "noun", translations: { ja: "しんメニュー", en: "new menu item", de: "neues Gericht", zh: "新菜品" } },
-    { id: "v30", category: "noun", translations: { ja: "かてい", en: "process, procedure", de: "Vorgang", zh: "过程" } }
+    { id: "v30", category: "noun", translations: { ja: "かてい", en: "process, procedure", de: "Vorgang", zh: "过程" } },
+    { id: "v31", category: "adverb", translations: { ja: "ゆっくり", en: "slowly", de: "langsam", zh: "慢慢地" } },
+    { id: "v32", category: "adverb", translations: { ja: "じょうずに", en: "skillfully", de: "geschickt", zh: "熟练地" } }
   ],
   dialogueA: {
     title: { ja: "いっしょに りょうりを する", en: "Cooking Together", de: "Zusammen kochen", zh: "一起做饭" },

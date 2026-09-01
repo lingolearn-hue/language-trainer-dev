@@ -44,7 +44,9 @@ export const topicTransport: TopicLesson = {
     { id: "v27", category: "noun", translations: { ja: "つうろがわのせき", en: "aisle seat", de: "Gangplatz", zh: "靠走廊座位" } },
     { id: "v28", category: "noun", translations: { ja: "あんぜんベルト", en: "seat belt", de: "Sicherheitsgurt", zh: "安全带" } },
     { id: "v29", category: "noun", translations: { ja: "りょこう", en: "trip, travel", de: "Reise", zh: "旅行" } },
-    { id: "v30", category: "noun", translations: { ja: "よてい", en: "plan, itinerary", de: "Plan", zh: "计划" } }
+    { id: "v30", category: "noun", translations: { ja: "よてい", en: "plan, itinerary", de: "Plan", zh: "计划" } },
+    { id: "v31", category: "adverb", translations: { ja: "とつぜん", en: "suddenly", de: "plötzlich", zh: "突然" } },
+    { id: "v32", category: "adverb", translations: { ja: "やっと", en: "finally", de: "endlich", zh: "终于" } }
   ],
   dialogueA: {
     title: { ja: "りょこうの じゅんびを する", en: "Getting Ready for a Trip", de: "Sich auf eine Reise vorbereiten", zh: "准备旅行" },
