@@ -170,7 +170,107 @@ export const topicWeather: TopicLesson = {
         { id: "vl3", category: "vowel_length", translations: { ja: "あつい", en: "hot (short vowels)", de: "heiß (kurze Vokale)", zh: "热的（短元音）" } },
         { id: "vl4", category: "vowel_length", translations: { ja: "さむい", en: "cold (short vowels)", de: "kalt (kurze Vokale)", zh: "冷的（短元音）" } }
       ]
+    },
+    de: {
+      title: { de: "Aussprachetraining", en: "Pronunciation Practice", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        o_long: { de: "O — lang", en: "O — long", ja: "O — ながい", zh: "O——长音" },
+        o_short: { de: "O — kurz", en: "O — short", ja: "O — みじかい", zh: "O——短音" }
+      },
+      items: [
+        { id: "ol1", category: "o_long", translations: { de: "Brot", en: "bread", ja: "パン", zh: "面包" } },
+        { id: "ol2", category: "o_long", translations: { de: "rot", en: "red", ja: "あかい", zh: "红色" } },
+        { id: "ol3", category: "o_long", translations: { de: "groß", en: "big", ja: "おおきい", zh: "大的" } },
+        { id: "os1", category: "o_short", translations: { de: "Sonne", en: "sun", ja: "たいよう", zh: "太阳" } },
+        { id: "os2", category: "o_short", translations: { de: "Donner", en: "thunder", ja: "かみなり", zh: "雷" } },
+        { id: "os3", category: "o_short", translations: { de: "Wolke", en: "cloud", ja: "くも", zh: "云" } }
+      ]
     }
+  },
+  pronunciationDrills: {
+    de: [
+      {
+        id: "sound-drill",
+        title: {
+          de: "Aussprachetraining 2",
+          en: "Pronunciation Practice 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          en: "Next, let's practice with a lot more examples.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          o_long1: { de: "O — lang", en: "O — long", ja: "O — ながい", zh: "O——长音" },
+          o_short1: { de: "O — kurz", en: "O — short", ja: "O — みじかい", zh: "O——短音" },
+          o_long2: { de: "O — lang", en: "O — long", ja: "O — ながい", zh: "O——长音" },
+          o_short2: { de: "O — kurz", en: "O — short", ja: "O — みじかい", zh: "O——短音" }
+        },
+        pairedColumns: [["o_long1", "o_short1"], ["o_long2", "o_short2"]],
+        items: [
+          { id: "ol1_1", category: "o_long1", translations: { de: "Boot", en: "boat", ja: "ボート", zh: "小船" } },
+          { id: "os1_1", category: "o_short1", translations: { de: "Sommer", en: "summer", ja: "なつ", zh: "夏天" } },
+          { id: "ol1_2", category: "o_long1", translations: { de: "Ofen", en: "oven", ja: "オーブン", zh: "烤箱" } },
+          { id: "os1_2", category: "o_short1", translations: { de: "Onkel", en: "uncle", ja: "おじ", zh: "叔叔" } },
+          { id: "ol1_3", category: "o_long1", translations: { de: "Hose", en: "pants", ja: "ズボン", zh: "裤子" } },
+          { id: "os1_3", category: "o_short1", translations: { de: "Kopf", en: "head", ja: "あたま", zh: "头" } },
+          { id: "ol1_4", category: "o_long1", translations: { de: "Rose", en: "rose", ja: "バラ", zh: "玫瑰" } },
+          { id: "os1_4", category: "o_short1", translations: { de: "Tochter", en: "daughter", ja: "むすめ", zh: "女儿" } },
+          { id: "ol1_5", category: "o_long1", translations: { de: "Lohn", en: "wage", ja: "きゅうりょう", zh: "工资" } },
+          { id: "os1_5", category: "o_short1", translations: { de: "Bock", en: "buck (goat)", ja: "おすやぎ", zh: "公羊" } },
+          { id: "ol1_6", category: "o_long1", translations: { de: "schon", en: "already", ja: "もう", zh: "已经" } },
+          { id: "os1_6", category: "o_short1", translations: { de: "Rock", en: "skirt", ja: "スカート", zh: "裙子" } },
+          { id: "ol1_7", category: "o_long1", translations: { de: "Mond", en: "moon", ja: "つき", zh: "月亮" } },
+          { id: "os1_7", category: "o_short1", translations: { de: "doch", en: "however, yes (contradicting)", ja: "しかし、いや", zh: "然而，是的（反驳）" } },
+          { id: "ol1_8", category: "o_long1", translations: { de: "Ton", en: "tone, clay", ja: "おと、ねんど", zh: "音调，粘土" } },
+          { id: "os1_8", category: "o_short1", translations: { de: "Loch", en: "hole", ja: "あな", zh: "洞" } },
+          { id: "ol1_9", category: "o_long1", translations: { de: "Kohle", en: "coal", ja: "せきたん", zh: "煤炭" } },
+          { id: "os1_9", category: "o_short1", translations: { de: "Koch", en: "cook (person)", ja: "コック", zh: "厨师" } },
+          { id: "ol1_10", category: "o_long1", translations: { de: "Boden", en: "ground, floor", ja: "じめん、ゆか", zh: "地面，地板" } },
+          { id: "os1_10", category: "o_short1", translations: { de: "Post", en: "mail, post office", ja: "ゆうびん", zh: "邮件，邮局" } },
+          { id: "ol1_11", category: "o_long1", translations: { de: "Sohn", en: "son", ja: "むすこ", zh: "儿子" } },
+          { id: "os1_11", category: "o_short1", translations: { de: "Storch", en: "stork", ja: "こうのとり", zh: "鹳" } },
+          { id: "ol1_12", category: "o_long1", translations: { de: "ohne", en: "without", ja: "〜なしで", zh: "没有" } },
+          { id: "os1_12", category: "o_short1", translations: { de: "Wolf", en: "wolf", ja: "おおかみ", zh: "狼" } },
+          { id: "ol1_13", category: "o_long1", translations: { de: "Krone", en: "crown", ja: "おうかん", zh: "皇冠" } },
+          { id: "os1_13", category: "o_short1", translations: { de: "Golf", en: "golf", ja: "ゴルフ", zh: "高尔夫" } },
+          { id: "ol1_14", category: "o_long1", translations: { de: "Note", en: "grade, note", ja: "せいせき、メモ", zh: "成绩，笔记" } },
+          { id: "os1_14", category: "o_short1", translations: { de: "Motte", en: "moth", ja: "が", zh: "蛾" } },
+
+          { id: "ol2_1", category: "o_long2", translations: { de: "Dose", en: "can (container)", ja: "かん", zh: "罐头" } },
+          { id: "os2_1", category: "o_short2", translations: { de: "Otter", en: "otter", ja: "かわうそ", zh: "水獭" } },
+          { id: "ol2_2", category: "o_long2", translations: { de: "Vogel", en: "bird", ja: "とり", zh: "鸟" } },
+          { id: "os2_2", category: "o_short2", translations: { de: "Roller", en: "scooter", ja: "スクーター", zh: "滑板车" } },
+          { id: "ol2_3", category: "o_long2", translations: { de: "oben", en: "above", ja: "うえに", zh: "上面" } },
+          { id: "os2_3", category: "o_short2", translations: { de: "Schloss", en: "castle, lock", ja: "しろ、じょうまえ", zh: "城堡，锁" } },
+          { id: "ol2_4", category: "o_long2", translations: { de: "Lob", en: "praise", ja: "ほめること", zh: "表扬" } },
+          { id: "os2_4", category: "o_short2", translations: { de: "Trott", en: "trot, routine", ja: "はやあし、まんねん", zh: "小跑，例行公事" } },
+          { id: "ol2_5", category: "o_long2", translations: { de: "Hof", en: "yard, courtyard", ja: "にわ", zh: "院子" } },
+          { id: "os2_5", category: "o_short2", translations: { de: "Zoll", en: "customs, inch", ja: "ぜいかん、インチ", zh: "海关，英寸" } },
+          { id: "ol2_6", category: "o_long2", translations: { de: "Zoo", en: "zoo", ja: "どうぶつえん", zh: "动物园" } },
+          { id: "os2_6", category: "o_short2", translations: { de: "Moped", en: "moped", ja: "モペット", zh: "小型摩托车" } },
+          { id: "ol2_7", category: "o_long2", translations: { de: "froh", en: "happy", ja: "うれしい", zh: "高兴" } },
+          { id: "os2_7", category: "o_short2", translations: { de: "Trommel", en: "drum", ja: "たいこ", zh: "鼓" } },
+          { id: "ol2_8", category: "o_long2", translations: { de: "Los", en: "lottery ticket, fate", ja: "くじ、うんめい", zh: "彩票，命运" } },
+          { id: "os2_8", category: "o_short2", translations: { de: "Bonbon", en: "candy", ja: "あめ", zh: "糖果" } },
+          { id: "ol2_9", category: "o_long2", translations: { de: "Kloster", en: "monastery", ja: "しゅうどういん", zh: "修道院" } },
+          { id: "os2_9", category: "o_short2", translations: { de: "Konto", en: "account", ja: "こうざ", zh: "账户" } },
+          { id: "ol2_10", category: "o_long2", translations: { de: "Motor", en: "engine, motor", ja: "エンジン", zh: "发动机" } },
+          { id: "os2_10", category: "o_short2", translations: { de: "Koffer", en: "suitcase", ja: "スーツケース", zh: "行李箱" } },
+          { id: "ol2_11", category: "o_long2", translations: { de: "Foto", en: "photo", ja: "しゃしん", zh: "照片" } },
+          { id: "os2_11", category: "o_short2", translations: { de: "Trotz", en: "defiance", ja: "はんこう", zh: "反抗" } },
+          { id: "ol2_12", category: "o_long2", translations: { de: "Ozean", en: "ocean", ja: "かいよう", zh: "海洋" } },
+          { id: "os2_12", category: "o_short2", translations: { de: "Roggen", en: "rye", ja: "ライむぎ", zh: "黑麦" } },
+          { id: "ol2_13", category: "o_long2", translations: { de: "Rogen", en: "fish roe", ja: "さかなのたまご", zh: "鱼卵" } },
+          { id: "os2_13", category: "o_short2", translations: { de: "Trog", en: "trough", ja: "かいばおけ", zh: "食槽" } },
+          { id: "ol2_14", category: "o_long2", translations: { de: "Zone", en: "zone", ja: "ちいき", zh: "区域" } },
+          { id: "os2_14", category: "o_short2", translations: { de: "Zopf", en: "braid", ja: "おさげ", zh: "辫子" } }
+        ]
+      }
+    ]
   },
   song: {
     // Per docs/a1-master-lesson-table-v05.md's assignment for row 19:
