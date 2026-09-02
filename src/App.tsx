@@ -43,6 +43,10 @@ import { topicConditions } from "./data/topics/topic-34-conditions";
 import { topicCommunication } from "./data/topics/topic-35-communication";
 import { topicPlans } from "./data/topics/topic-36-plans";
 import { topicInvitations } from "./data/topics/topic-37-invitations";
+import { topicFavors } from "./data/topics/topic-38-favors";
+import { topicGifts } from "./data/topics/topic-39-gifts";
+import { topicTechnology } from "./data/topics/topic-40-technology";
+import { topicEntertainment } from "./data/topics/topic-41-entertainment";
 import { buildLessonPlan } from "./engine/buildLesson";
 import { applyPhoneStyle } from "./engine/phoneStyle";
 import { loadSettings, saveSettings } from "./engine/userSettings";
@@ -65,7 +69,7 @@ const ALL_TOPICS: TopicLesson[] = [
   topicFamily, topicBody, topicAppearance, topicEmotions, topicFood,
   topicHome, topicClothing, topicShopping, topicAnimals, topicHealth,
   topicTravel, topicDirections, topicTime,
-  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, topicWeekend, topicAbilities, topicConditional, topicRoutine, topicHobbies, topicTransport, topicCooking, topicSeasons, topicLearning, topicRelationships, topicExperiences, topicMemories, topicRecommendations, topicConjunctions, topicConditions, topicCommunication, topicPlans, topicInvitations, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
+  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, topicWeekend, topicAbilities, topicConditional, topicRoutine, topicHobbies, topicTransport, topicCooking, topicSeasons, topicLearning, topicRelationships, topicExperiences, topicMemories, topicRecommendations, topicConjunctions, topicConditions, topicCommunication, topicPlans, topicInvitations, topicFavors, topicGifts, topicTechnology, topicEntertainment, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
 ];
 const generatedJapaneseLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))

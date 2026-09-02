@@ -163,7 +163,7 @@ changelog below predates that consolidation.
 See the "Build status" section near the top of this file (accurate as
 of v05a) and `docs/topic-lesson-system.md` for full per-topic detail —
 19 Japanese A1 rows built (all 19 now have both German grammar and
-pronunciation), 14 A2 topics built. An earlier "Status
+pronunciation), 22 A2 topics built. An earlier "Status
 summary"/"Known open items" pair that lived here was found to be a
 stale pre-v05a snapshot directly contradicting the Build status table
 above (it claimed only 7 lessons built); moved to `docs/ARCHIVE.md`.

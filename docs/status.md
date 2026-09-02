@@ -10,10 +10,10 @@ methodology and the current numbers.
 
 | Language | A1 (target: 34) | A2 (target: 35) | B1+ |
 |---|---|---|---|
-| ja | 56% / 56% | 40% / 40% | — |
-| de | 56% / 56% | 40% / 0% | — |
-| en | 56% / 0% | 40% / 0% | — |
-| zh | 56% / 0% | 40% / 0% | — |
+| ja | 56% / 56% | 63% / 63% | — |
+| de | 56% / 56% | 63% / 0% | — |
+| en | 56% / 0% | 63% / 0% | — |
+| zh | 56% / 0% | 63% / 0% | — |
 | fr | 0% / 0% | 0% / 0% | — |
 | es | 0% / 0% | 0% / 0% | — |
 
@@ -90,9 +90,9 @@ languages and grammar in only 1.
   lessons in the master table (recombining grammar from rows 1–18,
   reusing songs) rather than new grammar points — cheaper to build
   than rows 1–19 were, but not yet started.
-- A2: 14 of 35 topics built. Every remaining row introduces a
+- A2: 22 of 35 topics built. Every remaining row introduces a
   genuinely new grammar point — no review-lesson shortcut here, same
   authoring cost per lesson as what's already built.
 - B1+: no master table exists yet.
 
-Last updated: 2026-08-30 (v99).
+Last updated: 2026-09-02 (v100+, A2 rows 16–23 and kanji completion).

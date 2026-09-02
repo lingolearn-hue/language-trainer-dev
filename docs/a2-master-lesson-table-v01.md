@@ -21,7 +21,7 @@
 | 19 | Invitations    | 〜ませんか / 〜ましょう / 〜よう              | Inviting a friend out                           | Negotiating a plan                              | E vs EE               | I vs II               |
 | 20 | Favors         | 〜てあげる / 〜てくれる / 〜てもらう + 〜てほしい | Asking someone for help                     | Explaining a favor                              | K vs G                | S vs SH               |
 | 21 | Gifts          | Giving/receiving + requests                    | Giving someone a present                        | Asking someone to do something                  | B vs P                | M vs N                |
-| 22 | Technology     | 〜方 + 〜やすい / 〜にくい                    | Asking how to use an app                        | Explaining what is easy or difficult to use     | Japanese R vs L       | H vs F                |
+| 22 | Technology     | 〜方 + 〜やすい / 〜にくい                    | Asking how to use an app                        | Explaining what is easy or difficult to use     | Japanese R (two ら-row sets)       | H vs F                |
 | 23 | Entertainment  | 〜ようだ / 〜みたい                            | Discussing a movie                              | Saying what something seems like                | S vs SH               | Z vs J                |
 | 24 | News           | 〜そうだ (hearsay) / 〜らしい + 〜はず        | Discussing something you heard                 | Discussing what you expect to be true           | T vs CH               | D vs T                |
 | 25 | Opinions       | 〜と思う / 〜と思っている + 〜かどうか        | Giving your opinion                             | Discussing different viewpoints                 | K vs G                | B vs P                |
