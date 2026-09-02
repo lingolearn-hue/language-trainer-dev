@@ -39,6 +39,10 @@ import { topicExperiences } from "./data/topics/topic-30-experiences";
 import { topicMemories } from "./data/topics/topic-31-memories";
 import { topicRecommendations } from "./data/topics/topic-32-recommendations";
 import { topicConjunctions } from "./data/topics/topic-33-conjunctions";
+import { topicConditions } from "./data/topics/topic-34-conditions";
+import { topicCommunication } from "./data/topics/topic-35-communication";
+import { topicPlans } from "./data/topics/topic-36-plans";
+import { topicInvitations } from "./data/topics/topic-37-invitations";
 import { buildLessonPlan } from "./engine/buildLesson";
 import { applyPhoneStyle } from "./engine/phoneStyle";
 import { loadSettings, saveSettings } from "./engine/userSettings";
@@ -61,7 +65,7 @@ const ALL_TOPICS: TopicLesson[] = [
   topicFamily, topicBody, topicAppearance, topicEmotions, topicFood,
   topicHome, topicClothing, topicShopping, topicAnimals, topicHealth,
   topicTravel, topicDirections, topicTime,
-  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, topicWeekend, topicAbilities, topicConditional, topicRoutine, topicHobbies, topicTransport, topicCooking, topicSeasons, topicLearning, topicRelationships, topicExperiences, topicMemories, topicRecommendations, topicConjunctions, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
+  topicCountries, topicLandscape, topicTraffic, topicWork, topicSchool, topicWeather, topicWeekend, topicAbilities, topicConditional, topicRoutine, topicHobbies, topicTransport, topicCooking, topicSeasons, topicLearning, topicRelationships, topicExperiences, topicMemories, topicRecommendations, topicConjunctions, topicConditions, topicCommunication, topicPlans, topicInvitations, // ja-only for now — no German grammar/pronunciation authored yet, buildLessonPlan(..., "de", ...) returns null for these and they're filtered out below
 ];
 const generatedJapaneseLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))
