@@ -1,11 +1,17 @@
 # Topic-Based Lesson System
 
-**Status: 41 topics built. 19 are the A1 master table (rows 1–19), all
+**Status: 48 topics built. 19 are the A1 master table (rows 1–19), all
 with full Japanese content; all 19 also have German grammar, and all
 19 now also have German pronunciation (base + drill) — see the
 per-feature status list in "A2 topics" below for what's still missing
-per topic. 22 are A2 (see "A2 topics" below). German Lessons 2/11 and
-the English C1 lesson remain hand-written, outside this system.**
+per topic. 22 are A2 (see "A2 topics" below). 7 are C1, Chinese-target
+only so far (see "C1 topics" below). German Lessons 2/11 and the
+English C1 lesson remain hand-written, outside this system. Topic
+files/ids are level-prefixed and level-relative
+(`topic-a1-06-home.ts`, `topic-a2-14-conjunctions.ts`,
+`topic-c1-03-politics.ts`) specifically so adding more lessons to one
+level can never collide with another level's numbering — see "Topic
+id/lessonNumber scheme" below.**
 
 ## Terminology: primers vs. drills
 
@@ -27,6 +33,50 @@ These were previously named `extraReadalongs`/`TopicExtraReadalong` and
 primer/drill pairing for each of grammar and pronunciation is clear
 from the name alone.
 
+## Topic id/lessonNumber scheme
+
+Every topic's file name, `id`, and `lessonNumber` follow a
+level-prefixed, level-relative pattern: `topic-{level}-{NN}-{name}.ts`,
+e.g. `topic-a1-06-home.ts`, `topic-a2-14-conjunctions.ts`,
+`topic-c1-03-politics.ts`, with `lessonNumber` matching the `{NN}` (6,
+14, 3 respectively) — i.e. `lessonNumber` **resets to 1 at the start of
+each level** rather than counting up globally across all levels.
+
+This wasn't the original scheme. Topics were originally numbered
+globally and sequentially regardless of level (A1 = files/ids/numbers
+1–19, A2 continued at 20–41, C1 continued at 42–48). That scheme had a
+real, imminent problem: A1's master table still has 15 unbuilt rows
+(20–34, the review lessons — see "A2 topics" below for the equivalent
+A2 situation), and building them would have produced A1 topics
+numbered 20–34, directly colliding with A2's existing 20–41 range.
+Renamed everything to the level-relative scheme before that could
+happen, rather than after.
+
+`lessonNumber` is what `LessonSelect.tsx` sorts and displays by (as a
+combined `A1-06`-style label — see its own comment for why the display
+no longer needs a separate level line below the number). Sorting is
+level-first, `lessonNumber`-second, so level-relative numbers sort
+identically to what globally sequential numbers would have — the
+rename is invisible to sort order, only to the actual numeric values
+and file/id strings.
+
+**If you add a new topic**, follow the same pattern: pick the next
+`{NN}` within that topic's own level (not the next number overall),
+name the file and `id` to match, and set `lessonNumber` to that same
+`{NN}`. A quick sanity check after adding one: grep all topic files
+for `lessonNumber` grouped by level prefix and confirm no duplicates
+within a level — collisions across different levels are no longer
+possible by construction, but a duplicate *within* one level (e.g. two
+A2 topics both claiming `lessonNumber: 14`) would still be a real bug.
+
+One side effect worth knowing about: this rename means any
+`localStorage`-persisted lesson mastery/hidden status a real user had
+already saved (see `engine/lessonStatus.ts`) is now keyed to a dead
+id and orphaned — those lessons will simply reappear in the default
+lesson list. Not fixable from the codebase (it's inherent to renaming
+persistent-state keys); only relevant once this app has real users
+with saved progress, which it doesn't yet during dev.
+
 ## Vocab slide categories
 
 `VocabItem.category` is a free-form string, but `VocabDrillBlock.tsx`
@@ -37,7 +87,8 @@ tagged `adverb` are merged into the same column as `adjective` (headed
 usually aren't enough adverbs in one lesson to justify a dedicated
 column, and adjectives/adverbs read fine grouped together.
 Conjunctions get their own column since they're a distinct part of
-speech worth calling out (e.g. Topic 33). When tagging vocab, use the
+speech worth calling out (e.g. `topic-a2-14-conjunctions`). When
+tagging vocab, use the
 part of speech that's actually true for the word — the merge only
 affects rendering.
 
@@ -177,38 +228,42 @@ appended right after the pronunciation block. **Standard shape: 4
 columns × 14 words = 56 total**, not a smaller or uneven set — see
 "Goal: every lesson complete" above. Two uses so far:
 1. A hand-curated word list reinforcing that lesson's specific
-   pronunciation focus at scale (e.g. Topic 1's B/P/d→t/g→k drill,
+   pronunciation focus at scale (e.g. A1 topic 1's B/P/d→t/g→k drill,
    56 words across 4 columns) — pulled from real German-course slide
    material the project owner authored directly, translated into the
    other 3 languages.
 2. Row-by-row pitch-accent comparison (see next section).
 
 **Current status against the 4×14 standard:**
-- **Full 56-word, 4-column drills**: Topic 1 (de), Topic 3 (ja), Topic 6
-  (de), Topic 9 (ja), Topic 11 (de), Topic 13 (de), Topics 14–19 (de,
-  authored this session), and all 22 A2 topics (20–41, ja)
-- **Below standard, needs expansion**: Topic 2's ja drill (48 words —
-  its short/long-vowel columns have 12 each instead of 14); Topic 8's ja
-  drill (45 words across only 3 columns instead of 4)
-- **Missing entirely**: the `ja` side of Topics 4, 5, 7, 10, 12, 14–19
-  (these currently only have `de`), and the `de` side of Topics 2, 3,
-  8, 9 (these currently only have `ja`)
+- **Full 56-word, 4-column drills**: A1 topics 1 (de), 3 (ja), 6
+  (de), 9 (ja), 11 (de), 13 (de), 14–19 (de), and all 22 A2 topics
+  (`topic-a2-01` through `topic-a2-22`, ja)
+- **Below standard, needs expansion**: A1 topic 2's ja drill (48 words
+  — its short/long-vowel columns have 12 each instead of 14); A1
+  topic 8's ja drill (45 words across only 3 columns instead of 4)
+- **Missing entirely**: the `ja` side of A1 topics 4, 5, 7, 10, 12,
+  14–19 (these currently only have `de`), and the `de` side of A1
+  topics 2, 3, 8, 9 (these currently only have `ja`)
 
 Items are kept to the plain word + gloss — no inline explanatory
 annotations (e.g. "(long vowel)", "— new word, single pattern"). The
 grouping/column headers already carry that information; repeating it
 per-item added clutter without adding recognition value. The one
-exception is pitch-accent minimal-pair items (Topics 2, 9) where the
+exception is pitch-accent minimal-pair items (A1 topics 2, 9) where the
 parenthetical (e.g. "chopsticks (HL) / bridge (LH)") encodes the actual
 pitch pattern being taught, not commentary about it.
 
 A duplicate-word audit (same word appearing twice within one drill's
 `items` array under two different categories) was run across all A2
 topics in the same session that renamed these fields; found and fixed
-~24 real duplicates across Topics 20–22, plus 2 in Topic 23. Topic 26's
-triple use of ふく (服/吹く/拭く, genuine homophones) was left as
-intentional. Worth re-running the same audit against the A1 topics
-(1, 2, 3, 11, 13, 16) at some point — spot-checked, not yet fixed.
+~24 real duplicates across topics 1–3 (Weekend/Abilities/Conditional,
+now `topic-a2-01` through `topic-a2-03`), plus 2 in topic 4 (Routine,
+now `topic-a2-04`). `topic-a2-07` (Cooking)'s triple use
+of ふく (服/吹く/拭く, genuine homophones) was left as intentional.
+Worth re-running the same audit against the A1 topics (1, 2, 3, 11,
+13, 16 — i.e. `topic-a1-01`, `topic-a1-02`, `topic-a1-03`,
+`topic-a1-11`, `topic-a1-13`, `topic-a1-16`) at some point —
+spot-checked, not yet fixed.
 
 ## Row-by-row comparison columns (`pairedColumns`)
 
@@ -238,11 +293,11 @@ duplicate everything else about it and drift out of sync). Applied via
 `applyOverrides()` in `buildLesson.ts`.
 
 Used for two real Japan-context values that shouldn't leak into the
-German course: Topic 8's shared shopping dialogue prices everything in
-Yen (correct for the Japanese course) — overridden to Euro amounts for
-German, keeping the same internal math. Topic 5's shared rice/meal vocab
-gloss is overridden to the more general "Mahlzeit" for German (bread is
-already taught separately).
+German course: A1 topic 8's shared shopping dialogue prices everything
+in Yen (correct for the Japanese course) — overridden to Euro amounts
+for German, keeping the same internal math. A1 topic 5's shared
+rice/meal vocab gloss is overridden to the more general "Mahlzeit" for
+German (bread is already taught separately).
 
 ## Computer / Phone display style
 
@@ -310,28 +365,33 @@ below); now 35 rows after adding row 35 (Conjunctions) this session,
 since no existing row covered discourse-level sentence connectors
 (しかし/だから/それで/それに) — distinct from the sentence-internal
 connectors (〜たら, 〜ので, etc.) other rows already cover. 22 A2
-topics built so far (lesson numbers 20–41), using the same
-`TopicLesson.level` field (defaults to the target language's usual
-level when unset, so A1 topics didn't need any change).
+topics built so far (`topic-a2-01` through `topic-a2-22` — see "Topic
+id/lessonNumber scheme" above for why file numbers are level-relative
+rather than the globally sequential 20–41 they used to be), using the
+same `TopicLesson.level` field (defaults to the target language's
+usual level when unset, so A1 topics didn't need any change).
 
-- **Topics 20–22 (Weekend/past-tense, Abilities/potential-form,
-  Conditional/たら-form)** were built *before* the A2 table existed,
-  picked ad hoc from `docs/grammar-items-a1-to-c2-v01.md`'s A2 grammar
-  list. They don't match the table's actual row 8 (Travel, potential
-  form) or row 27 (Environment, たら) — themes and vocab differ. Not
-  reconciled yet; flagged for a future session.
-- **Topics 23–33 (Routine, Hobbies, Transport, Cooking, Seasons,
-  Learning, Relationships, Experiences, Memories, Recommendations,
-  Conjunctions)** are built directly from the table's rows 1, 2, 4, 6,
-  7, 11, 12, 13, 14, 15, and 35 respectively (rows 3/5/8/9/10 were
-  skipped — each conflicts with an existing A1 topic name/theme:
-  Home=Topic 6, Clothing=Topic 7, Travel=Topic 11, Health=Topic 10,
-  Work=Topic 17). These are the reference examples for what a
-  table-aligned A2 lesson looks like.
-- **Topics 34–41 (Conditions, Communication, Plans, Invitations,
-  Favors, Gifts, Technology, Entertainment)** are built directly from
-  the table's rows 16–23 in sequence, with matching grammar and
-  pronunciation assignments verified row-by-row against the table.
+- **`topic-a2-01` through `topic-a2-03` (Weekend/past-tense,
+  Abilities/potential-form, Conditional/たら-form)** were built
+  *before* the A2 table existed, picked ad hoc from
+  `docs/grammar-items-a1-to-c2-v01.md`'s A2 grammar list. They don't
+  match the table's actual row 8 (Travel, potential form) or row 27
+  (Environment, たら) — themes and vocab differ. Not reconciled yet;
+  flagged for a future session.
+- **`topic-a2-04` through `topic-a2-14` (Routine, Hobbies, Transport,
+  Cooking, Seasons, Learning, Relationships, Experiences, Memories,
+  Recommendations, Conjunctions)** are built directly from the
+  table's rows 1, 2, 4, 6, 7, 11, 12, 13, 14, 15, and 35 respectively
+  (rows 3/5/8/9/10 were skipped — each conflicts with an existing A1
+  topic name/theme: Home=`topic-a1-06`, Clothing=`topic-a1-07`,
+  Travel=`topic-a1-11`, Health=`topic-a1-10`, Work=`topic-a1-17`).
+  These are the reference examples for what a table-aligned A2 lesson
+  looks like.
+- **`topic-a2-15` through `topic-a2-22` (Conditions, Communication,
+  Plans, Invitations, Favors, Gifts, Technology, Entertainment)** are
+  built directly from the table's rows 16–23 in sequence, with
+  matching grammar and pronunciation assignments verified row-by-row
+  against the table.
 - The table's "Japanese R vs L" pronunciation wording was corrected to
   "Japanese R (two ら-row sets)" for every row built so far that used
   it (rows 6, 11, and 22) — Japanese has no true L phoneme, so the
@@ -357,27 +417,29 @@ still worth doing once more rows are built and repeats start to matter.
 
 Against the "every lesson complete" standard above, per-feature status:
 
-- **Kanji**: Topic 3 (A1) and all 22 A2 Topics (20–41) have full
-  `jaKanji` coverage (vocab, both dialogues, grammar primer). All
-  other A1 topics (everything except Topic 3) are fully kana-only
-  outside their grammar drills. See `engine/scriptDisplay.ts` for the
-  toggle mechanism.
-- **Self-introduction slides**: only Topics 1 and 2 have one.
-- **Grammar drills (`grammarDrills`)**: Topic 15 has both a `ja` set (4
-  slides — より/のほうが/いちばん/ほど〜ない, 10 sentences each) and a
-  `de` set (2 slides — Komparativ/Superlativ, 10 sentences each,
-  reusing the same Japanese-column vocab). All of Topics 1–19 have a
-  `de` set (1–2 slides depending on the grammar point). Topics 17's
-  `de` grammar (Nominativ/Akkusativ) and Topic 18's (Trennbare Verben)
+- **Kanji**: A1 topic 3 and all 22 A2 topics (`topic-a2-01` through
+  `topic-a2-22`) have full `jaKanji` coverage (vocab, both dialogues,
+  grammar primer). All other A1 topics (everything except topic 3) are
+  fully kana-only outside their grammar drills. See
+  `engine/scriptDisplay.ts` for the toggle mechanism.
+- **Self-introduction slides**: only A1 topics 1 and 2 have one.
+- **Grammar drills (`grammarDrills`)**: A1 topic 15 has both a `ja` set
+  (4 slides — より/のほうが/いちばん/ほど〜ない, 10 sentences each) and
+  a `de` set (2 slides — Komparativ/Superlativ, 10 sentences each,
+  reusing the same Japanese-column vocab). All 19 A1 topics have a
+  `de` set (1–2 slides depending on the grammar point). A1 topic 17's
+  `de` grammar (Nominativ/Akkusativ) and topic 18's (Trennbare Verben)
   restore the master table's originally-documented German concepts
   rather than mirroring their Japanese te-form/permission-prohibition
   content — see each file's own header comment for the reasoning. All
-  of Topics 20–41 have a `ja` set (1–3 slides depending on how many
-  grammar sub-concepts that topic's point has).
-- **Pronunciation drills (`pronunciationDrills`)**: 28 topics meet the
-  full 4×14 standard (6 from A1 pre-existing, all 22 from A2), 2 are
-  below it (A1 Topics 2, 8), the rest have none. All 19 A1 topics now
-  have German base pronunciation; Topics 14–19 got theirs in an
+  22 A2 topics have a `ja` set (1–3 slides depending on how many
+  grammar sub-concepts that topic's point has), and all 7 C1 topics
+  have a `zh` set on the same principle (see "C1 topics" above).
+- **Pronunciation drills (`pronunciationDrills`)**: 35 topics meet the
+  full 4×14 standard (6 from A1 pre-existing, all 22 from A2, all 7
+  from C1), 2 are below it (A1 topics 2, 8), the rest have none. All
+  19 A1 topics now have German base pronunciation; topics 14–19 got
+  theirs in an
   earlier session (J-as-Y/loanword stress, Ä/Ü-Ö, V-as-F/W-as-V,
   CH-as-SCH/CH-as-K, long/short U, long/short O) with reasoning
   documented in each file's header comment, same substitution approach
@@ -392,24 +454,87 @@ Against the "every lesson complete" standard above, per-feature status:
 - **Chinese vocab/dialogue/song is complete for all 19 A1 topics**
   (topicName, all vocab, both dialogues, songs) — Chinese can be used
   as a *source* language for every A1 German-target lesson. A2 topics
-  are ja-only entirely (no de/en/zh vocab/dialogue/song yet, despite
-  A2's grammar/pronunciation itself being ja-only too).
+  also have full `de`/`en`/`zh` vocab/dialogue/song (all 22, from the
+  first one built onward) — only A2's `grammar`/`pronunciation` are
+  ja-only; an earlier version of this doc incorrectly claimed A2 was
+  ja-only *entirely*, contradicting `docs/status.md`'s 63%
+  vocab/dialogue coverage for every one of `ja`/`de`/`en`/`zh` at the
+  A2 level.
 - **German Lessons 2/11 and the English C1 lesson remain hand-written**,
   outside this system.
 - **`fr`/`es` have no lessons or phrase templates at all** — the topic
   system's `LangCode` type already supports them structurally, but
   nothing has been authored.
 
+## C1 topics
+
+`docs/c1-master-lesson-table-v01.md` — a 34-row C1 plan (English,
+Japanese, Chinese, German, French, Spanish columns), saved verbatim.
+Structurally richer than A1/A2's tables: it adds an **Article** column
+(a reading passage per lesson) and a **Questions** column
+(comprehension-check questions), neither of which the A1/A2 tables
+have. Building from it required new infrastructure — see
+`data/topicTypes.ts`'s `TopicArticle`/`TopicQuestionSet` and
+`types/index.ts`'s `ComprehensionQuestion`/`QuestionsContent`/the new
+`"questions"` `BlockType`, plus the new `QuestionsBlock.tsx` component
+(multiple-choice only, self-checked, never a precise score — matching
+`ReadalongBlock`'s existing stance on speech self-check). `TopicArticle`
+needed no new rendering component — it reuses the ordinary `readalong`
+block type, since a reading passage is mechanically identical to a
+dialogue's 3-phase echo/shadow/silent readalong, just narrated as
+continuous prose instead of back-and-forth speakers.
+
+7 C1 topics built so far (rows 1–7: Education, Society, Politics,
+Economy, Environment, Technology, Media), all Chinese-target, all
+`zh`/`en` only — no `ja`/`de` at all, not even in vocab/dialogue. This
+was a deliberate scope decision (see each C1 topic file's own header
+comment) to keep the first C1 lessons manageable while the level's
+content shape was still being figured out, rather than 4x-ing
+translation effort immediately. See `docs/status.md`'s "Known
+asymmetry" section for why this makes C1's `ja`/`de` columns different
+from A1/A2's (0% because nothing was authored there at all, not
+because grammar/pronunciation lagged behind vocab like A1/A2's
+`en`/`zh` columns do).
+
+The C1 table's per-language grammar cells are often richer than a
+single grammar point — e.g. row 20 (Diplomacy)'s Japanese column lists
+five separate keigo patterns in one cell. Where a built topic's
+grammar point naturally has 2+ distinct sub-forms (e.g. C1 topic 3
+(Politics)'s 是……的／正是……／……才是……, or C1 topic 7 (Media)'s
+之／其／于／乃／遂), that's
+handled the same way A2 lessons with multi-form grammar points
+already are: multiple `grammarDrills` slides, one grouping per
+sub-form, rather than trying to cram every sub-form into one slide.
+
+Because the table's "Pronunciation 1"/"Pronunciation 2" columns are
+often prosody-level concepts (stress placement, chunking, register,
+intonation contour) rather than simple phonetic word-pairs, every
+built C1 topic's pronunciation items are short marked phrases or full
+sentences demonstrating the concept — not single words like most
+A1/A2 pronunciation items are. Each topic's file header comment
+explains the specific adaptation for that lesson's assigned concepts.
+
+New trainer course: Yui (the only trainer who speaks `zh`) has
+`chinese-c1` added to her `courseIds`, alongside her existing
+`japanese-beginner`. `App.tsx` builds C1 lessons from a separate
+`C1_TOPICS` array via `buildLessonPlan(topic, "zh", "en",
+"chinese-c1")`, independent of the `ALL_TOPICS`/ja+de pipeline the
+A1/A2 topics go through — folding C1 into `ALL_TOPICS` would just
+always produce `null` there (no `ja`/`de` grammar authored for C1
+topics), the same way A1/A2 topics already produce `null` against
+`zh`/`en`.
+
 ## For a future session picking this up
 
 Toward "every lesson complete" (see that section above), in rough
 priority order:
 1. Author kanji for the remaining 17 A1 topics (everything except
-   Topic 3) — same process as Topic 3: vocab, then dialogue, then
-   grammar primer, never pronunciation content. (All 22 A2 topics are
-   done.)
-2. Bring Topic 2's pronunciation drill up to the full 4×14 standard
-   (48→56 words) and Topic 8's (3 columns→4), then author one from
+   A1 topic 3) — same process as A1 topic 3: vocab, then dialogue,
+   then grammar primer, never pronunciation content. (All 22 A2 topics
+   are done. `jaKanji` doesn't apply to C1 at all — those topics are
+   Chinese-target with no Japanese content.)
+2. Bring A1 topic 2's pronunciation drill up to the full 4×14 standard
+   (48→56 words) and A1 topic 8's (3 columns→4), then author one from
    scratch for the 11 A1 topics that have none.
 3. Author self-introduction slides for the A1 topics that don't have
    one yet.
@@ -420,7 +545,22 @@ trainer pair" is:
 1. Add `en` and `zh` `PhraseSet`s to `phraseTemplates.ts`, then author
    English/Chinese grammar+pronunciation per topic, to make Vincent's
    and Yui's stated language coverage real rather than aspirational.
-2. Reconcile A2 Topics 20–22 with the master table's actual rows for
-   their grammar points (they were built before the table existed —
-   see the A2 topics section above).
+2. Reconcile A2 topics 1–3 (`topic-a2-01-weekend.ts` through
+   `topic-a2-03-conditional.ts`) with the master table's actual rows
+   for their grammar points (they were built before the table
+   existed — see the A2 topics section above).
 3. Extract German Lesson 11 and the English C1 lesson into topic files.
+
+Toward continuing C1 specifically:
+1. Build C1 rows 8–34 (27 remaining) from
+   `docs/c1-master-lesson-table-v01.md`, following the same
+   `zh`/`en`-only scope decision as rows 1–7 unless there's a specific
+   reason to widen it for a later batch.
+2. Once there's real signal on whether the `zh`/`en`-only scope was
+   the right call, decide whether to backfill `ja`/`de` for the C1
+   topics already built, or keep deferring that the way rows 8+ do —
+   this is a real open question, not a settled plan.
+3. Author melody data for C1 topics' songs, if C1 lessons end up
+   wanting songs at all — the C1 table has no song column (unlike
+   A1/A2), so none of the 7 built C1 topics have one; worth deciding
+   deliberately rather than by default before adding one.

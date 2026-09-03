@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 103 — 2026-09-03
+Version: 104 — 2026-09-03
 
 React-based long-form language tutor simulation (45-90 min sessions).
 Static content, multiple trainer personas, block-based session engine
@@ -10,7 +10,7 @@ See `/spec` (in project history) for concept, trainer, and lesson-structure docs
 
 See `docs/topic-lesson-system.md` for the topic-based lesson architecture
 (vocab/dialogue/song shared across target languages, grammar/pronunciation
-authored per language) — 41 topics built. Status and next steps are
+authored per language) — 48 topics built. Status and next steps are
 documented there.
 
 See `docs/song-melodies.md` for how song melody playback works and how
@@ -36,14 +36,18 @@ still planned.
   voice-name fallback lists (`voicesByLang`), since most platforms
   default to a female voice per locale unless the user has downloaded
   an alternative.
-- **Lessons**: 41 topic-based (19 A1, all Japanese and now all with
-  German grammar and pronunciation content; 22 A2, Japanese only) + 3
-  hand-written standalone (German Lektion 2, German Lektion 11, English
-  C1 "Voices from Orbit") = 44 total. See
-  `docs/topic-lesson-system.md` for architecture and per-feature
+- **Lessons**: 48 topic-based (19 A1, all Japanese and now all with
+  German grammar and pronunciation content; 22 A2, Japanese only; 7 C1,
+  Chinese only) + 3 hand-written standalone (German Lektion 2, German
+  Lektion 11, English C1 "Voices from Orbit") = 51 total. Topic files
+  and ids are level-prefixed and level-relative (`topic-a1-06-home`,
+  `topic-a2-14-conjunctions`, `topic-c1-03-politics`) so adding more
+  lessons to any level can't collide with another level's numbering.
+  See `docs/topic-lesson-system.md` for architecture and per-feature
   coverage, `docs/status.md` for the build-status table and
-  methodology, and `docs/a2-master-lesson-table-v01.md` for the A2 plan
-  (35 rows, 14 built).
+  methodology, `docs/a2-master-lesson-table-v01.md` for the A2 plan
+  (35 rows, 22 built), and `docs/c1-master-lesson-table-v01.md` for the
+  C1 plan (34 rows, 7 built).
 - **Kanji**: `jaKanji` display toggle exists app-wide (see
   `engine/scriptDisplay.ts`); only Topic 3 and A2 Topics 20–24 have
   full coverage (vocab/dialogue/grammar). Every other topic is
