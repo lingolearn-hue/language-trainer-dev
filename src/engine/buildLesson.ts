@@ -10,7 +10,7 @@ import { getPhrases, topicName as resolveTopicName } from "../data/phraseTemplat
 
 const CEFR_LEVEL: Partial<Record<LangCode, string>> = { ja: "A1", de: "A1" };
 const LANGUAGE_DISPLAY_NAME: Record<LangCode, string> = {
-  ja: "Japanese", de: "German", en: "English", zh: "Chinese",
+  ja: "Japanese", de: "German", en: "English", zh: "Chinese", fr: "French", es: "Spanish",
 };
 
 // Builds spoken/visible framing text for every language that HAS a
@@ -24,7 +24,7 @@ function framingText(
   fallback: (lang: LangCode) => string,
 ): Translations {
   const out: Translations = {};
-  (["ja", "de", "en", "zh"] as LangCode[]).forEach((lang) => {
+  (["ja", "de", "en", "zh", "fr", "es"] as LangCode[]).forEach((lang) => {
     const phrases = getPhrases(lang);
     out[lang] = phrases ? build(lang, phrases) : fallback(lang);
   });
@@ -81,6 +81,9 @@ export function buildLessonPlan(
     },
   };
 
+  const article = topic.article?.[targetLang];
+  const questionSet = topic.questions?.[targetLang];
+
   const agendaBlock: Block = {
     id: `${idSuffix}-agenda`,
     type: "agenda",
@@ -98,6 +101,12 @@ export function buildLessonPlan(
           : []),
         { id: "a2", translations: framingText((lang, p) => p.agendaLabels.vocab(resolveTopicName(topic.topicName, lang)), () => "Vocabulary") },
         { id: "a3", translations: framingText((lang, p) => p.agendaLabels.grammar(grammar.title[lang] ?? grammar.title.en ?? ""), () => grammar.title.en ?? "Grammar") },
+        ...(article
+          ? [{ id: "a3b", translations: framingText((lang: LangCode, p: NonNullable<ReturnType<typeof getPhrases>>) => p.agendaLabels.article(article.title[lang] ?? article.title.en ?? ""), () => article.title.en ?? "Article") }]
+          : []),
+        ...(questionSet
+          ? [{ id: "a3c", translations: framingText((_: LangCode, p: NonNullable<ReturnType<typeof getPhrases>>) => p.agendaLabels.questions, () => "Comprehension Questions") }]
+          : []),
         { id: "a4", translations: framingText((lang, p) => p.agendaLabels.dialogueA(topic.dialogueA.title[lang] ?? topic.dialogueA.title.en ?? ""), () => topic.dialogueA.title.en ?? "Dialogue A") },
         { id: "a5", translations: framingText((lang, p) => p.agendaLabels.dialogueB(topic.dialogueB.title[lang] ?? topic.dialogueB.title.en ?? ""), () => topic.dialogueB.title.en ?? "Dialogue B") },
         { id: "a6", translations: framingText((_, p) => p.agendaLabels.pronunciation, () => "Pronunciation Practice") },
@@ -248,11 +257,50 @@ export function buildLessonPlan(
     content: { lines: r.lines },
   }));
 
+  // Article + comprehension questions (see topicTypes.ts) — currently
+  // only relevant for C1+ topics. Article renders as an ordinary
+  // "readalong" block (same 3-phase mechanic as a dialogue, just one
+  // continuous voice instead of back-and-forth speakers); questions get
+  // their own dedicated block type since multiple-choice interaction
+  // isn't something any existing block type does. Placed right after
+  // grammar/grammarDrills and before the two dialogues — reading
+  // comprehension naturally follows grammar instruction and precedes
+  // the more conversational dialogue practice, matching the C1 table's
+  // own column order (Grammar, Dialogue A, Dialogue B, Article,
+  // Questions is the table's literal order, but article+questions read
+  // better slotted right after grammar than wedged between the two
+  // dialogues or tacked on at the very end).
+  const articleBlock: Block | null = article
+    ? {
+        id: `${idSuffix}-article`,
+        type: "readalong",
+        displayMode: "face",
+        estimatedMinutes: 5,
+        title: article.title,
+        spokenIntro: framingText((_, p) => p.dialogueIntro("generic"), () => ""),
+        content: { lines: article.lines },
+      }
+    : null;
+
+  const questionsBlock: Block | null = questionSet
+    ? {
+        id: `${idSuffix}-questions`,
+        type: "questions",
+        displayMode: "content",
+        estimatedMinutes: 5,
+        title: questionSet.title,
+        spokenIntro: questionSet.spokenIntro ?? framingText((_, p) => p.grammarIntro, () => ""),
+        content: { questions: questionSet.questions },
+      }
+    : null;
+
   const blocks: Block[] = [
     titleBlock, introBlock, agendaBlock,
     ...(selfIntroBlock ? [selfIntroBlock] : []),
     vocabBlock, grammarBlock,
     ...grammarDrillBlocks,
+    ...(articleBlock ? [articleBlock] : []),
+    ...(questionsBlock ? [questionsBlock] : []),
     dialogueABlock, dialogueBBlock, pronunciationBlock,
   ];
 

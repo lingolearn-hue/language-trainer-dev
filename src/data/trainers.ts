@@ -112,7 +112,7 @@ export const trainers: Trainer[] = [
     appearance: "Early 20s, Asian, straight black bob, oversized cardigan, tends to sketch kanji in the air while explaining.",
     hobby: "Collects stationery — pens and notebooks in particular.",
     defaultStyle: "phone",
-    courseIds: ["japanese-beginner"],
+    courseIds: ["japanese-beginner", "chinese-c1"],
     personalityNote:
       "Patient and encouraging, repeats readings without being asked, celebrates small wins.",
     voiceProfile: { lang: "ja-JP", pitch: 1.1, rate: 0.95 },

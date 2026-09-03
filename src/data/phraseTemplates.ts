@@ -36,6 +36,8 @@ export interface PhraseSet {
     selfIntro: string;
     vocab: (topic: string) => string;
     grammar: (title: string) => string;
+    article: (title: string) => string;
+    questions: string;
     dialogueA: (title: string) => string;
     dialogueB: (title: string) => string;
     pronunciation: string;
@@ -85,6 +87,8 @@ export const PHRASES: Partial<Record<LangCode, PhraseSet>> = {
       selfIntro: "あなたの じこしょうかい",
       vocab: (topic) => `たんご：${topic}`,
       grammar: (title) => `ぶんぽう：${title}`,
+      article: (title) => `ぶんしょう：${title}`,
+      questions: "りかいかくにん",
       dialogueA: (title) => `かいわ：${title}`,
       dialogueB: (title) => `かいわ：${title}`,
       pronunciation: "はつおんの れんしゅう",
@@ -126,6 +130,8 @@ export const PHRASES: Partial<Record<LangCode, PhraseSet>> = {
       selfIntro: "Deine Selbstvorstellung",
       vocab: (topic) => `Wortschatz: ${topic}`,
       grammar: (title) => `Grammatik: ${title}`,
+      article: (title) => `Text: ${title}`,
+      questions: "Verständnisfragen",
       dialogueA: (title) => `Dialog A: ${title}`,
       dialogueB: (title) => `Dialog B: ${title}`,
       pronunciation: "Aussprachetraining",

@@ -169,13 +169,13 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   box-shadow: 0 6px 24px rgba(0,0,0,0.15);
 }
 .slide-title {
-  font-size: 22px; font-weight: 700;
+  font-size: 22px; font-weight: 700; color: #1a1a22;
   padding: 16px 24px 10px; border-bottom: 1px solid #e2e2e8; margin: 0;
 }
 .slide-content {
   flex: 1; padding: 14px 24px;
   display: flex; flex-direction: column; justify-content: flex-start;
-  font-size: 14px;
+  font-size: 17px;
 }
 .slide-footer {
   display: flex; align-items: center; gap: 10px;
@@ -383,7 +383,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   row-gap: 4px;
   overflow-y: auto;
   align-items: baseline;
-  font-size: var(--dialogue-font-size, 22px);
+  font-size: var(--dialogue-font-size, 26px);
 }
 .lines.no-speakers { grid-template-columns: 1fr 1fr; }
 .line { display: contents; }
@@ -398,7 +398,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .line .target { font-size: 1em; }
 .line .source { font-size: 1em; }
 .line .speaker {
-  font-size: 0.6em; font-weight: 700; opacity: 0.5;
+  font-size: 0.85em; font-weight: 700; opacity: 0.5;
   text-transform: uppercase; letter-spacing: 0.02em; align-self: center;
   text-align: left;
 }
@@ -449,6 +449,29 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .chunk .source { opacity: 0.6; font-size: 0.85em; }
 .chunk .listen { margin-left: auto; background: transparent; padding: 0 4px; border: none; cursor: pointer; }
 .chunk.active { background: #dde6ff; }
+
+/* Reading-comprehension questions (QuestionsBlock) — one question per
+   slide, multiple-choice options as a vertical stack of buttons.
+   Feedback colors are deliberately soft (not harsh red/green) — this is
+   a rudimentary self-check, not a graded test, matching the app's
+   existing stance on speech self-check (see ReadalongBlock). */
+.question-block { display: flex; flex-direction: column; gap: 0.8em; overflow-y: auto; }
+.question-block > p.target { font-size: 1.2em; margin: 0; }
+.question-block > p.source { opacity: 0.6; font-size: 0.9em; margin: 0 0 0.4em; }
+.options { display: flex; flex-direction: column; gap: 0.5em; }
+.option-btn {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.15em;
+  text-align: left; background: #f2f2f6; border: 2px solid transparent;
+  border-radius: 8px; padding: 0.6em 0.8em; cursor: pointer; font: inherit;
+}
+.option-btn:disabled { cursor: default; }
+.option-btn .source { opacity: 0.6; font-size: 0.85em; }
+.option-btn.correct { border-color: #4caf7d; background: #e6f6ee; }
+.option-btn.incorrect { border-color: #d97a6c; background: #fbecea; }
+.option-btn.reveal-correct { border-color: #4caf7d; }
+.feedback { margin: 0.2em 0 0; font-weight: 600; }
+.feedback.match { color: #2f8f5e; }
+.feedback.no-match { color: #b5624f; }
 
 /* Audit bar — quick slide navigation + verbal-content overlay (QA tool).
    Kept dark, deliberately distinct from the light slide surface, so it

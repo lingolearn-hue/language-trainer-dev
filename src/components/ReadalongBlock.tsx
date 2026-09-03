@@ -206,7 +206,7 @@ export function ReadalongBlock({
     return sum + Math.max(1, Math.ceil(longer / CHARS_PER_ROW_ESTIMATE));
   }, 0);
   const rowBudgetPx = 430 / (totalVisualRows + 1);
-  const dialogueFontPx = Math.max(11, Math.min(24, rowBudgetPx / 1.35));
+  const dialogueFontPx = Math.max(13, Math.min(29, rowBudgetPx / 1.125)); // ~20% larger than the previous 11–24px range (divisor and bounds both scaled)
 
   return (
     <Slide

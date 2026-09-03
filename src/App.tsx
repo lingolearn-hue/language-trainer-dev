@@ -47,6 +47,9 @@ import { topicFavors } from "./data/topics/topic-38-favors";
 import { topicGifts } from "./data/topics/topic-39-gifts";
 import { topicTechnology } from "./data/topics/topic-40-technology";
 import { topicEntertainment } from "./data/topics/topic-41-entertainment";
+import { topicEducation } from "./data/topics/topic-42-education";
+import { topicSociety } from "./data/topics/topic-43-society";
+import { topicPolitics } from "./data/topics/topic-44-politics";
 import { buildLessonPlan } from "./engine/buildLesson";
 import { applyPhoneStyle } from "./engine/phoneStyle";
 import { loadSettings, saveSettings } from "./engine/userSettings";
@@ -79,12 +82,25 @@ const generatedGermanLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "de", "en", "german-beginner"))
   .filter((l): l is LessonPlan => l !== null);
 
+// C1 topics are a separate list from ALL_TOPICS above (not mixed in)
+// since they're built for a completely different target language (zh)
+// and CEFR level, with their own courseId — folding them into
+// ALL_TOPICS and generating ja/de from them would just always produce
+// null (no ja/de grammar authored for these), same as it currently does
+// for zh/en against ALL_TOPICS's own topics. See
+// docs/c1-master-lesson-table-v01.md.
+const C1_TOPICS: TopicLesson[] = [topicEducation, topicSociety, topicPolitics];
+const generatedChineseC1Lessons = C1_TOPICS
+  .map((topic) => buildLessonPlan(topic, "zh", "en", "chinese-c1"))
+  .filter((l): l is LessonPlan => l !== null);
+
 const allLessons: LessonPlan[] = [
   lesson2,
   lesson11,
   lessonEnglishSpace,
   ...generatedJapaneseLessons,
   ...generatedGermanLessons,
+  ...generatedChineseC1Lessons,
 ]; // grows as more lessons are built
 
 function App() {

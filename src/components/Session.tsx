@@ -6,6 +6,7 @@ import { IntroBlock } from "./IntroBlock";
 import { GrammarBlock } from "./GrammarBlock";
 import { AgendaBlock } from "./AgendaBlock";
 import { SelfIntroBlock } from "./SelfIntroBlock";
+import { QuestionsBlock } from "./QuestionsBlock";
 import { AuditBar } from "./AuditBar";
 import { LessonAvatars } from "./LessonAvatars";
 import { RateControls } from "./RateControls";
@@ -370,6 +371,16 @@ export function Session({
             )}
             {block.type === "selfIntro" && (
               <SelfIntroBlock
+                key={sessionKey}
+                block={block}
+                lang={lang}
+                trainer={trainer}
+                autoPlay={autoPlayReady && welcomeDone}
+                onComplete={handleComplete}
+              />
+            )}
+            {block.type === "questions" && (
+              <QuestionsBlock
                 key={sessionKey}
                 block={block}
                 lang={lang}

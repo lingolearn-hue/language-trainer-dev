@@ -1,6 +1,6 @@
 // Language matrix ------------------------------------------------------
 
-export type LangCode = "de" | "en" | "zh" | "ja";
+export type LangCode = "de" | "en" | "zh" | "ja" | "fr" | "es";
 
 export type Translations = Partial<Record<LangCode, string>> & {
   // Optional kanji form of the ja field, which is otherwise kana-only
@@ -14,7 +14,7 @@ export type Translations = Partial<Record<LangCode, string>> & {
 
 // Block model ------------------------------------------------------------
 
-export type BlockType = "readalong" | "vocabDrill" | "intro" | "grammar" | "agenda" | "selfIntro";
+export type BlockType = "readalong" | "vocabDrill" | "intro" | "grammar" | "agenda" | "selfIntro" | "questions";
 // 'readalong' also covers dialogue/singAlong content — same 3-phase mechanic.
 // 'agenda' is a distinct type from 'intro' because it's never read aloud
 // verbatim (a table of contents read as a run-on sentence sounds terrible)
@@ -130,13 +130,31 @@ export interface GrammarContent {
 
 export type RevealDensity = "dense" | "sparse";
 
+// Reading-comprehension question tied to an article-style readalong
+// (see TopicLesson.article in topicTypes.ts) — multiple-choice, since
+// that's checkable without any real grading/NLP (matching this app's
+// existing stance on speech self-check: rudimentary, never a precise
+// score — see ReadalongBlock's selfCheck). `correctIndex` is into
+// `options`, which must have at least 2 entries.
+export interface ComprehensionQuestion {
+  id: string;
+  question: Translations;
+  options: Translations[];
+  correctIndex: number;
+}
+
+export interface QuestionsContent {
+  questions: ComprehensionQuestion[];
+}
+
 export type BlockContent =
   | VocabDrillContent
   | ReadalongContent
   | IntroContent
   | GrammarContent
   | AgendaContent
-  | SelfIntroContent;
+  | SelfIntroContent
+  | QuestionsContent;
 
 export interface Block {
   id: string;

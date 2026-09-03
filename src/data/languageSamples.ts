@@ -5,10 +5,12 @@ import type { Trainer } from "./trainers";
 // spoken in German is "Deutsch") — used to build each trainer's self-intro
 // sample sentence, one per language they speak.
 const LANG_NAME_IN: Record<LangCode, Record<LangCode, string>> = {
-  de: { de: "Deutsch", en: "Englisch", zh: "Chinesisch", ja: "Japanisch" },
-  en: { de: "German", en: "English", zh: "Chinese", ja: "Japanese" },
-  zh: { de: "德语", en: "英语", zh: "中文", ja: "日语" },
-  ja: { de: "ドイツ語", en: "英語", zh: "中国語", ja: "日本語" },
+  de: { de: "Deutsch", en: "Englisch", zh: "Chinesisch", ja: "Japanisch", fr: "Französisch", es: "Spanisch" },
+  en: { de: "German", en: "English", zh: "Chinese", ja: "Japanese", fr: "French", es: "Spanish" },
+  zh: { de: "德语", en: "英语", zh: "中文", ja: "日语", fr: "法语", es: "西班牙语" },
+  ja: { de: "ドイツ語", en: "英語", zh: "中国語", ja: "日本語", fr: "フランス語", es: "スペイン語" },
+  fr: { de: "allemand", en: "anglais", zh: "chinois", ja: "japonais", fr: "français", es: "espagnol" },
+  es: { de: "alemán", en: "inglés", zh: "chino", ja: "japonés", fr: "francés", es: "español" },
 };
 
 // "Hello, I'm X. I teach A, B, and C." — one template per spoken
@@ -21,7 +23,7 @@ function joinList(lang: LangCode, items: string[]): string {
   if (lang === "ja") return items.join("と"); // と chains naturally between any number of items
   const last = items[items.length - 1];
   const rest = items.slice(0, -1);
-  const conjunction = lang === "de" ? "und" : "and";
+  const conjunction = { de: "und", en: "and", fr: "et", es: "y" }[lang as "de" | "en" | "fr" | "es"] ?? "and";
   const oxfordComma = lang === "de" ? "" : rest.length > 1 ? "," : ""; // German lists don't take a comma before und
   return `${rest.join(", ")}${oxfordComma} ${conjunction} ${last}`;
 }
@@ -35,6 +37,10 @@ function greeting(lang: LangCode, name: string, langNames: string[]): string {
       return `你好，我是${name}。我教${list}。`;
     case "ja":
       return `こんにちは、${name}です。${list}を教えています。`;
+    case "fr":
+      return `Bonjour, je m'appelle ${name}. J'enseigne ${list}.`;
+    case "es":
+      return `Hola, soy ${name}. Enseño ${list}.`;
     case "en":
     default:
       return `Hello, I'm ${name}. I teach ${list}.`;

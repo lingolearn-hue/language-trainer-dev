@@ -5,7 +5,7 @@ import { languageSamplesFor } from "../data/languageSamples";
 import { speak } from "../engine/speech";
 
 const LANG_NAME: Record<LangCode, string> = {
-  de: "German", en: "English", zh: "Chinese", ja: "Japanese",
+  de: "German", en: "English", zh: "Chinese", ja: "Japanese", fr: "French", es: "Spanish",
 };
 
 // Shown on the lesson-chooser screen, right after picking a trainer: one
