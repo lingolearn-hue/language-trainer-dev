@@ -1,0 +1,992 @@
+import type { TopicLesson } from "../topicTypes";
+
+// Migrated from lessonJapanese12.ts — see docs/topic-lesson-system.md.
+// Vocab/dialogue/song extracted verbatim (already fully multi-language
+// data); ja grammar/pronunciation carried over unchanged from
+// the original file. No content was rewritten in this migration.
+
+export const topicDirections: TopicLesson = {
+  id: "topic-a1-12-directions",
+  lessonNumber: 12,
+  topicName: {
+    ja: "ほうこう",
+    en: "Directions",
+    de: "Wegbeschreibung",
+    zh: "方向"
+  },
+  vocab: [
+    {
+      id: "v01",
+      category: "noun",
+      translations: {
+        ja: "みち",
+        en: "road, way",
+        de: "Straße, Weg",
+        zh: "道路"
+      }
+    },
+    {
+      id: "v02",
+      category: "noun",
+      translations: {
+        ja: "かど",
+        en: "corner",
+        de: "Ecke",
+        zh: "拐角"
+      }
+    },
+    {
+      id: "v03",
+      category: "noun",
+      translations: {
+        ja: "しんごう",
+        en: "traffic light",
+        de: "Ampel",
+        zh: "红绿灯"
+      }
+    },
+    {
+      id: "v04",
+      category: "noun",
+      translations: {
+        ja: "こうさてん",
+        en: "intersection",
+        de: "Kreuzung",
+        zh: "十字路口"
+      }
+    },
+    {
+      id: "v05",
+      category: "noun",
+      translations: {
+        ja: "ちず",
+        en: "map",
+        de: "Karte",
+        zh: "地图"
+      }
+    },
+    {
+      id: "v06",
+      category: "noun",
+      translations: {
+        ja: "めじるし",
+        en: "landmark",
+        de: "Orientierungspunkt",
+        zh: "地标"
+      }
+    },
+    {
+      id: "v07",
+      category: "noun",
+      translations: {
+        ja: "ほうこう",
+        en: "direction",
+        de: "Richtung",
+        zh: "方向"
+      }
+    },
+    {
+      id: "v08",
+      category: "noun",
+      translations: {
+        ja: "きた",
+        en: "north",
+        de: "Norden",
+        zh: "北"
+      }
+    },
+    {
+      id: "v09",
+      category: "noun",
+      translations: {
+        ja: "みなみ",
+        en: "south",
+        de: "Süden",
+        zh: "南"
+      }
+    },
+    {
+      id: "v10",
+      category: "noun",
+      translations: {
+        ja: "ひがし",
+        en: "east",
+        de: "Osten",
+        zh: "东"
+      }
+    },
+    {
+      id: "v11",
+      category: "noun",
+      translations: {
+        ja: "にし",
+        en: "west",
+        de: "Westen",
+        zh: "西"
+      }
+    },
+    {
+      id: "v12",
+      category: "noun",
+      translations: {
+        ja: "まえ",
+        en: "front",
+        de: "vorne",
+        zh: "前面"
+      }
+    },
+    {
+      id: "v13",
+      category: "noun",
+      translations: {
+        ja: "うしろ",
+        en: "back",
+        de: "hinten",
+        zh: "后面"
+      }
+    },
+    {
+      id: "v14",
+      category: "noun",
+      translations: {
+        ja: "となり",
+        en: "next to",
+        de: "daneben",
+        zh: "旁边"
+      }
+    },
+    {
+      id: "v15",
+      category: "verb",
+      translations: {
+        ja: "まがる",
+        en: "to turn",
+        de: "abbiegen",
+        zh: "转弯"
+      }
+    },
+    {
+      id: "v16",
+      category: "verb",
+      translations: {
+        ja: "わたる",
+        en: "to cross",
+        de: "überqueren",
+        zh: "穿过"
+      }
+    },
+    {
+      id: "v17",
+      category: "verb",
+      translations: {
+        ja: "すすむ",
+        en: "to go straight, proceed",
+        de: "vorwärtsgehen",
+        zh: "前进，直走"
+      }
+    },
+    {
+      id: "v18",
+      category: "verb",
+      translations: {
+        ja: "もどる",
+        en: "to go back",
+        de: "zurückgehen",
+        zh: "返回"
+      }
+    },
+    {
+      id: "v19",
+      category: "verb",
+      translations: {
+        ja: "つづく",
+        en: "to continue",
+        de: "sich fortsetzen",
+        zh: "继续"
+      }
+    },
+    {
+      id: "v20",
+      category: "verb",
+      translations: {
+        ja: "みつかる",
+        en: "to be found",
+        de: "gefunden werden",
+        zh: "被找到"
+      }
+    },
+    {
+      id: "v21",
+      category: "verb",
+      translations: {
+        ja: "まよう",
+        en: "to get lost",
+        de: "sich verirren",
+        zh: "迷路"
+      }
+    },
+    {
+      id: "v22",
+      category: "adjective",
+      translations: {
+        ja: "ちかい",
+        en: "close, near",
+        de: "nah",
+        zh: "近的"
+      }
+    },
+    {
+      id: "v23",
+      category: "adjective",
+      translations: {
+        ja: "とおい",
+        en: "far",
+        de: "weit",
+        zh: "远的"
+      }
+    },
+    {
+      id: "v24",
+      category: "adjective",
+      translations: {
+        ja: "まっすぐ",
+        en: "straight",
+        de: "gerade",
+        zh: "直走"
+      }
+    },
+    {
+      id: "v25",
+      category: "adjective",
+      translations: {
+        ja: "べんり",
+        en: "convenient",
+        de: "praktisch",
+        zh: "方便"
+      }
+    },
+    {
+      id: "v26",
+      category: "adjective",
+      translations: {
+        ja: "わかりやすい",
+        en: "easy to understand",
+        de: "leicht verständlich",
+        zh: "容易理解"
+      }
+    },
+    {
+      id: "v27",
+      category: "adjective",
+      translations: {
+        ja: "ふくざつ",
+        en: "complicated",
+        de: "kompliziert",
+        zh: "复杂"
+      }
+    },
+    {
+      id: "v28",
+      category: "adjective",
+      translations: {
+        ja: "しずか",
+        en: "quiet",
+        de: "ruhig",
+        zh: "安静"
+      }
+    },
+    {
+      id: "v29",
+      category: "adjective",
+      translations: {
+        ja: "にぎやか",
+        en: "lively, bustling",
+        de: "belebt",
+        zh: "热闹"
+      }
+    },
+    {
+      id: "v30",
+      category: "adjective",
+      translations: {
+        ja: "あんぜん",
+        en: "safe",
+        de: "sicher",
+        zh: "安全"
+      }
+    }
+  ],
+  dialogueA: {
+    title: {
+      ja: "かいわ：みちに まよった かんこうきゃく",
+      en: "Dialogue A: A Lost Tourist",
+      de: "Dialog A: Ein verirrter Tourist",
+      zh: "会话：迷路的游客"
+    },
+    lines: [
+      {
+        id: "d1",
+        speaker: "かんこうきゃく",
+        translations: {
+          ja: "すみません、みちに まよってしまいました。",
+          en: "Excuse me, I've gotten lost.",
+          de: "Entschuldigung, ich habe mich verirrt.",
+          zh: "不好意思，我迷路了。"
+        }
+      },
+      {
+        id: "d2",
+        speaker: "じゅうみん",
+        translations: {
+          ja: "だいじょうぶですか？どこへ いきたいですか？",
+          en: "Are you okay? Where do you want to go?",
+          de: "Geht es Ihnen gut? Wohin möchten Sie?",
+          zh: "您没事吧？想去哪里？"
+        }
+      },
+      {
+        id: "d3",
+        speaker: "かんこうきゃく",
+        translations: {
+          ja: "びじゅつかんを さがしています。",
+          en: "I'm looking for the museum.",
+          de: "Ich suche das Museum.",
+          zh: "我在找美术馆。"
+        }
+      },
+      {
+        id: "d4",
+        speaker: "じゅうみん",
+        translations: {
+          ja: "ああ、びじゅつかんですね。こうえんの となりに あります。",
+          en: "Ah, the museum. It's next to the park.",
+          de: "Ah, das Museum. Es ist neben dem Park.",
+          zh: "啊，美术馆啊。就在公园旁边。"
+        }
+      },
+      {
+        id: "d5",
+        speaker: "かんこうきゃく",
+        translations: {
+          ja: "こうえんは どこですか？",
+          en: "Where's the park?",
+          de: "Wo ist der Park?",
+          zh: "公园在哪里？"
+        }
+      },
+      {
+        id: "d6",
+        speaker: "じゅうみん",
+        translations: {
+          ja: "このみちを きたへ すすんでください。",
+          en: "Please go north along this road.",
+          de: "Gehen Sie diese Straße nach Norden.",
+          zh: "请沿着这条路往北走。"
+        }
+      },
+      {
+        id: "d7",
+        speaker: "かんこうきゃく",
+        translations: {
+          ja: "こうさてんで まがりますか？",
+          en: "Do I turn at the intersection?",
+          de: "Muss ich an der Kreuzung abbiegen?",
+          zh: "要在十字路口转弯吗？"
+        }
+      },
+      {
+        id: "d8",
+        speaker: "じゅうみん",
+        translations: {
+          ja: "はい、こうさてんで みぎに まがってください。",
+          en: "Yes, turn right at the intersection.",
+          de: "Ja, biegen Sie an der Kreuzung rechts ab.",
+          zh: "是的，请在十字路口右转。"
+        }
+      },
+      {
+        id: "d9",
+        speaker: "かんこうきゃく",
+        translations: {
+          ja: "それから まっすぐですか？",
+          en: "Then straight ahead?",
+          de: "Und dann geradeaus?",
+          zh: "然后直走吗？"
+        }
+      },
+      {
+        id: "d10",
+        speaker: "じゅうみん",
+        translations: {
+          ja: "はい、こうえんが みえるまで まっすぐです。",
+          en: "Yes, straight until you see the park.",
+          de: "Ja, geradeaus, bis Sie den Park sehen.",
+          zh: "是的，一直走到能看见公园为止。"
+        }
+      },
+      {
+        id: "d11",
+        speaker: "かんこうきゃく",
+        translations: {
+          ja: "びじゅつかんは わかりやすい ばしょに ありますか？",
+          en: "Is the museum in an easy-to-find place?",
+          de: "Ist das Museum leicht zu finden?",
+          zh: "美术馆在容易找到的地方吗？"
+        }
+      },
+      {
+        id: "d12",
+        speaker: "じゅうみん",
+        translations: {
+          ja: "はい、おおきい たてものなので すぐ みつかりますよ。",
+          en: "Yes, since it's a big building, you'll find it right away.",
+          de: "Ja, da es ein großes Gebäude ist, finden Sie es sofort.",
+          zh: "是的，因为是大建筑，很快就能找到。"
+        }
+      },
+      {
+        id: "d13",
+        speaker: "かんこうきゃく",
+        translations: {
+          ja: "たすかりました。ありがとうございます。",
+          en: "That's a big help. Thank you.",
+          de: "Das hilft sehr. Vielen Dank.",
+          zh: "帮了我大忙。谢谢您。"
+        }
+      },
+      {
+        id: "d14",
+        speaker: "じゅうみん",
+        translations: {
+          ja: "どういたしまして。きを つけて！",
+          en: "You're welcome. Take care!",
+          de: "Gern geschehen. Passen Sie auf sich auf!",
+          zh: "不客气。路上小心！"
+        }
+      }
+    ]
+  },
+  dialogueB: {
+    title: {
+      ja: "かいわ：じむしょの ばしょ",
+      en: "Dialogue B: Where the Office Is",
+      de: "Dialog B: Wo das Büro ist",
+      zh: "会话：办公室的位置"
+    },
+    lines: [
+      {
+        id: "e1",
+        speaker: "けん",
+        translations: {
+          ja: "あなたの じむしょは どこに ありますか？",
+          en: "Where is your office?",
+          de: "Wo ist dein Büro?",
+          zh: "你的办公室在哪里？"
+        }
+      },
+      {
+        id: "e2",
+        speaker: "みか",
+        translations: {
+          ja: "えきの まえの ビルの なかに あります。",
+          en: "It's inside the building in front of the station.",
+          de: "Es ist im Gebäude vor dem Bahnhof.",
+          zh: "在车站前面的大楼里。"
+        }
+      },
+      {
+        id: "e3",
+        speaker: "けん",
+        translations: {
+          ja: "なんかいに ありますか？",
+          en: "What floor is it on?",
+          de: "In welchem Stockwerk ist es?",
+          zh: "在几楼？"
+        }
+      },
+      {
+        id: "e4",
+        speaker: "みか",
+        translations: {
+          ja: "ごかいです。エレベーターの となりです。",
+          en: "The fifth floor. Next to the elevator.",
+          de: "Fünfter Stock. Neben dem Fahrstuhl.",
+          zh: "五楼。在电梯旁边。"
+        }
+      },
+      {
+        id: "e5",
+        speaker: "けん",
+        translations: {
+          ja: "えきから ちかいですか？",
+          en: "Is it close from the station?",
+          de: "Ist es nah vom Bahnhof?",
+          zh: "离车站近吗？"
+        }
+      },
+      {
+        id: "e6",
+        speaker: "みか",
+        translations: {
+          ja: "はい、あるいて さんぷんぐらいです。",
+          en: "Yes, about three minutes on foot.",
+          de: "Ja, etwa drei Minuten zu Fuß.",
+          zh: "是的，走路大概三分钟。"
+        }
+      },
+      {
+        id: "e7",
+        speaker: "けん",
+        translations: {
+          ja: "べんりな ばしょですね。",
+          en: "That's a convenient location.",
+          de: "Das ist eine praktische Lage.",
+          zh: "真是个方便的地方呢。"
+        }
+      },
+      {
+        id: "e8",
+        speaker: "みか",
+        translations: {
+          ja: "はい、でも あたりは すこし にぎやかです。",
+          en: "Yes, but the area is a bit lively.",
+          de: "Ja, aber die Gegend ist etwas belebt.",
+          zh: "是的，不过周围有点热闹。"
+        }
+      },
+      {
+        id: "e9",
+        speaker: "けん",
+        translations: {
+          ja: "ちかくに レストランは ありますか？",
+          en: "Are there restaurants nearby?",
+          de: "Gibt es Restaurants in der Nähe?",
+          zh: "附近有餐厅吗？"
+        }
+      },
+      {
+        id: "e10",
+        speaker: "みか",
+        translations: {
+          ja: "はい、ビルの したに いくつか あります。",
+          en: "Yes, there are a few below the building.",
+          de: "Ja, unter dem Gebäude gibt es einige.",
+          zh: "有的，大楼下面有几家。"
+        }
+      },
+      {
+        id: "e11",
+        speaker: "けん",
+        translations: {
+          ja: "ちゅうしゃじょうは ありますか？",
+          en: "Is there a parking lot?",
+          de: "Gibt es einen Parkplatz?",
+          zh: "有停车场吗？"
+        }
+      },
+      {
+        id: "e12",
+        speaker: "みか",
+        translations: {
+          ja: "はい、ビルの うしろに あります。",
+          en: "Yes, it's behind the building.",
+          de: "Ja, er ist hinter dem Gebäude.",
+          zh: "有的，在大楼后面。"
+        }
+      },
+      {
+        id: "e13",
+        speaker: "けん",
+        translations: {
+          ja: "こんど あそびに いっても いい？",
+          en: "Can I come visit sometime?",
+          de: "Darf ich dich mal besuchen kommen?",
+          zh: "下次可以去玩吗？"
+        }
+      },
+      {
+        id: "e14",
+        speaker: "みか",
+        translations: {
+          ja: "もちろん！いつでも きてね。",
+          en: "Of course! Come anytime.",
+          de: "Natürlich! Komm jederzeit.",
+          zh: "当然！随时欢迎来。"
+        }
+      }
+    ]
+  },
+  song: {
+    title: {
+      ja: "ロンドンばし",
+      en: "London Bridge is Falling Down",
+      de: "Die London Bridge fällt herunter",
+      zh: "伦敦桥"
+    },
+    lines: [
+      {
+        id: "sg1",
+        translations: {
+          ja: "ロンドンばしが おちる",
+          en: "London Bridge is falling down",
+          de: "Die London Bridge fällt herunter",
+          zh: "伦敦桥要塌下来了"
+        }
+      },
+      {
+        id: "sg2",
+        translations: {
+          ja: "おちる おちる",
+          en: "Falling down, falling down",
+          de: "fällt herunter, fällt herunter",
+          zh: "塌下来，塌下来"
+        }
+      },
+      {
+        id: "sg3",
+        translations: {
+          ja: "ロンドンばしが おちる",
+          en: "London Bridge is falling down",
+          de: "Die London Bridge fällt herunter",
+          zh: "伦敦桥要塌下来了"
+        }
+      },
+      {
+        id: "sg4",
+        translations: {
+          ja: "マイ フェア レディー",
+          en: "My fair lady",
+          de: "meine schöne Dame",
+          zh: "我美丽的女士"
+        }
+      }
+    ]
+  },
+  grammar: {
+    ja: {
+      title: {
+        ja: "ばしょの ひょうげん",
+        en: "Expressing Location",
+        de: "Ortsangaben"
+      },
+      explanation: {
+        ja: "にほんごには えいごの「in/on/under」のような まえおきしが ありません。かわりに「めいし＋の＋ばしょの めいし＋に」を つかいます。たとえば「つくえの うえに」（つくえ＋の＋うえ＋に）で「つくえの うえで」を あらわします。",
+        en: "Japanese doesn't have prepositions like English \"in/on/under.\" Instead, NOUN + の + LOCATION NOUN + に is used. For example, つくえの うえに (desk + の + top + に) expresses \"on the desk.\"",
+        de: "Im Japanischen gibt es keine Präpositionen wie im Deutschen „in/auf/unter\". Stattdessen wird NOMEN + の + ORTS-NOMEN + に benutzt. Zum Beispiel drückt つくえの うえに (Tisch + の + oben + に) „auf dem Tisch\" aus."
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            ja: "ぎんこうは えきの まえに あります。",
+            en: "The bank is in front of the station.",
+            de: "Die Bank ist vor dem Bahnhof."
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            ja: "コンビニは ホテルの となりに あります。",
+            en: "The convenience store is next to the hotel.",
+            de: "Der Convenience-Store ist neben dem Hotel."
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            ja: "こうえんは がっこうの うしろに あります。",
+            en: "The park is behind the school.",
+            de: "Der Park ist hinter der Schule."
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            ja: "ねこは いすの したに います。",
+            en: "The cat is under the chair.",
+            de: "Die Katze ist unter dem Stuhl."
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            ja: "じむしょは ビルの なかに あります。",
+            en: "The office is inside the building.",
+            de: "Das Büro ist im Gebäude."
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            ja: "しんごうの ちかくで まってください。",
+            en: "Please wait near the traffic light.",
+            de: "Bitte warten Sie in der Nähe der Ampel."
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Wechselpräpositionen (Ort)",
+        en: "Two-Way Prepositions (Place)",
+        ja: "りょうよう ぜんちし（ばしょ）"
+      },
+      explanation: {
+        de: "Wechselpräpositionen (in, an, auf, unter, über, vor, hinter, neben, zwischen) stehen mit Dativ, wenn sie einen festen Ort beschreiben (wo?), und mit Akkusativ, wenn sie eine Bewegung zu einem Ziel beschreiben (wohin?) — dieselbe wo/wohin-Unterscheidung wie in Lektion 11, jetzt sichtbar an der Endung der Präposition selbst.",
+        en: "Two-way prepositions (in, an, auf, unter, über, vor, hinter, neben, zwischen) take dative when describing a fixed location (wo?) and accusative when describing motion toward a destination (wohin?) — the same wo/wohin distinction from Lesson 11, now visible in the preposition's own case ending.",
+        ja: "りょうよう ぜんちし（in, an, auf, unter, über, vor, hinter, neben, zwischen）は、きまった ばしょを あらわす とき よかく（wo?）、いどうの もくてきちを あらわす とき たいかく（wohin?）に なります — レッスン11 と おなじ wo/wohin の くべつが、ぜんちしの かくへんかとして あらわれます。"
+      },
+      chunks: [
+        {
+          id: "g1",
+          translations: {
+            de: "Die Ampel ist an der Ecke.",
+            en: "The traffic light is at the corner. (an + dative, fixed location)",
+            ja: "しんごうは かどに あります。（an + よかく、きまった ばしょ）"
+          }
+        },
+        {
+          id: "g2",
+          translations: {
+            de: "Gehen Sie an die Ecke.",
+            en: "Go to the corner. (an + accusative, motion)",
+            ja: "かどまで いって ください。（an + たいかく、いどう）"
+          }
+        },
+        {
+          id: "g3",
+          translations: {
+            de: "Der Weg ist neben der Straße.",
+            en: "The path is next to the street. (neben + dative)",
+            ja: "みちは どおりの となりに あります。（neben + よかく）"
+          }
+        },
+        {
+          id: "g4",
+          translations: {
+            de: "Das Café ist zwischen der Bank und der Post.",
+            en: "The café is between the bank and the post office. (zwischen + dative)",
+            ja: "カフェは ぎんこうと ゆうびんきょくの あいだに あります。（zwischen + よかく）"
+          }
+        },
+        {
+          id: "g5",
+          translations: {
+            de: "Biegen Sie vor der Kreuzung ab.",
+            en: "Turn before the intersection. (vor + dative)",
+            ja: "こうさてんの てまえで まがって ください。（vor + よかく）"
+          }
+        },
+        {
+          id: "g6",
+          translations: {
+            de: "Der Parkplatz ist hinter dem Gebäude.",
+            en: "The parking lot is behind the building. (hinter + dative)",
+            ja: "ちゅうしゃじょうは たてものの うしろに あります。（hinter + よかく）"
+          }
+        }
+      ]
+    }
+  },
+  grammarDrills: {
+    de: [
+      {
+        id: "grammar-drill-wechselpraep",
+        title: { de: "Übung: Wechselpräpositionen", en: "Practice: Two-Way Prepositions", ja: "れんしゅう：りょうよう ぜんちし", zh: "练习：双格介词" },
+        spokenIntro: {
+          de: "Als Nächstes üben wir Beispielsätze mit Wechselpräpositionen.",
+          en: "Next, let's practice example sentences using two-way prepositions.",
+          ja: "つぎは、りょうよう ぜんちしを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用双格介词的例句。"
+        },
+        lines: [
+          { id: "wp1", translations: { de: "Die Karte ist auf dem Tisch.", en: "The map is on the table. (dative — fixed location)", ja: "ちずは テーブルの うえに あります。（よかく — きまった ばしょ）", zh: "地图在桌子上。（与格 — 固定位置）" } },
+          { id: "wp2", translations: { de: "Ich lege die Karte auf den Tisch.", en: "I put the map on the table. (accusative — motion)", ja: "ちずを テーブルの うえに おきます。（たいかく — うごき）", zh: "我把地图放在桌子上。（宾格 — 动作）" } },
+          { id: "wp3", translations: { de: "Die Ampel steht an der Kreuzung.", en: "The traffic light is at the intersection. (dative)", ja: "しんごうは こうさてんに あります。（よかく）", zh: "红绿灯在十字路口。（与格）" } },
+          { id: "wp4", translations: { de: "Geh an die Ecke!", en: "Go to the corner! (accusative — motion)", ja: "かどへ いって ください！（たいかく — うごき）", zh: "去拐角处！（宾格 — 动作）" } },
+          { id: "wp5", translations: { de: "Der Orientierungspunkt ist vor dem Gebäude.", en: "The landmark is in front of the building. (dative)", ja: "めじるしは たてものの まえに あります。（よかく）", zh: "地标在建筑物前面。（与格）" } },
+          { id: "wp6", translations: { de: "Stell dich vor die Tür!", en: "Stand in front of the door! (accusative — motion)", ja: "ドアの まえに たって ください！（たいかく — うごき）", zh: "站在门前面！（宾格 — 动作）" } },
+          { id: "wp7", translations: { de: "Das Café ist hinter dem Bahnhof.", en: "The café is behind the station. (dative)", ja: "きっさてんは えきの うしろに あります。（よかく）", zh: "咖啡馆在车站后面。（与格）" } },
+          { id: "wp8", translations: { de: "Geh hinter das Gebäude!", en: "Go behind the building! (accusative — motion)", ja: "たてものの うしろへ いって ください！（たいかく — うごき）", zh: "走到建筑物后面！（宾格 — 动作）" } },
+          { id: "wp9", translations: { de: "Der Laden ist neben der Kreuzung.", en: "The shop is next to the intersection. (dative)", ja: "みせは こうさてんの となりに あります。（よかく）", zh: "商店在十字路口旁边。（与格）" } },
+          { id: "wp10", translations: { de: "Setz dich zwischen uns!", en: "Sit down between us! (accusative — motion)", ja: "わたしたちの あいだに すわって ください！（たいかく — うごき）", zh: "坐在我们中间！（宾格 — 动作）" } }
+        ]
+      }
+    ]
+  },
+  pronunciation: {
+    ja: {
+      title: {
+        ja: "はつおんの れんしゅう",
+        en: "Pronunciation Practice",
+        de: "Aussprachetraining"
+      },
+      groupLabels: {
+        short: {
+          ja: "みじかい い",
+          en: "Short い",
+          de: "Kurzes い"
+        },
+        long: {
+          ja: "ながい い",
+          en: "Long い",
+          de: "Langes い"
+        },
+        pitch: {
+          ja: "アクセント（ふくしゅう）",
+          en: "Pitch accent (reinforced, new pairs)",
+          de: "Tonhöhenakzent (vertieft, neue Paare)"
+        }
+      },
+      items: [
+        {
+          id: "s1",
+          category: "short",
+          translations: {
+            ja: "おじさん",
+            en: "uncle (short じ)",
+            de: "Onkel (kurzes じ)"
+          }
+        },
+        {
+          id: "s2",
+          category: "short",
+          translations: {
+            ja: "とる",
+            en: "to take (unrelated to this pair, kept for symmetry)",
+            de: "nehmen (unabhängig, für Symmetrie beibehalten)"
+          }
+        },
+        {
+          id: "s3",
+          category: "short",
+          translations: {
+            ja: "きた",
+            en: "north (short き)",
+            de: "Norden (kurzes き)"
+          }
+        },
+        {
+          id: "n1",
+          category: "long",
+          translations: {
+            ja: "おじいさん",
+            en: "grandfather (long いい)",
+            de: "Großvater (langes いい)"
+          }
+        },
+        {
+          id: "n2",
+          category: "long",
+          translations: {
+            ja: "とおい",
+            en: "far (long とお)",
+            de: "weit (langes とお)"
+          }
+        },
+        {
+          id: "n3",
+          category: "long",
+          translations: {
+            ja: "きいろ",
+            en: "yellow (long きい)",
+            de: "gelb (langes きい)"
+          }
+        },
+        {
+          id: "p1",
+          category: "pitch",
+          translations: {
+            ja: "まえ",
+            en: "front (LH) — new word, single pattern",
+            de: "vorne (LH) — neues Wort, einzelnes Muster"
+          }
+        },
+        {
+          id: "p2",
+          category: "pitch",
+          translations: {
+            ja: "みち",
+            en: "road (LH) — new word, single pattern",
+            de: "Straße (LH) — neues Wort, einzelnes Muster"
+          }
+        },
+        {
+          id: "p3",
+          category: "pitch",
+          translations: {
+            ja: "まがる",
+            en: "to turn (LHL) — new word, single pattern",
+            de: "abbiegen (LHL) — neues Wort, einzelnes Muster"
+          }
+        }
+      ]
+    },
+    de: {
+      title: {
+        de: "Aussprachetraining",
+        en: "Pronunciation Practice",
+        ja: "はつおんの れんしゅう"
+      },
+      groupLabels: {
+        i_length: {
+          de: "I — lang vs. kurz",
+          en: "I — long vs. short",
+          ja: "I — ながい と みじかい"
+        },
+        eu: {
+          de: "EU/ÄU-Diphthong",
+          en: "EU/ÄU diphthong",
+          ja: "EU／ÄU の にじゅうぼいん"
+        }
+      },
+      items: [
+        {
+          id: "i1",
+          category: "i_length",
+          translations: {
+            de: "Linie",
+            en: "line, route (long I)",
+            ja: "せん、ろせん（ながい I）"
+          }
+        },
+        {
+          id: "i2",
+          category: "i_length",
+          translations: {
+            de: "Richtung",
+            en: "direction (short I)",
+            ja: "ほうこう（みじかい I）"
+          }
+        },
+        {
+          id: "i3",
+          category: "i_length",
+          translations: {
+            de: "sich verirren",
+            en: "to get lost (short I)",
+            ja: "みちに まよう（みじかい I）"
+          }
+        },
+        {
+          id: "eu1",
+          category: "eu",
+          translations: {
+            de: "Kreuzung",
+            en: "intersection (EU diphthong)",
+            ja: "こうさてん（EU の にじゅうぼいん）"
+          }
+        },
+        {
+          id: "eu2",
+          category: "eu",
+          translations: {
+            de: "überqueren",
+            en: "to cross (ÄU diphthong)",
+            ja: "わたる（ÄU の にじゅうぼいん）"
+          }
+        }
+      ]
+    }
+  }
+};

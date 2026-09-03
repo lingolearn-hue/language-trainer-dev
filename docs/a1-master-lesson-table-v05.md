@@ -75,7 +75,7 @@ invented songs. This required two kinds of changes to the plan below:
    lyrics are built on ethnic caricature of Native Americans; the
    substitute teaches the same numbers without that content. Not a
    silent swap — flagged here and in the source file
-   (`topic-15-landscape.ts`).
+   (`topic-a1-15-landscape.ts`).
 
 Final assignment actually implemented:
 

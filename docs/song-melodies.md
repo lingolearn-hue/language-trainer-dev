@@ -51,7 +51,7 @@ exact same ids already used for the spoken/displayed lyric text in
 ```ts
 // src/data/songMelodies.ts
 export const SONG_MELODIES: Record<string, SongMelody> = {
-  "topic-13-time-ja-song": {
+  "topic-a1-13-time-ja-song": {
     bpm: 100,
     lines: {
       sg1: [{ pitch: "C4", beats: 1 }, { pitch: "C4", beats: 1 }, /* ... */],

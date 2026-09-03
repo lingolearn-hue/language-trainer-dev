@@ -159,9 +159,16 @@ export function LessonSelect({
           {sorted.map((lesson) => {
             const displayLang: LangCode = lesson.targetLangCode ?? trainer.languages[0];
             const summary = summarizeLesson(lesson, displayLang);
-            const numberLabel = lesson.lessonNumber
-              ? String(lesson.lessonNumber).padStart(3, "0")
-              : "—";
+            // Combined "A1-06" style label — lessonNumber is level-relative
+            // (resets to 1 at the start of each level), so this alone is
+            // enough to uniquely identify a lesson's position; no separate
+            // level line needed below it anymore. See docs/topic-lesson-
+            // system.md's numbering-scheme note for why lessonNumber had to
+            // become level-relative rather than globally sequential.
+            const numberLabel =
+              lesson.level && lesson.lessonNumber
+                ? `${lesson.level}-${String(lesson.lessonNumber).padStart(2, "0")}`
+                : "—";
             return (
               <button
                 key={lesson.id}
@@ -173,7 +180,6 @@ export function LessonSelect({
               >
                 <div className="lesson-row-number">
                   <div className="lesson-row-number-value">{numberLabel}</div>
-                  {lesson.level && <div className="lesson-row-level">{lesson.level}</div>}
                 </div>
                 <div className="lesson-row-body">
                   <div className="lesson-row-title">{lesson.title[displayLang] ?? lesson.title.en}</div>

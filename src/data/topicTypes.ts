@@ -77,7 +77,7 @@ export interface TopicQuestionSet {
 }
 
 export interface TopicLesson {
-  id: string; // "topic-05-food"
+  id: string; // e.g. "topic-a1-05-food" — level-prefixed, level-relative numbering (see LessonSelect.tsx's numberLabel)
   lessonNumber: number; // master table row
   topicName: Translations; // {en:"Food", ja:"たべもの", de:"Essen", zh:"食物"}
   // CEFR level, e.g. "A1", "A2". Optional — defaults to the target

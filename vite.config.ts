@@ -22,6 +22,18 @@ export default defineConfig({
         // app changelog on total app size), so this alone makes full
         // lessons available offline once cached.
         globPatterns: ['**/*.{js,css,html,svg,png}'],
+        // Workbox's default precache limit is 2 MiB. The main JS chunk
+        // crossed that threshold once enough lesson content had been
+        // added (2.2 MB as of the C1 Media lesson), which made the
+        // production build fail outright rather than just warn — not a
+        // performance nit, a hard build-breaking error. Raised well
+        // past current size to give headroom for the lesson content
+        // that's still being added; if this app ever needs real
+        // code-splitting for load-time reasons, that's a separate,
+        // bigger change (see the Vite chunk-size warning in build
+        // output for the same underlying growth, which this doesn't
+        // address — only unblocks the PWA precache step specifically).
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
       },
     }),
   ],

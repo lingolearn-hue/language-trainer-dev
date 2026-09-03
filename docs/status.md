@@ -8,14 +8,14 @@ methodology and the current numbers.
 
 ## The table
 
-| Language | A1 (target: 34) | A2 (target: 35) | B1+ |
-|---|---|---|---|
-| ja | 56% / 56% | 63% / 63% | — |
-| de | 56% / 56% | 63% / 0% | — |
-| en | 56% / 0% | 63% / 0% | — |
-| zh | 56% / 0% | 63% / 0% | — |
-| fr | 0% / 0% | 0% / 0% | — |
-| es | 0% / 0% | 0% / 0% | — |
+| Language | A1 (target: 34) | A2 (target: 35) | C1 (target: 34) | B1+ |
+|---|---|---|---|---|
+| ja | 56% / 56% | 63% / 63% | 0% / 0% | — |
+| de | 56% / 56% | 63% / 0% | 0% / 0% | — |
+| en | 56% / 0% | 63% / 0% | 21% / 0% | — |
+| zh | 56% / 0% | 63% / 0% | 21% / 21% | — |
+| fr | 0% / 0% | 0% / 0% | 0% / 0% | — |
+| es | 0% / 0% | 0% / 0% | 0% / 0% | — |
 
 Each cell reads **vocab/dialogue % / grammar+pronunciation %**.
 
@@ -24,7 +24,8 @@ Each cell reads **vocab/dialogue % / grammar+pronunciation %**.
 A1 is a 34-row master-table plan; A2 is a 35-row plan (34 in the
 original table plus row 35, Conjunctions, added when no existing row
 covered discourse-level sentence connectors — see
-`docs/a2-master-lesson-table-v01.md`). Every percentage in this table
+`docs/a2-master-lesson-table-v01.md`); C1 is a 34-row plan (see
+`docs/c1-master-lesson-table-v01.md`). Every percentage in this table
 is **(topics meeting the criterion) / (that level's row count)** — not
 a percentage of what's currently built. This means a language can
 show, say, 56% even though every topic actually built for that
@@ -71,10 +72,23 @@ has `en`/`zh` grammar or pronunciation authored. Closing this gap is
 authoring work (writing grammar explanations and pronunciation
 contrasts in a new target language), not migration work.
 
+**C1 breaks this pattern deliberately.** Every C1 topic built so far
+only authors `zh` (target) and `en` (source) — no `ja`/`de` at all,
+not even in vocab/dialogue. This was an explicit scope decision (see
+each C1 topic file's own header comment) to keep the first C1 lessons
+manageable while proving out the level's content shape, rather than
+4x-ing translation effort on lessons still being figured out. This is
+why C1's `ja`/`de` columns show 0% across the board rather than the
+usual "vocab/dialogue ahead of grammar/pronunciation" split — there's
+no `ja`/`de` content there at all yet, by design, not because
+grammar/pronunciation authoring lagged behind vocab like it did for
+A1/A2's `en`/`zh` columns.
+
 ## Regenerating the numbers
 
 To recompute after adding topics, for each level and language, count
-topics (out of that level's row count — 34 for A1, 35 for A2) where:
+topics (out of that level's row count — 34 for A1, 35 for A2, 34 for
+C1) where:
 - vocab/dialogue: `vocab` items and both `dialogueA`/`dialogueB` lines
   have that language key populated
 - grammar/pronunciation: both `grammar[lang]` and `pronunciation[lang]`
@@ -93,6 +107,11 @@ languages and grammar in only 1.
 - A2: 22 of 35 topics built. Every remaining row introduces a
   genuinely new grammar point — no review-lesson shortcut here, same
   authoring cost per lesson as what's already built.
+- C1: 7 of 34 topics built (rows 1–7: Education, Society, Politics,
+  Economy, Environment, Technology, Media). Chinese-target only so
+  far, `zh`/`en` languages only (see "Known asymmetry" above). Every
+  row introduces a new grammar function, same as A2.
 - B1+: no master table exists yet.
 
-Last updated: 2026-09-02 (v100+, A2 rows 16–23 and kanji completion).
+Last updated: 2026-09-03 (C1 rows 1–7 built; level-relative lesson
+numbering — see docs/topic-lesson-system.md).

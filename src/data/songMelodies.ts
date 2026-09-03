@@ -108,7 +108,7 @@ const OLD_MACDONALD: SongMelody = {
 
 // Same tune as BRUDER_JAKOB below, but keyed sg1-sg6 (matching the
 // topic-system's line-id convention) instead of r1-r6 (lesson2.ts's own
-// convention) — needed since topic-01-family/topic-04-emotions's song
+// convention) — needed since topic-a1-01-family/topic-a1-04-emotions's song
 // lines use sg1-sg6 ids, reusing lesson2's exact lyrics but as a fresh
 // block with the topic system's usual naming.
 const BRUDER_JAKOB_SG: SongMelody = {
@@ -149,7 +149,7 @@ const THIS_OLD_MAN: SongMelody = {
 };
 
 // Ten Little Fingers — same simple ascending counting-song melody
-// traditionally used for "Ten Little Indians" (see topic-15-landscape.ts
+// traditionally used for "Ten Little Indians" (see topic-a1-15-landscape.ts
 // for why the lyrics were substituted).
 const TEN_LITTLE_FINGERS: SongMelody = {
   bpm: 112,
@@ -212,82 +212,82 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   // German lesson11, repeated onto Topic 16 (Traffic) since row 16 is
   // an open slot in the master table.
   "de11-song": ROW_ROW_ROW_YOUR_BOAT,
-  "topic-11-travel-ja-song": ROW_ROW_ROW_YOUR_BOAT,
-  "topic-11-travel-de-song": ROW_ROW_ROW_YOUR_BOAT,
-  "topic-24-hobbies-ja-song": ROW_ROW_ROW_YOUR_BOAT,
-  "topic-16-traffic-ja-song": ROW_ROW_ROW_YOUR_BOAT,
+  "topic-a1-11-travel-ja-song": ROW_ROW_ROW_YOUR_BOAT,
+  "topic-a1-11-travel-de-song": ROW_ROW_ROW_YOUR_BOAT,
+  "topic-a2-05-hobbies-ja-song": ROW_ROW_ROW_YOUR_BOAT,
+  "topic-a1-16-traffic-ja-song": ROW_ROW_ROW_YOUR_BOAT,
 
   // Frère Jacques / Bruder Jakob — lesson2.ts's own block keeps its
   // original r1-r6 line ids; Topic 1 (Family, its documented home) and
   // Topic 4 (Emotions, an open slot filled with a repeat) use the
   // sg1-sg6-keyed version of the exact same tune.
   "l2-readalong-bruderjakob": BRUDER_JAKOB,
-  "topic-01-family-ja-song": BRUDER_JAKOB_SG,
-  "topic-01-family-de-song": BRUDER_JAKOB_SG,
-  "topic-04-emotions-ja-song": BRUDER_JAKOB_SG,
-  "topic-04-emotions-de-song": BRUDER_JAKOB_SG,
+  "topic-a1-01-family-ja-song": BRUDER_JAKOB_SG,
+  "topic-a1-01-family-de-song": BRUDER_JAKOB_SG,
+  "topic-a1-04-emotions-ja-song": BRUDER_JAKOB_SG,
+  "topic-a1-04-emotions-de-song": BRUDER_JAKOB_SG,
 
   // Alle meine Entchen (lesson2.ts) — not currently repeated elsewhere.
   "l2-readalong-entchen": ALLE_MEINE_ENTCHEN,
 
   // London Bridge Is Falling Down — Topic 12 (Directions, original
   // home), repeated onto Topic 17 (Work, an open slot).
-  "topic-12-directions-ja-song": LONDON_BRIDGE,
-  "topic-12-directions-de-song": LONDON_BRIDGE,
-  "topic-17-work-ja-song": LONDON_BRIDGE,
+  "topic-a1-12-directions-ja-song": LONDON_BRIDGE,
+  "topic-a1-12-directions-de-song": LONDON_BRIDGE,
+  "topic-a1-17-work-ja-song": LONDON_BRIDGE,
 
   // Twinkle Twinkle Little Star — Topic 13 (Time, original home). Not
   // currently repeated elsewhere.
-  "topic-13-time-ja-song": TWINKLE_TWINKLE,
-  "topic-13-time-de-song": TWINKLE_TWINKLE,
-  "topic-23-routine-ja-song": TWINKLE_TWINKLE,
+  "topic-a1-13-time-ja-song": TWINKLE_TWINKLE,
+  "topic-a1-13-time-de-song": TWINKLE_TWINKLE,
+  "topic-a2-04-routine-ja-song": TWINKLE_TWINKLE,
 
   // Head, Shoulders, Knees and Toes — Topic 2 (Body, original home),
   // repeated onto Topic 5 (Food, an open slot).
-  "topic-02-body-ja-song": HEAD_SHOULDERS,
-  "topic-02-body-de-song": HEAD_SHOULDERS,
-  "topic-05-food-ja-song": HEAD_SHOULDERS,
-  "topic-05-food-de-song": HEAD_SHOULDERS,
+  "topic-a1-02-body-ja-song": HEAD_SHOULDERS,
+  "topic-a1-02-body-de-song": HEAD_SHOULDERS,
+  "topic-a1-05-food-ja-song": HEAD_SHOULDERS,
+  "topic-a1-05-food-de-song": HEAD_SHOULDERS,
 
   // Itsy Bitsy Spider — Topic 7 (Clothing, original home). Not currently
   // repeated elsewhere.
-  "topic-07-clothing-ja-song": ITSY_BITSY_SPIDER,
-  "topic-07-clothing-de-song": ITSY_BITSY_SPIDER,
+  "topic-a1-07-clothing-ja-song": ITSY_BITSY_SPIDER,
+  "topic-a1-07-clothing-de-song": ITSY_BITSY_SPIDER,
 
   // Old MacDonald Had a Farm — Topic 9 (Animals, original home),
   // repeated onto Topic 14 (Countries, an open slot).
-  "topic-09-animals-ja-song": OLD_MACDONALD,
-  "topic-09-animals-de-song": OLD_MACDONALD,
-  "topic-14-countries-ja-song": OLD_MACDONALD,
+  "topic-a1-09-animals-ja-song": OLD_MACDONALD,
+  "topic-a1-09-animals-de-song": OLD_MACDONALD,
+  "topic-a1-14-countries-ja-song": OLD_MACDONALD,
 
   // Alouette — Topic 3 (Appearance, documented home), reused exactly at
   // Topic 19 (Weather, per the master table's own explicit note), and
   // repeated onto Topic 6 (Home, an open slot).
-  "topic-03-appearance-ja-song": ALOUETTE,
-  "topic-03-appearance-de-song": ALOUETTE,
-  "topic-06-home-ja-song": ALOUETTE,
-  "topic-06-home-de-song": ALOUETTE,
-  "topic-19-weather-ja-song": ALOUETTE,
+  "topic-a1-03-appearance-ja-song": ALOUETTE,
+  "topic-a1-03-appearance-de-song": ALOUETTE,
+  "topic-a1-06-home-ja-song": ALOUETTE,
+  "topic-a1-06-home-de-song": ALOUETTE,
+  "topic-a1-19-weather-ja-song": ALOUETTE,
 
   // This Old Man — Topic 8 (Shopping, documented home — fits its
   // numbers/quantity grammar), repeated onto Topic 10 (Health, an open
   // slot).
-  "topic-08-shopping-ja-song": THIS_OLD_MAN,
-  "topic-08-shopping-de-song": THIS_OLD_MAN,
-  "topic-10-health-ja-song": THIS_OLD_MAN,
-  "topic-10-health-de-song": THIS_OLD_MAN,
+  "topic-a1-08-shopping-ja-song": THIS_OLD_MAN,
+  "topic-a1-08-shopping-de-song": THIS_OLD_MAN,
+  "topic-a1-10-health-ja-song": THIS_OLD_MAN,
+  "topic-a1-10-health-de-song": THIS_OLD_MAN,
 
-  // Ten Little Fingers (see topic-15-landscape.ts for the lyric
+  // Ten Little Fingers (see topic-a1-15-landscape.ts for the lyric
   // substitution note) — Topic 15 (Landscape, documented home for "Ten
   // Little Indians"). Not currently repeated elsewhere.
-  "topic-15-landscape-ja-song": TEN_LITTLE_FINGERS,
+  "topic-a1-15-landscape-ja-song": TEN_LITTLE_FINGERS,
 
   // Happy Birthday to You — Topic 18 (School, documented home). Not
   // currently repeated elsewhere.
-  "topic-18-school-ja-song": HAPPY_BIRTHDAY,
+  "topic-a1-18-school-ja-song": HAPPY_BIRTHDAY,
 
   // A2 topics each get their own song, not a repeat of an A1 one.
-  "topic-20-weekend-ja-song": IF_YOURE_HAPPY,
-  "topic-21-abilities-ja-song": WHEELS_ON_THE_BUS,
-  "topic-22-conditional-ja-song": MARY_HAD_A_LITTLE_LAMB,
+  "topic-a2-01-weekend-ja-song": IF_YOURE_HAPPY,
+  "topic-a2-02-abilities-ja-song": WHEELS_ON_THE_BUS,
+  "topic-a2-03-conditional-ja-song": MARY_HAD_A_LITTLE_LAMB,
 };

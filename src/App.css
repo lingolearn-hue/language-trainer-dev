@@ -649,11 +649,10 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 }
 .lesson-row:hover { transform: translateY(-1px); border-color: #3355e0; }
 .lesson-row-number {
-  flex: 0 0 56px; display: flex; flex-direction: column; align-items: center;
+  flex: 0 0 68px; display: flex; flex-direction: column; align-items: center;
   justify-content: center; border-right: 1px solid #e2e2e8; padding: 0 8px;
 }
-.lesson-row-number-value { font-size: 15px; font-weight: 700; }
-.lesson-row-level { font-size: 10px; color: #9a9aa2; margin-top: 2px; }
+.lesson-row-number-value { font-size: 14px; font-weight: 700; white-space: nowrap; }
 .lesson-row-body {
   flex: 1; min-width: 0; padding: 0 12px; border-right: 1px solid #e2e2e8;
   display: flex; flex-direction: column; justify-content: center; gap: 2px;
