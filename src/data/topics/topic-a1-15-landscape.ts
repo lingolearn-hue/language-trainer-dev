@@ -14,73 +14,73 @@ export const topicLandscape: TopicLesson = {
     zh: "自然风光"
   },
   vocab: [
-    { id: "v01", category: "noun", translations: { ja: "やま", en: "mountain", de: "Berg", zh: "山" } },
-    { id: "v02", category: "noun", translations: { ja: "かわ", en: "river", de: "Fluss", zh: "河流" } },
-    { id: "v03", category: "noun", translations: { ja: "うみ", en: "sea, ocean", de: "Meer", zh: "海" } },
-    { id: "v04", category: "noun", translations: { ja: "みずうみ", en: "lake", de: "See", zh: "湖" } },
-    { id: "v05", category: "noun", translations: { ja: "もり", en: "forest", de: "Wald", zh: "森林" } },
-    { id: "v06", category: "noun", translations: { ja: "はやし", en: "woods, grove", de: "Wäldchen, Gehölz", zh: "树林" } },
-    { id: "v07", category: "noun", translations: { ja: "たに", en: "valley", de: "Tal", zh: "山谷" } },
-    { id: "v08", category: "noun", translations: { ja: "はま", en: "beach, shore", de: "Strand", zh: "海滩" } },
-    { id: "v09", category: "noun", translations: { ja: "しま", en: "island", de: "Insel", zh: "岛屿" } },
-    { id: "v10", category: "noun", translations: { ja: "けしき", en: "scenery, view", de: "Landschaft, Aussicht", zh: "风景" } },
-    { id: "v11", category: "noun", translations: { ja: "ちへいせん", en: "horizon", de: "Horizont", zh: "地平线" } },
-    { id: "v12", category: "noun", translations: { ja: "たいよう", en: "sun", de: "Sonne", zh: "太阳" } },
-    { id: "v13", category: "noun", translations: { ja: "そら", en: "sky", de: "Himmel", zh: "天空" } },
-    { id: "v14", category: "noun", translations: { ja: "くも", en: "cloud", de: "Wolke", zh: "云" } },
-    { id: "v15", category: "verb", translations: { ja: "のぼる", en: "to climb", de: "besteigen, hinaufsteigen", zh: "攀登" } },
-    { id: "v16", category: "verb", translations: { ja: "ながめる", en: "to gaze at, look out over", de: "betrachten, hinausblicken", zh: "眺望" } },
-    { id: "v17", category: "verb", translations: { ja: "ハイキングする", en: "to go hiking", de: "wandern", zh: "徒步旅行" } },
-    { id: "v18", category: "verb", translations: { ja: "キャンプする", en: "to go camping", de: "campen", zh: "露营" } },
-    { id: "v19", category: "adjective", translations: { ja: "たかい", en: "high, tall", de: "hoch", zh: "高的" } },
-    { id: "v20", category: "adjective", translations: { ja: "ひくい", en: "low", de: "niedrig", zh: "低的" } },
-    { id: "v21", category: "adjective", translations: { ja: "ふかい", en: "deep", de: "tief", zh: "深的" } },
-    { id: "v22", category: "adjective", translations: { ja: "あさい", en: "shallow", de: "flach", zh: "浅的" } },
-    { id: "v23", category: "adjective", translations: { ja: "ひろい", en: "wide, spacious", de: "weit, geräumig", zh: "宽阔的" } },
-    { id: "v24", category: "adjective", translations: { ja: "しずかな", en: "quiet, peaceful", de: "ruhig", zh: "安静的" } },
-    { id: "v25", category: "adjective", translations: { ja: "うつくしい", en: "beautiful", de: "wunderschön", zh: "美丽的" } },
-    { id: "v26", category: "adjective", translations: { ja: "きけんな", en: "dangerous", de: "gefährlich", zh: "危险的" } },
-    { id: "v27", category: "noun", translations: { ja: "きゅうか", en: "vacation, holiday", de: "Urlaub", zh: "假期" } },
-    { id: "v28", category: "noun", translations: { ja: "たびさき", en: "travel destination", de: "Reiseziel", zh: "旅游目的地" } },
-    { id: "v29", category: "noun", translations: { ja: "ちず", en: "map", de: "Karte", zh: "地图" } },
-    { id: "v30", category: "noun", translations: { ja: "みち", en: "path, road", de: "Weg", zh: "路" } }
+    { id: "v01", category: "noun", translations: { ja: "やま", en: "mountain", de: "Berg", zh: "山", fr: "montagne" } },
+    { id: "v02", category: "noun", translations: { ja: "かわ", en: "river", de: "Fluss", zh: "河流", fr: "rivière" } },
+    { id: "v03", category: "noun", translations: { ja: "うみ", en: "sea, ocean", de: "Meer", zh: "海", fr: "mer" } },
+    { id: "v04", category: "noun", translations: { ja: "みずうみ", en: "lake", de: "See", zh: "湖", fr: "lac" } },
+    { id: "v05", category: "noun", translations: { ja: "もり", en: "forest", de: "Wald", zh: "森林", fr: "forêt" } },
+    { id: "v06", category: "noun", translations: { ja: "はやし", en: "woods, grove", de: "Wäldchen, Gehölz", zh: "树林", fr: "bois" } },
+    { id: "v07", category: "noun", translations: { ja: "たに", en: "valley", de: "Tal", zh: "山谷", fr: "vallée" } },
+    { id: "v08", category: "noun", translations: { ja: "はま", en: "beach, shore", de: "Strand", zh: "海滩", fr: "plage" } },
+    { id: "v09", category: "noun", translations: { ja: "しま", en: "island", de: "Insel", zh: "岛屿", fr: "île" } },
+    { id: "v10", category: "noun", translations: { ja: "けしき", en: "scenery, view", de: "Landschaft, Aussicht", zh: "风景", fr: "paysage" } },
+    { id: "v11", category: "noun", translations: { ja: "ちへいせん", en: "horizon", de: "Horizont", zh: "地平线", fr: "horizon" } },
+    { id: "v12", category: "noun", translations: { ja: "たいよう", en: "sun", de: "Sonne", zh: "太阳", fr: "soleil" } },
+    { id: "v13", category: "noun", translations: { ja: "そら", en: "sky", de: "Himmel", zh: "天空", fr: "ciel" } },
+    { id: "v14", category: "noun", translations: { ja: "くも", en: "cloud", de: "Wolke", zh: "云", fr: "nuage" } },
+    { id: "v15", category: "verb", translations: { ja: "のぼる", en: "to climb", de: "besteigen, hinaufsteigen", zh: "攀登", fr: "monter, gravir" } },
+    { id: "v16", category: "verb", translations: { ja: "ながめる", en: "to gaze at, look out over", de: "betrachten, hinausblicken", zh: "眺望", fr: "contempler" } },
+    { id: "v17", category: "verb", translations: { ja: "ハイキングする", en: "to go hiking", de: "wandern", zh: "徒步旅行", fr: "faire de la randonnée" } },
+    { id: "v18", category: "verb", translations: { ja: "キャンプする", en: "to go camping", de: "campen", zh: "露营", fr: "camper" } },
+    { id: "v19", category: "adjective", translations: { ja: "たかい", en: "high, tall", de: "hoch", zh: "高的", fr: "haut(e)" } },
+    { id: "v20", category: "adjective", translations: { ja: "ひくい", en: "low", de: "niedrig", zh: "低的", fr: "bas(se)" } },
+    { id: "v21", category: "adjective", translations: { ja: "ふかい", en: "deep", de: "tief", zh: "深的", fr: "profond(e)" } },
+    { id: "v22", category: "adjective", translations: { ja: "あさい", en: "shallow", de: "flach", zh: "浅的", fr: "peu profond(e)" } },
+    { id: "v23", category: "adjective", translations: { ja: "ひろい", en: "wide, spacious", de: "weit, geräumig", zh: "宽阔的", fr: "large, spacieux(se)" } },
+    { id: "v24", category: "adjective", translations: { ja: "しずかな", en: "quiet, peaceful", de: "ruhig", zh: "安静的", fr: "calme" } },
+    { id: "v25", category: "adjective", translations: { ja: "うつくしい", en: "beautiful", de: "wunderschön", zh: "美丽的", fr: "beau, belle" } },
+    { id: "v26", category: "adjective", translations: { ja: "きけんな", en: "dangerous", de: "gefährlich", zh: "危险的", fr: "dangereux(se)" } },
+    { id: "v27", category: "noun", translations: { ja: "きゅうか", en: "vacation, holiday", de: "Urlaub", zh: "假期", fr: "vacances" } },
+    { id: "v28", category: "noun", translations: { ja: "たびさき", en: "travel destination", de: "Reiseziel", zh: "旅游目的地", fr: "destination de voyage" } },
+    { id: "v29", category: "noun", translations: { ja: "ちず", en: "map", de: "Karte", zh: "地图", fr: "carte" } },
+    { id: "v30", category: "noun", translations: { ja: "みち", en: "path, road", de: "Weg", zh: "路", fr: "chemin" } }
   ],
   dialogueA: {
-    title: { ja: "きゅうかの ばしょを えらぶ", en: "Choosing a Vacation Spot", de: "Ein Urlaubsziel auswählen", zh: "选择度假地点" },
+    title: { ja: "きゅうかの ばしょを えらぶ", en: "Choosing a Vacation Spot", de: "Ein Urlaubsziel auswählen", zh: "选择度假地点", fr: "Choisir un lieu de vacances" },
     lines: [
-      { id: "d1", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "きゅうかは どこへ いきたい？", en: "Where do you want to go for vacation?", de: "Wohin möchtest du im Urlaub fahren?", zh: "假期你想去哪里？" } },
-      { id: "d2", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "うみか やま、どっちが いい？", en: "The sea or the mountains, which is better?", de: "Meer oder Berge, was ist besser?", zh: "海边还是山里，哪个好？" } },
-      { id: "d3", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "やまのほうが うみより すきだよ。", en: "I like the mountains more than the sea.", de: "Ich mag Berge lieber als das Meer.", zh: "比起海边，我更喜欢山里。" } },
-      { id: "d4", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "どうして？", en: "Why?", de: "Warum?", zh: "为什么？" } },
-      { id: "d5", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "やまは うみより しずかだから。", en: "Because the mountains are quieter than the sea.", de: "Weil die Berge ruhiger sind als das Meer.", zh: "因为山里比海边更安静。" } },
-      { id: "d6", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "でも けしきは うみのほうが きれいだよ。", en: "But the scenery at the sea is prettier.", de: "Aber die Aussicht am Meer ist schöner.", zh: "但是海边的风景更美。" } },
-      { id: "d7", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "この にほんで いちばん たかい やまは どこ？", en: "Where's the tallest mountain in Japan?", de: "Wo ist der höchste Berg in Japan?", zh: "日本最高的山在哪里？" } },
-      { id: "d8", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "ふじさんが いちばん たかいよ。", en: "Mt. Fuji is the tallest.", de: "Der Fuji ist der höchste.", zh: "富士山最高。" } },
-      { id: "d9", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "のぼった こと ある？", en: "Have you ever climbed it?", de: "Bist du schon einmal hochgestiegen?", zh: "你爬过吗？" } },
-      { id: "d10", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "ううん、まだ。でも いつか のぼりたい。", en: "No, not yet. But I want to climb it someday.", de: "Nein, noch nicht. Aber ich möchte irgendwann hinauf.", zh: "没有，还没有。但我总有一天想爬。" } },
-      { id: "d11", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "じゃあ、こんどの きゅうかに いこうよ。", en: "Then let's go this next vacation.", de: "Dann lass uns im nächsten Urlaub hingehen.", zh: "那我们下次假期一起去吧。" } },
-      { id: "d12", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "いいね！やまと うみ、りょうほう いこう。", en: "Sounds great! Let's go to both the mountains and the sea.", de: "Klingt gut! Lass uns beides machen, Berge und Meer.", zh: "好啊！山里和海边都去吧。" } },
-      { id: "d13", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "それが いちばん いい かんがえだね。", en: "That's the best idea.", de: "Das ist die beste Idee.", zh: "这是最好的主意。" } },
-      { id: "d14", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "たのしみだね！", en: "I can't wait!", de: "Ich freue mich schon!", zh: "好期待啊！" } }
+      { id: "d1", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "きゅうかは どこへ いきたい？", en: "Where do you want to go for vacation?", de: "Wohin möchtest du im Urlaub fahren?", zh: "假期你想去哪里？", fr: "Où veux-tu aller en vacances ?" } },
+      { id: "d2", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "うみか やま、どっちが いい？", en: "The sea or the mountains, which is better?", de: "Meer oder Berge, was ist besser?", zh: "海边还是山里，哪个好？", fr: "La mer ou la montagne, laquelle est mieux ?" } },
+      { id: "d3", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "やまのほうが うみより すきだよ。", en: "I like the mountains more than the sea.", de: "Ich mag Berge lieber als das Meer.", zh: "比起海边，我更喜欢山里。", fr: "J'aime plus la montagne que la mer." } },
+      { id: "d4", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "どうして？", en: "Why?", de: "Warum?", zh: "为什么？", fr: "Pourquoi ?" } },
+      { id: "d5", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "やまは うみより しずかだから。", en: "Because the mountains are quieter than the sea.", de: "Weil die Berge ruhiger sind als das Meer.", zh: "因为山里比海边更安静。", fr: "Parce que la montagne est plus calme que la mer." } },
+      { id: "d6", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "でも けしきは うみのほうが きれいだよ。", en: "But the scenery at the sea is prettier.", de: "Aber die Aussicht am Meer ist schöner.", zh: "但是海边的风景更美。", fr: "Mais le paysage de la mer est plus beau." } },
+      { id: "d7", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "この にほんで いちばん たかい やまは どこ？", en: "Where's the tallest mountain in Japan?", de: "Wo ist der höchste Berg in Japan?", zh: "日本最高的山在哪里？", fr: "Où est la montagne la plus haute du Japon ?" } },
+      { id: "d8", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "ふじさんが いちばん たかいよ。", en: "Mt. Fuji is the tallest.", de: "Der Fuji ist der höchste.", zh: "富士山最高。", fr: "Le mont Fuji est le plus haut." } },
+      { id: "d9", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "のぼった こと ある？", en: "Have you ever climbed it?", de: "Bist du schon einmal hochgestiegen?", zh: "你爬过吗？", fr: "Tu l'as déjà gravi ?" } },
+      { id: "d10", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "ううん、まだ。でも いつか のぼりたい。", en: "No, not yet. But I want to climb it someday.", de: "Nein, noch nicht. Aber ich möchte irgendwann hinauf.", zh: "没有，还没有。但我总有一天想爬。", fr: "Non, pas encore. Mais je veux le gravir un jour." } },
+      { id: "d11", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "じゃあ、こんどの きゅうかに いこうよ。", en: "Then let's go this next vacation.", de: "Dann lass uns im nächsten Urlaub hingehen.", zh: "那我们下次假期一起去吧。", fr: "Alors allons-y aux prochaines vacances." } },
+      { id: "d12", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "いいね！やまと うみ、りょうほう いこう。", en: "Sounds great! Let's go to both the mountains and the sea.", de: "Klingt gut! Lass uns beides machen, Berge und Meer.", zh: "好啊！山里和海边都去吧。", fr: "Génial ! Allons à la montagne et à la mer, toutes les deux." } },
+      { id: "d13", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "それが いちばん いい かんがえだね。", en: "That's the best idea.", de: "Das ist die beste Idee.", zh: "这是最好的主意。", fr: "C'est la meilleure idée." } },
+      { id: "d14", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "たのしみだね！", en: "I can't wait!", de: "Ich freue mich schon!", zh: "好期待啊！", fr: "J'ai hâte !" } }
     ]
   },
   dialogueB: {
-    title: { ja: "やまの うえからの けしき", en: "The View from the Mountaintop", de: "Die Aussicht vom Berggipfel", zh: "从山顶眺望的景色" },
+    title: { ja: "やまの うえからの けしき", en: "The View from the Mountaintop", de: "Die Aussicht vom Berggipfel", zh: "从山顶眺望的景色", fr: "La vue depuis le sommet" },
     lines: [
-      { id: "e1", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "やっと ちょうじょうに ついたね。", en: "We finally reached the summit.", de: "Wir haben endlich den Gipfel erreicht.", zh: "终于到山顶了。" } },
-      { id: "e2", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "この けしき、みて！すごい！", en: "Look at this view! Amazing!", de: "Schau dir diese Aussicht an! Fantastisch!", zh: "快看这个景色！太棒了！" } },
-      { id: "e3", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "したに もりと かわが みえるよ。", en: "You can see the forest and the river down below.", de: "Man sieht den Wald und den Fluss dort unten.", zh: "下面能看到森林和河流。" } },
-      { id: "e4", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "あのみずうみは この へんで いちばん おおきいよ。", en: "That lake is the biggest one in this area.", de: "Der See dort ist der größte in dieser Gegend.", zh: "那个湖是这一带最大的。" } },
-      { id: "e5", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "うみより ちいさいけど、きれいだね。", en: "It's smaller than the sea, but it's beautiful.", de: "Er ist kleiner als das Meer, aber wunderschön.", zh: "虽然比海小，但很美。" } },
-      { id: "e6", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "そらも きょうは いちばん きれいだと おもう。", en: "I think the sky is the most beautiful I've seen it today too.", de: "Ich finde, der Himmel ist heute auch am schönsten.", zh: "我觉得今天的天空也是最美的。" } },
-      { id: "e7", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "くもが ぜんぜん ないね。", en: "There are no clouds at all.", de: "Es gibt überhaupt keine Wolken.", zh: "一点云都没有。" } },
-      { id: "e8", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "ちへいせんまで みえる きがする。", en: "I feel like I can even see the horizon.", de: "Ich habe das Gefühl, ich kann sogar den Horizont sehen.", zh: "感觉都能看到地平线了。" } },
-      { id: "e9", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "ここまでの みちは たにより らくだったね。", en: "The path here was easier than through the valley.", de: "Der Weg hierher war einfacher als durch das Tal.", zh: "这里的路比走山谷更轻松。" } },
-      { id: "e10", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "でも いちばん きけんな ばしょは あそこの がけだよ。", en: "But the most dangerous spot is that cliff over there.", de: "Aber die gefährlichste Stelle ist die Klippe dort drüben.", zh: "但最危险的地方是那边的悬崖。" } },
-      { id: "e11", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "きをつけて ながめようね。", en: "Let's be careful while we look.", de: "Lass uns vorsichtig hinschauen.", zh: "我们小心点眺望吧。" } },
-      { id: "e12", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "しゃしんを たくさん とりたいな。", en: "I want to take lots of photos.", de: "Ich möchte viele Fotos machen.", zh: "我想拍很多照片。" } },
-      { id: "e13", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "この けしきは わすれられないね。", en: "I won't forget this view.", de: "Diese Aussicht werde ich nicht vergessen.", zh: "这个景色真是难忘啊。" } },
-      { id: "e14", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "また いっしょに のぼろうね。", en: "Let's climb together again.", de: "Lass uns wieder zusammen hochsteigen.", zh: "我们再一起爬吧。" } }
+      { id: "e1", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "やっと ちょうじょうに ついたね。", en: "We finally reached the summit.", de: "Wir haben endlich den Gipfel erreicht.", zh: "终于到山顶了。", fr: "On a enfin atteint le sommet." } },
+      { id: "e2", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "この けしき、みて！すごい！", en: "Look at this view! Amazing!", de: "Schau dir diese Aussicht an! Fantastisch!", zh: "快看这个景色！太棒了！", fr: "Regarde cette vue ! Incroyable !" } },
+      { id: "e3", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "したに もりと かわが みえるよ。", en: "You can see the forest and the river down below.", de: "Man sieht den Wald und den Fluss dort unten.", zh: "下面能看到森林和河流。", fr: "On voit la forêt et la rivière en bas." } },
+      { id: "e4", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "あのみずうみは この へんで いちばん おおきいよ。", en: "That lake is the biggest one in this area.", de: "Der See dort ist der größte in dieser Gegend.", zh: "那个湖是这一带最大的。", fr: "Ce lac est le plus grand de cette région." } },
+      { id: "e5", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "うみより ちいさいけど、きれいだね。", en: "It's smaller than the sea, but it's beautiful.", de: "Er ist kleiner als das Meer, aber wunderschön.", zh: "虽然比海小，但很美。", fr: "Il est plus petit que la mer, mais il est beau." } },
+      { id: "e6", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "そらも きょうは いちばん きれいだと おもう。", en: "I think the sky is the most beautiful I've seen it today too.", de: "Ich finde, der Himmel ist heute auch am schönsten.", zh: "我觉得今天的天空也是最美的。", fr: "Je pense que le ciel est aussi le plus beau aujourd'hui." } },
+      { id: "e7", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "くもが ぜんぜん ないね。", en: "There are no clouds at all.", de: "Es gibt überhaupt keine Wolken.", zh: "一点云都没有。", fr: "Il n'y a aucun nuage." } },
+      { id: "e8", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "ちへいせんまで みえる きがする。", en: "I feel like I can even see the horizon.", de: "Ich habe das Gefühl, ich kann sogar den Horizont sehen.", zh: "感觉都能看到地平线了。", fr: "J'ai l'impression de voir jusqu'à l'horizon." } },
+      { id: "e9", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "ここまでの みちは たにより らくだったね。", en: "The path here was easier than through the valley.", de: "Der Weg hierher war einfacher als durch das Tal.", zh: "这里的路比走山谷更轻松。", fr: "Le chemin jusqu'ici était plus facile que par la vallée." } },
+      { id: "e10", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "でも いちばん きけんな ばしょは あそこの がけだよ。", en: "But the most dangerous spot is that cliff over there.", de: "Aber die gefährlichste Stelle ist die Klippe dort drüben.", zh: "但最危险的地方是那边的悬崖。", fr: "Mais l'endroit le plus dangereux est cette falaise là-bas." } },
+      { id: "e11", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "きをつけて ながめようね。", en: "Let's be careful while we look.", de: "Lass uns vorsichtig hinschauen.", zh: "我们小心点眺望吧。", fr: "Regardons prudemment." } },
+      { id: "e12", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "しゃしんを たくさん とりたいな。", en: "I want to take lots of photos.", de: "Ich möchte viele Fotos machen.", zh: "我想拍很多照片。", fr: "Je veux prendre beaucoup de photos." } },
+      { id: "e13", speaker: { ja: "ゆき", en: "Yuki", de: "Yuki", zh: "雪" }, translations: { ja: "この けしきは わすれられないね。", en: "I won't forget this view.", de: "Diese Aussicht werde ich nicht vergessen.", zh: "这个景色真是难忘啊。", fr: "Je n'oublierai pas cette vue." } },
+      { id: "e14", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "また いっしょに のぼろうね。", en: "Let's climb together again.", de: "Lass uns wieder zusammen hochsteigen.", zh: "我们再一起爬吧。", fr: "Grimpons encore ensemble." } }
     ]
   },
   song: {
@@ -91,12 +91,12 @@ export const topicLandscape: TopicLesson = {
     // counting-song melody and structure, teaching the same numbers
     // without that content. Noted explicitly rather than silently
     // swapped — see also the master table's own update for this.
-    title: { ja: "10 の ゆび", en: "Ten Little Fingers", de: "Zehn kleine Finger" },
+    title: { ja: "10 の ゆび", en: "Ten Little Fingers", de: "Zehn kleine Finger", fr: "Dix petits doigts" },
     lines: [
-      { id: "sg1", translations: { ja: "いっぽん ゆび、にほん ゆび、さんぼん ゆび", en: "One little, two little, three little fingers", de: "Ein kleiner, zwei kleine, drei kleine Finger" } },
-      { id: "sg2", translations: { ja: "よんほん ゆび、ごほん ゆび", en: "Four little, five little fingers", de: "Vier kleine, fünf kleine Finger" } },
-      { id: "sg3", translations: { ja: "ろっぽん ゆび、ななほん ゆび、はっぽん ゆび", en: "Six little, seven little, eight little fingers", de: "Sechs kleine, sieben kleine, acht kleine Finger" } },
-      { id: "sg4", translations: { ja: "きゅうほん ゆび、じゅっぽん ゆび", en: "Nine little, ten little fingers", de: "Neun kleine, zehn kleine Finger" } }
+      { id: "sg1", translations: { ja: "いっぽん ゆび、にほん ゆび、さんぼん ゆび", en: "One little, two little, three little fingers", de: "Ein kleiner, zwei kleine, drei kleine Finger", fr: "Un petit, deux petits, trois petits doigts" } },
+      { id: "sg2", translations: { ja: "よんほん ゆび、ごほん ゆび", en: "Four little, five little fingers", de: "Vier kleine, fünf kleine Finger", fr: "Quatre petits, cinq petits doigts" } },
+      { id: "sg3", translations: { ja: "ろっぽん ゆび、ななほん ゆび、はっぽん ゆび", en: "Six little, seven little, eight little fingers", de: "Sechs kleine, sieben kleine, acht kleine Finger", fr: "Six petits, sept petits, huit petits doigts" } },
+      { id: "sg4", translations: { ja: "きゅうほん ゆび、じゅっぽん ゆび", en: "Nine little, ten little fingers", de: "Neun kleine, zehn kleine Finger", fr: "Neuf petits, dix petits doigts" } }
     ]
   },
   grammar: {
@@ -133,6 +133,31 @@ export const topicLandscape: TopicLesson = {
         { id: "g5", translations: { de: "Dieser See ist nicht so groß wie jener See.", en: "This lake isn't as big as that lake. (negative comparison: nicht so ... wie)", ja: "この みずうみは あの みずうみほど おおきくないです。（ひていの ひかく：nicht so ... wie）", zh: "这个湖没有那个湖大。（否定比较：nicht so ... wie）" } },
         { id: "g6", translations: { de: "Dieser Weg ist am einfachsten.", en: "This path is the easiest. (superlative: am -sten)", ja: "この みちが いちばん らくです。（さいじょうきゅう：am -sten）", zh: "这条路最轻松。（最高级：am -sten）" } }
       ]
+    },
+    // French reinforces the same comparative/superlative point as ja
+    // and de above, with fresh landscape examples that directly
+    // translate this file's own ja/de chunks (not reused from Topic
+    // 19 Weather's plus...que introduction, which this session also
+    // built — same grammar point, different example sentences, same
+    // "reinforcement not repetition" principle the ja/de content here
+    // already follows relative to each other).
+    fr: {
+      title: { fr: "Le comparatif et le superlatif (renforcement)", en: "Comparative and Superlative (Reinforced)", de: "Komparativ und Superlativ (vertieft)", ja: "ひかくきゅう と さいじょうきゅう（ふくしゅう）", zh: "比较级与最高级（巩固）" },
+      explanation: {
+        fr: "Cette leçon reprend « plus...que » et « le/la plus » vus dans une leçon précédente, cette fois avec le vocabulaire du paysage. « Plus...que » compare deux choses : La montagne est plus calme que la mer. « Le/la plus » + adjectif désigne la meilleure parmi plusieurs : Le mont Fuji est la montagne la plus haute du Japon.",
+        en: "This lesson revisits \"plus...que\" and \"le/la plus\" from an earlier lesson, this time with landscape vocabulary. \"Plus...que\" compares two things: La montagne est plus calme que la mer (The mountain is quieter than the sea). \"Le/la plus\" + adjective picks out the best among several: Le mont Fuji est la montagne la plus haute du Japon (Mt. Fuji is the tallest mountain in Japan).",
+        de: "Diese Lektion greift „plus...que\" und „le/la plus\" aus einer früheren Lektion wieder auf, diesmal mit Landschaftsvokabular. „Plus...que\" vergleicht zwei Dinge: La montagne est plus calme que la mer (Der Berg ist ruhiger als das Meer). „Le/la plus\" + Adjektiv wählt das Beste unter mehreren aus: Le mont Fuji est la montagne la plus haute du Japon (Der Fuji ist der höchste Berg Japans).",
+        ja: "この レッスンは、まえの レッスンで ならった「plus...que」と「le/la plus」を、しぜんの ことばで もういちど れんしゅうします。「plus...que」は ふたつを くらべます：La montagne est plus calme que la mer（やまは うみより しずかです）。「le/la plus」＋けいようしは、いくつかの なかで いちばんを えらびます：Le mont Fuji est la montagne la plus haute du Japon（ふじさんは にほんで いちばん たかい やまです）。",
+        zh: "本课重新练习之前学过的「plus...que」和「le/la plus」，这次使用自然风光词汇。「plus...que」比较两个事物：La montagne est plus calme que la mer（山比海更安静）。「le/la plus」+形容词在多个中选出最好的：Le mont Fuji est la montagne la plus haute du Japon（富士山是日本最高的山）。"
+      },
+      chunks: [
+        { id: "g1", translations: { fr: "La montagne est plus calme que la mer.", en: "The mountain is quieter than the sea. (plus...que)", de: "Der Berg ist ruhiger als das Meer. (plus...que)", ja: "やまは うみより しずかです。（plus...que）", zh: "山比海更安静。（plus...que）" } },
+        { id: "g2", translations: { fr: "La mer a un plus beau paysage.", en: "The sea has a prettier landscape. (comparative, attributive)", de: "Das Meer hat die schönere Aussicht. (Vergleich, attributiv)", ja: "うみのほうが けしきが きれいです。（ひかくきゅう、しゅうしょくご）", zh: "海边的风景更美。（比较级，定语形式）" } },
+        { id: "g3", translations: { fr: "Montagne ou mer, laquelle préférez-vous ?", en: "Mountains or sea, which do you prefer?", de: "Berge oder Meer, was mögen Sie lieber?", ja: "やまと うみ、どちらが すきですか？", zh: "山和海，你更喜欢哪个？" } },
+        { id: "g4", translations: { fr: "Le mont Fuji est la montagne la plus haute du Japon.", en: "Mt. Fuji is the tallest mountain in Japan. (superlative, attributive)", de: "Der Fuji ist der höchste Berg in Japan. (Superlativ, attributiv)", ja: "にほんで いちばん たかい やまは ふじさんです。（さいじょうきゅう、しゅうしょくご）", zh: "日本最高的山是富士山。（最高级，定语形式）" } },
+        { id: "g5", translations: { fr: "Ce lac n'est pas aussi grand que cet autre lac.", en: "This lake isn't as big as that lake. (negative comparison)", de: "Dieser See ist nicht so groß wie jener See. (negativer Vergleich)", ja: "この みずうみは あの みずうみほど おおきくないです。（ひていの ひかく）", zh: "这个湖没有那个湖大。（否定比较）" } },
+        { id: "g6", translations: { fr: "Ce chemin est le plus facile.", en: "This path is the easiest. (superlative)", de: "Dieser Weg ist am einfachsten. (Superlativ)", ja: "この みちが いちばん らくです。（さいじょうきゅう）", zh: "这条路最轻松。（最高级）" } }
+      ]
     }
   },
   pronunciation: {
@@ -166,6 +191,27 @@ export const topicLandscape: TopicLesson = {
         { id: "uo1", category: "ue_oe", translations: { de: "Hügel", en: "hill", ja: "おか", zh: "小山" } },
         { id: "uo2", category: "ue_oe", translations: { de: "schön", en: "beautiful", ja: "うつくしい", zh: "美丽的" } },
         { id: "uo3", category: "ue_oe", translations: { de: "Höhe", en: "height, altitude", ja: "たかさ", zh: "高度" } }
+      ]
+    },
+    // French pronunciation: closed é [e] vs. open è/ê [ɛ] — a genuine
+    // vowel-quality distinction with no English equivalent, anchored
+    // in landscape vocabulary that naturally has both (rivière, forêt,
+    // falaise on the open side).
+    fr: {
+      title: { fr: "Exercice de prononciation", en: "Pronunciation Practice", de: "Aussprachetraining", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        e_closed: { fr: "É fermé [e]", en: "Closed É [e]", de: "Geschlossenes É [e]", ja: "とじた É [e]", zh: "闭合的É [e]" },
+        e_open: { fr: "È/Ê ouvert [ɛ]", en: "Open È/Ê [ɛ]", de: "Offenes È/Ê [ɛ]", ja: "ひらいた È/Ê [ɛ]", zh: "开放的È/Ê [ɛ]" }
+      },
+      items: [
+        { id: "ec1", category: "e_closed", translations: { fr: "été", en: "summer", de: "Sommer", ja: "なつ", zh: "夏天" } },
+        { id: "ec2", category: "e_closed", translations: { fr: "étoile", en: "star", de: "Stern", ja: "ほし", zh: "星星" } },
+        { id: "ec3", category: "e_closed", translations: { fr: "région", en: "region", de: "Region", ja: "ちいき", zh: "地区" } },
+        { id: "ec4", category: "e_closed", translations: { fr: "élevé", en: "elevated, high", de: "erhöht", ja: "たかい", zh: "高的" } },
+        { id: "eo1", category: "e_open", translations: { fr: "rivière", en: "river", de: "Fluss", ja: "かわ", zh: "河流" } },
+        { id: "eo2", category: "e_open", translations: { fr: "forêt", en: "forest", de: "Wald", ja: "もり", zh: "森林" } },
+        { id: "eo3", category: "e_open", translations: { fr: "falaise", en: "cliff", de: "Klippe", ja: "がけ", zh: "悬崖" } },
+        { id: "eo4", category: "e_open", translations: { fr: "pierre", en: "stone, rock", de: "Stein", ja: "いし", zh: "石头" } }
       ]
     }
   },
@@ -252,6 +298,92 @@ export const topicLandscape: TopicLesson = {
           { id: "oe12", category: "oe", translations: { de: "Mönch", en: "monk", ja: "しゅうどうし", zh: "僧侣" } },
           { id: "oe13", category: "oe", translations: { de: "Höhle", en: "cave", ja: "どうくつ", zh: "洞穴" } },
           { id: "oe14", category: "oe", translations: { de: "Ökosystem", en: "ecosystem", ja: "せいたいけい", zh: "生态系统" } }
+        ]
+      }
+    ],
+    fr: [
+      {
+        id: "sound-drill",
+        title: {
+          fr: "Exercice de prononciation 2",
+          en: "Pronunciation Practice 2",
+          de: "Aussprachetraining 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          fr: "Ensuite, pratiquons avec beaucoup plus d'exemples.",
+          en: "Next, let's practice with a lot more examples.",
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          e_closed1: { fr: "É fermé [e]", en: "Closed É [e]", de: "Geschlossenes É [e]", ja: "とじた É [e]", zh: "闭合的É [e]" },
+          e_closed2: { fr: "É fermé [e]", en: "Closed É [e]", de: "Geschlossenes É [e]", ja: "とじた É [e]", zh: "闭合的É [e]" },
+          e_open1: { fr: "È/Ê ouvert [ɛ]", en: "Open È/Ê [ɛ]", de: "Offenes È/Ê [ɛ]", ja: "ひらいた È/Ê [ɛ]", zh: "开放的È/Ê [ɛ]" },
+          e_open2: { fr: "È/Ê ouvert [ɛ]", en: "Open È/Ê [ɛ]", de: "Offenes È/Ê [ɛ]", ja: "ひらいた È/Ê [ɛ]", zh: "开放的È/Ê [ɛ]" }
+        },
+        items: [
+          { id: "ec1_1", category: "e_closed1", translations: { fr: "université", en: "university", de: "Universität", ja: "だいがく", zh: "大学" } },
+          { id: "ec1_2", category: "e_closed1", translations: { fr: "société", en: "society", de: "Gesellschaft", ja: "しゃかい", zh: "社会" } },
+          { id: "ec1_3", category: "e_closed1", translations: { fr: "qualité", en: "quality", de: "Qualität", ja: "しつ", zh: "质量" } },
+          { id: "ec1_4", category: "e_closed1", translations: { fr: "beauté", en: "beauty", de: "Schönheit", ja: "び", zh: "美" } },
+          { id: "ec1_5", category: "e_closed1", translations: { fr: "liberté", en: "freedom", de: "Freiheit", ja: "じゆう", zh: "自由" } },
+          { id: "ec1_6", category: "e_closed1", translations: { fr: "sécurité", en: "security", de: "Sicherheit", ja: "あんぜん", zh: "安全" } },
+          { id: "ec1_7", category: "e_closed1", translations: { fr: "activité", en: "activity", de: "Aktivität", ja: "かつどう", zh: "活动" } },
+          { id: "ec1_8", category: "e_closed1", translations: { fr: "propriété", en: "property", de: "Eigentum", ja: "ざいさん", zh: "财产" } },
+          { id: "ec1_9", category: "e_closed1", translations: { fr: "variété", en: "variety", de: "Vielfalt", ja: "たようせい", zh: "多样性" } },
+          { id: "ec1_10", category: "e_closed1", translations: { fr: "immensité", en: "immensity", de: "Weite", ja: "こうだいさ", zh: "浩瀚" } },
+          { id: "ec1_11", category: "e_closed1", translations: { fr: "clarté", en: "clarity", de: "Klarheit", ja: "めいかくさ", zh: "清晰" } },
+          { id: "ec1_12", category: "e_closed1", translations: { fr: "pureté", en: "purity", de: "Reinheit", ja: "じゅんすいさ", zh: "纯净" } },
+          { id: "ec1_13", category: "e_closed1", translations: { fr: "tranquillité", en: "tranquility", de: "Ruhe", ja: "へいおん", zh: "宁静" } },
+          { id: "ec1_14", category: "e_closed1", translations: { fr: "vérité", en: "truth", de: "Wahrheit", ja: "しんじつ", zh: "真相" } },
+
+          { id: "ec2_1", category: "e_closed2", translations: { fr: "créer", en: "to create", de: "erschaffen", ja: "つくる", zh: "创造" } },
+          { id: "ec2_2", category: "e_closed2", translations: { fr: "préférer", en: "to prefer", de: "bevorzugen", ja: "このむ", zh: "偏好" } },
+          { id: "ec2_3", category: "e_closed2", translations: { fr: "espérer", en: "to hope", de: "hoffen", ja: "きぼうする", zh: "希望" } },
+          { id: "ec2_4", category: "e_closed2", translations: { fr: "considérer", en: "to consider", de: "betrachten", ja: "かんがえる", zh: "考虑" } },
+          { id: "ec2_5", category: "e_closed2", translations: { fr: "récupérer", en: "to recover", de: "sich erholen", ja: "かいふくする", zh: "恢复" } },
+          { id: "ec2_6", category: "e_closed2", translations: { fr: "célébrer", en: "to celebrate", de: "feiern", ja: "いわう", zh: "庆祝" } },
+          { id: "ec2_7", category: "e_closed2", translations: { fr: "préparer", en: "to prepare", de: "vorbereiten", ja: "じゅんびする", zh: "准备" } },
+          { id: "ec2_8", category: "e_closed2", translations: { fr: "répéter", en: "to repeat", de: "wiederholen", ja: "くりかえす", zh: "重复" } },
+          { id: "ec2_9", category: "e_closed2", translations: { fr: "intégrer", en: "to integrate", de: "integrieren", ja: "とうごうする", zh: "融入" } },
+          { id: "ec2_10", category: "e_closed2", translations: { fr: "générer", en: "to generate", de: "erzeugen", ja: "せいせいする", zh: "产生" } },
+          { id: "ec2_11", category: "e_closed2", translations: { fr: "modéré", en: "moderate", de: "moderat", ja: "おだやかな", zh: "适度的" } },
+          { id: "ec2_12", category: "e_closed2", translations: { fr: "élégant", en: "elegant", de: "elegant", ja: "エレガントな", zh: "优雅的" } },
+          { id: "ec2_13", category: "e_closed2", translations: { fr: "énergie", en: "energy", de: "Energie", ja: "エネルギー", zh: "能量" } },
+          { id: "ec2_14", category: "e_closed2", translations: { fr: "étendue", en: "expanse", de: "Ausdehnung", ja: "ひろがり", zh: "广阔" } },
+
+          { id: "eo1_1", category: "e_open1", translations: { fr: "père", en: "father", de: "Vater", ja: "ちち", zh: "父亲" } },
+          { id: "eo1_2", category: "e_open1", translations: { fr: "mère", en: "mother", de: "Mutter", ja: "はは", zh: "母亲" } },
+          { id: "eo1_3", category: "e_open1", translations: { fr: "frère", en: "brother", de: "Bruder", ja: "きょうだい", zh: "兄弟" } },
+          { id: "eo1_4", category: "e_open1", translations: { fr: "chèvre", en: "goat", de: "Ziege", ja: "やぎ", zh: "山羊" } },
+          { id: "eo1_5", category: "e_open1", translations: { fr: "lièvre", en: "hare", de: "Hase", ja: "のうさぎ", zh: "野兔" } },
+          { id: "eo1_6", category: "e_open1", translations: { fr: "règle", en: "rule", de: "Regel", ja: "きそく", zh: "规则" } },
+          { id: "eo1_7", category: "e_open1", translations: { fr: "système", en: "system", de: "System", ja: "システム", zh: "系统" } },
+          { id: "eo1_8", category: "e_open1", translations: { fr: "problème", en: "problem", de: "Problem", ja: "もんだい", zh: "问题" } },
+          { id: "eo1_9", category: "e_open1", translations: { fr: "thème", en: "theme", de: "Thema", ja: "テーマ", zh: "主题" } },
+          { id: "eo1_10", category: "e_open1", translations: { fr: "extrême", en: "extreme", de: "extrem", ja: "きょくたんな", zh: "极端的" } },
+          { id: "eo1_11", category: "e_open1", translations: { fr: "modèle", en: "model", de: "Modell", ja: "モデル", zh: "模型" } },
+          { id: "eo1_12", category: "e_open1", translations: { fr: "poème", en: "poem", de: "Gedicht", ja: "し", zh: "诗" } },
+          { id: "eo1_13", category: "e_open1", translations: { fr: "crème", en: "cream", de: "Sahne", ja: "クリーム", zh: "奶油" } },
+          { id: "eo1_14", category: "e_open1", translations: { fr: "scène", en: "scene", de: "Szene", ja: "げんば、シーン", zh: "场景" } },
+
+          { id: "eo2_1", category: "e_open2", translations: { fr: "tempête", en: "storm", de: "Sturm", ja: "あらし", zh: "暴风雨" } },
+          { id: "eo2_2", category: "e_open2", translations: { fr: "conquête", en: "conquest", de: "Eroberung", ja: "せいふく", zh: "征服" } },
+          { id: "eo2_3", category: "e_open2", translations: { fr: "enquête", en: "investigation", de: "Untersuchung", ja: "ちょうさ", zh: "调查" } },
+          { id: "eo2_4", category: "e_open2", translations: { fr: "honnête", en: "honest", de: "ehrlich", ja: "しょうじきな", zh: "诚实的" } },
+          { id: "eo2_5", category: "e_open2", translations: { fr: "bête", en: "animal, beast", de: "Tier, Biest", ja: "けもの", zh: "野兽" } },
+          { id: "eo2_6", category: "e_open2", translations: { fr: "tête", en: "head", de: "Kopf", ja: "あたま", zh: "头" } },
+          { id: "eo2_7", category: "e_open2", translations: { fr: "vêtement", en: "clothing", de: "Kleidung", ja: "ふく", zh: "衣服" } },
+          { id: "eo2_8", category: "e_open2", translations: { fr: "prêt", en: "ready", de: "bereit", ja: "じゅんびが できた", zh: "准备好的" } },
+          { id: "eo2_9", category: "e_open2", translations: { fr: "ancêtre", en: "ancestor", de: "Vorfahre", ja: "せんぞ", zh: "祖先" } },
+          { id: "eo2_10", category: "e_open2", translations: { fr: "intérêt", en: "interest", de: "Interesse", ja: "きょうみ", zh: "兴趣" } },
+          { id: "eo2_11", category: "e_open2", translations: { fr: "arête", en: "fish bone, ridge", de: "Gräte, Grat", ja: "ほね、おね", zh: "鱼刺，山脊" } },
+          { id: "eo2_12", category: "e_open2", translations: { fr: "fête", en: "party, holiday", de: "Fest", ja: "パーティー", zh: "节日，派对" } },
+          { id: "eo2_13", category: "e_open2", translations: { fr: "secrète", en: "secret (fem.)", de: "geheim (fem.)", ja: "ひみつの（じょせいけい）", zh: "秘密的（阴性）" } },
+          { id: "eo2_14", category: "e_open2", translations: { fr: "brèche", en: "breach, gap", de: "Bresche, Lücke", ja: "われめ", zh: "缺口" } }
         ]
       }
     ]
@@ -390,6 +522,54 @@ export const topicLandscape: TopicLesson = {
           { id: "sl8", translations: { de: "Heute Morgen war es am kältesten.", en: "This morning was the coldest.", ja: "けさが いちばん さむかったです。", zh: "今天早上最冷。" } },
           { id: "sl9", translations: { de: "Dieses Reiseziel ist am beliebtesten.", en: "This travel destination is the most popular.", ja: "この たびさきが いちばん にんきです。", zh: "这个旅游目的地最受欢迎。" } },
           { id: "sl10", translations: { de: "Er läuft am schnellsten.", en: "He runs the fastest.", ja: "かれが いちばん はやく はしります。", zh: "他跑得最快。" } }
+        ]
+      }
+    ],
+    fr: [
+      {
+        id: "grammar-drill-comparatif",
+        title: { fr: "Exercice : le comparatif", en: "Practice: Comparative", de: "Übung: Komparativ", ja: "れんしゅう：ひかくきゅう", zh: "练习：比较级" },
+        spokenIntro: {
+          fr: "Ensuite, pratiquons des phrases au comparatif.",
+          en: "Next, let's practice example sentences using the comparative.",
+          de: "Als Nächstes üben wir Beispielsätze im Komparativ.",
+          ja: "つぎは、ひかくきゅうを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用比较级的例句。"
+        },
+        lines: [
+          { id: "k1", translations: { fr: "La montagne est plus haute que la mer.", en: "The mountain is higher than the sea.", de: "Der Berg ist höher als das Meer.", ja: "やまは うみより たかいです。", zh: "山比海更高。" } },
+          { id: "k2", translations: { fr: "La rivière est plus longue que le lac.", en: "The river is longer than the lake.", de: "Der Fluss ist länger als der See.", ja: "かわは みずうみより ながいです。", zh: "河流比湖更长。" } },
+          { id: "k3", translations: { fr: "La forêt est plus grande que le parc.", en: "The forest is bigger than the park.", de: "Der Wald ist größer als der Park.", ja: "もりは こうえんより おおきいです。", zh: "森林比公园更大。" } },
+          { id: "k4", translations: { fr: "L'île est plus petite que la vallée.", en: "The island is smaller than the valley.", de: "Die Insel ist kleiner als das Tal.", ja: "しまは たにより ちいさいです。", zh: "岛屿比山谷更小。" } },
+          { id: "k5", translations: { fr: "L'été est plus chaud que l'hiver.", en: "Summer is hotter than winter.", de: "Der Sommer ist heißer als der Winter.", ja: "なつは ふゆより あついです。", zh: "夏天比冬天更热。" } },
+          { id: "k6", translations: { fr: "Ce chemin est plus court que cet autre chemin.", en: "This path is shorter than that path.", de: "Dieser Weg ist kürzer als jener Weg.", ja: "この みちは あの みちより みじかいです。", zh: "这条路比那条路更短。" } },
+          { id: "k7", translations: { fr: "La mer est plus profonde que la rivière.", en: "The sea is deeper than the river.", de: "Das Meer ist tiefer als der Fluss.", ja: "うみは かわより ふかいです。", zh: "海比河更深。" } },
+          { id: "k8", translations: { fr: "Ce matin, il fait plus froid qu'hier.", en: "This morning is colder than yesterday.", de: "Heute Morgen ist es kälter als gestern.", ja: "けさは きのうより さむいです。", zh: "今天早上比昨天更冷。" } },
+          { id: "k9", translations: { fr: "Le train est plus rapide que le bus.", en: "The train is faster than the bus.", de: "Der Zug ist schneller als der Bus.", ja: "でんしゃは バスより はやいです。", zh: "电车比公交车更快。" } },
+          { id: "k10", translations: { fr: "La plage est plus vaste que l'île.", en: "The beach is wider than the island.", de: "Der Strand ist weitläufiger als die Insel.", ja: "はまは しまより ひろいです。", zh: "海滩比岛屿更宽阔。" } }
+        ]
+      },
+      {
+        id: "grammar-drill-superlatif",
+        title: { fr: "Exercice : le superlatif", en: "Practice: Superlative", de: "Übung: Superlativ", ja: "れんしゅう：さいじょうきゅう", zh: "练习：最高级" },
+        spokenIntro: {
+          fr: "Ensuite, pratiquons des phrases au superlatif.",
+          en: "Next, let's practice example sentences using the superlative.",
+          de: "Als Nächstes üben wir Beispielsätze im Superlativ.",
+          ja: "つぎは、さいじょうきゅうを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用最高级的例句。"
+        },
+        lines: [
+          { id: "sl1", translations: { fr: "Le mont Fuji est la montagne la plus haute du Japon.", en: "Mt. Fuji is the tallest mountain in Japan.", de: "Der Fuji ist der höchste Berg in Japan.", ja: "ふじさんは にほんで いちばん たかい やまです。", zh: "富士山是日本最高的山。" } },
+          { id: "sl2", translations: { fr: "C'est la plus belle vue.", en: "This is the most beautiful view.", de: "Das ist die schönste Aussicht.", ja: "これは いちばん うつくしい けしきです。", zh: "这是最美的风景。" } },
+          { id: "sl3", translations: { fr: "L'été est la saison la plus chaude.", en: "Summer is the hottest season.", de: "Der Sommer ist die heißeste Jahreszeit.", ja: "なつが いちばん あつい きせつです。", zh: "夏天是最热的季节。" } },
+          { id: "sl4", translations: { fr: "Cette île-là est la plus petite.", en: "That island is the smallest.", de: "Jene Insel ist die kleinste.", ja: "あの しまが いちばん ちいさいです。", zh: "那个岛屿最小。" } },
+          { id: "sl5", translations: { fr: "Ce chemin est le plus sûr.", en: "This path is the safest.", de: "Dieser Weg ist der sicherste.", ja: "この みちが いちばん あんぜんです。", zh: "这条路最安全。" } },
+          { id: "sl6", translations: { fr: "Le lac Biwa est le plus grand lac du Japon.", en: "Lake Biwa is the biggest lake in Japan.", de: "Der Biwa-See ist der größte See Japans.", ja: "びわこは にほんで いちばん おおきい みずうみです。", zh: "琵琶湖是日本最大的湖。" } },
+          { id: "sl7", translations: { fr: "Cette montagne-là est la plus dangereuse.", en: "That mountain is the most dangerous.", de: "Jener Berg ist der gefährlichste.", ja: "あの やまが いちばん きけんです。", zh: "那座山最危险。" } },
+          { id: "sl8", translations: { fr: "Ce matin était le plus froid.", en: "This morning was the coldest.", de: "Heute Morgen war es am kältesten.", ja: "けさが いちばん さむかったです。", zh: "今天早上最冷。" } },
+          { id: "sl9", translations: { fr: "Cette destination est la plus populaire.", en: "This travel destination is the most popular.", de: "Dieses Reiseziel ist am beliebtesten.", ja: "この たびさきが いちばん にんきです。", zh: "这个旅游目的地最受欢迎。" } },
+          { id: "sl10", translations: { fr: "Il court le plus vite.", en: "He runs the fastest.", de: "Er läuft am schnellsten.", ja: "かれが いちばん はやく はしります。", zh: "他跑得最快。" } }
         ]
       }
     ]

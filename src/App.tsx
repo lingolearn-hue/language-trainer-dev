@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SessionProvider } from "./context/SessionContext";
 import { Session } from "./components/Session";
 import { TrainerSelect } from "./components/TrainerSelect";
+import { LipSyncTestPage } from "./components/LipSyncTestPage";
 import { LessonSelect } from "./components/LessonSelect";
 import { lesson2 } from "./data/lesson2";
 import { lesson11 } from "./data/lesson11";
@@ -123,6 +124,7 @@ const allLessons: LessonPlan[] = [
 function App() {
   const [trainer, setTrainer] = useState<Trainer | null>(null);
   const [lesson, setLesson] = useState<LessonPlan | null>(null);
+  const [showLipSyncTest, setShowLipSyncTest] = useState(false);
   // Lifted here (not owned by TrainerSelect or LessonSelect individually)
   // so the same "I want to learn" / "I already know" choice is linked
   // across both screens — changing it on either one updates this single
@@ -149,6 +151,10 @@ function App() {
   // never used anywhere — a real no-op bug, not by design.
   const [styleChoice, setStyleChoice] = useState<"computer" | "phone" | null>(null);
 
+  if (showLipSyncTest) {
+    return <LipSyncTestPage onBack={() => setShowLipSyncTest(false)} />;
+  }
+
   if (!trainer) {
     return (
       <TrainerSelect
@@ -156,6 +162,7 @@ function App() {
         sourceLang={sourceLang}
         onTargetChange={setTargetLang}
         onSourceChange={setSourceLang}
+        onOpenLipSyncTest={() => setShowLipSyncTest(true)}
         onSelect={(t) => {
           setTrainer(t);
           saveSettings({ trainerId: t.id });

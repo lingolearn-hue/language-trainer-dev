@@ -22,6 +22,7 @@ export function TrainerSelect({
   sourceLang,
   onTargetChange,
   onSourceChange,
+  onOpenLipSyncTest,
   onSelect,
 }: {
   // Lifted to App.tsx so the same choice is linked with LessonSelect's
@@ -30,6 +31,7 @@ export function TrainerSelect({
   sourceLang: LangCode | "";
   onTargetChange: (lang: LangCode | "") => void;
   onSourceChange: (lang: LangCode | "") => void;
+  onOpenLipSyncTest: () => void;
   onSelect: (trainer: Trainer) => void;
 }) {
   const matching = trainers.filter((t) => matchesFilter(t, targetLang, sourceLang));
@@ -58,6 +60,9 @@ export function TrainerSelect({
     <div className="trainer-select">
       <VoiceHelpOverlay />
       <UpdateCheckButton />
+      <button className="lip-sync-test-entry-button" onClick={onOpenLipSyncTest}>
+        🧪 Lip Sync Test
+      </button>
       <h1>Choose your trainer</h1>
       <p className="subtitle">Each trainer teaches a set of languages, in any direction.</p>
 

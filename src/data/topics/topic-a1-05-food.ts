@@ -18,93 +18,93 @@ export const topicFood: TopicLesson = {
   topicName: { ja: "たべもの", zh: "食物", de: "Essen", en: "Food" },
 
   vocab: [
-    { id: "v01", category: "noun", translations: { ja: "ごはん", zh: "米饭", de: "Reis, Mahlzeit", en: "rice, meal" } },
-    { id: "v02", category: "noun", translations: { ja: "パン", zh: "面包", de: "Brot", en: "bread" } },
-    { id: "v03", category: "noun", translations: { ja: "みず", zh: "水", de: "Wasser", en: "water" } },
-    { id: "v04", category: "noun", translations: { ja: "おちゃ", zh: "茶", de: "Tee", en: "tea" } },
-    { id: "v05", category: "noun", translations: { ja: "にく", zh: "肉", de: "Fleisch", en: "meat" } },
-    { id: "v06", category: "noun", translations: { ja: "さかな", zh: "鱼", de: "Fisch", en: "fish" } },
-    { id: "v07", category: "noun", translations: { ja: "やさい", zh: "蔬菜", de: "Gemüse", en: "vegetables" } },
-    { id: "v08", category: "noun", translations: { ja: "くだもの", zh: "水果", de: "Obst", en: "fruit" } },
-    { id: "v09", category: "noun", translations: { ja: "たまご", zh: "蛋", de: "Ei", en: "egg" } },
-    { id: "v10", category: "noun", translations: { ja: "スープ", zh: "汤", de: "Suppe", en: "soup" } },
-    { id: "v11", category: "noun", translations: { ja: "メニュー", zh: "菜单", de: "Speisekarte", en: "menu" } },
-    { id: "v12", category: "noun", translations: { ja: "レストラン", zh: "餐厅", de: "Restaurant", en: "restaurant" } },
-    { id: "v13", category: "noun", translations: { ja: "あさごはん", zh: "早饭", de: "Frühstück", en: "breakfast" } },
-    { id: "v14", category: "noun", translations: { ja: "ひるごはん", zh: "午饭", de: "Mittagessen", en: "lunch" } },
-    { id: "v15", category: "noun", translations: { ja: "ばんごはん", zh: "晚餐", de: "Abendessen", en: "dinner" } },
-    { id: "v16", category: "noun", translations: { ja: "デザート", zh: "点心", de: "Nachtisch", en: "dessert" } },
-    { id: "v17", category: "verb", translations: { ja: "たべる", zh: "吃", de: "essen", en: "to eat" } },
-    { id: "v18", category: "verb", translations: { ja: "のむ", zh: "喝", de: "trinken", en: "to drink" } },
-    { id: "v19", category: "verb", translations: { ja: "つくる", zh: "做", de: "machen, zubereiten", en: "to make" } },
-    { id: "v20", category: "verb", translations: { ja: "ちゅうもんする", zh: "点", de: "bestellen", en: "to order" } },
-    { id: "v21", category: "verb", translations: { ja: "はらう", zh: "付钱", de: "bezahlen", en: "to pay" } },
-    { id: "v22", category: "verb", translations: { ja: "たりる", zh: "够", de: "reichen, genug sein", en: "to be enough" } },
-    { id: "v23", category: "verb", translations: { ja: "すく", zh: "饿", de: "hungrig werden (おなかが すく)", en: "to become hungry (おなかが すく)" } },
-    { id: "v24", category: "verb", translations: { ja: "のどが かわく", zh: "渴", de: "durstig werden", en: "to become thirsty" } },
-    { id: "v25", category: "adjective", translations: { ja: "おいしい", zh: "好吃", de: "lecker", en: "delicious" } },
-    { id: "v26", category: "adjective", translations: { ja: "まずい", zh: "难吃", de: "schlecht schmeckend", en: "bad-tasting" } },
-    { id: "v27", category: "adjective", translations: { ja: "あまい", zh: "甜", de: "süß", en: "sweet" } },
-    { id: "v28", category: "adjective", translations: { ja: "からい", zh: "辣", de: "scharf", en: "spicy" } },
-    { id: "v29", category: "adjective", translations: { ja: "しょっぱい", zh: "咸", de: "salzig", en: "salty" } },
-    { id: "v30", category: "adjective", translations: { ja: "あつい", zh: "热", de: "heiß (Temperatur)", en: "hot (temperature)" } },
-    { id: "v31", category: "noun", translations: { ja: "すし", zh: "寿司", de: "Sushi", en: "sushi" } },
-    { id: "v32", category: "noun", translations: { ja: "かいしゃ", zh: "公司", de: "Firma, Büro", en: "company, office" } },
-    { id: "v33", category: "noun", translations: { ja: "じぶん", zh: "自己", de: "man selbst", en: "oneself" } },
-    { id: "v34", category: "adjective", translations: { ja: "すき", zh: "喜欢", de: "mögen (な-Adjektiv)", en: "to like, be fond of (な-adj)" } },
+    { id: "v01", category: "noun", translations: { ja: "ごはん", zh: "米饭", de: "Reis, Mahlzeit", en: "rice, meal", fr: "riz, repas" } },
+    { id: "v02", category: "noun", translations: { ja: "パン", zh: "面包", de: "Brot", en: "bread", fr: "pain" } },
+    { id: "v03", category: "noun", translations: { ja: "みず", zh: "水", de: "Wasser", en: "water", fr: "eau" } },
+    { id: "v04", category: "noun", translations: { ja: "おちゃ", zh: "茶", de: "Tee", en: "tea", fr: "thé" } },
+    { id: "v05", category: "noun", translations: { ja: "にく", zh: "肉", de: "Fleisch", en: "meat", fr: "viande" } },
+    { id: "v06", category: "noun", translations: { ja: "さかな", zh: "鱼", de: "Fisch", en: "fish", fr: "poisson" } },
+    { id: "v07", category: "noun", translations: { ja: "やさい", zh: "蔬菜", de: "Gemüse", en: "vegetables", fr: "légumes" } },
+    { id: "v08", category: "noun", translations: { ja: "くだもの", zh: "水果", de: "Obst", en: "fruit", fr: "fruits" } },
+    { id: "v09", category: "noun", translations: { ja: "たまご", zh: "蛋", de: "Ei", en: "egg", fr: "œuf" } },
+    { id: "v10", category: "noun", translations: { ja: "スープ", zh: "汤", de: "Suppe", en: "soup", fr: "soupe" } },
+    { id: "v11", category: "noun", translations: { ja: "メニュー", zh: "菜单", de: "Speisekarte", en: "menu", fr: "menu" } },
+    { id: "v12", category: "noun", translations: { ja: "レストラン", zh: "餐厅", de: "Restaurant", en: "restaurant", fr: "restaurant" } },
+    { id: "v13", category: "noun", translations: { ja: "あさごはん", zh: "早饭", de: "Frühstück", en: "breakfast", fr: "petit-déjeuner" } },
+    { id: "v14", category: "noun", translations: { ja: "ひるごはん", zh: "午饭", de: "Mittagessen", en: "lunch", fr: "déjeuner" } },
+    { id: "v15", category: "noun", translations: { ja: "ばんごはん", zh: "晚餐", de: "Abendessen", en: "dinner", fr: "dîner" } },
+    { id: "v16", category: "noun", translations: { ja: "デザート", zh: "点心", de: "Nachtisch", en: "dessert", fr: "dessert" } },
+    { id: "v17", category: "verb", translations: { ja: "たべる", zh: "吃", de: "essen", en: "to eat", fr: "manger" } },
+    { id: "v18", category: "verb", translations: { ja: "のむ", zh: "喝", de: "trinken", en: "to drink", fr: "boire" } },
+    { id: "v19", category: "verb", translations: { ja: "つくる", zh: "做", de: "machen, zubereiten", en: "to make", fr: "préparer, faire" } },
+    { id: "v20", category: "verb", translations: { ja: "ちゅうもんする", zh: "点", de: "bestellen", en: "to order", fr: "commander" } },
+    { id: "v21", category: "verb", translations: { ja: "はらう", zh: "付钱", de: "bezahlen", en: "to pay", fr: "payer" } },
+    { id: "v22", category: "verb", translations: { ja: "たりる", zh: "够", de: "reichen, genug sein", en: "to be enough", fr: "suffire" } },
+    { id: "v23", category: "verb", translations: { ja: "すく", zh: "饿", de: "hungrig werden (おなかが すく)", en: "to become hungry (おなかが すく)", fr: "avoir faim" } },
+    { id: "v24", category: "verb", translations: { ja: "のどが かわく", zh: "渴", de: "durstig werden", en: "to become thirsty", fr: "avoir soif" } },
+    { id: "v25", category: "adjective", translations: { ja: "おいしい", zh: "好吃", de: "lecker", en: "delicious", fr: "délicieux(se)" } },
+    { id: "v26", category: "adjective", translations: { ja: "まずい", zh: "难吃", de: "schlecht schmeckend", en: "bad-tasting", fr: "mauvais(e) (au goût)" } },
+    { id: "v27", category: "adjective", translations: { ja: "あまい", zh: "甜", de: "süß", en: "sweet", fr: "sucré(e)" } },
+    { id: "v28", category: "adjective", translations: { ja: "からい", zh: "辣", de: "scharf", en: "spicy", fr: "épicé(e)" } },
+    { id: "v29", category: "adjective", translations: { ja: "しょっぱい", zh: "咸", de: "salzig", en: "salty", fr: "salé(e)" } },
+    { id: "v30", category: "adjective", translations: { ja: "あつい", zh: "热", de: "heiß (Temperatur)", en: "hot (temperature)", fr: "chaud(e) (température)" } },
+    { id: "v31", category: "noun", translations: { ja: "すし", zh: "寿司", de: "Sushi", en: "sushi", fr: "sushi" } },
+    { id: "v32", category: "noun", translations: { ja: "かいしゃ", zh: "公司", de: "Firma, Büro", en: "company, office", fr: "entreprise, bureau" } },
+    { id: "v33", category: "noun", translations: { ja: "じぶん", zh: "自己", de: "man selbst", en: "oneself", fr: "soi-même" } },
+    { id: "v34", category: "adjective", translations: { ja: "すき", zh: "喜欢", de: "mögen (な-Adjektiv)", en: "to like, be fond of (な-adj)", fr: "aimer" } },
   ],
 
   dialogueA: {
-    title: { ja: "かいわ：レストランで", zh: "对话A：在餐厅", de: "Dialog A: Im Restaurant", en: "Dialogue A: At the Restaurant" },
+    title: { ja: "かいわ：レストランで", zh: "对话A：在餐厅", de: "Dialog A: Im Restaurant", en: "Dialogue A: At the Restaurant", fr: "Dialogue A : Au restaurant" },
     lines: [
-      { id: "d1", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "いらっしゃいませ。なんめいさまですか？", zh: "欢迎光临。请问几位？", de: "Willkommen. Wie viele Personen?", en: "Welcome. How many people?" } },
-      { id: "d2", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "ふたりです。", zh: "两位。", de: "Zwei Personen.", en: "Two people." } },
-      { id: "d3", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "こちらへ どうぞ。メニューです。", zh: "这边请。这是菜单。", de: "Hier entlang, bitte. Hier ist die Speisekarte.", en: "This way, please. Here's the menu." } },
-      { id: "d4", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "ありがとうございます。", zh: "谢谢。", de: "Danke.", en: "Thank you." } },
-      { id: "d5", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "ごちゅうもんは おきまりですか？", zh: "您决定好点什么了吗？", de: "Haben Sie schon gewählt?", en: "Have you decided your order?" } },
-      { id: "d6", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "すしと スープを おねがいします。", zh: "请给我寿司和汤。", de: "Sushi und Suppe, bitte.", en: "Sushi and soup, please." } },
-      { id: "d7", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "おのみものは？", zh: "要喝点什么吗？", de: "Und etwas zu trinken?", en: "What about a drink?" } },
-      { id: "d8", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "おちゃを ください。", zh: "请给我茶。", de: "Tee, bitte.", en: "Tea, please." } },
-      { id: "d9", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "かしこまりました。すこし おまちください。", zh: "好的，请稍等。", de: "Verstanden. Einen Moment bitte.", en: "Understood. Please wait a moment." } },
-      { id: "d10", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "すみません、これは からいですか？", zh: "请问，这个辣吗？", de: "Entschuldigung, ist das scharf?", en: "Excuse me, is this spicy?" } },
-      { id: "d11", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "いいえ、あまり からくないです。", zh: "不辣，不是很辣。", de: "Nein, es ist nicht sehr scharf.", en: "No, it's not very spicy." } },
-      { id: "d12", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "よかった。それを ちゅうもんします。", zh: "太好了，那我就点这个。", de: "Gut. Das bestelle ich.", en: "Great. I'll order that." } },
-      { id: "d13", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "かしこまりました。", zh: "明白了。", de: "Verstanden.", en: "Understood." } },
-      { id: "d14", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "とても おいしかったです。ごちそうさまでした。", zh: "非常好吃。谢谢款待。", de: "Es war sehr lecker. Danke für das Essen.", en: "It was very delicious. Thank you for the meal." } },
+      { id: "d1", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "いらっしゃいませ。なんめいさまですか？", zh: "欢迎光临。请问几位？", de: "Willkommen. Wie viele Personen?", en: "Welcome. How many people?", fr: "Bienvenue. Combien de personnes ?" } },
+      { id: "d2", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "ふたりです。", zh: "两位。", de: "Zwei Personen.", en: "Two people.", fr: "Deux personnes." } },
+      { id: "d3", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "こちらへ どうぞ。メニューです。", zh: "这边请。这是菜单。", de: "Hier entlang, bitte. Hier ist die Speisekarte.", en: "This way, please. Here's the menu.", fr: "Par ici, s'il vous plaît. Voici le menu." } },
+      { id: "d4", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "ありがとうございます。", zh: "谢谢。", de: "Danke.", en: "Thank you.", fr: "Merci." } },
+      { id: "d5", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "ごちゅうもんは おきまりですか？", zh: "您决定好点什么了吗？", de: "Haben Sie schon gewählt?", en: "Have you decided your order?", fr: "Avez-vous choisi ?" } },
+      { id: "d6", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "すしと スープを おねがいします。", zh: "请给我寿司和汤。", de: "Sushi und Suppe, bitte.", en: "Sushi and soup, please.", fr: "Des sushis et une soupe, s'il vous plaît." } },
+      { id: "d7", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "おのみものは？", zh: "要喝点什么吗？", de: "Und etwas zu trinken?", en: "What about a drink?", fr: "Et pour boire ?" } },
+      { id: "d8", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "おちゃを ください。", zh: "请给我茶。", de: "Tee, bitte.", en: "Tea, please.", fr: "Du thé, s'il vous plaît." } },
+      { id: "d9", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "かしこまりました。すこし おまちください。", zh: "好的，请稍等。", de: "Verstanden. Einen Moment bitte.", en: "Understood. Please wait a moment.", fr: "Très bien. Un instant, s'il vous plaît." } },
+      { id: "d10", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "すみません、これは からいですか？", zh: "请问，这个辣吗？", de: "Entschuldigung, ist das scharf?", en: "Excuse me, is this spicy?", fr: "Excusez-moi, est-ce que c'est épicé ?" } },
+      { id: "d11", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "いいえ、あまり からくないです。", zh: "不辣，不是很辣。", de: "Nein, es ist nicht sehr scharf.", en: "No, it's not very spicy.", fr: "Non, ce n'est pas très épicé." } },
+      { id: "d12", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "よかった。それを ちゅうもんします。", zh: "太好了，那我就点这个。", de: "Gut. Das bestelle ich.", en: "Great. I'll order that.", fr: "Parfait. Je vais commander ça." } },
+      { id: "d13", speaker: { ja: "てんいん", en: "Waiter", de: "Kellner", zh: "服务员" }, translations: { ja: "かしこまりました。", zh: "明白了。", de: "Verstanden.", en: "Understood.", fr: "Très bien." } },
+      { id: "d14", speaker: { ja: "きゃく", en: "Customer", de: "Gast", zh: "顾客" }, translations: { ja: "とても おいしかったです。ごちそうさまでした。", zh: "非常好吃。谢谢款待。", de: "Es war sehr lecker. Danke für das Essen.", en: "It was very delicious. Thank you for the meal.", fr: "C'était très délicieux. Merci pour ce repas." } },
     ],
   },
 
   dialogueB: {
-    title: { ja: "かいわ：まいにちの しょくじ", zh: "对话B：日常饮食习惯", de: "Dialog B: Tägliche Essgewohnheiten", en: "Dialogue B: Daily Eating Habits" },
+    title: { ja: "かいわ：まいにちの しょくじ", zh: "对话B：日常饮食习惯", de: "Dialog B: Tägliche Essgewohnheiten", en: "Dialogue B: Daily Eating Habits", fr: "Dialogue B : Habitudes alimentaires quotidiennes" },
     lines: [
-      { id: "e1", speaker: "あい", translations: { ja: "まいあさ なにを たべますか？", zh: "你每天早上吃什么？", de: "Was isst du jeden Morgen?", en: "What do you eat every morning?" } },
-      { id: "e2", speaker: "けん", translations: { ja: "パンと たまごを たべます。", zh: "我吃面包和鸡蛋。", de: "Ich esse Brot und Eier.", en: "I eat bread and eggs." } },
-      { id: "e3", speaker: "あい", translations: { ja: "おちゃも のみますか？", zh: "你也喝茶吗？", de: "Trinkst du auch Tee?", en: "Do you also drink tea?" } },
-      { id: "e4", speaker: "けん", translations: { ja: "はい、まいあさ のみます。", zh: "是的，我每天早上都喝。", de: "Ja, ich trinke ihn jeden Morgen.", en: "Yes, I drink it every morning." } },
-      { id: "e5", speaker: "あい", translations: { ja: "ひるごはんは どこで たべますか？", zh: "你在哪里吃午饭？", de: "Wo isst du zu Mittag?", en: "Where do you eat lunch?" } },
-      { id: "e6", speaker: "けん", translations: { ja: "かいしゃで たべます。", zh: "我在公司吃。", de: "Ich esse im Büro.", en: "I eat at the office." } },
-      { id: "e7", speaker: "あい", translations: { ja: "じぶんで つくりますか？", zh: "是你自己做的吗？", de: "Machst du es selbst?", en: "Do you make it yourself?" } },
-      { id: "e8", speaker: "けん", translations: { ja: "はい、あさ つくります。", zh: "是的，我早上做的。", de: "Ja, ich mache es morgens.", en: "Yes, I make it in the morning." } },
-      { id: "e9", speaker: "あい", translations: { ja: "ばんごはんは？", zh: "晚饭呢？", de: "Und zum Abendessen?", en: "What about dinner?" } },
-      { id: "e10", speaker: "けん", translations: { ja: "レストランで たべることが おおいです。", zh: "我经常在餐厅吃。", de: "Ich esse oft in einem Restaurant.", en: "I often eat at a restaurant." } },
-      { id: "e11", speaker: "あい", translations: { ja: "からい たべものが すきですか？", zh: "你喜欢吃辣的吗？", de: "Magst du scharfes Essen?", en: "Do you like spicy food?" } },
-      { id: "e12", speaker: "けん", translations: { ja: "はい、とても すきです。あいさんは？", zh: "是的，我很喜欢。爱，你呢？", de: "Ja, sehr gerne. Und du, Ai?", en: "Yes, I like it a lot. What about you, Ai?" } },
-      { id: "e13", speaker: "あい", translations: { ja: "わたしは あまい ものが すきです。", zh: "我喜欢甜的。", de: "Ich mag süße Sachen.", en: "I like sweet things." } },
-      { id: "e14", speaker: "けん", translations: { ja: "なるほど。でざーとが すきなんですね。", zh: "原来如此，你喜欢甜点啊。", de: "Verstehe. Du magst also Nachtisch.", en: "I see. So you like dessert." } },
+      { id: "e1", speaker: "あい", translations: { ja: "まいあさ なにを たべますか？", zh: "你每天早上吃什么？", de: "Was isst du jeden Morgen?", en: "What do you eat every morning?", fr: "Qu'est-ce que tu manges chaque matin ?" } },
+      { id: "e2", speaker: "けん", translations: { ja: "パンと たまごを たべます。", zh: "我吃面包和鸡蛋。", de: "Ich esse Brot und Eier.", en: "I eat bread and eggs.", fr: "Je mange du pain et des œufs." } },
+      { id: "e3", speaker: "あい", translations: { ja: "おちゃも のみますか？", zh: "你也喝茶吗？", de: "Trinkst du auch Tee?", en: "Do you also drink tea?", fr: "Tu bois aussi du thé ?" } },
+      { id: "e4", speaker: "けん", translations: { ja: "はい、まいあさ のみます。", zh: "是的，我每天早上都喝。", de: "Ja, ich trinke ihn jeden Morgen.", en: "Yes, I drink it every morning.", fr: "Oui, j'en bois tous les matins." } },
+      { id: "e5", speaker: "あい", translations: { ja: "ひるごはんは どこで たべますか？", zh: "你在哪里吃午饭？", de: "Wo isst du zu Mittag?", en: "Where do you eat lunch?", fr: "Où est-ce que tu déjeunes ?" } },
+      { id: "e6", speaker: "けん", translations: { ja: "かいしゃで たべます。", zh: "我在公司吃。", de: "Ich esse im Büro.", en: "I eat at the office.", fr: "Je mange au bureau." } },
+      { id: "e7", speaker: "あい", translations: { ja: "じぶんで つくりますか？", zh: "是你自己做的吗？", de: "Machst du es selbst?", en: "Do you make it yourself?", fr: "Tu le prépares toi-même ?" } },
+      { id: "e8", speaker: "けん", translations: { ja: "はい、あさ つくります。", zh: "是的，我早上做的。", de: "Ja, ich mache es morgens.", en: "Yes, I make it in the morning.", fr: "Oui, je le prépare le matin." } },
+      { id: "e9", speaker: "あい", translations: { ja: "ばんごはんは？", zh: "晚饭呢？", de: "Und zum Abendessen?", en: "What about dinner?", fr: "Et pour le dîner ?" } },
+      { id: "e10", speaker: "けん", translations: { ja: "レストランで たべることが おおいです。", zh: "我经常在餐厅吃。", de: "Ich esse oft in einem Restaurant.", en: "I often eat at a restaurant.", fr: "Je mange souvent au restaurant." } },
+      { id: "e11", speaker: "あい", translations: { ja: "からい たべものが すきですか？", zh: "你喜欢吃辣的吗？", de: "Magst du scharfes Essen?", en: "Do you like spicy food?", fr: "Tu aimes la nourriture épicée ?" } },
+      { id: "e12", speaker: "けん", translations: { ja: "はい、とても すきです。あいさんは？", zh: "是的，我很喜欢。爱，你呢？", de: "Ja, sehr gerne. Und du, Ai?", en: "Yes, I like it a lot. What about you, Ai?", fr: "Oui, j'aime beaucoup ça. Et toi, Ai ?" } },
+      { id: "e13", speaker: "あい", translations: { ja: "わたしは あまい ものが すきです。", zh: "我喜欢甜的。", de: "Ich mag süße Sachen.", en: "I like sweet things.", fr: "J'aime les choses sucrées." } },
+      { id: "e14", speaker: "けん", translations: { ja: "なるほど。でざーとが すきなんですね。", zh: "原来如此，你喜欢甜点啊。", de: "Verstehe. Du magst also Nachtisch.", en: "I see. So you like dessert.", fr: "Je vois. Donc tu aimes le dessert." } },
     ],
   },
 
   song: {
     // Row 5 is an open slot in docs/a1-master-lesson-table-v05.md —
     // filled with a repeat so every lesson has a song.
-    title: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, Shoulders, Knees and Toes" },
+    title: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, Shoulders, Knees and Toes", fr: "Tête, épaules, genoux et pieds" },
     lines: [
-      { id: "sg1", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes" } },
-      { id: "sg2", translations: { ja: "ひざ あし", zh: "膝盖、脚趾", de: "Knie und Zehen", en: "Knees and toes" } },
-      { id: "sg3", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes" } },
-      { id: "sg4", translations: { ja: "ひざ あし", zh: "膝盖、脚趾", de: "Knie und Zehen", en: "Knees and toes" } },
-      { id: "sg5", translations: { ja: "め と みみと くちと はな", zh: "眼睛、耳朵、嘴巴、鼻子", de: "Augen und Ohren und Mund und Nase", en: "Eyes and ears and mouth and nose" } },
-      { id: "sg6", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes" } }
+      { id: "sg1", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes", fr: "Tête, épaules, genoux et pieds" } },
+      { id: "sg2", translations: { ja: "ひざ あし", zh: "膝盖、脚趾", de: "Knie und Zehen", en: "Knees and toes", fr: "Genoux et pieds" } },
+      { id: "sg3", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes", fr: "Tête, épaules, genoux et pieds" } },
+      { id: "sg4", translations: { ja: "ひざ あし", zh: "膝盖、脚趾", de: "Knie und Zehen", en: "Knees and toes", fr: "Genoux et pieds" } },
+      { id: "sg5", translations: { ja: "め と みみと くちと はな", zh: "眼睛、耳朵、嘴巴、鼻子", de: "Augen und Ohren und Mund und Nase", en: "Eyes and ears and mouth and nose", fr: "Et les yeux, les oreilles, la bouche et le nez" } },
+      { id: "sg6", translations: { ja: "あたま かた ひざ あし", zh: "头、肩膀、膝盖、脚趾", de: "Kopf, Schultern, Knie und Zehen", en: "Head, shoulders, knees and toes", fr: "Tête, épaules, genoux et pieds" } }
     ]
   },
 
@@ -149,6 +149,29 @@ export const topicFood: TopicLesson = {
         { id: "g6", translations: { de: "Sie bestellt eine Suppe.", en: "She orders a soup. (regular sie-form)", ja: "かのじょは スープを ちゅうもんします。（きそく：sie-form）", zh: "她点了一份汤。（规则sie形）" } },
       ],
     },
+    // French grammar mirrors German's approach: present tense covering
+    // a regular -er verb, an irregular verb, and a modal-like polite
+    // form (je voudrais), matching the table's three-part slot
+    // (regular/irregular/modal) the same way German's essen/möchten
+    // pairing does.
+    fr: {
+      title: { fr: "Le présent", en: "Present Tense", de: "Präsens", ja: "げんざいけい", zh: "现在时" },
+      explanation: {
+        fr: "Le présent des verbes réguliers en -er se forme avec le radical + terminaison (-e, -es, -e, -ons, -ez, -ent), comme manger. Certains verbes sont irréguliers, comme boire (je bois, tu bois, il boit, nous buvons, vous buvez, ils boivent). « Je voudrais » (de vouloir) exprime un souhait poli, proche de « I would like ».",
+        en: "The present tense of regular -er verbs is formed with the stem + ending (-e, -es, -e, -ons, -ez, -ent), like manger (to eat). Some verbs are irregular, like boire (to drink: je bois, tu bois, il boit, nous buvons, vous buvez, ils boivent). \"Je voudrais\" (from vouloir, to want) expresses a polite wish, similar to \"I would like\".",
+        de: "Das Präsens regelmäßiger -er-Verben wird mit Stamm + Endung (-e, -es, -e, -ons, -ez, -ent) gebildet, wie bei manger (essen). Einige Verben sind unregelmäßig, wie boire (trinken: je bois, tu bois, il boit, nous buvons, vous buvez, ils boivent). „Je voudrais\" (von vouloir, wollen) drückt einen höflichen Wunsch aus, ähnlich wie „möchte\".",
+        ja: "きそくてきな -er どうし（manger「たべる」など）の げんざいけいは、ごかん＋ごび（-e, -es, -e, -ons, -ez, -ent）で つくります。boire「のむ」の ような ふきそくどうしも あります（je bois, tu bois, il boit, nous buvons, vous buvez, ils boivent）。「Je voudrais」（vouloir「ほしい」から）は、ていねいな きぼうを あらわし、「〜したいのですが」に ちかい ひょうげんです。",
+        zh: "规则的-er动词（如manger「吃」）的现在时由词干+词尾（-e, -es, -e, -ons, -ez, -ent）构成。也有不规则动词，如boire「喝」（je bois, tu bois, il boit, nous buvons, vous buvez, ils boivent）。「Je voudrais」（来自vouloir「想要」）表达礼貌的愿望，类似「我想要」。"
+      },
+      chunks: [
+        { id: "g1", translations: { fr: "Je mange du pain tous les jours.", en: "I eat bread every day. (regular je-form)", de: "Ich esse jeden Tag Brot. (reguläre je-Form)", ja: "わたしは まいにち パンを たべます。（きそく：je-form）", zh: "我每天吃面包。（规则je形）" } },
+        { id: "g2", translations: { fr: "Il aime boire du thé.", en: "He likes to drink tea. (irregular: boire)", de: "Er trinkt gern Tee. (unregelmäßig: boire)", ja: "かれは おちゃを のむのが すきです。（ふきそく：boire）", zh: "他喜欢喝茶。（不规则：boire）" } },
+        { id: "g3", translations: { fr: "Nous buvons de l'eau.", en: "We drink water. (irregular, nous-form)", de: "Wir trinken Wasser. (unregelmäßig, nous-Form)", ja: "わたしたちは みずを のみます。（ふきそく、nous-form）", zh: "我们喝水。（不规则，nous形）" } },
+        { id: "g4", translations: { fr: "Je voudrais manger des sushis.", en: "I would like to eat sushi. (modal-like: je voudrais)", de: "Ich möchte Sushi essen. (modalähnlich: je voudrais)", ja: "すしを たべたいです。（じょどうしてき：je voudrais）", zh: "我想吃寿司。（类情态动词：je voudrais）" } },
+        { id: "g5", translations: { fr: "Voudrais-tu boire quelque chose aussi ?", en: "Would you like to drink something too? (modal-like, question form)", de: "Möchtest du auch etwas trinken? (modalähnlich, Fragesatz)", ja: "なにか のみたいですか？（じょどうしてき、しつもんけい）", zh: "你也想喝点什么吗？（类情态动词，疑问形）" } },
+        { id: "g6", translations: { fr: "Elle commande une soupe.", en: "She orders a soup. (regular elle-form)", de: "Sie bestellt eine Suppe. (reguläre sie-Form)", ja: "かのじょは スープを ちゅうもんします。（きそく：elle-form）", zh: "她点了一份汤。（规则elle形）" } },
+      ],
+    },
   },
 
   grammarDrills: {
@@ -173,6 +196,31 @@ export const topicFood: TopicLesson = {
           { id: "pr8", translations: { de: "Er trinkt gern Tee.", en: "He likes to drink tea. (regular er-form)", ja: "かれは おちゃを のむのが すきです。（きそく：er-form）", zh: "他喜欢喝茶。（规则er形）" } },
           { id: "pr9", translations: { de: "Möchtest du Nachtisch?", en: "Would you like dessert? (möchten, question)", ja: "デザートを たべたいですか？（möchten、しつもん）", zh: "你想吃甜点吗？（möchten，疑问句）" } },
           { id: "pr10", translations: { de: "Ich esse Gemüse und Obst.", en: "I eat vegetables and fruit. (regular ich-form)", ja: "わたしは やさいと くだものを たべます。（きそく：ich-form）", zh: "我吃蔬菜和水果。（规则ich形）" } }
+        ]
+      }
+    ],
+    fr: [
+      {
+        id: "grammar-drill-present",
+        title: { fr: "Exercice : le présent", en: "Practice: Present Tense", de: "Übung: Präsens", ja: "れんしゅう：げんざいけい", zh: "练习：现在时" },
+        spokenIntro: {
+          fr: "Ensuite, pratiquons des phrases au présent.",
+          en: "Next, let's practice example sentences in the present tense.",
+          de: "Als Nächstes üben wir Beispielsätze im Präsens.",
+          ja: "つぎは、げんざいけいを つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用现在时的例句。"
+        },
+        lines: [
+          { id: "pr1", translations: { fr: "Je mange du pain tous les jours.", en: "I eat bread every day. (regular je-form)", de: "Ich esse jeden Tag Brot. (reguläre je-Form)", ja: "わたしは まいにち パンを たべます。（きそく：je-form）", zh: "我每天吃面包。（规则je形）" } },
+          { id: "pr2", translations: { fr: "Il aime manger du poisson.", en: "He likes to eat fish. (regular il-form)", de: "Er isst gern Fisch. (reguläre er-Form)", ja: "かれは さかなを たべるのが すきです。（きそく：il-form）", zh: "他喜欢吃鱼。（规则il形）" } },
+          { id: "pr3", translations: { fr: "Nous buvons de l'eau.", en: "We drink water. (irregular, nous-form)", de: "Wir trinken Wasser. (unregelmäßig, nous-Form)", ja: "わたしたちは みずを のみます。（ふきそく、nous-form）", zh: "我们喝水。（不规则，nous形）" } },
+          { id: "pr4", translations: { fr: "Tu commandes la soupe.", en: "You order the soup. (regular tu-form)", de: "Du bestellst die Suppe. (reguläre du-Form)", ja: "あなたは スープを ちゅうもんします。（きそく：tu-form）", zh: "你点了汤。（规则tu形）" } },
+          { id: "pr5", translations: { fr: "Elle prépare le petit-déjeuner.", en: "She prepares breakfast. (regular elle-form)", de: "Sie macht das Frühstück. (reguläre sie-Form)", ja: "かのじょは あさごはんを つくります。（きそく：elle-form）", zh: "她准备早餐。（规则elle形）" } },
+          { id: "pr6", translations: { fr: "Je voudrais manger du riz.", en: "I would like to eat rice. (je voudrais + infinitive)", de: "Ich möchte Reis essen. (möchten + Infinitiv)", ja: "わたしは ごはんを たべたいです。（je voudrais + ふていし）", zh: "我想吃米饭。（je voudrais + 不定式）" } },
+          { id: "pr7", translations: { fr: "Nous payons au restaurant.", en: "We pay at the restaurant. (regular nous-form)", de: "Wir bezahlen im Restaurant. (reguläre wir-Form)", ja: "わたしたちは レストランで はらいます。（きそく：nous-form）", zh: "我们在餐厅付款。（规则nous形）" } },
+          { id: "pr8", translations: { fr: "Il boit du thé avec plaisir.", en: "He likes to drink tea. (irregular il-form)", de: "Er trinkt gern Tee. (unregelmäßig, er-Form)", ja: "かれは おちゃを のむのが すきです。（ふきそく：il-form）", zh: "他喜欢喝茶。（不规则il形）" } },
+          { id: "pr9", translations: { fr: "Voudrais-tu un dessert ?", en: "Would you like dessert? (je voudrais, question)", de: "Möchtest du Nachtisch? (möchten, Frage)", ja: "デザートを たべたいですか？（je voudrais、しつもん）", zh: "你想吃甜点吗？（je voudrais，疑问句）" } },
+          { id: "pr10", translations: { fr: "Je mange des légumes et des fruits.", en: "I eat vegetables and fruit. (regular je-form)", de: "Ich esse Gemüse und Obst. (reguläre ich-Form)", ja: "わたしは やさいと くだものを たべます。（きそく：je-form）", zh: "我吃蔬菜和水果。（规则je形）" } }
         ]
       }
     ]
@@ -218,6 +266,28 @@ export const topicFood: TopicLesson = {
         { id: "z2", category: "z_ts", translations: { de: "Zitrone", en: "lemon (Z = ts)", ja: "レモン（Z は「ts」）", zh: "柠檬（Z发音为ts）" } },
         { id: "z3", category: "z_ts", translations: { de: "Zwiebel", en: "onion (Z = ts)", ja: "たまねぎ（Z は「ts」）", zh: "洋葱（Z发音为ts）" } },
         { id: "z4", category: "z_ts", translations: { de: "würzig", en: "spicy, flavorful (Z-adjacent zw/z sound family)", ja: "あじわい ゆたかな（Z けいの おと）", zh: "味道浓郁的（Z相关音）" } },
+      ],
+    },
+    // French pronunciation: silent vs. pronounced final consonants —
+    // one of the first things a French learner has to internalize,
+    // since it's the opposite of most alphabetic-script languages'
+    // default assumption (that written final letters are spoken).
+    // Food vocab supplies plenty of clean examples of both patterns.
+    fr: {
+      title: { fr: "Exercice de prononciation", en: "Pronunciation Practice", de: "Aussprachetraining", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        silent: { fr: "Consonne finale muette", en: "Silent final consonant", de: "Stummer Endkonsonant", ja: "ごびの しいん が むおん", zh: "词尾辅音不发音" },
+        pronounced: { fr: "Consonne finale prononcée", en: "Pronounced final consonant", de: "Ausgesprochener Endkonsonant", ja: "ごびの しいん が はつおんされる", zh: "词尾辅音发音" }
+      },
+      items: [
+        { id: "sl1", category: "silent", translations: { fr: "chaud", en: "hot (final d silent)", de: "heiß (Schluss-d stumm)", ja: "あつい（ごびの d は むおん）", zh: "热的（词尾d不发音）" } },
+        { id: "sl2", category: "silent", translations: { fr: "lait", en: "milk (final t silent)", de: "Milch (Schluss-t stumm)", ja: "ぎゅうにゅう（ごびの t は むおん）", zh: "牛奶（词尾t不发音）" } },
+        { id: "sl3", category: "silent", translations: { fr: "gâteau", en: "cake (final u/eau group silent-ish, no final consonant sound)", de: "Kuchen (Endung ohne Konsonantenlaut)", ja: "ケーキ（ごびに しいんの おとが ない）", zh: "蛋糕（词尾无辅音音）" } },
+        { id: "sl4", category: "silent", translations: { fr: "riz", en: "rice (final z silent)", de: "Reis (Schluss-z stumm)", ja: "ごはん（ごびの z は むおん）", zh: "米饭（词尾z不发音）" } },
+        { id: "pr1", category: "pronounced", translations: { fr: "soupe", en: "soup (final e makes the p audible)", de: "Suppe (Schluss-e macht p hörbar)", ja: "スープ（ごびの e が p を はつおんさせる）", zh: "汤（词尾e使p发音）" } },
+        { id: "pr2", category: "pronounced", translations: { fr: "salade", en: "salad (final e makes the d audible)", de: "Salat (Schluss-e macht d hörbar)", ja: "サラダ（ごびの e が d を はつおんさせる）", zh: "沙拉（词尾e使d发音）" } },
+        { id: "pr3", category: "pronounced", translations: { fr: "tarte", en: "tart, pie (final e makes the t audible)", de: "Kuchen, Torte (Schluss-e macht t hörbar)", ja: "タルト（ごびの e が t を はつおんさせる）", zh: "馅饼（词尾e使t发音）" } },
+        { id: "pr4", category: "pronounced", translations: { fr: "carotte", en: "carrot (final e makes the t audible)", de: "Karotte (Schluss-e macht t hörbar)", ja: "にんじん（ごびの e が t を はつおんさせる）", zh: "胡萝卜（词尾e使t发音）" } }
       ],
     },
   },

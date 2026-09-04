@@ -22,73 +22,73 @@ export const topicWeather: TopicLesson = {
     zh: "天气"
   },
   vocab: [
-    { id: "v01", category: "noun", translations: { ja: "てんき", en: "weather", de: "Wetter", zh: "天气" } },
-    { id: "v02", category: "noun", translations: { ja: "はれ", en: "sunny", de: "sonnig", zh: "晴天" } },
-    { id: "v03", category: "noun", translations: { ja: "くもり", en: "cloudy", de: "bewölkt", zh: "阴天" } },
-    { id: "v04", category: "noun", translations: { ja: "あめ", en: "rain", de: "Regen", zh: "雨" } },
-    { id: "v05", category: "noun", translations: { ja: "ゆき", en: "snow", de: "Schnee", zh: "雪" } },
-    { id: "v06", category: "noun", translations: { ja: "かぜ", en: "wind", de: "Wind", zh: "风" } },
-    { id: "v07", category: "noun", translations: { ja: "たいふう", en: "typhoon", de: "Taifun", zh: "台风" } },
-    { id: "v08", category: "noun", translations: { ja: "かみなり", en: "thunder", de: "Donner", zh: "雷" } },
-    { id: "v09", category: "noun", translations: { ja: "きり", en: "fog", de: "Nebel", zh: "雾" } },
-    { id: "v10", category: "noun", translations: { ja: "つゆ", en: "rainy season", de: "Regenzeit", zh: "梅雨季" } },
-    { id: "v11", category: "noun", translations: { ja: "きおん", en: "temperature", de: "Temperatur", zh: "气温" } },
-    { id: "v12", category: "adjective", translations: { ja: "あつい", en: "hot", de: "heiß", zh: "热的" } },
-    { id: "v13", category: "adjective", translations: { ja: "さむい", en: "cold", de: "kalt", zh: "冷的" } },
-    { id: "v14", category: "adjective", translations: { ja: "すずしい", en: "cool", de: "kühl", zh: "凉爽的" } },
-    { id: "v15", category: "adjective", translations: { ja: "あたたかい", en: "warm", de: "warm", zh: "温暖的" } },
-    { id: "v16", category: "adjective", translations: { ja: "むしあつい", en: "humid", de: "schwül", zh: "闷热的" } },
-    { id: "v17", category: "adjective", translations: { ja: "かんそうした", en: "dry", de: "trocken", zh: "干燥的" } },
-    { id: "v18", category: "noun", translations: { ja: "てんきよほう", en: "weather forecast", de: "Wettervorhersage", zh: "天气预报" } },
-    { id: "v19", category: "noun", translations: { ja: "かさ", en: "umbrella", de: "Regenschirm", zh: "雨伞" } },
-    { id: "v20", category: "noun", translations: { ja: "にじ", en: "rainbow", de: "Regenbogen", zh: "彩虹" } },
-    { id: "v21", category: "noun", translations: { ja: "ひざし", en: "sunlight", de: "Sonnenlicht", zh: "阳光" } },
-    { id: "v22", category: "noun", translations: { ja: "くも", en: "cloud", de: "Wolke", zh: "云" } },
-    { id: "v23", category: "noun", translations: { ja: "しつど", en: "humidity", de: "Luftfeuchtigkeit", zh: "湿度" } },
-    { id: "v24", category: "noun", translations: { ja: "きせつ", en: "season", de: "Jahreszeit", zh: "季节" } },
-    { id: "v25", category: "noun", translations: { ja: "はる", en: "spring", de: "Frühling", zh: "春天" } },
-    { id: "v26", category: "noun", translations: { ja: "なつ", en: "summer", de: "Sommer", zh: "夏天" } },
-    { id: "v27", category: "noun", translations: { ja: "あき", en: "autumn", de: "Herbst", zh: "秋天" } },
-    { id: "v28", category: "noun", translations: { ja: "ふゆ", en: "winter", de: "Winter", zh: "冬天" } },
-    { id: "v29", category: "adjective", translations: { ja: "つよい", en: "strong", de: "stark", zh: "强的" } },
-    { id: "v30", category: "adjective", translations: { ja: "よわい", en: "weak", de: "schwach", zh: "弱的" } }
+    { id: "v01", category: "noun", translations: { ja: "てんき", en: "weather", de: "Wetter", zh: "天气", fr: "temps, météo" } },
+    { id: "v02", category: "noun", translations: { ja: "はれ", en: "sunny", de: "sonnig", zh: "晴天", fr: "ensoleillé" } },
+    { id: "v03", category: "noun", translations: { ja: "くもり", en: "cloudy", de: "bewölkt", zh: "阴天", fr: "nuageux" } },
+    { id: "v04", category: "noun", translations: { ja: "あめ", en: "rain", de: "Regen", zh: "雨", fr: "pluie" } },
+    { id: "v05", category: "noun", translations: { ja: "ゆき", en: "snow", de: "Schnee", zh: "雪", fr: "neige" } },
+    { id: "v06", category: "noun", translations: { ja: "かぜ", en: "wind", de: "Wind", zh: "风", fr: "vent" } },
+    { id: "v07", category: "noun", translations: { ja: "たいふう", en: "typhoon", de: "Taifun", zh: "台风", fr: "typhon" } },
+    { id: "v08", category: "noun", translations: { ja: "かみなり", en: "thunder", de: "Donner", zh: "雷", fr: "tonnerre" } },
+    { id: "v09", category: "noun", translations: { ja: "きり", en: "fog", de: "Nebel", zh: "雾", fr: "brouillard" } },
+    { id: "v10", category: "noun", translations: { ja: "つゆ", en: "rainy season", de: "Regenzeit", zh: "梅雨季", fr: "saison des pluies" } },
+    { id: "v11", category: "noun", translations: { ja: "きおん", en: "temperature", de: "Temperatur", zh: "气温", fr: "température" } },
+    { id: "v12", category: "adjective", translations: { ja: "あつい", en: "hot", de: "heiß", zh: "热的", fr: "chaud(e)" } },
+    { id: "v13", category: "adjective", translations: { ja: "さむい", en: "cold", de: "kalt", zh: "冷的", fr: "froid(e)" } },
+    { id: "v14", category: "adjective", translations: { ja: "すずしい", en: "cool", de: "kühl", zh: "凉爽的", fr: "frais, fraîche" } },
+    { id: "v15", category: "adjective", translations: { ja: "あたたかい", en: "warm", de: "warm", zh: "温暖的", fr: "chaud(e), tiède" } },
+    { id: "v16", category: "adjective", translations: { ja: "むしあつい", en: "humid", de: "schwül", zh: "闷热的", fr: "humide" } },
+    { id: "v17", category: "adjective", translations: { ja: "かんそうした", en: "dry", de: "trocken", zh: "干燥的", fr: "sec, sèche" } },
+    { id: "v18", category: "noun", translations: { ja: "てんきよほう", en: "weather forecast", de: "Wettervorhersage", zh: "天气预报", fr: "prévisions météo" } },
+    { id: "v19", category: "noun", translations: { ja: "かさ", en: "umbrella", de: "Regenschirm", zh: "雨伞", fr: "parapluie" } },
+    { id: "v20", category: "noun", translations: { ja: "にじ", en: "rainbow", de: "Regenbogen", zh: "彩虹", fr: "arc-en-ciel" } },
+    { id: "v21", category: "noun", translations: { ja: "ひざし", en: "sunlight", de: "Sonnenlicht", zh: "阳光", fr: "lumière du soleil" } },
+    { id: "v22", category: "noun", translations: { ja: "くも", en: "cloud", de: "Wolke", zh: "云", fr: "nuage" } },
+    { id: "v23", category: "noun", translations: { ja: "しつど", en: "humidity", de: "Luftfeuchtigkeit", zh: "湿度", fr: "humidité" } },
+    { id: "v24", category: "noun", translations: { ja: "きせつ", en: "season", de: "Jahreszeit", zh: "季节", fr: "saison" } },
+    { id: "v25", category: "noun", translations: { ja: "はる", en: "spring", de: "Frühling", zh: "春天", fr: "printemps" } },
+    { id: "v26", category: "noun", translations: { ja: "なつ", en: "summer", de: "Sommer", zh: "夏天", fr: "été" } },
+    { id: "v27", category: "noun", translations: { ja: "あき", en: "autumn", de: "Herbst", zh: "秋天", fr: "automne" } },
+    { id: "v28", category: "noun", translations: { ja: "ふゆ", en: "winter", de: "Winter", zh: "冬天", fr: "hiver" } },
+    { id: "v29", category: "adjective", translations: { ja: "つよい", en: "strong", de: "stark", zh: "强的", fr: "fort(e)" } },
+    { id: "v30", category: "adjective", translations: { ja: "よわい", en: "weak", de: "schwach", zh: "弱的", fr: "faible" } }
   ],
   dialogueA: {
-    title: { ja: "きょうの てんきの はなし", en: "Small Talk About Today's Weather", de: "Small Talk über das heutige Wetter", zh: "聊聊今天的天气" },
+    title: { ja: "きょうの てんきの はなし", en: "Small Talk About Today's Weather", de: "Small Talk über das heutige Wetter", zh: "聊聊今天的天气", fr: "Discuter du temps qu'il fait aujourd'hui" },
     lines: [
-      { id: "d1", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "きょうは いい てんきですね。", en: "The weather is nice today, isn't it?", de: "Das Wetter ist heute schön, nicht wahr?", zh: "今天天气真好啊。" } },
-      { id: "d2", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "ほんとうに。きのうより あたたかいですね。", en: "Really. It's warmer than yesterday.", de: "Wirklich. Es ist wärmer als gestern.", zh: "真的。比昨天暖和呢。" } },
-      { id: "d3", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "てんきよほうを みましたか？あしたは あめらしいですよ。", en: "Did you check the forecast? It seems like it'll rain tomorrow.", de: "Haben Sie die Vorhersage gesehen? Es scheint, dass es morgen regnet.", zh: "您看天气预报了吗？听说明天会下雨。" } },
-      { id: "d4", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "ほんとうですか。かさを もっていかないと。", en: "Really? I'll need to bring an umbrella.", de: "Wirklich? Ich muss einen Regenschirm mitnehmen.", zh: "真的吗？那得带伞了。" } },
-      { id: "d5", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "かぜも つよく なるそうです。", en: "It seems the wind will get strong too.", de: "Es heißt, der Wind wird auch stark.", zh: "听说风也会变强。" } },
-      { id: "d6", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "たいふうが きているんですか？", en: "Is a typhoon coming?", de: "Kommt ein Taifun?", zh: "是台风要来了吗？" } },
-      { id: "d7", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "いいえ、ただの かぜだと おもいます。でも きをつけてくださいね。", en: "No, I think it's just wind. But please be careful.", de: "Nein, ich glaube, es ist nur Wind. Aber bitte seien Sie vorsichtig.", zh: "不是，我觉得只是普通的风。不过还是要小心哦。" } },
-      { id: "d8", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "わかりました。しつども たかいですね。", en: "Got it. The humidity is high too, isn't it?", de: "Verstanden. Die Luftfeuchtigkeit ist auch hoch, oder?", zh: "明白了。湿度也很高呢。" } },
-      { id: "d9", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "そうですね、むしあついです。", en: "Yeah, it's humid.", de: "Ja, es ist schwül.", zh: "是啊，闷热。" } },
-      { id: "d10", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "つゆの きせつですからね。", en: "Well, it is rainy season after all.", de: "Nun ja, es ist ja Regenzeit.", zh: "毕竟是梅雨季节嘛。" } },
-      { id: "d11", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "はやく なつが きてほしいですね。", en: "I hope summer comes soon.", de: "Ich hoffe, der Sommer kommt bald.", zh: "真希望夏天快点到来。" } },
-      { id: "d12", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "でも なつは あつすぎますよ。", en: "But summer is too hot.", de: "Aber der Sommer ist zu heiß.", zh: "但夏天太热了。" } },
-      { id: "d13", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "たしかに。あきが いちばん すきです。", en: "True. I like autumn the best.", de: "Stimmt. Der Herbst gefällt mir am besten.", zh: "确实。我最喜欢秋天了。" } },
-      { id: "d14", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "わたしも そうです。すずしくて きもちが いいですね。", en: "Me too. It's cool and feels pleasant.", de: "Ich auch. Es ist kühl und fühlt sich angenehm an.", zh: "我也是。凉爽又舒服。" } }
+      { id: "d1", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "きょうは いい てんきですね。", en: "The weather is nice today, isn't it?", de: "Das Wetter ist heute schön, nicht wahr?", zh: "今天天气真好啊。", fr: "Il fait beau aujourd'hui, n'est-ce pas ?" } },
+      { id: "d2", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "ほんとうに。きのうより あたたかいですね。", en: "Really. It's warmer than yesterday.", de: "Wirklich. Es ist wärmer als gestern.", zh: "真的。比昨天暖和呢。", fr: "Vraiment. Il fait plus chaud qu'hier." } },
+      { id: "d3", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "てんきよほうを みましたか？あしたは あめらしいですよ。", en: "Did you check the forecast? It seems like it'll rain tomorrow.", de: "Haben Sie die Vorhersage gesehen? Es scheint, dass es morgen regnet.", zh: "您看天气预报了吗？听说明天会下雨。", fr: "Vous avez regardé les prévisions ? Il paraît qu'il va pleuvoir demain." } },
+      { id: "d4", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "ほんとうですか。かさを もっていかないと。", en: "Really? I'll need to bring an umbrella.", de: "Wirklich? Ich muss einen Regenschirm mitnehmen.", zh: "真的吗？那得带伞了。", fr: "Vraiment ? Je dois prendre un parapluie." } },
+      { id: "d5", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "かぜも つよく なるそうです。", en: "It seems the wind will get strong too.", de: "Es heißt, der Wind wird auch stark.", zh: "听说风也会变强。", fr: "Il paraît que le vent va aussi devenir fort." } },
+      { id: "d6", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "たいふうが きているんですか？", en: "Is a typhoon coming?", de: "Kommt ein Taifun?", zh: "是台风要来了吗？", fr: "Un typhon arrive ?" } },
+      { id: "d7", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "いいえ、ただの かぜだと おもいます。でも きをつけてくださいね。", en: "No, I think it's just wind. But please be careful.", de: "Nein, ich glaube, es ist nur Wind. Aber bitte seien Sie vorsichtig.", zh: "不是，我觉得只是普通的风。不过还是要小心哦。", fr: "Non, je pense que c'est juste du vent. Mais faites attention." } },
+      { id: "d8", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "わかりました。しつども たかいですね。", en: "Got it. The humidity is high too, isn't it?", de: "Verstanden. Die Luftfeuchtigkeit ist auch hoch, oder?", zh: "明白了。湿度也很高呢。", fr: "D'accord. L'humidité est élevée aussi, n'est-ce pas ?" } },
+      { id: "d9", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "そうですね、むしあついです。", en: "Yeah, it's humid.", de: "Ja, es ist schwül.", zh: "是啊，闷热。", fr: "Oui, c'est humide." } },
+      { id: "d10", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "つゆの きせつですからね。", en: "Well, it is rainy season after all.", de: "Nun ja, es ist ja Regenzeit.", zh: "毕竟是梅雨季节嘛。", fr: "Bon, c'est la saison des pluies après tout." } },
+      { id: "d11", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "はやく なつが きてほしいですね。", en: "I hope summer comes soon.", de: "Ich hoffe, der Sommer kommt bald.", zh: "真希望夏天快点到来。", fr: "J'espère que l'été arrivera bientôt." } },
+      { id: "d12", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "でも なつは あつすぎますよ。", en: "But summer is too hot.", de: "Aber der Sommer ist zu heiß.", zh: "但夏天太热了。", fr: "Mais l'été est trop chaud." } },
+      { id: "d13", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "たしかに。あきが いちばん すきです。", en: "True. I like autumn the best.", de: "Stimmt. Der Herbst gefällt mir am besten.", zh: "确实。我最喜欢秋天了。", fr: "C'est vrai. J'aime l'automne le plus." } },
+      { id: "d14", speaker: { ja: "けん", en: "Ken", de: "Ken", zh: "健" }, translations: { ja: "わたしも そうです。すずしくて きもちが いいですね。", en: "Me too. It's cool and feels pleasant.", de: "Ich auch. Es ist kühl und fühlt sich angenehm an.", zh: "我也是。凉爽又舒服。", fr: "Moi aussi. C'est frais et agréable." } }
     ]
   },
   dialogueB: {
-    title: { ja: "ふたつの まちの てんきを くらべる", en: "Comparing Weather in Two Cities", de: "Das Wetter zweier Städte vergleichen", zh: "比较两座城市的天气" },
+    title: { ja: "ふたつの まちの てんきを くらべる", en: "Comparing Weather in Two Cities", de: "Das Wetter zweier Städte vergleichen", zh: "比较两座城市的天气", fr: "Comparer le temps de deux villes" },
     lines: [
-      { id: "e1", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "とうきょうと さっぽろ、どちらが さむいですか？", en: "Which is colder, Tokyo or Sapporo?", de: "Was ist kälter, Tokio oder Sapporo?", zh: "东京和札幌，哪个更冷？" } },
-      { id: "e2", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "さっぽろのほうが とうきょうより さむいですよ。", en: "Sapporo is colder than Tokyo.", de: "Sapporo ist kälter als Tokio.", zh: "札幌比东京更冷。" } },
-      { id: "e3", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "ゆきも おおいですか？", en: "Does it get a lot of snow too?", de: "Schneit es dort auch viel?", zh: "雪也多吗？" } },
-      { id: "e4", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "はい、さっぽろは にほんで いちばん ゆきが おおい まちの ひとつです。", en: "Yes, Sapporo is one of the snowiest cities in Japan.", de: "Ja, Sapporo ist eine der schneereichsten Städte Japans.", zh: "是的，札幌是日本雪最多的城市之一。" } },
-      { id: "e5", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "なつは どうですか？", en: "What about summer?", de: "Und wie ist es im Sommer?", zh: "夏天怎么样？" } },
-      { id: "e6", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "さっぽろの なつは とうきょうより すずしいです。", en: "Sapporo's summer is cooler than Tokyo's.", de: "Sapporos Sommer ist kühler als der von Tokio.", zh: "札幌的夏天比东京凉爽。" } },
-      { id: "e7", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "とうきょうの なつは あつくて むしあついですよね。", en: "Tokyo's summer is hot and humid, isn't it?", de: "Tokios Sommer ist heiß und schwül, nicht wahr?", zh: "东京的夏天又热又闷吧？" } },
-      { id: "e8", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "そうですね、とうきょうのほうが しつどが たかいです。", en: "Yeah, Tokyo has higher humidity.", de: "Ja, Tokio hat eine höhere Luftfeuchtigkeit.", zh: "是的，东京的湿度更高。" } },
-      { id: "e9", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "どちらの きせつが いちばん すきですか？", en: "Which season do you like best?", de: "Welche Jahreszeit gefällt Ihnen am besten?", zh: "您最喜欢哪个季节？" } },
-      { id: "e10", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "わたしは はるが いちばん すきです。あたたかくて きれいですから。", en: "I like spring the best. It's warm and beautiful.", de: "Mir gefällt der Frühling am besten. Er ist warm und schön.", zh: "我最喜欢春天。因为温暖又美丽。" } },
-      { id: "e11", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "さっぽろの はるは とうきょうほど はやく きませんよね。", en: "Sapporo's spring doesn't come as early as Tokyo's, does it?", de: "Sapporos Frühling kommt nicht so früh wie der von Tokio, oder?", zh: "札幌的春天没有东京来得早吧？" } },
-      { id: "e12", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "そのとおりです。にがつは まだ ゆきが のこっています。", en: "That's right. In February, snow still remains.", de: "Genau. Im Februar liegt noch Schnee.", zh: "没错。二月的时候还有积雪。" } },
-      { id: "e13", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "きせつの ちがいが おもしろいですね。", en: "It's interesting how the seasons differ.", de: "Es ist interessant, wie sich die Jahreszeiten unterscheiden.", zh: "季节的差异真有趣呢。" } },
-      { id: "e14", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "ほんとうに。にほんは たてに ながいから、てんきも さまざまですよ。", en: "Really. Since Japan is long from north to south, the weather varies a lot too.", de: "Wirklich. Da Japan von Nord nach Süd lang gestreckt ist, ist auch das Wetter sehr unterschiedlich.", zh: "真的。因为日本南北狭长，天气也各不相同。" } }
+      { id: "e1", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "とうきょうと さっぽろ、どちらが さむいですか？", en: "Which is colder, Tokyo or Sapporo?", de: "Was ist kälter, Tokio oder Sapporo?", zh: "东京和札幌，哪个更冷？", fr: "Qui est plus froid, Tokyo ou Sapporo ?" } },
+      { id: "e2", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "さっぽろのほうが とうきょうより さむいですよ。", en: "Sapporo is colder than Tokyo.", de: "Sapporo ist kälter als Tokio.", zh: "札幌比东京更冷。", fr: "Sapporo est plus froid que Tokyo." } },
+      { id: "e3", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "ゆきも おおいですか？", en: "Does it get a lot of snow too?", de: "Schneit es dort auch viel?", zh: "雪也多吗？", fr: "Il neige beaucoup aussi ?" } },
+      { id: "e4", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "はい、さっぽろは にほんで いちばん ゆきが おおい まちの ひとつです。", en: "Yes, Sapporo is one of the snowiest cities in Japan.", de: "Ja, Sapporo ist eine der schneereichsten Städte Japans.", zh: "是的，札幌是日本雪最多的城市之一。", fr: "Oui, Sapporo est l'une des villes les plus enneigées du Japon." } },
+      { id: "e5", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "なつは どうですか？", en: "What about summer?", de: "Und wie ist es im Sommer?", zh: "夏天怎么样？", fr: "Et l'été ?" } },
+      { id: "e6", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "さっぽろの なつは とうきょうより すずしいです。", en: "Sapporo's summer is cooler than Tokyo's.", de: "Sapporos Sommer ist kühler als der von Tokio.", zh: "札幌的夏天比东京凉爽。", fr: "L'été de Sapporo est plus frais que celui de Tokyo." } },
+      { id: "e7", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "とうきょうの なつは あつくて むしあついですよね。", en: "Tokyo's summer is hot and humid, isn't it?", de: "Tokios Sommer ist heiß und schwül, nicht wahr?", zh: "东京的夏天又热又闷吧？", fr: "L'été de Tokyo est chaud et humide, n'est-ce pas ?" } },
+      { id: "e8", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "そうですね、とうきょうのほうが しつどが たかいです。", en: "Yeah, Tokyo has higher humidity.", de: "Ja, Tokio hat eine höhere Luftfeuchtigkeit.", zh: "是的，东京的湿度更高。", fr: "Oui, Tokyo a une humidité plus élevée." } },
+      { id: "e9", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "どちらの きせつが いちばん すきですか？", en: "Which season do you like best?", de: "Welche Jahreszeit gefällt Ihnen am besten?", zh: "您最喜欢哪个季节？", fr: "Quelle saison préférez-vous ?" } },
+      { id: "e10", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "わたしは はるが いちばん すきです。あたたかくて きれいですから。", en: "I like spring the best. It's warm and beautiful.", de: "Mir gefällt der Frühling am besten. Er ist warm und schön.", zh: "我最喜欢春天。因为温暖又美丽。", fr: "J'aime le printemps le plus. C'est chaud et beau." } },
+      { id: "e11", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "さっぽろの はるは とうきょうほど はやく きませんよね。", en: "Sapporo's spring doesn't come as early as Tokyo's, does it?", de: "Sapporos Frühling kommt nicht so früh wie der von Tokio, oder?", zh: "札幌的春天没有东京来得早吧？", fr: "Le printemps de Sapporo n'arrive pas aussi tôt que celui de Tokyo, n'est-ce pas ?" } },
+      { id: "e12", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "そのとおりです。にがつは まだ ゆきが のこっています。", en: "That's right. In February, snow still remains.", de: "Genau. Im Februar liegt noch Schnee.", zh: "没错。二月的时候还有积雪。", fr: "C'est exact. En février, il reste encore de la neige." } },
+      { id: "e13", speaker: { ja: "みほ", en: "Miho", de: "Miho", zh: "美穗" }, translations: { ja: "きせつの ちがいが おもしろいですね。", en: "It's interesting how the seasons differ.", de: "Es ist interessant, wie sich die Jahreszeiten unterscheiden.", zh: "季节的差异真有趣呢。", fr: "C'est intéressant de voir comment les saisons diffèrent." } },
+      { id: "e14", speaker: { ja: "りく", en: "Riku", de: "Riku", zh: "陆" }, translations: { ja: "ほんとうに。にほんは たてに ながいから、てんきも さまざまですよ。", en: "Really. Since Japan is long from north to south, the weather varies a lot too.", de: "Wirklich. Da Japan von Nord nach Süd lang gestreckt ist, ist auch das Wetter sehr unterschiedlich.", zh: "真的。因为日本南北狭长，天气也各不相同。", fr: "Vraiment. Comme le Japon est long du nord au sud, le temps varie beaucoup aussi." } }
     ]
   },
   grammar: {
@@ -125,6 +125,28 @@ export const topicWeather: TopicLesson = {
         { id: "g5", translations: { de: "Heute ist es nicht so heiß wie gestern.", en: "Today isn't as hot as yesterday. (negative comparison)", ja: "きょうは きのうほど あつくないです。（ひていの ひかく）", zh: "今天没有昨天那么热。（否定比较）" } },
         { id: "g6", translations: { de: "Nächste Woche wird es wahrscheinlich kühler.", en: "Next week will probably be cooler. (comparative + probably)", ja: "らいしゅうは たぶん すずしく なるでしょう。（ひかくきゅう + たぶん）", zh: "下周可能会更凉爽。（比较级 + 可能）" } }
       ]
+    },
+    // French comparatives/superlatives are the third genuine parallel
+    // in this lesson: plus...que and le/la plus map onto exactly the
+    // same weather-comparison function as Japanese's より／いちばん
+    // and German's Komparativ/Superlativ above.
+    fr: {
+      title: { fr: "Le comparatif et le superlatif : plus, le plus, moins", en: "Comparative and Superlative: Plus, Le Plus, Moins", de: "Komparativ und Superlativ: Plus, le plus, moins", ja: "ひかくきゅう と さいじょうきゅう：plus、le plus、moins", zh: "比较级与最高级：plus、le plus、moins" },
+      explanation: {
+        fr: "Pour comparer deux choses, on utilise « plus...que » : Il fait plus froid qu'hier. Pour le superlatif, on utilise « le/la plus » + adjectif : L'hiver est la saison la plus froide. Pour dire qu'une chose est moindre qu'une autre, on utilise « moins...que » ou « pas aussi...que » : Aujourd'hui n'est pas aussi chaud qu'hier.",
+        en: "To compare two things, use \"plus...que\" (more...than): Il fait plus froid qu'hier (It's colder than yesterday). For the superlative, use \"le/la plus\" + adjective: L'hiver est la saison la plus froide (Winter is the coldest season). To say something is less than another, use \"moins...que\" or \"pas aussi...que\": Aujourd'hui n'est pas aussi chaud qu'hier (Today isn't as hot as yesterday).",
+        de: "Um zwei Dinge zu vergleichen, benutzt man „plus...que\" (mehr...als): Il fait plus froid qu'hier (Es ist kälter als gestern). Für den Superlativ benutzt man „le/la plus\" + Adjektiv: L'hiver est la saison la plus froide (Der Winter ist die kälteste Jahreszeit). Um auszudrücken, dass etwas weniger ist als etwas anderes, benutzt man „moins...que\" oder „pas aussi...que\": Aujourd'hui n'est pas aussi chaud qu'hier (Heute ist es nicht so heiß wie gestern).",
+        ja: "ふたつの ものを ひかくする ときは「plus...que」（〜より もっと）を つかいます：Il fait plus froid qu'hier（きのうより さむいです）。さいじょうきゅうは「le/la plus」＋けいようしを つかいます：L'hiver est la saison la plus froide（ふゆが いちばん さむい きせつです）。あるものが もう ひとつより すくない ことを いう ときは「moins...que」または「pas aussi...que」を つかいます：Aujourd'hui n'est pas aussi chaud qu'hier（きょうは きのうほど あつくないです）。",
+        zh: "比较两个事物时，使用「plus...que」（比……更）：Il fait plus froid qu'hier（比昨天冷）。最高级使用「le/la plus」+形容词：L'hiver est la saison la plus froide（冬天是最冷的季节）。表示某物比另一物少时，使用「moins...que」或「pas aussi...que」：Aujourd'hui n'est pas aussi chaud qu'hier（今天没有昨天那么热）。"
+      },
+      chunks: [
+        { id: "g1", translations: { fr: "Il fait plus froid aujourd'hui qu'hier.", en: "It's colder today than yesterday. (plus...que)", de: "Heute ist es kälter als gestern. (plus...que)", ja: "きょうは きのうより さむいです。（plus...que）", zh: "今天比昨天冷。（plus...que）" } },
+        { id: "g2", translations: { fr: "L'été est plus chaud que l'hiver.", en: "Summer is hotter than winter. (plus...que)", de: "Der Sommer ist heißer als der Winter. (plus...que)", ja: "なつのほうが ふゆより あついです。（plus...que）", zh: "夏天比冬天热。（plus...que）" } },
+        { id: "g3", translations: { fr: "Quelle ville est la plus chaude, Tokyo ou Osaka ?", en: "Which city is hottest, Tokyo or Osaka? (superlative, question)", de: "Welche Stadt ist am heißesten, Tokio oder Osaka? (Superlativ, Frage)", ja: "とうきょうと おおさか、どちらが あついですか？（さいじょうきゅう、しつもん）", zh: "东京和大阪，哪个更热？（最高级，疑问句）" } },
+        { id: "g4", translations: { fr: "L'hiver est la saison la plus froide au Japon.", en: "Winter is the coldest season in Japan. (le/la plus + noun)", de: "Der Winter ist die kälteste Jahreszeit in Japan. (le/la plus + Nomen)", ja: "にほんで いちばん さむい きせつは ふゆです。（le/la plus + めいし）", zh: "日本最冷的季节是冬天。（le/la plus + 名词）" } },
+        { id: "g5", translations: { fr: "Aujourd'hui n'est pas aussi chaud qu'hier.", en: "Today isn't as hot as yesterday. (negative comparison)", de: "Heute ist es nicht so heiß wie gestern. (negativer Vergleich)", ja: "きょうは きのうほど あつくないです。（ひていの ひかく）", zh: "今天没有昨天那么热。（否定比较）" } },
+        { id: "g6", translations: { fr: "La semaine prochaine sera probablement plus fraîche.", en: "Next week will probably be cooler. (plus + probably)", de: "Nächste Woche wird es wahrscheinlich kühler. (plus + wahrscheinlich)", ja: "らいしゅうは たぶん すずしいでしょう。（plus + たぶん）", zh: "下周可能会更凉爽。（plus + 可能）" } }
+      ]
     }
   },
   grammarDrills: {
@@ -149,6 +171,31 @@ export const topicWeather: TopicLesson = {
           { id: "wk8", translations: { de: "Dieser Taifun ist stärker als der letzte.", en: "This typhoon is stronger than the last one.", ja: "この たいふうは まえのより つよいです。", zh: "这次台风比上次更强。" } },
           { id: "wk9", translations: { de: "Der Herbst ist nicht so heiß wie der Sommer.", en: "Autumn isn't as hot as summer.", ja: "あきは なつほど あつくないです。", zh: "秋天没有夏天热。" } },
           { id: "wk10", translations: { de: "Morgen wird es wahrscheinlich windiger.", en: "It will probably be windier tomorrow.", ja: "あしたは たぶん かぜが つよく なるでしょう。", zh: "明天可能风会更大。" } }
+        ]
+      }
+    ],
+    fr: [
+      {
+        id: "grammar-drill-comparaison",
+        title: { fr: "Exercice : comparer le temps", en: "Practice: Comparing Weather", de: "Übung: Wetter vergleichen", ja: "れんしゅう：てんきを くらべる", zh: "练习：比较天气" },
+        spokenIntro: {
+          fr: "Ensuite, pratiquons des phrases de comparaison sur le temps.",
+          en: "Next, let's practice example sentences comparing weather.",
+          de: "Als Nächstes üben wir Beispielsätze zum Wettervergleich.",
+          ja: "つぎは、てんきを くらべる れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习比较天气的例句。"
+        },
+        lines: [
+          { id: "wk1", translations: { fr: "Sapporo est plus froid que Tokyo.", en: "Sapporo is colder than Tokyo.", de: "Sapporo ist kälter als Tokio.", ja: "さっぽろは とうきょうより さむいです。", zh: "札幌比东京冷。" } },
+          { id: "wk2", translations: { fr: "L'été de Sapporo est plus frais que celui de Tokyo.", en: "Sapporo's summer is cooler than Tokyo's.", de: "Sapporos Sommer ist kühler als der von Tokio.", ja: "さっぽろの なつは とうきょうより すずしいです。", zh: "札幌的夏天比东京凉爽。" } },
+          { id: "wk3", translations: { fr: "Tokyo a une humidité plus élevée.", en: "Tokyo has higher humidity.", de: "Tokio hat eine höhere Luftfeuchtigkeit.", ja: "とうきょうのほうが しつどが たかいです。", zh: "东京的湿度更高。" } },
+          { id: "wk4", translations: { fr: "Le printemps est la saison la plus belle.", en: "Spring is the most beautiful season.", de: "Der Frühling ist die schönste Jahreszeit.", ja: "はるが いちばん きれいな きせつです。", zh: "春天是最美的季节。" } },
+          { id: "wk5", translations: { fr: "Sapporo est l'une des villes les plus enneigées du Japon.", en: "Sapporo is one of the snowiest cities in Japan.", de: "Sapporo ist eine der schneereichsten Städte Japans.", ja: "さっぽろは にほんで いちばん ゆきが おおい まちの ひとつです。", zh: "札幌是日本雪最多的城市之一。" } },
+          { id: "wk6", translations: { fr: "L'hiver est la saison la plus froide.", en: "Winter is the coldest season.", de: "Der Winter ist die kälteste Jahreszeit.", ja: "ふゆが いちばん さむい きせつです。", zh: "冬天是最冷的季节。" } },
+          { id: "wk7", translations: { fr: "Il fait plus chaud aujourd'hui qu'hier.", en: "Today is warmer than yesterday.", de: "Heute ist es wärmer als gestern.", ja: "きょうは きのうより あたたかいです。", zh: "今天比昨天暖和。" } },
+          { id: "wk8", translations: { fr: "Ce typhon est plus fort que le dernier.", en: "This typhoon is stronger than the last one.", de: "Dieser Taifun ist stärker als der letzte.", ja: "この たいふうは まえのより つよいです。", zh: "这次台风比上次更强。" } },
+          { id: "wk9", translations: { fr: "L'automne n'est pas aussi chaud que l'été.", en: "Autumn isn't as hot as summer.", de: "Der Herbst ist nicht so heiß wie der Sommer.", ja: "あきは なつほど あつくないです。", zh: "秋天没有夏天热。" } },
+          { id: "wk10", translations: { fr: "Demain, il y aura probablement plus de vent.", en: "It will probably be windier tomorrow.", de: "Morgen wird es wahrscheinlich windiger.", ja: "あしたは たぶん かぜが つよく なるでしょう。", zh: "明天可能风会更大。" } }
         ]
       }
     ]
@@ -184,6 +231,26 @@ export const topicWeather: TopicLesson = {
         { id: "os1", category: "o_short", translations: { de: "Sonne", en: "sun", ja: "たいよう", zh: "太阳" } },
         { id: "os2", category: "o_short", translations: { de: "Donner", en: "thunder", ja: "かみなり", zh: "雷" } },
         { id: "os3", category: "o_short", translations: { de: "Wolke", en: "cloud", ja: "くも", zh: "云" } }
+      ]
+    },
+    // French pronunciation: "ill"/"il" as a [j] glide (mouillé l — no
+    // real [l] sound at all) vs. a plain, fully-pronounced "l" — two
+    // weather words (soleil, brouillard) anchor the glide side nicely.
+    fr: {
+      title: { fr: "Exercice de prononciation", en: "Pronunciation Practice", de: "Aussprachetraining", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        ill: { fr: "« ill »/« il » = glissement [j]", en: "\"ill\"/\"il\" = glide [j]", de: "„ill\"/„il\" = Gleitlaut [j]", ja: "「ill」／「il」= わたりおん [j]", zh: "「ill」／「il」= 滑音 [j]" },
+        l: { fr: "L normal [l]", en: "Normal L [l]", de: "Normales L [l]", ja: "つうじょうの L [l]", zh: "普通L [l]" }
+      },
+      items: [
+        { id: "il1", category: "ill", translations: { fr: "soleil", en: "sun", de: "Sonne", ja: "たいよう", zh: "太阳" } },
+        { id: "il2", category: "ill", translations: { fr: "brouillard", en: "fog", de: "Nebel", ja: "きり", zh: "雾" } },
+        { id: "il3", category: "ill", translations: { fr: "feuille", en: "leaf", de: "Blatt", ja: "は（しょくぶつの）", zh: "叶子" } },
+        { id: "il4", category: "ill", translations: { fr: "famille", en: "family", de: "Familie", ja: "かぞく", zh: "家庭" } },
+        { id: "l1", category: "l", translations: { fr: "pluie", en: "rain", de: "Regen", ja: "あめ", zh: "雨" } },
+        { id: "l2", category: "l", translations: { fr: "ciel", en: "sky", de: "Himmel", ja: "そら", zh: "天空" } },
+        { id: "l3", category: "l", translations: { fr: "gel", en: "frost", de: "Frost", ja: "しも", zh: "霜冻" } },
+        { id: "l4", category: "l", translations: { fr: "lumière", en: "light", de: "Licht", ja: "ひかり", zh: "光" } }
       ]
     }
   },
@@ -270,18 +337,104 @@ export const topicWeather: TopicLesson = {
           { id: "os2_14", category: "o_short2", translations: { de: "Zopf", en: "braid", ja: "おさげ", zh: "辫子" } }
         ]
       }
+    ],
+    fr: [
+      {
+        id: "sound-drill",
+        title: {
+          fr: "Exercice de prononciation 2",
+          en: "Pronunciation Practice 2",
+          de: "Aussprachetraining 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          fr: "Ensuite, pratiquons avec beaucoup plus d'exemples.",
+          en: "Next, let's practice with a lot more examples.",
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          ill1: { fr: "« ill »/« il » = glissement [j]", en: "\"ill\"/\"il\" = glide [j]", de: "„ill\"/„il\" = Gleitlaut [j]", ja: "「ill」／「il」= わたりおん [j]", zh: "「ill」／「il」= 滑音 [j]" },
+          ill2: { fr: "« ill »/« il » = glissement [j]", en: "\"ill\"/\"il\" = glide [j]", de: "„ill\"/„il\" = Gleitlaut [j]", ja: "「ill」／「il」= わたりおん [j]", zh: "「ill」／「il」= 滑音 [j]" },
+          l1: { fr: "L normal [l]", en: "Normal L [l]", de: "Normales L [l]", ja: "つうじょうの L [l]", zh: "普通L [l]" },
+          l2: { fr: "L normal [l]", en: "Normal L [l]", de: "Normales L [l]", ja: "つうじょうの L [l]", zh: "普通L [l]" }
+        },
+        items: [
+          { id: "il1_1", category: "ill1", translations: { fr: "oreille", en: "ear", de: "Ohr", ja: "みみ", zh: "耳朵" } },
+          { id: "il1_2", category: "ill1", translations: { fr: "abeille", en: "bee", de: "Biene", ja: "はち", zh: "蜜蜂" } },
+          { id: "il1_3", category: "ill1", translations: { fr: "corbeille", en: "basket", de: "Korb", ja: "かご", zh: "篮子" } },
+          { id: "il1_4", category: "ill1", translations: { fr: "vermeil", en: "vermillion", de: "leuchtend rot", ja: "しゅいろ", zh: "朱红色" } },
+          { id: "il1_5", category: "ill1", translations: { fr: "sommeil", en: "sleep", de: "Schlaf", ja: "すいみん", zh: "睡眠" } },
+          { id: "il1_6", category: "ill1", translations: { fr: "conseil", en: "advice", de: "Rat", ja: "アドバイス", zh: "建议" } },
+          { id: "il1_7", category: "ill1", translations: { fr: "appareil", en: "device", de: "Gerät", ja: "きき", zh: "设备" } },
+          { id: "il1_8", category: "ill1", translations: { fr: "orteil", en: "toe", de: "Zeh", ja: "あしのゆび", zh: "脚趾" } },
+          { id: "il1_9", category: "ill1", translations: { fr: "éveil", en: "awakening", de: "Erwachen", ja: "めざめ", zh: "觉醒" } },
+          { id: "il1_10", category: "ill1", translations: { fr: "merveille", en: "marvel", de: "Wunder", ja: "ふしぎ", zh: "奇迹" } },
+          { id: "il1_11", category: "ill1", translations: { fr: "bataille", en: "battle", de: "Schlacht", ja: "たたかい", zh: "战斗" } },
+          { id: "il1_12", category: "ill1", translations: { fr: "paille", en: "straw", de: "Stroh", ja: "わら", zh: "稻草" } },
+          { id: "il1_13", category: "ill1", translations: { fr: "médaille", en: "medal", de: "Medaille", ja: "メダル", zh: "奖牌" } },
+          { id: "il1_14", category: "ill1", translations: { fr: "groseille", en: "currant, berry", de: "Johannisbeere", ja: "スグリ", zh: "醋栗" } },
+
+          { id: "il2_1", category: "ill2", translations: { fr: "grenouille", en: "frog", de: "Frosch", ja: "かえる", zh: "青蛙" } },
+          { id: "il2_2", category: "ill2", translations: { fr: "nouille", en: "noodle", de: "Nudel", ja: "めん", zh: "面条" } },
+          { id: "il2_3", category: "ill2", translations: { fr: "citrouille", en: "pumpkin", de: "Kürbis", ja: "かぼちゃ", zh: "南瓜" } },
+          { id: "il2_4", category: "ill2", translations: { fr: "brindille", en: "twig", de: "Zweig", ja: "こえだ", zh: "小树枝" } },
+          { id: "il2_5", category: "ill2", translations: { fr: "chenille", en: "caterpillar", de: "Raupe", ja: "けむし", zh: "毛毛虫" } },
+          { id: "il2_6", category: "ill2", translations: { fr: "vanille", en: "vanilla", de: "Vanille", ja: "バニラ", zh: "香草" } },
+          { id: "il2_7", category: "ill2", translations: { fr: "pupille", en: "pupil (eye)", de: "Pupille", ja: "どうこう", zh: "瞳孔" } },
+          { id: "il2_8", category: "ill2", translations: { fr: "myrtille", en: "blueberry", de: "Blaubeere", ja: "ブルーベリー", zh: "蓝莓" } },
+          { id: "il2_9", category: "ill2", translations: { fr: "béquille", en: "crutch", de: "Krücke", ja: "まつばづえ", zh: "拐杖" } },
+          { id: "il2_10", category: "ill2", translations: { fr: "coquille", en: "shell", de: "Muschelschale", ja: "から（かいの）", zh: "贝壳" } },
+          { id: "il2_11", category: "ill2", translations: { fr: "oseille", en: "sorrel, money (slang)", de: "Sauerampfer", ja: "スイバ", zh: "酸模" } },
+          { id: "il2_12", category: "ill2", translations: { fr: "quenouille", en: "distaff", de: "Spinnrocken", ja: "いとまきぼう", zh: "纺锤" } },
+          { id: "il2_13", category: "ill2", translations: { fr: "charmille", en: "arbor, bower", de: "Laubengang", ja: "こみち", zh: "林荫小径" } },
+          { id: "il2_14", category: "ill2", translations: { fr: "ratatouille", en: "ratatouille", de: "Ratatouille", ja: "ラタトゥイユ", zh: "普罗旺斯杂烩" } },
+
+          { id: "l1_1", category: "l1", translations: { fr: "lac", en: "lake", de: "See", ja: "みずうみ", zh: "湖" } },
+          { id: "l1_2", category: "l1", translations: { fr: "large", en: "wide", de: "breit", ja: "はばの ひろい", zh: "宽的" } },
+          { id: "l1_3", category: "l1", translations: { fr: "long", en: "long", de: "lang", ja: "ながい", zh: "长的" } },
+          { id: "l1_4", category: "l1", translations: { fr: "lourd", en: "heavy", de: "schwer", ja: "おもい", zh: "重的" } },
+          { id: "l1_5", category: "l1", translations: { fr: "lent", en: "slow", de: "langsam", ja: "おそい", zh: "慢的" } },
+          { id: "l1_6", category: "l1", translations: { fr: "lisse", en: "smooth", de: "glatt", ja: "なめらかな", zh: "光滑的" } },
+          { id: "l1_7", category: "l1", translations: { fr: "liste", en: "list", de: "Liste", ja: "リスト", zh: "清单" } },
+          { id: "l1_8", category: "l1", translations: { fr: "livre", en: "book", de: "Buch", ja: "ほん", zh: "书" } },
+          { id: "l1_9", category: "l1", translations: { fr: "loyal", en: "loyal", de: "loyal", ja: "ちゅうじつな", zh: "忠诚的" } },
+          { id: "l1_10", category: "l1", translations: { fr: "local", en: "local", de: "lokal", ja: "ちいきの", zh: "本地的" } },
+          { id: "l1_11", category: "l1", translations: { fr: "logique", en: "logical", de: "logisch", ja: "ろんりてきな", zh: "逻辑的" } },
+          { id: "l1_12", category: "l1", translations: { fr: "limite", en: "limit", de: "Grenze", ja: "げんかい", zh: "限度" } },
+          { id: "l1_13", category: "l1", translations: { fr: "ligne", en: "line", de: "Linie", ja: "せん", zh: "线" } },
+          { id: "l1_14", category: "l1", translations: { fr: "lien", en: "link, bond", de: "Verbindung", ja: "つながり", zh: "联系" } },
+
+          { id: "l2_1", category: "l2", translations: { fr: "lampe", en: "lamp", de: "Lampe", ja: "ランプ", zh: "灯" } },
+          { id: "l2_2", category: "l2", translations: { fr: "larme", en: "tear (crying)", de: "Träne", ja: "なみだ", zh: "眼泪" } },
+          { id: "l2_3", category: "l2", translations: { fr: "lecture", en: "reading", de: "Lektüre", ja: "どくしょ", zh: "阅读" } },
+          { id: "l2_4", category: "l2", translations: { fr: "légal", en: "legal", de: "legal", ja: "ごうほうな", zh: "合法的" } },
+          { id: "l2_5", category: "l2", translations: { fr: "lettre", en: "letter", de: "Brief", ja: "てがみ", zh: "信" } },
+          { id: "l2_6", category: "l2", translations: { fr: "liberté", en: "freedom", de: "Freiheit", ja: "じゆう", zh: "自由" } },
+          { id: "l2_7", category: "l2", translations: { fr: "licence", en: "license, degree", de: "Lizenz", ja: "めんきょ", zh: "许可，学位" } },
+          { id: "l2_8", category: "l2", translations: { fr: "linge", en: "laundry, linen", de: "Wäsche", ja: "せんたくもの", zh: "衣物" } },
+          { id: "l2_9", category: "l2", translations: { fr: "lieu", en: "place", de: "Ort", ja: "ばしょ", zh: "地点" } },
+          { id: "l2_10", category: "l2", translations: { fr: "ligue", en: "league", de: "Liga", ja: "リーグ", zh: "联盟" } },
+          { id: "l2_11", category: "l2", translations: { fr: "lisière", en: "edge, border", de: "Rand", ja: "はし、へり", zh: "边缘" } },
+          { id: "l2_12", category: "l2", translations: { fr: "litre", en: "liter", de: "Liter", ja: "リットル", zh: "升" } },
+          { id: "l2_13", category: "l2", translations: { fr: "localiser", en: "to locate", de: "lokalisieren", ja: "いちを つきとめる", zh: "定位" } },
+          { id: "l2_14", category: "l2", translations: { fr: "lune", en: "moon", de: "Mond", ja: "つき", zh: "月亮" } }
+        ]
+      }
     ]
   },
   song: {
     // Per docs/a1-master-lesson-table-v05.md's assignment for row 19:
     // reuses row 3's song exactly, not an original composition.
-    title: { ja: "アルエット", en: "Alouette", de: "Alouette", zh: "云雀之歌" },
+    title: { ja: "アルエット", en: "Alouette", de: "Alouette", zh: "云雀之歌", fr: "Alouette" },
     lines: [
-      { id: "sg1", translations: { ja: "アルエット、やさしい アルエットよ", en: "Alouette, gentle Alouette", de: "Alouette, liebe Alouette", zh: "云雀啊，可爱的云雀啊" } },
-      { id: "sg2", translations: { ja: "アルエット、はねを むしってしまうよ", en: "Alouette, I shall pluck your feathers", de: "Alouette, ich werde dich rupfen", zh: "云雀啊，我要拔掉你的羽毛" } },
-      { id: "sg3", translations: { ja: "あたまの はねを むしるよ", en: "I shall pluck the feathers from your head", de: "Ich rupfe die Federn von deinem Kopf", zh: "我要拔掉你头上的羽毛" } },
-      { id: "sg4", translations: { ja: "あたまを、あたまを", en: "From your head, from your head", de: "Von deinem Kopf, von deinem Kopf", zh: "从你的头上，从你的头上" } },
-      { id: "sg5", translations: { ja: "アルエット、アルエット、ああ！", en: "Alouette, Alouette, oh!", de: "Alouette, Alouette, oh!", zh: "云雀啊，云雀啊，哦！" } }
+      { id: "sg1", translations: { ja: "アルエット、やさしい アルエットよ", en: "Alouette, gentle Alouette", de: "Alouette, liebe Alouette", zh: "云雀啊，可爱的云雀啊", fr: "Alouette, gentille alouette" } },
+      { id: "sg2", translations: { ja: "アルエット、はねを むしってしまうよ", en: "Alouette, I shall pluck your feathers", de: "Alouette, ich werde dich rupfen", zh: "云雀啊，我要拔掉你的羽毛", fr: "Alouette, je te plumerai" } },
+      { id: "sg3", translations: { ja: "あたまの はねを むしるよ", en: "I shall pluck the feathers from your head", de: "Ich rupfe die Federn von deinem Kopf", zh: "我要拔掉你头上的羽毛", fr: "Je te plumerai la tête" } },
+      { id: "sg4", translations: { ja: "あたまを、あたまを", en: "From your head, from your head", de: "Von deinem Kopf, von deinem Kopf", zh: "从你的头上，从你的头上", fr: "Et la tête, et la tête" } },
+      { id: "sg5", translations: { ja: "アルエット、アルエット、ああ！", en: "Alouette, Alouette, oh!", de: "Alouette, Alouette, oh!", zh: "云雀啊，云雀啊，哦！", fr: "Alouette, Alouette, ah !" } }
     ]
   }
 };

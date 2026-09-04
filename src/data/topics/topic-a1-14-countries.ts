@@ -16,86 +16,86 @@ export const topicCountries: TopicLesson = {
     zh: "国家"
   },
   vocab: [
-    { id: "v01", category: "noun", translations: { ja: "くに", en: "country", de: "Land", zh: "国家" } },
-    { id: "v02", category: "noun", translations: { ja: "にほん", en: "Japan", de: "Japan", zh: "日本" } },
-    { id: "v03", category: "noun", translations: { ja: "アメリカ", en: "America, the USA", de: "Amerika, die USA", zh: "美国" } },
-    { id: "v04", category: "noun", translations: { ja: "ちゅうごく", en: "China", de: "China", zh: "中国" } },
-    { id: "v05", category: "noun", translations: { ja: "かんこく", en: "Korea", de: "Korea", zh: "韩国" } },
-    { id: "v06", category: "noun", translations: { ja: "ドイツ", en: "Germany", de: "Deutschland", zh: "德国" } },
-    { id: "v07", category: "noun", translations: { ja: "フランス", en: "France", de: "Frankreich", zh: "法国" } },
-    { id: "v08", category: "noun", translations: { ja: "イギリス", en: "the UK, England", de: "Großbritannien, England", zh: "英国" } },
-    { id: "v09", category: "noun", translations: { ja: "しゅっしん", en: "hometown, place of origin", de: "Herkunftsort, Heimat", zh: "籍贯，出生地" } },
-    { id: "v10", category: "noun", translations: { ja: "こくせき", en: "nationality", de: "Staatsangehörigkeit", zh: "国籍" } },
-    { id: "v11", category: "noun", translations: { ja: "げんご", en: "language", de: "Sprache", zh: "语言" } },
-    { id: "v12", category: "noun", translations: { ja: "えいご", en: "English (language)", de: "Englisch (Sprache)", zh: "英语" } },
-    { id: "v13", category: "noun", translations: { ja: "にほんご", en: "Japanese (language)", de: "Japanisch (Sprache)", zh: "日语" } },
-    { id: "v14", category: "noun", translations: { ja: "ちゅうごくご", en: "Chinese (language)", de: "Chinesisch (Sprache)", zh: "汉语" } },
-    { id: "v15", category: "noun", translations: { ja: "ドイツご", en: "German (language)", de: "Deutsch (Sprache)", zh: "德语" } },
-    { id: "v16", category: "noun", translations: { ja: "かいがい", en: "overseas, abroad", de: "im Ausland", zh: "海外" } },
-    { id: "v17", category: "verb", translations: { ja: "りょこうする", en: "to travel", de: "reisen", zh: "旅行" } },
-    { id: "v18", category: "verb", translations: { ja: "すむ", en: "to live, reside", de: "wohnen", zh: "居住" } },
-    { id: "v19", category: "verb", translations: { ja: "うまれる", en: "to be born", de: "geboren werden", zh: "出生" } },
-    { id: "v20", category: "verb", translations: { ja: "そだつ", en: "to grow up", de: "aufwachsen", zh: "长大" } },
-    { id: "v21", category: "noun", translations: { ja: "ぶんか", en: "culture", de: "Kultur", zh: "文化" } },
-    { id: "v22", category: "noun", translations: { ja: "しゅと", en: "capital city", de: "Hauptstadt", zh: "首都" } },
-    { id: "v23", category: "noun", translations: { ja: "たいりく", en: "continent", de: "Kontinent", zh: "大陆" } },
-    { id: "v24", category: "noun", translations: { ja: "アジア", en: "Asia", de: "Asien", zh: "亚洲" } },
-    { id: "v25", category: "noun", translations: { ja: "ヨーロッパ", en: "Europe", de: "Europa", zh: "欧洲" } },
-    { id: "v26", category: "noun", translations: { ja: "アフリカ", en: "Africa", de: "Afrika", zh: "非洲" } },
-    { id: "v27", category: "noun", translations: { ja: "こっきょう", en: "border", de: "Grenze", zh: "国境" } },
-    { id: "v28", category: "noun", translations: { ja: "パスポート", en: "passport", de: "Reisepass", zh: "护照" } },
-    { id: "v29", category: "adjective", translations: { ja: "とおい", en: "far", de: "weit entfernt", zh: "远的" } },
-    { id: "v30", category: "adjective", translations: { ja: "ちかい", en: "near, close", de: "nah, in der Nähe", zh: "近的" } }
+    { id: "v01", category: "noun", translations: { ja: "くに", en: "country", de: "Land", zh: "国家", fr: "pays" } },
+    { id: "v02", category: "noun", translations: { ja: "にほん", en: "Japan", de: "Japan", zh: "日本", fr: "Japon" } },
+    { id: "v03", category: "noun", translations: { ja: "アメリカ", en: "America, the USA", de: "Amerika, die USA", zh: "美国", fr: "Amérique, les États-Unis" } },
+    { id: "v04", category: "noun", translations: { ja: "ちゅうごく", en: "China", de: "China", zh: "中国", fr: "Chine" } },
+    { id: "v05", category: "noun", translations: { ja: "かんこく", en: "Korea", de: "Korea", zh: "韩国", fr: "Corée" } },
+    { id: "v06", category: "noun", translations: { ja: "ドイツ", en: "Germany", de: "Deutschland", zh: "德国", fr: "Allemagne" } },
+    { id: "v07", category: "noun", translations: { ja: "フランス", en: "France", de: "Frankreich", zh: "法国", fr: "France" } },
+    { id: "v08", category: "noun", translations: { ja: "イギリス", en: "the UK, England", de: "Großbritannien, England", zh: "英国", fr: "Royaume-Uni, Angleterre" } },
+    { id: "v09", category: "noun", translations: { ja: "しゅっしん", en: "hometown, place of origin", de: "Herkunftsort, Heimat", zh: "籍贯，出生地", fr: "ville natale" } },
+    { id: "v10", category: "noun", translations: { ja: "こくせき", en: "nationality", de: "Staatsangehörigkeit", zh: "国籍", fr: "nationalité" } },
+    { id: "v11", category: "noun", translations: { ja: "げんご", en: "language", de: "Sprache", zh: "语言", fr: "langue" } },
+    { id: "v12", category: "noun", translations: { ja: "えいご", en: "English (language)", de: "Englisch (Sprache)", zh: "英语", fr: "anglais" } },
+    { id: "v13", category: "noun", translations: { ja: "にほんご", en: "Japanese (language)", de: "Japanisch (Sprache)", zh: "日语", fr: "japonais" } },
+    { id: "v14", category: "noun", translations: { ja: "ちゅうごくご", en: "Chinese (language)", de: "Chinesisch (Sprache)", zh: "汉语", fr: "chinois" } },
+    { id: "v15", category: "noun", translations: { ja: "ドイツご", en: "German (language)", de: "Deutsch (Sprache)", zh: "德语", fr: "allemand" } },
+    { id: "v16", category: "noun", translations: { ja: "かいがい", en: "overseas, abroad", de: "im Ausland", zh: "海外", fr: "à l'étranger" } },
+    { id: "v17", category: "verb", translations: { ja: "りょこうする", en: "to travel", de: "reisen", zh: "旅行", fr: "voyager" } },
+    { id: "v18", category: "verb", translations: { ja: "すむ", en: "to live, reside", de: "wohnen", zh: "居住", fr: "habiter" } },
+    { id: "v19", category: "verb", translations: { ja: "うまれる", en: "to be born", de: "geboren werden", zh: "出生", fr: "naître" } },
+    { id: "v20", category: "verb", translations: { ja: "そだつ", en: "to grow up", de: "aufwachsen", zh: "长大", fr: "grandir" } },
+    { id: "v21", category: "noun", translations: { ja: "ぶんか", en: "culture", de: "Kultur", zh: "文化", fr: "culture" } },
+    { id: "v22", category: "noun", translations: { ja: "しゅと", en: "capital city", de: "Hauptstadt", zh: "首都", fr: "capitale" } },
+    { id: "v23", category: "noun", translations: { ja: "たいりく", en: "continent", de: "Kontinent", zh: "大陆", fr: "continent" } },
+    { id: "v24", category: "noun", translations: { ja: "アジア", en: "Asia", de: "Asien", zh: "亚洲", fr: "Asie" } },
+    { id: "v25", category: "noun", translations: { ja: "ヨーロッパ", en: "Europe", de: "Europa", zh: "欧洲", fr: "Europe" } },
+    { id: "v26", category: "noun", translations: { ja: "アフリカ", en: "Africa", de: "Afrika", zh: "非洲", fr: "Afrique" } },
+    { id: "v27", category: "noun", translations: { ja: "こっきょう", en: "border", de: "Grenze", zh: "国境", fr: "frontière" } },
+    { id: "v28", category: "noun", translations: { ja: "パスポート", en: "passport", de: "Reisepass", zh: "护照", fr: "passeport" } },
+    { id: "v29", category: "adjective", translations: { ja: "とおい", en: "far", de: "weit entfernt", zh: "远的", fr: "loin" } },
+    { id: "v30", category: "adjective", translations: { ja: "ちかい", en: "near, close", de: "nah, in der Nähe", zh: "近的", fr: "proche" } }
   ],
   dialogueA: {
-    title: { ja: "りょこうの インタビュー", en: "Travel Interview", de: "Reise-Interview", zh: "旅行采访" },
+    title: { ja: "りょこうの インタビュー", en: "Travel Interview", de: "Reise-Interview", zh: "旅行采访", fr: "Interview de voyage" },
     lines: [
-      { id: "d1", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "こんにちは。しつもんしても いいですか？", en: "Hello. May I ask you some questions?", de: "Hallo. Darf ich Ihnen ein paar Fragen stellen?", zh: "您好。我可以问您几个问题吗？" } },
-      { id: "d2", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "はい、いいですよ。", en: "Yes, that's fine.", de: "Ja, gerne.", zh: "好的，可以。" } },
-      { id: "d3", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "どこの くにから きましたか？", en: "Which country are you from?", de: "Aus welchem Land kommen Sie?", zh: "您从哪个国家来？" } },
-      { id: "d4", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "フランスから きました。", en: "I'm from France.", de: "Ich komme aus Frankreich.", zh: "我从法国来。" } },
-      { id: "d5", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "なんかこくご を はなしますか？", en: "What languages do you speak?", de: "Welche Sprachen sprechen Sie?", zh: "您会说几种语言？" } },
-      { id: "d6", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "フランスごと えいごを はなします。", en: "I speak French and English.", de: "Ich spreche Französisch und Englisch.", zh: "我说法语和英语。" } },
-      { id: "d7", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "にほんは これで なんかいめですか？", en: "How many times have you been to Japan?", de: "Wie oft waren Sie schon in Japan?", zh: "这是您第几次来日本？" } },
-      { id: "d8", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "さんかいめです。", en: "This is my third time.", de: "Das ist mein drittes Mal.", zh: "这是第三次了。" } },
-      { id: "d9", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "にほんの ぶんかで なにが すきですか？", en: "What do you like about Japanese culture?", de: "Was gefällt Ihnen an der japanischen Kultur?", zh: "您喜欢日本文化的什么？" } },
-      { id: "d10", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "たべものと おんせんが すきです。", en: "I like the food and the hot springs.", de: "Ich mag das Essen und die heißen Quellen.", zh: "我喜欢食物和温泉。" } },
-      { id: "d11", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "つぎは どこへ りょこうしますか？", en: "Where will you travel next?", de: "Wohin reisen Sie als Nächstes?", zh: "接下来您要去哪里旅行？" } },
-      { id: "d12", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "かんこくへ いくよていです。", en: "I'm planning to go to Korea.", de: "Ich plane, nach Korea zu reisen.", zh: "我打算去韩国。" } },
-      { id: "d13", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "そうですか。たのしい たびを！", en: "I see. Have a great trip!", de: "Verstehe. Gute Reise!", zh: "是这样啊。祝您旅途愉快！" } },
-      { id: "d14", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "ありがとうございます！", en: "Thank you very much!", de: "Vielen Dank!", zh: "非常感谢！" } }
+      { id: "d1", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "こんにちは。しつもんしても いいですか？", en: "Hello. May I ask you some questions?", de: "Hallo. Darf ich Ihnen ein paar Fragen stellen?", zh: "您好。我可以问您几个问题吗？", fr: "Bonjour. Puis-je vous poser quelques questions ?" } },
+      { id: "d2", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "はい、いいですよ。", en: "Yes, that's fine.", de: "Ja, gerne.", zh: "好的，可以。", fr: "Oui, bien sûr." } },
+      { id: "d3", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "どこの くにから きましたか？", en: "Which country are you from?", de: "Aus welchem Land kommen Sie?", zh: "您从哪个国家来？", fr: "De quel pays venez-vous ?" } },
+      { id: "d4", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "フランスから きました。", en: "I'm from France.", de: "Ich komme aus Frankreich.", zh: "我从法国来。", fr: "Je viens de France." } },
+      { id: "d5", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "なんかこくご を はなしますか？", en: "What languages do you speak?", de: "Welche Sprachen sprechen Sie?", zh: "您会说几种语言？", fr: "Quelles langues parlez-vous ?" } },
+      { id: "d6", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "フランスごと えいごを はなします。", en: "I speak French and English.", de: "Ich spreche Französisch und Englisch.", zh: "我说法语和英语。", fr: "Je parle français et anglais." } },
+      { id: "d7", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "にほんは これで なんかいめですか？", en: "How many times have you been to Japan?", de: "Wie oft waren Sie schon in Japan?", zh: "这是您第几次来日本？", fr: "Combien de fois êtes-vous venu au Japon ?" } },
+      { id: "d8", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "さんかいめです。", en: "This is my third time.", de: "Das ist mein drittes Mal.", zh: "这是第三次了。", fr: "C'est ma troisième fois." } },
+      { id: "d9", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "にほんの ぶんかで なにが すきですか？", en: "What do you like about Japanese culture?", de: "Was gefällt Ihnen an der japanischen Kultur?", zh: "您喜欢日本文化的什么？", fr: "Qu'est-ce que vous aimez dans la culture japonaise ?" } },
+      { id: "d10", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "たべものと おんせんが すきです。", en: "I like the food and the hot springs.", de: "Ich mag das Essen und die heißen Quellen.", zh: "我喜欢食物和温泉。", fr: "J'aime la nourriture et les sources chaudes." } },
+      { id: "d11", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "つぎは どこへ りょこうしますか？", en: "Where will you travel next?", de: "Wohin reisen Sie als Nächstes?", zh: "接下来您要去哪里旅行？", fr: "Où allez-vous voyager ensuite ?" } },
+      { id: "d12", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "かんこくへ いくよていです。", en: "I'm planning to go to Korea.", de: "Ich plane, nach Korea zu reisen.", zh: "我打算去韩国。", fr: "Je prévois d'aller en Corée." } },
+      { id: "d13", speaker: { ja: "きしゃ", en: "Reporter", de: "Reporter", zh: "记者" }, translations: { ja: "そうですか。たのしい たびを！", en: "I see. Have a great trip!", de: "Verstehe. Gute Reise!", zh: "是这样啊。祝您旅途愉快！", fr: "Je vois. Bon voyage !" } },
+      { id: "d14", speaker: { ja: "たびびと", en: "Traveler", de: "Reisender", zh: "旅行者" }, translations: { ja: "ありがとうございます！", en: "Thank you very much!", de: "Vielen Dank!", zh: "非常感谢！", fr: "Merci beaucoup !" } }
     ]
   },
   dialogueB: {
-    title: { ja: "はじめまして、どこの しゅっしんですか", en: "Nice to Meet You, Where Are You From?", de: "Freut mich, woher kommen Sie?", zh: "初次见面，您是哪里人？" },
+    title: { ja: "はじめまして、どこの しゅっしんですか", en: "Nice to Meet You, Where Are You From?", de: "Freut mich, woher kommen Sie?", zh: "初次见面，您是哪里人？", fr: "Enchanté, d'où venez-vous ?" },
     lines: [
-      { id: "e1", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "はじめまして。あいです。", en: "Nice to meet you. I'm Ai.", de: "Freut mich. Ich bin Ai.", zh: "初次见面，我是爱。" } },
-      { id: "e2", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "はじめまして。トムです。", en: "Nice to meet you. I'm Tom.", de: "Freut mich. Ich bin Tom.", zh: "初次见面，我是汤姆。" } },
-      { id: "e3", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "トムさんは どこの しゅっしんですか？", en: "Where are you from, Tom?", de: "Woher kommen Sie, Tom?", zh: "汤姆先生，您是哪里人？" } },
-      { id: "e4", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "イギリスの しゅっしんです。", en: "I'm from the UK.", de: "Ich komme aus Großbritannien.", zh: "我是英国人。" } },
-      { id: "e5", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "イギリスの どこですか？", en: "Where in the UK?", de: "Wo in Großbritannien?", zh: "英国的哪里？" } },
-      { id: "e6", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "ロンドンです。しゅとに すんでいました。", en: "London. I lived in the capital.", de: "London. Ich habe in der Hauptstadt gewohnt.", zh: "伦敦。我以前住在首都。" } },
-      { id: "e7", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "いつ にほんへ きましたか？", en: "When did you come to Japan?", de: "Wann sind Sie nach Japan gekommen?", zh: "您是什么时候来日本的？" } },
-      { id: "e8", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "さんねんまえに きました。", en: "I came three years ago.", de: "Ich bin vor drei Jahren gekommen.", zh: "我三年前来的。" } },
-      { id: "e9", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "にほんごは じょうずですね！", en: "Your Japanese is great!", de: "Ihr Japanisch ist sehr gut!", zh: "您的日语说得真好！" } },
-      { id: "e10", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "ありがとう。まだ べんきょうちゅうです。", en: "Thank you. I'm still studying it.", de: "Danke. Ich lerne noch.", zh: "谢谢。我还在学习。" } },
-      { id: "e11", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "かぞくは どこに すんでいますか？", en: "Where does your family live?", de: "Wo lebt Ihre Familie?", zh: "您的家人住在哪里？" } },
-      { id: "e12", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "かぞくは まだ イギリスに います。", en: "My family is still in the UK.", de: "Meine Familie ist noch in Großbritannien.", zh: "我的家人还在英国。" } },
-      { id: "e13", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "とおいですね。よく かえりますか？", en: "That's far. Do you go back often?", de: "Das ist weit. Fahren Sie oft zurück?", zh: "真远啊。您常回去吗？" } },
-      { id: "e14", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "いちねんに いっかい くらいです。", en: "About once a year.", de: "Ungefähr einmal im Jahr.", zh: "大概一年一次。" } }
+      { id: "e1", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "はじめまして。あいです。", en: "Nice to meet you. I'm Ai.", de: "Freut mich. Ich bin Ai.", zh: "初次见面，我是爱。", fr: "Enchantée. Je m'appelle Ai." } },
+      { id: "e2", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "はじめまして。トムです。", en: "Nice to meet you. I'm Tom.", de: "Freut mich. Ich bin Tom.", zh: "初次见面，我是汤姆。", fr: "Enchanté. Je m'appelle Tom." } },
+      { id: "e3", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "トムさんは どこの しゅっしんですか？", en: "Where are you from, Tom?", de: "Woher kommen Sie, Tom?", zh: "汤姆先生，您是哪里人？", fr: "D'où venez-vous, Tom ?" } },
+      { id: "e4", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "イギリスの しゅっしんです。", en: "I'm from the UK.", de: "Ich komme aus Großbritannien.", zh: "我是英国人。", fr: "Je viens du Royaume-Uni." } },
+      { id: "e5", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "イギリスの どこですか？", en: "Where in the UK?", de: "Wo in Großbritannien?", zh: "英国的哪里？", fr: "D'où au Royaume-Uni ?" } },
+      { id: "e6", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "ロンドンです。しゅとに すんでいました。", en: "London. I lived in the capital.", de: "London. Ich habe in der Hauptstadt gewohnt.", zh: "伦敦。我以前住在首都。", fr: "Londres. J'habitais dans la capitale." } },
+      { id: "e7", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "いつ にほんへ きましたか？", en: "When did you come to Japan?", de: "Wann sind Sie nach Japan gekommen?", zh: "您是什么时候来日本的？", fr: "Quand êtes-vous venu au Japon ?" } },
+      { id: "e8", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "さんねんまえに きました。", en: "I came three years ago.", de: "Ich bin vor drei Jahren gekommen.", zh: "我三年前来的。", fr: "Je suis venu il y a trois ans." } },
+      { id: "e9", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "にほんごは じょうずですね！", en: "Your Japanese is great!", de: "Ihr Japanisch ist sehr gut!", zh: "您的日语说得真好！", fr: "Votre japonais est excellent !" } },
+      { id: "e10", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "ありがとう。まだ べんきょうちゅうです。", en: "Thank you. I'm still studying it.", de: "Danke. Ich lerne noch.", zh: "谢谢。我还在学习。", fr: "Merci. Je l'étudie encore." } },
+      { id: "e11", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "かぞくは どこに すんでいますか？", en: "Where does your family live?", de: "Wo lebt Ihre Familie?", zh: "您的家人住在哪里？", fr: "Où habite votre famille ?" } },
+      { id: "e12", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "かぞくは まだ イギリスに います。", en: "My family is still in the UK.", de: "Meine Familie ist noch in Großbritannien.", zh: "我的家人还在英国。", fr: "Ma famille est encore au Royaume-Uni." } },
+      { id: "e13", speaker: { ja: "あい", en: "Ai", de: "Ai", zh: "爱" }, translations: { ja: "とおいですね。よく かえりますか？", en: "That's far. Do you go back often?", de: "Das ist weit. Fahren Sie oft zurück?", zh: "真远啊。您常回去吗？", fr: "C'est loin. Vous y retournez souvent ?" } },
+      { id: "e14", speaker: { ja: "トム", en: "Tom", de: "Tom", zh: "汤姆" }, translations: { ja: "いちねんに いっかい くらいです。", en: "About once a year.", de: "Ungefähr einmal im Jahr.", zh: "大概一年一次。", fr: "Environ une fois par an." } }
     ]
   },
   song: {
     // Row 14 is an open slot in docs/a1-master-lesson-table-v05.md —
     // filled with a repeat so every lesson has a song.
-    title: { ja: "マクドナルドじいさんの のうじょう", en: "Old MacDonald Had a Farm", de: "Onkel Jörg hat einen Bauernhof" },
+    title: { ja: "マクドナルドじいさんの のうじょう", en: "Old MacDonald Had a Farm", de: "Onkel Jörg hat einen Bauernhof", fr: "Dans la ferme de Mathurin" },
     lines: [
-      { id: "sg1", translations: { ja: "マクドナルドじいさんの のうじょうで", en: "Old MacDonald had a farm", de: "Onkel Jörg hat einen Bauernhof" } },
-      { id: "sg2", translations: { ja: "イーアイ イーアイ オー", en: "E-I-E-I-O", de: "Ija-ija-oh" } },
-      { id: "sg3", translations: { ja: "そこには いぬが いて", en: "And on that farm he had a dog", de: "Und auf dem Hof, da hat er einen Hund" } },
-      { id: "sg4", translations: { ja: "イーアイ イーアイ オー", en: "E-I-E-I-O", de: "Ija-ija-oh" } },
-      { id: "sg5", translations: { ja: "ワンワン ここで、ワンワン そこで", en: "With a woof-woof here and a woof-woof there", de: "Hier wau-wau, da wau-wau" } },
-      { id: "sg6", translations: { ja: "マクドナルドじいさんの のうじょうで", en: "Old MacDonald had a farm", de: "Onkel Jörg hat einen Bauernhof" } }
+      { id: "sg1", translations: { ja: "マクドナルドじいさんの のうじょうで", en: "Old MacDonald had a farm", de: "Onkel Jörg hat einen Bauernhof", fr: "Dans la ferme de Mathurin" } },
+      { id: "sg2", translations: { ja: "イーアイ イーアイ オー", en: "E-I-E-I-O", de: "Ija-ija-oh", fr: "Ia ia o" } },
+      { id: "sg3", translations: { ja: "そこには いぬが いて", en: "And on that farm he had a dog", de: "Und auf dem Hof, da hat er einen Hund", fr: "Il y avait un chien" } },
+      { id: "sg4", translations: { ja: "イーアイ イーアイ オー", en: "E-I-E-I-O", de: "Ija-ija-oh", fr: "Ia ia o" } },
+      { id: "sg5", translations: { ja: "ワンワン ここで、ワンワン そこで", en: "With a woof-woof here and a woof-woof there", de: "Hier wau-wau, da wau-wau", fr: "Ouah ouah ici, ouah ouah là" } },
+      { id: "sg6", translations: { ja: "マクドナルドじいさんの のうじょうで", en: "Old MacDonald had a farm", de: "Onkel Jörg hat einen Bauernhof", fr: "Dans la ferme de Mathurin" } }
     ]
   },
   grammar: {
@@ -132,6 +132,30 @@ export const topicCountries: TopicLesson = {
         { id: "g5", translations: { de: "Was gefällt Ihnen an der Kultur?", en: "What do you like about the culture? (wh-question: was)", ja: "ぶんかの なにが すきですか？（ぎもんし：was）", zh: "您喜欢文化中的什么？（疑问词：was）" } },
         { id: "g6", translations: { de: "Wann sind Sie nach Japan gekommen?", en: "When did you come to Japan? (wh-question: wann)", ja: "いつ にほんへ きましたか？（ぎもんし：wann）", zh: "您是什么时候来日本的？（疑问词：wann）" } }
       ]
+    },
+    // French question formation is a genuinely three-way system (unlike
+    // German's single inversion rule or Japanese's か particle) —
+    // intonation-only, est-ce que, and inversion all coexist for the
+    // same yes/no question. "d'où" + "venir de" covers the wh-question/
+    // origin half of the table's slot, paired with "venir" (to come)
+    // as the origin verb, parallel to German's kommen aus.
+    fr: {
+      title: { fr: "Questions et origine : d'où, venir de", en: "Questions and Origin: D'où, Venir De", de: "Fragen und Herkunft: D'où, venir de", ja: "しつもんと しゅっしん：d'où、venir de", zh: "疑问句与出身：d'où、venir de" },
+      explanation: {
+        fr: "En français, on peut poser une question de trois façons : par intonation seule (Vous êtes japonais ?), avec « est-ce que » (Est-ce que vous êtes japonais ?), ou par inversion (Êtes-vous japonais ?). Pour demander l'origine, on utilise « d'où » : D'où venez-vous ? L'origine s'exprime avec « venir de » + pays (je viens, tu viens, il/elle vient, nous venons, vous venez, ils/elles viennent).",
+        en: "In French, a question can be formed three ways: by intonation alone (Vous êtes japonais ?), with \"est-ce que\" (Est-ce que vous êtes japonais ?), or by inversion (Êtes-vous japonais ?). To ask about origin, use \"d'où\": D'où venez-vous? (Where do you come from?) Origin is expressed with \"venir de\" + country (je viens, tu viens, il/elle vient, nous venons, vous venez, ils/elles viennent).",
+        de: "Im Französischen kann man eine Frage auf drei Arten bilden: nur durch Intonation (Vous êtes japonais ?), mit „est-ce que\" (Est-ce que vous êtes japonais ?), oder durch Inversion (Êtes-vous japonais ?). Um nach der Herkunft zu fragen, benutzt man „d'où\": D'où venez-vous? Die Herkunft wird mit „venir de\" + Land ausgedrückt (je viens, tu viens, il/elle vient, nous venons, vous venez, ils/elles viennent).",
+        ja: "フランスごの しつもんは 3つの つくりかたが あります：イントネーションだけ（Vous êtes japonais ?）、「est-ce que」を つかう（Est-ce que vous êtes japonais ?）、または とうちほう（Êtes-vous japonais ?）。しゅっしんを たずねる ときは「d'où」を つかいます：D'où venez-vous?　しゅっしんは「venir de」＋くにで あらわします（je viens, tu viens, il/elle vient, nous venons, vous venez, ils/elles viennent）。",
+        zh: "法语提问有三种方式：仅靠语调（Vous êtes japonais ?）、使用「est-ce que」（Est-ce que vous êtes japonais ?），或倒装（Êtes-vous japonais ?）。询问出身时使用「d'où」：D'où venez-vous?（您从哪里来？）出身用「venir de」+国家表达（je viens, tu viens, il/elle vient, nous venons, vous venez, ils/elles viennent）。"
+      },
+      chunks: [
+        { id: "g1", translations: { fr: "Vous êtes japonais ?", en: "Are you Japanese? (intonation question)", de: "Sind Sie Japaner? (Intonationsfrage)", ja: "にほんじんですか？（イントネーションの しつもん）", zh: "您是日本人吗？（语调疑问句）" } },
+        { id: "g2", translations: { fr: "Est-ce que vous parlez français ?", en: "Do you speak French? (est-ce que)", de: "Sprechen Sie Französisch? (est-ce que)", ja: "フランスごを はなしますか？（est-ce que）", zh: "您说法语吗？（est-ce que）" } },
+        { id: "g3", translations: { fr: "D'où venez-vous ?", en: "Where are you from? (wh-question: d'où)", de: "Woher kommen Sie? (W-Frage: d'où)", ja: "どこから きましたか？（ぎもんし：d'où）", zh: "您从哪里来？（疑问词：d'où）" } },
+        { id: "g4", translations: { fr: "Je viens de France.", en: "I come from France. (venir de + country)", de: "Ich komme aus Frankreich. (venir de + Land)", ja: "フランスから きました。（venir de + くに）", zh: "我从法国来。（venir de + 国家）" } },
+        { id: "g5", translations: { fr: "Qu'est-ce que vous aimez dans la culture japonaise ?", en: "What do you like about Japanese culture? (wh-question: qu'est-ce que)", de: "Was gefällt Ihnen an der japanischen Kultur? (W-Frage: qu'est-ce que)", ja: "にほんの ぶんかの なにが すきですか？（ぎもんし：qu'est-ce que）", zh: "您喜欢日本文化的什么？（疑问词：qu'est-ce que）" } },
+        { id: "g6", translations: { fr: "Quand êtes-vous venu au Japon ?", en: "When did you come to Japan? (wh-question: quand, inversion)", de: "Wann sind Sie nach Japan gekommen? (W-Frage: quand, Inversion)", ja: "いつ にほんへ きましたか？（ぎもんし：quand、とうちほう）", zh: "您是什么时候来日本的？（疑问词：quand，倒装）" } }
+      ]
     }
   },
   grammarDrills: {
@@ -156,6 +180,31 @@ export const topicCountries: TopicLesson = {
           { id: "w8", translations: { de: "Wie heißt die Hauptstadt?", en: "What is the capital called? (wh-question: wie)", ja: "しゅとは なんと いいますか？（ぎもんし：wie）", zh: "首都叫什么名字？（疑问词：wie）" } },
           { id: "w9", translations: { de: "Sprechen Sie Deutsch?", en: "Do you speak German? (yes/no, verb-first)", ja: "ドイツごを はなしますか？（はい・いいえ、どうしが さいしょ）", zh: "您说德语吗？（是非问句，动词提前）" } },
           { id: "w10", translations: { de: "Ja, ich spreche auch Englisch.", en: "Yes, I also speak English. (positive answer)", ja: "はい、えいごも はなします。（ひていでない こたえ）", zh: "是的，我也说英语。（肯定回答）" } }
+        ]
+      }
+    ],
+    fr: [
+      {
+        id: "grammar-drill-dou-venir",
+        title: { fr: "Exercice : d'où / venir de", en: "Practice: D'où / Venir De", de: "Übung: D'où / venir de", ja: "れんしゅう：d'où／venir de", zh: "练习：d'où／venir de" },
+        spokenIntro: {
+          fr: "Ensuite, pratiquons des phrases avec d'où et venir de.",
+          en: "Next, let's practice example sentences using d'où and venir de.",
+          de: "Als Nächstes üben wir Beispielsätze mit d'où und venir de.",
+          ja: "つぎは、d'où と venir de を つかった れいぶんを れんしゅうしましょう。",
+          zh: "接下来，让我们练习使用d'où和venir de的例句。"
+        },
+        lines: [
+          { id: "w1", translations: { fr: "D'où venez-vous ?", en: "Where are you from?", de: "Woher kommen Sie?", ja: "どこから きましたか？", zh: "您从哪里来？" } },
+          { id: "w2", translations: { fr: "Je viens d'Allemagne.", en: "I come from Germany.", de: "Ich komme aus Deutschland.", ja: "ドイツから きました。", zh: "我从德国来。" } },
+          { id: "w3", translations: { fr: "Il vient de Chine.", en: "He comes from China.", de: "Er kommt aus China.", ja: "かれは ちゅうごくから きました。", zh: "他从中国来。" } },
+          { id: "w4", translations: { fr: "Elle vient des États-Unis.", en: "She comes from America.", de: "Sie kommt aus Amerika.", ja: "かのじょは アメリカから きました。", zh: "她从美国来。" } },
+          { id: "w5", translations: { fr: "Nous venons du Royaume-Uni.", en: "We come from the UK.", de: "Wir kommen aus Großbritannien.", ja: "わたしたちは イギリスから きました。", zh: "我们从英国来。" } },
+          { id: "w6", translations: { fr: "Quelle est votre nationalité ?", en: "What is your nationality? (wh-question: quelle)", de: "Was ist Ihre Staatsangehörigkeit? (W-Frage: was)", ja: "こくせきは なんですか？（ぎもんし：quelle）", zh: "您的国籍是什么？（疑问词：quelle）" } },
+          { id: "w7", translations: { fr: "Où êtes-vous né(e) ?", en: "Where were you born? (wh-question: où)", de: "Wo sind Sie geboren? (W-Frage: wo)", ja: "どこで うまれましたか？（ぎもんし：où）", zh: "您在哪里出生？（疑问词：où）" } },
+          { id: "w8", translations: { fr: "Comment s'appelle la capitale ?", en: "What is the capital called? (wh-question: comment)", de: "Wie heißt die Hauptstadt? (W-Frage: wie)", ja: "しゅとは なんと いいますか？（ぎもんし：comment）", zh: "首都叫什么名字？（疑问词：comment）" } },
+          { id: "w9", translations: { fr: "Parlez-vous français ?", en: "Do you speak French? (yes/no, inversion)", de: "Sprechen Sie Französisch? (Ja/Nein, Inversion)", ja: "フランスごを はなしますか？（はい・いいえ、とうちほう）", zh: "您说法语吗？（是非问句，倒装）" } },
+          { id: "w10", translations: { fr: "Oui, je parle aussi anglais.", en: "Yes, I also speak English. (positive answer)", de: "Ja, ich spreche auch Englisch. (positive Antwort)", ja: "はい、えいごも はなします。（こうていの こたえ）", zh: "是的，我也说英语。（肯定回答）" } }
         ]
       }
     ]
@@ -191,6 +240,27 @@ export const topicCountries: TopicLesson = {
         { id: "st1", category: "stress", translations: { de: "Amerika", en: "America", ja: "アメリカ", zh: "美国" } },
         { id: "st2", category: "stress", translations: { de: "Europa", en: "Europe", ja: "ヨーロッパ", zh: "欧洲" } },
         { id: "st3", category: "stress", translations: { de: "Kanada", en: "Canada", ja: "カナダ", zh: "加拿大" } }
+      ]
+    },
+    // French pronunciation: the "gn" [ɲ] sound and "ch" (always [ʃ],
+    // like English "sh") — both genuinely core French sounds, and
+    // both happen to appear right in country names themselves
+    // (Allemagne, Espagne; Chine), a natural fit for this topic.
+    fr: {
+      title: { fr: "Exercice de prononciation", en: "Pronunciation Practice", de: "Aussprachetraining", ja: "はつおんの れんしゅう", zh: "发音练习" },
+      groupLabels: {
+        gn: { fr: "Le son « gn »", en: "The \"gn\" sound [ɲ]", de: "Der Laut „gn\" [ɲ]", ja: "「gn」の おん [ɲ]", zh: "「gn」音 [ɲ]" },
+        ch: { fr: "Le son « ch »", en: "The \"ch\" sound (always \"sh\")", de: "Der Laut „ch\" (immer wie „sch\")", ja: "「ch」の おん（つねに「sh」）", zh: "「ch」音（总是「sh」音）" }
+      },
+      items: [
+        { id: "gn1", category: "gn", translations: { fr: "Allemagne", en: "Germany", de: "Deutschland", ja: "ドイツ", zh: "德国" } },
+        { id: "gn2", category: "gn", translations: { fr: "Espagne", en: "Spain", de: "Spanien", ja: "スペイン", zh: "西班牙" } },
+        { id: "gn3", category: "gn", translations: { fr: "montagne", en: "mountain", de: "Berg", ja: "やま", zh: "山" } },
+        { id: "gn4", category: "gn", translations: { fr: "campagne", en: "countryside", de: "Land, Landschaft", ja: "いなか", zh: "乡村" } },
+        { id: "ch1", category: "ch", translations: { fr: "Chine", en: "China (ch = \"sh\")", de: "China (ch = „sch\")", ja: "ちゅうごく（ch は「sh」）", zh: "中国（ch发sh音）" } },
+        { id: "ch2", category: "ch", translations: { fr: "chat", en: "cat", de: "Katze", ja: "ねこ", zh: "猫" } },
+        { id: "ch3", category: "ch", translations: { fr: "chien", en: "dog", de: "Hund", ja: "いぬ", zh: "狗" } },
+        { id: "ch4", category: "ch", translations: { fr: "chaud", en: "hot", de: "heiß", ja: "あつい", zh: "热的" } }
       ]
     }
   },
@@ -276,6 +346,92 @@ export const topicCountries: TopicLesson = {
           { id: "st2_12", category: "stress2", translations: { de: "Mazedonien", en: "North Macedonia", ja: "マケドニア", zh: "北马其顿" } },
           { id: "st2_13", category: "stress2", translations: { de: "Montenegro", en: "Montenegro", ja: "モンテネグロ", zh: "黑山" } },
           { id: "st2_14", category: "stress2", translations: { de: "Afrika", en: "Africa", ja: "アフリカ", zh: "非洲" } }
+        ]
+      }
+    ],
+    fr: [
+      {
+        id: "sound-drill",
+        title: {
+          fr: "Exercice de prononciation 2",
+          en: "Pronunciation Practice 2",
+          de: "Aussprachetraining 2",
+          ja: "はつおんの れんしゅう２",
+          zh: "发音练习2"
+        },
+        spokenIntro: {
+          fr: "Ensuite, pratiquons avec beaucoup plus d'exemples.",
+          en: "Next, let's practice with a lot more examples.",
+          de: "Als Nächstes üben wir mit vielen weiteren Beispielen.",
+          ja: "つぎは、もっと たくさんの れいで れんしゅうしましょう。",
+          zh: "接下来，让我们用更多的例子来练习。"
+        },
+        groupLabels: {
+          gn1: { fr: "Le son « gn »", en: "The \"gn\" sound [ɲ]", de: "Der Laut „gn\" [ɲ]", ja: "「gn」の おん [ɲ]", zh: "「gn」音 [ɲ]" },
+          gn2: { fr: "Le son « gn »", en: "The \"gn\" sound [ɲ]", de: "Der Laut „gn\" [ɲ]", ja: "「gn」の おん [ɲ]", zh: "「gn」音 [ɲ]" },
+          ch1: { fr: "Le son « ch »", en: "The \"ch\" sound (always \"sh\")", de: "Der Laut „ch\" (immer wie „sch\")", ja: "「ch」の おん（つねに「sh」）", zh: "「ch」音（总是「sh」音）" },
+          ch2: { fr: "Le son « ch »", en: "The \"ch\" sound (always \"sh\")", de: "Der Laut „ch\" (immer wie „sch\")", ja: "「ch」の おん（つねに「sh」）", zh: "「ch」音（总是「sh」音）" }
+        },
+        items: [
+          { id: "gn1_1", category: "gn1", translations: { fr: "magnifique", en: "magnificent", de: "großartig", ja: "すばらしい", zh: "壮丽的" } },
+          { id: "gn1_2", category: "gn1", translations: { fr: "vigne", en: "vine", de: "Weinrebe", ja: "ぶどうの き", zh: "葡萄藤" } },
+          { id: "gn1_3", category: "gn1", translations: { fr: "peigne", en: "comb", de: "Kamm", ja: "くし", zh: "梳子" } },
+          { id: "gn1_4", category: "gn1", translations: { fr: "règne", en: "reign", de: "Herrschaft", ja: "とうち", zh: "统治" } },
+          { id: "gn1_5", category: "gn1", translations: { fr: "saigner", en: "to bleed", de: "bluten", ja: "しゅっけつする", zh: "流血" } },
+          { id: "gn1_6", category: "gn1", translations: { fr: "baignade", en: "swimming, bathing", de: "Baden", ja: "みずあび", zh: "游泳，洗浴" } },
+          { id: "gn1_7", category: "gn1", translations: { fr: "gagner", en: "to win", de: "gewinnen", ja: "かつ", zh: "获胜" } },
+          { id: "gn1_8", category: "gn1", translations: { fr: "soigner", en: "to take care of", de: "pflegen", ja: "せわを する", zh: "照顾" } },
+          { id: "gn1_9", category: "gn1", translations: { fr: "éloigner", en: "to move away", de: "entfernen", ja: "とおざける", zh: "使远离" } },
+          { id: "gn1_10", category: "gn1", translations: { fr: "grogner", en: "to grumble", de: "murren", ja: "ぶつぶつ いう", zh: "抱怨" } },
+          { id: "gn1_11", category: "gn1", translations: { fr: "cogner", en: "to knock, bang", de: "schlagen", ja: "たたく", zh: "敲，撞" } },
+          { id: "gn1_12", category: "gn1", translations: { fr: "rogner", en: "to trim", de: "beschneiden", ja: "きりつめる", zh: "削减" } },
+          { id: "gn1_13", category: "gn1", translations: { fr: "poignet", en: "wrist", de: "Handgelenk", ja: "てくび", zh: "手腕" } },
+          { id: "gn1_14", category: "gn1", translations: { fr: "peignoir", en: "bathrobe", de: "Bademantel", ja: "バスローブ", zh: "浴袍" } },
+
+          { id: "gn2_1", category: "gn2", translations: { fr: "agneau", en: "lamb", de: "Lamm", ja: "こひつじ", zh: "羊羔" } },
+          { id: "gn2_2", category: "gn2", translations: { fr: "beignet", en: "fritter, donut", de: "Krapfen", ja: "あげパン", zh: "炸糕" } },
+          { id: "gn2_3", category: "gn2", translations: { fr: "araignée", en: "spider", de: "Spinne", ja: "くも", zh: "蜘蛛" } },
+          { id: "gn2_4", category: "gn2", translations: { fr: "châtaigne", en: "chestnut", de: "Kastanie", ja: "くり", zh: "栗子" } },
+          { id: "gn2_5", category: "gn2", translations: { fr: "besogne", en: "task, work", de: "Arbeit, Aufgabe", ja: "しごと", zh: "任务" } },
+          { id: "gn2_6", category: "gn2", translations: { fr: "consigne", en: "instruction", de: "Anweisung", ja: "しじ", zh: "指示" } },
+          { id: "gn2_7", category: "gn2", translations: { fr: "témoignage", en: "testimony", de: "Zeugnis", ja: "しょうげん", zh: "证词" } },
+          { id: "gn2_8", category: "gn2", translations: { fr: "clignoter", en: "to blink, flash", de: "blinken", ja: "てんめつする", zh: "闪烁" } },
+          { id: "gn2_9", category: "gn2", translations: { fr: "grognon", en: "grumpy", de: "mürrisch", ja: "きげんが わるい", zh: "脾气不好的" } },
+          { id: "gn2_10", category: "gn2", translations: { fr: "mignon", en: "cute", de: "niedlich", ja: "かわいい", zh: "可爱的" } },
+          { id: "gn2_11", category: "gn2", translations: { fr: "trognon", en: "core (of a fruit)", de: "Kerngehäuse", ja: "しん（くだものの）", zh: "果核" } },
+          { id: "gn2_12", category: "gn2", translations: { fr: "rognure", en: "clipping, paring", de: "Abschnitt", ja: "けずりくず", zh: "削屑" } },
+          { id: "gn2_13", category: "gn2", translations: { fr: "poignée", en: "handle, handful", de: "Griff, Handvoll", ja: "とって、ひとにぎり", zh: "把手，一把" } },
+          { id: "gn2_14", category: "gn2", translations: { fr: "vignette", en: "sticker, vignette", de: "Aufkleber", ja: "シール", zh: "贴纸" } },
+
+          { id: "ch1_1", category: "ch1", translations: { fr: "chambre", en: "room, bedroom", de: "Zimmer", ja: "へや", zh: "房间" } },
+          { id: "ch1_2", category: "ch1", translations: { fr: "cheval", en: "horse", de: "Pferd", ja: "うま", zh: "马" } },
+          { id: "ch1_3", category: "ch1", translations: { fr: "chapitre", en: "chapter", de: "Kapitel", ja: "しょう（ほんの）", zh: "章节" } },
+          { id: "ch1_4", category: "ch1", translations: { fr: "chocolat", en: "chocolate", de: "Schokolade", ja: "チョコレート", zh: "巧克力" } },
+          { id: "ch1_5", category: "ch1", translations: { fr: "chemise", en: "shirt", de: "Hemd", ja: "シャツ", zh: "衬衫" } },
+          { id: "ch1_6", category: "ch1", translations: { fr: "chose", en: "thing", de: "Sache", ja: "もの、こと", zh: "东西" } },
+          { id: "ch1_7", category: "ch1", translations: { fr: "chute", en: "fall", de: "Sturz", ja: "らっか", zh: "跌落" } },
+          { id: "ch1_8", category: "ch1", translations: { fr: "chef", en: "chef, boss", de: "Chef, Koch", ja: "しちょう、シェフ", zh: "厨师，老板" } },
+          { id: "ch1_9", category: "ch1", translations: { fr: "choix", en: "choice", de: "Wahl", ja: "せんたく", zh: "选择" } },
+          { id: "ch1_10", category: "ch1", translations: { fr: "chaîne", en: "chain", de: "Kette", ja: "くさり", zh: "链条" } },
+          { id: "ch1_11", category: "ch1", translations: { fr: "cheveux", en: "hair", de: "Haare", ja: "かみのけ", zh: "头发" } },
+          { id: "ch1_12", category: "ch1", translations: { fr: "chemin", en: "path", de: "Weg", ja: "みち", zh: "小路" } },
+          { id: "ch1_13", category: "ch1", translations: { fr: "chiffre", en: "number, digit", de: "Ziffer", ja: "すうじ", zh: "数字" } },
+          { id: "ch1_14", category: "ch1", translations: { fr: "champion", en: "champion", de: "Champion", ja: "チャンピオン", zh: "冠军" } },
+
+          { id: "ch2_1", category: "ch2", translations: { fr: "chercher", en: "to look for", de: "suchen", ja: "さがす", zh: "寻找" } },
+          { id: "ch2_2", category: "ch2", translations: { fr: "chanter", en: "to sing", de: "singen", ja: "うたう", zh: "唱歌" } },
+          { id: "ch2_3", category: "ch2", translations: { fr: "acheter", en: "to buy", de: "kaufen", ja: "かう", zh: "购买" } },
+          { id: "ch2_4", category: "ch2", translations: { fr: "chapeau", en: "hat", de: "Hut", ja: "ぼうし", zh: "帽子" } },
+          { id: "ch2_5", category: "ch2", translations: { fr: "marcher", en: "to walk", de: "gehen", ja: "あるく", zh: "走路" } },
+          { id: "ch2_6", category: "ch2", translations: { fr: "coucher", en: "to put to bed, lie down", de: "hinlegen", ja: "ねかせる", zh: "使躺下" } },
+          { id: "ch2_7", category: "ch2", translations: { fr: "cacher", en: "to hide", de: "verstecken", ja: "かくす", zh: "隐藏" } },
+          { id: "ch2_8", category: "ch2", translations: { fr: "lâcher", en: "to let go", de: "loslassen", ja: "はなす", zh: "放开" } },
+          { id: "ch2_9", category: "ch2", translations: { fr: "bouche", en: "mouth", de: "Mund", ja: "くち", zh: "嘴" } },
+          { id: "ch2_10", category: "ch2", translations: { fr: "mouche", en: "fly (insect)", de: "Fliege", ja: "はえ", zh: "苍蝇" } },
+          { id: "ch2_11", category: "ch2", translations: { fr: "douche", en: "shower", de: "Dusche", ja: "シャワー", zh: "淋浴" } },
+          { id: "ch2_12", category: "ch2", translations: { fr: "niche", en: "kennel, niche", de: "Hundehütte, Nische", ja: "いぬごや", zh: "狗窝，壁龛" } },
+          { id: "ch2_13", category: "ch2", translations: { fr: "ruche", en: "beehive", de: "Bienenstock", ja: "はちのす", zh: "蜂巢" } },
+          { id: "ch2_14", category: "ch2", translations: { fr: "bûche", en: "log", de: "Holzscheit", ja: "まき", zh: "木柴" } }
         ]
       }
     ]
