@@ -117,4 +117,18 @@ export const trainers: Trainer[] = [
       "Patient and encouraging, repeats readings without being asked, celebrates small wins.",
     voiceProfile: { lang: "ja-JP", pitch: 1.1, rate: 0.95 },
   },
+  {
+    id: "t-camille",
+    name: "Camille",
+    languages: ["fr", "en"],
+    avatarType: "female",
+    avatarSeed: "t-camille",
+    appearance: "Mid-30s, olive skin, curly dark brown hair in a loose bun, warm smile, colorful scarf.",
+    hobby: "Amateur painter — watercolors of street scenes from her travels.",
+    defaultStyle: "phone",
+    courseIds: ["french-beginner"],
+    personalityNote:
+      "Warm and expressive, uses her hands a lot while talking, laughs easily at her own mistakes to put learners at ease.",
+    voiceProfile: { lang: "fr-FR", pitch: 1.05, rate: 1.0 },
+  },
 ];

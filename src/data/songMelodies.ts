@@ -224,6 +224,7 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   "l2-readalong-bruderjakob": BRUDER_JAKOB,
   "topic-a1-01-family-ja-song": BRUDER_JAKOB_SG,
   "topic-a1-01-family-de-song": BRUDER_JAKOB_SG,
+  "topic-a1-01-family-fr-song": BRUDER_JAKOB_SG, // same tune — Frère Jacques is the song's original language
   "topic-a1-04-emotions-ja-song": BRUDER_JAKOB_SG,
   "topic-a1-04-emotions-de-song": BRUDER_JAKOB_SG,
 

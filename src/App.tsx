@@ -86,6 +86,18 @@ const generatedGermanLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "de", "en", "german-beginner"))
   .filter((l): l is LessonPlan => l !== null);
 
+// French, like German, is generated straight off ALL_TOPICS rather
+// than a separate list — only topic-a1-01-family has `fr` grammar/
+// pronunciation authored so far, so every other topic here returns
+// null and gets filtered out below, same as de/zh already do against
+// topics that don't have their content yet. Extend more A1 topics with
+// `fr` the same way (vocab/dialogue/song translations + a new
+// grammar.fr/pronunciation.fr block) and they'll start generating
+// automatically with no changes needed here.
+const generatedFrenchLessons = ALL_TOPICS
+  .map((topic) => buildLessonPlan(topic, "fr", "en", "french-beginner"))
+  .filter((l): l is LessonPlan => l !== null);
+
 // C1 topics are a separate list from ALL_TOPICS above (not mixed in)
 // since they're built for a completely different target language (zh)
 // and CEFR level, with their own courseId — folding them into
@@ -104,6 +116,7 @@ const allLessons: LessonPlan[] = [
   lessonEnglishSpace,
   ...generatedJapaneseLessons,
   ...generatedGermanLessons,
+  ...generatedFrenchLessons,
   ...generatedChineseC1Lessons,
 ]; // grows as more lessons are built
 
