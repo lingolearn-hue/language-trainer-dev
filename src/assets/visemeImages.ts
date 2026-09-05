@@ -1,9 +1,14 @@
-// Cropped from a single 22-photo reference sheet (same model, same
-// lighting/pose throughout — see src/assets/visemes/README.md) so
-// swapping between them at runtime never causes a lighting/head-angle
-// jump, only the mouth region visibly changes. Each viseme has two
-// photo variants (1/2) except neutral/laughing; VisemeAvatar.tsx
-// alternates between them for a touch of natural variation at no cost.
+// Cropped and face-aligned from a single reference photo sheet (same
+// model, same lighting/pose throughout, faces re-centered via Haar
+// cascade face detection — see the asset-generation notes in git
+// history) so swapping between them at runtime never causes a
+// lighting/head-angle jump, only the mouth region visibly changes.
+// Each viseme has two photo variants (1/2) except neutral/laughing;
+// this model's source sheet only had one REST shot, so rest_1/rest_2
+// are identical duplicates rather than two distinct photos — kept as
+// two files anyway so the rest of the code doesn't need a special
+// case. VisemeAvatar.tsx alternates between variants for a touch of
+// natural variation at no cost.
 
 import neutral from "./visemes/neutral.jpg";
 import laughing from "./visemes/laughing.jpg";
