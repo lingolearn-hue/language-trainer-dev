@@ -55,6 +55,10 @@ import { topicEconomy } from "./data/topics/topic-c1-04-economy";
 import { topicEnvironment } from "./data/topics/topic-c1-05-environment";
 import { topicTechnologyC1 } from "./data/topics/topic-c1-06-technology";
 import { topicMedia } from "./data/topics/topic-c1-07-media";
+import { topicTravelMishaps } from "./data/topics/topic-b1-01-travel-mishaps";
+import { topicCareerBeginnings } from "./data/topics/topic-b1-02-career-beginnings";
+import { topicGrowingUp } from "./data/topics/topic-b1-03-growing-up";
+import { topicImaginingAlternatives } from "./data/topics/topic-b1-04-imagining-alternatives";
 import { buildLessonPlan } from "./engine/buildLesson";
 import { applyPhoneStyle } from "./engine/phoneStyle";
 import { loadSettings, saveSettings } from "./engine/userSettings";
@@ -111,6 +115,21 @@ const generatedChineseC1Lessons = C1_TOPICS
   .map((topic) => buildLessonPlan(topic, "zh", "en", "chinese-c1"))
   .filter((l): l is LessonPlan => l !== null);
 
+// B1 topics are also a separate list, same reasoning as C1 above —
+// entirely new files, not part of A1/A2's shared-vocab ALL_TOPICS
+// structure. Unlike C1 though, this reuses the *same* courseId
+// ("japanese-beginner") as the A1/A2 Japanese pipeline rather than a
+// new one — the intent is one continuous Japanese lesson list a
+// learner progresses through (A1 → A2 → B1), not a separate
+// "Japanese Intermediate" course Yui would need a second courseIds
+// entry for. The courseId's literal name ("beginner") undersells what
+// it now contains, but renaming it would mean touching every A1/A2
+// reference for a purely cosmetic gain — not worth it for one lesson.
+const B1_TOPICS: TopicLesson[] = [topicTravelMishaps, topicCareerBeginnings, topicGrowingUp, topicImaginingAlternatives];
+const generatedJapaneseB1Lessons = B1_TOPICS
+  .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))
+  .filter((l): l is LessonPlan => l !== null);
+
 const allLessons: LessonPlan[] = [
   lesson2,
   lesson11,
@@ -118,6 +137,7 @@ const allLessons: LessonPlan[] = [
   ...generatedJapaneseLessons,
   ...generatedGermanLessons,
   ...generatedFrenchLessons,
+  ...generatedJapaneseB1Lessons,
   ...generatedChineseC1Lessons,
 ]; // grows as more lessons are built
 

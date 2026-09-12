@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 108 — 2026-09-05
+Version: 109 — 2026-09-08
 
 React-based long-form language tutor simulation (45-90 min sessions).
 Static content, multiple trainer personas, block-based session engine
@@ -46,10 +46,12 @@ still planned.
   See `docs/topic-lesson-system.md` for architecture and per-feature
   coverage, `docs/status.md` for the build-status table and
   methodology, `docs/a2-master-lesson-table-v01.md` for the A2 plan
-  (35 rows, 22 built), and `docs/c1-master-lesson-table-v01.md` for the
-  C1 plan (34 rows, 7 built).
+  (35 rows, 22 built), `docs/b1-master-lesson-table-v01.md` for the B1
+  plan (34 rows, 0 built — table only, six languages planned from the
+  start), and `docs/c1-master-lesson-table-v01.md` for the C1 plan (34
+  rows, 7 built).
 - **Kanji**: `jaKanji` display toggle exists app-wide (see
-  `engine/scriptDisplay.ts`); only Topic 3 and A2 Topics 20–24 have
+  `engine/scriptDisplay.ts`); A1 topic 3 and all 22 A2 topics have
   full coverage (vocab/dialogue/grammar). Every other topic is
   kana-only except for `grammarDrills` lines, which have kanji
   wherever that feature exists. See `docs/topic-lesson-system.md` for
