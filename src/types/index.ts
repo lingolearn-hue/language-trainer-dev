@@ -213,6 +213,15 @@ export interface LessonPlan {
   // lessons that predate this field; LessonSelect falls back to the
   // trainer's own primary language in that case.
   targetLangCode?: LangCode;
+  // The lesson's source language (what the student already speaks),
+  // as a LangCode. Set by buildLessonPlan for every generated lesson;
+  // absent on the handful of hand-authored lessons that predate this
+  // field (lesson2, lesson11, lessonEnglishSpace) — LessonSelect treats
+  // those as matching any source-language filter rather than excluding
+  // them for lacking the field, since there's no single correct source
+  // to attribute to lessonEnglishSpace in particular (taught across
+  // multiple source languages depending on trainer).
+  sourceLangCode?: LangCode;
   // Display metadata for the slide footer (e.g. "German A1 — Lesson 2"):
   // human-readable target-language name, CEFR-style level, and lesson
   // number within that course. All optional — Slide falls back to

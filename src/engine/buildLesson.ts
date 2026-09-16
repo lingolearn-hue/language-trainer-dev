@@ -54,7 +54,7 @@ function applyOverrides<T extends { id: string; translations: Translations }>(
 export function buildLessonPlan(
   topic: TopicLesson,
   targetLang: LangCode,
-  _sourceLang: LangCode, // reserved for future use (e.g. source-language-specific framing variants)
+  sourceLang: LangCode,
   courseId: string,
 ): LessonPlan | null {
   const grammar = topic.grammar[targetLang];
@@ -337,6 +337,7 @@ export function buildLessonPlan(
     courseId,
     language: LANGUAGE_DISPLAY_NAME[targetLang],
     targetLangCode: targetLang,
+    sourceLangCode: sourceLang,
     level: topic.level ?? CEFR_LEVEL[targetLang] ?? "A1",
     lessonNumber: topic.lessonNumber,
     title: topic.topicName,

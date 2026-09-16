@@ -53,7 +53,23 @@ export function LessonSelect({
   );
   const [levelFilter, setLevelFilter] = useState<string>("all");
 
-  const courseLessons = lessons.filter((l) => trainer.courseIds.includes(l.courseId));
+  // Once the learner has picked a specific target/source pair (on this
+  // screen's chips, or carried over from TrainerSelect's front-page
+  // chips — same lifted state, see App.tsx), the lesson list should
+  // show only that pair, not every course this trainer happens to
+  // teach. A trainer like Max (japanese-beginner + german-beginner) or
+  // Yui (japanese-beginner + chinese-c1) would otherwise show lessons
+  // in a language the learner didn't select at all. Lessons missing
+  // the relevant field (the handful of hand-authored ones that predate
+  // sourceLangCode — see types/index.ts) are never excluded by that
+  // dimension, since there's no data to filter on, not because they
+  // match every pair.
+  const courseLessons = lessons.filter((l) => {
+    if (!trainer.courseIds.includes(l.courseId)) return false;
+    if (targetLang && l.targetLangCode && l.targetLangCode !== targetLang) return false;
+    if (sourceLang && l.sourceLangCode && l.sourceLangCode !== sourceLang) return false;
+    return true;
+  });
   const levels = Array.from(
     new Set(courseLessons.map((l) => l.level).filter((v): v is string => !!v))
   ).sort();
