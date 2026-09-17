@@ -14,11 +14,12 @@ const LANGUAGE_DISPLAY_NAME: Record<LangCode, string> = {
 };
 
 // Builds spoken/visible framing text for every language that HAS a
-// phrase template (currently ja, de) — not just targetLang — since
+// phrase template (ja, de, fr, es, zh) — not just targetLang — since
 // Translations lookups happen for whichever pair (source/target) is
 // active at runtime, and either side could be a templated language.
-// Languages without a template (en, zh currently) fall back to the raw
-// topic name with no sentence wrapper, rather than breaking entirely.
+// en is the one language without a template; it falls back to the raw
+// topic name with no sentence wrapper below, rather than breaking
+// entirely.
 function framingText(
   build: (lang: LangCode, phrases: NonNullable<ReturnType<typeof getPhrases>>) => string,
   fallback: (lang: LangCode) => string,
@@ -61,7 +62,21 @@ export function buildLessonPlan(
   const pronunciation = topic.pronunciation[targetLang];
   if (!grammar || !pronunciation) return null; // can't build a full lesson without these — see topicTypes.ts
 
-  const idSuffix = `${topic.id}-${targetLang}`;
+  // Every lesson built before this field existed was implicitly
+  // en-sourced, and every id derived from idSuffix — including song
+  // block ids, which SONG_MELODIES (songMelodies.ts) looks up by exact
+  // id — was already baked in on that assumption. Appending sourceLang
+  // unconditionally would silently break every existing melody lookup
+  // (e.g. "topic-a1-01-family-de-song" would become
+  // "...-de-en-song", no longer matching the stored key). So: leave
+  // the id alone for the en-source case (preserves every existing id,
+  // no migration needed), and only disambiguate for a non-en source —
+  // which is exactly the new case this fixes (de-target/zh-source
+  // would otherwise collide with the existing de-target/en-source
+  // lesson's id).
+  const idSuffix = sourceLang === "en"
+    ? `${topic.id}-${targetLang}`
+    : `${topic.id}-${targetLang}-${sourceLang}`;
 
   const titleBlock: Block = {
     id: `${idSuffix}-title`,
@@ -117,62 +132,42 @@ export function buildLessonPlan(
 
   // Bilingual framing message (source then target, both actually spoken —
   // see TeacherCaption's bilingual prop) ending with the transition
-  // phrase, followed by the monologue itself as a normal 3-phase
-  // (echo/shadow/silent) read-along — reusing ReadalongBlock rather than
-  // the old bare-bones IntroBlock, which just showed one static caption
-  // and never invited the student to actually read anything.
+  // phrase, followed by the monologue itself as a singlePass read-along
+  // (see Block.singlePass) — reusing ReadalongBlock rather than the old
+  // bare-bones IntroBlock, which just showed one static caption and
+  // never invited the student to actually read anything. Was a full
+  // 3-phase (echo/shadow/silent) read-along at first, same as a
+  // dialogue; switched to singlePass once it became clear a welcome
+  // message someone hears once doesn't need the same repeat-practice
+  // treatment as content they're meant to drill — length was shortened
+  // to match (the old 14-line monologue made sense to sit through 3
+  // times over several minutes; it dragged as a single pass).
   const EN_FALLBACK_MONOLOGUE = [
     "Hello! I'm your trainer for this lesson.",
-    "I'm glad you're here today.",
-    "Learning a language is fun, especially at your own pace.",
-    "In this lesson, we'll practice vocabulary and grammar together.",
-    "We'll also listen to a short dialogue and practice speaking it.",
-    "Don't worry about mistakes — they're part of learning.",
-    "Feel free to pause and repeat as many times as you like.",
-    "If it feels too fast, take a short break.",
-    "If it feels too easy, we can move a bit quicker.",
+    "We'll practice vocabulary, grammar, and a short dialogue together.",
+    "Don't worry about mistakes — feel free to pause and repeat anytime.",
     "Every lesson builds on what you already know.",
-    "By the end, you'll be able to use new words and phrases with confidence.",
     "I'll guide you the whole way through.",
-    "Let's take this step by step, together.",
     "Ready? Let's begin!",
-  ];
-  const ZH_FALLBACK_MONOLOGUE = [
-    "你好！我是这节课的老师。",
-    "很高兴你今天能来。",
-    "学习一门语言很有趣，尤其是按照自己的节奏来学。",
-    "在这节课中，我们会一起练习词汇和语法。",
-    "我们还会听一段简短的对话，并练习说出来。",
-    "不用担心出错——这也是学习的一部分。",
-    "你可以随时暂停，重复多少次都可以。",
-    "如果觉得太快了，可以稍作休息。",
-    "如果觉得太简单了，我们可以稍微加快一点。",
-    "每节课都是在你已经学过的基础上继续的。",
-    "到最后，你就能自信地使用新单词和新句子了。",
-    "我会一直陪着你。",
-    "让我们一步一步一起前进吧。",
-    "准备好了吗？我们开始吧！",
   ];
   const introBlock: Block = {
     id: `${idSuffix}-intro`,
     type: "readalong",
     displayMode: "face",
-    estimatedMinutes: 3,
+    estimatedMinutes: 2,
     title: framingText((_, p) => p.labels.intro, () => "Introduction"),
     spokenIntro: framingText(
       (_, p) => p.introTransition,
-      (lang) =>
-        lang === "zh"
-          ? "我们先一起读一遍我的文本。之后，你可以再读一次，也可以用自己的话说。"
-          : "We'll first read my proposal together. After that, you can read it again, or use your own words.",
+      () => "Here's a quick word from your trainer before we start.",
     ),
     spokenIntroBilingual: true,
+    singlePass: true,
     content: {
       lines: EN_FALLBACK_MONOLOGUE.map((_, i) => ({
         id: `intro-${i}`,
         translations: framingText(
           (_, p) => p.introMonologue[i],
-          (lang) => (lang === "zh" ? ZH_FALLBACK_MONOLOGUE[i] : EN_FALLBACK_MONOLOGUE[i]),
+          () => EN_FALLBACK_MONOLOGUE[i],
         ),
       })),
     },

@@ -765,12 +765,14 @@ export const topicHealth: TopicLesson = {
       title: {
         de: "Imperativ",
         en: "Imperatives",
-        ja: "めいれいけい"
+        ja: "めいれいけい",
+        zh: "命令式"
       },
       explanation: {
         de: "Der deutsche Imperativ hat drei Formen, je nachdem, wen man anspricht. du-Form: Pronomen weglassen, oft auch die Endung -st (du ruhst → Ruh dich aus!). ihr-Form: die normale ihr-Form ohne Pronomen (ihr geht → Geht!). Höfliche Sie-Form: Verb und Sie tauschen die Reihenfolge (Sie gehen → Gehen Sie!).",
         en: "German has three imperative forms depending on who you're addressing. du-form: drop the pronoun, often the -st ending too (du ruhst → Ruh dich aus!). ihr-form: the normal ihr-form without the pronoun (ihr geht → Geht!). Polite Sie-form: verb and Sie swap order (Sie gehen → Gehen Sie!).",
-        ja: "ドイツごの めいれいけいは、だれに はなすかで 3しゅるい あります。du-けい：だいめいしを はぶき、-st も おおくは はぶきます（du ruhst → Ruh dich aus!）。ihr-けい：だいめいしなしの ふつうの ihr-けい（ihr geht → Geht!）。ていねいな Sie-けい：どうしと Sie の じゅんばんを いれかえます（Sie gehen → Gehen Sie!）。"
+        ja: "ドイツごの めいれいけいは、だれに はなすかで 3しゅるい あります。du-けい：だいめいしを はぶき、-st も おおくは はぶきます（du ruhst → Ruh dich aus!）。ihr-けい：だいめいしなしの ふつうの ihr-けい（ihr geht → Geht!）。ていねいな Sie-けい：どうしと Sie の じゅんばんを いれかえます（Sie gehen → Gehen Sie!）。",
+        zh: "德语命令式根据对话对象不同有三种形式。du形：省略代词，通常也省略词尾-st（du ruhst → Ruh dich aus!）。ihr形：不带代词的普通ihr形（ihr geht → Geht!）。礼貌的Sie形：动词与Sie互换顺序（Sie gehen → Gehen Sie!）。"
       },
       chunks: [
         {
@@ -778,7 +780,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Ruh dich aus!",
             en: "Rest! (du-imperative)",
-            ja: "やすんで ください！（du-けい）"
+            ja: "やすんで ください！（du-けい）",
+            zh: "休息吧！（du命令式）"
           }
         },
         {
@@ -786,7 +789,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Schlaf gut!",
             en: "Sleep well! (du-imperative)",
-            ja: "よく ねて ください！（du-けい）"
+            ja: "よく ねて ください！（du-けい）",
+            zh: "好好睡吧！（du命令式）"
           }
         },
         {
@@ -794,7 +798,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Legen Sie sich hin!",
             en: "Lie down! (formal Sie-imperative)",
-            ja: "よこに なって ください！（ていねいな Sie-けい）"
+            ja: "よこに なって ください！（ていねいな Sie-けい）",
+            zh: "请躺下！（礼貌的Sie命令式）"
           }
         },
         {
@@ -802,7 +807,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Nehmen Sie die Medikamente ein!",
             en: "Take the medicine! (formal Sie-imperative)",
-            ja: "くすりを のんで ください！（ていねいな Sie-けい）"
+            ja: "くすりを のんで ください！（ていねいな Sie-けい）",
+            zh: "请服药！（礼貌的Sie命令式）"
           }
         },
         {
@@ -810,7 +816,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Geht ins Krankenhaus!",
             en: "Go to the hospital! (ihr-imperative, plural)",
-            ja: "びょういんに いって ください！（ihr-けい、ふくすう）"
+            ja: "びょういんに いって ください！（ihr-けい、ふくすう）",
+            zh: "去医院吧！（ihr命令式，复数）"
           }
         },
         {
@@ -818,7 +825,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Machen Sie sich keine Sorgen!",
             en: "Don't worry! (formal Sie-imperative, negative)",
-            ja: "しんぱいしないで ください！（ていねいな Sie-けい、ひてい）"
+            ja: "しんぱいしないで ください！（ていねいな Sie-けい、ひてい）",
+            zh: "请不要担心！（礼貌的Sie命令式，否定）"
           }
         }
       ]
@@ -1012,18 +1020,21 @@ export const topicHealth: TopicLesson = {
       title: {
         de: "Aussprachetraining",
         en: "Pronunciation Practice",
-        ja: "はつおんの れんしゅう"
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
       },
       groupLabels: {
         n_ng: {
           de: "N vs. NG",
           en: "N vs. NG",
-          ja: "N と NG"
+          ja: "N と NG",
+          zh: "N 与 NG"
         },
         devoicing: {
           de: "Auslautverhärtung, vertieft: b/d/g am Wortende klingen wie p/t/k",
           en: "Final devoicing, reinforced: b/d/g at word end sound like p/t/k",
-          ja: "ごびの むせいか（ふくしゅう）：ごびの b/d/g は p/t/k のように きこえる"
+          ja: "ごびの むせいか（ふくしゅう）：ごびの b/d/g は p/t/k のように きこえる",
+          zh: "词尾清化（巩固）：词尾的b/d/g发音像p/t/k"
         }
       },
       items: [
@@ -1033,7 +1044,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Verband",
             en: "bandage (plain N)",
-            ja: "ほうたい（ふつうの N）"
+            ja: "ほうたい（ふつうの N）",
+            zh: "绷带（普通N）"
           }
         },
         {
@@ -1042,7 +1054,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Medikament",
             en: "medicine (plain N)",
-            ja: "くすり（ふつうの N）"
+            ja: "くすり（ふつうの N）",
+            zh: "药（普通N）"
           }
         },
         {
@@ -1051,7 +1064,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Übung",
             en: "exercise, practice (NG)",
-            ja: "れんしゅう（NG）"
+            ja: "れんしゅう（NG）",
+            zh: "练习（NG）"
           }
         },
         {
@@ -1060,7 +1074,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Achtung",
             en: "caution, attention (NG)",
-            ja: "ちゅうい（NG）"
+            ja: "ちゅうい（NG）",
+            zh: "注意（NG）"
           }
         },
         {
@@ -1069,7 +1084,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "gesund",
             en: "healthy (final d sounds like t)",
-            ja: "けんこうな（ごびの d は t のよう）"
+            ja: "けんこうな（ごびの d は t のよう）",
+            zh: "健康的（词尾d发t音）"
           }
         },
         {
@@ -1078,7 +1094,8 @@ export const topicHealth: TopicLesson = {
           translations: {
             de: "Grad",
             en: "degree (final d sounds like t)",
-            ja: "ど（おんど）（ごびの d は t のよう）"
+            ja: "ど（おんど）（ごびの d は t のよう）",
+            zh: "度（温度）（词尾d发t音）"
           }
         }
       ]

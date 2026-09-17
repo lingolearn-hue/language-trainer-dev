@@ -699,12 +699,14 @@ export const topicTravel: TopicLesson = {
       title: {
         de: "Richtung und Ort: wo / wohin",
         en: "Direction and Location: wo / wohin",
-        ja: "ほうこう と ばしょ：wo と wohin"
+        ja: "ほうこう と ばしょ：wo と wohin",
+        zh: "方向与地点：wo／wohin"
       },
       explanation: {
         de: "wo fragt nach einem festen Ort (Antwort im Dativ: im Hotel). wohin fragt nach einer Richtung oder einem Ziel (Antwort im Akkusativ: ins Hotel, zum Bahnhof). Für Städte und Länder ohne Artikel benutzt man nach: nach Berlin, nach Deutschland.",
         en: "wo asks about a fixed location (answer in dative: im Hotel). wohin asks about a direction or destination (answer in accusative: ins Hotel, zum Bahnhof). For cities and countries without an article, use nach: nach Berlin, nach Deutschland.",
-        ja: "wo は きまった ばしょを たずねます（こたえは よかく：im Hotel）。wohin は ほうこうや もくてきちを たずねます（こたえは たいかく：ins Hotel、zum Bahnhof）。かんしのない とし・くにの ばあいは nach を つかいます：nach Berlin、nach Deutschland。"
+        ja: "wo は きまった ばしょを たずねます（こたえは よかく：im Hotel）。wohin は ほうこうや もくてきちを たずねます（こたえは たいかく：ins Hotel、zum Bahnhof）。かんしのない とし・くにの ばあいは nach を つかいます：nach Berlin、nach Deutschland。",
+        zh: "wo询问固定地点（答案用第三格：im Hotel）。wohin询问方向或目的地（答案用第四格：ins Hotel、zum Bahnhof）。对于没有冠词的城市和国家，使用nach：nach Berlin、nach Deutschland。"
       },
       chunks: [
         {
@@ -712,7 +714,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Wo ist der Bahnhof?",
             en: "Where is the train station? (wo — fixed location)",
-            ja: "えきは どこ ですか？（wo — きまった ばしょ）"
+            ja: "えきは どこ ですか？（wo — きまった ばしょ）",
+            zh: "火车站在哪里？（wo——固定地点）"
           }
         },
         {
@@ -720,7 +723,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Wohin fährst du?",
             en: "Where are you going? (wohin — direction)",
-            ja: "どこへ いきますか？（wohin — ほうこう）"
+            ja: "どこへ いきますか？（wohin — ほうこう）",
+            zh: "你要去哪里？（wohin——方向）"
           }
         },
         {
@@ -728,7 +732,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Ich fahre zum Bahnhof.",
             en: "I'm going to the train station. (zum — direction, dative-fused)",
-            ja: "えきへ いきます。（zum — ほうこう）"
+            ja: "えきへ いきます。（zum — ほうこう）",
+            zh: "我要去火车站。（zum——方向，与介词融合的第三格）"
           }
         },
         {
@@ -736,7 +741,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Ich bin im Hotel.",
             en: "I am at the hotel. (im — fixed location, dative)",
-            ja: "ホテルに います。（im — きまった ばしょ、よかく）"
+            ja: "ホテルに います。（im — きまった ばしょ、よかく）",
+            zh: "我在酒店。（im——固定地点，第三格）"
           }
         },
         {
@@ -744,7 +750,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Wir fahren nach Berlin.",
             en: "We're going to Berlin. (nach — city, no article)",
-            ja: "ベルリンへ いきます。（nach — とし、かんしなし）"
+            ja: "ベルリンへ いきます。（nach — とし、かんしなし）",
+            zh: "我们要去柏林。（nach——城市，无冠词）"
           }
         },
         {
@@ -752,7 +759,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Der Zug fährt in die Stadt.",
             en: "The train is going into the city. (in die — direction, accusative)",
-            ja: "でんしゃは まちへ いきます。（in die — ほうこう、たいかく）"
+            ja: "でんしゃは まちへ いきます。（in die — ほうこう、たいかく）",
+            zh: "火车开往市区。（in die——方向，第四格）"
           }
         }
       ]
@@ -882,18 +890,21 @@ export const topicTravel: TopicLesson = {
       title: {
         de: "Aussprachetraining",
         en: "Pronunciation Practice",
-        ja: "はつおんの れんしゅう"
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
       },
       groupLabels: {
         cluster: {
           de: "Anlaut-Konsonantencluster vs. Einzelkonsonant",
           en: "Initial consonant cluster vs. single consonant",
-          ja: "ごとうの しいん クラスター と たんいつしいん"
+          ja: "ごとうの しいん クラスター と たんいつしいん",
+          zh: "词首辅音丛与单辅音"
         },
         schw_schr: {
           de: "SCHW-/SCHR-Cluster",
           en: "SCHW-/SCHR- clusters",
-          ja: "SCHW-／SCHR- クラスター"
+          ja: "SCHW-／SCHR- クラスター",
+          zh: "SCHW-／SCHR- 辅音丛"
         }
       },
       items: [
@@ -903,7 +914,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Flugzeug",
             en: "airplane (initial cluster Fl-)",
-            ja: "ひこうき（ごとうクラスター Fl-）"
+            ja: "ひこうき（ごとうクラスター Fl-）",
+            zh: "飞机（词首辅音丛Fl-）"
           }
         },
         {
@@ -912,7 +924,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Grenze",
             en: "border (initial cluster Gr-)",
-            ja: "こっきょう（ごとうクラスター Gr-）"
+            ja: "こっきょう（ごとうクラスター Gr-）",
+            zh: "边境（词首辅音丛Gr-）"
           }
         },
         {
@@ -921,7 +934,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Zug",
             en: "train (single initial consonant Z)",
-            ja: "でんしゃ（たんいつしいん Z）"
+            ja: "でんしゃ（たんいつしいん Z）",
+            zh: "火车（单辅音Z）"
           }
         },
         {
@@ -930,7 +944,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Koffer",
             en: "suitcase (single initial consonant K)",
-            ja: "スーツケース（たんいつしいん K）"
+            ja: "スーツケース（たんいつしいん K）",
+            zh: "行李箱（单辅音K）"
           }
         },
         {
@@ -939,7 +954,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "schwer",
             en: "heavy (SCHW- cluster, e.g. heavy luggage)",
-            ja: "おもい（SCHW- クラスター、おもい にもつ）"
+            ja: "おもい（SCHW- クラスター、おもい にもつ）",
+            zh: "重的（SCHW-辅音丛，如沉重的行李）"
           }
         },
         {
@@ -948,7 +964,8 @@ export const topicTravel: TopicLesson = {
           translations: {
             de: "Schranke",
             en: "barrier, gate (SCHR- cluster, e.g. at a crossing)",
-            ja: "しゃだんき（SCHR- クラスター、ふみきりなど）"
+            ja: "しゃだんき（SCHR- クラスター、ふみきりなど）",
+            zh: "栏杆（SCHR-辅音丛，如道口栏杆）"
           }
         }
       ]

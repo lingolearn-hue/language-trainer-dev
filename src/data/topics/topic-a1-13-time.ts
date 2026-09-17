@@ -729,12 +729,14 @@ export const topicTime: TopicLesson = {
       title: {
         de: "Zeitpräpositionen",
         en: "Prepositions of Time",
-        ja: "じかんの ぜんちし"
+        ja: "じかんの ぜんちし",
+        zh: "时间介词"
       },
       explanation: {
         de: "um steht bei Uhrzeiten (um neun Uhr). am steht bei Tagen und Tagesabschnitten (am Montag, am Vormittag). im steht bei Monaten und Jahreszeiten (im Winter). vor und nach beschreiben \"before\"/\"after\" einer Zeit oder eines Ereignisses. zwischen ... und beschreibt eine Zeitspanne.",
         en: "um is used with clock times (um neun Uhr). am is used with days and parts of the day (am Montag, am Vormittag). im is used with months and seasons (im Winter). vor and nach describe \"before\"/\"after\" a time or event. zwischen ... und describes a time range.",
-        ja: "um は じこくに つかいます（um neun Uhr）。am は ようびや いちにちの じかんたいに つかいます（am Montag、am Vormittag）。im は つきや きせつに つかいます（im Winter）。vor と nach は じこくや できごとの「まえ」「あと」を あらわします。zwischen ... und は きかんを あらわします。"
+        ja: "um は じこくに つかいます（um neun Uhr）。am は ようびや いちにちの じかんたいに つかいます（am Montag、am Vormittag）。im は つきや きせつに つかいます（im Winter）。vor と nach は じこくや できごとの「まえ」「あと」を あらわします。zwischen ... und は きかんを あらわします。",
+        zh: "um用于具体时刻（um neun Uhr）。am用于星期几和一天中的时段（am Montag、am Vormittag）。im用于月份和季节（im Winter）。vor和nach表示某个时刻或事件的\"之前\"／\"之后\"。zwischen ... und表示一段时间范围。"
       },
       chunks: [
         {
@@ -742,7 +744,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Um neun Uhr beginnt die Besprechung.",
             en: "The meeting starts at nine o'clock. (um + clock time)",
-            ja: "くじに かいぎが はじまります。（um + じこく）"
+            ja: "くじに かいぎが はじまります。（um + じこく）",
+            zh: "会议九点开始。（um + 具体时刻）"
           }
         },
         {
@@ -750,7 +753,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Am Wochenende bin ich frei.",
             en: "I'm free on the weekend. (am + day-type period)",
-            ja: "しゅうまつは ひまです。（am + きかん）"
+            ja: "しゅうまつは ひまです。（am + きかん）",
+            zh: "周末我有空。（am + 类日期时段）"
           }
         },
         {
@@ -758,7 +762,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Am Vormittag habe ich Zeit.",
             en: "I have time in the morning. (am + part of day)",
-            ja: "ごぜんちゅうは じかんが あります。（am + いちにちの じかんたい）"
+            ja: "ごぜんちゅうは じかんが あります。（am + いちにちの じかんたい）",
+            zh: "我上午有时间。（am + 一天中的时段）"
           }
         },
         {
@@ -766,7 +771,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Vor der Besprechung bereite ich mich vor.",
             en: "I prepare before the meeting. (vor + noun)",
-            ja: "かいぎの まえに じゅんびします。（vor + めいし）"
+            ja: "かいぎの まえに じゅんびします。（vor + めいし）",
+            zh: "我在会议前做准备。（vor + 名词）"
           }
         },
         {
@@ -774,7 +780,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Nach dem Treffen habe ich frei.",
             en: "I'm free after the meeting. (nach + noun)",
-            ja: "かいぎの あとは ひまです。（nach + めいし）"
+            ja: "かいぎの あとは ひまです。（nach + めいし）",
+            zh: "会议后我有空。（nach + 名词）"
           }
         },
         {
@@ -782,7 +789,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Zwischen zwei und drei Uhr habe ich Zeit.",
             en: "I have time between two and three o'clock. (zwischen ... und)",
-            ja: "にじから さんじの あいだ じかんが あります。（zwischen ... und）"
+            ja: "にじから さんじの あいだ じかんが あります。（zwischen ... und）",
+            zh: "两点到三点之间我有时间。（zwischen ... und）"
           }
         }
       ]
@@ -930,18 +938,21 @@ export const topicTime: TopicLesson = {
       title: {
         de: "Aussprachetraining",
         en: "Pronunciation Practice",
-        ja: "はつおんの れんしゅう"
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
       },
       groupLabels: {
         h: {
           de: "H gesprochen vs. stumm (Dehnungs-H)",
           en: "H pronounced vs. silent (vowel-lengthening H)",
-          ja: "はつおんされる H と むおんの H（ぼいん を のばす H）"
+          ja: "はつおんされる H と むおんの H（ぼいん を のばす H）",
+          zh: "H发音与不发音（延长元音的H）"
         },
         ch: {
           de: "CH in Buch vs. ich, revisited",
           en: "CH in Buch vs. ich, revisited",
-          ja: "Buch と ich の CH（ふくしゅう）"
+          ja: "Buch と ich の CH（ふくしゅう）",
+          zh: "Buch与ich中的CH（复习）"
         }
       },
       items: [
@@ -951,7 +962,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "heute",
             en: "today (H pronounced, syllable-initial)",
-            ja: "きょう（H は はつおんされる）"
+            ja: "きょう（H は はつおんされる）",
+            zh: "今天（H发音，音节首）"
           }
         },
         {
@@ -960,7 +972,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Uhr",
             en: "clock, o'clock (H silent, lengthens the U)",
-            ja: "とけい（H は むおん、U を のばす）"
+            ja: "とけい（H は むおん、U を のばす）",
+            zh: "钟，……点钟（H不发音，延长U）"
           }
         },
         {
@@ -969,7 +982,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "früh",
             en: "early (H silent, lengthens the Ü)",
-            ja: "はやい（H は むおん、Ü を のばす）"
+            ja: "はやい（H は むおん、Ü を のばす）",
+            zh: "早（H不发音，延长Ü）"
           }
         },
         {
@@ -978,7 +992,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Woche",
             en: "week (Ich-laut — CH after e)",
-            ja: "しゅう（Ich-Laut — e の あとの CH）"
+            ja: "しゅう（Ich-Laut — e の あとの CH）",
+            zh: "星期（Ich音——e后的CH）"
           }
         },
         {
@@ -987,7 +1002,8 @@ export const topicTime: TopicLesson = {
           translations: {
             de: "Buch",
             en: "book (Ach-laut — CH after u, the classic contrast pair with ich)",
-            ja: "ほん（Ach-Laut — u の あとの CH、ich との だいひょうてきな たいひ）"
+            ja: "ほん（Ach-Laut — u の あとの CH、ich との だいひょうてきな たいひ）",
+            zh: "书（Ach音——u后的CH，与ich的经典对比）"
           }
         }
       ]

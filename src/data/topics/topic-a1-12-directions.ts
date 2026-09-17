@@ -729,12 +729,14 @@ export const topicDirections: TopicLesson = {
       title: {
         de: "Wechselpräpositionen (Ort)",
         en: "Two-Way Prepositions (Place)",
-        ja: "りょうよう ぜんちし（ばしょ）"
+        ja: "りょうよう ぜんちし（ばしょ）",
+        zh: "两用介词（地点）"
       },
       explanation: {
         de: "Wechselpräpositionen (in, an, auf, unter, über, vor, hinter, neben, zwischen) stehen mit Dativ, wenn sie einen festen Ort beschreiben (wo?), und mit Akkusativ, wenn sie eine Bewegung zu einem Ziel beschreiben (wohin?) — dieselbe wo/wohin-Unterscheidung wie in Lektion 11, jetzt sichtbar an der Endung der Präposition selbst.",
         en: "Two-way prepositions (in, an, auf, unter, über, vor, hinter, neben, zwischen) take dative when describing a fixed location (wo?) and accusative when describing motion toward a destination (wohin?) — the same wo/wohin distinction from Lesson 11, now visible in the preposition's own case ending.",
-        ja: "りょうよう ぜんちし（in, an, auf, unter, über, vor, hinter, neben, zwischen）は、きまった ばしょを あらわす とき よかく（wo?）、いどうの もくてきちを あらわす とき たいかく（wohin?）に なります — レッスン11 と おなじ wo/wohin の くべつが、ぜんちしの かくへんかとして あらわれます。"
+        ja: "りょうよう ぜんちし（in, an, auf, unter, über, vor, hinter, neben, zwischen）は、きまった ばしょを あらわす とき よかく（wo?）、いどうの もくてきちを あらわす とき たいかく（wohin?）に なります — レッスン11 と おなじ wo/wohin の くべつが、ぜんちしの かくへんかとして あらわれます。",
+        zh: "两用介词（in, an, auf, unter, über, vor, hinter, neben, zwischen）在描述固定地点时（wo？）用第三格，在描述朝目的地移动时（wohin？）用第四格——与第11课相同的wo/wohin区分，现在体现在介词自身的格变化上。"
       },
       chunks: [
         {
@@ -742,7 +744,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Die Ampel ist an der Ecke.",
             en: "The traffic light is at the corner. (an + dative, fixed location)",
-            ja: "しんごうは かどに あります。（an + よかく、きまった ばしょ）"
+            ja: "しんごうは かどに あります。（an + よかく、きまった ばしょ）",
+            zh: "红绿灯在拐角处。（an + 第三格，固定地点）"
           }
         },
         {
@@ -750,7 +753,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Gehen Sie an die Ecke.",
             en: "Go to the corner. (an + accusative, motion)",
-            ja: "かどまで いって ください。（an + たいかく、いどう）"
+            ja: "かどまで いって ください。（an + たいかく、いどう）",
+            zh: "请走到拐角处。（an + 第四格，移动）"
           }
         },
         {
@@ -758,7 +762,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Der Weg ist neben der Straße.",
             en: "The path is next to the street. (neben + dative)",
-            ja: "みちは どおりの となりに あります。（neben + よかく）"
+            ja: "みちは どおりの となりに あります。（neben + よかく）",
+            zh: "小路在街道旁边。（neben + 第三格）"
           }
         },
         {
@@ -766,7 +771,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Das Café ist zwischen der Bank und der Post.",
             en: "The café is between the bank and the post office. (zwischen + dative)",
-            ja: "カフェは ぎんこうと ゆうびんきょくの あいだに あります。（zwischen + よかく）"
+            ja: "カフェは ぎんこうと ゆうびんきょくの あいだに あります。（zwischen + よかく）",
+            zh: "咖啡馆在银行和邮局之间。（zwischen + 第三格）"
           }
         },
         {
@@ -774,7 +780,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Biegen Sie vor der Kreuzung ab.",
             en: "Turn before the intersection. (vor + dative)",
-            ja: "こうさてんの てまえで まがって ください。（vor + よかく）"
+            ja: "こうさてんの てまえで まがって ください。（vor + よかく）",
+            zh: "请在路口前转弯。（vor + 第三格）"
           }
         },
         {
@@ -782,7 +789,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Der Parkplatz ist hinter dem Gebäude.",
             en: "The parking lot is behind the building. (hinter + dative)",
-            ja: "ちゅうしゃじょうは たてものの うしろに あります。（hinter + よかく）"
+            ja: "ちゅうしゃじょうは たてものの うしろに あります。（hinter + よかく）",
+            zh: "停车场在大楼后面。（hinter + 第三格）"
           }
         }
       ]
@@ -926,18 +934,21 @@ export const topicDirections: TopicLesson = {
       title: {
         de: "Aussprachetraining",
         en: "Pronunciation Practice",
-        ja: "はつおんの れんしゅう"
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
       },
       groupLabels: {
         i_length: {
           de: "I — lang vs. kurz",
           en: "I — long vs. short",
-          ja: "I — ながい と みじかい"
+          ja: "I — ながい と みじかい",
+          zh: "I — 长音与短音"
         },
         eu: {
           de: "EU/ÄU-Diphthong",
           en: "EU/ÄU diphthong",
-          ja: "EU／ÄU の にじゅうぼいん"
+          ja: "EU／ÄU の にじゅうぼいん",
+          zh: "EU／ÄU 双元音"
         }
       },
       items: [
@@ -947,7 +958,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Linie",
             en: "line, route (long I)",
-            ja: "せん、ろせん（ながい I）"
+            ja: "せん、ろせん（ながい I）",
+            zh: "线路（长音I）"
           }
         },
         {
@@ -956,7 +968,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Richtung",
             en: "direction (short I)",
-            ja: "ほうこう（みじかい I）"
+            ja: "ほうこう（みじかい I）",
+            zh: "方向（短音I）"
           }
         },
         {
@@ -965,7 +978,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "sich verirren",
             en: "to get lost (short I)",
-            ja: "みちに まよう（みじかい I）"
+            ja: "みちに まよう（みじかい I）",
+            zh: "迷路（短音I）"
           }
         },
         {
@@ -974,7 +988,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "Kreuzung",
             en: "intersection (EU diphthong)",
-            ja: "こうさてん（EU の にじゅうぼいん）"
+            ja: "こうさてん（EU の にじゅうぼいん）",
+            zh: "十字路口（EU双元音）"
           }
         },
         {
@@ -983,7 +998,8 @@ export const topicDirections: TopicLesson = {
           translations: {
             de: "überqueren",
             en: "to cross (ÄU diphthong)",
-            ja: "わたる（ÄU の にじゅうぼいん）"
+            ja: "わたる（ÄU の にじゅうぼいん）",
+            zh: "穿过（ÄU双元音）"
           }
         }
       ]

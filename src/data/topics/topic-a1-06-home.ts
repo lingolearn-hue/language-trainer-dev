@@ -695,12 +695,14 @@ export const topicHome: TopicLesson = {
       title: {
         de: "Possessivpronomen",
         en: "Possessives",
-        ja: "しょゆう だいめいし"
+        ja: "しょゆう だいめいし",
+        zh: "物主代词"
       },
       explanation: {
         de: "Possessivpronomen zeigen, wem etwas gehört: mein(e) (my), dein(e) (your, informal), sein(e) (his), ihr(e) (her), unser(e) (our), euer/eure (your, plural), ihr(e) (their) und Ihr(e) (your, formal). Die Endung -e kommt bei femininen und pluralen Nomen dazu, sonst bleibt die Grundform.",
         en: "Possessive pronouns show who owns something: mein(e) (my), dein(e) (your, informal), sein(e) (his), ihr(e) (her), unser(e) (our), euer/eure (your, plural), ihr(e) (their), and Ihr(e) (your, formal). The -e ending is added for feminine and plural nouns; otherwise the base form is used.",
-        ja: "しょゆう だいめいしは、なにが だれの ものかを しめします：mein(e)（わたしの）、dein(e)（きみの）、sein(e)（かれの）、ihr(e)（かのじょの）、unser(e)（わたしたちの）、euer/eure（きみたちの）、ihr(e)（かれらの）、Ihr(e)（ていねいな あなたの）。じょせいけい・ふくすうの めいしには -e が つき、それ いがいは きほんけいの ままです。"
+        ja: "しょゆう だいめいしは、なにが だれの ものかを しめします：mein(e)（わたしの）、dein(e)（きみの）、sein(e)（かれの）、ihr(e)（かのじょの）、unser(e)（わたしたちの）、euer/eure（きみたちの）、ihr(e)（かれらの）、Ihr(e)（ていねいな あなたの）。じょせいけい・ふくすうの めいしには -e が つき、それ いがいは きほんけいの ままです。",
+        zh: "物主代词表示某物属于谁：mein(e)（我的）、dein(e)（你的，非正式）、sein(e)（他的）、ihr(e)（她的）、unser(e)（我们的）、euer/eure（你们的）、ihr(e)（他们的）、以及Ihr(e)（您的，正式）。阴性和复数名词后加词尾-e，其他情况保持词干原形。"
       },
       chunks: [
         {
@@ -708,7 +710,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Das ist mein Zimmer.",
             en: "This is my room. (mein)",
-            ja: "これは わたしの へやです。（mein）"
+            ja: "これは わたしの へやです。（mein）",
+            zh: "这是我的房间。（mein）"
           }
         },
         {
@@ -716,7 +719,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Ist das dein Schlüssel?",
             en: "Is that your key? (dein)",
-            ja: "それは きみの かぎ ですか？（dein）"
+            ja: "それは きみの かぎ ですか？（dein）",
+            zh: "那是你的钥匙吗？（dein）"
           }
         },
         {
@@ -724,7 +728,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Das ist sein Bett.",
             en: "That is his bed. (sein)",
-            ja: "それは かれの ベッドです。（sein）"
+            ja: "それは かれの ベッドです。（sein）",
+            zh: "那是他的床。（sein）"
           }
         },
         {
@@ -732,7 +737,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Das ist ihr Tisch.",
             en: "That is her table. (ihr)",
-            ja: "それは かのじょの テーブルです。（ihr）"
+            ja: "それは かのじょの テーブルです。（ihr）",
+            zh: "那是她的桌子。（ihr）"
           }
         },
         {
@@ -740,7 +746,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Das ist unser Haus.",
             en: "That is our house. (unser)",
-            ja: "それは わたしたちの いえです。（unser）"
+            ja: "それは わたしたちの いえです。（unser）",
+            zh: "那是我们的房子。（unser）"
           }
         },
         {
@@ -748,7 +755,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Wo ist euer Stuhl?",
             en: "Where is your (plural) chair? (euer)",
-            ja: "きみたちの いすは どこ ですか？（euer）"
+            ja: "きみたちの いすは どこ ですか？（euer）",
+            zh: "你们的椅子在哪里？（euer）"
           }
         }
       ]
@@ -878,18 +886,21 @@ export const topicHome: TopicLesson = {
       title: {
         de: "Aussprachetraining",
         en: "Pronunciation Practice",
-        ja: "はつおんの れんしゅう"
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
       },
       groupLabels: {
         f_v: {
           de: "F und V klingen beide meist wie \"f\"",
           en: "F and V both usually sound like \"f\"",
-          ja: "F と V は どちらも たいてい「f」の おと"
+          ja: "F と V は どちらも たいてい「f」の おと",
+          zh: "F和V通常都发\"f\"的音"
         },
         w: {
           de: "W klingt wie englisches V",
           en: "W sounds like English V",
-          ja: "W は えいごの V のように きこえる"
+          ja: "W は えいごの V のように きこえる",
+          zh: "W发音像英语的V"
         }
       },
       items: [
@@ -899,7 +910,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Fenster",
             en: "window (letter F)",
-            ja: "まど（もじ F）"
+            ja: "まど（もじ F）",
+            zh: "窗户（字母F）"
           }
         },
         {
@@ -908,7 +920,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Vater",
             en: "father (letter V, sounds like F)",
-            ja: "ちち（もじ V、f の おと）"
+            ja: "ちち（もじ V、f の おと）",
+            zh: "父亲（字母V，发f音）"
           }
         },
         {
@@ -917,7 +930,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "verleihen",
             en: "to lend out (letter V, sounds like F)",
-            ja: "かす（もじ V、f の おと）"
+            ja: "かす（もじ V、f の おと）",
+            zh: "借出（字母V，发f音）"
           }
         },
         {
@@ -926,7 +940,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "wohnen",
             en: "to live, reside (W sounds like English V)",
-            ja: "すむ（W は えいごの V のよう）"
+            ja: "すむ（W は えいごの V のよう）",
+            zh: "居住（W发音像英语的V）"
           }
         },
         {
@@ -935,7 +950,8 @@ export const topicHome: TopicLesson = {
           translations: {
             de: "Wasser",
             en: "water (W sounds like English V)",
-            ja: "みず（W は えいごの V のよう）"
+            ja: "みず（W は えいごの V のよう）",
+            zh: "水（W发音像英语的V）"
           }
         }
       ]

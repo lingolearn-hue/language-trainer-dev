@@ -794,12 +794,14 @@ export const topicClothing: TopicLesson = {
       title: {
         de: "Demonstrativpronomen: dieser / das ... da",
         en: "Demonstratives: this / that",
-        ja: "しじ だいめいし：これ／それ"
+        ja: "しじ だいめいし：これ／それ",
+        zh: "指示代词：dieser／das...da"
       },
       explanation: {
         de: "dieser/diese/dieses (\"this\") stimmt im Geschlecht mit dem Nomen überein, genau wie der/die/das: dieser Mantel (m), diese Hose (f), dieses Hemd (n). Für \"that\" fügt man im Deutschen meist einfach da oder dort nach dem Nomen hinzu, statt ein eigenes Wort zu benutzen: die Schuhe da (those shoes).",
         en: "dieser/diese/dieses (\"this\") matches the noun's gender, just like der/die/das: dieser Mantel (m), diese Hose (f), dieses Hemd (n). For \"that\", German usually just adds da or dort after the noun instead of using a separate word: die Schuhe da (those shoes).",
-        ja: "dieser/diese/dieses（これ）は、der/die/das と おなじように めいしの せいに あわせます：dieser Mantel（だんせい）、diese Hose（じょせい）、dieses Hemd（ちゅうせい）。「それ」を あらわす ときは、べつの ことばを つかわず、めいしの あとに da や dort を つけるのが ふつうです：die Schuhe da（あの くつ）。"
+        ja: "dieser/diese/dieses（これ）は、der/die/das と おなじように めいしの せいに あわせます：dieser Mantel（だんせい）、diese Hose（じょせい）、dieses Hemd（ちゅうせい）。「それ」を あらわす ときは、べつの ことばを つかわず、めいしの あとに da や dort を つけるのが ふつうです：die Schuhe da（あの くつ）。",
+        zh: "dieser/diese/dieses（这个）与der/die/das一样，与名词的性一致：dieser Mantel（阳性）、diese Hose（阴性）、dieses Hemd（中性）。表示\"那个\"时，德语通常只是在名词后加上da或dort，而不用单独的词：die Schuhe da（那双鞋）。"
       },
       chunks: [
         {
@@ -807,7 +809,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Dieses Hemd ist schön.",
             en: "This shirt is nice. (dieses — neuter)",
-            ja: "この シャツは すてきです。（dieses — ちゅうせい）"
+            ja: "この シャツは すてきです。（dieses — ちゅうせい）",
+            zh: "这件衬衫很漂亮。（dieses — 中性）"
           }
         },
         {
@@ -815,7 +818,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Diese Hose ist zu eng.",
             en: "These pants are too tight. (diese — feminine)",
-            ja: "この ズボンは きつすぎます。（diese — じょせい）"
+            ja: "この ズボンは きつすぎます。（diese — じょせい）",
+            zh: "这条裤子太紧了。（diese — 阴性）"
           }
         },
         {
@@ -823,7 +827,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Dieser Mantel ist warm.",
             en: "This coat is warm. (dieser — masculine)",
-            ja: "この コートは あたたかいです。（dieser — だんせい）"
+            ja: "この コートは あたたかいです。（dieser — だんせい）",
+            zh: "这件大衣很暖和。（dieser — 阳性）"
           }
         },
         {
@@ -831,7 +836,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Das Kleid dort ist schön.",
             en: "That dress (over there) is pretty. (das ... dort)",
-            ja: "あの ドレスは すてきです。（das ... dort）"
+            ja: "あの ドレスは すてきです。（das ... dort）",
+            zh: "那件裙子很漂亮。（das ... dort）"
           }
         },
         {
@@ -839,7 +845,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Die Schuhe da sind neu.",
             en: "Those shoes (there) are new. (die ... da, plural)",
-            ja: "その くつは あたらしいです。（die ... da、ふくすう）"
+            ja: "その くつは あたらしいです。（die ... da、ふくすう）",
+            zh: "那双鞋是新的。（die ... da，复数）"
           }
         },
         {
@@ -847,7 +854,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Ist das dein Hut?",
             en: "Is that your hat? (das as a demonstrative pronoun)",
-            ja: "それは きみの ぼうし ですか？（しじ だいめいしの das）"
+            ja: "それは きみの ぼうし ですか？（しじ だいめいしの das）",
+            zh: "那是你的帽子吗？（作为指示代词的das）"
           }
         }
       ]
@@ -1077,18 +1085,21 @@ export const topicClothing: TopicLesson = {
       title: {
         de: "Aussprachetraining",
         en: "Pronunciation Practice",
-        ja: "はつおんの れんしゅう"
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
       },
       groupLabels: {
         l_r: {
           de: "L vs. R",
           en: "L vs. R",
-          ja: "L と R"
+          ja: "L と R",
+          zh: "L 与 R"
         },
         uvular_r: {
           de: "Das deutsche R (Zäpfchen-R, nicht wie im Englischen)",
           en: "The German R (uvular, not like English R)",
-          ja: "ドイツごの R（のどおくの R、えいごとは ちがう）"
+          ja: "ドイツごの R（のどおくの R、えいごとは ちがう）",
+          zh: "德语的R（小舌音R，与英语不同）"
         }
       },
       items: [
@@ -1098,7 +1109,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "locker",
             en: "loose-fitting (L)",
-            ja: "ゆったりした（L）"
+            ja: "ゆったりした（L）",
+            zh: "宽松的（L）"
           }
         },
         {
@@ -1107,7 +1119,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Rock",
             en: "skirt (R, contrast with L)",
-            ja: "スカート（R、L との たいひ）"
+            ja: "スカート（R、L との たいひ）",
+            zh: "裙子（R，与L对比）"
           }
         },
         {
@@ -1116,7 +1129,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Regenschirm",
             en: "umbrella (uvular R)",
-            ja: "かさ（のどおくの R）"
+            ja: "かさ（のどおくの R）",
+            zh: "雨伞（小舌音R）"
           }
         },
         {
@@ -1125,7 +1139,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "Krawatte",
             en: "necktie (uvular R)",
-            ja: "ネクタイ（のどおくの R）"
+            ja: "ネクタイ（のどおくの R）",
+            zh: "领带（小舌音R）"
           }
         },
         {
@@ -1134,7 +1149,8 @@ export const topicClothing: TopicLesson = {
           translations: {
             de: "tragen",
             en: "to wear (uvular R)",
-            ja: "きる（のどおくの R）"
+            ja: "きる（のどおくの R）",
+            zh: "穿，戴（小舌音R）"
           }
         }
       ]

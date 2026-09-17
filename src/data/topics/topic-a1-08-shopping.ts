@@ -789,12 +789,14 @@ export const topicShopping: TopicLesson = {
       title: {
         de: "Zahlen und Mengenangaben",
         en: "Numbers and Quantity",
-        ja: "すうじ と りょう"
+        ja: "すうじ と りょう",
+        zh: "数字与数量"
       },
       explanation: {
         de: "Die Grundzahlen 1-12 sind: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf. Sie stehen direkt vor dem gezählten Nomen, ohne Zählwort wie im Japanischen. Mengenwörter wie viel(e) (\"much/many\") und wenig(e) (\"little/few\") stehen ebenfalls vor dem Nomen — bei zählbaren Nomen im Plural bekommen sie ein -e: viele Äpfel, wenige Äpfel.",
         en: "Cardinal numbers 1-12 are: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf. They go directly before the counted noun, with no counter word like in Japanese. Quantity words like viel(e) (\"much/many\") and wenig(e) (\"little/few\") also go before the noun — with countable plural nouns they take an -e: viele Äpfel, wenige Äpfel.",
-        ja: "きすうし 1〜12は：eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf です。にほんごの じょすうしと ちがい、かぞえる めいしの まえに ちょくせつ おきます。viel(e)（おおい）や wenig(e)（すくない）のような りょうを あらわす ことばも めいしの まえに おきます — ふくすうの かぞえられる めいしには -e が つきます：viele Äpfel、wenige Äpfel。"
+        ja: "きすうし 1〜12は：eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf です。にほんごの じょすうしと ちがい、かぞえる めいしの まえに ちょくせつ おきます。viel(e)（おおい）や wenig(e)（すくない）のような りょうを あらわす ことばも めいしの まえに おきます — ふくすうの かぞえられる めいしには -e が つきます：viele Äpfel、wenige Äpfel。",
+        zh: "基数1-12是：eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf。它们直接放在所数的名词前，不像日语那样需要量词。像viel(e)（多）和wenig(e)（少）这样的数量词也放在名词前——用于可数复数名词时会加词尾-e：viele Äpfel（很多苹果）、wenige Äpfel（很少苹果）。"
       },
       chunks: [
         {
@@ -802,7 +804,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Das kostet zehn Euro.",
             en: "That costs ten euros. (number)",
-            ja: "それは じゅうユーロです。（すうじ）"
+            ja: "それは じゅうユーロです。（すうじ）",
+            zh: "那个要十欧元。（数字）"
           }
         },
         {
@@ -810,7 +813,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Ich brauche zwei Tomaten.",
             en: "I need two tomatoes. (number + counted noun, no counter word)",
-            ja: "トマトが ふたつ ひつようです。（すうじ、じょすうしなし）"
+            ja: "トマトが ふたつ ひつようです。（すうじ、じょすうしなし）",
+            zh: "我需要两个西红柿。（数字+所数名词，无量词）"
           }
         },
         {
@@ -818,7 +822,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Es gibt viele Sonderangebote.",
             en: "There are many special offers. (viele — plural quantity)",
-            ja: "とくばいひんが たくさん あります。（viele — ふくすうの りょう）"
+            ja: "とくばいひんが たくさん あります。（viele — ふくすうの りょう）",
+            zh: "有很多特价商品。（viele — 复数数量）"
           }
         },
         {
@@ -826,7 +831,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Wir haben wenig Geld.",
             en: "We have little money. (wenig — uncountable quantity)",
-            ja: "わたしたちは おかねが すくないです。（wenig — かぞえられない りょう）"
+            ja: "わたしたちは おかねが すくないです。（wenig — かぞえられない りょう）",
+            zh: "我们钱不多。（wenig — 不可数数量）"
           }
         },
         {
@@ -834,7 +840,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Der Preis ist hundert Euro.",
             en: "The price is one hundred euros. (number)",
-            ja: "ねだんは ひゃくユーロです。（すうじ）"
+            ja: "ねだんは ひゃくユーロです。（すうじ）",
+            zh: "价格是一百欧元。（数字）"
           }
         },
         {
@@ -842,7 +849,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Ich kaufe ein paar Tomaten.",
             en: "I'm buying a few tomatoes. (ein paar — a few)",
-            ja: "トマトを すこし かいます。（ein paar — すこし）"
+            ja: "トマトを すこし かいます。（ein paar — すこし）",
+            zh: "我买几个西红柿。（ein paar — 几个）"
           }
         }
       ]
@@ -1049,18 +1057,21 @@ export const topicShopping: TopicLesson = {
       title: {
         de: "Aussprachetraining",
         en: "Pronunciation Practice",
-        ja: "はつおんの れんしゅう"
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
       },
       groupLabels: {
         e_length: {
           de: "E — lang vs. kurz",
           en: "E — long vs. short",
-          ja: "E — ながい と みじかい"
+          ja: "E — ながい と みじかい",
+          zh: "E — 长音与短音"
         },
         ei: {
           de: "EI-Diphthong",
           en: "EI diphthong",
-          ja: "EI の にじゅうぼいん"
+          ja: "EI の にじゅうぼいん",
+          zh: "EI 双元音"
         }
       },
       items: [
@@ -1070,7 +1081,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "wenig",
             en: "little, few (short E)",
-            ja: "すくない（みじかい E）"
+            ja: "すくない（みじかい E）",
+            zh: "少（短音E）"
           }
         },
         {
@@ -1079,7 +1091,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Geld",
             en: "money (short E)",
-            ja: "おかね（みじかい E）"
+            ja: "おかね（みじかい E）",
+            zh: "钱（短音E）"
           }
         },
         {
@@ -1088,7 +1101,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "lesen",
             en: "to read (long E)",
-            ja: "よむ（ながい E）"
+            ja: "よむ（ながい E）",
+            zh: "读（长音E）"
           }
         },
         {
@@ -1097,7 +1111,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Preis",
             en: "price (EI diphthong)",
-            ja: "ねだん（EI の にじゅうぼいん）"
+            ja: "ねだん（EI の にじゅうぼいん）",
+            zh: "价格（EI双元音）"
           }
         },
         {
@@ -1106,7 +1121,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "einpacken",
             en: "to pack, wrap (EI diphthong)",
-            ja: "つつむ（EI の にじゅうぼいん）"
+            ja: "つつむ（EI の にじゅうぼいん）",
+            zh: "打包（EI双元音）"
           }
         },
         {
@@ -1115,7 +1131,8 @@ export const topicShopping: TopicLesson = {
           translations: {
             de: "Ei",
             en: "egg (EI diphthong)",
-            ja: "たまご（EI の にじゅうぼいん）"
+            ja: "たまご（EI の にじゅうぼいん）",
+            zh: "鸡蛋（EI双元音）"
           }
         }
       ]

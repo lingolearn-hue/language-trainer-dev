@@ -91,6 +91,19 @@ const generatedGermanLessons = ALL_TOPICS
   .map((topic) => buildLessonPlan(topic, "de", "en", "german-beginner"))
   .filter((l): l is LessonPlan => l !== null);
 
+// Same courseId as the en-sourced German lessons above, not a new
+// one — the language-pair filtering fix in LessonSelect.tsx (see its
+// own comment) already separates these correctly by sourceLangCode,
+// so a learner picking target=de/source=zh sees only these, and
+// target=de/source=en sees only the ones above. All 19 A1 topics now
+// have zh grammar/pronunciation content for German (verified before
+// wiring this — see the per-topic zh-coverage audit in git history),
+// so this generates a full 19-lesson course, not a partial one like
+// French's current single-topic scope.
+const generatedGermanZhLessons = ALL_TOPICS
+  .map((topic) => buildLessonPlan(topic, "de", "zh", "german-beginner"))
+  .filter((l): l is LessonPlan => l !== null);
+
 // French, like German, is generated straight off ALL_TOPICS rather
 // than a separate list — only topic-a1-01-family has `fr` grammar/
 // pronunciation authored so far, so every other topic here returns
@@ -136,6 +149,7 @@ const allLessons: LessonPlan[] = [
   lessonEnglishSpace,
   ...generatedJapaneseLessons,
   ...generatedGermanLessons,
+  ...generatedGermanZhLessons,
   ...generatedFrenchLessons,
   ...generatedJapaneseB1Lessons,
   ...generatedChineseC1Lessons,

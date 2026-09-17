@@ -176,6 +176,16 @@ export interface Block {
   // tell a song apart from a dialogue. Undefined/false = not a song
   // (dialogue, or any other block type where the question doesn't apply).
   isSong?: boolean;
+  // Skips the normal 3-phase echo/shadow/silent readalong mechanic
+  // (see ReadalongBlock.tsx's PHASES) in favor of one straight pass
+  // through the lines — target sentence spoken once, target+source
+  // shown together, then straight on to the next line. No repeat-
+  // after-me pause, no self-check mic, no phase buttons. Used for the
+  // intro monologue specifically: a welcome message someone listens to
+  // once, not a dialogue they're meant to drill and repeat back.
+  // Undefined/false = normal 3-phase behavior (dialogues, articles,
+  // songs).
+  singlePass?: boolean;
   // Extra content-only display scale — set on sub-blocks produced by the
   // phone-style split (see engine/phoneStyle.ts): each original
   // slide becomes 3 smaller-content slides, shown bigger to match.

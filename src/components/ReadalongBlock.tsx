@@ -116,6 +116,27 @@ export function ReadalongBlock({
     await runPhaseFor(phase);
   }
 
+  // The whole point of singlePass (see Block.singlePass) is that there's
+  // nothing to repeat — target audio plays once per line, target+source
+  // are shown together (same per-line layout as the 3-phase path below),
+  // then straight on to the next line. No repeat-after-me pause, no
+  // shadow/silent redundancy, no self-check mic (there's nothing to
+  // check yourself against when you were never asked to repeat anything).
+  async function runSinglePass(shouldCancel: () => boolean = () => cancelledRef.current) {
+    setRunning(true);
+    for (let i = 0; i < content.lines.length; i++) {
+      if (shouldCancel()) break;
+      setActiveLine(i);
+      const text = content.lines[i].translations[lang.targetLang];
+      if (!text) continue;
+      await speak(text, lang.targetLang, trainer.voiceProfile);
+      if (shouldCancel()) break;
+      await wait(pauseFor(text, 500, 30, 1800)); // brief beat between lines — long enough to read, not a repeat-practice pause
+    }
+    setActiveLine(null);
+    setRunning(false);
+  }
+
   async function selfCheck(lineId: string, text: string | undefined) {
     if (!text) return;
     if (!isRecognitionSupported()) {
@@ -166,6 +187,11 @@ export function ReadalongBlock({
     if (!autoPlay) return;
     let cancelled = false;
     (async () => {
+      if (block.singlePass) {
+        await runSinglePass(() => cancelled);
+        if (!cancelled) onComplete();
+        return;
+      }
       for (let i = 0; i < PHASES.length; i++) {
         if (cancelled) return;
         setPhaseIdx(i);
@@ -213,24 +239,33 @@ export function ReadalongBlock({
       fontScale={block.fontScale}
       title={resolveDisplayText(block.title ?? {}, lang.targetLang, showAlt) ?? block.title?.en}
       footer={
-        <>
-          <span className="phase-label">{PHASE_LABEL[phase]}</span>
-          {melody && (
-            <button
-              className={`melody-toggle-btn${melodyMode !== "lyrics" ? " active" : ""}`}
-              onClick={cycleMelodyMode}
-              title="Cycle: spoken lyrics -> melody only -> both together"
-            >
-              {melodyMode === "lyrics" ? "🗣️ Lyrics" : melodyMode === "melody" ? "🎵 Melody" : "🗣️🎵 Both"}
+        block.singlePass ? (
+          <>
+            <button disabled={running} onClick={() => runSinglePass()}>
+              {running ? "Playing…" : "▶ Replay"}
             </button>
-          )}
-          <button disabled={running} onClick={runPhase}>
-            {running ? "Playing…" : `▶ Play phase: ${phase}`}
-          </button>
-          <button disabled={running} onClick={nextPhase}>
-            {phaseIdx < PHASES.length - 1 ? "Next phase →" : "Continue →"}
-          </button>
-        </>
+            <button disabled={running} onClick={onComplete}>Continue →</button>
+          </>
+        ) : (
+          <>
+            <span className="phase-label">{PHASE_LABEL[phase]}</span>
+            {melody && (
+              <button
+                className={`melody-toggle-btn${melodyMode !== "lyrics" ? " active" : ""}`}
+                onClick={cycleMelodyMode}
+                title="Cycle: spoken lyrics -> melody only -> both together"
+              >
+                {melodyMode === "lyrics" ? "🗣️ Lyrics" : melodyMode === "melody" ? "🎵 Melody" : "🗣️🎵 Both"}
+              </button>
+            )}
+            <button disabled={running} onClick={runPhase}>
+              {running ? "Playing…" : `▶ Play phase: ${phase}`}
+            </button>
+            <button disabled={running} onClick={nextPhase}>
+              {phaseIdx < PHASES.length - 1 ? "Next phase →" : "Continue →"}
+            </button>
+          </>
+        )
       }
     >
       <div

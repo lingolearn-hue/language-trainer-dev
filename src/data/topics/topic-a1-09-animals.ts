@@ -747,12 +747,14 @@ export const topicAnimals: TopicLesson = {
       title: {
         de: "Pluralbildung",
         en: "Plural Formation",
-        ja: "ふくすうけいの つくりかた"
+        ja: "ふくすうけいの つくりかた",
+        zh: "复数形式的构成"
       },
       explanation: {
         de: "Deutsche Pluralformen folgen keiner einzigen Regel wie das englische -s. Häufige Muster sind: -e (der Hund → die Hunde), -en/-n (die Katze → die Katzen), Umlaut ohne Endung oder mit -er (der Vogel → die Vögel), und -s meist bei Lehnwörtern (der Panda → die Pandas). Die Pluralform wird am besten zusammen mit jedem Nomen gelernt.",
         en: "German plurals don't follow one single rule like English -s. Common patterns include: -e (der Hund → die Hunde), -en/-n (die Katze → die Katzen), umlaut with no ending or with -er (der Vogel → die Vögel), and -s mostly for loanwords (der Panda → die Pandas). It's best to learn the plural form together with each noun.",
-        ja: "ドイツごの ふくすうけいは、えいごの -s のような ひとつの ルールに したがいません。よく ある パターンは：-e（der Hund → die Hunde）、-en/-n（die Katze → die Katzen）、うむらうと＋ごびなし または -er（der Vogel → die Vögel）、そして がいらいごに おおい -s（der Panda → die Pandas）です。ふくすうけいは、めいしごとに いっしょに おぼえるのが いちばんです。"
+        ja: "ドイツごの ふくすうけいは、えいごの -s のような ひとつの ルールに したがいません。よく ある パターンは：-e（der Hund → die Hunde）、-en/-n（die Katze → die Katzen）、うむらうと＋ごびなし または -er（der Vogel → die Vögel）、そして がいらいごに おおい -s（der Panda → die Pandas）です。ふくすうけいは、めいしごとに いっしょに おぼえるのが いちばんです。",
+        zh: "德语复数形式不遵循像英语-s那样单一的规则。常见的模式有：-e（der Hund → die Hunde）、-en/-n（die Katze → die Katzen）、变元音不加词尾或加-er（der Vogel → die Vögel），以及外来词常用的-s（der Panda → die Pandas）。最好把复数形式和每个名词一起记住。"
       },
       chunks: [
         {
@@ -760,7 +762,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "ein Hund, zwei Hunde",
             en: "one dog, two dogs (-e plural)",
-            ja: "いぬ いっぴき、いぬ にひき（-e の ふくすう）"
+            ja: "いぬ いっぴき、いぬ にひき（-e の ふくすう）",
+            zh: "一只狗，两只狗（-e复数）"
           }
         },
         {
@@ -768,7 +771,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "eine Katze, zwei Katzen",
             en: "one cat, two cats (-n plural)",
-            ja: "ねこ いっぴき、ねこ にひき（-n の ふくすう）"
+            ja: "ねこ いっぴき、ねこ にひき（-n の ふくすう）",
+            zh: "一只猫，两只猫（-n复数）"
           }
         },
         {
@@ -776,7 +780,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "ein Vogel, zwei Vögel",
             en: "one bird, two birds (umlaut, no ending)",
-            ja: "とり いちわ、とり にわ（うむらうと、ごびなし）"
+            ja: "とり いちわ、とり にわ（うむらうと、ごびなし）",
+            zh: "一只鸟，两只鸟（变元音，无词尾）"
           }
         },
         {
@@ -784,7 +789,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "ein Schaf, zwei Schafe",
             en: "one sheep, two sheep (-e plural)",
-            ja: "ひつじ いっぴき、ひつじ にひき（-e の ふくすう）"
+            ja: "ひつじ いっぴき、ひつじ にひき（-e の ふくすう）",
+            zh: "一只羊，两只羊（-e复数）"
           }
         },
         {
@@ -792,7 +798,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "ein Pferd, zwei Pferde",
             en: "one horse, two horses (-e plural)",
-            ja: "うま いっとう、うま にとう（-e の ふくすう）"
+            ja: "うま いっとう、うま にとう（-e の ふくすう）",
+            zh: "一匹马，两匹马（-e复数）"
           }
         },
         {
@@ -800,7 +807,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "ein Panda, zwei Pandas",
             en: "one panda, two pandas (-s plural, loanword)",
-            ja: "パンダ いっとう、パンダ にとう（-s の ふくすう、がいらいご）"
+            ja: "パンダ いっとう、パンダ にとう（-s の ふくすう、がいらいご）",
+            zh: "一只熊猫，两只熊猫（-s复数，外来词）"
           }
         }
       ]
@@ -948,18 +956,21 @@ export const topicAnimals: TopicLesson = {
       title: {
         de: "Aussprachetraining",
         en: "Pronunciation Practice",
-        ja: "はつおんの れんしゅう"
+        ja: "はつおんの れんしゅう",
+        zh: "发音练习"
       },
       groupLabels: {
         sh_s_ch: {
           de: "SCH vs. S vs. CH (dreifacher Kontrast)",
           en: "SCH vs. S vs. CH (three-way contrast)",
-          ja: "SCH と S と CH（さんしゅの たいひ）"
+          ja: "SCH と S と CH（さんしゅの たいひ）",
+          zh: "SCH、S、CH（三方对比）"
         },
         ich_ach: {
           de: "Ich-Laut vs. Ach-Laut",
           en: "Ich-laut vs. Ach-laut",
-          ja: "Ich-Laut と Ach-Laut"
+          ja: "Ich-Laut と Ach-Laut",
+          zh: "Ich音 与 Ach音"
         }
       },
       items: [
@@ -969,7 +980,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "Schaf",
             en: "sheep (SCH → \"sh\")",
-            ja: "ひつじ（SCH → 「sh」）"
+            ja: "ひつじ（SCH → 「sh」）",
+            zh: "羊（SCH发\"sh\"音）"
           }
         },
         {
@@ -978,7 +990,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "Schwein",
             en: "pig (SCH → \"sh\")",
-            ja: "ぶた（SCH → 「sh」）"
+            ja: "ぶた（SCH → 「sh」）",
+            zh: "猪（SCH发\"sh\"音）"
           }
         },
         {
@@ -987,7 +1000,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "süß",
             en: "cute, sweet (plain S)",
-            ja: "かわいい（ふつうの S）"
+            ja: "かわいい（ふつうの S）",
+            zh: "可爱，甜（普通S）"
           }
         },
         {
@@ -996,7 +1010,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "sanft",
             en: "gentle (plain S)",
-            ja: "おだやかな（ふつうの S）"
+            ja: "おだやかな（ふつうの S）",
+            zh: "温和的（普通S）"
           }
         },
         {
@@ -1005,7 +1020,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "Kaninchen",
             en: "rabbit (Ich-laut — CH after i/n)",
-            ja: "うさぎ（Ich-Laut — i/n の あとの CH）"
+            ja: "うさぎ（Ich-Laut — i/n の あとの CH）",
+            zh: "兔子（Ich音——i/n后的CH）"
           }
         },
         {
@@ -1014,7 +1030,8 @@ export const topicAnimals: TopicLesson = {
           translations: {
             de: "Bauch",
             en: "belly (Ach-laut — CH after a/o/u)",
-            ja: "おなか（Ach-Laut — a/o/u の あとの CH）"
+            ja: "おなか（Ach-Laut — a/o/u の あとの CH）",
+            zh: "肚子（Ach音——a/o/u后的CH）"
           }
         }
       ]

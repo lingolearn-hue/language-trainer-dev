@@ -214,6 +214,7 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   "de11-song": ROW_ROW_ROW_YOUR_BOAT,
   "topic-a1-11-travel-ja-song": ROW_ROW_ROW_YOUR_BOAT,
   "topic-a1-11-travel-de-song": ROW_ROW_ROW_YOUR_BOAT,
+  "topic-a1-11-travel-de-zh-song": ROW_ROW_ROW_YOUR_BOAT, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a2-05-hobbies-ja-song": ROW_ROW_ROW_YOUR_BOAT,
   "topic-a1-16-traffic-ja-song": ROW_ROW_ROW_YOUR_BOAT,
 
@@ -224,9 +225,11 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   "l2-readalong-bruderjakob": BRUDER_JAKOB,
   "topic-a1-01-family-ja-song": BRUDER_JAKOB_SG,
   "topic-a1-01-family-de-song": BRUDER_JAKOB_SG,
+  "topic-a1-01-family-de-zh-song": BRUDER_JAKOB_SG, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a1-01-family-fr-song": BRUDER_JAKOB_SG, // same tune — Frère Jacques is the song's original language
   "topic-a1-04-emotions-ja-song": BRUDER_JAKOB_SG,
   "topic-a1-04-emotions-de-song": BRUDER_JAKOB_SG,
+  "topic-a1-04-emotions-de-zh-song": BRUDER_JAKOB_SG, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
 
   // Alle meine Entchen (lesson2.ts) — not currently repeated elsewhere.
   "l2-readalong-entchen": ALLE_MEINE_ENTCHEN,
@@ -235,30 +238,36 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   // home), repeated onto Topic 17 (Work, an open slot).
   "topic-a1-12-directions-ja-song": LONDON_BRIDGE,
   "topic-a1-12-directions-de-song": LONDON_BRIDGE,
+  "topic-a1-12-directions-de-zh-song": LONDON_BRIDGE, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a1-17-work-ja-song": LONDON_BRIDGE,
 
   // Twinkle Twinkle Little Star — Topic 13 (Time, original home). Not
   // currently repeated elsewhere.
   "topic-a1-13-time-ja-song": TWINKLE_TWINKLE,
   "topic-a1-13-time-de-song": TWINKLE_TWINKLE,
+  "topic-a1-13-time-de-zh-song": TWINKLE_TWINKLE, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a2-04-routine-ja-song": TWINKLE_TWINKLE,
 
   // Head, Shoulders, Knees and Toes — Topic 2 (Body, original home),
   // repeated onto Topic 5 (Food, an open slot).
   "topic-a1-02-body-ja-song": HEAD_SHOULDERS,
   "topic-a1-02-body-de-song": HEAD_SHOULDERS,
+  "topic-a1-02-body-de-zh-song": HEAD_SHOULDERS, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a1-05-food-ja-song": HEAD_SHOULDERS,
   "topic-a1-05-food-de-song": HEAD_SHOULDERS,
+  "topic-a1-05-food-de-zh-song": HEAD_SHOULDERS, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
 
   // Itsy Bitsy Spider — Topic 7 (Clothing, original home). Not currently
   // repeated elsewhere.
   "topic-a1-07-clothing-ja-song": ITSY_BITSY_SPIDER,
   "topic-a1-07-clothing-de-song": ITSY_BITSY_SPIDER,
+  "topic-a1-07-clothing-de-zh-song": ITSY_BITSY_SPIDER, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
 
   // Old MacDonald Had a Farm — Topic 9 (Animals, original home),
   // repeated onto Topic 14 (Countries, an open slot).
   "topic-a1-09-animals-ja-song": OLD_MACDONALD,
   "topic-a1-09-animals-de-song": OLD_MACDONALD,
+  "topic-a1-09-animals-de-zh-song": OLD_MACDONALD, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a1-14-countries-ja-song": OLD_MACDONALD,
 
   // Alouette — Topic 3 (Appearance, documented home), reused exactly at
@@ -266,8 +275,10 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   // repeated onto Topic 6 (Home, an open slot).
   "topic-a1-03-appearance-ja-song": ALOUETTE,
   "topic-a1-03-appearance-de-song": ALOUETTE,
+  "topic-a1-03-appearance-de-zh-song": ALOUETTE, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a1-06-home-ja-song": ALOUETTE,
   "topic-a1-06-home-de-song": ALOUETTE,
+  "topic-a1-06-home-de-zh-song": ALOUETTE, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a1-19-weather-ja-song": ALOUETTE,
 
   // This Old Man — Topic 8 (Shopping, documented home — fits its
@@ -275,8 +286,10 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   // slot).
   "topic-a1-08-shopping-ja-song": THIS_OLD_MAN,
   "topic-a1-08-shopping-de-song": THIS_OLD_MAN,
+  "topic-a1-08-shopping-de-zh-song": THIS_OLD_MAN, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
   "topic-a1-10-health-ja-song": THIS_OLD_MAN,
   "topic-a1-10-health-de-song": THIS_OLD_MAN,
+  "topic-a1-10-health-de-zh-song": THIS_OLD_MAN, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
 
   // Ten Little Fingers (see topic-a1-15-landscape.ts for the lyric
   // substitution note) — Topic 15 (Landscape, documented home for "Ten
