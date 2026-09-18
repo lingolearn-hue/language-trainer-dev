@@ -39,15 +39,28 @@ export function Slide({
       if (width <= 0 || height <= 0) return;
       // Fit-to-screen: scale by whichever dimension is tighter, so the
       // slide always fits fully inside its container with no overflow
-      // and no wasted gap. (A height-only scale previously caused
-      // portrait overflow — a narrow-tall container would scale the
-      // fixed 960-wide slide up past the container's actual width.)
-      const nextScale = Math.min(width / BASE_WIDTH, height / BASE_HEIGHT);
+      // and no wasted gap. Portrait is the exception: preserving the
+      // fixed 16:10 BASE_WIDTH/BASE_HEIGHT ratio in a tall narrow
+      // container means width is always the binding constraint, which
+      // forces a short, small, vertically-centered slide with a lot of
+      // empty space above/below — not what "fill the screen" should
+      // mean on a phone. Portrait skips the transform-scale system
+      // altogether (scale locked at 1) and lets .slide-frame's own
+      // width:100%/height:100% (see the portrait override in App.css)
+      // fill the container directly — content sizes at its own normal
+      // CSS px values rather than a proportionally-scaled fixed canvas.
+      const isPortrait = height > width;
+      const nextScale = isPortrait ? 1 : Math.min(width / BASE_WIDTH, height / BASE_HEIGHT);
       setScale(nextScale);
       // Reported for Session.tsx to position the caption/nav-footer
       // overlay exactly over the visible slide graphic, not the outer
       // (often larger, letterboxed) container — see engine/slideSize.ts.
-      reportSlideSize(BASE_WIDTH * nextScale, BASE_HEIGHT * nextScale);
+      // In portrait, the frame fills the container directly (no
+      // transform-scale involved — see above), so the "visible slide
+      // graphic" size IS the container's own measured size, not a
+      // BASE_WIDTH/BASE_HEIGHT-derived figure (which would wrongly
+      // report 960x600 now that nextScale is locked to 1 there).
+      reportSlideSize(isPortrait ? width : BASE_WIDTH * nextScale, isPortrait ? height : BASE_HEIGHT * nextScale);
     });
     observer.observe(el);
     return () => observer.disconnect();

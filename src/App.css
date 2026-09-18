@@ -226,23 +226,20 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
     flex-direction: row;
   }
 
-  /* .slide-frame (below) is a fixed 960x600 landscape box by design for
-     wide/"computer" viewports — .slide-fit-container centers it and
-     clips overflow, which is fine when the viewport is wider than
-     960px, but on a phone-width portrait viewport the fixed box simply
-     doesn't fit and gets center-cropped, clipping both edges of every
-     slide's content (this was the actual root cause of "garbled" phone
-     screens — text appeared to start mid-sentence because the left
-     portion of the 960px-wide frame was cropped off, not because of a
-     text-wrapping bug inside it, though .lines/.line's own portrait
-     stacking fix elsewhere is still needed for content to read well
-     once the frame itself is properly sized). Drop the fixed landscape
-     dimensions here and let the frame fill the available portrait
-     space instead. */
+  /* .slide-frame stays at its fixed 960x600 base size in landscape/
+     computer view (see Slide.tsx's BASE_WIDTH/BASE_HEIGHT) and gets
+     fit to the container via JS transform:scale there. Portrait is
+     different: Slide.tsx locks scale to 1 in portrait specifically
+     (see its own comment) so this override is safe to apply without
+     compounding into a double-shrink — width:100%/height:100% here
+     IS the frame's actual final size, filling the container directly
+     instead of preserving the fixed 16:10 ratio, which would leave
+     a short frame vertically centered in a sea of empty space (tried
+     that first; see git history — this needed the JS-side scale fix
+     too, not just this CSS override, to actually take effect). */
   .slide-frame {
     width: 100%;
     height: 100%;
-    flex-shrink: 1;
   }
 }
 
