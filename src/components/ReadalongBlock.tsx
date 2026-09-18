@@ -231,8 +231,21 @@ export function ReadalongBlock({
     const longer = Math.max(targetLen, sourceLen);
     return sum + Math.max(1, Math.ceil(longer / CHARS_PER_ROW_ESTIMATE));
   }, 0);
-  const rowBudgetPx = 430 / (totalVisualRows + 1);
-  const dialogueFontPx = Math.max(13, Math.min(29, rowBudgetPx / 1.125)); // ~20% larger than the previous 11–24px range (divisor and bounds both scaled)
+  // Portrait locks Slide.tsx's fit-to-screen transform at scale=1 (see
+  // its own comment) rather than proportionally shrinking a fixed-canvas
+  // layout the way landscape still does — so the 430/29 budget and cap
+  // below, tuned assuming that shrink would always apply, rendered at
+  // literal, oversized px values on a narrow phone once nothing was
+  // scaling them down anymore ("text too large on most slides" — the
+  // .agenda-target/.agenda-source em-based sizing wasn't affected since
+  // it was never tied to this calculation or that assumption). Smaller
+  // budget and lower cap here target roughly the same effective size as
+  // that already-fine agenda text (~18px) instead of readalong content
+  // sitting at its 29px ceiling for most typically-short dialogue/intro
+  // line counts.
+  const isPortrait = typeof window !== "undefined" && window.matchMedia("(orientation: portrait)").matches;
+  const rowBudgetPx = (isPortrait ? 150 : 430) / (totalVisualRows + 1);
+  const dialogueFontPx = Math.max(13, Math.min(isPortrait ? 19 : 29, rowBudgetPx / 1.125)); // ~20% larger than the previous 11–24px range (divisor and bounds both scaled)
 
   return (
     <Slide

@@ -275,8 +275,13 @@ export function VocabDrillBlock({
   // single column) — still dynamic so short lists (e.g. an 8-row
   // pronunciation group) scale up to use the available height.
   const maxRows = Math.max(1, ...columns.map((c) => c.items.length));
-  const rowBudgetPx = 430 / (maxRows + 1);
-  const vocabFontPx = Math.max(11, Math.min(22, rowBudgetPx / 1.55));
+  // See ReadalongBlock.tsx's identical fix for why this needs a
+  // portrait-specific budget/cap: the 430/22 tuning assumed Slide.tsx's
+  // fit-to-screen transform would always proportionally shrink it,
+  // which portrait no longer does (locked at scale=1 there).
+  const isPortrait = typeof window !== "undefined" && window.matchMedia("(orientation: portrait)").matches;
+  const rowBudgetPx = (isPortrait ? 150 : 430) / (maxRows + 1);
+  const vocabFontPx = Math.max(11, Math.min(isPortrait ? 16 : 22, rowBudgetPx / 1.55));
 
   return (
     <Slide
