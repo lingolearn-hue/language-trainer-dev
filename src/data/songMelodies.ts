@@ -29,29 +29,6 @@ const ROW_ROW_ROW_YOUR_BOAT: SongMelody = {
   },
 };
 
-const BRUDER_JAKOB: SongMelody = {
-  bpm: 108,
-  lines: {
-    r1: [{ pitch: "C4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "E4", beats: 1 }, { pitch: "C4", beats: 1 }],
-    r2: [{ pitch: "E4", beats: 1 }, { pitch: "F4", beats: 1 }, { pitch: "G4", beats: 2 }],
-    r3: [{ pitch: "E4", beats: 1 }, { pitch: "F4", beats: 1 }, { pitch: "G4", beats: 2 }],
-    r4: [{ pitch: "G4", beats: 0.5 }, { pitch: "A4", beats: 0.5 }, { pitch: "G4", beats: 0.5 }, { pitch: "F4", beats: 0.5 }, { pitch: "E4", beats: 1 }, { pitch: "C4", beats: 1 }],
-    r5: [{ pitch: "C4", beats: 1 }, { pitch: "G3", beats: 1 }, { pitch: "C4", beats: 2 }],
-    r6: [{ pitch: "C4", beats: 1 }, { pitch: "G3", beats: 1 }, { pitch: "C4", beats: 2 }],
-  },
-};
-
-const ALLE_MEINE_ENTCHEN: SongMelody = {
-  bpm: 108,
-  lines: {
-    e1: [{ pitch: "C4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "E4", beats: 1 }, { pitch: "F4", beats: 1 }, { pitch: "G4", beats: 2 }],
-    e2: [{ pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "G4", beats: 4 }],
-    e3: [{ pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "A4", beats: 1 }, { pitch: "G4", beats: 4 }],
-    e4: [{ pitch: "G4", beats: 1 }, { pitch: "F4", beats: 1 }, { pitch: "F4", beats: 1 }, { pitch: "F4", beats: 1 }, { pitch: "E4", beats: 4 }],
-    e5: [{ pitch: "E4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "D4", beats: 1 }, { pitch: "C4", beats: 4 }],
-  },
-};
-
 const LONDON_BRIDGE: SongMelody = {
   bpm: 112,
   lines: {
@@ -106,11 +83,9 @@ const OLD_MACDONALD: SongMelody = {
   },
 };
 
-// Same tune as BRUDER_JAKOB below, but keyed sg1-sg6 (matching the
-// topic-system's line-id convention) instead of r1-r6 (lesson2.ts's own
-// convention) — needed since topic-a1-01-family/topic-a1-04-emotions's song
-// lines use sg1-sg6 ids, reusing lesson2's exact lyrics but as a fresh
-// block with the topic system's usual naming.
+// Frère Jacques / Bruder Jakob tune, keyed sg1-sg6 (matching the
+// topic-system's line-id convention) — used by topic-a1-01-family and
+// topic-a1-04-emotions's song lines.
 const BRUDER_JAKOB_SG: SongMelody = {
   bpm: 108,
   lines: {
@@ -218,11 +193,9 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   "topic-a2-05-hobbies-ja-song": ROW_ROW_ROW_YOUR_BOAT,
   "topic-a1-16-traffic-ja-song": ROW_ROW_ROW_YOUR_BOAT,
 
-  // Frère Jacques / Bruder Jakob — lesson2.ts's own block keeps its
-  // original r1-r6 line ids; Topic 1 (Family, its documented home) and
-  // Topic 4 (Emotions, an open slot filled with a repeat) use the
-  // sg1-sg6-keyed version of the exact same tune.
-  "l2-readalong-bruderjakob": BRUDER_JAKOB,
+  // Frère Jacques / Bruder Jakob — Topic 1 (Family, its documented
+  // home) and Topic 4 (Emotions, an open slot filled with a repeat)
+  // use the sg1-sg6-keyed version of the tune.
   "topic-a1-01-family-ja-song": BRUDER_JAKOB_SG,
   "topic-a1-01-family-de-song": BRUDER_JAKOB_SG,
   "topic-a1-01-family-de-zh-song": BRUDER_JAKOB_SG, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
@@ -231,8 +204,6 @@ export const SONG_MELODIES: Record<string, SongMelody> = {
   "topic-a1-04-emotions-de-song": BRUDER_JAKOB_SG,
   "topic-a1-04-emotions-de-zh-song": BRUDER_JAKOB_SG, // same tune, de-zh pair (see engine/buildLesson.ts idSuffix)
 
-  // Alle meine Entchen (lesson2.ts) — not currently repeated elsewhere.
-  "l2-readalong-entchen": ALLE_MEINE_ENTCHEN,
 
   // London Bridge Is Falling Down — Topic 12 (Directions, original
   // home), repeated onto Topic 17 (Work, an open slot).

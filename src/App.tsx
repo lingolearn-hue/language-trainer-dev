@@ -4,7 +4,6 @@ import { Session } from "./components/Session";
 import { TrainerSelect } from "./components/TrainerSelect";
 import { LipSyncTestPage } from "./components/LipSyncTestPage";
 import { LessonSelect } from "./components/LessonSelect";
-import { lesson2 } from "./data/lesson2";
 import { lesson11 } from "./data/lesson11";
 import { lessonEnglishSpace } from "./data/lessonEnglishSpace";
 import { topicFamily } from "./data/topics/topic-a1-01-family";
@@ -144,7 +143,6 @@ const generatedJapaneseB1Lessons = B1_TOPICS
   .filter((l): l is LessonPlan => l !== null);
 
 const allLessons: LessonPlan[] = [
-  lesson2,
   lesson11,
   lessonEnglishSpace,
   ...generatedJapaneseLessons,

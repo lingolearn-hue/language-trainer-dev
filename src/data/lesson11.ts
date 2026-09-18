@@ -10,9 +10,8 @@ import type { LessonPlan, Block } from "../types";
 // Same 9-block shape as the built Japanese lessons: title -> agenda ->
 // warm-up -> vocab -> grammar -> dialogue A -> dialogue B -> pronunciation
 // -> song. This is the first German lesson built directly from the
-// master table (Lesson 2 predates it) — uses that same unified shape
-// rather than lesson2's older 3-separate-grammar-block structure, for
-// consistency with every lesson built since.
+// master table, using that unified shape for consistency with every
+// lesson built since.
 //
 // Grammar: wo (location, dative) vs wohin (direction, accusative) with
 // two-way prepositions (in, auf, an, zu, nach) — the actual German

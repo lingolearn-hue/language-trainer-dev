@@ -173,7 +173,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   padding: 16px 24px 10px; border-bottom: 1px solid #e2e2e8; margin: 0;
 }
 .slide-content {
-  flex: 1; padding: 14px 24px;
+  flex: 1; min-width: 0; padding: 14px 24px;
   display: flex; flex-direction: column; justify-content: flex-start;
   font-size: 17px;
 }
@@ -224,6 +224,25 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
      reason. Side by side instead. */
   .session-layout .right-rail .lesson-avatars {
     flex-direction: row;
+  }
+
+  /* .slide-frame (below) is a fixed 960x600 landscape box by design for
+     wide/"computer" viewports — .slide-fit-container centers it and
+     clips overflow, which is fine when the viewport is wider than
+     960px, but on a phone-width portrait viewport the fixed box simply
+     doesn't fit and gets center-cropped, clipping both edges of every
+     slide's content (this was the actual root cause of "garbled" phone
+     screens — text appeared to start mid-sentence because the left
+     portion of the 960px-wide frame was cropped off, not because of a
+     text-wrapping bug inside it, though .lines/.line's own portrait
+     stacking fix elsewhere is still needed for content to read well
+     once the frame itself is properly sized). Drop the fixed landscape
+     dimensions here and let the frame fill the available portrait
+     space instead. */
+  .slide-frame {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 1;
   }
 }
 
@@ -336,6 +355,12 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .paired-source {
   display: block; font-weight: 400; opacity: 0.6; font-size: 0.8em; margin-top: 0.1em;
 }
+/* Trailing "(...)" disambiguation on a vocab source gloss — e.g. "father
+   (other's / addressing)" for Japanese kinship terms, where own-family vs
+   other's-family and reference vs address genuinely pick a different word.
+   Kept legible but visually secondary so it doesn't compete with the main
+   gloss or blow out row height — see VocabDrillBlock.tsx's VocabText. */
+.vocab-note { opacity: 0.65; font-size: 0.85em; }
 
 /* Self-intro slide (e.g. Lesson 2's "Selbstvorstellung") — two independent
    columns side by side: fixed self-intro template on the left (readalong,
@@ -382,6 +407,7 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   column-gap: 6px;
   row-gap: 4px;
   overflow-y: auto;
+  min-width: 0;
   align-items: baseline;
   font-size: var(--dialogue-font-size, 26px);
 }
@@ -394,6 +420,9 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
   line-height: 1.25;
   opacity: 0.55;
   text-align: left;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .line .target { font-size: 1em; }
 .line .source { font-size: 1em; }
@@ -405,6 +434,43 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #e8e8ec; color
 .line.active .target,
 .line.active .source { opacity: 1; background: #dde6ff; }
 .line.active .speaker { opacity: 0.85; }
+
+/* Placed right after the base .lines/.line rules above (not inside the
+   earlier @media (orientation: portrait) block with the session-layout
+   rules) — a media query adds no specificity of its own, so an
+   unconditional rule appearing LATER in the file still wins a
+   same-specificity tie over an earlier conditional one regardless of
+   whether the query matches. This has to come after line 411 above to
+   actually take effect.
+   The speaker|target|source layout relies on .line's display:contents
+   trick (see the base .line rule above) to align every line's cells
+   into shared grid columns — reads well wide, but grid-template-
+   columns' 1fr 1fr squeezes target/source into unreadably narrow
+   strips on a phone-width portrait viewport, overflowing badly rather
+   than wrapping (this is what was actually making dialogue/intro/song
+   slides "garbled" on phone, not a general phone-vs-computer style
+   issue). Portrait switches to one stacked column instead: .line
+   becomes a real flex container again (undoing display:contents) so
+   speaker/target/source stack top-to-bottom within each line at full
+   available width, and lines flow one after another down the page
+   instead of into fixed columns. */
+@media (orientation: portrait) {
+  .lines {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+  }
+  .line {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .line .speaker { text-align: left; }
+}
+
 .self-check-btn {
   background: transparent; border: none; cursor: pointer; font-size: 0.85em;
   margin-left: 0.4em; padding: 0 3px; vertical-align: middle;

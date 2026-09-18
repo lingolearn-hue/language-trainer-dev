@@ -6,6 +6,29 @@ import { Slide } from "./Slide";
 import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
 import { resolveDisplayText } from "../engine/scriptDisplay";
 
+// Splits off a trailing parenthetical note — e.g. "father (other's /
+// addressing)" or the full-width-paren equivalent "爸爸（他人／称呼）" —
+// and renders it in a smaller, lighter span so a genuinely useful but
+// long disambiguation (Japanese kinship terms need this: 父 vs お父さん
+// depend on whose father and whether you're addressing them directly)
+// doesn't compete with the main word for visual weight or blow out the
+// row height. Matches at most one trailing "(...)"/"（...）"; anything
+// without one renders unchanged. Not applied to the target-language
+// cell — target words in this app's data don't carry this kind of
+// gloss, only source-language translations do.
+const TRAILING_NOTE = /^(.*?)\s*([（(][^）)]*[）)])\s*$/;
+function VocabText({ text }: { text: string | undefined }) {
+  if (!text) return null;
+  const m = TRAILING_NOTE.exec(text);
+  if (!m) return <>{text}</>;
+  return (
+    <>
+      {m[1]}
+      <span className="vocab-note"> {m[2]}</span>
+    </>
+  );
+}
+
 const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string; ja: string }> = {
   noun: { de: "Nomen", en: "Nouns", zh: "名词", ja: "名詞" },
   verb: { de: "Verben", en: "Verbs", zh: "动词", ja: "動詞" },
@@ -292,7 +315,7 @@ export function VocabDrillBlock({
                           {resolveDisplayText(item.translations, lang.targetLang, showAlt)}
                           {item.tag && <span className="vocab-tag">{item.tag}</span>}
                         </td>
-                        <td className="source">{resolveDisplayText(item.translations, lang.sourceLang, showAlt)}</td>
+                        <td className="source"><VocabText text={resolveDisplayText(item.translations, lang.sourceLang, showAlt)} /></td>
                       </tr>
                     ))}
                   </tbody>
@@ -329,7 +352,7 @@ export function VocabDrillBlock({
                             <>
                               {resolveDisplayText(l.translations, lang.targetLang, showAlt)}
                               {l.tag && <span className="vocab-tag">{l.tag}</span>}
-                              <span className="paired-source">{resolveDisplayText(l.translations, lang.sourceLang, showAlt)}</span>
+                              <span className="paired-source"><VocabText text={resolveDisplayText(l.translations, lang.sourceLang, showAlt)} /></span>
                             </>
                           )}
                         </td>
@@ -338,7 +361,7 @@ export function VocabDrillBlock({
                             <>
                               {resolveDisplayText(r.translations, lang.targetLang, showAlt)}
                               {r.tag && <span className="vocab-tag">{r.tag}</span>}
-                              <span className="paired-source">{resolveDisplayText(r.translations, lang.sourceLang, showAlt)}</span>
+                              <span className="paired-source"><VocabText text={resolveDisplayText(r.translations, lang.sourceLang, showAlt)} /></span>
                             </>
                           )}
                         </td>

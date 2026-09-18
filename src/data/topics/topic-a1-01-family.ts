@@ -31,9 +31,9 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おとうさん",
-        zh: "爸爸（他人的／称呼自己的）",
-        de: "Vater (fremder / eigener, in Anrede)",
-        en: "father (someone else's / addressing your own)",
+        zh: "爸爸（他人／称呼）",
+        de: "Vater (fremd / Anrede)",
+        en: "father (other's / addressing)",
         fr: "papa (de quelqu'un d'autre / pour s'adresser au sien)"
       }
     },
@@ -42,9 +42,9 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おかあさん",
-        zh: "妈妈（他人的／称呼自己的）",
-        de: "Mutter (fremde / eigene, in Anrede)",
-        en: "mother (someone else's / addressing your own)",
+        zh: "妈妈（他人／称呼）",
+        de: "Mutter (fremd / Anrede)",
+        en: "mother (other's / addressing)",
         fr: "maman (de quelqu'un d'autre / pour s'adresser à la sienne)"
       }
     },
@@ -53,9 +53,9 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おにいさん",
-        zh: "哥哥（他人的／称呼自己的）",
-        de: "älterer Bruder (fremder / eigener, in Anrede)",
-        en: "older brother (someone else's / addressing your own)",
+        zh: "哥哥（他人／称呼）",
+        de: "älterer Bruder (fremd / Anrede)",
+        en: "older brother (other's / addressing)",
         fr: "grand frère (de quelqu'un d'autre / pour s'adresser au sien)"
       }
     },
@@ -64,9 +64,9 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おねえさん",
-        zh: "姐姐（他人的／称呼自己的）",
-        de: "ältere Schwester (fremde / eigene, in Anrede)",
-        en: "older sister (someone else's / addressing your own)",
+        zh: "姐姐（他人／称呼）",
+        de: "ältere Schwester (fremd / Anrede)",
+        en: "older sister (other's / addressing)",
         fr: "grande sœur (de quelqu'un d'autre / pour s'adresser à la sienne)"
       }
     },
@@ -350,9 +350,9 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "ちち",
-        zh: "爸爸（自己的，对外人说时用）",
+        zh: "爸爸（自己的）",
         de: "Vater (eigener)",
-        en: "father (own, used when talking about your own to others)",
+        en: "father (own)",
         fr: "père (le sien, en parlant à d'autres)"
       }
     },
@@ -361,9 +361,9 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "はは",
-        zh: "妈妈（自己的，对外人说时用）",
+        zh: "妈妈（自己的）",
         de: "Mutter (eigene)",
-        en: "mother (own, used when talking about your own to others)",
+        en: "mother (own)",
         fr: "mère (la sienne, en parlant à d'autres)"
       }
     },
@@ -826,9 +826,8 @@ export const topicFamily: TopicLesson = {
   },
   song: {
     // Per docs/a1-master-lesson-table-v05.md's assignment for row 1.
-    // de/en/zh lyrics reused verbatim from lesson2.ts's own Bruder Jakob
-    // block (readalongBruderJakobBlock) — same song, not retranslated.
-    // ja is new (lesson2 has no ja).
+    // de/en/zh lyrics are the traditional Bruder Jakob translation,
+    // reused verbatim (not retranslated); ja is this topic's own.
     title: { ja: "フレール・ジャックさん", en: "Brother John", de: "Bruder Jakob", zh: "雅各弟兄", fr: "Frère Jacques" },
     lines: [
       { id: "sg1", translations: { ja: "ねえ ジャックさん、ねえ ジャックさん", en: "Brother John, Brother John,", de: "Bruder Jakob, Bruder Jakob,", zh: "雅各弟兄，雅各弟兄，", fr: "Frère Jacques, Frère Jacques," } },

@@ -2,8 +2,9 @@ import type { LessonPlan, Block } from "../types";
 
 // New original lesson (not sourced from any Deutsch_N.pdf) — English for
 // advanced learners (~C1), space-travel theme. Same structure/pacing rules
-// as lesson2.ts: title -> agenda -> self-intro -> vocab -> grammar(s) ->
-// dialogue -> pronunciation -> song (song always closes the lesson).
+// as every hand-authored lesson in this style: title -> agenda ->
+// self-intro -> vocab -> grammar(s) -> dialogue -> pronunciation -> song
+// (song always closes the lesson).
 // courseId: "english-advanced-c1" — see data/trainers.ts for which
 // trainers can teach it (any trainer with target language "en").
 
