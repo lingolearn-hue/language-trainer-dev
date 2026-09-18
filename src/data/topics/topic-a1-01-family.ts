@@ -31,10 +31,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おとうさん",
-        zh: "爸爸（他人／称呼）",
-        de: "Vater (fremd / Anrede)",
-        en: "father (other's / addressing)",
-        fr: "papa (de quelqu'un d'autre / pour s'adresser au sien)"
+        zh: "爸爸",
+        de: "Vater",
+        en: "father",
+        fr: "papa"
       }
     },
     {
@@ -42,10 +42,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おかあさん",
-        zh: "妈妈（他人／称呼）",
-        de: "Mutter (fremd / Anrede)",
-        en: "mother (other's / addressing)",
-        fr: "maman (de quelqu'un d'autre / pour s'adresser à la sienne)"
+        zh: "妈妈",
+        de: "Mutter",
+        en: "mother",
+        fr: "maman"
       }
     },
     {
@@ -53,10 +53,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おにいさん",
-        zh: "哥哥（他人／称呼）",
-        de: "älterer Bruder (fremd / Anrede)",
-        en: "older brother (other's / addressing)",
-        fr: "grand frère (de quelqu'un d'autre / pour s'adresser au sien)"
+        zh: "哥哥",
+        de: "älterer Bruder",
+        en: "older brother",
+        fr: "grand frère"
       }
     },
     {
@@ -64,10 +64,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おねえさん",
-        zh: "姐姐（他人／称呼）",
-        de: "ältere Schwester (fremd / Anrede)",
-        en: "older sister (other's / addressing)",
-        fr: "grande sœur (de quelqu'un d'autre / pour s'adresser à la sienne)"
+        zh: "姐姐",
+        de: "ältere Schwester",
+        en: "older sister",
+        fr: "grande sœur"
       }
     },
     {
@@ -75,10 +75,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おとうと",
-        zh: "弟弟（自己的）",
-        de: "jüngerer Bruder (eigener)",
-        en: "younger brother (own)",
-        fr: "petit frère (le sien)"
+        zh: "弟弟",
+        de: "jüngerer Bruder",
+        en: "younger brother",
+        fr: "petit frère"
       }
     },
     {
@@ -86,10 +86,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "いもうと",
-        zh: "妹妹（自己的）",
-        de: "jüngere Schwester (eigene)",
-        en: "younger sister (own)",
-        fr: "petite sœur (la sienne)"
+        zh: "妹妹",
+        de: "jüngere Schwester",
+        en: "younger sister",
+        fr: "petite sœur"
       }
     },
     {
@@ -97,10 +97,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "そふ",
-        zh: "爷爷（自己的）",
-        de: "Großvater (eigener)",
-        en: "grandfather (own)",
-        fr: "grand-père (le sien)"
+        zh: "爷爷",
+        de: "Großvater",
+        en: "grandfather",
+        fr: "grand-père"
       }
     },
     {
@@ -108,10 +108,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "そぼ",
-        zh: "奶奶（自己的）",
-        de: "Großmutter (eigene)",
-        en: "grandmother (own)",
-        fr: "grand-mère (la sienne)"
+        zh: "奶奶",
+        de: "Großmutter",
+        en: "grandmother",
+        fr: "grand-mère"
       }
     },
     {
@@ -141,10 +141,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "おっと",
-        zh: "丈夫（自己的）",
-        de: "Ehemann (eigener)",
-        en: "husband (own)",
-        fr: "mari (le sien)"
+        zh: "丈夫",
+        de: "Ehemann",
+        en: "husband",
+        fr: "mari"
       }
     },
     {
@@ -152,10 +152,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "つま",
-        zh: "妻子（自己的）",
-        de: "Ehefrau (eigene)",
-        en: "wife (own)",
-        fr: "femme, épouse (la sienne)"
+        zh: "妻子",
+        de: "Ehefrau",
+        en: "wife",
+        fr: "femme, épouse"
       }
     },
     {
@@ -350,10 +350,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "ちち",
-        zh: "爸爸（自己的）",
-        de: "Vater (eigener)",
-        en: "father (own)",
-        fr: "père (le sien, en parlant à d'autres)"
+        zh: "爸爸",
+        de: "Vater",
+        en: "father",
+        fr: "père"
       }
     },
     {
@@ -361,10 +361,10 @@ export const topicFamily: TopicLesson = {
       category: "noun",
       translations: {
         ja: "はは",
-        zh: "妈妈（自己的）",
-        de: "Mutter (eigene)",
-        en: "mother (own)",
-        fr: "mère (la sienne, en parlant à d'autres)"
+        zh: "妈妈",
+        de: "Mutter",
+        en: "mother",
+        fr: "mère"
       }
     },
     {
@@ -917,10 +917,10 @@ export const topicFamily: TopicLesson = {
         zh: "sein／haben"
       },
       explanation: {
-        de: "sein (\"to be\") wird benutzt, um jemanden oder etwas zu beschreiben oder zu identifizieren: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind. haben (\"to have\") drückt Besitz aus und funktioniert für Menschen, Tiere und Dinge gleichermaßen — anders als im Japanischen, wo います (belebt) und あります (unbelebt) getrennt sind, gibt es im Deutschen nur ein einziges Verb: ich habe, du hast, er/sie/es hat.",
-        en: "sein (\"to be\") is used to describe or identify someone or something: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind. haben (\"to have\") expresses possession and works the same way for people, animals, and things — unlike Japanese, which splits います (animate) and あります (inanimate), German has just one verb: ich habe, du hast, er/sie/es hat.",
-        ja: "sein（〜だ）は、だれか・なにかを せつめいしたり とくていしたり する ときに つかいます：ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind。haben（もっている）は しょゆうを あらわし、ひとにも どうぶつにも ものにも おなじように つかいます — にほんごの います（せいぶつ）と あります（むせいぶつ）の くべつは ドイツごには なく、どうし ひとつだけです：ich habe, du hast, er/sie/es hat。",
-        zh: "sein（是）用于描述或说明某人或某物：ich bin，du bist，er/sie/es ist，wir sind，ihr seid，sie sind。haben（有）表示拥有，对人、动物和物品都一样使用——不像日语区分います（有生命）和あります（无生命），德语只有一个动词：ich habe，du hast，er/sie/es hat。"
+        de: "sein (\"to be\") wird benutzt, um jemanden oder etwas zu beschreiben oder zu identifizieren: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind. haben (\"to have\") drückt Besitz aus und funktioniert für Menschen, Tiere und Dinge gleichermaßen — im Deutschen gibt es dafür nur ein einziges Verb: ich habe, du hast, er/sie/es hat.",
+        en: "sein (\"to be\") is used to describe or identify someone or something: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind. haben (\"to have\") expresses possession and works the same way for people, animals, and things — German has just one verb: ich habe, du hast, er/sie/es hat.",
+        ja: "sein（〜だ）は、だれか・なにかを せつめいしたり とくていしたり する ときに つかいます：ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind。haben（もっている）は しょゆうを あらわし、ひとにも どうぶつにも ものにも おなじように つかいます — ドイツごには どうし ひとつだけです：ich habe, du hast, er/sie/es hat。",
+        zh: "sein（是）用于描述或说明某人或某物：ich bin，du bist，er/sie/es ist，wir sind，ihr seid，sie sind。haben（有）表示拥有，对人、动物和物品都一样使用，德语只有一个动词：ich habe，du hast，er/sie/es hat。"
       },
       chunks: [
         {

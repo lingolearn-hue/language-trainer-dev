@@ -793,10 +793,10 @@ export const topicShopping: TopicLesson = {
         zh: "数字与数量"
       },
       explanation: {
-        de: "Die Grundzahlen 1-12 sind: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf. Sie stehen direkt vor dem gezählten Nomen, ohne Zählwort wie im Japanischen. Mengenwörter wie viel(e) (\"much/many\") und wenig(e) (\"little/few\") stehen ebenfalls vor dem Nomen — bei zählbaren Nomen im Plural bekommen sie ein -e: viele Äpfel, wenige Äpfel.",
-        en: "Cardinal numbers 1-12 are: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf. They go directly before the counted noun, with no counter word like in Japanese. Quantity words like viel(e) (\"much/many\") and wenig(e) (\"little/few\") also go before the noun — with countable plural nouns they take an -e: viele Äpfel, wenige Äpfel.",
-        ja: "きすうし 1〜12は：eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf です。にほんごの じょすうしと ちがい、かぞえる めいしの まえに ちょくせつ おきます。viel(e)（おおい）や wenig(e)（すくない）のような りょうを あらわす ことばも めいしの まえに おきます — ふくすうの かぞえられる めいしには -e が つきます：viele Äpfel、wenige Äpfel。",
-        zh: "基数1-12是：eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf。它们直接放在所数的名词前，不像日语那样需要量词。像viel(e)（多）和wenig(e)（少）这样的数量词也放在名词前——用于可数复数名词时会加词尾-e：viele Äpfel（很多苹果）、wenige Äpfel（很少苹果）。"
+        de: "Die Grundzahlen 1-12 sind: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf. Sie stehen direkt vor dem gezählten Nomen, ohne Zählwort. Mengenwörter wie viel(e) (\"much/many\") und wenig(e) (\"little/few\") stehen ebenfalls vor dem Nomen — bei zählbaren Nomen im Plural bekommen sie ein -e: viele Äpfel, wenige Äpfel.",
+        en: "Cardinal numbers 1-12 are: eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf. They go directly before the counted noun, with no counter word needed. Quantity words like viel(e) (\"much/many\") and wenig(e) (\"little/few\") also go before the noun — with countable plural nouns they take an -e: viele Äpfel, wenige Äpfel.",
+        ja: "きすうし 1〜12は：eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf です。かぞえる めいしの まえに ちょくせつ おきます。じょすうしは ひつよう ありません。viel(e)（おおい）や wenig(e)（すくない）のような りょうを あらわす ことばも めいしの まえに おきます — ふくすうの かぞえられる めいしには -e が つきます：viele Äpfel、wenige Äpfel。",
+        zh: "基数1-12是：eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf。它们直接放在所数的名词前，不需要量词。像viel(e)（多）和wenig(e)（少）这样的数量词也放在名词前——用于可数复数名词时会加词尾-e：viele Äpfel（很多苹果）、wenige Äpfel（很少苹果）。"
       },
       chunks: [
         {

@@ -887,10 +887,10 @@ export const topicBody: TopicLesson = {
         zh: "人称代词"
       },
       explanation: {
-        de: "Die deutschen Personalpronomen sind: ich, du, er/sie/es, wir, ihr, sie (Plural) und Sie (höflich). Anders als im Japanischen kann das Pronomen im Deutschen nie weggelassen werden — jeder Satz braucht ein Subjekt — und das Verb ändert seine Endung je nach Pronomen (ich habe, du hast, er/sie/es hat).",
-        en: "German personal pronouns are: ich, du, er/sie/es, wir, ihr, sie (plural), and Sie (polite). Unlike Japanese, the pronoun can never be dropped in German — every sentence needs a subject — and the verb ending changes depending on the pronoun (ich habe, du hast, er/sie/es hat).",
-        ja: "ドイツごの にんしょうだいめいしは：ich（わたし）、du（きみ）、er/sie/es（かれ／かのじょ／それ）、wir（わたしたち）、ihr（きみたち）、sie（かれら）、Sie（ていねいな あなた）です。にほんごと ちがい、ドイツごでは だいめいしを はぶく ことは できません — すべての ぶんに しゅごが ひつようです。どうしの ごびも だいめいしに よって かわります（ich habe, du hast, er/sie/es hat）。",
-        zh: "德语的人称代词有：ich（我）、du（你）、er/sie/es（他/她/它）、wir（我们）、ihr（你们）、sie（他们）、Sie（您，礼貌形式）。与日语不同，德语中代词绝不能省略——每个句子都需要主语——而且动词词尾会随代词变化（ich habe，du hast，er/sie/es hat）。"
+        de: "Die deutschen Personalpronomen sind: ich, du, er/sie/es, wir, ihr, sie (Plural) und Sie (höflich). Das Pronomen kann im Deutschen nie weggelassen werden — jeder Satz braucht ein Subjekt — und das Verb ändert seine Endung je nach Pronomen (ich habe, du hast, er/sie/es hat).",
+        en: "German personal pronouns are: ich, du, er/sie/es, wir, ihr, sie (plural), and Sie (polite). The pronoun can never be dropped in German — every sentence needs a subject — and the verb ending changes depending on the pronoun (ich habe, du hast, er/sie/es hat).",
+        ja: "ドイツごの にんしょうだいめいしは：ich（わたし）、du（きみ）、er/sie/es（かれ／かのじょ／それ）、wir（わたしたち）、ihr（きみたち）、sie（かれら）、Sie（ていねいな あなた）です。ドイツごでは だいめいしを はぶく ことは できません — すべての ぶんに しゅごが ひつようです。どうしの ごびも だいめいしに よって かわります（ich habe, du hast, er/sie/es hat）。",
+        zh: "德语的人称代词有：ich（我）、du（你）、er/sie/es（他/她/它）、wir（我们）、ihr（你们）、sie（他们）、Sie（您，礼貌形式）。德语中代词绝不能省略——每个句子都需要主语——而且动词词尾会随代词变化（ich habe，du hast，er/sie/es hat）。"
       },
       chunks: [
         {
