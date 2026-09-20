@@ -1,4 +1,5 @@
-import type { Block, LessonPlan, VocabDrillContent, VocabItem, ReadalongContent, GrammarContent } from "../types";
+import type { Block, LessonPlan, VocabDrillContent, VocabItem, ReadalongContent, GrammarContent, Translations } from "../types";
+import { DEFAULT_CATEGORY_LABEL } from "../components/VocabDrillBlock";
 
 // "Phone" teaching style: vocab/pronunciation slides with multiple
 // columns get split so each column (or each declared paired-comparison
@@ -20,6 +21,68 @@ import type { Block, LessonPlan, VocabDrillContent, VocabItem, ReadalongContent,
 // not on every render — so lesson.blocks staying a plain array (not
 // re-computed reactively) is intentional, not an oversight.
 const FONT_SCALE = 1.3;
+
+// A category with more items than this still ends up on one slide
+// today — VocabDrillBlock.tsx's own MAX_ROWS_PER_COLUMN=16 splits it
+// into "Label 1"/"Label 2" sub-COLUMNS, but .vocab-groups lays every
+// column out in a row regardless of that split, so on a narrow phone
+// screen "Nouns 1" and "Nouns 2" still render squeezed side by side on
+// the same slide rather than as separate pages — not what "only one
+// column per slide, ~15 words" (the actual per-topic request this is
+// solving) means on a phone. Chunking here, before groupKeysForPhone
+// even runs, makes each chunk its own distinct category key, so it
+// naturally becomes its own slide instead of a same-slide column.
+const MAX_ITEMS_PER_SLIDE = 15;
+
+// Splits any category over MAX_ITEMS_PER_SLIDE into several same-sized
+// chunks, each given a synthetic category key ("noun#0", "noun#1", ...)
+// and a matching numbered label ("Nouns 1", "Nouns 2", ...) so it reads
+// the same way VocabDrillBlock.tsx's own internal splitting already
+// labels things. Categories that are part of a declared pairedColumns
+// comparison are left alone — those exist specifically to stay
+// side-by-side for a row-by-row comparison, and are usually short
+// enough (curated phonetic pairs, not a full vocab list) not to need
+// this anyway.
+function chunkLargeCategories(content: VocabDrillContent): VocabDrillContent {
+  const byCategory = new Map<string, VocabItem[]>();
+  const order: string[] = [];
+  for (const item of content.items) {
+    const key = item.category ?? "other";
+    if (!byCategory.has(key)) {
+      byCategory.set(key, []);
+      order.push(key);
+    }
+    byCategory.get(key)!.push(item);
+  }
+  const pairedKeys = new Set(content.pairedColumns?.flat() ?? []);
+  const newItems: VocabItem[] = [];
+  const newGroupLabels: Record<string, Translations> = { ...content.groupLabels };
+
+  for (const key of order) {
+    const items = byCategory.get(key)!;
+    if (items.length <= MAX_ITEMS_PER_SLIDE || pairedKeys.has(key)) {
+      newItems.push(...items);
+      continue;
+    }
+    const baseLabel: Translations | undefined = content.groupLabels?.[key] ?? DEFAULT_CATEGORY_LABEL[key];
+    const chunkCount = Math.ceil(items.length / MAX_ITEMS_PER_SLIDE);
+    for (let i = 0; i < chunkCount; i++) {
+      const chunkKey = `${key}#${i}`;
+      const chunkItems = items
+        .slice(i * MAX_ITEMS_PER_SLIDE, (i + 1) * MAX_ITEMS_PER_SLIDE)
+        .map((it) => ({ ...it, category: chunkKey }));
+      newItems.push(...chunkItems);
+      if (baseLabel) {
+        const numbered: Translations = {};
+        for (const [lang, text] of Object.entries(baseLabel)) {
+          if (typeof text === "string") numbered[lang as keyof Translations] = `${text} ${i + 1}`;
+        }
+        newGroupLabels[chunkKey] = numbered;
+      }
+    }
+  }
+  return { ...content, items: newItems, groupLabels: newGroupLabels };
+}
 
 function splitArray<T>(arr: T[], parts: number): T[][] {
   if (arr.length === 0) return [];
@@ -62,7 +125,8 @@ function groupKeysForPhone(content: VocabDrillContent): string[][] {
 
 function splitBlock(block: Block): Block[] {
   if (block.type === "vocabDrill") {
-    const content = block.content as VocabDrillContent;
+    const rawContent = block.content as VocabDrillContent;
+    const content = chunkLargeCategories(rawContent);
     const groups = groupKeysForPhone(content);
     if (groups.length <= 1) return [block]; // nothing to split — single category already fits one slide
     return groups.map((keys, i) => {

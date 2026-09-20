@@ -29,7 +29,7 @@ function VocabText({ text }: { text: string | undefined }) {
   );
 }
 
-const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string; ja: string }> = {
+export const DEFAULT_CATEGORY_LABEL: Record<string, { de: string; en: string; zh: string; ja: string }> = {
   noun: { de: "Nomen", en: "Nouns", zh: "名词", ja: "名詞" },
   verb: { de: "Verben", en: "Verbs", zh: "动词", ja: "動詞" },
   adjective: { de: "Adjektive/Adverbien", en: "Adjectives/Adverbs", zh: "形容词/副词", ja: "形容詞・副詞" },
