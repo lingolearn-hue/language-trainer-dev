@@ -26,6 +26,7 @@ export function Slide({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
+  const [isPortrait, setIsPortrait] = useState(false);
   const controlsTarget = useSlideControlsTarget();
 
   useEffect(() => {
@@ -49,9 +50,10 @@ export function Slide({
       // width:100%/height:100% (see the portrait override in App.css)
       // fill the container directly — content sizes at its own normal
       // CSS px values rather than a proportionally-scaled fixed canvas.
-      const isPortrait = height > width;
-      const nextScale = isPortrait ? 1 : Math.min(width / BASE_WIDTH, height / BASE_HEIGHT);
+      const nextIsPortrait = height > width;
+      const nextScale = nextIsPortrait ? 1 : Math.min(width / BASE_WIDTH, height / BASE_HEIGHT);
       setScale(nextScale);
+      setIsPortrait(nextIsPortrait);
       // Reported for Session.tsx to position the caption/nav-footer
       // overlay exactly over the visible slide graphic, not the outer
       // (often larger, letterboxed) container — see engine/slideSize.ts.
@@ -60,11 +62,33 @@ export function Slide({
       // graphic" size IS the container's own measured size, not a
       // BASE_WIDTH/BASE_HEIGHT-derived figure (which would wrongly
       // report 960x600 now that nextScale is locked to 1 there).
-      reportSlideSize(isPortrait ? width : BASE_WIDTH * nextScale, isPortrait ? height : BASE_HEIGHT * nextScale);
+      reportSlideSize(nextIsPortrait ? width : BASE_WIDTH * nextScale, nextIsPortrait ? height : BASE_HEIGHT * nextScale);
     });
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // fontScale (phone-style split slides, see phoneStyle.ts) is an
+  // *additional* content-only zoom on top of whatever .slide-frame's own
+  // scale is doing — meant to make phone-style's already-large-relative
+  // text look a bit bigger still. In landscape that's harmless: the
+  // whole frame (including .slide-title, a sibling of .slide-content)
+  // is being proportionally scaled together by the fit-to-screen system
+  // above, so an extra content-only bump just makes text modestly
+  // larger within its own box. In portrait it's actively broken: scale
+  // is locked to 1 there (nothing else is shrinking the frame down for
+  // this to compensate for), .slide-title sits OUTSIDE .slide-content
+  // as a sibling and is unaffected by this transform, and
+  // transformOrigin "center center" grows the content box in every
+  // direction from its middle — so a 1.3x zoom on content that already
+  // fills its container pushes it up and out, overlapping the title
+  // above it (this was the actual cause of "the noun/verb headline
+  // clips the title" on phone-style portrait vocab slides — nothing to
+  // do with the vocab-group-label's own CSS). Portrait's own font-size
+  // logic (ReadalongBlock.tsx/VocabDrillBlock.tsx's isPortrait-aware
+  // budget) already sizes text appropriately without this, so just
+  // skip it there.
+  const applyFontScale = fontScale && fontScale !== 1 && !isPortrait;
 
   return (
     <div className="slide-fit-container" ref={containerRef}>
@@ -75,7 +99,7 @@ export function Slide({
         {title && <h2 className="slide-title">{title}</h2>}
         <div
           className="slide-content"
-          style={fontScale && fontScale !== 1 ? { transform: `scale(${fontScale})`, transformOrigin: "center center" } : undefined}
+          style={applyFontScale ? { transform: `scale(${fontScale})`, transformOrigin: "center center" } : undefined}
         >
           {children}
         </div>

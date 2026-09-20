@@ -245,7 +245,7 @@ export function ReadalongBlock({
   // line counts.
   const isPortrait = typeof window !== "undefined" && window.matchMedia("(orientation: portrait)").matches;
   const rowBudgetPx = (isPortrait ? 150 : 430) / (totalVisualRows + 1);
-  const dialogueFontPx = Math.max(13, Math.min(isPortrait ? 19 : 29, rowBudgetPx / 1.125)); // ~20% larger than the previous 11–24px range (divisor and bounds both scaled)
+  const dialogueFontPx = Math.max(isPortrait ? 11 : 13, Math.min(isPortrait ? 16 : 29, rowBudgetPx / 1.125)); // portrait matches VocabDrillBlock.tsx's cap/floor (11-16px) — see its comment on why splitting into smaller phone-style chunks pushes each chunk's own row-budget calc toward the ceiling more easily than the original unsplit block did
 
   return (
     <Slide

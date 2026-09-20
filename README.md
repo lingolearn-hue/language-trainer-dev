@@ -1,6 +1,6 @@
 # Language Trainer
 
-Version: 115 — 2026-09-18
+Version: 116 — 2026-09-20
 
 React-based long-form language tutor simulation (45-90 min sessions).
 Static content, multiple trainer personas, block-based session engine

@@ -71,11 +71,18 @@ function splitBlock(block: Block): Block[] {
         ...block,
         id: `${block.id}-phone${i + 1}`,
         fontScale: FONT_SCALE,
+        // Only the first fragment keeps spokenIntro — it's a one-time
+        // "let's look at vocabulary" transition, not per-category
+        // content; repeating it before every split-off category would
+        // mean it gets read again and again as the learner pages
+        // through what was originally one slide.
+        spokenIntro: i === 0 ? block.spokenIntro : undefined,
         content: { items, groupLabels: content.groupLabels, pairedColumns: content.pairedColumns },
       };
     });
   }
   if (block.type === "readalong") {
+    if (block.singlePass) return [block]; // intro (currently the only singlePass block) is a short welcome message meant to be seen as one continuous pass, not fragmented into several 2-line slides each needing its own "Continue" click — the comment above already said intro isn't split, but nothing actually enforced that until now
     const content = block.content as ReadalongContent;
     const chunks = splitArray(content.lines, 3);
     if (chunks.length <= 1) return [block];
@@ -83,22 +90,44 @@ function splitBlock(block: Block): Block[] {
       ...block,
       id: `${block.id}-phone${i + 1}`,
       fontScale: FONT_SCALE,
+      spokenIntro: i === 0 ? block.spokenIntro : undefined, // same reasoning as the vocabDrill case above — one-time transition, not per-fragment content
       content: { lines },
     }));
   }
   if (block.type === "grammar") {
     const content = block.content as GrammarContent;
-    const chunks = splitArray(content.chunks, 3);
-    if (chunks.length <= 1) return [block];
-    return chunks.map((chunkGroup, i) => ({
-      ...block,
-      id: `${block.id}-phone${i + 1}`,
-      fontScale: FONT_SCALE,
-      // Only the first sub-block keeps the framing explanation text —
-      // repeating it on all 3 would be redundant since it's not
-      // per-example content, just a one-time lead-in.
-      content: { explanation: i === 0 ? content.explanation : {}, chunks: chunkGroup },
-    }));
+    const hasExplanation = content.explanation && Object.keys(content.explanation).length > 0;
+    const chunkGroups = splitArray(content.chunks, 3);
+    const result: Block[] = [];
+    // Explanation is prose meant to be read as its own thing before any
+    // examples — cramming it onto the same slide as the first 1-2
+    // examples (the old behavior) meant the explanation and the first
+    // example competed for the same cramped slide. A dedicated
+    // explanation-only slide first, then chunks-only slides after.
+    if (hasExplanation) {
+      result.push({
+        ...block,
+        id: `${block.id}-phone-explanation`,
+        fontScale: FONT_SCALE,
+        content: { explanation: content.explanation, chunks: [] },
+      });
+    }
+    chunkGroups.forEach((chunkGroup, i) => {
+      const isVeryFirstFragment = !hasExplanation && i === 0;
+      result.push({
+        ...block,
+        id: `${block.id}-phone${i + 1}`,
+        fontScale: FONT_SCALE,
+        // Same reasoning as the vocabDrill/readalong cases above — but
+        // here the "first fragment" is the dedicated explanation slide
+        // when there is one, so every chunk-group slide clears it,
+        // unless there was no explanation at all (isVeryFirstFragment).
+        spokenIntro: isVeryFirstFragment ? block.spokenIntro : undefined,
+        content: { explanation: {}, chunks: chunkGroup },
+      });
+    });
+    if (result.length <= 1) return [block]; // nothing gained from splitting
+    return result;
   }
   return [block]; // agenda, intro, selfIntro — not split
 }
