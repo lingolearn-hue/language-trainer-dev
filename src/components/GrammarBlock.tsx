@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Block, GrammarContent, LanguageSettings, DisplaySettings } from "../types";
 import type { Trainer } from "../data/trainers";
-import { speak, wait } from "../engine/speech";
+import { speak, wait, splitIntoSentences } from "../engine/speech";
 import { Slide } from "./Slide";
 import { useShowAlternateScript } from "../hooks/useShowAlternateScript";
 import { resolveDisplayText } from "../engine/scriptDisplay";
@@ -79,12 +79,28 @@ export function GrammarBlock({
     (async () => {
       // Explanation: target once, then source once — same per-sentence
       // pattern as the chunks below, not a separate full pass at the end.
+      // Split into individual sentences before speaking (matching
+      // TeacherCaption.tsx's spokenIntro pattern) rather than one long
+      // speak() call over the whole paragraph — besides sounding more
+      // natural with real pauses between sentences, it also means
+      // pre-generated audio (engine/audioHash.ts) can dedupe at the
+      // sentence level, where actual repetition happens; a full
+      // multi-sentence explanation paragraph essentially never repeats
+      // verbatim elsewhere, but individual sentences within it often do.
       const explanationTarget = content.explanation[lang.targetLang];
       const explanationSource = content.explanation[lang.sourceLang];
-      if (explanationTarget) await speak(explanationTarget, lang.targetLang, trainer.voiceProfile);
+      if (explanationTarget) {
+        for (const sentence of splitIntoSentences(explanationTarget)) {
+          if (cancelled) return;
+          await speak(sentence, lang.targetLang, trainer.voiceProfile);
+        }
+      }
       if (cancelled) return;
       if (explanationSource && explanationSource !== explanationTarget) {
-        await speak(explanationSource, lang.sourceLang, trainer.voiceProfile);
+        for (const sentence of splitIntoSentences(explanationSource)) {
+          if (cancelled) return;
+          await speak(sentence, lang.sourceLang, trainer.voiceProfile);
+        }
       }
       if (cancelled) return;
 
