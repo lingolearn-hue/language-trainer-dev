@@ -1,0 +1,32 @@
+{
+  "name": "LingoLearn",
+  "short_name": "LingoLearn",
+  "description": "Structured 1-on-1 language tutoring simulator — German, English, and Japanese.",
+  "start_url": "/language-trainer-dev/",
+  "scope": "/language-trainer-dev/",
+  "id": "/language-trainer-dev/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#863bff",
+  "icons": [
+    {
+      "src": "/language-trainer-dev/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/language-trainer-dev/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/language-trainer-dev/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
