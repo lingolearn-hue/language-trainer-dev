@@ -9,6 +9,19 @@
 // two files anyway so the rest of the code doesn't need a special
 // case. VisemeAvatar.tsx alternates between variants for a touch of
 // natural variation at no cost.
+//
+// NEUTRAL is the one exception worth knowing about: it's the idle/
+// resting face (shown whenever the trainer isn't actively speaking —
+// see LipSyncTestPage.tsx's idle-cycling effect), which has no sync
+// constraint the way active-speech visemes do, so it can afford many
+// more variants (blinks, a slight smile shift, a head tilt) cycled on
+// a slow, randomized interval instead of every animation frame — a
+// couple of alternating stills reads as an obvious A-B-A-B loop within
+// a few seconds; more variants shown less often reads as genuinely
+// idle. Currently just [neutral.jpg] (one photo) — extend this array
+// (and the imports above it) as more idle variants are added; nothing
+// else needs to change; VisemeAvatar.tsx and the idle-cycling effect
+// both already size themselves to however many entries exist here.
 
 import neutral from "./visemes/neutral.jpg";
 import laughing from "./visemes/laughing.jpg";
@@ -50,7 +63,7 @@ export type VisemeKey =
   | "MBP"
   | "REST";
 
-export const VISEME_IMAGES: Record<VisemeKey, [string] | [string, string]> = {
+export const VISEME_IMAGES: Record<VisemeKey, string[]> = {
   NEUTRAL: [neutral],
   LAUGHING: [laughing],
   AA: [aa1, aa2],

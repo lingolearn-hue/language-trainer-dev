@@ -137,6 +137,9 @@ const B1_TOPICS: TopicLesson[] = [topicTravelMishaps, topicCareerBeginnings, top
 const generatedJapaneseB1Lessons = B1_TOPICS
   .map((topic) => buildLessonPlan(topic, "ja", "en", "japanese-beginner"))
   .filter((l): l is LessonPlan => l !== null);
+const generatedFrenchB1Lessons = B1_TOPICS
+  .map((topic) => buildLessonPlan(topic, "fr", "en", "french-beginner"))
+  .filter((l): l is LessonPlan => l !== null);
 
 const allLessons: LessonPlan[] = [
   lesson11,
@@ -146,6 +149,7 @@ const allLessons: LessonPlan[] = [
   ...generatedGermanZhLessons,
   ...generatedFrenchLessons,
   ...generatedJapaneseB1Lessons,
+  ...generatedFrenchB1Lessons,
   ...generatedChineseC1Lessons,
 ]; // grows as more lessons are built
 

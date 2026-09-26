@@ -23,76 +23,77 @@ export const topicCareerBeginnings: TopicLesson = {
   topicName: {
     ja: "キャリアの はじまり",
     jaKanji: "キャリアの始まり",
-    en: "Career Beginnings"
+    en: "Career Beginnings",
+    fr: "Débuts de carrière"
   },
   vocab: [
-    { id: "v01", category: "noun", translations: { ja: "キャリア", en: "career" } },
-    { id: "v02", category: "noun", translations: { ja: "しゅうかつ", jaKanji: "就活", en: "job hunting" } },
-    { id: "v03", category: "noun", translations: { ja: "りれきしょ", jaKanji: "履歴書", en: "resume, CV" } },
-    { id: "v04", category: "noun", translations: { ja: "めんせつ", jaKanji: "面接", en: "interview" } },
-    { id: "v05", category: "verb", translations: { ja: "さいようされる", jaKanji: "採用される", en: "to be hired" } },
-    { id: "v06", category: "verb", translations: { ja: "はいぞくされる", jaKanji: "配属される", en: "to be assigned to (a department)" } },
-    { id: "v07", category: "noun", translations: { ja: "けんしゅうきかん", jaKanji: "研修期間", en: "training period" } },
-    { id: "v08", category: "noun", translations: { ja: "せんぱい", jaKanji: "先輩", en: "senior colleague, mentor" } },
-    { id: "v09", category: "noun", translations: { ja: "ぶしょ", jaKanji: "部署", en: "department" } },
-    { id: "v10", category: "noun", translations: { ja: "しょうしん", jaKanji: "昇進", en: "promotion" } },
-    { id: "v11", category: "verb", translations: { ja: "てんしょくする", jaKanji: "転職する", en: "to change jobs" } },
-    { id: "v12", category: "verb", translations: { ja: "きぎょうする", jaKanji: "起業する", en: "to start a business" } },
-    { id: "v13", category: "noun", translations: { ja: "インターンシップ", en: "internship" } },
-    { id: "v14", category: "noun", translations: { ja: "しかく", jaKanji: "資格", en: "qualification, certificate" } },
-    { id: "v15", category: "verb", translations: { ja: "みに つける", jaKanji: "身に付ける", en: "to acquire (a skill)" } },
-    { id: "v16", category: "noun", translations: { ja: "けいけん", jaKanji: "経験", en: "experience" } },
-    { id: "v17", category: "verb", translations: { ja: "けいけんを つむ", jaKanji: "経験を積む", en: "to gain experience" } },
-    { id: "v18", category: "noun", translations: { ja: "しょくば", jaKanji: "職場", en: "workplace" } },
-    { id: "v19", category: "noun", translations: { ja: "どうりょう", jaKanji: "同僚", en: "colleague" } },
-    { id: "v20", category: "noun", translations: { ja: "じょうし", jaKanji: "上司", en: "supervisor, boss" } },
-    { id: "v21", category: "noun", translations: { ja: "せきにん", jaKanji: "責任", en: "responsibility" } },
-    { id: "v22", category: "verb", translations: { ja: "たんとうする", jaKanji: "担当する", en: "to be in charge of" } },
-    { id: "v23", category: "noun", translations: { ja: "じっせき", jaKanji: "実績", en: "track record, achievement" } },
-    { id: "v24", category: "verb", translations: { ja: "くろうする", jaKanji: "苦労する", en: "to struggle, have a hard time" } },
-    { id: "v25", category: "verb", translations: { ja: "のりこえる", jaKanji: "乗り越える", en: "to overcome" } },
-    { id: "v26", category: "noun", translations: { ja: "せいちょう", jaKanji: "成長", en: "growth" } },
-    { id: "v27", category: "verb", translations: { ja: "せいちょうする", jaKanji: "成長する", en: "to grow" } },
-    { id: "v28", category: "noun", translations: { ja: "てんきてん", jaKanji: "転機", en: "turning point" } },
-    { id: "v29", category: "adverb", translations: { ja: "とうじ", jaKanji: "当時", en: "at that time" } },
-    { id: "v30", category: "adverb", translations: { ja: "それいらい", jaKanji: "それ以来", en: "since then" } }
+    { id: "v01", category: "noun", translations: { ja: "キャリア", en: "career", fr: "carrière" } },
+    { id: "v02", category: "noun", translations: { ja: "しゅうかつ", jaKanji: "就活", en: "job hunting", fr: "recherche d'emploi" } },
+    { id: "v03", category: "noun", translations: { ja: "りれきしょ", jaKanji: "履歴書", en: "resume, CV", fr: "CV" } },
+    { id: "v04", category: "noun", translations: { ja: "めんせつ", jaKanji: "面接", en: "interview", fr: "entretien" } },
+    { id: "v05", category: "verb", translations: { ja: "さいようされる", jaKanji: "採用される", en: "to be hired", fr: "être embauché(e)" } },
+    { id: "v06", category: "verb", translations: { ja: "はいぞくされる", jaKanji: "配属される", en: "to be assigned to (a department)", fr: "être affecté(e) (à un service)" } },
+    { id: "v07", category: "noun", translations: { ja: "けんしゅうきかん", jaKanji: "研修期間", en: "training period", fr: "période de formation" } },
+    { id: "v08", category: "noun", translations: { ja: "せんぱい", jaKanji: "先輩", en: "senior colleague, mentor", fr: "collègue expérimenté(e), mentor" } },
+    { id: "v09", category: "noun", translations: { ja: "ぶしょ", jaKanji: "部署", en: "department", fr: "service, département" } },
+    { id: "v10", category: "noun", translations: { ja: "しょうしん", jaKanji: "昇進", en: "promotion", fr: "promotion" } },
+    { id: "v11", category: "verb", translations: { ja: "てんしょくする", jaKanji: "転職する", en: "to change jobs", fr: "changer d'emploi" } },
+    { id: "v12", category: "verb", translations: { ja: "きぎょうする", jaKanji: "起業する", en: "to start a business", fr: "créer une entreprise" } },
+    { id: "v13", category: "noun", translations: { ja: "インターンシップ", en: "internship", fr: "stage" } },
+    { id: "v14", category: "noun", translations: { ja: "しかく", jaKanji: "資格", en: "qualification, certificate", fr: "qualification, certificat" } },
+    { id: "v15", category: "verb", translations: { ja: "みに つける", jaKanji: "身に付ける", en: "to acquire (a skill)", fr: "acquérir (une compétence)" } },
+    { id: "v16", category: "noun", translations: { ja: "けいけん", jaKanji: "経験", en: "experience", fr: "expérience" } },
+    { id: "v17", category: "verb", translations: { ja: "けいけんを つむ", jaKanji: "経験を積む", en: "to gain experience", fr: "acquérir de l'expérience" } },
+    { id: "v18", category: "noun", translations: { ja: "しょくば", jaKanji: "職場", en: "workplace", fr: "lieu de travail" } },
+    { id: "v19", category: "noun", translations: { ja: "どうりょう", jaKanji: "同僚", en: "colleague", fr: "collègue" } },
+    { id: "v20", category: "noun", translations: { ja: "じょうし", jaKanji: "上司", en: "supervisor, boss", fr: "supérieur(e), patron(ne)" } },
+    { id: "v21", category: "noun", translations: { ja: "せきにん", jaKanji: "責任", en: "responsibility", fr: "responsabilité" } },
+    { id: "v22", category: "verb", translations: { ja: "たんとうする", jaKanji: "担当する", en: "to be in charge of", fr: "être responsable de" } },
+    { id: "v23", category: "noun", translations: { ja: "じっせき", jaKanji: "実績", en: "track record, achievement", fr: "bilan, réalisation" } },
+    { id: "v24", category: "verb", translations: { ja: "くろうする", jaKanji: "苦労する", en: "to struggle, have a hard time", fr: "avoir du mal, peiner" } },
+    { id: "v25", category: "verb", translations: { ja: "のりこえる", jaKanji: "乗り越える", en: "to overcome", fr: "surmonter" } },
+    { id: "v26", category: "noun", translations: { ja: "せいちょう", jaKanji: "成長", en: "growth", fr: "croissance" } },
+    { id: "v27", category: "verb", translations: { ja: "せいちょうする", jaKanji: "成長する", en: "to grow", fr: "grandir, se développer" } },
+    { id: "v28", category: "noun", translations: { ja: "てんきてん", jaKanji: "転機", en: "turning point", fr: "tournant" } },
+    { id: "v29", category: "adverb", translations: { ja: "とうじ", jaKanji: "当時", en: "at that time", fr: "à cette époque" } },
+    { id: "v30", category: "adverb", translations: { ja: "それいらい", jaKanji: "それ以来", en: "since then", fr: "depuis lors" } }
   ],
   dialogueA: {
     title: { ja: "はじめての しごとの はなし", jaKanji: "初めての仕事の話", en: "Talking About Your First Job" },
     lines: [
-      { id: "d1", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "はじめての しごとは どうだった？", jaKanji: "初めての仕事はどうだった？", en: "What was your first job like?" } },
-      { id: "d2", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "だいがくを そつぎょうする ころには、しょうしゃに にゅうしゃする ことが すでに きまっていたんだ。", jaKanji: "大学を卒業する頃には、商社に入社する事が既に決まっていたんだ。", en: "By the time I graduated university, I had already decided on a trading company." } },
-      { id: "d3", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "どうやって はいったの？", jaKanji: "どうやって入ったの？", en: "How did you get in?" } },
-      { id: "d4", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "だいがく さんねんせいの ときに、すでに そこで インターンシップを けいけんしていたんだ。", jaKanji: "大学三年生の時に、既にそこでインターンシップを経験していたんだ。", en: "I had already done an internship there during my third year of college." } },
-      { id: "d5", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "すごい スタートダッシュだね。けんしゅうきかんは どうだった？", jaKanji: "すごいスタートダッシュだね。研修期間はどうだった？", en: "That's a great head start. What was the training period like?" } },
-      { id: "d6", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "けんしゅうが おわる ころには、しごとの きほんを すでに まなんでいたよ。", jaKanji: "研修が終わる頃には、仕事の基本を既に学んでいたよ。", en: "By the time training finished, I had already learned the basics of the job." } },
-      { id: "d7", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "せんぱいは いたの？", jaKanji: "先輩はいたの？", en: "Did you have a mentor?" } },
-      { id: "d8", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、ぼくが はじめる まえに、もう ひとりの せんぱいが サポートよういんとして はいぞくされていたんだ。", jaKanji: "うん、僕が始める前に、もう一人の先輩がサポート要員として配属されていたんだ。", en: "Yes, a senior colleague had already been assigned to support me before I even started." } },
-      { id: "d9", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "それは すごく たすかったでしょう。", jaKanji: "それはすごく助かったでしょう。", en: "That must have helped a lot." } },
-      { id: "d10", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん。いちねんめが おわる ころには、おおきく せいちょうしていたと おもう。", jaKanji: "うん。一年目が終わる頃には、大きく成長していたと思う。", en: "Yeah. By the time my first year ended, I think I had grown a lot." } },
-      { id: "d11", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "さいしょは たいへんだった？", jaKanji: "最初は大変だった？", en: "Was it difficult at first?" } },
-      { id: "d12", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "すごく。なれる まえは、しごとりょうに くろうしていたんだ。", jaKanji: "すごく。慣れる前は、仕事量に苦労していたんだ。", en: "Very. Before I got used to it, I had been struggling with the workload." } },
-      { id: "d13", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "でも、のりこえたんだね。", jaKanji: "でも、乗り越えたんだね。", en: "But you overcame it." } },
-      { id: "d14", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、そのころには、ながく つづけたい ことを すでに みつけていたんだ。", jaKanji: "うん、その頃には、長く続けたい事を既に見つけていたんだ。", en: "Yes, and by then, I had already found what I wanted to do long-term." } }
+      { id: "d1", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "はじめての しごとは どうだった？", jaKanji: "初めての仕事はどうだった？", en: "What was your first job like?", fr: "Comment était ton premier emploi ?" } },
+      { id: "d2", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "だいがくを そつぎょうする ころには、しょうしゃに にゅうしゃする ことが すでに きまっていたんだ。", jaKanji: "大学を卒業する頃には、商社に入社する事が既に決まっていたんだ。", en: "By the time I graduated university, I had already decided on a trading company.", fr: "Au moment où j'ai obtenu mon diplôme universitaire, j'avais déjà décidé de rejoindre une société de commerce." } },
+      { id: "d3", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "どうやって はいったの？", jaKanji: "どうやって入ったの？", en: "How did you get in?", fr: "Comment es-tu entré là-bas ?" } },
+      { id: "d4", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "だいがく さんねんせいの ときに、すでに そこで インターンシップを けいけんしていたんだ。", jaKanji: "大学三年生の時に、既にそこでインターンシップを経験していたんだ。", en: "I had already done an internship there during my third year of college.", fr: "J'avais déjà fait un stage là-bas pendant ma troisième année d'université." } },
+      { id: "d5", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "すごい スタートダッシュだね。けんしゅうきかんは どうだった？", jaKanji: "すごいスタートダッシュだね。研修期間はどうだった？", en: "That's a great head start. What was the training period like?", fr: "Quel bon départ. Comment était la période de formation ?" } },
+      { id: "d6", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "けんしゅうが おわる ころには、しごとの きほんを すでに まなんでいたよ。", jaKanji: "研修が終わる頃には、仕事の基本を既に学んでいたよ。", en: "By the time training finished, I had already learned the basics of the job.", fr: "Au moment où la formation s'est terminée, j'avais déjà appris les bases du travail." } },
+      { id: "d7", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "せんぱいは いたの？", jaKanji: "先輩はいたの？", en: "Did you have a mentor?", fr: "Tu avais un mentor ?" } },
+      { id: "d8", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、ぼくが はじめる まえに、もう ひとりの せんぱいが サポートよういんとして はいぞくされていたんだ。", jaKanji: "うん、僕が始める前に、もう一人の先輩がサポート要員として配属されていたんだ。", en: "Yes, a senior colleague had already been assigned to support me before I even started.", fr: "Oui, un collègue expérimenté avait déjà été affecté pour me soutenir avant même que je commence." } },
+      { id: "d9", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "それは すごく たすかったでしょう。", jaKanji: "それはすごく助かったでしょう。", en: "That must have helped a lot.", fr: "Ça a dû beaucoup t'aider." } },
+      { id: "d10", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん。いちねんめが おわる ころには、おおきく せいちょうしていたと おもう。", jaKanji: "うん。一年目が終わる頃には、大きく成長していたと思う。", en: "Yeah. By the time my first year ended, I think I had grown a lot.", fr: "Oui. Au moment où ma première année s'est terminée, je pense que j'avais beaucoup grandi." } },
+      { id: "d11", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "さいしょは たいへんだった？", jaKanji: "最初は大変だった？", en: "Was it difficult at first?", fr: "C'était difficile au début ?" } },
+      { id: "d12", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "すごく。なれる まえは、しごとりょうに くろうしていたんだ。", jaKanji: "すごく。慣れる前は、仕事量に苦労していたんだ。", en: "Very. Before I got used to it, I had been struggling with the workload.", fr: "Beaucoup. Avant de m'habituer, j'avais eu du mal avec la charge de travail." } },
+      { id: "d13", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "でも、のりこえたんだね。", jaKanji: "でも、乗り越えたんだね。", en: "But you overcame it.", fr: "Mais tu as surmonté ça." } },
+      { id: "d14", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、そのころには、ながく つづけたい ことを すでに みつけていたんだ。", jaKanji: "うん、その頃には、長く続けたい事を既に見つけていたんだ。", en: "Yes, and by then, I had already found what I wanted to do long-term.", fr: "Oui, et à cette époque, j'avais déjà trouvé ce que je voulais faire à long terme." } }
     ]
   },
   dialogueB: {
     title: { ja: "けいれきに ついての めんせつ", jaKanji: "経歴についての面接", en: "An Interview About Career History" },
     lines: [
-      { id: "e1", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "けいれきに ついて おしえて いただけますか？", jaKanji: "経歴について教えていただけますか？", en: "Could you tell me about your career history?" } },
-      { id: "e2", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "はい。この かいしゃに はいる まえに、ちいさな かいしゃで ごねんかん すでに はたらいていました。", jaKanji: "はい。この会社に入る前に、小さな会社で五年間既に働いていました。", en: "Of course. Before joining this company, I had already worked at a smaller firm for five years." } },
-      { id: "e3", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "そこでの やくわりは なんでしたか？", jaKanji: "そこでの役割は何でしたか？", en: "What was your role there?" } },
-      { id: "e4", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "たいしょくする ころには、えいぎょうぶを すでに たんとうしていました。", jaKanji: "退職する頃には、営業部を既に担当していました。", en: "By the time I left, I had already been in charge of the sales department." } },
-      { id: "e5", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "それは すばらしいですね。なぜ てんしょくを きめたのですか？", jaKanji: "それは素晴らしいですね。なぜ転職を決めたのですか？", en: "That's impressive. Why did you decide to change jobs?" } },
-      { id: "e6", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "じつは、キャリアの てんきてんに ついて すでに しばらく かんがえていたんです。", jaKanji: "実は、キャリアの転機について既にしばらく考えていたんです。", en: "Actually, I had already been thinking about a turning point in my career for a while." } },
-      { id: "e7", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "なるほど。そこで どんな けいけんを つみましたか？", jaKanji: "なるほど。そこでどんな経験を積みましたか？", en: "I see. What experience did you gain there?" } },
-      { id: "e8", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "つぎに すすむ まえに、いくつかの しかくを すでに みに つけて いました。", jaKanji: "次に進む前に、幾つかの資格を既に身に付けていました。", en: "Before moving on, I had already acquired several qualifications." } },
-      { id: "e9", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "いちばん じまんできる じっせきは なんですか？", jaKanji: "一番自慢できる実績は何ですか？", en: "What was your proudest achievement?" } },
-      { id: "e10", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "たいしょくする ころには、おもな とりひきさきと すでに つよい かんけいを きずいていました。", jaKanji: "退職する頃には、主な取引先と既に強い関係を築いていました。", en: "By the time I left, I had already built strong relationships with major clients." } },
-      { id: "e11", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "じょうしは どのように サポートして くれましたか？", jaKanji: "上司はどのようにサポートしてくれましたか？", en: "How did your supervisor support you?" } },
-      { id: "e12", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "じょうしは そうそう から おおきな せきにんを すでに まかせて くれて いました。", jaKanji: "上司は早々から大きな責任を既に任せてくれていました。", en: "My boss had already trusted me with a lot of responsibility early on." } },
-      { id: "e13", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "きちょうな けいけんですね。", jaKanji: "貴重な経験ですね。", en: "That sounds like valuable experience." } },
-      { id: "e14", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "はい、それいらい、まなんだ ことを すべて ここでの しごとに いかしています。", jaKanji: "はい、それ以来、学んだ事を全てここでの仕事に生かしています。", en: "Yes, since then, I've applied everything I learned to my work here." } }
+      { id: "e1", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "けいれきに ついて おしえて いただけますか？", jaKanji: "経歴について教えていただけますか？", en: "Could you tell me about your career history?", fr: "Pourriez-vous me parler de votre parcours professionnel ?" } },
+      { id: "e2", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "はい。この かいしゃに はいる まえに、ちいさな かいしゃで ごねんかん すでに はたらいていました。", jaKanji: "はい。この会社に入る前に、小さな会社で五年間既に働いていました。", en: "Of course. Before joining this company, I had already worked at a smaller firm for five years.", fr: "Bien sûr. Avant de rejoindre cette entreprise, j'avais déjà travaillé cinq ans dans une petite entreprise." } },
+      { id: "e3", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "そこでの やくわりは なんでしたか？", jaKanji: "そこでの役割は何でしたか？", en: "What was your role there?", fr: "Quel était votre rôle là-bas ?" } },
+      { id: "e4", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "たいしょくする ころには、えいぎょうぶを すでに たんとうしていました。", jaKanji: "退職する頃には、営業部を既に担当していました。", en: "By the time I left, I had already been in charge of the sales department.", fr: "Au moment où je suis parti, j'étais déjà responsable du service commercial." } },
+      { id: "e5", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "それは すばらしいですね。なぜ てんしょくを きめたのですか？", jaKanji: "それは素晴らしいですね。なぜ転職を決めたのですか？", en: "That's impressive. Why did you decide to change jobs?", fr: "C'est impressionnant. Pourquoi avez-vous décidé de changer d'emploi ?" } },
+      { id: "e6", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "じつは、キャリアの てんきてんに ついて すでに しばらく かんがえていたんです。", jaKanji: "実は、キャリアの転機について既にしばらく考えていたんです。", en: "Actually, I had already been thinking about a turning point in my career for a while.", fr: "En fait, j'avais déjà réfléchi pendant un moment à un tournant dans ma carrière." } },
+      { id: "e7", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "なるほど。そこで どんな けいけんを つみましたか？", jaKanji: "なるほど。そこでどんな経験を積みましたか？", en: "I see. What experience did you gain there?", fr: "Je vois. Quelle expérience y avez-vous acquise ?" } },
+      { id: "e8", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "つぎに すすむ まえに、いくつかの しかくを すでに みに つけて いました。", jaKanji: "次に進む前に、幾つかの資格を既に身に付けていました。", en: "Before moving on, I had already acquired several qualifications.", fr: "Avant de passer à la suite, j'avais déjà acquis plusieurs qualifications." } },
+      { id: "e9", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "いちばん じまんできる じっせきは なんですか？", jaKanji: "一番自慢できる実績は何ですか？", en: "What was your proudest achievement?", fr: "Quelle est votre plus grande réalisation ?" } },
+      { id: "e10", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "たいしょくする ころには、おもな とりひきさきと すでに つよい かんけいを きずいていました。", jaKanji: "退職する頃には、主な取引先と既に強い関係を築いていました。", en: "By the time I left, I had already built strong relationships with major clients.", fr: "Au moment où je suis parti, j'avais déjà bâti des relations solides avec nos principaux clients." } },
+      { id: "e11", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "じょうしは どのように サポートして くれましたか？", jaKanji: "上司はどのようにサポートしてくれましたか？", en: "How did your supervisor support you?", fr: "Comment votre supérieur vous a-t-il soutenu(e) ?" } },
+      { id: "e12", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "じょうしは そうそう から おおきな せきにんを すでに まかせて くれて いました。", jaKanji: "上司は早々から大きな責任を既に任せてくれていました。", en: "My boss had already trusted me with a lot of responsibility early on.", fr: "Mon patron m'avait déjà confié beaucoup de responsabilités dès le début." } },
+      { id: "e13", speaker: { ja: "めんせつかん", en: "Interviewer" }, translations: { ja: "きちょうな けいけんですね。", jaKanji: "貴重な経験ですね。", en: "That sounds like valuable experience.", fr: "C'est une expérience précieuse." } },
+      { id: "e14", speaker: { ja: "おうぼしゃ", en: "Applicant" }, translations: { ja: "はい、それいらい、まなんだ ことを すべて ここでの しごとに いかしています。", jaKanji: "はい、それ以来、学んだ事を全てここでの仕事に生かしています。", en: "Yes, since then, I've applied everything I learned to my work here.", fr: "Oui, et depuis lors, j'applique tout ce que j'ai appris à mon travail ici." } }
     ]
   },
   grammar: {
@@ -110,6 +111,21 @@ export const topicCareerBeginnings: TopicLesson = {
         { id: "g4", translations: { ja: "はじめる まえに、せんぱいが すでに サポートよういんとして はいぞくされていた。", jaKanji: "始める前に、先輩が既にサポート要員として配属されていた。", en: "Before I started, a mentor had already been assigned to support me." } },
         { id: "g5", translations: { ja: "いちねんめが おわる ころには、おおきく せいちょうしていた。", jaKanji: "一年目が終わる頃には、大きく成長していた。", en: "By the time my first year ended, I had grown a lot." } },
         { id: "g6", translations: { ja: "なれる まえは、しごとりょうに くろうしていた。", jaKanji: "慣れる前は、仕事量に苦労していた。", en: "Before I got used to it, I had been struggling with the workload." } }
+      ]
+    },
+    fr: {
+      title: { fr: "Le plus-que-parfait : raconter un parcours professionnel", en: "The Plus-que-parfait: Narrating a Career History" },
+      explanation: {
+        fr: "Ce point de grammaire reprend le même schéma que dans la leçon Mésaventures de voyage, utilisé ici pour raconter un parcours professionnel dans l'ordre. Pour montrer l'ordre de plusieurs événements passés — obtenir son diplôme, rejoindre une entreprise, se former, être promu — on associe au moment où... déjà ou déjà avec le plus-que-parfait, ce qui montre clairement qu'un événement avait déjà eu lieu avant un autre.",
+        en: "This grammar point reuses the same pattern from the Travel Mishaps lesson, used here to narrate a career history in sequence. To show the order of several past events — graduating, joining a company, training, being promoted — pairing au moment où... déjà (\"by the time ~, already\") or déjà (\"already\") with the plus-que-parfait makes it clear that one event had already happened before another."
+      },
+      chunks: [
+        { id: "g1", translations: { fr: "Au moment où j'ai obtenu mon diplôme, j'avais déjà décidé de rejoindre une société de commerce.", en: "By the time I graduated university, I had already decided on joining a trading company." } },
+        { id: "g2", translations: { fr: "Dès ma troisième année d'université, j'avais déjà fait un stage.", en: "By my third year of college, I had already done an internship." } },
+        { id: "g3", translations: { fr: "Au moment où la formation s'est terminée, j'avais déjà appris les bases du travail.", en: "By the time training finished, I had already learned the basics of the job." } },
+        { id: "g4", translations: { fr: "Avant que je commence, un mentor avait déjà été affecté pour me soutenir.", en: "Before I started, a mentor had already been assigned to support me." } },
+        { id: "g5", translations: { fr: "Au moment où ma première année s'est terminée, j'avais beaucoup grandi.", en: "By the time my first year ended, I had grown a lot." } },
+        { id: "g6", translations: { fr: "Avant de m'habituer, j'avais eu du mal avec la charge de travail.", en: "Before I got used to it, I had been struggling with the workload." } }
       ]
     }
   },
@@ -139,6 +155,23 @@ export const topicCareerBeginnings: TopicLesson = {
         { id: "p2_2", category: "pitch2", translations: { ja: "のうりょく", en: "ability" } },
         { id: "p2_3", category: "pitch2", translations: { ja: "せきにん", en: "responsibility" } },
         { id: "p2_4", category: "pitch2", translations: { ja: "しんらい", en: "trust" } }
+      ]
+    },
+    fr: {
+      title: { fr: "Entraînement à la prononciation", en: "Pronunciation Practice" },
+      groupLabels: {
+        liaison1: { fr: "Liaison avec « avais »/« étais »", en: "Liaison with avais/étais" },
+        nasal1: { fr: "Voyelles nasales", en: "Nasal Vowels" }
+      },
+      items: [
+        { id: "li_1", category: "liaison1", translations: { fr: "j'avais décidé", en: "I had decided (liaison: avai_z_décidé)" } },
+        { id: "li_2", category: "liaison1", translations: { fr: "j'étais responsable", en: "I was responsible (liaison: étai_z_responsable)" } },
+        { id: "li_3", category: "liaison1", translations: { fr: "il avait appris", en: "he had learned (liaison: avai_t_appris)" } },
+        { id: "li_4", category: "liaison1", translations: { fr: "nous avions acquis", en: "we had acquired (liaison: avion_z_acquis)" } },
+        { id: "na_1", category: "nasal1", translations: { fr: "formation", en: "training (nasal: an, on)" } },
+        { id: "na_2", category: "nasal1", translations: { fr: "entretien", en: "interview (nasal: an, en)" } },
+        { id: "na_3", category: "nasal1", translations: { fr: "responsabilité", en: "responsibility (nasal: on)" } },
+        { id: "na_4", category: "nasal1", translations: { fr: "promotion", en: "promotion (nasal: om, on)" } }
       ]
     }
   },

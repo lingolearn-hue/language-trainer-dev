@@ -30,76 +30,77 @@ export const topicTravelMishaps: TopicLesson = {
   topicName: {
     ja: "りょこうトラブル",
     jaKanji: "旅行トラブル",
-    en: "Travel Mishaps"
+    en: "Travel Mishaps",
+    fr: "Mésaventures de voyage"
   },
   vocab: [
-    { id: "v01", category: "noun", translations: { ja: "びん", jaKanji: "便", en: "flight" } },
-    { id: "v02", category: "noun", translations: { ja: "くうこう", jaKanji: "空港", en: "airport" } },
-    { id: "v03", category: "noun", translations: { ja: "ちえん", jaKanji: "遅延", en: "delay" } },
-    { id: "v04", category: "noun", translations: { ja: "けっこう", jaKanji: "欠航", en: "cancellation" } },
-    { id: "v05", category: "noun", translations: { ja: "とうじょうぐち", jaKanji: "搭乗口", en: "boarding gate" } },
-    { id: "v06", category: "noun", translations: { ja: "にもつ", jaKanji: "荷物", en: "luggage, baggage" } },
-    { id: "v07", category: "noun", translations: { ja: "スーツケース", en: "suitcase" } },
-    { id: "v08", category: "verb", translations: { ja: "なくす", en: "to lose (an item)" } },
-    { id: "v09", category: "verb", translations: { ja: "みつける", jaKanji: "見つける", en: "to find" } },
-    { id: "v10", category: "noun", translations: { ja: "いしつぶつがかり", jaKanji: "遺失物係", en: "lost and found" } },
-    { id: "v11", category: "noun", translations: { ja: "のりつぎびん", jaKanji: "乗り継ぎ便", en: "connecting flight" } },
-    { id: "v12", category: "noun", translations: { ja: "けいゆ", jaKanji: "経由", en: "layover" } },
-    { id: "v13", category: "verb", translations: { ja: "のりおくれる", jaKanji: "乗り遅れる", en: "to miss (a flight/train)" } },
-    { id: "v14", category: "verb", translations: { ja: "よやくを とりなおす", jaKanji: "予約を取り直す", en: "to rebook" } },
-    { id: "v15", category: "noun", translations: { ja: "はらいもどし", jaKanji: "払い戻し", en: "refund" } },
-    { id: "v16", category: "noun", translations: { ja: "おわび", jaKanji: "お詫び", en: "apology" } },
-    { id: "v17", category: "noun", translations: { ja: "こうくうがいしゃ", jaKanji: "航空会社", en: "airline" } },
-    { id: "v18", category: "noun", translations: { ja: "チケット", en: "ticket" } },
-    { id: "v19", category: "noun", translations: { ja: "パスポート", en: "passport" } },
-    { id: "v20", category: "noun", translations: { ja: "ぜいかん", jaKanji: "税関", en: "customs" } },
-    { id: "v21", category: "noun", translations: { ja: "にゅうこくしんさ", jaKanji: "入国審査", en: "immigration" } },
-    { id: "v22", category: "noun", translations: { ja: "アナウンス", en: "announcement" } },
-    { id: "v23", category: "verb", translations: { ja: "あしどめされる", jaKanji: "足止めされる", en: "to be stranded" } },
-    { id: "v24", category: "noun", translations: { ja: "てんこうによる ちえん", jaKanji: "天候による遅延", en: "weather delay" } },
-    { id: "v25", category: "noun", translations: { ja: "だいたいルート", jaKanji: "代替ルート", en: "alternative route" } },
-    { id: "v26", category: "verb", translations: { ja: "くじょうを いう", jaKanji: "苦情を言う", en: "to complain" } },
-    { id: "v27", category: "noun", translations: { ja: "ほしょう", jaKanji: "補償", en: "compensation" } },
-    { id: "v28", category: "adverb", translations: { ja: "すでに", jaKanji: "既に", en: "already" } },
-    { id: "v29", category: "adverb", translations: { ja: "〜たときには もう", jaKanji: "〜た時にはもう", en: "by the time ~, already" } },
-    { id: "v30", category: "adverb", translations: { ja: "やっと", jaKanji: "やっと", en: "finally" } }
+    { id: "v01", category: "noun", translations: { ja: "びん", jaKanji: "便", en: "flight", fr: "vol" } },
+    { id: "v02", category: "noun", translations: { ja: "くうこう", jaKanji: "空港", en: "airport", fr: "aéroport" } },
+    { id: "v03", category: "noun", translations: { ja: "ちえん", jaKanji: "遅延", en: "delay", fr: "retard" } },
+    { id: "v04", category: "noun", translations: { ja: "けっこう", jaKanji: "欠航", en: "cancellation", fr: "annulation" } },
+    { id: "v05", category: "noun", translations: { ja: "とうじょうぐち", jaKanji: "搭乗口", en: "boarding gate", fr: "porte d'embarquement" } },
+    { id: "v06", category: "noun", translations: { ja: "にもつ", jaKanji: "荷物", en: "luggage, baggage", fr: "bagages" } },
+    { id: "v07", category: "noun", translations: { ja: "スーツケース", en: "suitcase", fr: "valise" } },
+    { id: "v08", category: "verb", translations: { ja: "なくす", en: "to lose (an item)", fr: "perdre" } },
+    { id: "v09", category: "verb", translations: { ja: "みつける", jaKanji: "見つける", en: "to find", fr: "trouver" } },
+    { id: "v10", category: "noun", translations: { ja: "いしつぶつがかり", jaKanji: "遺失物係", en: "lost and found", fr: "objets trouvés" } },
+    { id: "v11", category: "noun", translations: { ja: "のりつぎびん", jaKanji: "乗り継ぎ便", en: "connecting flight", fr: "vol de correspondance" } },
+    { id: "v12", category: "noun", translations: { ja: "けいゆ", jaKanji: "経由", en: "layover", fr: "escale" } },
+    { id: "v13", category: "verb", translations: { ja: "のりおくれる", jaKanji: "乗り遅れる", en: "to miss (a flight/train)", fr: "rater" } },
+    { id: "v14", category: "verb", translations: { ja: "よやくを とりなおす", jaKanji: "予約を取り直す", en: "to rebook", fr: "réserver à nouveau" } },
+    { id: "v15", category: "noun", translations: { ja: "はらいもどし", jaKanji: "払い戻し", en: "refund", fr: "remboursement" } },
+    { id: "v16", category: "noun", translations: { ja: "おわび", jaKanji: "お詫び", en: "apology", fr: "excuses" } },
+    { id: "v17", category: "noun", translations: { ja: "こうくうがいしゃ", jaKanji: "航空会社", en: "airline", fr: "compagnie aérienne" } },
+    { id: "v18", category: "noun", translations: { ja: "チケット", en: "ticket", fr: "billet" } },
+    { id: "v19", category: "noun", translations: { ja: "パスポート", en: "passport", fr: "passeport" } },
+    { id: "v20", category: "noun", translations: { ja: "ぜいかん", jaKanji: "税関", en: "customs", fr: "douane" } },
+    { id: "v21", category: "noun", translations: { ja: "にゅうこくしんさ", jaKanji: "入国審査", en: "immigration", fr: "contrôle des passeports" } },
+    { id: "v22", category: "noun", translations: { ja: "アナウンス", en: "announcement", fr: "annonce" } },
+    { id: "v23", category: "verb", translations: { ja: "あしどめされる", jaKanji: "足止めされる", en: "to be stranded", fr: "être bloqué(e)" } },
+    { id: "v24", category: "noun", translations: { ja: "てんこうによる ちえん", jaKanji: "天候による遅延", en: "weather delay", fr: "retard dû au temps" } },
+    { id: "v25", category: "noun", translations: { ja: "だいたいルート", jaKanji: "代替ルート", en: "alternative route", fr: "itinéraire alternatif" } },
+    { id: "v26", category: "verb", translations: { ja: "くじょうを いう", jaKanji: "苦情を言う", en: "to complain", fr: "se plaindre" } },
+    { id: "v27", category: "noun", translations: { ja: "ほしょう", jaKanji: "補償", en: "compensation", fr: "dédommagement" } },
+    { id: "v28", category: "adverb", translations: { ja: "すでに", jaKanji: "既に", en: "already", fr: "déjà" } },
+    { id: "v29", category: "adverb", translations: { ja: "〜たときには もう", jaKanji: "〜た時にはもう", en: "by the time ~, already", fr: "au moment où..., déjà" } },
+    { id: "v30", category: "adverb", translations: { ja: "やっと", jaKanji: "やっと", en: "finally", fr: "enfin" } }
   ],
   dialogueA: {
     title: { ja: "フライトちえんの はなし", en: "A Delayed Flight Story", jaKanji: "フライト遅延の話" },
     lines: [
-      { id: "d1", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "おおさかへの りょこう、どうだった？", jaKanji: "大阪への旅行、どうだった？", en: "How was your trip to Osaka?" } },
-      { id: "d2", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "きかないで。くうこうに ついたときには、フライトは すでに ちえんしていたんだ。", jaKanji: "聞かないで。空港に着いた時には、フライトは既に遅延していたんだ。", en: "Don't even ask. My flight had already been delayed by the time I got to the airport." } },
-      { id: "d3", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "ほんとう？なにが あったの？", jaKanji: "本当？何があったの？", en: "Really? What happened?" } },
-      { id: "d4", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "まえのばん あらしが あって、おおくの びんが えいきょうを うけていたんだ。", jaKanji: "前の晩嵐があって、多くの便が影響を受けていたんだ。", en: "There had been a storm the night before, so many flights were affected." } },
-      { id: "d5", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "たいへんだったね。どのくらい ちえんしたの？", jaKanji: "大変だったね。どのくらい遅延したの？", en: "That's rough. How long was the delay?" } },
-      { id: "d6", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "とうじょうする ころには、もう さんじかん たっていたよ。", jaKanji: "搭乗する頃には、もう3時間経っていたよ。", en: "By the time we boarded, three hours had already passed." } },
-      { id: "d7", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "のりつぎびんには のりおくれたの？", jaKanji: "乗り継ぎ便には乗り遅れたの？", en: "Did you miss your connecting flight?" } },
-      { id: "d8", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、ざんねんながら。とうちゃくしたときには、もう しゅっぱつしてしまっていたんだ。", jaKanji: "うん、残念ながら。到着した時には、もう出発してしまっていたんだ。", en: "Yes, unfortunately. It had already left by the time we landed." } },
-      { id: "d9", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "どう したの？", jaKanji: "どうしたの？", en: "What did you do?" } },
-      { id: "d10", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "こうくうがいしゃが すでに つぎの びんに よやくを とりなおしていて くれたんだ。", jaKanji: "航空会社が既に次の便に予約を取り直していてくれたんだ。", en: "The airline had already rebooked us onto the next available flight." } },
-      { id: "d11", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "すぐに たいおうして くれて よかったね。", jaKanji: "すぐに対応してくれてよかったね。", en: "That's good they took care of it quickly." } },
-      { id: "d12", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "ながく まっていたから、しょくじけんも よういして くれていたよ。", jaKanji: "長く待っていたから、食事券も用意してくれていたよ。", en: "They had also prepared a meal voucher for us, since we'd been waiting so long." } },
-      { id: "d13", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "せめて きちんと おわびが あって よかった。", jaKanji: "せめてきちんとお詫びがあってよかった。", en: "At least they apologized properly." } },
-      { id: "d14", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、やっと ついたけど、すごく おそく なっちゃった。", jaKanji: "うん、やっと着いたけど、すごく遅くなっちゃった。", en: "Yes, finally we arrived, though it was very late." } }
+      { id: "d1", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "おおさかへの りょこう、どうだった？", jaKanji: "大阪への旅行、どうだった？", en: "How was your trip to Osaka?", fr: "Comment s'est passé ton voyage à Osaka ?" } },
+      { id: "d2", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "きかないで。くうこうに ついたときには、フライトは すでに ちえんしていたんだ。", jaKanji: "聞かないで。空港に着いた時には、フライトは既に遅延していたんだ。", en: "Don't even ask. My flight had already been delayed by the time I got to the airport.", fr: "Ne m'en parle pas. Mon vol avait déjà été retardé quand je suis arrivé à l'aéroport." } },
+      { id: "d3", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "ほんとう？なにが あったの？", jaKanji: "本当？何があったの？", en: "Really? What happened?", fr: "Vraiment ? Qu'est-ce qui s'est passé ?" } },
+      { id: "d4", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "まえのばん あらしが あって、おおくの びんが えいきょうを うけていたんだ。", jaKanji: "前の晩嵐があって、多くの便が影響を受けていたんだ。", en: "There had been a storm the night before, so many flights were affected.", fr: "Il y avait eu une tempête la veille au soir, donc beaucoup de vols avaient été affectés." } },
+      { id: "d5", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "たいへんだったね。どのくらい ちえんしたの？", jaKanji: "大変だったね。どのくらい遅延したの？", en: "That's rough. How long was the delay?", fr: "C'est dur. Le retard a duré combien de temps ?" } },
+      { id: "d6", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "とうじょうする ころには、もう さんじかん たっていたよ。", jaKanji: "搭乗する頃には、もう3時間経っていたよ。", en: "By the time we boarded, three hours had already passed.", fr: "Le temps qu'on embarque, trois heures s'étaient déjà écoulées." } },
+      { id: "d7", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "のりつぎびんには のりおくれたの？", jaKanji: "乗り継ぎ便には乗り遅れたの？", en: "Did you miss your connecting flight?", fr: "Tu as raté ton vol de correspondance ?" } },
+      { id: "d8", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、ざんねんながら。とうちゃくしたときには、もう しゅっぱつしてしまっていたんだ。", jaKanji: "うん、残念ながら。到着した時には、もう出発してしまっていたんだ。", en: "Yes, unfortunately. It had already left by the time we landed.", fr: "Oui, malheureusement. Il était déjà parti quand on a atterri." } },
+      { id: "d9", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "どう したの？", jaKanji: "どうしたの？", en: "What did you do?", fr: "Qu'est-ce que tu as fait ?" } },
+      { id: "d10", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "こうくうがいしゃが すでに つぎの びんに よやくを とりなおしていて くれたんだ。", jaKanji: "航空会社が既に次の便に予約を取り直していてくれたんだ。", en: "The airline had already rebooked us onto the next available flight.", fr: "La compagnie aérienne nous avait déjà réservés sur le vol suivant." } },
+      { id: "d11", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "すぐに たいおうして くれて よかったね。", jaKanji: "すぐに対応してくれてよかったね。", en: "That's good they took care of it quickly.", fr: "C'est bien qu'ils s'en soient occupés rapidement." } },
+      { id: "d12", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "ながく まっていたから、しょくじけんも よういして くれていたよ。", jaKanji: "長く待っていたから、食事券も用意してくれていたよ。", en: "They had also prepared a meal voucher for us, since we'd been waiting so long.", fr: "Comme on avait attendu longtemps, ils nous avaient aussi préparé un bon repas." } },
+      { id: "d13", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "せめて きちんと おわびが あって よかった。", jaKanji: "せめてきちんとお詫びがあってよかった。", en: "At least they apologized properly.", fr: "Au moins ils se sont bien excusés." } },
+      { id: "d14", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、やっと ついたけど、すごく おそく なっちゃった。", jaKanji: "うん、やっと着いたけど、すごく遅くなっちゃった。", en: "Yes, finally we arrived, though it was very late.", fr: "Oui, on est enfin arrivés, mais très en retard." } }
     ]
   },
   dialogueB: {
     title: { ja: "にもつの ふんしつとどけ", en: "A Lost-Luggage Report", jaKanji: "荷物の紛失届" },
     lines: [
-      { id: "e1", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "すみません、スーツケースが みつからないんです。", jaKanji: "すみません、スーツケースが見つからないんです。", en: "Excuse me, I can't find my suitcase." } },
-      { id: "e2", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "それは たいへんですね。さいごに みたのは いつですか？", jaKanji: "それは大変ですね。最後に見たのはいつですか？", en: "I'm sorry to hear that. When did you last see it?" } },
-      { id: "e3", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "とうきょうの カウンターで すでに あずけていました。", jaKanji: "東京のカウンターで既に預けていました。", en: "I had already checked it in at the counter in Tokyo." } },
-      { id: "e4", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "わかりました。システムを かくにんします。", jaKanji: "分かりました。システムを確認します。", en: "I see. Let me check the system." } },
-      { id: "e5", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "スーツケースは のりつぎびんに つみこまれていなかった ようです。", jaKanji: "スーツケースは乗り継ぎ便に積み込まれていなかったようです。", en: "It seems your suitcase hadn't been loaded onto the connecting flight." } },
-      { id: "e6", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "そんな。いま どこに あるんですか？", jaKanji: "そんな。今どこにあるんですか？", en: "Oh no. Where is it now?" } },
-      { id: "e7", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "まだ けいゆちの くうこうに あります。わかったときには もう のりつぎに まにあっていなかったんです。", jaKanji: "まだ経由地の空港にあります。分かった時にはもう乗り継ぎに間に合っていなかったんです。", en: "It's still at the layover airport. It had already missed the connection by the time we found this out." } },
-      { id: "e8", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "いつ もどって きますか？", jaKanji: "いつ戻ってきますか？", en: "When will I get it back?" } },
-      { id: "e9", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "とうちゃくしだい、ホテルへ おおくりします。たぶん あしたに なります。", jaKanji: "到着次第、ホテルへお送りします。多分明日になります。", en: "We'll send it to your hotel once it arrives, probably tomorrow." } },
-      { id: "e10", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "だいじな しょるいを すでに つめてしまっていたんです。", jaKanji: "大事な書類を既に詰めてしまっていたんです。", en: "I had already packed important documents in there." } },
-      { id: "e11", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "わかりました。ゆうせんてきに たいおうして、とうちゃくしだい すぐ ごれんらくします。", jaKanji: "分かりました。優先的に対応して、到着次第すぐご連絡します。", en: "I understand. We'll prioritize it and contact you as soon as it arrives." } },
-      { id: "e12", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "なにか ほしょうは ありますか？", jaKanji: "何か補償はありますか？", en: "Is there any compensation for this?" } },
-      { id: "e13", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "はい、ごふべんを おかけした ぶん、いちぶ はらいもどしを ごあんないできます。", jaKanji: "はい、ご不便をおかけした分、一部払い戻しをご案内できます。", en: "Yes, we can offer a partial refund for the inconvenience." } },
-      { id: "e14", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "ありがとうございます。はやく たいおうして いただけて たすかります。", jaKanji: "ありがとうございます。早く対応していただけて助かります。", en: "Thank you. I appreciate you handling this so quickly." } }
+      { id: "e1", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "すみません、スーツケースが みつからないんです。", jaKanji: "すみません、スーツケースが見つからないんです。", en: "Excuse me, I can't find my suitcase.", fr: "Excusez-moi, je ne trouve pas ma valise." } },
+      { id: "e2", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "それは たいへんですね。さいごに みたのは いつですか？", jaKanji: "それは大変ですね。最後に見たのはいつですか？", en: "I'm sorry to hear that. When did you last see it?", fr: "Je suis désolé(e) d'entendre ça. Quand l'avez-vous vue pour la dernière fois ?" } },
+      { id: "e3", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "とうきょうの カウンターで すでに あずけていました。", jaKanji: "東京のカウンターで既に預けていました。", en: "I had already checked it in at the counter in Tokyo.", fr: "Je l'avais déjà enregistrée au comptoir à Tokyo." } },
+      { id: "e4", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "わかりました。システムを かくにんします。", jaKanji: "分かりました。システムを確認します。", en: "I see. Let me check the system.", fr: "Je comprends. Je vais vérifier le système." } },
+      { id: "e5", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "スーツケースは のりつぎびんに つみこまれていなかった ようです。", jaKanji: "スーツケースは乗り継ぎ便に積み込まれていなかったようです。", en: "It seems your suitcase hadn't been loaded onto the connecting flight.", fr: "Il semble que votre valise n'avait pas été chargée sur le vol de correspondance." } },
+      { id: "e6", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "そんな。いま どこに あるんですか？", jaKanji: "そんな。今どこにあるんですか？", en: "Oh no. Where is it now?", fr: "Oh non. Où est-elle maintenant ?" } },
+      { id: "e7", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "まだ けいゆちの くうこうに あります。わかったときには もう のりつぎに まにあっていなかったんです。", jaKanji: "まだ経由地の空港にあります。分かった時にはもう乗り継ぎに間に合っていなかったんです。", en: "It's still at the layover airport. It had already missed the connection by the time we found this out.", fr: "Elle est encore à l'aéroport de l'escale. Elle avait déjà raté la correspondance quand on s'en est rendu compte." } },
+      { id: "e8", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "いつ もどって きますか？", jaKanji: "いつ戻ってきますか？", en: "When will I get it back?", fr: "Quand vais-je la récupérer ?" } },
+      { id: "e9", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "とうちゃくしだい、ホテルへ おおくりします。たぶん あしたに なります。", jaKanji: "到着次第、ホテルへお送りします。多分明日になります。", en: "We'll send it to your hotel once it arrives, probably tomorrow.", fr: "Nous vous l'enverrons à l'hôtel dès son arrivée, probablement demain." } },
+      { id: "e10", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "だいじな しょるいを すでに つめてしまっていたんです。", jaKanji: "大事な書類を既に詰めてしまっていたんです。", en: "I had already packed important documents in there.", fr: "J'avais déjà mis des documents importants dedans." } },
+      { id: "e11", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "わかりました。ゆうせんてきに たいおうして、とうちゃくしだい すぐ ごれんらくします。", jaKanji: "分かりました。優先的に対応して、到着次第すぐご連絡します。", en: "I understand. We'll prioritize it and contact you as soon as it arrives.", fr: "Je comprends. Nous allons prioriser votre cas et vous contacter dès son arrivée." } },
+      { id: "e12", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "なにか ほしょうは ありますか？", jaKanji: "何か補償はありますか？", en: "Is there any compensation for this?", fr: "Y a-t-il un dédommagement possible ?" } },
+      { id: "e13", speaker: { ja: "たんとうしゃ", en: "Staff" }, translations: { ja: "はい、ごふべんを おかけした ぶん、いちぶ はらいもどしを ごあんないできます。", jaKanji: "はい、ご不便をおかけした分、一部払い戻しをご案内できます。", en: "Yes, we can offer a partial refund for the inconvenience.", fr: "Oui, nous pouvons vous proposer un remboursement partiel pour le désagrément." } },
+      { id: "e14", speaker: { ja: "きゃく", en: "Traveler" }, translations: { ja: "ありがとうございます。はやく たいおうして いただけて たすかります。", jaKanji: "ありがとうございます。早く対応していただけて助かります。", en: "Thank you. I appreciate you handling this so quickly.", fr: "Merci. J'apprécie que vous traitiez cela si rapidement." } }
     ]
   },
   grammar: {
@@ -117,6 +118,21 @@ export const topicTravelMishaps: TopicLesson = {
         { id: "g4", translations: { ja: "こうくうがいしゃは すでに よやくを とりなおしていた。", jaKanji: "航空会社は既に予約を取り直していた。", en: "The airline had already rebooked us." } },
         { id: "g5", translations: { ja: "わたしたちが とうちゃくしたときには、みんな もう まっていた。", jaKanji: "私たちが到着した時には、皆もう待っていた。", en: "By the time we arrived, everyone had already been waiting." } },
         { id: "g6", translations: { ja: "だいじな しょるいを すでに つめてしまっていた。", jaKanji: "大事な書類を既に詰めてしまっていた。", en: "I had already packed important documents (in there)." } }
+      ]
+    },
+    fr: {
+      title: { fr: "Le plus-que-parfait : raconter un passé antérieur à un autre passé", en: "The Plus-que-parfait: Narrating a Past-Before-Past" },
+      explanation: {
+        fr: "Le plus-que-parfait se forme avec l'imparfait de avoir ou être suivi du participe passé (j'avais raté, j'étais parti(e)). Il exprime qu'une action était déjà terminée ou en cours avant un autre moment du passé — c'est l'équivalent français du 〜ていた japonais utilisé dans cette leçon. On l'utilise souvent avec déjà, au moment où, ou quand pour bien marquer l'ordre des événements : quand je suis arrivé, le vol avait déjà été retardé.",
+        en: "The plus-que-parfait is formed with the imperfect of avoir or être followed by the past participle (j'avais raté \"I had missed\", j'étais parti(e) \"I had left\"). It expresses that an action was already completed or ongoing before another point in the past — the French equivalent of the Japanese ~te ita used in this lesson. It's often paired with déjà (\"already\"), au moment où (\"by the time\"), or quand (\"when\") to make the sequence of events explicit: quand je suis arrivé, le vol avait déjà été retardé (\"by the time I arrived, the flight had already been delayed\")."
+      },
+      chunks: [
+        { id: "g1", translations: { fr: "Quand je suis arrivé à l'aéroport, le vol avait déjà été retardé.", en: "By the time I arrived at the airport, the flight had already been delayed." } },
+        { id: "g2", translations: { fr: "Le vol de correspondance était déjà parti.", en: "The connecting flight had already left." } },
+        { id: "g3", translations: { fr: "Quand je m'en suis rendu compte, les bagages n'avaient pas été chargés.", en: "By the time I noticed, the luggage hadn't been loaded." } },
+        { id: "g4", translations: { fr: "La compagnie aérienne nous avait déjà réservés sur un autre vol.", en: "The airline had already rebooked us." } },
+        { id: "g5", translations: { fr: "Quand nous sommes arrivés, tout le monde attendait déjà.", en: "By the time we arrived, everyone had already been waiting." } },
+        { id: "g6", translations: { fr: "J'avais déjà mis des documents importants dedans.", en: "I had already packed important documents (in there)." } }
       ]
     }
   },
@@ -146,6 +162,23 @@ export const topicTravelMishaps: TopicLesson = {
         { id: "p2_2", category: "pitch2", translations: { ja: "まえに", en: "before" } },
         { id: "p2_3", category: "pitch2", translations: { ja: "そのとき", en: "at that time" } },
         { id: "p2_4", category: "pitch2", translations: { ja: "とうとう", en: "finally, eventually" } }
+      ]
+    },
+    fr: {
+      title: { fr: "Entraînement à la prononciation", en: "Pronunciation Practice" },
+      groupLabels: {
+        liaison1: { fr: "Liaison avec « avais »/« étais »", en: "Liaison with avais/étais" },
+        nasal1: { fr: "Voyelles nasales", en: "Nasal Vowels" }
+      },
+      items: [
+        { id: "li_1", category: "liaison1", translations: { fr: "j'avais attendu", en: "I had waited (liaison: avai_z_attendu)" } },
+        { id: "li_2", category: "liaison1", translations: { fr: "j'étais arrivé(e)", en: "I had arrived (liaison: étai_z_arrivé)" } },
+        { id: "li_3", category: "liaison1", translations: { fr: "il avait annoncé", en: "he had announced (liaison: avai_t_annoncé)" } },
+        { id: "li_4", category: "liaison1", translations: { fr: "nous avions embarqué", en: "we had boarded (liaison: avion_z_embarqué)" } },
+        { id: "na_1", category: "nasal1", translations: { fr: "correspondance", en: "connection (nasal: on, an)" } },
+        { id: "na_2", category: "nasal1", translations: { fr: "embarquement", en: "boarding (nasal: an, en)" } },
+        { id: "na_3", category: "nasal1", translations: { fr: "annonce", en: "announcement (nasal: an, on)" } },
+        { id: "na_4", category: "nasal1", translations: { fr: "compensation", en: "compensation (nasal: om, an, on)" } }
       ]
     }
   },

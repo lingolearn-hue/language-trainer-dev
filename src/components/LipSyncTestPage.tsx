@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { LangCode } from "../types";
 import { textToVisemeFrames, totalVisemeDurationMs, type VisemeFrame } from "../engine/visemeMap";
 import { VisemeAvatar } from "./VisemeAvatar";
-import type { VisemeKey } from "../assets/visemeImages";
+import { VISEME_IMAGES, type VisemeKey } from "../assets/visemeImages";
 
 // Standalone test view — deliberately NOT wired into the shared
 // speech.ts queue/voice-resolution pipeline (that's built for the
@@ -41,7 +41,8 @@ export function LipSyncTestPage({ onBack }: { onBack: () => void }) {
   const [rate, setRate] = useState(1);
   const [speaking, setSpeaking] = useState(false);
   const [currentViseme, setCurrentViseme] = useState<VisemeKey>("NEUTRAL");
-  const [variantToggle, setVariantToggle] = useState(false);
+  const [activeVariantIndex, setActiveVariantIndex] = useState(0); // 0/1 alternation during active speech, same as the old variantToggle boolean
+  const [idleVariantIndex, setIdleVariantIndex] = useState(0); // slow-cycled while resting — see the idle effect below
 
   const framesRef = useRef<VisemeFrame[]>([]);
   const startTimeRef = useRef(0);
@@ -108,7 +109,7 @@ export function LipSyncTestPage({ onBack }: { onBack: () => void }) {
     if (idx !== -1 && idx !== frameIndexRef.current) {
       frameIndexRef.current = idx;
       setCurrentViseme(frames[idx].viseme);
-      setVariantToggle((v) => !v);
+      setActiveVariantIndex((i) => (i === 0 ? 1 : 0));
     }
     rafRef.current = requestAnimationFrame(tick);
   }
@@ -125,6 +126,45 @@ export function LipSyncTestPage({ onBack }: { onBack: () => void }) {
     };
   }, []);
 
+  // Idle-cycling: whenever resting on NEUTRAL (not actively speaking),
+  // slowly cycle through however many idle photo variants exist —
+  // deliberately NOT the same per-frame alternation active speech uses
+  // (see VisemeAvatar.tsx's comment). A fast alternation between just
+  // a couple of stills reads as an obvious A-B-A-B loop within a few
+  // seconds; a slow (2-4s), randomized-interval cycle through more
+  // variants reads as genuinely idle instead. No-ops cleanly if
+  // NEUTRAL only has one photo (today's default) — nothing to cycle
+  // to, so this just never fires rather than needing a separate guard
+  // everywhere else.
+  useEffect(() => {
+    const neutralCount = VISEME_IMAGES.NEUTRAL.length;
+    if (speaking || neutralCount <= 1) return;
+
+    let cancelled = false;
+    let timeoutId: number;
+
+    function scheduleNext() {
+      const delay = 2000 + Math.random() * 2000; // 2-4s, randomized so the cadence itself doesn't become a noticeable pattern
+      timeoutId = window.setTimeout(() => {
+        if (cancelled) return;
+        setIdleVariantIndex((prev) => {
+          // Avoid repeating the same variant twice in a row — picks
+          // among every OTHER index, not a plain random 0..n-1 (which
+          // would occasionally look like it didn't change at all).
+          const others = Array.from({ length: neutralCount }, (_, i) => i).filter((i) => i !== prev % neutralCount);
+          return others[Math.floor(Math.random() * others.length)];
+        });
+        scheduleNext();
+      }, delay);
+    }
+    scheduleNext();
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timeoutId);
+    };
+  }, [speaking]);
+
   return (
     <div className="lip-sync-test-page">
       <button className="back-button" onClick={onBack}>← Back</button>
@@ -135,7 +175,11 @@ export function LipSyncTestPage({ onBack }: { onBack: () => void }) {
       </p>
 
       <div className="lip-sync-avatar-frame">
-        <VisemeAvatar viseme={currentViseme} variantToggle={variantToggle} size={320} />
+        <VisemeAvatar
+          viseme={currentViseme}
+          variantIndex={currentViseme === "NEUTRAL" && !speaking ? idleVariantIndex : activeVariantIndex}
+          size={320}
+        />
       </div>
       <div className="lip-sync-viseme-label">{currentViseme}</div>
 

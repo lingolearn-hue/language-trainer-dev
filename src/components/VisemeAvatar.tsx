@@ -1,22 +1,26 @@
 import { VISEME_IMAGES, type VisemeKey } from "../assets/visemeImages";
 
-// Renders the current viseme as a photo. Alternates between the two
-// available photo variants each time the SAME viseme key repeats
-// back-to-back (e.g. two AA frames in a row) so it doesn't look like a
-// frozen single image during a held vowel — purely cosmetic, costs
-// nothing since it's just picking index 0 vs 1 out of an array already
-// in memory.
+// Renders the current viseme as a photo. variantIndex picks which
+// photo shows via variants[variantIndex % variants.length] — purely
+// cosmetic, costs nothing since it's just indexing an array already in
+// memory. The caller decides what variantIndex means: during active
+// speech it's flipped every frame the SAME viseme key repeats
+// back-to-back (0/1 alternation, so a held vowel doesn't look like a
+// frozen single image); for NEUTRAL specifically, the caller instead
+// runs a slow, randomized idle-cycling timer (see
+// LipSyncTestPage.tsx) across however many idle variants exist — the
+// modulo here is what makes that safe regardless of array length.
 export function VisemeAvatar({
   viseme,
-  variantToggle,
+  variantIndex,
   size = 320,
 }: {
   viseme: VisemeKey;
-  variantToggle: boolean; // flip this each frame from the caller; which variant shows just tracks its parity
+  variantIndex: number;
   size?: number;
 }) {
   const variants = VISEME_IMAGES[viseme];
-  const src = variants.length > 1 ? variants[variantToggle ? 1 : 0] : variants[0];
+  const src = variants[variantIndex % variants.length];
   return (
     <img
       src={src}

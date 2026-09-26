@@ -21,76 +21,77 @@ export const topicGrowingUp: TopicLesson = {
   topicName: {
     ja: "こどもじだいの おもいで",
     jaKanji: "子供時代の思い出",
-    en: "Growing Up"
+    en: "Growing Up",
+    fr: "Souvenirs d'enfance"
   },
   vocab: [
-    { id: "v01", category: "noun", translations: { ja: "こどもじだい", jaKanji: "子供時代", en: "childhood" } },
-    { id: "v02", category: "verb", translations: { ja: "そだつ", jaKanji: "育つ", en: "to grow up" } },
-    { id: "v03", category: "verb", translations: { ja: "そだてる", jaKanji: "育てる", en: "to raise (a child)" } },
-    { id: "v04", category: "noun", translations: { ja: "こきょう", jaKanji: "故郷", en: "hometown" } },
-    { id: "v05", category: "noun", translations: { ja: "きんじょ", jaKanji: "近所", en: "neighborhood" } },
-    { id: "v06", category: "noun", translations: { ja: "あそびば", jaKanji: "遊び場", en: "playground" } },
-    { id: "v07", category: "verb", translations: { ja: "そとで あそぶ", jaKanji: "外で遊ぶ", en: "to play outside" } },
-    { id: "v08", category: "noun", translations: { ja: "テレビゲーム", en: "video game" } },
-    { id: "v09", category: "noun", translations: { ja: "せだい", jaKanji: "世代", en: "generation" } },
-    { id: "v10", category: "noun", translations: { ja: "そふぼ", jaKanji: "祖父母", en: "grandparents" } },
-    { id: "v11", category: "adjective", translations: { ja: "きびしい", jaKanji: "厳しい", en: "strict" } },
-    { id: "v12", category: "adjective", translations: { ja: "あまい", jaKanji: "甘い", en: "lenient" } },
-    { id: "v13", category: "noun", translations: { ja: "もんげん", jaKanji: "門限", en: "curfew" } },
-    { id: "v14", category: "noun", translations: { ja: "おこづかい", jaKanji: "お小遣い", en: "allowance" } },
-    { id: "v15", category: "verb", translations: { ja: "しかられる", jaKanji: "叱られる", en: "to be scolded" } },
-    { id: "v16", category: "verb", translations: { ja: "ほめられる", jaKanji: "褒められる", en: "to be praised" } },
-    { id: "v17", category: "noun", translations: { ja: "おもいで", jaKanji: "思い出", en: "memory, recollection" } },
-    { id: "v18", category: "adjective", translations: { ja: "なつかしい", jaKanji: "懐かしい", en: "nostalgic" } },
-    { id: "v19", category: "verb", translations: { ja: "かわる", jaKanji: "変わる", en: "to change (over time)" } },
-    { id: "v20", category: "noun", translations: { ja: "テクノロジー", en: "technology" } },
-    { id: "v21", category: "noun", translations: { ja: "スマホ", en: "smartphone" } },
-    { id: "v22", category: "noun", translations: { ja: "こていでんわ", jaKanji: "固定電話", en: "landline phone" } },
-    { id: "v23", category: "verb", translations: { ja: "れんらくを とる", jaKanji: "連絡を取る", en: "to get in touch" } },
-    { id: "v24", category: "noun", translations: { ja: "せいかつようしき", jaKanji: "生活様式", en: "lifestyle" } },
-    { id: "v25", category: "noun", translations: { ja: "しつけ", en: "upbringing, discipline" } },
-    { id: "v26", category: "noun", translations: { ja: "かちかん", jaKanji: "価値観", en: "values, beliefs" } },
-    { id: "v27", category: "verb", translations: { ja: "くらべる", jaKanji: "比べる", en: "to compare" } },
-    { id: "v28", category: "adverb", translations: { ja: "あのころ", jaKanji: "あの頃", en: "back then, in those days" } },
-    { id: "v29", category: "adverb", translations: { ja: "さいきん", jaKanji: "最近", en: "recently, nowadays" } },
-    { id: "v30", category: "grammar", translations: { ja: "〜たことが ない", jaKanji: "〜た事がない", en: "to have never (done)" } }
+    { id: "v01", category: "noun", translations: { ja: "こどもじだい", jaKanji: "子供時代", en: "childhood", fr: "enfance" } },
+    { id: "v02", category: "verb", translations: { ja: "そだつ", jaKanji: "育つ", en: "to grow up", fr: "grandir" } },
+    { id: "v03", category: "verb", translations: { ja: "そだてる", jaKanji: "育てる", en: "to raise (a child)", fr: "élever (un enfant)" } },
+    { id: "v04", category: "noun", translations: { ja: "こきょう", jaKanji: "故郷", en: "hometown", fr: "ville natale" } },
+    { id: "v05", category: "noun", translations: { ja: "きんじょ", jaKanji: "近所", en: "neighborhood", fr: "quartier" } },
+    { id: "v06", category: "noun", translations: { ja: "あそびば", jaKanji: "遊び場", en: "playground", fr: "aire de jeux" } },
+    { id: "v07", category: "verb", translations: { ja: "そとで あそぶ", jaKanji: "外で遊ぶ", en: "to play outside", fr: "jouer dehors" } },
+    { id: "v08", category: "noun", translations: { ja: "テレビゲーム", en: "video game", fr: "jeu vidéo" } },
+    { id: "v09", category: "noun", translations: { ja: "せだい", jaKanji: "世代", en: "generation", fr: "génération" } },
+    { id: "v10", category: "noun", translations: { ja: "そふぼ", jaKanji: "祖父母", en: "grandparents", fr: "grands-parents" } },
+    { id: "v11", category: "adjective", translations: { ja: "きびしい", jaKanji: "厳しい", en: "strict", fr: "strict(e)" } },
+    { id: "v12", category: "adjective", translations: { ja: "あまい", jaKanji: "甘い", en: "lenient", fr: "indulgent(e)" } },
+    { id: "v13", category: "noun", translations: { ja: "もんげん", jaKanji: "門限", en: "curfew", fr: "couvre-feu" } },
+    { id: "v14", category: "noun", translations: { ja: "おこづかい", jaKanji: "お小遣い", en: "allowance", fr: "argent de poche" } },
+    { id: "v15", category: "verb", translations: { ja: "しかられる", jaKanji: "叱られる", en: "to be scolded", fr: "se faire gronder" } },
+    { id: "v16", category: "verb", translations: { ja: "ほめられる", jaKanji: "褒められる", en: "to be praised", fr: "être félicité(e)" } },
+    { id: "v17", category: "noun", translations: { ja: "おもいで", jaKanji: "思い出", en: "memory, recollection", fr: "souvenir" } },
+    { id: "v18", category: "adjective", translations: { ja: "なつかしい", jaKanji: "懐かしい", en: "nostalgic", fr: "nostalgique" } },
+    { id: "v19", category: "verb", translations: { ja: "かわる", jaKanji: "変わる", en: "to change (over time)", fr: "changer" } },
+    { id: "v20", category: "noun", translations: { ja: "テクノロジー", en: "technology", fr: "technologie" } },
+    { id: "v21", category: "noun", translations: { ja: "スマホ", en: "smartphone", fr: "smartphone" } },
+    { id: "v22", category: "noun", translations: { ja: "こていでんわ", jaKanji: "固定電話", en: "landline phone", fr: "téléphone fixe" } },
+    { id: "v23", category: "verb", translations: { ja: "れんらくを とる", jaKanji: "連絡を取る", en: "to get in touch", fr: "prendre contact" } },
+    { id: "v24", category: "noun", translations: { ja: "せいかつようしき", jaKanji: "生活様式", en: "lifestyle", fr: "mode de vie" } },
+    { id: "v25", category: "noun", translations: { ja: "しつけ", en: "upbringing, discipline", fr: "éducation" } },
+    { id: "v26", category: "noun", translations: { ja: "かちかん", jaKanji: "価値観", en: "values, beliefs", fr: "valeurs" } },
+    { id: "v27", category: "verb", translations: { ja: "くらべる", jaKanji: "比べる", en: "to compare", fr: "comparer" } },
+    { id: "v28", category: "adverb", translations: { ja: "あのころ", jaKanji: "あの頃", en: "back then, in those days", fr: "à cette époque-là" } },
+    { id: "v29", category: "adverb", translations: { ja: "さいきん", jaKanji: "最近", en: "recently, nowadays", fr: "récemment, de nos jours" } },
+    { id: "v30", category: "grammar", translations: { ja: "〜たことが ない", jaKanji: "〜た事がない", en: "to have never (done)", fr: "n'avoir jamais (fait)" } }
   ],
   dialogueA: {
     title: { ja: "こどもじだいを ふりかえる", jaKanji: "子供時代を振り返る", en: "Reminiscing About Childhood" },
     lines: [
-      { id: "d1", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "こどもの ころの いえ、おぼえてる？", jaKanji: "子供の頃の家、覚えてる？", en: "Do you remember your childhood home?" } },
-      { id: "d2", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "もちろん。じゅっさいに なる ころには、すでに さんかい ひっこしていたよ。", jaKanji: "もちろん。10歳になる頃には、既に3回引っ越していたよ。", en: "Of course. By the time I turned ten, I had already moved three times." } },
-      { id: "d3", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "けっこう おおいね。きんじょは どんな ところだった？", jaKanji: "結構多いね。近所はどんな所だった？", en: "That's a lot of moving. What was your neighborhood like?" } },
-      { id: "d4", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "ちいさな あそびばが ちかくに あったよ。ひっこす まえは、おおきな まちを みたことが なかったんだ。", jaKanji: "小さな遊び場が近くにあったよ。引っ越す前は、大きな街を見た事がなかったんだ。", en: "There was a small playground nearby. Before we moved, I had never seen a big city." } },
-      { id: "d5", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "そとで よく あそんでいたの？", jaKanji: "外でよく遊んでいたの？", en: "Did you play outside a lot?" } },
-      { id: "d6", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "まいにち ね。ちゅうがくせいに なる ころには、きんじょに ともだちが すでに たくさん できていたよ。", jaKanji: "毎日ね。中学生になる頃には、近所に友達が既にたくさんできていたよ。", en: "Every day. By the time I was in middle school, I had already made lots of friends in the neighborhood." } },
-      { id: "d7", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "りょうしんは きびしかった？", jaKanji: "両親は厳しかった？", en: "What about your parents? Were they strict?" } },
-      { id: "d8", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "ははは きびしかったけど、こうこうせいに なる ころには、すでに あまく なっていたよ。", jaKanji: "母は厳しかったけど、高校生になる頃には、既に甘くなっていたよ。", en: "My mother was strict, but by the time I was in high school, she had already become more lenient." } },
-      { id: "d9", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "もんげんは あったの？", jaKanji: "門限はあったの？", en: "Did you have a curfew?" } },
-      { id: "d10", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、くらく なる まえには かえらないと いけなかった。こどもの ころ、おそくまで そとに いたことが なかったんだ。", jaKanji: "うん、暗くなる前には帰らないといけなかった。子供の頃、遅くまで外にいた事がなかったんだ。", en: "Yes, I had to be home before it got dark. I had never stayed out late as a kid." } },
-      { id: "d11", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "そふぼとは なかが よかったの？", jaKanji: "祖父母とは仲が良かったの？", en: "Were you close with your grandparents?" } },
-      { id: "d12", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "すごく。がっこうに はいる まえに、いろいろな ことを すでに おしえて くれていたよ。", jaKanji: "すごく。学校に入る前に、色々な事を既に教えてくれていたよ。", en: "Very. They had already taught me a lot of things before I even started school." } },
-      { id: "d13", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "きちょうな おもいでだね。", jaKanji: "貴重な思い出だね。", en: "Those sound like precious memories." } },
-      { id: "d14", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、いま かんがえると、ほんとうに なつかしいよ。", jaKanji: "うん、今考えると、本当に懐かしいよ。", en: "Yeah, thinking about it now, it's really nostalgic." } }
+      { id: "d1", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "こどもの ころの いえ、おぼえてる？", jaKanji: "子供の頃の家、覚えてる？", en: "Do you remember your childhood home?", fr: "Tu te souviens de la maison de ton enfance ?" } },
+      { id: "d2", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "もちろん。じゅっさいに なる ころには、すでに さんかい ひっこしていたよ。", jaKanji: "もちろん。10歳になる頃には、既に3回引っ越していたよ。", en: "Of course. By the time I turned ten, I had already moved three times.", fr: "Bien sûr. Au moment où j'ai eu dix ans, j'avais déjà déménagé trois fois." } },
+      { id: "d3", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "けっこう おおいね。きんじょは どんな ところだった？", jaKanji: "結構多いね。近所はどんな所だった？", en: "That's a lot of moving. What was your neighborhood like?", fr: "C'est beaucoup. À quoi ressemblait ton quartier ?" } },
+      { id: "d4", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "ちいさな あそびばが ちかくに あったよ。ひっこす まえは、おおきな まちを みたことが なかったんだ。", jaKanji: "小さな遊び場が近くにあったよ。引っ越す前は、大きな街を見た事がなかったんだ。", en: "There was a small playground nearby. Before we moved, I had never seen a big city.", fr: "Il y avait une petite aire de jeux à proximité. Avant qu'on déménage, je n'avais jamais vu une grande ville." } },
+      { id: "d5", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "そとで よく あそんでいたの？", jaKanji: "外でよく遊んでいたの？", en: "Did you play outside a lot?", fr: "Tu jouais souvent dehors ?" } },
+      { id: "d6", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "まいにち ね。ちゅうがくせいに なる ころには、きんじょに ともだちが すでに たくさん できていたよ。", jaKanji: "毎日ね。中学生になる頃には、近所に友達が既にたくさんできていたよ。", en: "Every day. By the time I was in middle school, I had already made lots of friends in the neighborhood.", fr: "Tous les jours. Au moment où je suis entré au collège, je m'étais déjà fait beaucoup d'amis dans le quartier." } },
+      { id: "d7", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "りょうしんは きびしかった？", jaKanji: "両親は厳しかった？", en: "What about your parents? Were they strict?", fr: "Et tes parents ? Ils étaient stricts ?" } },
+      { id: "d8", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "ははは きびしかったけど、こうこうせいに なる ころには、すでに あまく なっていたよ。", jaKanji: "母は厳しかったけど、高校生になる頃には、既に甘くなっていたよ。", en: "My mother was strict, but by the time I was in high school, she had already become more lenient.", fr: "Ma mère était stricte, mais au moment où j'étais au lycée, elle était déjà devenue plus indulgente." } },
+      { id: "d9", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "もんげんは あったの？", jaKanji: "門限はあったの？", en: "Did you have a curfew?", fr: "Tu avais un couvre-feu ?" } },
+      { id: "d10", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、くらく なる まえには かえらないと いけなかった。こどもの ころ、おそくまで そとに いたことが なかったんだ。", jaKanji: "うん、暗くなる前には帰らないといけなかった。子供の頃、遅くまで外にいた事がなかったんだ。", en: "Yes, I had to be home before it got dark. I had never stayed out late as a kid.", fr: "Oui, je devais rentrer avant la tombée de la nuit. Enfant, je n'étais jamais resté dehors tard le soir." } },
+      { id: "d11", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "そふぼとは なかが よかったの？", jaKanji: "祖父母とは仲が良かったの？", en: "Were you close with your grandparents?", fr: "Tu étais proche de tes grands-parents ?" } },
+      { id: "d12", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "すごく。がっこうに はいる まえに、いろいろな ことを すでに おしえて くれていたよ。", jaKanji: "すごく。学校に入る前に、色々な事を既に教えてくれていたよ。", en: "Very. They had already taught me a lot of things before I even started school.", fr: "Beaucoup. Ils m'avaient déjà appris plein de choses avant même que j'entre à l'école." } },
+      { id: "d13", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "きちょうな おもいでだね。", jaKanji: "貴重な思い出だね。", en: "Those sound like precious memories.", fr: "Ce sont des souvenirs précieux." } },
+      { id: "d14", speaker: { ja: "けん", en: "Ken" }, translations: { ja: "うん、いま かんがえると、ほんとうに なつかしいよ。", jaKanji: "うん、今考えると、本当に懐かしいよ。", en: "Yeah, thinking about it now, it's really nostalgic.", fr: "Oui, quand j'y repense maintenant, c'est vraiment nostalgique." } }
     ]
   },
   dialogueB: {
     title: { ja: "せだいを くらべる", jaKanji: "世代を比べる", en: "Comparing Generations" },
     lines: [
-      { id: "e1", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "みほさんの こどもじだいは、いまの こどもと どう ちがったの？", jaKanji: "みほさんの子供時代は、今の子供とどう違ったの？", en: "How was your childhood different from kids today?" } },
-      { id: "e2", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "そうね、じゅうだいの ころには、スマホに さわったことが なかったよ。", jaKanji: "そうね、10代の頃には、スマホに触った事がなかったよ。", en: "Well, by the time I was a teenager, I had never even touched a smartphone." } },
-      { id: "e3", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "ほんとうに？どうやって ともだちと れんらくを とっていたの？", jaKanji: "本当に？どうやって友達と連絡を取っていたの？", en: "Really? How did you stay in touch with friends?" } },
-      { id: "e4", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "こていでんわを つかっていたよ。みんなの ばんごうを すでに おぼえていたんだ。", jaKanji: "固定電話を使っていたよ。皆の番号を既に覚えていたんだ。", en: "We used the landline phone. I had already memorized everyone's phone number by heart." } },
-      { id: "e5", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "すごいね。いまの こどもは なんでも スマホに たよっているよ。", jaKanji: "すごいね。今の子供は何でもスマホに頼っているよ。", en: "That's impressive. Kids today rely on their phones for everything." } },
-      { id: "e6", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "そうだね。あのころから テクノロジーは すごく かわったよ。", jaKanji: "そうだね。あの頃からテクノロジーはすごく変わったよ。", en: "Exactly. Technology has changed so much since then." } },
-      { id: "e7", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "りょうしんの せだいは どうだったの？", jaKanji: "両親の世代はどうだったの？", en: "What about your parents' generation?" } },
-      { id: "e8", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "りょうしんは テレビが ない じだいに そだっていて、こんな せいかつは けいけんしたことが なかったんだって。", jaKanji: "両親はテレビがない時代に育っていて、こんな生活は経験した事がなかったんだって。", en: "My parents had grown up without television. They had never experienced anything like this." } },
-      { id: "e9", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "せだいの ギャップが おおきいね。", jaKanji: "世代のギャップが大きいね。", en: "That's a big gap between generations." } },
-      { id: "e10", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "うん。かちかんも あのころに くらべて おおきく かわったよ。", jaKanji: "うん。価値観もあの頃に比べて大きく変わったよ。", en: "It is. Our values have also changed a lot compared to back then." } },
-      { id: "e11", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "しつけも かわったと おもう？", jaKanji: "しつけも変わったと思う？", en: "Do you think upbringing has changed too?" } },
-      { id: "e12", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "ぜったい。さいきんの おやは むかしより きびしくないと おもうよ。", jaKanji: "絶対。最近の親は昔より厳しくないと思うよ。", en: "Definitely. Parents nowadays seem less strict than they used to be." } },
-      { id: "e13", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "むかしと いまを くらべるのは おもしろいね。", jaKanji: "昔と今を比べるのは面白いね。", en: "It's interesting to compare how things used to be." } },
-      { id: "e14", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "うん、どれだけ かわったか、あらためて かんじるよ。", jaKanji: "うん、どれだけ変わったか、改めて感じるよ。", en: "Yeah, it makes you really feel how much has changed." } }
+      { id: "e1", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "みほさんの こどもじだいは、いまの こどもと どう ちがったの？", jaKanji: "みほさんの子供時代は、今の子供とどう違ったの？", en: "How was your childhood different from kids today?", fr: "En quoi ton enfance était-elle différente de celle des enfants d'aujourd'hui ?" } },
+      { id: "e2", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "そうね、じゅうだいの ころには、スマホに さわったことが なかったよ。", jaKanji: "そうね、10代の頃には、スマホに触った事がなかったよ。", en: "Well, by the time I was a teenager, I had never even touched a smartphone.", fr: "Eh bien, quand j'étais adolescente, je n'avais jamais touché un smartphone." } },
+      { id: "e3", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "ほんとうに？どうやって ともだちと れんらくを とっていたの？", jaKanji: "本当に？どうやって友達と連絡を取っていたの？", en: "Really? How did you stay in touch with friends?", fr: "Vraiment ? Comment restais-tu en contact avec tes amis ?" } },
+      { id: "e4", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "こていでんわを つかっていたよ。みんなの ばんごうを すでに おぼえていたんだ。", jaKanji: "固定電話を使っていたよ。皆の番号を既に覚えていたんだ。", en: "We used the landline phone. I had already memorized everyone's phone number by heart.", fr: "On utilisait le téléphone fixe. J'avais déjà mémorisé le numéro de tout le monde." } },
+      { id: "e5", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "すごいね。いまの こどもは なんでも スマホに たよっているよ。", jaKanji: "すごいね。今の子供は何でもスマホに頼っているよ。", en: "That's impressive. Kids today rely on their phones for everything.", fr: "Impressionnant. Les enfants d'aujourd'hui dépendent de leur téléphone pour tout." } },
+      { id: "e6", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "そうだね。あのころから テクノロジーは すごく かわったよ。", jaKanji: "そうだね。あの頃からテクノロジーはすごく変わったよ。", en: "Exactly. Technology has changed so much since then.", fr: "Exactement. La technologie a énormément changé depuis cette époque-là." } },
+      { id: "e7", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "りょうしんの せだいは どうだったの？", jaKanji: "両親の世代はどうだったの？", en: "What about your parents' generation?", fr: "Et la génération de tes parents ?" } },
+      { id: "e8", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "りょうしんは テレビが ない じだいに そだっていて、こんな せいかつは けいけんしたことが なかったんだって。", jaKanji: "両親はテレビがない時代に育っていて、こんな生活は経験した事がなかったんだって。", en: "My parents had grown up without television. They had never experienced anything like this.", fr: "Mes parents avaient grandi à une époque sans télévision. Ils n'avaient jamais rien connu de tel." } },
+      { id: "e9", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "せだいの ギャップが おおきいね。", jaKanji: "世代のギャップが大きいね。", en: "That's a big gap between generations.", fr: "C'est un grand écart entre les générations." } },
+      { id: "e10", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "うん。かちかんも あのころに くらべて おおきく かわったよ。", jaKanji: "うん。価値観もあの頃に比べて大きく変わったよ。", en: "It is. Our values have also changed a lot compared to back then.", fr: "Oui. Nos valeurs ont aussi beaucoup changé par rapport à cette époque-là." } },
+      { id: "e11", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "しつけも かわったと おもう？", jaKanji: "しつけも変わったと思う？", en: "Do you think upbringing has changed too?", fr: "Tu penses que l'éducation a changé aussi ?" } },
+      { id: "e12", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "ぜったい。さいきんの おやは むかしより きびしくないと おもうよ。", jaKanji: "絶対。最近の親は昔より厳しくないと思うよ。", en: "Definitely. Parents nowadays seem less strict than they used to be.", fr: "Absolument. Je pense que les parents d'aujourd'hui sont moins stricts qu'avant." } },
+      { id: "e13", speaker: { ja: "あい", en: "Ai" }, translations: { ja: "むかしと いまを くらべるのは おもしろいね。", jaKanji: "昔と今を比べるのは面白いね。", en: "It's interesting to compare how things used to be.", fr: "C'est intéressant de comparer le passé et le présent." } },
+      { id: "e14", speaker: { ja: "みほ", en: "Miho" }, translations: { ja: "うん、どれだけ かわったか、あらためて かんじるよ。", jaKanji: "うん、どれだけ変わったか、改めて感じるよ。", en: "Yeah, it makes you really feel how much has changed.", fr: "Oui, ça fait vraiment sentir à quel point les choses ont changé." } }
     ]
   },
   grammar: {
@@ -108,6 +109,21 @@ export const topicGrowingUp: TopicLesson = {
         { id: "g4", translations: { ja: "こどもの ころ、おそくまで そとに いたことが なかった。", jaKanji: "子供の頃、遅くまで外にいた事がなかった。", en: "As a kid, I had never stayed out late." } },
         { id: "g5", translations: { ja: "がっこうに はいる まえに、そふぼが いろいろな ことを おしえて くれていた。", jaKanji: "学校に入る前に、祖父母が色々な事を教えてくれていた。", en: "Before I started school, my grandparents had already taught me a lot of things." } },
         { id: "g6", translations: { ja: "じゅうだいの ころ、スマホに さわったことが なかった。", jaKanji: "10代の頃、スマホに触った事がなかった。", en: "As a teenager, I had never touched a smartphone." } }
+      ]
+    },
+    fr: {
+      title: { fr: "Le plus-que-parfait et « n'avais jamais » : séquence et contraste", en: "Plus-que-parfait and 'n'avais jamais': Sequencing and Contrast" },
+      explanation: {
+        fr: "En plus du plus-que-parfait déjà vu dans les leçons précédentes, ce sujet utilise n'avais/n'étais jamais — la forme négative qui exprime qu'on n'avait jamais fait ou vécu quelque chose avant un certain moment. Comme dans « au moment où j'ai eu dix ans, je n'avais jamais vu une grande ville », cette forme montre une absence d'expérience jusqu'à un point de référence dans le passé. Elle est particulièrement utile pour contraster l'enfance et le présent, ou pour parler des différences entre générations.",
+        en: "In addition to the plus-que-parfait seen in previous lessons, this topic uses n'avais/n'étais jamais — the negative form expressing that something had never been done or experienced by a certain point. As in \"by the time I turned ten, I had never seen a big city,\" this form shows a lack of experience up to a reference point in the past. It's especially useful for contrasting childhood with the present, or describing generational differences."
+      },
+      chunks: [
+        { id: "g1", translations: { fr: "Au moment où j'ai eu dix ans, j'avais déjà déménagé trois fois.", en: "By the time I turned ten, I had already moved three times." } },
+        { id: "g2", translations: { fr: "Avant qu'on déménage, je n'avais jamais vu une grande ville.", en: "Before we moved, I had never seen a big city." } },
+        { id: "g3", translations: { fr: "Au moment où j'étais au lycée, ma mère était déjà devenue plus indulgente.", en: "By the time I was in high school, my mother had already become more lenient." } },
+        { id: "g4", translations: { fr: "Enfant, je n'étais jamais resté dehors tard le soir.", en: "As a kid, I had never stayed out late." } },
+        { id: "g5", translations: { fr: "Avant que j'entre à l'école, mes grands-parents m'avaient déjà appris plein de choses.", en: "Before I started school, my grandparents had already taught me a lot of things." } },
+        { id: "g6", translations: { fr: "Adolescent(e), je n'avais jamais touché un smartphone.", en: "As a teenager, I had never touched a smartphone." } }
       ]
     }
   },
@@ -137,6 +153,23 @@ export const topicGrowingUp: TopicLesson = {
         { id: "c2_2", category: "contrast2", translations: { ja: "げんざい", en: "currently" } },
         { id: "c2_3", category: "contrast2", translations: { ja: "いまどき", en: "nowadays" } },
         { id: "c2_4", category: "contrast2", translations: { ja: "いま", en: "now" } }
+      ]
+    },
+    fr: {
+      title: { fr: "Entraînement à la prononciation", en: "Pronunciation Practice" },
+      groupLabels: {
+        liaison1: { fr: "Liaison avec « avais »/« étais »", en: "Liaison with avais/étais" },
+        nasal1: { fr: "Voyelles nasales", en: "Nasal Vowels" }
+      },
+      items: [
+        { id: "li_1", category: "liaison1", translations: { fr: "j'étais enfant", en: "I was a child (liaison: étai_z_enfant)" } },
+        { id: "li_2", category: "liaison1", translations: { fr: "j'avais un couvre-feu", en: "I had a curfew (liaison: avai_z_un)" } },
+        { id: "li_3", category: "liaison1", translations: { fr: "ils avaient appris", en: "they had taught (liaison: avaien_t_appris)" } },
+        { id: "li_4", category: "liaison1", translations: { fr: "nous étions amis", en: "we were friends (liaison: étion_z_amis)" } },
+        { id: "na_1", category: "nasal1", translations: { fr: "enfance", en: "childhood (nasal: an)" } },
+        { id: "na_2", category: "nasal1", translations: { fr: "génération", en: "generation (nasal: on)" } },
+        { id: "na_3", category: "nasal1", translations: { fr: "indulgent(e)", en: "lenient (nasal: in, en)" } },
+        { id: "na_4", category: "nasal1", translations: { fr: "changement", en: "change (nasal: an, en)" } }
       ]
     }
   },
